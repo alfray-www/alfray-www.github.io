@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Seeds</title>
+    <style type="text/css">
+        body      { color: white; background-color: black; }
+        a:link    { color: orange; }
+        a:visited { color: green;  }
+        a:hover   { color: yellow; }
+        h1        { color: orange; }
+    </style>
+</head>
+<body>
+
+
+<h1><img src="app_icon.png" />About Seeds</h1>
+<p>
+Seeds 4.2 is an app that can query a key/value spreadsheet.
+<br/>
+<a href="https://play.google.com/store/apps/details?id=com.alflabs.seeds" target="_blank">
+<img width="256" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/></a>
+</p>
+
+<p>
+The app connects to a Google Spreadsheet that has "seeds" and "values" columns. <br/>
+You can then search for seeds using a simple filter and
+the app displays the corresponding values but initially hides them
+till you individually click on them to reveal them for a few seconds.
+</p>
+
+<p>
+    What is good for? I use it as a simplified flash card system. Say you need to learn a list of capitals, 
+    click on any line to reveal the answer. Here's an example:
+<p/>
+
+<!-- iframe width="560" height="315" -->
+<iframe width="800" height="450"
+    src="https://www.youtube.com/embed/QFpBZQctz_8"
+    frameborder="1"
+    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+<p>
+    Note that the app <em>never changes the spreadsheet</em>. It only reads from it.
+    To change the data, simply open the underlying spreadsheet using Google Drive.
+</p>
+
+<h1>Accounts &amp; Permissions Requested</h3>
+
+<p> <img src="a - signin process.png" width="1024" /> </p>
+
+To begin, sign-in using a Google account and follow the prompts the accept the Google Drive permissions.
+The application uses the following permissions:
+<ul>
+    <li>Google Drive API in read-only access, to get the list of spreadsheets from the user.
+        This allows the user to select one of its own spreadsheets.</li>
+    <li>Google Spreadsheet API in read-only access. Once a spreadsheet has been selected, the
+        app queries that spreadsheet for seeds and displays the values. The spreadsheet is 
+        never modified by the app.</li>
+</ul>
+
+<h1>Usage</h1>
+<p>
+To continue, the user must select a spreadsheet. Note that the Android app <em>cannot</em>
+create the spreadsheet, it has to be done by the user itself either from the Google Drive
+app or from the Google Drive web site.
+</p>
+
+The spreadsheet must be created with the following simple format:
+<ul>
+    <li>Column A: Seeds (what the user searches for).</li>
+    <li>Column B: Values (initially hidden til tapped by the user).</li>
+    <li>Column C...Z: Optional comments/details for each entry.</li>
+</ul>
+
+Here's an example of Spreadsheet:
+<p> <img src="about_sample_data.png" /> </p>
+
+To use the app, simply enter a search pattern. The matching rows from the spreadsheet are shown and
+then the user can tap each entry to reveal the answer.
+
+<p> <img src="b - search process.png" width="1024" /> </p>
+
+<h1><a name="privacy">Privacy Policy</a></h1>
+
+<a href="https://docs.google.com/document/d/1dONgR1cS5073jHYlxyktt7s-TzJg5EtEzMkf_uozPNs/pub">Alf-Labs Android App Privacy Policy</a>
+<br/>
+The application complies with the privacy and security policies set by the Android Play Store.
+<br/>
+The application does NOT collect nor transmit personal or sensitive user data.
+<br/>
+Some Android permissions are considered sensitives. The following non-exclusive list explains some usage:
+<ul>
+    <li><a href="https://developers.google.com/identity/sign-in/android/">Google Sign-In API</a>:
+        The Account API is used to be able to allow the user to select which account to use.</li>
+    <li><a href="https://developers.google.com/drive/">Google Drive API</a>:
+        Google Drive documents are accessed solely as read-only for local usage.</li>
+    <li><a href="https://developers.google.com/sheets/api/">Google Spreadsheet API</a>: 
+        Google Spreadsheet documents are accessed solely as read-only for local usage.</li>
+    <li><a href="https://firebase.google.com/">Firebase Analytics</a>: 
+        The application uses "Firebase Analytics" and "Firebase Crashlytics" to collect usage information and crash reports. 
+        <a href="https://firebase.google.com/policies/analytics">Link to the Firebase Use Policy</a>.
+    </li>
+</ul>
+
+<br/>
+<hr/>
+<font size="-1">
+Google Play and the Google Play logo are trademarks of Google LLC.
+</font>
+
+<!-- Global site tag (gtag.js) - Google Analytics 20200822 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-243916-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-243916-1');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<html>
+<head>
+    <title>About Asqare</title>
+    <style type="text/css">
+        body      { color: white; background-color: black;  }
+        a:link    { color: orange; }
+        a:visited { color: green;  }
+        a:hover   { color: yellow; }
+        h1,h2,h3  { color: orange; }
+    </style>
+</head>
+<body>
+
+<h1><img src="app_icon.png" width="48" />About Asqare</h1>
+
+Swap colored sprites in this puzzle game to make sprites vanish.
+When stuck, make a negative-scoring move! The game offers two game modes and
+manages a list of current games that you can pause and recall at any time.
+
+<p/>
+<b>This game was first developed on 2008 for Android 1.0!</b>
+It was designed to run efficiently on the limited phone hardware we had back then.
+As such, graphics and animations are kept simple. And the good news is that on today's modern phones,
+that means a game that is efficient and uses <b>very little graphics and CPU power</b>, thus little battery. Yeah!
+
+<center>
+<a href="https://play.google.com/store/apps/details?id=com.alfray.asqare" target="_blank">
+<img width="256" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/></a>
+</center>
+
+<br/>
+<em>Enjoy!</em>
+<p/>
+
+<center>
+<img title="Screenshot" src="screenshot.png" />
+</center>
+
+
+<h1>Game List Screen</h1>
+
+The game opens on the game list screen that lets you start new games or continue previously played ones.
+
+<p/>
+Since the games are not timed, you can always abandon a game and continue it later.
+
+<p/>
+To get started, press the "New Game" button on the game list screen and select one of the two different game modes available
+<a href="#bijoux">Bijoux</a> or <a href="#bee">B&eacute;e</a>.
+
+<p/>
+In the top corner of the screen is a 3-dot icon menu to access the settings.
+This lets you configure the vibration mode as well as change the visual theme of the games.
+
+
+
+<a name="bijoux"><h1>Bijoux</h1></a>
+
+In this game mode, the screen is covered with colored sprites (squares or circles).
+The goal is to align 3 or more sprites of the same shape and color in a row to form a <i>sequence</i>.
+When an adjacent sequence of the same shape and color contains at least 3 aligned sprites,
+the sequence is removed and vanishes from the board.
+
+<p/>
+New sprites fall from the top, filling the empty space.
+If they also align to form a sequence with 3 or more similar aligned sprites, they also vanish, forming a <i>chain</i>.
+
+<p/>
+<b>Points are awarded for each sprite removed using a
+<a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank">Fibonacci sequence</a></b>:
+1 point for the first sprite, then 2, then 3, then 5, then 8, etc.
+
+<p/>
+Thus the minimum number of points per sequence removed is 6 (1+2+3),
+and that score increases geometrically as more similar sprites are removed at the same time.
+It is thus in your best interest to maximize the number of sprites that get removed at the same time!
+
+<p/>
+In this game mode, there are no levels, and <b>the game never ends as you can never get stuck</b>:
+you can always swap sprites around. However if the swapped sprite does not result in a sequence removal,
+there's a penalty and you <b>loose 10 points on your current score</b>!
+<br/>
+That's pretty significant, so it's in your best interest to use that only strategically.
+
+<p/>
+The bottom of the board displays the number of moves made so far, the current score, and a <i>ratio</i>:
+the ratio is the current score divided by the number of moves.
+<br/>
+One way to play is to ignore the actual score and focus on the ratio itself: how high can you go?
+
+
+
+<a name="bee"><h1>B&eacute;e</h1></a>
+
+In this game mode, the screen is covered with colored circles.
+
+<p/>
+Although this game mode looks visually similar to the previous one, the mechanics and goals are very different.
+
+<p/>
+When a circle is selected, all the adjacent circles of the same color blink, as they are selected too.
+When this selected area is selected again, all the circles collapse and vanish.
+The area must contain at least 2 circles for it to go away.
+
+<p/>
+This game mode has no levels either.
+However you can quickly get in a situation where it is not possible to find areas
+with 2 or more circles of the same color, in which case the game is finished.
+<br/>
+The trick however is that... there is no indication that the game is impossible to continue!
+There is no computer nanny giving 3 stars when you can't play anymore.
+It's up to you to realize you have exhausted all your moves. Or... have you? Maybe you missed one...
+
+
+<p/>
+<a name="credits"><h1>Credits</h1></a>
+Flower visual theme by <a href="http://dkworldwide.com/" target="_blank">Dave Kaufman</a>.
+
+<p/>
+
+
+<h1>Privacy Policy</h1>
+
+<a href="https://docs.google.com/document/d/1dONgR1cS5073jHYlxyktt7s-TzJg5EtEzMkf_uozPNs/pub">Alf-Labs Android App Privacy Policy</a>
+<br/>
+The application complies with the privacy and security policies set by the Android Play Store.
+<br/>
+The application does not collect nor transmit personal or sensitive user data.
+<br/>
+The application does not use any analytics service, nor does it collect usage information, nor crash reports.
+
+<p/>
+
+<!-- <hr width="40%" / -->
+<font size="-1">
+    Google Play, the Google Play logo are trademarks of Google LLC.
+    <p/>
+</font>
+
+
+</body>
+</html>

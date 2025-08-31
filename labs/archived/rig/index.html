@@ -1,0 +1,844 @@
+<html>
+<head>
+<title>R.I.G.</title>
+<style type="text/css">
+<!--
+.yellowbox { background-color: #FFFFCC; border: 1px #CCCCCC solid; text-align: center}
+.orange { background-color: #FFCC99; border: none; text-align: center }
+.tableborderline {  border-bottom-width: 1px}
+.historydiv {
+	border-top: 1px dashed #333333;
+	border-right: none;
+	border-bottom: none;
+	border-left: none;
+	vertical-align: top;
+}
+.bottomdiv {
+	border-top-style: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #333333;
+}
+.halflineparagraph {
+	margin-bottom: 8pt;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h1 class="yellowbox">&nbsp;&nbsp;R.I.G.&nbsp;&nbsp;</h1>
+<p align="center">&nbsp;<a href="#description">Description</a> &nbsp;|&nbsp; <a href="#news">News</a> 
+  &nbsp;|&nbsp; <a href="#demo">Sample Sites</a>&nbsp;&nbsp;|&nbsp; <a href="#contact">Contact</a>&nbsp;<br>
+  &nbsp;<a href="#sourceforge">SourceForge</a> &nbsp;|&nbsp; <a href="#.izumi/Dev/RigDev">Dev 
+  Page</a> &nbsp;|&nbsp; <a href="#downloads">Downloads</a><br>
+</p>
+<h3 class="orange"><a name="description"></a>Description</h3>
+<div align="center"><a href="#summary">Summary</a> | <a href="#what">What is it?</a> 
+  | <a href="#features">Features</a> | <a href="#license">License</a><br>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    
+<td valign="top"> 
+      
+<p class="yellowbox"><a name="summary"></a>Summary</p>
+      <p>RIG is a web-based JPEG and movie album viewer, especially useful for 
+        digital camera albums; provides automatic image resizing, preview &amp; 
+        thumbnail caching, user authentication; composed of a PHP web interface 
+        and a C++ thumbnail engine. Storage relies on file-system rather than 
+        database.</p>
+      <p><i>RIG has been primarily prototyped in the soothing environment of Pennsylvania 
+        ;-)</i></p>
+      </td>
+    <td align="right" width="10%" valign="top"> <a href="cover.html"><img src="img-web/rig-cover-128.jpg" width="96" height="128" border="0"></a></td>
+  </tr>
+</table>
+<p class="yellowbox"><a name="what"></a>What is RIG?</p>
+<p>RIG (a.k.a. the Ralf Image Gallery) is a web-based image album viewer.<br>
+  The main application of RIG is a viewer for digital camera albums; as such it 
+  offers specific functionalities like automatic image resizing and handling of 
+  dated album names.</p>
+<p>RIG is composed of two parts:</p>
+<ul>
+  <li>A set of PHP scripts allowing a user to navigate albums and display images 
+    via a web interface,</li>
+  <li>A C++ &quot;thumbnail&quot; engine that can resize images &quot;on the fly&quot;. 
+    It is used to produce thumbnails as well as resize images to the viewer's 
+    preference.</li>
+</ul>
+<p>The images are read directly from the local file system. The directories are 
+  interpreted as albums, each album containing an arbitrary number of images or 
+  sub-albums. Currently only JPEG files are supported as this is the most common 
+  format produced by digital cameras. Most modern cameras can also generate movie 
+  files: under GNU/Linux systems, these movie files can be handled if <a href="http://avifile.sourceforge.net/">avifile 
+  library</a> is installed on the system.</p>
+<p>RIG currently works using PHP 4 with Apache. It is mainly developed under GNU/Linux 
+  (Debian/Apache 1.3/PHP 4) but also tested under Win32/Apache/PHP 4 or Win32/IIS 
+  5/PHP 4. It is expected that the scripts will work with other web servers supporting 
+  PHP or at least require only a minimal set of modifications.</p>
+<p>RIG thumbnail, the resizing application, is a C++ application that compiles 
+  with GCC (for GNU/Linux) or Visual Studio 6 (Win32) or Visual Studio .Net (Win32). 
+  It is expected to be portable on other platforms using a reasonable C++-compatible 
+  compiler. The thumbnail application has been designed with speed in mind yet 
+  code maintenance has not been sacrificed for speed. 1600x1200 images are resized 
+  in less than 1 second on a not-so-high end Pentium III @ 1Ghz computer (usually 
+  in less time than is needed for the resulting image to be downloaded by the 
+  client web browser) or in 2~3 seconds on a K6-II @ 350 MHz (i.e. a low end DSL 
+  server).</p>
+<p>RIG maintains a cache of resized images and a cache of generated HTML album 
+  pages in order to produce them once. The web interface provides an administration 
+  page that can be used to pre-compute all the resized images. The administrator 
+  can also hide/show images or albums at will.</p>
+<p>The web interface is composed of a small set of HTML and PHP modular scripts, 
+  which are expected to be easy to understand and modify even for a beginner or 
+  a non-programmer. All UI strings (for the web interface) are isolated for internationalization 
+  purposes; default translations in English, French, Spanish and Japanese are 
+  provided. Configuration files provide support for site-wide settings vs. album-wide 
+  settings. It is thus possible to have different albums (with different configuration 
+  files) served by the same server yet sharing the same PHP code base.</p>
+<p class="yellowbox"><a name="features" id="features"></a>Features</p>
+<p>In 2000, I wanted to update the photo album on my web site. I was previously 
+  using statically generated web pages with one reduced version of the pictures. 
+  I looked around and quickly found <a href="http://ids.sourceforge.net/">IDS</a> 
+  first and <a href="http://gallery.sourceforge.net/">Gallery</a> later but they 
+  didn't exactly do what I wanted. IDS was really really slow on my server and 
+  Gallery doesn't just use the plain file system structure with a local network 
+  upload of albums, which is a requirement for me.</p>
+<p>So here's a quick review of RIG's features:</p>
+<ul>
+  <li><i>File system based</i>: 
+    <ul>
+      <li> Albums are stored in plain directories and image files.</li>
+      <li> Name of albums and images are directly based on the file names.</li>
+      <li> The hierarchical structure of the directories defines the hierarchical 
+        structure of the albums.</li>
+      <li> Display ordering is based on a date prefix in album or images, as well 
+        as an index prefix in image names.</li>
+      <li>The easiest way to manage the content of your albums is by managing 
+        directories of pictures and transferring to your server via the network 
+        (Samba, NFS, FTP, SFTP, etc.) using your regular GNU/Linux or Windows 
+        tools.</li>
+    </ul>
+  </li>
+  <li><i>Not database driven</i>: 
+    <ul>
+      <li>Believe it or not, this is actually a good feature. Don't get me wrong: 
+        database storage of metadata is a good thing, but it is not <em>always</em> 
+        necessary.</li>
+      <li> RIG does not require any database to work and it will never do. All 
+        user-editable settings are stored in flat text files.</li>
+      <li>Backuping and mirroring a site is just a matter of handling folders 
+        of images and text files.</li>
+      <li> I have plans to implement future features that will benefit of the 
+        presence of a database (<a href="http://pear.php.net/">pear</a> or <a href="http://www.php.net/manual/en/ref.dba.php">dbm</a>). 
+        These features will most probably be disabled by default if no database 
+        is present, unless they can be implemented using text or XML files with 
+        reasonable performances.</li>
+    </ul>
+  </li>
+  <li><i>Security</i>: 
+    <ul>
+      <li>RIG is built with security in mind. This can take many forms: </li>
+      <li>Settings: 
+        <ul>
+          <li>The default installation allows album settings and sources to be 
+            stored in a specific location out of the htdocs/document root. This 
+            is particularly important for security-sensitive files such as users 
+            &amp; passwords.</li>
+        </ul>
+      </li>
+      <li>Web interface: 
+        <ul>
+          <li>All HTTP GET arguments are checked for sanity. Relative paths in 
+            album or image names are forbidden.</li>
+          <li>Buffer overflows and <a href="http://www.cert.org/advisories/CA-2000-02.html">cross-site 
+            scripting</a> issues are taken care of.</li>
+          <li>Form input is filtered and validated. HTML or PHP scripting is limited 
+            or not allowed in form inputs.</li>
+          <li>User authentication supports plain-text, crypt or MD5 passwords. 
+            Client-side cookies do not store clear passwords if crypt or MD5 is 
+            used. </li>
+        </ul>
+      </li>
+      <li>Folders: 
+        <ul>
+          <li>RIG uses special folders for upload. Uploaded images are <em>not</em> 
+            stored in album directories transferred manually by the user.</li>
+          <li>RIG will never touch the manually transferred images by default. 
+            Features to rename/move folders <i>will</i> be implemented either 
+            by using a virtual remapping or by physical remapping if the site 
+            admin enables it. Site administrators can change this behavior on 
+            a per-album basis.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><i>Speed</i>: 
+    <ul>
+      <li>The web interface is written in pure PHP4 and executes reasonably fast.</li>
+      <li>The &quot;thumbnail&quot; resize engine is a simplistic C++ application 
+        based on <a href="http://www.ijg.org/">libjeg62b</a> and <a href="http://avifile.sourceforge.net/">libavifile</a>. 
+        The resize algorithm uses floating point arithmetic and has been tuned 
+        to achieve good performances yet keeping the code simple and readable 
+        (prior to that I was using a fixed-point arithmetic algorithm which was 
+        not that much faster, had visible artifacts when producing small thumbnails 
+        and was basically impossible to maintain). Aggressive optimization is 
+        no longer the only way to go.</li>
+      <li>Timing: resizing a 1600x1200 JPEG takes approximately 2~4 seconds on 
+        a K6@350, 1 second on a G3@350 and 0.5 seconds on a P4@1GHz.</li>
+      <li>RIG keeps a cache of the generated previews or thumbnails. The above 
+        generation time only occurs once per picture per preview size.</li>
+      <li>RIG maintains a cache of the generated album HTML pages. Successive 
+        requests of the same album or image page reuses the HTML cache, avoiding 
+        most of the PHP calls. A cached page is generally served in a fraction 
+        of a second, which means better response time and reduced server load. 
+        The cache is automatically regenerated when needed.</li>
+    </ul>
+  </li>
+  <li><i>Flexibility</i>: 
+    <ul>
+      <li>Site vs Album settings: by design, RIG can handle multiple independent 
+        albums on the &quot;site&quot; server. The common source code is shared. 
+        Preferences settings can be overridden by each separate albums. This allows 
+        the site settings to be managed by the admin and albums to be managed 
+        by each user account.</li>
+      <li>The web interface can easily support multiple languages and multiple 
+        layout/color themes. English, Spanish, French and Japanese are currently 
+        supported.</li>
+      <li>The theme architecture will be enhanced soon to be able to have richer 
+        themes, more CSS compliant. </li>
+    </ul>
+  </li>
+  <li><i>Portability</i>: 
+    <ul>
+      <li>The web interface is developed mostly under GNU/Linux/Apache and tested 
+        against Windows/Apache or Windows/IIS.</li>
+      <li>The C++ thumbnail engine compiles with GCC 2.95, 3.x, Visual Studio 
+        6 and Visual Studio .Net.</li>
+    </ul>
+  </li>
+  <li><i>Non-obsolescense</i>: 
+    <ul>
+      <li>RIG is still quite young. I have many ideas in mind which I haven't 
+        examined yet. I write RIG mostly for myself and some friends, which means 
+        it will continue to evolve, one idea or one feature at a time.</li>
+      <li>Between features I actually need and features which are too hype to 
+        miss, I don't see the project ending any time soon and that's just fine 
+        with me.</li>
+      <li>The best way to make sure development goes on is by using it and telling 
+        me about it. Comments (both negative and positive) are always welcome.</li>
+    </ul>
+  </li>
+</ul>
+<p>This list may be incomplete. RIG permanently evolves.</p>
+<p>If you want information about the future of RIG, you can:</p>
+<ul>
+  <li>Consult the <a href="#.izumi/Dev/RigDev">RIG development 
+    page</a>, which list things I'm thinking about and may or may not implement.</li>
+  <li>Consult the <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/rig-thumbnail/rig/TODO.txt?rev=HEAD&content-type=text/vnd.viewcvs-markup">RIG 
+    todo list</a> for a non-exhaustive list of features I'm working on.</li>
+  <li>Simply <a href="#contact">email me</a> and ask!</li>
+</ul>
+<p>&nbsp;</p>
+<p class="yellowbox"><a name="license"></a>What is the RIG License?</p>
+<p>RIG 0.6.2 used to have a modified version of the Artistic License.<br>
+  Since RIG 0.6.3+, the license has been reverted to the pure Artistic License 
+  to be an <a href="http://www.opensource.org/docs/definition.html">Open Source</a> 
+  license. *grin*</p>
+<p>You can consult the license here: <a href="LICENSE.html">RIG License</a>.</p>
+<p>I am not a lawyer and I find licenses generally obscure to read, so what it 
+  all means is:</p>
+<ul>
+  <li>RIG is free software, it can be used for either personal, academic or commercial 
+    purposes at absolutely no cost.</li>
+  <li>It comes &quot;as-is&quot;. No guarantee, support, maintenance or installation 
+    help is implied.</li>
+  <li>You are free to add any feature that you think is missing, or changing the 
+    source code or the look to match your own needs. I'm interested in learning 
+    about any feature you add, I make no promise I'd actually reuse your code. 
+    If you redistribute your own version, please use the same license and make 
+    it easy to differentiate your sources from mine.</li>
+  <li>I love positive feedback and positive criticism. I already have an extended 
+    <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/rig-thumbnail/rig/TODO.txt?rev=HEAD&content-type=text/vnd.viewcvs-markup">todo 
+    list</a> of things I'd like to see in the software at some point; of course 
+    there is no written schedule for this, it all depends on my free time and 
+    my creativity. If you need something that is not on this list, please ask 
+    gently.</li>
+  <li>If you'd like to, I'd be more than happy to add your site to the <a href="#demo">sample 
+    site list</a> below.</li>
+  <li>Your respect will earn you mine.</li>
+</ul>
+<p>Starting with version 0.7, RIG is licensed under the <a href="http://www.gnu.org/licenses/licenses.html#TOCGPL">GNU 
+  General Public License</a>.</p>
+<p></p>
+<h3 class="orange"><a name="news"></a>News</h3>
+<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr valign="top"> <td align="right"> <b>June 24, 2006</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added final release 1.0 on Sourceforge. <b>Please upgrade all previous versions.</b> This one fixes the security vulnerability.</p></td> </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>June 24, 2006</b></td>
+    <td>&nbsp;</td>
+    <td> 
+	<p><b>A security flaw</b> has been disclosed 3 days ago that allows an attacker to perform PHP code injection so all RIG versions between 0.6.5 and 0.7.5 are deemed affected.</p>
+
+<p>Unfortunately so-called <i>"security researcher"</i> <a href="mailto:admin@majorsecurity.de">David "Aesthetico" Vieira-Kurz</a> failed to contact me prior to exposing the vulnerability and consequently RIG servers' of mine and some friends were hacked into. I had to spend a lot of time taking the server offline to check it and make sure it was clean, time that I could have used to patch RIG instead. Further investigation just shows that he actually failed to contact me contrary to what he claims in the <a href="http://www.securityfocus.com/archive/1/437818/30/0/threaded">advisory</a>. Voluntarily disclosing a vulnerability that he knew would jeopardize personal servers is highly unethical and makes me wonder of the intentions of <a href="mailto:admin@majorsecurity.de">Aesthetico</a> and his one-person operation at <a href="http://majorsecurity.de/">http://majorsecurity.de/</a>. Full disclosure is something that should be taken very seriously and should only be done by responsible people: favoring personal fame and satisfaction over actual security is not an attitude I can condone.</p>
+
+	<p>The immediate consequence is that all distribution archives have been deleted. If you want to grab a version, go to sourceforce. <b>The final release 1.0 has a fix for this one security flaw. There might be others and I will not audit the code, so use it at your own risk</b> (I will however gladly integrate any security patches that are sent to me.)
+	</p>
+
+	<p class="halflineparagraph">
+	The other long-term consequence is that I am officially stopping working on this project.  It won't evolve. I've been burned by PHP one too many time and it's time web developers start realizing there are better alternatives to PHP nowaday. PHP was a fun tool to start learning web dev but experience shows that it is a rather innapropriate environment.
+    </p></td>
+  </tr>
+  <tr valign="top"> <td align="right"> <b>April     12, 2006</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added 0.7.4 on Sourceforge.</p></td> </tr>
+  <tr valign="top"> <td align="right"> <b>December  12, 2005</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added 0.7.3 on Sourceforge.</p></td> </tr>
+  <tr valign="top"> <td align="right"> <b>November  26, 2005</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added 0.7.2 on Sourceforge.</p></td> </tr>
+  <tr valign="top"> <td align="right"> <b>October    8, 2005</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added 0.7.1 on Sourceforge.</p></td> </tr>
+  <tr valign="top"> <td align="right"> <b>September 25, 2005</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added 0.7 on Sourceforge.</p></td> </tr>
+  <tr valign="top"> <td align="right"> <b>July       5, 2004</b></td> <td>&nbsp;</td> <td> <p class="halflineparagraph">Added 0.6.4.5 on Sourceforge.</p></td> </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>July 16, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Moved 0.6.4.4 back to unstable the <a href="#downloads">download</a> 
+        section.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>July 5, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Moved 0.6.4.4 to stable. Adding 0.6.4.5 
+        to unstable (bug fixes) in the <a href="#downloads">download</a> section.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>June 17, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Updated this page.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>January 30, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Added the <a href="#.izumi/Dev/RigDev">RIG 
+        development page</a> to the feature list section.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>December 7, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Adding version 0.6.4.4 in <a href="#downloads">download</a> 
+        section..</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>August 22, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Adding versions 0.6.3.5, 0.6.4.0 and 0.6.4.1 
+        in the<a href="#downloads">download</a> section..</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>June 23, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Updated this page.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>June 15, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Uploaded new version <a href="#downloads">0.6.3.3</a> 
+        with full Japanese translation!<br>
+        Thanks Tatsuo!</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>March 16, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Added a list of RIG's <a href="#features">features</a> 
+        in the description above.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>March 8, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Experimental language translation page started. 
+        Preparations for album uploads. Not on CVS yet.<br>
+        Examining <a href="http://www.geeklog.net/">GeekLog</a> and <a href="http://www.drupal.org/">Drupal</a> 
+        as an alternative for this site. </p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>February 23, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Experimental image administration page started. 
+        Not on CVS yet. </p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>February 22, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Adding password support to login. Adding 
+        gray color theme.<br>
+        Updated file archives on SourceForge. </p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>January 20, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Finally committed all RIG 0.6.3 diffs to 
+        SourceForge.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>January 19, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td><p class="halflineparagraph">Adding features to RIG 0.6.3: copyright display, 
+        albums/images count.<br>
+        Oh and I've decided to dump the experimental 0.6.3-exp release and merge 
+        it into the main branch.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>October 12, 2002</b></td>
+    <td width="16">&nbsp;</td>
+    <td><p class="halflineparagraph">Adding features to RIG 0.6.2: jhead support, 
+        error reporting, fixes.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>July 22, 2002</b></td>
+    <td width="16">&nbsp;</td>
+    <td><p class="halflineparagraph">Made a <a href="index.html">home page</a> 
+        for RIG.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>July 8, 2002</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Started working on RIG 0.6.3-exp.<br>
+      </p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>June 2002</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p>Created the <a href="http://sourceforge.net/projects/rig-thumbnail/">rig-thumbnail 
+        project</a> on <a href="http://sourceforge.net">SourceForge</a><br>
+      </p></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+<h3 class="orange"><a name="demo"></a>Sample Sites</h3>
+<div align="center">
+  <p>Here are some sample image galleries:</p>
+  <table border="0" width="60%">
+    <tr> 
+      <td valign="top"> 
+        <p align="left"><b>Album</b>: Ralf's Public Image Gallery<br>
+          <b>Owner</b>: Ralf</p>
+        <p align="left"><b>Version</b>: N/A<br>
+          <b>System</b>: N/A</p>
+		  <p align="left"><b>Status</b>: Not Operational. Closed.</p>
+      </td>
+      <td valign="top"> 
+        <div align="center"><img src="img-web/rig-public-128.jpg" width="128" height="100" border="0" alt="SourceForge Logo"> 
+        </div>
+      </td>
+    </tr>
+  </table>
+  <br>
+</div>
+<p align="center">If you want to have your own RIG-based image gallery listed 
+  here, please <a href="#contact">drop me an email</a>.</p>
+<p align="center">&nbsp;</p>
+<h3 class="orange"><a name="sourceforge" id="sourceforge"></a>SourceForge</h3>
+<div align="center"> 
+  <table border="0">
+    <tr> 
+      <td valign="top" align="center"> <p align="center"><a href="http://sourceforge.net/projects/rig-thumbnail/">RIG 
+          Image Gallery</a> on <a href="http://sourceforge.net">SourceForge</a>, 
+          code name <a href="http://sourceforge.net/projects/rig-thumbnail/"><code>rig-thumbnail</code></a>:</p>
+        <p align="center"><a href="http://sourceforge.net/projects/rig-thumbnail/">http://sourceforge.net/projects/rig-thumbnail/</a></p></td>
+      <td valign="top" align="left" width="16">&nbsp;</td>
+      <td valign="top" align="left"> <A href="http://sourceforge.net"><IMG src="http://sourceforge.net/sflogo.php?group_id=54367&amp;type=5" width="210" height="62" border="0" alt="SourceForge Logo"></A> 
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+<h3 class="orange"><a name="downloads" id="downloads"></a>Downloads</h3>
+<p align="center"><a href="#stable">Stable</a> | <a href="#unstable">Testing/Unstable</a> 
+  | <a href="#old">Old Archives</a></p>
+<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="stable"></a>Stable</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.4.1<br>
+          </b><b>Aug. 17, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p><b>Version 0.6.4.1 is the most recent stable revision</b>.</p>
+      <p>A bunch of features have been introduced since version 0.6.2.3: more 
+        prefs, more themes, video support, image borders, vertical album layout, 
+        Japanese translation, album description files, PHP 4.3.2 support, crypted 
+        password, and of course many fixes!</p>
+      <p class="halflineparagraph"> The installation document has been revisited 
+        is can now be considered a must-read for new comers!<br>
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=179661">rig_2003-08-17_v0641.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=179661">notes</a>]</div></td>
+    <td> [143 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>0.6.2.3<br>
+          </b><b>Nov. 4, 2002</b></p>
+      </div></td>
+    <td colspan="2"> <p>A bunch of features have been introduced since version 
+        0.6.2.0, although not as much as expected. Most of the new features are 
+        visible, yet not dramatic: color themes, multiple languages user interface, 
+        better error reporting, jhead display.</p>
+      <p class="halflineparagraph">It has been running on my server for around 
+        4 months. It is considered well tested and reliable.<br>
+        The documentation included in this archive is rather limited. </p></td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=142227">rig_2002-11-04_v0623.tgz</a> 
+    </td>
+    <td width="60"> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=142227">notes</a>]</div></td>
+    <td width="60"> [82 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100" class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td width="60" class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>0.6.2.0<br>
+          </b><b>Nov. 30, 2001</b></p>
+      </div></td>
+    <td colspan="2"> <p>The &quot;initial&quot; revision hosted on sourceforge. 
+        This version is stable and usable, yet more features are expected to be 
+        added to the project before it can be labeled 1.0, such as album/image 
+        renaming or reorganization, authentication and upload of new images using 
+        the web interface.</p>
+      <p align="left" class="halflineparagraph">This version has been available 
+        since November 2001; it has been up and running since then on my public 
+        album server as well as some other friends' servers. The documentation 
+        included in this archive is rather limited. </p></td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=116607">rig-0.6.2-011130.tgz</a> 
+    </td>
+    <td width="60"> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=116607">notes</a>]</div></td>
+    <td width="60"> [60 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="unstable"></a>Development (a.k.a. 
+      testing and/or unstable)</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.4.5<br>
+          </b><b>July 5, 2004</b></p>
+      </div></td>
+    <td colspan="2"> <p> This is an intermediary dev release, with some minor 
+        but useful fixes.</p>
+      <p class="halflineparagraph">Although considered non-stable (low testing), 
+        this release seems to perform very well.</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=251147">rig_2004-07-05_v0645.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=251147">notes</a>]</div></td>
+    <td> [172 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.4.4<br>
+          </b><b>Dec. 7, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p>This version has been under testing for the past 6 months 
+        on my servers.<br>
+        It performed very well and has been promoted to stable. Unfortunately 
+        I found some rather annoying bugs (which I fixed in CVS already, as of 
+        20040716), so I'm putting this back in unstable.</p>
+      <p class="halflineparagraph">This version fixes a number of annoying bugs 
+        from the 0.6.4.1, especially the broken image resize popup. So if you 
+        experienced this bug, please update! <br>
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=202843">rig_2003-12-07_v0644.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=202843">notes</a>]</div></td>
+    <td> [168 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.4.2<br>
+          </b><b>Aug. 21, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p> This is an intermediary dev release, with some minor 
+        but useful features: more preferences, location.php and htdocs have been 
+        updated, move dadmin sources out of the normal sources, code has been 
+        updated to comply with PHP 4.3.2 installation defaults, and finally has 
+        been tested with IIS 5 and PHP 4.3.2 on a Windows box.</p>
+      <p class="halflineparagraph">Although considered non-stable (low testing 
+        and new features to be added soon), this release seems to perform very 
+        well.</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=179663">rig_2003-08-21_v0642.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=179663">notes</a>]</div></td>
+    <td> [147 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.3.5<br>
+          </b><b>Aug. 13, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p class="halflineparagraph"> This version introduces some 
+        new (minor but useful) features. It seems pretty solid and is a good candidate 
+        to become 0.6.4-stable.</p>
+      <p class="halflineparagraph">New features include: albums has grid vs vertical 
+        layout, displays date of modification, new &quot;ignore lists&quot; for 
+        albums/images (patterns of files to be ignored), introduced support for 
+        videos, fixed broken album frame for Mozilla 1.0, support in-album &quot;file_info.diz&quot; 
+        or &quot;descript.ion&quot; files.</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=177922">rig_2003-08-13_v0635.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=177922">notes</a>]</div></td>
+    <td> [127 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.3.3<br>
+          </b><b>Jun. 15, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p>This version features completly translated Japanese strings.<br>
+        Also some minor fixes &amp; cleanup.</p>
+      <p align="left" class="halflineparagraph">This is mostly untested but few 
+        problems are to be expected since the modifications were fairly limited. 
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=165687">rig_2003-06-15_v0633.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="https://sourceforge.net/project/shownotes.php?release_id=165687">notes</a>]</div></td>
+    <td> [102 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>0.6.3.2<br>
+          </b><b>Mar. 16, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p>This version introduces experimental features, like the 
+        translate-language web interface, the separate administration of albums 
+        and images. Also several fixes and more prefs.</p>
+      <p align="left" class="halflineparagraph">This is mostly untested but some 
+        people prefer to live dangerously so they need unstable packages :-)</p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=146982">rig_2003-03-16_v0632.tgz</a> 
+    </td>
+    <td> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=146982">notes</a>]</div></td>
+    <td> [102 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>0.6.3.1<br>
+          </b><b>Feb. 22, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p>This version introduces minor features, like a gray color 
+        theme. More important, it introduces user/passwords in the login process 
+        (plain text, crypt and MD5 are supported).</p>
+      <p align="left" class="halflineparagraph">This is mostly untested but few 
+        problems are to be expected since the modifications were fairly limited. 
+      </p></td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=142232">rig_2003-02-22_v0631.tgz</a> 
+    </td>
+    <td width="60"> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=142232">notes</a>]</div></td>
+    <td width="60"> [96 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100" class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td width="60" class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>0.6.3.0<br>
+          </b><b>Jan. 20, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p>This version introduces some rewriting of the code, and 
+        some features, like display of the number of images/albums and copyrights. 
+        It also separates album options from the album cache.</p>
+      <p align="left" class="halflineparagraph">Ran on my server with no problem 
+        for a little while (a month or so), before I upgraded yet again ;-). </p></td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td><a href="http://sourceforge.net/project/showfiles.php?group_id=54367&release_id=142231">rig_2003-02-15_v0630.tgz</a> 
+    </td>
+    <td width="60"> <div align="center">[<a href="http://sourceforge.net/project/shownotes.php?release_id=142231">notes</a>]</div></td>
+    <td width="60"> [92 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100" class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td width="60" class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>0.6.2.4<br>
+          </b><b>Jan. 18, 2003</b></p>
+      </div></td>
+    <td colspan="2"> <p>This version is basically the same as 0.6.2.3, but with 
+        an additional URL-rewrite feature.<br>
+        There's a known bug in this feature (the cookie management doesn't use 
+        the rewritten URL correctly).</p>
+      <p class="halflineparagraph">Currently only available via <a href="http://sourceforge.net/cvs/?group_id=54367">SourceForge 
+        CVS</a>, using checkout tag is &quot;tag_2003-01-18_v0624&quot;. </p></td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp; </td>
+    <td colspan="2"> [<a href="http://sourceforge.net/cvs/?group_id=54367">Anonymous 
+      CVS Access</a>]<br>
+      [<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/rig-thumbnail/rig/?only_with_tag=tag_2003-01-18_v0624">Browse 
+      CVS: tag_2003-01-18_v0624</a>]</p></td>
+    <td width="60">[N/A]</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td width="60">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="old"></a>Old Archives</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>0.6.1</b></p>
+      </div></td>
+    <td colspan="2"><a href="distrib/rig-0.6.1-011128.tgz">rig-0.6.1-011128.tgz</a></td>
+    <td width="60">[59 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"><b>0.6.0</b></div></td>
+    <td colspan="2"><a href="distrib/rig-0.6-011125.tgz">rig-0.6-011125.tgz</a> 
+    </td>
+    <td width="60">[59 kB]</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td width="60">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3 class="orange"><a name="contact"></a>Contact</h3>
+<p align="center">RIG is developed and maintained by 
+  <SCRIPT TYPE="text/javascript">
+	<!-- 
+	// protected email script by Joe Maller
+	// JavaScripts available at http://www.joemaller.com
+	// this script is free to use and distribute
+	// but please credit me and/or link to my site
+		emailE='powerpulsar.com'
+		emailE=('ralf-rig' + '@' + emailE)
+		document.write('<A href="#mailto:' + emailE + '">' + "Le R'alf" + '</a>')
+	//-->
+	</script>
+	<NOSCRIPT> <em>Email address protected by JavaScript. Please 
+  enable JavaScript to contact me.</em> </NOSCRIPT>
+</p>
+<p>&nbsp;</p>
+<div align="center"> 
+  <table width="100%" border="0">
+    <tr>
+      <td class="orange">---</td>
+    </tr>
+    <tr>
+      <td class="yellowbox">---</td>
+    </tr>
+  </table>
+  <p><br>
+    <font size="-1"><a href="http://www.alfray.com">Alfray</a> | <a href="http://www.powerpulsar.com">Powerpulsar</a> 
+    | <a href="http://ralf.alfray.com">R'alf Home Page</a><br>
+    Last Updated: June 26, 2006<br>
+    Created: July 22, 2002 </font></p>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics 20200822 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-243916-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-243916-1');
+</script>
+
+</body>
+</html>
+

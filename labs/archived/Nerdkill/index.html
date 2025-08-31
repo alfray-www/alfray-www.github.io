@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://www.alfray.com -->
+<!-- The above comment marks this page for IE6 XP SP2 and will avoid a warning
+preventing the JavaScript email from working.
+See Local Machine Zone Lockdown in MSDN Internet Explorer 6 Resource Kit -->
+<html>
+<head>
+<title>Nerdkill for BeOS, C#, Java, Android, and Web</title>
+<style type="text/css">
+<!--
+.yellowbox { background-color: #FFFFCC; border: 1px #CCCCCC solid; text-align: center}
+.orange { background-color: #FFCC99; border: none; text-align: center }
+.tableborderline {  border-bottom-width: 1px}
+.historydiv {
+	border-top: 1px dashed #333333;
+	border-right: none;
+	border-bottom: none;
+	border-left: none;
+	vertical-align: top;
+}
+.bottomdiv {
+	border-top-style: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #333333;
+}
+.halflineparagraph {
+	margin-bottom: 8pt;
+}
+-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+
+<body bgcolor="#FFFFFF">
+<h1 class="yellowbox">Nerdkill for BeOS, C#, Java, Android, and Web</h1>
+<p align="center">&nbsp;
+  <a href="#description">Description</a>&nbsp;|&nbsp;
+  <a href="#ppc">Pocket PC</a>&nbsp;|&nbsp;
+  <a href="#android">Android</a>&nbsp;|&nbsp;
+  <a href="#web">Web</a>&nbsp;|&nbsp;
+  <a href="#news">News</a>&nbsp;|&nbsp;
+  <a href="#downloads">Downloads</a>&nbsp;|&nbsp;
+  <a href="#contact">Contact</a><br>
+</p>
+<h3 class="orange"><a name="description"></a>Description</h3>
+<div align="center"><a href="#summary">Summary</a> | <a href="#what">What is it?</a> 
+  | <a href="#notes">Notes</a> | <a href="#history">History</a> | <a href="#license">License</a><br>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    
+<td valign="top"> 
+
+
+<p class="yellowbox"><a name="summary"></a>Summary</p>
+      <p>A blast-all-these-nerds game.<br>
+        Get rid of these annoying nerds. Shoot them, gun them, electrify them, 
+        explode them!<br>
+        No one must escape!</p>
+      <p>The game was originally developed for the Amiga (see <a href="#history">History</a> 
+        below) and I freely adapted it to the BeOS, as a short coding joke for 
+        Paris' <a href="http://en.wikipedia.org/wiki/BeOS">Be</a> GeekFest, Feb'97 
+        with the much needed help of <i>Pulco</i> 
+        and <i>SpH</i>.</p>
+      <p> Now rewritten entirely from scratch for Windows .Net 1.1 and Managed 
+        DirectX, it includes the same cute little graphics as the <a href="http://en.wikipedia.org/wiki/BeOS">BeOS</a> 
+        version and the same vocal sound effects to provide countless hours of 
+        fun.</p>
+      <p>In May 2004, I also ported the game to Pocket PC. More information on 
+        the <a href="#ppc">Pocket PC section</a> below.</p>
+        
+      <p>In March 2007, I also ported the game to Java 1.4 and Java 5.
+      More information on the <a href="#java">Java section</a> below.</p>
+        
+      <p>In November 2015, I also ported the game to Android, starting with Android 1.5 (a.k.a "Cupcake").
+      More information on the <a href="#android">Android section</a> below.</p>
+        
+        <p>In December 2023, I also ported the game to web, experimenting with both the <a href="https://defold.com/">Defold game engine</a>
+          as well as the <a href="https://godotengine.org">Godot 4 game engine</a>.
+        More information on the <a href="#web">web section</a> below.</p>
+
+      </td>
+    <td align="right" width="10%" valign="top"> <div align="center"><a href="img/screenshot2.gif"><img src="img/screenshot1.jpg" width="193" height="157" border="2"></a><br>
+        <font size="-3">(click on picture for enlarged view)</font></div></td>
+  </tr>
+</table>
+
+
+<p class="yellowbox"><a name="what"></a>What is Nerdkill?</p>
+<p>Nerdkill is a simple game whose main purpose is to help you <a href="Nerdkill-BeDope-Review.html">remove 
+  stress and enjoy life better.</a><br>
+  The game displays a bunch of little annoying moving nerds and a diverse collection 
+  of weapons. Select a weapon and aim at one of those little nerds and enjoy -- 
+  that's all it takes :-)</p>
+<p>Sure, it doesn't take much to amuse me -- what about you?</p>
+<p>The game is implemented using <a href="http://en2.wikipedia.org/wiki/C-sharp_programming_language">C#</a>,Windows 
+  .Net 1.1 and Managed DirectX.<br>
+  Sources are included in the <a href="#downloads">binary package</a>. The whole 
+  thing uses an Open Source <a href="#license">license</a>. </p>
+
+<p>At this point, I need to clarify that Nerdkill's core purpose is not really <i>about</i> the game
+  -- the gameplay is actually fairly inexistent and has never evolved since the first BeOS version.
+  <br/>
+  Instead, Nerdkill has evolved in my go-to project to experiment with different platforms.  <br/>
+  Whenever I need to learn a new programming environment or SDK, Nerdkill is my go-to project,
+  purposely because the "game" itself is so simple. </br>
+  It's fun yet doesn't get in the way of learning the platform.
+  <br/>
+  The versions listed here are only the ones that have been finished and polished enough to be publicly listed. <br/>
+  On top of the official BeOS, C#, Java, Android, and web versions, I've also experimented with other versions;
+  for example at some point I had an implementation written in <a href="http://vanilla-js.com">Vanilla JS</a>
+  and another in <a href="https://godotengine.org">Unity</a>.
+</p>
+
+
+<p class="yellowbox"><a name="notes" id="notes"></a>Notes</p>
+<p> <u>Notes for the Windows desktop version (for Pocket PC, see <a href="#ppc">below</a>):</u></p>
+<ul>
+  <li>You must install <a href="http://www.microsoft.com/net">.Net 1.1</a> and 
+    <a href="http://www.microsoft.com/directx">DirectX 9</a> first. Use <a href="http://windowsupdate.microsoft.com/">Microsoft 
+    Windows Update</a> (<code>Start &gt; All Programs &gt; Windows Update</code>) 
+    to install the latest versions.</li>
+  <li>Install <a href="#mdxredist">DirectX 9 Managed</a> extension</li>
+  <li>A Windows Installer (MSI) is provided in the <a href="#downloads">download</a> 
+    section that takes care of checking for <a href="http://www.microsoft.com/net">.Net 
+    1.1</a> and providing some <a href="http://www.microsoft.com/directx">DirectX 
+    9</a> DLLs.</li>
+  <li>No installer is actually needed if you have all the DLLs.</li>
+</ul>
+<p><u>Politically correctness statement &amp; warning:</u></p>
+<ul>
+  <li>If you find the content of the game objectionable, please do not use it 
+    and do not let your children use it.</li>
+  <li>The game is not intended to promote antagonism, violence or hate against 
+    any kind of people, religion, race or class, especially <a href="http://en.wikipedia.org/wiki/Nerd">nerds</a>.</li>
+  <li>The lack of any score is actually a philosophical statement.
+  <li>All characters used in the game are fictitious.</li>
+</ul>
+<p><u>Usage:</u></p>
+<ul>
+  <li>Turn on the speakers -- but not too loud :-)</li>
+  <li>Start the game.</li>
+  <li>Select a weapon (by default the gun is selected).</li>
+  <li>Click on one of the moving little nerds and watch.</li>
+  <li>Try different weapons.</li>
+</ul>
+<p><u>Goals &amp; strategies:</u></p>
+<ul>
+  <li>There is no goal. The game quits when all the nerds are eliminated.</li>
+  <li>There is no score. On purpose. Just relax :-)</li>
+  <li>One strategy is to aim at every single nerd using a precision weapon.</li>
+  <li>A reverse strategy is to use a wider scope weapon, such as the dynamite.</li>
+  <li>I particularly enjoy the chain reaction of mines.</li>
+  <li>Although it is technically possible to finish the game using solely the 
+    bulldozer or the coke can, it can be really tedious. Try it.</li>
+</ul>
+<p><u>Compatibility issues:</u></p>
+<ul>
+  <li>Sound is optional. DirectDraw is not.</li>
+  <li>A <a href="http://en2.wikipedia.org/wiki/Computer_mouse">mouse</a> is required 
+    too (a trackpad works ;-)).</li>
+  <li> Should run correctly on any recent hardware with 2D support. No fancy 3D 
+    required :)</li>
+  <li> On an older ATI Mach64 w/ Win98, <a href="http://en.wikipedia.org/wiki/Sprite">sprites</a> 
+    may have a black contour instead of being transparent. I guess the card doesn't 
+    do source overlay.</li>
+</ul>
+<p class="yellowbox"><a name="history" id="history"></a>History</p>
+<p><i>Nerdkill 1.0.0 BeOS</i> was 
+  released around 1997/1998.<br>
+  I first saw Nerdkill on a roommate's Amiga 4000 back in '93 or '94 at the university. 
+  The game was developed by <i>Adam Girvin</i>.</p>
+<p> As an early <a href="http://en.wikipedia.org/wiki/BeOS">BeOS</a> adopter, 
+  I wanted something fun to do and so I started writing a clone several years 
+  later using whatever I had in mind that I saw back on the Amiga. The first version 
+  was coded in little more than a night or two, right before the<br>
+  Paris' <a href="http://en.wikipedia.org/wiki/BeOS">Be</a> GeekFest, Feb'97. 
+  Two friends, <i>Pulco</i> 
+  and <i>SpH</i> helped with the graphics and the sound &quot;effects&quot;. At the time 
+  I was able to run an original Nerdkill.lha on an Amiga emulator, but for no 
+  more than a few seconds. We added a couple of improvements on the original version 
+  and never tried to write a perfect clone -- just something fun to watch and 
+  play. Later, we had some ideas about a 3D version and some improvements but 
+  we never followed through -- also I believe it would have removed the simplicity 
+  of the original version.</p>
+<p> Several years later on another continent, I was in need of some <a href="http://en2.wikipedia.org/wiki/C-sharp_programming_language">C#</a> 
+  coding practice. Once again Nerdkill was the ideal candidate. The game is simplistic 
+  enough in that it doesn't interfere with the coding practice and it's fun enough 
+  to allow completion of the project before my mind flies somewhere else ;-).</p>
+<p class="yellowbox"><a name="license"></a>What is the Nerdkill License?</p>
+<p>You can consult the extract terms of the license here: <a href="distrib/nerdkill_v110_license.txt">Nerdkill 
+  License</a>.<br>
+  The Nerdkill is licensed under the <a href="http://www.gnu.org/licenses/licenses.html#TOCGPL">GNU 
+  General Public License</a>, an <a href="http://www.opensource.org/docs/definition.html">Open 
+  Source</a> approved license.</p>
+<p><a href="http://en.wikipedia.org/wiki/Ianal">I am not a lawyer</a> and I find 
+  <a href="distrib/COPYING.txt">the complete text of the license</a> generally 
+  obscure to read, so what it all means is:</p>
+<ul>
+  <li>Nerdkill is free software, it can be used at absolutely no cost.</li>
+  <li>It comes &quot;as-is&quot;. No guarantee, support, maintenance or installation 
+    help is implied.</li>
+  <li>You are free to add any feature that you think is missing, or change the 
+    source code or the look to match your own needs. I'm interested in learning 
+    about any feature you add, yet I make no promise I'll actually reuse your 
+    code. If you redistribute your own version, please use the same license and 
+    make it easy to differentiate your sources from mine.</li>
+  <li>I love positive feedback and positive criticism. An extended to-do list 
+    of things I'd like to see in the software at some point is included in the 
+    source archive. Of course there is no written schedule for this, it all depends 
+    on my free time and my creativity. If you need something that is not on this 
+    list, please ask gently.</li>
+  <li>Your respect will earn you mine.</li>
+</ul>
+
+
+<h3 class="orange"><a name="ppc" id="ppc"></a>Pocket PC</h3>
+<p><a href="img/nerdkill_pocket.gif"><img src="img/nerdkill_pocket.gif" alt="Nerdkill Pocket Screenshot. Click on picture for enlarged view." title="Nerdkill Pocket Screenshot. Click on picture for enlarged view." width="170" height="242" border="0" align="right"></a>In 
+  early 2004, <a href="http://www.codeproject.com">Code Project</a> ran a <a href="http://www.codeproject.com/script/competitions/WinMobile/">coding 
+  contest</a> which goal was to write &quot;something interesting&quot; using 
+  the .Net Compact Framework. That motivated me to do something I though was interesting: 
+  explore the capabilities of .Net Compact Framework 1.1 to host a 100% managed 
+  game; Nerdkill C# was the perfect choice.</p>
+<p>Nerdkill C# had mostly been started as a way to explore the Direct X Managed 
+  API. I also experimented with a <i>modular 
+  platform</i> that would be easy to adapt to other games or other host implementations. 
+  Both these goals were met successfully.</p>
+<p>Nerdkill Pocket was thus started with these two goals in mind: first examine 
+  how portable the <i>modular 
+  platform</i> was and what work it would involve to &quot;port&quot; it to the 
+  Pocket PC and second examine how capable .Net Compact Framework 1.1 really is. 
+  Could a 2D Sprite-based game really be written in 100% managed code?</p>
+<p>The short answers are yes and almost yes.<br>
+  If you're a developer, you may be interested in the detailed results as described 
+  in the <a href="http://www.codeproject.com/netcf/cfgamenerdkill.asp">Code Project 
+  Nerdkill Pocket article</a> (<a href="codeproject_article.html">mirror available 
+  here</a>.)</p>
+<p>In June 2004, <a href="http://www.codeproject.com/netcf/cfgamenerdkill.asp"><b>Nerdkill 
+  Pocket</b></a><b> was awarded the &quot;<a href="http://www.codeproject.com/script/rumor/article.asp?id=304">Best 
+  Use of Technology</a>&quot; by <a href="http://www.codeproject.com">Code Project</a></b> 
+  :-) </p>
+<p>Download links are available in the <a href="http://www.codeproject.com/netcf/cfgamenerdkill.asp">Code 
+  Project Nerdkill Pocket article</a> as well as in the <a href="#dlnerdkillppc">download 
+  section</a> below.</p>
+
+
+<h3 class="orange"><a name="java" id="java"></a>Java</h3>
+
+<p>
+In March 2007, I ported the game to Java. This took only a handful of days, since the engine
+was initally designed to be easily portable. Converting C# to Java is also a mostly
+straighforward operation.
+<p/>
+
+<p>Download links are available in below.
+The best way to play Nerdkill Java is to simply use the Webstart link. This is an
+on-line installer that will seamlessly install Nerdkill Java on your computer and run it.
+This works out of the box on Windows and MacOS.<p/>
+<p>
+For Linux, if you have Java installed, you can download the JAR file and execute it from
+the command line.</p>
+
+<p>
+Note that I <i>may</i> adapt the game to phone later using J2ME.
+<p/>
+
+
+<h3 class="orange"><a name="android" id="android"></a>Android</h3>
+
+<p>An Android version has been available since 2015 for Android 1.5 ("Cupcake") and above, and regularly updated as needed.</p>
+
+<p>The Android implementation used the Java desktop version as a base. <br/>
+I reimplemented the core game engine to be more efficient on Android. <br/>
+That game engine was then reused later as the base for <a href="https://www.alfray.com/labs/apps/asqare/">Asqare</a>.</p>
+
+<p>The latest <a href="https://play.google.com/store/apps/details?id=com.alfray.nerdkill" target="_blank">Android version of Nerdkill</a>
+  can be found in the Google Play store for free:</p>
+
+<center>
+<a href="https://play.google.com/store/apps/details?id=com.alfray.nerdkill" target="_blank">
+<img width="256" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/></a>
+</center>
+
+
+<h3 class="orange"><a name="web" id="web"></a>Web</h3>
+
+<p>I have implemented a number of version of Nerdkill for the web.</p>
+
+<p>In 2016, I implemented a version in <a href="http://vanilla-js.com">Vanilla JS</a> yet never published it. <br/>
+  Based on that experience, I decided the best way to write a game for the web was to use one of the many game engines available. </p>
+<p>In 2017,  I rewrote the game using the Unity game engine. <br/>
+  I wasn't fully satisfied with Unity for a variety of technical reasons; 
+  that lead me to discover the <a href="https://godotengine.org">Godot game engine</a>.</p>
+<p>In 2022 I rewrote it using Godot, which turned to be much more superior in many ways.</p>  
+<p>In 2023, I rewrote it again using the <a href="https://defold.com/">Defold game engine</a>,
+  as well as the latest <a href="https://godotengine.org">Godot 4.2 game engine</a>.</p>
+
+<p>The latest versions can be found here:</p>
+<ul>
+  <li><a href="https://defold.com">Defold</a> version:
+    <a href="https://www.alfray.com/labs/archived/NerdkillDefold/" target="_blank">Nerdkill Defold</a>
+    </li>
+    <li><a href="https://godotengine.org">Godot</a> version:
+    <a href="https://www.alfray.com/labs/archived/NerdkillGodot/" target="_blank">Nerdkill Godot</a>
+    </li>
+</ul>
+
+<p>
+The experience was quite conclusive. <br/>
+
+<a href="https://defold.com/">Defold</a> was surprisingly lightweight and delightful to learn. 
+Without knowing anything of the game engine, I got the game ported in less than a week.
+Defold seems very well tailored for lightweight 2D games, from sprite sheet creation to adding sound support,
+from Lua scripting to game objects and message passing, everything is fairly clear, with simple tutorials to learn it on the go. 
+<br/>
+<a href="https://godotengine.org">Godot</a> was as easy to go back to it as when I last used it. Although the latest
+version 4 changes some APIs, the concepts remain the same and are easy to adjust accordingly. Godot basically provides
+<i>everything</i> one may need; the documentation is excellent, GDScript is a pleasure to use, and there are lots of tutorials and help out there.
+<br/>
+If I had to chose, I'd likely select Defold again for simple lightweight one-time projects, and Godot for longer term projects.
+It's worth noting that both game engines have very similar structures and it's thus easy to transition from one to the other.
+
+</p>
+
+
+<h3 class="orange"><a name="news"></a>News</h3>
+<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr valign="top"> 
+    <td align="right"> <b>June 23, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph"><a href="http://www.codeproject.com/netcf/cfgamenerdkill.asp">Nerdkill 
+        Pocket</a> is awarded the &quot;<a href="http://www.codeproject.com/script/rumor/article.asp?id=304">Best 
+        Use of Technology</a>&quot; by <a href="http://www.codeproject.com">Code 
+        Project</a>.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>May 27, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Version 1.0 of <a href="#ppc">Nerdkill Pocket</a> 
+        completed. GPL license.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>May 22, 2004</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Version 1.1 of Nerdkill C# completed and 
+        ready to <a href="#downloads">download</a>. Uses the GNU General Public 
+        License.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>December 17, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph"><a href="http://www.tucows.com"><img src="img/tucows_logo_150_t.gif" alt="Download freeware and shareware software from Tucows!" width="150" height="40" border="0" align="absmiddle" title="Tucows"></a> 
+        download available!<br>
+        Nerdkill C# was rated 4 cows!<br>
+        See the <a href="http://www.gamingplace.at/preview/336760.html">Nerdkill 
+        C# Preview Page on Tucows</a> for more information.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>November 20, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Moved to new <a href="http://www.alfray.com/labs/">projects</a> 
+        location.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"> <b>November 7, 2003</b></td>
+    <td>&nbsp;</td>
+    <td> <p class="halflineparagraph">Version 1.0 of Nerdkill C# completed and 
+        ready to <a href="#downloads">download</a>.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>November 3, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td><p class="halflineparagraph">Created this web page to advertise and distribute 
+        the project.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>September 22, 2003</b></td>
+    <td width="16">&nbsp;</td>
+    <td><p class="halflineparagraph">First real design &amp; implementation in 
+        C#.</p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>December 31, 2002</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Not much really -- just <i>&quot;Oh let's 
+        use C# and DirectX&quot;</i>.<br>
+        But shortly after the champagne inhibited any will to code and the idea 
+        sunk like lead in the sea.<br>
+      </p></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>September 1998</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p>Last official version of <a href="http://ralf.alfray.com/beos/#nerdkill">Nerdkill 
+        1.0 for BeOS</a> x86 &amp; PPC.<br>
+      </p></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+<h3 class="orange"><a name="downloads" id="downloads"></a>Downloads</h3>
+
+<p align="center"><a href="#dlnerdkillcs">Nerdkill C#</a> (<i>Desktop</i>)
+|
+<a href="#dlnerdkillppc">Nerdkill Pocket</a> (<i>Pocket PC</i>)
+|
+<a href="#dlnerdkilljava">Nerdkill Java</a> (<i>Desktop</i>)
+|
+<a href="#dlnerdkillandroid">Nerdkill Android</a>
+|
+<a href="#dlnerdkillweb">Nerdkill Web</a>
+</p>
+
+<p align="center"><font size="-1"><i>Note: most download links have been removed due to spam bot abuse.</i></font></p>
+
+<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="dlnerdkillcs"></a>
+    Nerdill C# (desktop version)</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>Nerdkill&nbsp;C#&nbsp;<br>
+          v1.1<br>
+          </b><b>May 22, 2004&nbsp;</b></p>
+      </div></td>
+    <td colspan="2"> <p><b>Nerdkill C# Version 1.1 is the most recent stable &amp; 
+        only revision</b>.</p>
+      <p>Available here and as well as on <a href="http://www.tucows.com"><img src="img/tucows_logo_150_t.gif" alt="Download freeware and shareware software from Tucows!" width="150" height="40" border="0" align="absmiddle" title="Tucows"></a>!<br>
+        <br>
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Web based installer for Internet Explorer</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Executable &amp; sources</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillWebSetup_v110.Exe</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center">[<i>notes</i>]</div></td>
+    <td> <div align="center">[130&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Zip with Microsoft Installer Windows package</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Executable &amp; sources</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillCs_v110.zip</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center">[<i>notes</i>]</div></td>
+    <td> <div align="center">[2.5&nbsp;MB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Zip archive</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Sources</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillCsSources_v110.zip</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center">[<i>notes</i>]</div></td>
+    <td> <div align="center">[1&nbsp;MB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p>&nbsp;</p>
+      </div></td>
+    <td colspan="2"> <p><b>Important: .Net Framework 1.1 and DirectX 9 Managed 
+        are required to run this program!</b></p>
+      <p>If you do not have .Net Framework 1.1 nor the DirectX 9 End-User Runtime, 
+        download the latest version from the <a href="http://windowsupdate.microsoft.com/">Microsoft 
+        Windows Update</a>.<br>
+      </p>
+      <p>If you have DirectX 9, you must install DX9 Managed before running Nerdkill. 
+        The installer (.msi) package can be found in the complete DX9 download; 
+        it is included here for your convenience (this version may be obsolete):<br>
+        <br>
+      </p></td>
+    <td> <div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td><i>mdxredist (DX9 Managed).msi</i> 
+      <a name="mdxredist"></a> </td>
+    <td> <div align="center">[notes]</div></td>
+    <td> <div align="center">[1&nbsp;MB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4" class="bottomdiv">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>Nerdkill&nbsp;C#&nbsp;<br>
+          v1.0<br>
+          </b><b>Nov 7, 2004&nbsp;</b></p>
+      </div></td>
+    <td colspan="2"> <p><b>Nerdkill C# Version 1.0 is the previous version</b>.<br>
+        It is no longer available. Please use version 1.1 instead.<br>
+        <br>
+      </p></td>
+    <td>&nbsp;</td></td>
+  </tr>
+  <!-- tr valign="top"> 
+    <td colspan="4" class="bottomdiv">&nbsp;</td>
+  </tr -->
+  <tr valign="top"> 
+    <td colspan="4">&nbsp;</td>
+  </tr>
+
+
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="dlnerdkillppc"></a>
+    Nerdkill Pocket (Pocket PC version)</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>Nerdkill&nbsp;Pocket&nbsp;<br>
+          v1.0<br>
+          </b><b>June 27, 2004&nbsp;</b></p>
+      </div></td>
+    <td colspan="2"> <p><b>Nerdkill Pocket Version 1.0 is the most recent stable 
+        &amp; only revision</b>.</p>
+      <p>Available on <a href="http://www.codeproject.com/netcf/cfgamenerdkill.asp">Code 
+        Project</a> as well as here.<br>
+        <br>
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>CAB Installer for Pocket PC / ARM</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Executable for .Net CF 1.1</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillPocket_v100_ARM.zip</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[406&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>CAB Installer for Pocket PC / MIPS</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Executable for .Net CF 1.1</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillPocket_v100_MIPS.zip</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[406&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>CAB Installer for Pocket PC / x86</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Executable for .Net CF 1.1</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillPocket_v100_x86.zip</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[406&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Zip archive</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Sources</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillPocket_Src_v100.zip</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[462&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"> <p><b>Important: .Net Compact Framework 1.1 is required to 
+        run this program!</b><br>
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">Instructions for CAB files: unzip the archive, copy the CAB 
+      file to your Pocket PC using ActiveSync and then execute it using the File 
+      Explorer. This will install .Net Compact Framework 1.1 as needed as well 
+      as the Nerdkill Pocket executable. Use the File Explorer to start Nerdkill 
+      (you can add a link to the Start Menu or the Program files if you want.)</td>
+    <td> <div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4">&nbsp;</td>
+  </tr>
+
+
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="dlnerdkilljava"></a>
+    Nerdkill Java</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>Nerdkill&nbsp;Java&nbsp;<br>
+          v1.0<br>
+          </b><b>March 11, 2007&nbsp;</b></p>
+      </div></td>
+    <td colspan="2"> <p><b>Nerdkill Java 1.0 is the most recent stable 
+        &amp; only revision</b>.</p>
+      
+        <br>
+      </p></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Java archive (JAR)</td>
+        </tr>
+        <tr> 
+          <td width="16%">Content:</td>
+          <td>Executable for all Java 1.4 platorms</td>
+        </tr>
+        <tr> 
+          <td width="16%">File:</td>
+          <td><i>NerdkillJava001.jar</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[907&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Webstart File (online installer)</td>
+        </tr>
+        <tr> 
+          <td width="16%">Link:</td>
+          <td><i>NerdkillJava.jnlp</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[406&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td> <table width="100%" border="0" cellpadding="0" cellspacing="0" class="halflineparagraph">
+        <tr> 
+          <td width="16%">Kind:</td>
+          <td>Source Code</td>
+        </tr>
+        <tr> 
+          <td width="16%">Link:</td>
+          <td><i>http://code.google.com/p/nerdkill/source</i></td>
+        </tr>
+      </table></td>
+    <td> <div align="center"><font color="#666666">[notes]</font></div></td>
+    <td> <div align="center">[406&nbsp;kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">
+      If you want to run the game using a command line, download the JAR file then
+      type the following command in a terminal:
+      <pre>java -jar NerdkillJava001.jar</pre>
+      </td>
+    <td> <div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4">&nbsp;</td>
+  </tr>
+
+
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="dlnerdkillandroid"></a>
+    Nerdkill Android</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>Nerdkill Android</b></p>
+      </div></td>
+    <td> 
+<p>The latest <a href="https://play.google.com/store/apps/details?id=com.alfray.nerdkill" target="_blank">Android version of Nerdkill</a>
+  can be found in the Google Play store for free:</p>
+
+<center>
+<a href="https://play.google.com/store/apps/details?id=com.alfray.nerdkill" target="_blank">
+<img width="256" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"/></a>
+</center>
+      </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4">&nbsp;</td>
+  </tr>
+
+
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox"><a name="dlnerdkillweb"></a>
+    Nerdkill Web</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"><p><b>&nbsp;</b></p></div></td>
+    <td> <div ><p><a href="https://www.alfray.com/labs/archived/NerdkillDefold/" target="_blank">Nerdkill Defold</a></p></div></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"><p><b>&nbsp;</b></p></div></td>
+    <td> <div ><p><a href="https://www.alfray.com/labs/archived/NerdkillGodot/" target="_blank">Nerdkill Godot</a> </p></div> </td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4" class="bottomdiv">&nbsp;</td>
+  </tr>
+
+
+</table>
+<p>&nbsp;</p>
+<h3 class="orange"><a name="contact"></a>Contact</h3>
+<p align="center">Nerdkill is developed and maintained by <i>Le R'alf</i>'
+</p>
+<p>&nbsp;</p>
+<div align="center"> 
+  <table width="100%" border="0">
+    <tr>
+      <td class="orange">---</td>
+    </tr>
+    <tr>
+      <td class="yellowbox">---</td>
+    </tr>
+  </table>
+  <p><br>
+    <font size="-1"><a href="http://www.alfray.com">Alfray</a> | <a href="http://www.powerpulsar.com">Powerpulsar</a> 
+    | <a href="http://ralf.alfray.com">R'alf Home Page</a><br>
+    Last Updated: March 17, 2007<br>
+    Created: November 02, 2003</font></p>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics 20200822 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-243916-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-243916-1');
+</script>
+
+</body>
+</html>
+

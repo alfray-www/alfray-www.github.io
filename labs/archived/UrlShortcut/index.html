@@ -1,0 +1,444 @@
+<!-- saved from url=(0021)http://www.alfray.com -->
+<!-- The above comment marks thist page for IE6 XP SP2 and will avoid a warning
+preventing the JavaScript email from working.
+See Local Machine Zone Lockdown in MSDN Internet Explorer 6 Resource Kit -->
+<html>
+<head>
+<!-- meta http-equiv="refresh" content="0;URL=index.php" -->
+<title>UrlShortcut</title>
+<style type="text/css">
+<!--
+.yellowbox { background-color: #FFFFCC; border: 1px #CCCCCC solid; text-align: center}
+.orange { background-color: #FFCC99; border: none; text-align: center }
+.tableborderline {  border-bottom-width: 1px}
+.historydiv {
+	border-top: 1px dashed #333333;
+	border-right: none;
+	border-bottom: none;
+	border-left: none;
+	vertical-align: top;
+}
+.bottomdiv {
+	border-top-style: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #333333;
+}
+.halflineparagraph {
+	margin-bottom: 8pt;
+}
+.url {
+	font-family: monospace;
+	display: block;
+	margin: 1.33em;
+	margin-right: 40px;
+}TABLE.screen {
+	background-color: #ECF8E0;
+	padding: 5px;
+	border: thin solid;
+	display: block;
+	width: 95%;
+}
+-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<!--
+<body bgcolor="#99CCFF" text="#000000">
+
+	This page will automatically redirect you to the album entry point.<br>
+	Note that in order to use the Rig Album, you need to enable cookies on your browser.
+	<p>
+	If you browser doesn't redirect you automatically, please click here
+	to enter the <a href="./index.php">album</a>.
+-->
+
+<body bgcolor="#FFFFFF">
+<h1 class="yellowbox">UrlShortcut</h1>
+<p align="center">&nbsp;<a href="#description">Description</a> &nbsp;|&nbsp; <a href="#news">News</a> 
+  &nbsp;|&nbsp; <a href="#contact"> Contact</a>&nbsp;&nbsp;|&nbsp; <a href="#downloads">Downloads</a>&nbsp;<br>
+</p>
+<h3 class="orange"><a name="description"></a>Description</h3>
+<div align="center"> 
+  <p><a href="#summary">Summary</a> | <a href="#what">What is it?</a> | <a href="#req">Requirements</a> 
+    | <a href="#install">Installation</a><a href="#history"></a> | <a href="#usage">Usage</a> 
+    | <a href="#limit">Limitations</a><a href="#history"></a> | <a href="#license">License</a><br>
+  </p>
+</div>
+  
+<p class="yellowbox"><a name="what"></a>Summary</p>
+<p>UrlShortcut is a simple <a href="http://www.php.net/">PHP</a> script that let's 
+  you maintain a database of &quot;shortcut&quot; URLs.</p>
+<p>This allows you to publish URLs to friends that are not extra long, with the 
+  purpose of either having easier to type URLs or simply to place URLs in email 
+  and avoid the URL being split on several lines. You can also use it as a repository 
+  of URLs to consult later or as a reminder of URLs to add to your favorite blog.</p>
+<p></p>
+<p class="yellowbox"><a name="what"></a>What is it?</p>
+<p>UrlShortcut is a simple <a href="http://www.php.net/">PHP</a> script that let's 
+  you maintain a database of &quot;shortcut&quot; urls.<br>
+  When a browser visits one of these short URLs, the PHP script will redirect 
+  the browser to the original URL immediately.</p>
+<p>URL redirections can generally be setup directly in your web server's configuration 
+  (IIS, Apache, etc.). Unfortunately, this is generally a manual process that 
+  is hard to automatize and also requires administrator access to the web server 
+  computer and/or the web server account. On the other hand, UrlShortcut can be 
+  installed easily on any web server that has PHP support, such as home page typically 
+  provided by ISPs.</p>
+<p></p>
+<p class="yellowbox"><a name="req" id="req"></a>Requirements</p>
+<p>To use UrlShortcut, you need:</p>
+<ul>
+  <li>A web server with <a href="http://www.php.net/">PHP</a> support.</li>
+  <li>PHP must have been compiled with <a href="http://www.php.net/manual/en/ref.dba.php">DBA</a> 
+    support, the dbm-style database abstract layer.</li>
+</ul>
+<p>By default, the script uses the &quot;<a href="http://www.sleepycat.com/">db4</a>&quot; 
+  handler. This can be changed as described <a href="#dbhandler">later</a>.</p>
+<p></p>
+<p class="yellowbox"><a name="install" id="install"></a>Installation</p>
+<p>Notes: this manual described steps for installation on a typical Linux box. 
+  Configuration on other systems should be similar. Please refer to your system 
+  maintainer or your operating system vendor for details.</p>
+<p>To install, simply untar the archive under your <code>public_html</code> and 
+  rename the directory to what you want to see in the final URL. For example:</p>
+<p class="url">cd ~/public_html<br>
+  tar xvzf UrlShortcut-1.0.tgz<br>
+  mv UrlShortcut-1.0 url</p>
+<p>This will make UrlShortcut available as the following URL:</p>
+<p class="url">http://www.example.org/url?1</p>
+<p>&nbsp;</p>
+<p>The archive is composed of the following files:</p>
+<table width="100%" border="0" cellspacing="1">
+  <tr valign="top"> 
+    <td> <ul>
+        <li><code>common.php</code>:</li>
+      </ul></td>
+    <td width="5">&nbsp;</td>
+    <td>Core functions and preferences.</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <ul>
+        <li><code>index.php</code>:</li>
+      </ul></td>
+    <td width="5">&nbsp;</td>
+    <td>Redirects to a pre-created URL.</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <ul>
+        <li><code>create.php</code>: </li>
+      </ul></td>
+    <td width="5">&nbsp;</td>
+    <td>Creates a new shortcut for an URL.</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <ul>
+        <li><code>list.php</code>:</li>
+      </ul></td>
+    <td width="5">&nbsp;</td>
+    <td>Lists all known shortcuts and their target URL.</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <ul>
+        <li><code>template.htaccess</code>:</li>
+      </ul></td>
+    <td width="5">&nbsp;</td>
+    <td>An example of <code>.htaccess</code> file that can be used with Apache 
+      to restrict access.</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <ul>
+        <li><code>data/</code>:</li>
+      </ul></td>
+    <td width="5">&nbsp;</td>
+    <td>Directory where the database file will be created and accessed.<br>
+      Your web server <b>must</b> have write access to it. </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Configuration is achieved by editing <code>common.php</code> and modifying 
+  the following defines at the top of the file:</p>
+<p> <code><a name="dbhandler"></a>DB_HANDLER</code> preference:</p>
+<ul>
+  <li>This string represents the name of the DBA handler to use.</li>
+  <li>Consult the PHP Manual for DBA to get a list of possible handlers: <a href="http://www.php.net/manual/en/ref.dba.php">http://www.php.net/manual/en/ref.dba.php</a>.</li>
+  <li>Not all handlers are available on a given system. This depends on how PHP 
+    was configured and what libraries are available on your system.</li>
+  <li>On most recent Linux boxes, the &quot;db4&quot; handler should be the default 
+    with PHP 4.3.2; for older version of PHP, the &quot;db2&quot; handler can 
+    be used. Otherwise the &quot;flatfile&quot; format should be your last chance.</li>
+</ul>
+<p> <code>DB_FILE</code> preference:</p>
+<ul>
+  <li>This string contains the <i>relative</i> path of the database file.</li>
+  <li>By default the file will be located in the &quot;data&quot; directory located 
+    at the same place than the script. You can change this here.</li>
+  <li> DB_FILE is <i>relative</i> path, that is the absolute directory where the 
+    script *executes* will be prefixed to the DB_FILE path. </li>
+  <li>You must ensure that your web server has write access to the directory and 
+    can create a file there. </li>
+</ul>
+<p>&nbsp;</p>
+<p class="yellowbox"><a name="usage" id="usage"></a>Usage</p>
+<p>The following discussion assumes UrlShortcut has been installed as described 
+  above and the service is available at the following URL:</p>
+<p class="url">http://www.example.org/url/</p>
+<p>&nbsp;</p>
+<p><b>1- Creating Shortcuts</b></p>
+<p>To use UrlShortcut, you must first create a shortcut. You can do this by accessing 
+  the <code>create.php</code> script and providing the target URL directly on 
+  the query string, like this:</p>
+<p class="url">http://www.example.org/url/create.php?http://www.alfray.com/projects/UrlShortcut/</p>
+<p>The URL <b>must</b> begin with &quot;<code>http://</code>&quot; to be accepted.</p>
+<p>Since typing such an URL is annoying, the best way to create a shortcut is 
+  to place a bookmark in the toolbar of your JavaScript-enabled browser:</p>
+<ul>
+  <li>Drag this link &quot;<a href="javascript:void(location.href='http://www.example.org/create.php?'+location.href)">Create 
+    Shortcut</a>&quot; to your browser's toolbar (Internet Explorer, Mozilla, 
+    FireFox, etc.).</li>
+  <li>Edit the bookmark and replace &quot;www.example.org/url&quot; by the real 
+    location of your page.</li>
+  <li>Now simply navigate to any page and press the bookmark &quot;<a href="javascript:void(location.href='http://www.example.org/create.php?'+location.href)">Create 
+    Shortcut</a>&quot; to create a new shortcut to the current page.</li>
+</ul>
+<p>You will really enjoy and take full advantage of the simplicity of creating 
+  shortcuts once you take the necessary step to configure your web browser.</p>
+<p>Once a shortcut has been created, a page will display the result shortcut, 
+  as this:</p>
+<blockquote><table cellspacing="0" class="screen">
+  <tr> 
+    <td> The following shortcut:
+      <p>
+      <blockquote><code><b><a href="http://www.example.org/url?1">http://www.example.org/url?1</a></b></code></blockquote>
+      <p>has been created and registered for the following URL:
+      <p>
+      <blockquote><code><b><a href="http://www.alfray.com/projects/UrlShortcut/">http://www.alfray.com/projects/UrlShortcut/</a></b></code></blockquote>
+      <p>
+      <p>
+      <hr>
+      <p><a href="http://www.example.org/url/list.php">List all existing keys</a>
+      <p>
+      <p>Alfray's UrlShortcut v1.0 </td>
+  </tr>
+</table></blockquote>
+<p>The first link is what you want to use, copy/paste in emails, etc.</p>
+<p>Note that UrlShortcut does not duplicate keys. If you try to create a new shortcut 
+  later with the same target URL, you will receive the previous shortcut URL. 
+  That means it is safe to call the creation script as many times as you want 
+  with the same target URL.</p>
+<p>In the shortcut URL generated above, &quot;1&quot; is what makes the shortcut 
+  URL unique. This identifier is created by incrementally increasing a counter. 
+  The first value is 1 (the value 0 is never used). The counter value is encoded 
+  in base 34 using digits and lower-cap letters except letters &quot;o&quot; and 
+  &quot;l&quot; (L) which can be easily confused with 0 (zero) and 1 (one). If 
+  you need to memorize or write down the shortcut URL, the identifier is all you 
+  need.</p>
+<p>&nbsp; </p>
+<p><b>2- Listing Shortcuts</b></p>
+<p>Once you have created several shortcut URLs, you may not remember where each 
+  shortcut points to. The list page will show you that. It is available via a 
+  link at the bottom of the create page. To view the list, you simply need to 
+  browse this URL:</p>
+<p class="url">http://www.example.org/url/list.php</p>
+<p>The result will look like that:</p>
+<blockquote><table width="100%" border="0" cellspacing="0" class="screen">
+  <tr>
+    <td>
+<code>[<a href="http://www.example.org/url?1">1</a>]</code> => <a href="http://www.alfray.com/projects/UrlShortcut/">http://www.alfray.com/projects/UrlShortcut/</a><br>
+<code>[<a href="http://www.example.org/url?2">2</a>]</code> => <a href="http://www.alfray.com/">http://www.alfray.com/</a><br>
+<code>[<a href="http://www.example.org/url?3">3</a>]</code> => <a href="http://www.alfray.com/projects/nerdkill/index.html">http://www.alfray.com/projects/nerdkill/index.html</a><br>
+<code>[<a href="http://www.example.org/url?4">4</a>]</code> => <a href="http://ralf.alfray.com/.izumi/">http://ralf.alfray.com/.izumi/</a><br>
+<p><hr><p>Alfray's UrlShortcut v1.0
+	</td>
+  </tr>
+</table></blockquote>
+<p>&nbsp;</p>
+<p><b>3- Using Shortcuts</b></p>
+<p>To use a shortcut, simply enter the shortcut URL in any browser. The script 
+  will order the browser to redirect to the target URL, if such a shortcut exists 
+  in its database. If not, the user will be presented with an informative message.</p>
+<p>If the target URL is no longer valid, UrlShortcut still tries to redirect the 
+  browser to the specified URL. Depending on its configuration, the browser will 
+  display an error message indicating the page cannot be found.</p>
+<p>&nbsp;</p>
+<p class="yellowbox"><a name="limit" id="limit"></a>Limitations</p>
+<p>UrlShortcut has the following limitations:</p>
+<ul>
+  <li>It has only been tested with Apache 1.3.29 and PHP 4.3.3. 
+    <ul>
+      <li>The script is simple enough to work with earlier versions of PHP, probably 
+        up to PHP 4.1.x, provided that some minimal DBA support is compiled in 
+        PHP.</li>
+      <li>The script should also work with any other web server that has PHP support, 
+        such as IIS although this has not been tested and cannot be guaranteed.</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>As explained <a href="#dbhandler">earlier</a>, <a href="http://www.php.net/">PHP</a> 
+    must have <a href="http://www.php.net/manual/en/ref.dba.php">DBA</a> compiled 
+    in.</li>
+</ul>
+<ul>
+  <li> Anonymous issue &amp; URL discovery hacking: 
+    <ul>
+      <li>Unless you configure your web server otherwise, anybody can access the 
+        URL redirector.</li>
+      <li>It is strongly suggest that you protect the <code>list.php</code> and 
+        <code>create.php</code> script, unless you are providing a public service. 
+        The accompanying <code>template.htaccess</code> shows how to limit access 
+        to these files by IP address.</li>
+      <li>Since shortcut URLs are created in a linear way, it is trivial to &quot;discover&quot; 
+        any other URL by simply injecting a random number on the URL query line 
+        of the redirector. Unless you protect access to the <code>index.php </code>script, 
+        anybody can use the service with either a legitimate shortcut URL or a 
+        crafted one. Since the redirector has no previous knowledge of who is 
+        allowed to use it, by default it allows anybody to do so and cannot, by 
+        design, distinguish between valid uses and abuses.</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>There is currently no mechanism to remove a shortcut URL nor to update its 
+    value in case the target page has moved:
+    <ul>
+      <li>Manually updating an URL or delete it is a feature that may be provided 
+        in a future release.</li>
+      <li>By design, it is not possible to automatically discover if a page has 
+        moved and update its URL in the shortcut database.</li>
+      <li>You can remove all shortcuts at once by simply deleting the database 
+        file on the server.</li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p class="yellowbox"><a name="license"></a>License</p>
+<p>UrlShortcut is distributed under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">General 
+  Public Licens</a>e (a.k.a. GPL).</p>
+<p><a href="http://en.wikipedia.org/wiki/Ianal">I am not a lawyer</a> and I find 
+  licenses generally obscure to read, so what it all means is:</p>
+<ul>
+  <li>UrlShortcut is free software, it can be used for either personal, academic 
+    or commercial purposes at absolutely no cost.</li>
+  <li>It comes &quot;as-is&quot;. No guarantee, support, maintenance or installation 
+    help is implied.</li>
+  <li>You are free to add any feature that you think is missing, or change the 
+    source code or the look to match your own needs. I'm interested in learning 
+    about any feature you add, yet I make no promise I'll actually reuse your 
+    code. If you redistribute your own version, please use the same license and 
+    make it easy to differentiate your sources from mine.</li>
+  <li>I love positive feedback and positive criticism. An extended to-do list 
+    of things I'd like to see in the software at some point is included in the 
+    source archive. Of course there is no written schedule for this, it all depends 
+    on my free time and my creativity. If you need something that is not on this 
+    list, please ask gently.</li>
+  <li>Your respect will earn you mine.</li>
+</ul>
+<p>&nbsp;</p>
+<h3 class="orange"><a name="news"></a>News</h3>
+<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr valign="top"> 
+    <td width="140" align="right"> <b>March 21, 2004</b></td>
+    <td width="16">&nbsp;</td>
+    <td> <p class="halflineparagraph">Version 1.0 completed and ready to <a href="#downloads">download</a>.</p></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+<h3 class="orange"><a name="downloads" id="downloads"></a>Downloads</h3>
+<table width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox">Stable</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="100"> <div align="center"> 
+        <p><b>1.0<br>
+          </b><b>March 21,<br>
+          2004 </b></p>
+      </div></td>
+    <td colspan="2"> <p><b>Version 1.0 is the most recent stable &amp; only revision</b>.</p>
+      <p><br>
+        <br>
+      </p></td>
+    <td width="68"><div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="382"><a href="distrib.php?f=UrlShortcut-1.0-20040321.tgz">UrlShortcut-1.0-20040321.tgz</a></td>
+    <td width="57"> <div align="center"><font color="#999999"><s>[notes]</s></font></div></td>
+    <td> <div align="center">[16 kB]</div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="4" class="yellowbox">Development (a.k.a. unstable)</td>
+  </tr>
+  <tr valign="top"> 
+    <td> <div align="center"> 
+        <p><b>- - -</b></p>
+      </div></td>
+    <td colspan="2"> <p> None.</p></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td> <div align="center"></div></td>
+    <td> <div align="center"></div></td>
+  </tr>
+  <tr valign="top"> 
+    <td class="bottomdiv">&nbsp;</td>
+    <td colspan="2" class="bottomdiv">&nbsp;</td>
+    <td class="bottomdiv"><div align="center"></div></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3 class="orange"><a name="contact"></a>Contact</h3>
+<p align="center">UrlShortcut is developed and maintained by 
+  <SCRIPT TYPE="text/javascript">
+	<!-- 
+	// protected email script by Joe Maller
+	// JavaScripts available at http://www.joemaller.com
+	// this script is free to use and distribute
+	// but please credit me and/or link to my site
+		emailE='alfray.com'
+		emailE=('ralf-url' + '@' + emailE)
+		document.write('<A href="mailto:' + emailE + '">' + "Le R'alf" + '</a>')
+	//-->
+	</script>
+	<NOSCRIPT> <em>Email address protected by JavaScript. Please 
+  enable JavaScript to contact me.</em> </NOSCRIPT>
+</p>
+<p>&nbsp;</p>
+<div align="center"> 
+  <table width="100%" border="0">
+    <tr>
+      <td class="orange">---</td>
+    </tr>
+    <tr>
+      <td class="yellowbox">---</td>
+    </tr>
+  </table>
+  <p><br>
+    <font size="-1"><a href="http://www.alfray.com">Alfray</a> | <a href="http://www.powerpulsar.com">Powerpulsar</a> 
+    | <a href="http://ralf.alfray.com">R'alf Home Page</a><br>
+    Last Updated: July 31, 2004<br>
+    Created: March 21, 2004</font></p>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics 20200822 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-243916-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-243916-1');
+</script>
+
+</body>
+</html>
+
