@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Randall Museum Model Railroad" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/randall/2024-07-11_branchline_automation_failing.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Branchline Automation Failing" />
+
+<meta property="og:description" content="The Branchline Automation has been failing for a week or two now. It seems to start ok, then fails mid-morning. Symptom is that the train drives back in recovery mode, whilst it’s already on the parked block. As a one-sentence recap, one of the main design points of Conductor 2&nbsp;is to have fancy recovery abilities in the automation script to be able to re-align the trains when they are not at their expected locations." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_2a48bdc0719fda1677a9f1579be9d1bc3661349cba6033c14df507a205531df8i.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Branchline Automation Failing" />
+
+<meta name="twitter:description" content="The Branchline Automation has been failing for a week or two now. It seems to start ok, then fails mid-morning. Symptom is that the train drives back in recovery mode, whilst it’s already on the parked block. As a one-sentence recap, one of the main design points of Conductor 2&nbsp;is to have fancy recovery abilities in the automation script to be able to re-align the trains when they are not at their expected locations." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_2a48bdc0719fda1677a9f1579be9d1bc3661349cba6033c14df507a205531df8i.png" />
+
+<title>Blog: Randall Museum Model Railroad</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0003.html">Blog: Randall Museum Model Railroad</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">Introduction</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Blog &amp; News</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">About the Model Railroad</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/videos.html" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="font-style:italic">The Randall Museum in San Francisco hosts a large HO-scale model model railroad. Created by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span style="font-style:italic">&nbsp;starting in 1961, the layout was donated to the Museum in 2015. Since then I have started automatizing trains running on the layout. I am also the model railroad maintainer. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">This blog</a></span><span style="font-style:italic">&nbsp;describes various updates on the Randall project and I maintain a separate </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">blog for all my electronics</a></span><span style="font-style:italic">&nbsp;not directly related to Randall. </span><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-07-14_branchline_sensors_update.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-06-28_experimental_intercom_system.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2024-07-11 - Branchline Automation Failing</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Randall</span>
+    </span>
+    </div>
+
+
+    <p></p>
+<p><span>The Branchline Automation has been failing for a week or two now. It seems to start ok, then fails mid-morning. Symptom is that the train drives back in recovery mode, whilst it’s already on the parked block. As a one-sentence recap, one of the main design points of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;is to have fancy recovery abilities in the automation script to be able to re-align the trains when they are not at their expected locations. </span></p>
+<p></p>
+<p><span>Checking the logs last week, I could not figure why it failed in the first place. Let’s try again.</span></p>
+<p></p>
+<p><span>After monitoring the train for a little while this morning, I got this:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:196.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:394.00px"><img alt="" src="img_2a48bdc0719fda1677a9f1579be9d1bc3661349cba6033c14df507a205531df8i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Thus the automation control sees 3 blocks occupied, whereas the train is visually stopped at the boundary between B820 (BL station) and B801 (BL parked). It goes without saying that only one block should be occupied here, or maybe 2 if the train is stopped at the boundary between 2 blocks.</span></p>
+<p></p>
+<p><span>Something interesting in this log… (Line starting with ⇒ are my annotations):</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>⇒ this is a normal run, we’re returning from B830 (the big canyon U curve):</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:43:49.680 S S/NS753 BLStation : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:43:49.680 B S/B830v B830 : TRAILING after 74.28 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:43:49.681 B S/NS753 BLStation : OCCUPIED after 183.61 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:43:49.683 D 204 : -4</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:44:40.816 S S/NS753 BLStation : OFF</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:44:41.478 S S/NS753 BLStation : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:44:55.509 S S/NS752 BLParked : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:44:55.510 B S/B830v B830 : EMPTY after 65.83 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:44:55.511 B S/NS753 BLStation : TRAILING after 65.83 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:44:55.511 B S/NS752 BLParked : OCCUPIED after 320.57 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:45:05.562 D 204 : 0</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:45:13.781 R Sequence Branchline #3 Shuttle (0204) : IDLE</span></p>
+<p><span>⇒ Engine parked normally. There’s a bit of “blinking” on the BLStation sensor but nothing we can’t handle.</span></p>
+<p><span>⇒ Next run starts here:</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:21.031 R Idle Branchline #0 Ready : IDLE</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:21.032 R Sequence Branchline #3 Shuttle (0204) : ACTIVATED</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:21.032 B S/NS752 BLParked : EMPTY after 325.52 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:21.067 B S/NS752 BLParked : OCCUPIED after 0.04 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:21.067 R Sequence Branchline #3 Shuttle (0204) : ACTIVE</span></p>
+<p><span>⇒ Engine at the expected place. BLParked is occupied, and from previous lines, all other blocks should be empty, thus the train starts its run:</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:30.885 D 204 : 4</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">…</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:55.272 S S/NS753 BLStation : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:55.272 B S/NS752 BLParked : TRAILING after 34.21 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:55.272 B S/NS753 BLStation : OCCUPIED after 341.49 seconds</span></p>
+<p><span>⇒ Engine moving from BLParked to BLStation…</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.263 S S/NS752 BLParked : OFF</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.263 S S/NS753 BLStation : OFF</span></p>
+<p><span>⇒ Interesting, we have some “blinking” on the BL Station sensor again here… and then instantly everything breaks:</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.277 R Sequence Branchline #3 Shuttle (0204) : ERROR Sequence Branchline #3 Shuttle (0204) next block {B830 [B830v]} activated in 4.0 seconds. Current block {BLStation [NS753]} must remain occupied for at least 10 seconds.</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.278 R Sequence Branchline #3 Shuttle (0204) : ERROR</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.279 R Sequence Branchline #3 Shuttle (0204) : {"name":"Shuttle","th":"BL","act":2,"err":true,"nodes":[{"n":"BLParked","ms":34205},{"n":"BLStation","ms":4006}]}</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.281 B S/NS752 BLParked : EMPTY after 4.01 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.282 B S/NS753 BLStation : TRAILING after 4.01 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.282 B S/B830v B830 : OCCUPIED after 363.77 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.282 R Sequence Branchline #3 Shuttle (0204) : IDLE</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.284 R Sequence Branchline #3 Shuttle (0204) : {"name":"Shuttle","th":"BL","act":2,"err":true,"nodes":[{"n":"BLParked","ms":34205},{"n":"BLStation.1","ms":4006},{"n":"BLStation.2","ms":4010},{"n":"B830","ms":0}]}</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.286 B S/NS753 BLStation : EMPTY after 0.00 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.286 R Sequence Branchline #4 Recovery (0204) : ACTIVATED</span></p>
+<p></p>
+<p><span>OK so there’s some blinking on the BLStation sensor. And when moving forward, this seems to (incorrectly) trigger the virtual B830v block, e.g. we moved too fast the active block from BLStation to B830v.</span></p>
+<p><span>So we end up in recovery, and this happens:</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.286 R Sequence Branchline #4 Recovery (0204) : ACTIVATED</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.286 B S/B830v B830 : EMPTY after 0.00 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.287 D 204 : 0</span></p>
+<p style="margin-left:36pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.540 S S/B830v B830 : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.541 B S/B830v B830 : OCCUPIED after 0.26 seconds</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:50:59.541 R Sequence Branchline #4 Recovery (0204) : ACTIVE</span></p>
+<p><span>⇒ Recovery (incorrectly) deducts the train is on virtual block B830 and activates it, and tries to move it.</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:00.276 D 204 : -4</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:01.029 S S/NS753 BLStation : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:01.229 S S/NS753 BLStation : OFF</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:01.891 S S/NS753 BLStation : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:03.040 S S/NS753 BLStation : OFF</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:03.703 S S/NS753 BLStation : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.050 S S/NS753 BLStation : OFF</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.615 S S/NS752 BLParked : ON</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.615 S S/NS753 BLStation : ON</span></p>
+<p><span>⇒ Obviously the train is at the BLStation/Parked junction, and there’s a ton of blinking on that BLStation sensor.</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.625 R Sequence Branchline #4 Recovery (0204) : ERROR Sequence Branchline #4 Recovery (0204) has unexpected occupied blocks out of {B830}: [&lt;BLParked [NS752]&gt;]</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.626 R Sequence Branchline #4 Recovery (0204) : ERROR</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.628 R Sequence Branchline #4 Recovery (0204) : {"name":"Recovery","th":"BL","act":1,"err":true,"nodes":[{"n":"B830","ms":6085}]}</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.630 D 204 : 0</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.882 R Sequence Branchline #4 Recovery (0204) : IDLE</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">10:51:05.883 R Sequence Branchline #4 Recovery (0204) : {"name":"Recovery","th":"BL","act":1,"err":true,"nodes":[{"n":"B830.1","ms":6085},{"n":"B830.2","ms":6341}]}</span></p>
+<p><span>⇒ We end up the recovery sequence thinking the train was only on B830.</span></p>
+<p></p>
+<p><span>I suspected the lack of recovery had to do with the virtual block -- if the train is found nowhere, recovery “deduces” it is in the virtual block and reverses it. This is a fairly logical assumption with ideal sensors, but it is wrong if we start with flaky sensors. Then if the train is somewhere else and wasn’t detected when stopped, it may be detected once it starts moving and now we have 2 active blocks, which is a definite recovery error.</span></p>
+<p></p>
+<p><span>There’s an attempt at a “2nd stage recovery” here in script 55 v11, line 1966:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor/src/2e2829741f2610ee23dd37745cad0cf61b279816/jmri/conductor/engine2k/src/main/resources/v2/script/script_55_v11_bl204%2Bml8330%2B1067%2Btl6119_sat.conductor.kts#lines-1966" style="color:inherit;text-decoration:inherit">https://bitbucket.org/model-railroad/conductor/src/2e2829741f2610ee23dd37745cad0cf61b279816/jmri/conductor/engine2k/src/main/resources/v2/script/script_55_v11_bl204%2Bml8330%2B1067%2Btl6119_sat.conductor.kts#lines-1966</a></span></p>
+<p></p>
+<p><span>The main recovery handles the “normal” cases of all the real blocks detecting the presence of a train on a single block (or a boundary). If that fails, we switch to a secondary recovery. That one (ab)uses an “idle” route rather than a “sequence” route: we run the train backwards till B801 (BL Parked) is active, with B820 (BL station) inactive. There’s also a 5-minutes timeout for that operation. That will not fix the root cause, but it should fix the recovery.</span></p>
+<p></p>
+<p><span>There are 2 root causes to fix:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>That B810 / BLStation sensor is now flaky. It used to be fine, but not anymore 😕</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The cause of the sensor working can be anything from the track leakage current having changed due to a scenery update, or due to a bad block feeder solder. It’s rarely the sensor itself which is at fault.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It’s an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201254549-BD20-Block-Detector" style="color:inherit;text-decoration:inherit">NCE BD20</a></span><span>&nbsp;sensor. Either I need to solder an adjustment resistor to it, or upgrade it to one of the Iowa Scaled </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">CKT-BD1</a></span><span>&nbsp;sensors as I have done on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2024-01-29_iowa_scaled_ckt-bd1_sensors__18f61f08.html" style="color:inherit;text-decoration:inherit">Mountain Block Panel</a></span><span>.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I want to get rid of the virtual block.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The proper way to do that is to finish wiring a real block sensor in that spot -- that was the eventual goal anyway, I just need to find more time crawling under the layout finding where the block boundaries are and where the power feeds are for this or these blocks.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>The Iowa Scaled </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">CKT-BD1</a></span><span>&nbsp;sensors are more fancy than the “legacy” </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201254549-BD20-Block-Detector" style="color:inherit;text-decoration:inherit">NCE BD20</a></span><span>&nbsp;sensors. To adjust the sensitivity of the NCE ones, I need to solder a small variable resistor and then manually turn that “till it’s good” (easier said than done). The Iowa Scaled are more modern and have a little ATTiny85 processor on them. They are adjusted merely by pressing a button and waiting a few seconds. I like the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201254549-BD20-Block-Detector" style="color:inherit;text-decoration:inherit">NCE BD20</a></span><span>&nbsp;sensors because they are more compact, very simple in design; I still have a handful of these around. The Iowa Scaled </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">CKT-BD1</a></span><span>&nbsp;sensors did not exist when I started automating the layout so I only currently use them for the track blocks which have proven to be very unreliable.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-07-14_branchline_sensors_update.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-06-28_experimental_intercom_system.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

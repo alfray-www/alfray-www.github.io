@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/0009.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="Blog: Model Train-related Notes" />
+<meta property="og:description" content="“Conductor” is the name of the software that controls the automation on the Randall Museum Model Railroad. It’s written in Java and integrates into JMRI. The other part is the Android tablet display software. Combined, both create “RTAC” -- the Randall Train Automation Controller. I started the conductor project in mid-2016 and by the end of 2016 I had a working version deployed on the layout at the museum. Immediately after that, I started thinking about extending it already :-)" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_67a1665aeeac9a09b815020214bcc165e23f4183f770fafce354dc27691031b4i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="Blog: Model Train-related Notes" />
+<meta name="twitter:description" content="“Conductor” is the name of the software that controls the automation on the Randall Museum Model Railroad. It’s written in Java and integrates into JMRI. The other part is the Android tablet display software. Combined, both create “RTAC” -- the Randall Train Automation Controller. I started the conductor project in mid-2016 and by the end of 2016 I had a working version deployed on the layout at the museum. Immediately after that, I started thinking about extending it already :-)" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_67a1665aeeac9a09b815020214bcc165e23f4183f770fafce354dc27691031b4i.jpg" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0009.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0008.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="000a.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-01-16_conductor_automation_software.html">
+    <h2 class="post-title">2017-01-16 - Conductor Automation Software</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>“</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor</a></span><span>” is the name of the software that controls the automation on the Randall Museum Model Railroad. It’s written in Java and integrates into JMRI. The other part is the Android tablet display software. Combined, both create “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">RTAC</a></span><span>” -- the Randall Train Automation Controller. I started the conductor project in mid-2016 and by the end of 2016 I had a working version deployed on the layout at the museum. Immediately after that, I started thinking about extending it already :-)</span></p>
+<p></p>
+<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor" style="color:inherit;text-decoration:inherit">RTAC / Conductor source</a></span><span>&nbsp;can be found in this git repo </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/conductor</a></span><span>&nbsp;with a GNU GPL v3 license.</span></p>
+<p></p>
+<p><span>--</span></p>
+<p></p>
+<p><span>Here's a rethink of the automation software.</span></p>
+<p></p>
+<p><span>Right now I have JMRI for sensor management and DCC throttles. Conductor acts as a plug-in that drives the automation purely on sensor+timer event based script.</span></p>
+<p style="text-align:left"><span></span></p>
+
+<a href="2017-01-16_conductor_automation_software.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-12-01_ir_sensors.html">
+    <h2 class="post-title">2016-12-01 - IR Sensors</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Electronics
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p><span>To detect trains on the branchline, I experimented with using IR reflective sensors instead of block detectors. These have the advantage that they are inexpensive and can be connected directly to an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>&nbsp;board.</span></p>
+<p></p>
+<p><span>The original idea was to embed the sensors in the track bed. The sensors are fairly small and fit nicely between ties. The one chosen have a detection range of 2-15 mm, which would be ideal to detect when an engine truck passes over the sensor. </span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:159.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:98.00px"><img alt="" src="img_67a1665aeeac9a09b815020214bcc165e23f4183f770fafce354dc27691031b4i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span>The IR reflective sensor used are </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/26NywA3" style="color:inherit;text-decoration:inherit">TCRT5000</a></span><span>. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.vishay.com/docs/83760/tcrt5000.pdf" style="color:inherit;text-decoration:inherit">Vishay spec</a></span><span>&nbsp;can be found </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.vishay.com/docs/83760/tcrt5000.pdf" style="color:inherit;text-decoration:inherit">here</a></span><span>. </span></p>
+<p><span>This model is nothing more than 2 separate "LEDs" stuck together in a flimsy small plastic shell. They can be easily removed from the plastic shell and mounted in the track flush with the ties, pointing upwards (technically one LED is an emitter and the other is a receiver so calling it a LED is abusing the term, although it may look like one).</span></p>
+<p style="text-align:left"></p>
+<p><span>The photodetector on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/26NywA3" style="color:inherit;text-decoration:inherit">TCRT5000</a></span><span>&nbsp;varies its current based on the amount of light received. No light, no current; lots of light, more current. The amount of light that bounces and the collector current depends on the distance between the detector and the object. The nominal distance is 2 millimeters and experimentation showed that I could get away with much more.</span></p>
+<p style="text-align:left"><span>One of the LED is an emitter and needs to be powered by 5 V and a resistor (to limit and adjust the current). The other side is a phototransistor, NPN type.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>How is the IR sensor going to connect to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>?</span></p>
+<p style="text-align:left"><span></span></p>
+
+<a href="2016-12-01_ir_sensors.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-10-11_jmri_logix.html">
+    <h2 class="post-title">2016-10-11 - JMRI Logix</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Jmri
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span></span></p>
+<p style="text-align:left"><span>Looking at JMRI Logix, this is a non-script click-o-drome if-this-then-that.</span></p>
+<p style="text-align:left"><span>Conditions range from block, sensors. Actions are signals, turnouts, scripts or warrants.</span></p>
+<p style="text-align:left"><span>Conditions can act when set or on change.</span></p>
+<p style="text-align:left"><span>No direct throttle control, maybe indirectly via warrant scripts to run "auto trains".</span></p>
+<p style="text-align:left"><span>One possibility is starting a script when some condition happen.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Seems interesting for people who don't want to write scripts. Tons of clicking to get things done.</span></p>
+<p style="text-align:left"><span>Seems ideally suited for simple linear decision trees, not for free-form scripting.</span></p>
+<p style="text-align:left"><span>Examples would be signals or turnouts set depending on block usage.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>For my automation purposes, it seems fairly weak and I’ll design my own software that uses a text file for configuration. Somehow it makes non-tech people very nervous and Windows users especially seem to enjoy clicking ad nauseum in poorly designed modal dialog boxes instead of having a single text file script they can look at quickly. </span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-10-08_nce_limitations.html">
+    <h2 class="post-title">2016-10-08 - NCE Limitations</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933425-Common-Cab-Questions" style="color:inherit;text-decoration:inherit">https://ncedcc.zendesk.com/hc/en-us/articles/200933425-Common-Cab-Questions</a></span><span>&nbsp;</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/2VVj4nH" style="color:inherit;text-decoration:inherit">NCE PowerCab</a></span><span>&nbsp;</span><span>/ </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/39AshWB" style="color:inherit;text-decoration:inherit">DCC Twin</a></span><span>&nbsp;</span><span>can only use cab bus addresses up to 10.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>0-1 are the internal twin cabs.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>2-7 are for throttles.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>8-9-10 are for cab devices.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>&nbsp;can use only cab bus address 4 or 48-63. That means effectively on a PowerCab bus it can only use address 4, there can't be more than one on the whole bus. Quite disappointing but OK enough for home since I had no plan to have more.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span></span></p>
+
+<a href="2016-10-08_nce_limitations.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-10-07_nce_switch-8.html">
+    <h2 class="post-title">2016-10-07 - NCE Switch-8</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p style="text-align:left"><span>I got an NCE Switch-8 to learn what I can (and cannot) do with it for Randall. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Looking at the electronics on the board… If there’s one thing I like about the NCE electronics, it is that they are </span><span style="font-style:italic">not</span><span>&nbsp;fancy. This is the tech I grew up with and I can look at the board and recognize the components and understand what they do. I hope it will stay like that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Microproc: PIC16F1936</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.microchip.com/wwwproducts/en/PIC16F1936" style="color:inherit;text-decoration:inherit">http://www.microchip.com/wwwproducts/en/PIC16F1936</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf" style="color:inherit;text-decoration:inherit">http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf</a></span></p>
+<p style="text-align:left"><span>Pin 1 = Vpp (programing voltage)</span></p>
+<p style="text-align:left"><span>Pin 8 = Vss (-)</span></p>
+<p style="text-align:left"><span>Pin 20 = Vdd (+)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Power: MCC 7805CT</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.mccsemi.com/up_pdf/MC7805CT(TO-220).pdf" style="color:inherit;text-decoration:inherit">http://www.mccsemi.com/up_pdf/MC7805CT(TO-220).pdf</a></span></p>
+<p style="text-align:left"><span>Front Left to Right : Pin 1 / 2 / 3</span></p>
+<p style="text-align:left"><span>Pin 1 = Input / Left</span></p>
+<p style="text-align:left"><span>Pin 2 = GND</span></p>
+<p style="text-align:left"><span>Pin 3 = Output / Right</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>On the Switch-8, the large programming header can be used to get the +5 from the 7805.</span></p>
+<p style="text-align:left"><span>From top, #2 is the +5 and #3 is the Gnd from 7805 (shared with the GND headers).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>NCE AIU01: there's a similar 7805. A +5V can be soldered on the little through-hole just on top of the 7805 on the board. Measures 5V. For a single IR sensor, use a 220 Ω resistor.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-09-26_direct_access_to_nce_q-snap_mk2.html">
+    <h2 class="post-title">2016-09-26 - Direct Access to NCE Q-Snap Mk2</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p style="text-align:left"><span>From both the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200590909-Board-Versions-and-Jumper-Settings" style="color:inherit;text-decoration:inherit">NCE USB v7</a></span><span>&nbsp;doc (see NCE website) or from</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/help/en/package/jmri/jmrix/nce/packetgen/NcePacketGenFrame.shtml" style="color:inherit;text-decoration:inherit">http://jmri.sourceforge.net/help/en/package/jmri/jmrix/nce/packetgen/NcePacketGenFrame.shtml</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Example: 0xAD is for switching an Accy/Signal. There is no provision to read the state.</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>E.g. 0xAD 0x00 0x03 0x03 0x00 ⇒ throw 0x0003 in normal direction</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>E.g. 0xAD 0x00 0x03 0x04 0x00 ⇒ throw 0x0003 in reverse direction</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>0 is an invalid address.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Max address is 2044 (0x7FC) which is a broadcast address for Accy.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Note: when trying in JMRI &gt; NCE Command, "Binary" means hex without x, seriously \o/ ?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Lockout CV 556:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Use on Address of input #1, which is 4 for my home one.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>556 = 0x022C</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>0xAF is Ops ACCY programming.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>AF 00 04 02 2C [0=unlocked | 1=locked]</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>This works. It locks buttons out.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ACCY on controller can still be used to throw turnouts.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>That means I can trivially command that from an Arduino and bypass JMRI if needed.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-08-25_nce_q-snap_and_eztrack_6_crossovers.html">
+    <h2 class="post-title">2016-08-25 - NCE Q-Snap and EZTrack #6 Crossovers</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p style="text-align:left"><span>Experiment from tonight: control the EZTrack #6 crossovers using the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>. ⇒ Failed.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>I have 2 EZTrack #6 turnouts mounted in cross-over configuration. The idea was to power them from a single Q-Snap output to save one output for each cross-over.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The Q-Snap has no problem driving a single #6. But ever the largest timing I tried does not make the crossover (2 turnouts in parallel) toggle properly. They either bounce or switch half-way.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>I also tried using a 9V DC power brick instead of the DCC power. That didn't help. Supposedly that way the turnout should get 9x2-2 = 16 VDC. However from experience I remember I always failed to trigger them in DC, which is why I previously used the AC from the EZTrack ACC power brick.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-08-22_home_control_panel.html">
+    <h2 class="post-title">2016-08-22 - Home Control Panel</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/train" title="View All Category Posts">Train</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/products/50" style="color:inherit;text-decoration:inherit">DigiX</a></span><span>: 11 x 6 in</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>: 4 x 3 in (DCC bus)</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>: 4 x 3 (2 RJ12, comes with one cable)</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.gabotronics.com/development-boards/xmega-xminilab.htm" style="color:inherit;text-decoration:inherit">XminiLab scope + board</a></span><span>: 2 x 3 // 3.5 x 3 in</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526389-UTP-Universal-Throttle-Panel" style="color:inherit;text-decoration:inherit">NCE UTP</a></span><span>: 3 x 2 x 2 in deep</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:448.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:621.00px"><img alt="" src="img_c985daf3252ab87f2b786481eb693894a2892801de0919ad7654291ee92b4cadd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Notes:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Q-Snap really needs 3 outputs per turnouts, it carries its own common per twin-coil. It's not clear whether I can share the commons since each one has its own capacitor.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The DigiX relays OTOH work by sharing the AC common so I have 2 outputs per turnouts plus one common.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-08-04_yard_design_links.html">
+    <h2 class="post-title">2016-08-04 - Yard Design Links</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/train" title="View All Category Posts">Train</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:133.00px;margin:-0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:488.00px"><img alt="" src="img_1c1814f0720c5aaf3d31605f7acf80e4c0fadd80706b7040448ea0dcb25d2741i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Yard Design 10 Rules: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.housatonicrr.com/yard_des.html" style="color:inherit;text-decoration:inherit">http://www.housatonicrr.com/yard_des.html</a></span><span>&nbsp;very good intro.</span></p>
+<p style="text-align:left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhat unrelated, very interesting read on </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.housatonicrr.com/Index.htm" style="color:inherit;text-decoration:inherit">Housatonic Railroad Design Philosophy</a></span><span>.</span></p>
+<p style="text-align:left"><span>Tips of Freight Yard design: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.featherrivertrains.com/documents/kal_12248.pdf" style="color:inherit;text-decoration:inherit">http://www.featherrivertrains.com/documents/kal_12248.pdf</a></span></p>
+<p style="text-align:left"><span>Yard Operations and Design: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.x2011west.org/handouts/ldBootcamp-YardOps.pdf" style="color:inherit;text-decoration:inherit">https://www.x2011west.org/handouts/ldBootcamp-YardOps.pdf</a></span></p>
+<p style="text-align:left"><span>Many LayoutVision pages relevant: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.layoutvision.com/id18.html" style="color:inherit;text-decoration:inherit">http://www.layoutvision.com/id18.html</a></span><span>&nbsp;</span></p>
+<p style="text-align:left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Love for the yard: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.layoutvision.com/id19.html" style="color:inherit;text-decoration:inherit">http://www.layoutvision.com/id19.html</a></span><span>&nbsp;</span></p>
+<p style="text-align:left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to classification yard: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.layoutvision.com/id20.html" style="color:inherit;text-decoration:inherit">http://www.layoutvision.com/id20.html</a></span></p>
+<p style="text-align:left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ops on a classic 4x8: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.layoutvision.com/id39.html" style="color:inherit;text-decoration:inherit">http://www.layoutvision.com/id39.html</a></span></p>
+<p style="text-align:left"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beware of CAD: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.layoutvision.com/id40.html" style="color:inherit;text-decoration:inherit">http://www.layoutvision.com/id40.html</a></span><span>&nbsp;(agreed on the S curves!)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:168.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:454.00px"><img alt="" src="img_d84c0b0842b1c1af8242bc897082bb74613046c37254d4356ea711e19fe9d224i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span>Interesting design. Note that according to LayoutVison, typical west yards don't have an A/D.</span></p>
+<p></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2016-04-09_use_an_nce_aiu_and_ir_sensors.html">
+    <h2 class="post-title">2016-04-09 - Use an NCE AIU and IR sensors</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p><span>Since I have IR reflective sensors, the idea would be to connect them to an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>&nbsp;to detect position in 2 or 3 spots for speed control and automation.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>(Also I got an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>&nbsp;to control 4 twin-coils, This would cover the front cross-over (2 turnouts), the yard entrance Y1 and the Y1/Y2 yard turnout. Really the point is learning and see what it’s good for since I can already control these turnouts with the Arduino/DigiX).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>One idea is for speed matching, using one NCE AIU and 2 sensors.</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Embed the sensors in the EZTrack pointing up rather than side mounted.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Use these directly using JMRI/jython.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>This leaves 12 unused inputs on the AIU.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span></span></p>
+
+<a href="2016-04-09_use_an_nce_aiu_and_ir_sensors.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0008.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="000a.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

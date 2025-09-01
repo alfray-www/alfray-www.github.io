@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2023-04-09_conductor_2_virtual_blocks_i_4b939f77.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: Virtual Blocks Implementation" />
+
+<meta property="og:description" content="Let’s implement virtual blocks. These have been part of the original design and I now have a need for them." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_d170c7f9bdd42fcbc243cfe15d8f76d39363ff0879dce83c25bbb9f8a1ff9d96i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: Virtual Blocks Implementation" />
+
+<meta name="twitter:description" content="Let’s implement virtual blocks. These have been part of the original design and I now have a need for them." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_d170c7f9bdd42fcbc243cfe15d8f76d39363ff0879dce83c25bbb9f8a1ff9d96i.jpg" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0002.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-04-24_conductor_2_dsl_throttle_onl_87348bbf.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-04-05_conductor_2_maps.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2023-04-09 - Conductor 2: Virtual Blocks Implementation</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>Let’s implement virtual blocks. These have been part of the original design and I now have a need for them.</span></p>
+<p></p>
+<p><span>As a reminder, what is a virtual block and what is it good for?</span></p>
+<p><span>Let’s look at the Branchline. It’s is a simple straight chain of blocks as shown in yellow on this map:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:165.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:357.00px"><img alt="" src="img_d170c7f9bdd42fcbc243cfe15d8f76d39363ff0879dce83c25bbb9f8a1ff9d96i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span>Because the track is curved and goes through tunnels, it looks complicated, yet it’s really a straight line:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>[ B801 parking ] ⇒ [ B820 station ] ⇒ [ B830 canyon ] ⇒ [ B850 tunnel ] ⇒ [ B860 reversing block ]</span></li>
+</ul>
+<p></p>
+<p><span>One thing not obvious on this map is that B830 has no track sensor associated with it. When I did the original sensor wiring back in 2017, I simply couldn’t identify the corresponding track feeders, and I suspect (or hope) there are actually two blocks in there because it’s a fairly long segment. That’s why I left a B840 in my naming scheme, for potential later usage.</span></p>
+<p></p>
+<p><span>But now the concept behind the Conductor 2 automation is for the engine to track on which block the train is </span><span style="font-style:italic">supposed to be</span><span>, and match that with the reality of the track sensors. That’s a problem in this case since after moving out of block B820 we have no idea… the track appears empty, and that’s a definite error condition. How do we solve that in the script?</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>In this case, B830 is going to be a “virtual block”: we can add it to our block graph. Since the track is purely linear, we </span><span style="font-style:italic">know</span><span>&nbsp;that an engine coming out of B820 </span><span style="font-style:italic">must</span><span>&nbsp;be on B830. As soon as we see an activation on B850, we know the engine has reached the other side of that virtual block and all is fine. The only thing we can do is use a timeout -- if the engine hasn’t reached the other side in N seconds, then we know there’s a problem.</span></p>
+<p></p>
+<p></p>
+<p><span>In the DSL, we currently have:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">val B310 = block("NS768") named "B310"</span></p>
+<p><span>… and everything in the DSL is an “IBlock”.</span></p>
+<p></p>
+<p><span>The current IBlock requires a “systemName” property, so it’s very JMRI-centric. Which is not a real problem since Conductor is naturally JMRI-centric.</span></p>
+<p></p>
+<p><span>However a lot of places, especially the junction with the simulator, expect a block to have a unique system name. This is how the main engine exchanges block data with the simulator whilst trying hard to avoid “leaking” objects. System names are unique, and are consequently an adequate way to uniquely identify a block.</span></p>
+<p></p>
+<p><span>Thus a natural way to implement virtual blocks would be to use IBlock as-is and define a system name. It should be unique and not used by any other block. </span></p>
+<p></p>
+<p><span>It’s worth remembering that a block has 2 different names:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A block has a “default name”, which is its “JMRI system name”.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>block.systemName or block.defaultName returns that.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A block is also a “named variable”, which has a more user-friendly name.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>block.name returns the “named” name, and if not set returns the “default name”.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>So the real question is whether the virtual block’s “system name” is going to be synthetic (e.g. auto-generated, for example “virtual01”, “virtual02”, etc.) or selected by the user:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">val B350 = virtualBlock() named "B350"</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">val B350 = virtualBlock("vb350") named "B350"</span></p>
+<p></p>
+<p><span>In the current script, once we have blocks defined, we always use the variables, not the string names. The variable names are used only for display. The system names are used for keying and exporting.</span></p>
+<p></p>
+<p><span>Deliberation:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We support only this syntax:</span></li>
+</ul>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">val B350 = virtualBlock("vb350") named "B350"</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This allows us to create maps with deterministic system names. I can also define virtual blocks that this way become later regular blocks.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We will not merge the variable name into the system name.</span></li>
+</ul>
+<p></p>
+<p><span>The initial design called for the script to programmatically activate and deactivate the virtual block. E.g. literally a script would have looked like this:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>B820 has become inactive → train must have moved on → set virtual B830 to active.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>B850 has become active → train must have moved on → set virtual B830 to inactive.</span></li>
+</ul>
+<p></p>
+<p><span>I tried that and it quickly proved to be problematic: There is a bit of a conundrum on </span><span style="font-style:italic">when</span><span>&nbsp;and </span><span style="font-style:italic">how</span><span>&nbsp;a virtual block would be activated. The problem is that this is going to be different behavior when under simulation or real JMRI.</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Simulation: the route manager </span><span style="font-style:italic">simulator</span><span>&nbsp;automatically triggers the next block after a timeout to simulate engine movement.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>That naturally activates the virtual block. After another timeout simulating engine movement in the virtual block, the next real block gets activated automatically by the simulator.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>In the script, that block deactivates the virtual block.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Real JMRI: there’s currently nothing to activate the virtual block.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The script needs to check, while the block is occupied, that the block sensor is indeed active. When it becomes inactive, we can expect the train to have moved and programmatically activate the virtual block.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>But this basically has the script do more or less what the route sequence manager could be doing. Thus the route sequence manager should be the one activating the virtual block when the occupied block becomes inactive.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>There are two obvious red flags here. Once again the simulation is drastically different from the real behavior. We cannot define a mechanism based on “it works properly under simulation but not with the real sensor”.</span></p>
+<p><span>The other red flag was that the virtual block design relied on the script driving the activation of the block. Instead we should strive for the route sequence manager to take care of it, and do it the same way under simulation or not:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Route manager detecting the current block is no longer activated:</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Right now it expects one of the outgoing blocks to become active.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Change: If no outgoing blocks are active yet there’s </span><span style="font-style:italic">only one</span><span>&nbsp;and it’s a virtual block, activate that.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Potential issue: More than one virtual block ⇒ should not be possible. Cannot choose. It’s an error. Prevented by enforcing there’s only one outgoing block.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Potential issue: Delay in next block activating. Now two blocks are active (the virtual block + the real block). It’s an error. Prevented by enforcing there’s only one outgoing block.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Route manager detecting the next (outgoing) block is activated:</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When marking the current block as trailing, if it’s a virtual block then also deactivate the underlying sensor.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Potential issue: none foreseen.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>So that’s the way to go. Let the route manager do what it is supposed to: manage the route. The script shouldn’t have to do what will only turn into boilerplate code.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-04-24_conductor_2_dsl_throttle_onl_87348bbf.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-04-05_conductor_2_maps.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

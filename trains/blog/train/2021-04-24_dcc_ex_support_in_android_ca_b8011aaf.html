@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2021-04-24_dcc_ex_support_in_android_ca_b8011aaf.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="DCC++ EX support in Android Cab Engineer app" />
+
+<meta property="og:description" content="Today on the bench, we have two things going on:" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_0fdcffde033dc2e0d21b8814d118fef102cb7b075cda6516ca2fe308145b3ffbi.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="DCC++ EX support in Android Cab Engineer app" />
+
+<meta name="twitter:description" content="Today on the bench, we have two things going on:" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_0fdcffde033dc2e0d21b8814d118fef102cb7b075cda6516ca2fe308145b3ffbi.jpg" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0005.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2021-07-03_motion_sensor_led_light_for__3ee06166.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2020-03-15_dwarf_signal_for_turnout_continued.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2021-04-24 - DCC++ EX support in Android Cab Engineer app</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Jmri</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>Today on the bench, we have two things going on:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:524.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_0fdcffde033dc2e0d21b8814d118fef102cb7b075cda6516ca2fe308145b3ffbi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>On the left side, we have a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3gDnQAC" style="color:inherit;text-decoration:inherit">“Wifi Kit 32” ESP32</a></span><span>&nbsp;running a fork of the latest </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dcc-ex.com/" style="color:inherit;text-decoration:inherit">DCC++ EX firmware</a></span><span>.<br>On the right side, we have my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://play.google.com/store/apps/details?id=com.alflabs.dcccab" style="color:inherit;text-decoration:inherit">Cab Engineer DCC Throttle</a></span><span>&nbsp;app for Android communicating with the DC++ EX command station.</span></p>
+<p></p>
+<p><span>A few clarifications and explanations are needed here.</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>First, I’ll be very clear: </span><span style="font-weight:700">the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dcc-ex.com/" style="color:inherit;text-decoration:inherit">DCC++ EX firmware</a></span><span style="font-weight:700">&nbsp;does </span><span style="font-style:italic;font-weight:700">not</span><span style="font-weight:700">&nbsp;support any ESP32, and my fork is mostly non-functional</span><span>. That project supports a few Arduino variations with corresponding motor shields used to generate the DCC track power. The firmware also supports very specific wifi or ethernet shields for the remote app communication. </span></p>
+<p></p>
+<p><span>I do have a few supported Arduino UNO or Nano, yet I did not have the adequate motor / wifi / ethernet shields to run the whole thing as-is.<br>Since I want this to adapt my app to work with the device, the wifi or ethernet shield is the mandatory part and that’s precisely what I did not have around. I do have a Digistump DigiX (mega with wifi clone) for my old layout using my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/layout-wifi" style="color:inherit;text-decoration:inherit">Translate control software</a></span><span>; I don’t want to rip that off though. I could order some Arduino wifi shields but right now shipping from low cost providers overseas is taking about forever.</span></p>
+<p></p>
+<p><span>On the other hand, I have a handful of ESP32 around. All of them have wifi, which is exactly what I need. How hard would it be to run the DCC++ EX firmware on them?</span></p>
+<p><span>The DCC++ EX firmware is not designed to build on ESP32, and without corresponding motor shields it’s rather moot to control any DCC. Yet for my Android app communication needs, that’s fine. So I did just that:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ralfoide/CommandStation-EX" style="color:inherit;text-decoration:inherit">https://github.com/ralfoide/CommandStation-EX</a></span><span>&nbsp;is my fork of the DCC++ EX firmware to build on ESP32.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It uses the same PlatformIO configuration file with a new “esp32” target.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I don’t have a suitable motor shield driver so I added a new “no-op motor driver” that does exactly nothing.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>My fork further disables DCC waveform generation ISR since I have no need for it.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I was agreeably surprised to see the firmware had support for an I2C LCD (got one here), or even an OLED exactly like the one included on the &nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3gDnQAC" style="color:inherit;text-decoration:inherit">“Wifi Kit 32”</a></span><span>&nbsp;board. However the default implementation is Arduino-pin centric so I added a new implementation to support the OLED screen via the U8G2 library.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The default firmware supports either the AT-based wifi (ironically implemented using an ESP8266) or an ethernet shield. Neither of these are suitable as-is on the ESP32. I added a new “Wifi ESP32” implementation by forking their ethernet shield support and adapting it to support the late-init style of the wifi.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The was some low-level code that I simply disabled with the appropriate “#if !defined(ESP32)” which was performing I don’t know what DCC-related duty.</span></li>
+</ul>
+<p></p>
+<p><span>The result of that fork is available here on Github at </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ralfoide/CommandStation-EX" style="color:inherit;text-decoration:inherit">https://github.com/ralfoide/CommandStation-EX</a></span><span>&nbsp;after I cleaned it a bit. The “no-op motor driver” is IMHO something the DCC++ EX project should have upfront, to make it trivial to debug the firmware without affecting any real DCC accessories or to make it easier to port their firmware to new architectures. The OLED U8G2 and the Wifi ESP32 support are fairly obvious. For that latter, I used the WiFiServer / WiFiClient Arduino-based classes; they integrate very well with the ESP32 and basically mirror the “Ethernet Interface” that was implemented in the DCC++ EX code.</span></p>
+<p></p>
+<p><span>I obviously did not spend any effort trying to support the feature set of the ESP32 nor its FreeRTOS foundation. For example the DCC++ EX firmware is very careful to only perform a small incremental unit of work in its main loop, updating only part of the OLED display, or processing only part of the DCC cab wifi chatter. All these would be better architectured as individual FreeRTOS tasks communicating between each other with the appropriate FreeRTOS semaphores, queues, or message buffer synchronization APIs. That would allow using the two CPU cores more efficiently when available.</span></p>
+<p></p>
+<p><span>In the end, that did serve me well to debug the app behavior though, which was the whole point.</span></p>
+<p></p>
+<p><span>The &nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://play.google.com/store/apps/details?id=com.alflabs.dcccab" style="color:inherit;text-decoration:inherit">Cab Engineer DCC Throttle</a></span><span>&nbsp;app for Android is available on the Google Play store and the latest “beta” v0.1.5 version is available by joining the “beta channel”. It features:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>New: Connect to DCC++ EX command stations.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There is no auto-discovery yet. I will likely add that later; apparently this is done by scanning for a wifi access point with a name of “dccex-&lt;mac address&gt;” and I could change my ESP32 port to perform that too.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>New: Support for Track Power control in the JMRI / WiThrottle protocol.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This is supported by the DCC++ EX command stations.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>For JMRI using an NCE command station, the track power is shown as “Unknown”. I’ve added an app setting to hide the track power control card in that case, so if you want that card yet don’t see it, enable it in the app settings.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>New: Connection status card (useful with flaky wifi).</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Connection status used to be a small line updating at the bottom of the screen. Although I do like that a lot, I do realize it can be quite subtle for many users. The new card makes the connection status more obvious. More importantly it clearly indicates if the connection is being lost and a reconnection attempt is happening. The card can be disabled in the settings, in which case the old one-line status is shown.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>New: Edit/delete server entries.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Sort of the kind of obvious functionality that is coming slowly… That’s still version 0.1.x after all.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Updated JMRI heart beat handling &amp; reconnection.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>That’s an area where I had partial support so I finally completed it. I </span><span style="font-style:italic">believe</span><span>&nbsp;I’m following the WiThrottle heartbeat protocol properly (as much as I can tell from the lacking documentation).</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I also added my own check on that. If the app can’t talk to the JMRI server, it automatically disconnects and reconnects. I found that useful on flaky wifi networks. I prefer the app to tell me it fails to connect to the server than let me hanging and believe my commands </span><span style="font-style:italic">may</span><span>&nbsp;be received some day later.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>The step in the app is translating as well as focusing on implementing DCC Fn support, with both profiles and customization. The current UI in the app is limited to F0..F8 and fixed quick functions, which is not even enough for my own needs. </span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2021-07-03_motion_sensor_led_light_for__3ee06166.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2020-03-15_dwarf_signal_for_turnout_continued.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

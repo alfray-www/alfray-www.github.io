@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Randall Museum Model Railroad" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/randall/000b.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
+<meta property="og:description" content="Back in November, I did a major update to the Vision&nbsp;software that drives the Vision computer&nbsp;at the museum for the Train Vision Project. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the chrome://tracing protocol&nbsp;and the Perfetto web UI, which I can then collect remotely and analyze later." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_df9ade82487782d54fd4e880a4053d4694ceb4d2c770eeeeb5d6dccaa2cad84fi.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
+<meta name="twitter:description" content="Back in November, I did a major update to the Vision&nbsp;software that drives the Vision computer&nbsp;at the museum for the Train Vision Project. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the chrome://tracing protocol&nbsp;and the Perfetto web UI, which I can then collect remotely and analyze later." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_df9ade82487782d54fd4e880a4053d4694ceb4d2c770eeeeb5d6dccaa2cad84fi.png" />
+
+<title>Blog: Randall Museum Model Railroad</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="000b.html">Blog: Randall Museum Model Railroad</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">Introduction</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Blog &amp; News</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">About the Model Railroad</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/videos.html" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="font-style:italic">The Randall Museum in San Francisco hosts a large HO-scale model model railroad. Created by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span style="font-style:italic">&nbsp;starting in 1961, the layout was donated to the Museum in 2015. Since then I have started automatizing trains running on the layout. I am also the model railroad maintainer. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">This blog</a></span><span style="font-style:italic">&nbsp;describes various updates on the Randall project and I maintain a separate </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">blog for all my electronics</a></span><span style="font-style:italic">&nbsp;not directly related to Randall. </span><span></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="000a.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="000c.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-11_train_vision_detection_and_p_136b337d.html">
+    <h2 class="post-title">2022-01-11 - Train Vision Detection and Perfetto Tracing</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-11-27_new_version_for_train_vision.html" style="color:inherit;text-decoration:inherit">Back in November</a></span><span>, I did a major update to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/" style="color:inherit;text-decoration:inherit">Vision</a></span><span>&nbsp;software that drives the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;at the museum for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-09-20_train_vision.html" style="color:inherit;text-decoration:inherit">Train Vision Project</a></span><span>. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool/" style="color:inherit;text-decoration:inherit">chrome://tracing protocol</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ui.perfetto.dev/" style="color:inherit;text-decoration:inherit">Perfetto web UI</a></span><span>, which I can then collect remotely and analyze later.</span></p>
+<p></p>
+<p><span>Here’s an example of run from last Saturday:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:249.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_df9ade82487782d54fd4e880a4053d4694ceb4d2c770eeeeb5d6dccaa2cad84fi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>What we see above is an automated run from the mainline Freight train. Rows represent cameras 1, 2, and 3 respectively. Let’s look at camera 1 in detail:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:227.02px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:634.00px"><img alt="" src="img_7f3ea6295f722a0f0d98b8f2f6a671bcab40d548c1efcb90fb68a344a7016528d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span></span></p>
+
+<a href="2022-01-11_train_vision_detection_and_p_136b337d.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-10_planning_for_2022.html">
+    <h2 class="post-title">2022-01-10 - Planning for 2022</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>This year I’d like my projects to enhance the automation. There are two automation additions I want to get to, namely </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.dcct9cs2zllo" style="color:inherit;text-decoration:inherit">Fairfield</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2018-11-22_more_automated_routes.html" style="color:inherit;text-decoration:inherit">Trolley line</a></span><span>; however I realize these require a lot of research &amp; preparation work that is mostly software and, if I go there, it will be yet another 6-9 months with nothing tangible for others to actually see.</span></p>
+<p></p>
+<p><span>So instead I’d like to focus on enhancing the variety of the current automation. </span></p>
+<p></p>
+<p><span style="font-weight:700">1- Branchline Automation</span></p>
+<p></p>
+<p><span>We currently have a single engine running, and we park it on the B811/B801 storage track. However the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.frbaeoqrvbt" style="color:inherit;text-decoration:inherit">track &amp; panel</a></span><span>&nbsp;supports 3 storage tracks.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:154.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_81f92ec1f7c63fe9b5ea1298aab86141a2b90a2667f6cde9010527dda60e7631i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:10pt;font-style:italic">Branchline/Mainline Track Diagram (blue is mainline, green is branchline)</span><span style="font-style:italic">.</span></p>
+<p></p>
+<p><span></span></p>
+
+<a href="2022-01-10_planning_for_2022.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-08_documentation_update_and_a_t_047ce9f2.html">
+    <h2 class="post-title">2022-01-08 - Documentation Update and a Trip Down Memory Lane</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>I’ve spent some time updating the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation" style="color:inherit;text-decoration:inherit">Randall Documentation</a></span><span>&nbsp;git repository. What’s changed:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation/src/master/hardware/" style="color:inherit;text-decoration:inherit">hardware</a></span><span>&nbsp;folder.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Currently it only contains the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/nce_fulgurex.html" style="color:inherit;text-decoration:inherit">PFM Fulgurex</a></span><span>&nbsp;documentation.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I plan to add more to collect the user manual of all the hardware we </span><span style="font-style:italic">currently</span><span>&nbsp;</span><span>use on the train layout, from the command station, to the various electronic boards such as auto reversers or electronic circuit breakers.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation/src/master/ggmrc_history/" style="color:inherit;text-decoration:inherit">ggmrc_history</a></span><span>&nbsp;folder. </span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This contains paper documentation I found on the layout’s archives. I scanned them all a few years ago. Scan quality was so-so; image contrast is really poor on many of these. I tried my best to find what they describe and rename them accordingly.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>I was particularly interested in the historical documents I could find. They cover a wide time range, from 1965 up to 2010.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:257.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.00px"><img alt="" src="img_ed555396101d1d22dbf0f8c5208eedbc3976e8c9f85725d3423e041fea4a761fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:10pt;font-style:italic">Layout wiring standard “adopted June ‘65”</span><span style="font-style:italic">.</span></p>
+<p></p>
+<p><span>However these documents are a mixed bag. Some are early design schematics for the mainline or the yards, which may or may not be relevant today. There are some early construction standards for the layout. Others describe equipment which is not there anymore. There are a few yard or panel descriptions that I could not quite relate exactly to the layout, so these are labeled as ‘unknown’.</span></p>
+<p><span></span></p>
+
+<a href="2022-01-08_documentation_update_and_a_t_047ce9f2.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-06_automation_maintenance.html">
+    <h2 class="post-title">2022-01-06 - Automation Maintenance</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>On the software side, while traveling during the xmas break, I have spent time cleaning up the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor" style="color:inherit;text-decoration:inherit">Conductor source code</a></span><span>, which is my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">script-based software that drives the entire model layout automation</a></span><span>. I have not changed any functionality, just done maintenance on the code base; I have modularized the code to split the parser and the script engine into an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor/src/master/jmri/conductor/engine1/" style="color:inherit;text-decoration:inherit">engine module</a></span><span>, and I have updated all the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dagger.dev/dev-guide/" style="color:inherit;text-decoration:inherit">dagger components</a></span><span>&nbsp;to make it easier to write tests for just the scripting engine.</span></p>
+<p></p>
+<p><span>I have remotely deployed the new version on the layout, and as desired this update was totally silent and unnoticed.</span></p>
+<p></p>
+<p><span>On the train model side, we’ve had issues with the Branchline for a little while.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:236.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b0f211ffaec9ce20106c12f77423023d006a17128c8775209f4364fe18f39af0i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Last month, the 2-car Santa Fe RDC from Rapido stopped working. I “solved” that by just running it with only one of the two RDC cars. The unit is also not doing sound anymore, at least not in a consistent manner. &nbsp;That’s unfortunately the second Rapido RDC unit that developed similar problems. The small motors they use for each truck is apparently the weak link, and since they use two of them, the unit can’t run well once one of the motors fails. For the RDC SP 11, I worked around that by disconnecting one of the motors, making it single-truck powered, which is fine on our flat branchline. I could do that too here, however it won’t solve the sound issue (it does make sound from time to time IIRC so it’s not a speaker/wiring issue, maybe more like a decoder issue).</span></p>
+<p></p>
+<p><span>The other way I “fixed” the branchline automation is by thoroughly cleaning the engine wheels and then scrubbing the track where it was losing power with the Walthers hand cleaning tool. </span></p>
+<p></p>
+<p><span>But at some point we need to just work around the problem and address it. Time for an engine/train change on the branchline.</span></p>
+<p></p>
+<p><span>There’s a similar issue on the mainline. The trains were not stopping at the right spot, and that got solved by cleaning the engine wheels. But more importantly, we’re going to have to swap the engines at some point. Out of the two UP SD70ACe engines, one is out of commission, and I’m currently running with the backup </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.rrpicturearchives.net/Locopicture.aspx?id=169705" style="color:inherit;text-decoration:inherit">UP 8749</a></span><span>. There is no backup for the backup so we’ll need to deal with that.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:180.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:739.00px"><img alt="" src="img_8cca41098d956cc9568935818390384be2bb93db06c085a0ff857252f00a2e36i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The easy solution here is to try to get yet another UP SD70ACe once available. Currently </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.walthers.com/products/trains/locomotives-traction/diesel/scale-ho_scale-road_name-union_pacific-dcc-y_2-sound-y_4?product_list_limit=240" style="color:inherit;text-decoration:inherit">Walthers</a></span><span>&nbsp;or </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.trainworld.com/catalogsearch/result/index/?q=sd70ace&amp;scale=151" style="color:inherit;text-decoration:inherit">TrainWorld</a></span><span>&nbsp;have none though. In any case, one of the many pending tasks I have is to look at what’s wrong with the first unit and fix it. What I have done in the past that worked well is get any similar unit from the same OEM and just do a shell swap.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-01_happy_new_year.html">
+    <h2 class="post-title">2022-01-01 - Happy New Year</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>Happy New Year 2022 from the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span>&nbsp;team.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:609.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:609.00px"><img alt="" src="img_8843f009049fab0b9745364f3a6ae24697ac866007da8588baf88c180b25faa8i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:431.28px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:588.90px"><img alt="" src="img_a8651921b7922f38592bcc414fdd90689f7645a936074f9d0725d74c1373f35bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>2021 was yet another odd year. It was marked by the museum reopening in October. The usual lot of mandatory </span><span>layout maintenance</span><span>&nbsp;happened with various things to fix (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-06-05_work_update_t80_t90_and_siding_b91.html" style="color:inherit;text-decoration:inherit">B91</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-04-18_repair_for_block_b320.html" style="color:inherit;text-decoration:inherit">B320</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-11-15_mainline_b321_repair_at_t322.html" style="color:inherit;text-decoration:inherit">B321</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-01-09_work_update_on_t150_panels_and_lights.html" style="color:inherit;text-decoration:inherit">T150</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-02-06_repair_for_turnout_t320.html" style="color:inherit;text-decoration:inherit">T320</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-07-06_repair_for_turnout_t450.html" style="color:inherit;text-decoration:inherit">T450</a></span><span>, etc). Some new stuff happened like balloon auto-reversers for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2020-12-06_dcc_control_for_bridgeport_turnout.html" style="color:inherit;text-decoration:inherit">Bridgeport yard</a></span><span>, and a good amount of time spent </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-07-02_understanding_the_building_l_9aa84d3d.html" style="color:inherit;text-decoration:inherit">understanding the lighting</a></span><span>.</span></p>
+<p><span></span></p>
+
+<a href="2022-01-01_happy_new_year.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-12-23_update_to_vision_computer_vl_557b4ea0.html">
+    <h2 class="post-title">2021-12-23 - Update to Vision Computer: VLC with RTSP on Debian Bullseye</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>I’ve spent the last couple weeks doing background computer maintenance mostly. The kind of stuff nobody at the layout will notice, because things magically get fixed before they are too broken.</span></p>
+<p></p>
+<p><span>If you don’t like computer stuff, you can skip this one as we’re going to get deep in the weeds with Linux commands.</span></p>
+<p><span></span></p>
+
+<a href="2021-12-23_update_to_vision_computer_vl_557b4ea0.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-12-16_randall_layout_git_repositor_6c2286c7.html">
+    <h2 class="post-title">2021-12-16 - Randall Layout Git Repositories on Bitbucket</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>I keep all the source code and configuration files related to the automation in git repositories on </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/" style="color:inherit;text-decoration:inherit">Bitbucket</a></span><span>. At first I was using my private workspace, and I finally moved the various projects into a proper dedicated workspace:</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/model-railroad/</a></span></p>
+<p></p>
+<p><span>This now contains three repositories:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor" style="color:inherit;text-decoration:inherit">conductor</a></span><span>: The main repository that holds the various projects used for the train automation of the railroad exhibit. Most notably it contains the sources for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html#h.wvt4jys24nsw" style="color:inherit;text-decoration:inherit">Conductor</a></span><span>&nbsp;software that drives the automation, the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html#h.4872t6a07wp" style="color:inherit;text-decoration:inherit">RTAC</a></span><span>&nbsp;program that runs on the Android display tablets, and a few other Arduino/Pic16f projects.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision" style="color:inherit;text-decoration:inherit">vision</a></span><span>: The software that runs on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;at the museum, playing recorded videos, and also playing live feeds from cameras located around the layout.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation" style="color:inherit;text-decoration:inherit">randall-documentation</a></span><span>: This one is totally new. I moved here all the public documentation I have for the Randall Museum Model Railroad.</span></li>
+</ul>
+<p></p>
+<p><span>The documentation repository contains files for layout maps, layout schemas, layout labels, and all the documentation I wrote for the museum staff and the Saturday Operators. I do have links to that in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">introduction</a></span><span>&nbsp;page however all the source material was just on my own drive. Now it’s properly archived as it should with proper revisions. One goal of having a public repository is to have volunteers submitted patches to extend it. For that purpose I’ve clarified in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation/src/master/README.md" style="color:inherit;text-decoration:inherit">README</a></span><span>&nbsp;the license and the file formats that can apply here.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-11-28__cracker_jack_illuminated_billboard.html">
+    <h2 class="post-title">2021-11-28 - “Cracker Jack” Illuminated Billboard</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>Today Allen and I finally got the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://microstru.com/collections/o-ho-billboards/products/cracker-jack-billboard" style="color:inherit;text-decoration:inherit">“Cracker Jack” illuminated HO-sized billboard</a></span><span>&nbsp;</span><span>powered by the layout’s building lighting panel:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:313.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_cc78fa2472356656f815eeb1f320ee533b7844baa902dda2803b66755c580259i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Even with the full room lights on, it’s still quite visible and should be a nice animation for visitors:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:393.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b44fb734902501d5d79a544ea7cb7355cb7a0925b4ea7879c0c9809dd69ee278i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-06-26_work_update_and_a_look_at_bu_ea32efd0.html" style="color:inherit;text-decoration:inherit">Back in June</a></span><span>, Allen got the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://microstru.com/collections/o-ho-billboards/products/cracker-jack-billboard" style="color:inherit;text-decoration:inherit">billboard</a></span><span>&nbsp;and we temporarily installed it, yet it remained unpowered. The sign can be powered via a battery and instead I wanted it connected to the layout’s building lighting circuits using an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/2UCLQe7" style="color:inherit;text-decoration:inherit">Adjustable Voltage Regulator</a></span><span>. </span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:200.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_2887691978a287da9e33cce1a5d7579ebe6e8813249f829c4758dbdba8d9487di.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>That project took a bit longer than expected -- first I plugged the voltage regulator in reverse (thus increasing the voltage instead of reducing it), and that killed the billboard’s control board. So I got a replacement for that, and this time wired it up correctly. Allen and I made the building self-contained with the voltage regulator and I tried adding an orange LED inside to add some scene lighting, which honestly didn’t work and is quite sub-par.</span></p>
+<p><span></span></p>
+
+<a href="2021-11-28__cracker_jack_illuminated_billboard.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-11-27_new_version_for_train_vision.html">
+    <h2 class="post-title">2021-11-27 - New Version for Train Vision</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>Concluding 4 days of work, this morning I installed the new version of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision" style="color:inherit;text-decoration:inherit">vision</a></span><span>&nbsp;software on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;at the museum for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-09-20_train_vision.html" style="color:inherit;text-decoration:inherit">Train Vision Project</a></span><span>.</span></p>
+<p></p>
+<p><span>The project has three cameras looking at the layout and displays live videos when it detects trains. In the initial version, that video was really choppy. It was fine when I was experimenting with this on the wifi at home, but the same cameras + laptop resulted in a really bad frame rate when using the sub-par wifi in the train room.</span></p>
+<p></p>
+<p><span>So I spent the Thanksgiving break entirely rewriting that part of the software. In the previous version I was using the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bytedeco/javacv/blob/master/src/main/java/org/bytedeco/javacv/FFmpegFrameGrabber.java" style="color:inherit;text-decoration:inherit">FFmpegFrameGrabber</a></span><span>&nbsp;to get the cameras’ </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol" style="color:inherit;text-decoration:inherit">RTSP</a></span><span>&nbsp;h264 feed, analyzing the frames for motion, and then feeding them to the display by drawing them directly with a Canvas in a JPanel. That was really not optimal. In the new version, I replaced the custom viewers by instances of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/caprica/vlcj" style="color:inherit;text-decoration:inherit">VLCj</a></span><span>&nbsp;in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://capricasoftware.co.uk/projects/vlcj-4/tutorials/direct-rendering" style="color:inherit;text-decoration:inherit">Direct Rendering</a></span><span>&nbsp;mode, so now I have VLC driving the RTSP feed, and I use the reverse where the VLCj decoded frames are fed to the motion analyzer. They all work in their respective threads with blocking queues for synchronization.</span></p>
+<p></p>
+<p><span>The result is that the videos are really better looking now. Not choppy anymore. I also reconfigured the cameras to boost the contrast and saturation as the image was rather bland -- I overdid that part a tad much, I need to tune it down now.</span></p>
+<p></p>
+<p><span>The only downside is that CPU usage really went up, which makes sense since I now have 3 VLC viewers in 1280x720 @ 15 fps doing their work where before I had 3 meager 640x480 feeds at some very irregular frame rate. But that’s fine, because now I can underclock the analyzer threads and run them at 5 fps -- they don’t need to detect motion on every single frame. Overall the software now runs at 50-75% on the 4 CPU i7 cores which is on par with what I had before, but with better quality.</span></p>
+<p></p>
+<p><span>The last thing I’ve done is add a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/train-motion/src/experimental/src/main/java/com/alflabs/trainmotion/util/StatsCollector.java" style="color:inherit;text-decoration:inherit">statistics collector</a></span><span>&nbsp;for debugging purposes that can export the motion events to the chrome://tracing json format:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:270.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_5438d2c0c01768844139d1b5b243e866d13a52533bc89278fefb141e7ae5ea21i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>That should allow me to fine tune the motion detection thresholds.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-11-23_train_vision_maintenance.html">
+    <h2 class="post-title">2021-11-23 - Train Vision Maintenance</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>I’ve done some work on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;to get more reliable networking. The USB-to-ethernet adapter hasn’t been behaving as stable as I’d like to, and I fixed the wifi so at least I got that.</span></p>
+<p></p>
+<p><span>But maybe it’s not just that </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3EMDuDe" style="color:inherit;text-decoration:inherit">USB-to-ethernet adapter</a></span><span>&nbsp;that needs some more work though -- last time I went by the museum, all the port lights were off on the ethernet switch till I power-cycled it so maybe I should look at that first.</span></p>
+<p></p>
+<p><span>I have also updated the highlighter’s logic in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision" style="color:inherit;text-decoration:inherit">vision</a></span><span>, and actually I like the updated logic even less than the original. Look at these stats:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:295.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:675.00px"><img alt="" src="img_4067b1744dd2885ef8a99b6292ce6b4528f0c2652ebee59b268a403162e3f970i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>That’s terrible. Too many highlights. The thing is too sensitive, I need to change it to have some kind of adaptive threshold. Some of the highlights happen when no trains are moving, probably because the RTSP h264 stream is of subpar quality and very noisy, not to mention noticeable inconsistent frame rate. That’s why I need that wired ethernet to work.</span></p>
+<p></p>
+<p><span>And what’s up with the lack of stats after noon? I know the laptop was running at least till 4-5 pm. If it were a 12/24 hour mismatch, the “12 pm” events should look like midnight (12 am) and the 4-5pm events should look like 4-5am, which is not the case here. More mysteries.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="000a.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="000c.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

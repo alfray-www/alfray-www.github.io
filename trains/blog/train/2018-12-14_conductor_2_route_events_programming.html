@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2018-12-14_conductor_2_route_events_programming.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: Route / Events Programming" />
+
+<meta property="og:description" content="Just to keep some perspective, here is how the current Conductor 1&nbsp;script is architectured:" />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: Route / Events Programming" />
+
+<meta name="twitter:description" content="Just to keep some perspective, here is how the current Conductor 1&nbsp;script is architectured:" />
+
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0007.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2019-01-20_mini_wifi_camera_and_train_l_10c40469.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2018-12-09_sq23_mini_camera_for_cab_rides.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2018-12-14 - Conductor 2: Route / Events Programming</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>Just to keep some perspective, here is how the current </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 1</a></span><span>&nbsp;script is architectured:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There are 3 routes, 2 for passenger and 1 for branchline, with the passenger ones alternating.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Where appropriate, the routes define variables for speed &amp; timers upfront so that they can be adjusted for new engines / train configuration.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>They lack profiles but these are essentially an extension of the current setup.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Within each route are </span><span style="font-style:italic">sequences</span><span>. Since the script is a parallel execution script, the sequences are implemented using state keeping, but that’s mostly what the states are for.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>That’s actually a bit of an issue as it makes the states hard to figure and keep track of, creating some unforeseen complications sometimes.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There are events not associated with any route.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Main example is the Sonora switch in non-automated mode.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A lesser example is the RTAC display especially for stopped/error modes.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>Having changed the trains for automation recently, I can see where the system works and where it breaks:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Mostly I changed the passenger trains just by adjusting the speeds.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I did alter 1 or 2 timers, for example the Freight’s run time before stopping at the mid station.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It broke when I tried to use an MTH engine as its functions usage is vastly different.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Same goes for the Rapido which has more fancy functions. In that case changing the engine in a route would require customizing the script for different functions.</span></li>
+</ul>
+<p style="text-align:left"><span></span></p>
+<p></p>
+<p><span>Function differentiation could be done in the script by having, for example, an integer variable for a grade crossing sound for example and then making sure the command that triggers that can use that variable. An invalid value such as -1 could be used to disable the command.</span></p>
+<p></p>
+<p><span>Another suggestion is to allow a route script to be exactly that, a condition sequence of tests/actions. So for example we could write “if address = 1234 then { on (condition) → (events) }”. &nbsp;This is important -- it means the route events closure is executed at each iteration, whereas right now it would be executed once during startup to define all the events with delayed condition closures. There’s some benefit in doing that as it would allow the events closure to be fully scripted with large if-block conditionals, loops, etc. Switching on states could actually using a switch/case instruction with an enum.</span></p>
+<p></p>
+<p><span>We still need to address having events not associated with a route. It’s possible to make a default “no-automated-route-active” route, but that seems a bit clumsy. Unless I just call it “default” and it’s not too bad. Rather than see these as synthetic routes, we could see them as special triggers: startup {}, loop {}, shutdown {}. The startup would happen once before any route is executed. The loop would run at the end of each iteration after the routes, and the shutdown would happen after the last route executes.</span></p>
+<p></p>
+<p><span>One part to elaborate is the sequencing with a route and the sequence management in a route.</span></p>
+<p><span>The goal is to do reservation and as indicated above for the sake of granularity we could do either sub-routes or automatic freeing. In the case of ABS on a continuous loop, we can do “on the fly” reservation using &nbsp;an N+2 window. For our use case it makes sense to start with 3 modes: global reservation, global reservation with automatic freeing, ABS window reservation.</span></p>
+<p><span>Implementation wise that means we’ll have different reservation strategies and plug the proper engine based on the route’s definition, with a sensible default (simplest case).</span></p>
+<p></p>
+<p><span>If we exclude the harder case of sub-routes, it makes sense to define the route as an </span><span style="font-style:italic">ordered</span><span>&nbsp;set of blocks.</span></p>
+<p></p>
+<p><span>Originally I wanted to add turnouts in the routes. However given the way the layout is wired at Randall, turnouts are always part of a specific block. They do not have a sensor of their own, and never have their own block. One reason to add them is so that they can be locked by a route reservation. This is good if we describe the rails as a graph structure, as the turnouts are naturally the nodes linking the paths, and it could allow automatic re-routing. However here we’re not going to do that. Consequently listing turnouts provide no benefit in terms of reservation.</span></p>
+<p></p>
+<p><span>We can however add the turnouts if we also add normal/reverse direction. The info is not just the turnout but its desired state. That would allow the script to automatically set them for the required route, and when would depend on the route strategy, e.g. an ABS window strategy could just align them 2 blocks ahead and keep them reserved for 2 extra blocks past the train.</span></p>
+<p></p>
+<p><span>In the simplest case the automation should look like:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An ordered list of blocks and turnouts (with their thrown state).</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A default speed for the blocks, plus per-block speed override.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A startup sequence, using timers and/or blocks.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An end-route stop sequence, equally using timers and/or blocks.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>En-route pauses (e.g. for shuttle pause).</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Special events (horn, etc.) based on timers and/or blocks.</span></li>
+</ul>
+<p><span>If we are using automated reservation, we may want to customize the start/pause of the train. Ideally it should just be whatever the DCC momentum does.</span></p>
+<p></p>
+<p><span>There are two ways to organize the route’s sequence:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define an array of blocks / turnouts.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Separately define events which, like in Conductor v1, have conditions on the block occupancy and engine directions.</span></li>
+</ul>
+<p><span>Or:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define an array of blocks.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>For each block, add an events closure.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Keep track of the position of the train in the block sequence (aka “the current block) and only execute events for that block.</span></li>
+</ul>
+<p><span>Or:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All both styles. Each block can have its events closure, and there’s a “generic” events closure that can get executed at each iteration (similar to the “default” closure indicated above).</span></li>
+</ul>
+<p></p>
+<p><span>In summary we have script structure that looks like this:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Startup {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Route 1 {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Mode ABS # or Global-Lock</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Blocks [</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B311 eval {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T311 Normal,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B321 eval {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; After 5.seconds then { horn grade-crossing }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T330 Reverse,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B330 speed(cross-over),</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B340,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B350 virtual,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B360,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B370 eval {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B360,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B350 virtual,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B340,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B330 eval { … } speed(cross-over),</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T330 Reverse,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B321 eval { … },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T311 Normal,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; B311 eval { … },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; ]</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Eval {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; if () { }; switch(state) { case … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Loop {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Shutdown {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; On (condition) then { actions }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The syntax doesn’t quite work with groovy so it will need some work.</span></p>
+<p><span>The eval blocks probably need a specific syntax to create timers “on the fly” -- this could be implemented by having the current block being tracked with the time spent in the block.</span></p>
+<p></p>
+<p><span>This shows a potential example of “virtual” blocks. These would be declared as such to know they are not associated with any sensor. In this case the idea is that going up, B340 is activated. When the block is seen going off, the train is assumed to be in B350 so it is “virtually occupied”. Once B360 is activated, the virtual block is turned off and it is not an error. There are few issues with this as there is no guarantee that it is the expected train that shows up in B360. The other issue is how to handle flaky sensors, of which B340 is a good example.</span></p>
+<p></p>
+<p><span>Next we need to detail how error conditions are handled, for example when a block suddenly turns occupied and is not predicted to be the next one. Are we stopping everything, are there cases where we need to be lenient, etc.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2019-01-20_mini_wifi_camera_and_train_l_10c40469.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2018-12-09_sq23_mini_camera_for_cab_rides.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

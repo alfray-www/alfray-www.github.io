@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/randall/rtac.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="RTAC: Randall Train Automation Controller" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_3b03c231aaa46b74a6acaa8c1c52f7470194ecf91d5f47ba50f01d91a531eacfd.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="RTAC: Randall Train Automation Controller" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_3b03c231aaa46b74a6acaa8c1c52f7470194ecf91d5f47ba50f01d91a531eacfd.png" />
+
+<title>RTAC: Randall Train Automation Controller</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="randall/rtac.html">RTAC: Randall Train Automation Controller</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">Introduction</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Blog &amp; News</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">About the Model Railroad</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/videos.html" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span style="font-size:24pt;font-weight:700">Randall Train Automation Controller:</span></p>
+<p style="text-align:center"><span style="font-size:24pt;font-weight:700">“Conductor” and “RTAC” software</span></p>
+<p></p>
+<p style="text-align:center"><span>2023-07</span></p>
+<p></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-weight:700">RTAC</span><span>&nbsp;is free software for </span><span style="font-weight:700">model railroad computer control</span><span>&nbsp;with the main goal of </span><span style="font-weight:700">running trains automatically</span><span>&nbsp;and performing other </span><span style="font-weight:700">event-based automation</span><span>. It uses </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/" style="color:inherit;text-decoration:inherit">JMRI</a></span><span>&nbsp;to interface with a model railroad’s command station.<br>The “Conductor” server uses an event-based script to drive the computer automation.<br>The “RTAC” Android software displays the system status on a network of Android tablets.<br>The system was designed and is actively used to drive the automation of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.randallmuseum.org" style="color:inherit;text-decoration:inherit">Randall Museum</a></span><span style="font-weight:700">'s model railroad</span><span style="vertical-align:baseline">.</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="560" height="315" src="https://www.youtube.com/embed/XtwPmEy1OB0" frameborder="0" allowfullscreen></iframe></span></p>
+<p></p>
+<p><span>Starting in 2016, I worked on automating the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.randallmuseum.org" style="color:inherit;text-decoration:inherit">Randall Museum</a></span><span>'s model railroad, built by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span>.</span></p>
+<p></p>
+<p><span>The model railroad is an old HO DC model railroad that has been converted to DCC using an NCE command station and boosters. I wrote a fairly extensive description of the layout, which can be found here:<br> &nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall_layout.html" style="color:inherit;text-decoration:inherit">http://www.alfray.com/trains/randall_layout.html</a></span></p>
+<p></p>
+<p><span>The mainline turnouts </span><span style="background-color:rgb(255, 255, 255)">are controlled using rotary toggles (non-momentary) that are directly connected to their corresponding Tortoise or PFM Fulgurex slow-motion turnout motors, as I explained </span><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/nce_button_board.html" style="color:inherit;text-decoration:inherit">here</a></span><span style="background-color:rgb(255, 255, 255)">.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The model railroad is fairly large, and to get started we decided to only automate two parts of the layout: there are two specific automated routes, called the “passenger” and “branchline” routes.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:298.8pt"><p style="text-align:center"><span style="background-color:rgb(255, 255, 255);font-weight:700;vertical-align:baseline">Video of the Passenger Automation</span></p><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="450" height="253" src="https://www.youtube.com/embed/-_qlqWYfz_E" frameborder="0" allowfullscreen></iframe></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:298.8pt"><p style="text-align:center"><span style="background-color:rgb(255, 255, 255);font-weight:700;vertical-align:baseline">Video of the Branchline Automation</span></p><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="450" height="253" src="https://www.youtube.com/embed/PSfy2tQKMu8" frameborder="0" allowfullscreen></iframe></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">I proposed several other automated lines and as this initial phase works well, we might expand it later.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The automation is designed to be used by the museum staff and consequently the whole system is designed to be as seamless as possible. </span></p>
+<p></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.kbtg2cd8w4zs" style="color:inherit;text-decoration:inherit">1- Automation Overview</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.wvt4jys24nsw" style="color:inherit;text-decoration:inherit">2- Conductor v1 &amp; v2</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.k17dr0id5zrq" style="color:inherit;text-decoration:inherit">3- Conductor v2</a></span></p>
+<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.es8zcxanb5rb" style="color:inherit;text-decoration:inherit">3.1- Screenshots &amp; Behavior</a></span></p>
+<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.jfo0f970rtza" style="color:inherit;text-decoration:inherit">3.2- Route Scripting Language for Conductor v2</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.eouoduk2s53y" style="color:inherit;text-decoration:inherit">4- Conductor v1</a></span></p>
+<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.citn41cboe0u" style="color:inherit;text-decoration:inherit">4.1- Screenshots &amp; Behavior</a></span></p>
+<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.vcm2s8wc36s3" style="color:inherit;text-decoration:inherit">4.2- Event Language for Conductor v1</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.4872t6a07wp" style="color:inherit;text-decoration:inherit">5- RTAC, the Android Software</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.5z1zog9kjm89" style="color:inherit;text-decoration:inherit">6- Privacy Policy for RTAC</a></span></p>
+<p></p>
+<h1 id="h.kbtg2cd8w4zs" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>1- </span><span style="font-size:20pt">Automation Overview</span></h1>
+<p><span style="background-color:rgb(255, 255, 255)">Before digging into the details of how the automation software is implemented, this section is mostly educational and gives some background on the kind of equipment selected for this automation project.</span></p>
+<p></p>
+<p><span>Automating a model railroad requires three different aspects: sensors to detect the train, control of turnouts, and a way to connect all these to a computer running the control software. Here's a schematic overview of the system used on this layout:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:524.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:752.00px"><img alt="" src="img_3b03c231aaa46b74a6acaa8c1c52f7470194ecf91d5f47ba50f01d91a531eacfd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span style="background-color:rgb(255, 255, 255)">The core of the automation is a Linux computer running </span><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/" style="color:inherit;text-decoration:inherit">JMRI</a></span><span style="background-color:rgb(255, 255, 255)">, which interfaces with the NCE command station. Detectors are connected to the block panel to monitor which blocks draw power. DCC accessory decoders control the turnouts. JMRI provides a way to read data from the block sensors and control turnouts.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The system is not using any of the routes and </span><span style="background-color:rgb(255, 255, 255);font-style:italic">logix</span><span style="background-color:rgb(255, 255, 255)">&nbsp;modules of JMRI. Their system is in my opinion fairly limited in capabilities, not very flexible, yet at the same time extremely complex and obscure to set up for the benefit offered. Their UI model is a click-o-drome where everything is configured using a confusing bazillion of poorly designed dialog boxes and it’s fairly impossible to get an overview at a glance of the programmed system.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Instead Conductor is programmed using a single text file that describes all the events and actions in a very simple manner using a rich and descriptive custom programming language. The language design was inspired </span><span>by my experience with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.plcdev.com/introduction_grafcets" style="color:inherit;text-decoration:inherit">ladder logic</a></span><span style="background-color:rgb(255, 255, 255)">&nbsp;(such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://fr.wikipedia.org/wiki/Grafcet" style="color:inherit;text-decoration:inherit">Grafcet</a></span><span style="background-color:rgb(255, 255, 255)">) as used in industrial programmable logic controllers.</span></p>
+<p></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:199.2pt"><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:148.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:251.00px"><img alt="" src="img_cc1c5d4299df9864d2e2c9ffdfb9d8707718a892ecf08ef72acf6800d6efce12i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:148.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:265.00px"><img alt="" src="img_042b7fe8d5b3329f2e1098416491116ec4ad0eb70267fe8e680a0183c85e3276i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:148.40px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:265.00px"><img alt="" src="img_428f509d986dd8afb8fa22e6efc5f2279d05a6632e714396817608e5f56e269ai.jpg" style="height:168.57px;margin-left:0.00px;margin-top:-6.40px" title=""></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">One of the main goals of the changes made to the layout is to be actually as unobtrusive as possible. Most notably, the model railroad must be able to function in DCC without the aid of the computer (e.g. in case of malfunction).</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">This design and the choice made imply there are some compromises:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Block detection is limited to pure basic “something is drawing power” detection.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">We don’t use Railcom and the system does not know which locomotive is on a given block. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Such block detection only detects engines (which motors draw power from the track) and lighted cars. They do not detect cars which are electrically isolated from the track. This is not a problem in the automation we are currently running but it’s something everyone who has to deal with block detection must keep in mind -- for example how does one detect that part of a train has detached.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">The typical work-around for this is to add resistors on cars’ trucks.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Originally, the NCE Switch-8 was chosen because it can control the Tortoise turnouts from the mainline and due to its advertised capability of being driven by non-momentary toggles.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">It so turned out that I quickly realized not all the mainline turnouts had been converted to Tortoise. There are still a number of old Fulgurex turnout motors on the layout. As explained on the page </span><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/nce_fulgurex.html" style="color:inherit;text-decoration:inherit">NCE Switch-8 and PFM Fulgurex</a></span><span style="background-color:rgb(255, 255, 255)">, this can be solved by extra relays or DS64.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">It also turned out that the NCE Switch-8 did not actually work with non-momentary toggles, which was solved by reprogramming them as explained in </span><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/nce_button_board.html" style="color:inherit;text-decoration:inherit">NCE Button Board and non-momentary contacts</a></span><span style="background-color:rgb(255, 255, 255)">.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Finally, due to cost and time constraints, not all the blocks and not all the turnouts are equipped with sensors and DCC accessory control. A strategic number of them have been equipped as required by the first phase of the automation, with the goal to add more later as the system gets developed.</span></li>
+</ul>
+<p></p>
+<p><span>There are two automated routes with two different trains. Each route works in a similar principle: a train is stopped and waiting at a starting point. When an activation button is pressed, the train moves up the route till another specific point where it stops and reverses course towards the starting point. This is a point-to-point back-and-forth travel.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:298.8pt"><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:133.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:298.00px"><img alt="" src="img_5b6feb0f0c633cc17ad898b1717df55856c59b1eb17db5ec5ec3ebeacd47aabci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:298.8pt"><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:130.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:298.00px"><img alt="" src="img_7ed5cde5d0ccbe9e84d16ffba7d763aa3830cb882c653ac0adc8d25b6d54e939i.jpg" style="height:192.34px;margin-left:-47.36px;margin-top:0.00px;width:392.72px" title=""></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>I do get a few comments that this is a “simple” point-to-point automation. This kind of “shuttle” scheme has indeed been done repeatedly in DC using relays and there are readily available commercial modules doing just that.</span></p>
+<p></p>
+<p><span>The system I created allows us to do much more than just run the trains -- we have the same fine control over DCC functions as operators do. The trains are programmed to accelerate and decelerate depending on where they are in their route, as well as use all the DCC functions such as lights, bell, and horn. Moreover, speed and functions can be easily customized for each specific engine, a feature very useful to us as we routinely rotate our trains every few months to avoid excessive tear.</span></p>
+<p></p>
+<p><span>However my plan all along was to offer more than just a shuttle-type automation. Eventually what I want is to do route management where a given train runs along a predetermined route and only enters it when it is safe to enter. For example, right now we have a single passenger train on the mainline. What I envision later is multiple trains on the mainline, waiting for critical sections of the routes being free and automatically stopping and using sidings to pass each other.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Even with the current “shuttle” automation design, the flexible automation has proven useful to automate tasks beyond pure animation -- see section 3.2 below about the Conductor Event Language for an example.</span></p>
+<p></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 255)">The current system is in its second incarnation and offers a fairly good flexibility.</span></p>
+<h1 id="h.wvt4jys24nsw" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>2</span><span>- </span><span style="font-size:20pt">Conductor v1 &amp; v2</span></h1>
+<p><span style="background-color:rgb(255, 255, 255)">T</span><span style="background-color:rgb(255, 255, 255)">he automation is controlled by a Linux computer running </span><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/" style="color:inherit;text-decoration:inherit">JMRI</a></span><span style="background-color:rgb(255, 255, 255)">, a custom Java program named “Conductor” and an Android application named “RTAC”, the “Randall Train Automation Controller”. I built Conductor and RTAC specifically for the Randall automation, yet they should be flexible enough to be reused for other train automation projects.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Features of Conductor:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Conductor is a Java app that integrates with JMRI. It can run on all platforms supported by JMRI (Windows, Mac, and Linux).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">It has access to the turnouts, sensors and throttles defined in JMRI.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Conductor is controlled using an automation script with a custom language that I developed for that purpose.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">The script responds to sensor events and controls DCC turnouts and DCC engines via JMRI.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">This allows the automation to be easily modified without recompiling the program.</span></li>
+</ul>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">There are two versions of Conductor:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Conductor v1 was written in 2017 in Java and using a custom event language.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Conductor v2 is a complete rewrite in 2022, using Kotlin Scripting Language with a custom DSL.</span></li>
+</ul>
+<p></p>
+<p></p>
+<h1 id="h.k17dr0id5zrq" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">3- Conductor v2</span></h1>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Conductor v2 is a 2022 rewrite of the main server automation software. It’s based around the Kotlin Scripting Language with a custom DSL and offers a cleaner way to describe the train routes used for automation than the first iteration of the software.</span></p>
+<h2 id="h.es8zcxanb5rb" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">3.1- Screenshots &amp; Behavior</span></h2>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Conductor v2 runs as an extension to JMRI. The interface is a full-screen “kiosk” display of the track with the state of the sensors and the controlled trains:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:498.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_097648515148b170f8a64ae56c8308b5788d52a9ffecbdcdaf52b8690f7b78edi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The entire behavior is controlled using a script that defines the train routes and the events and their actions. The scripting language is detailed in the next section.</span></p>
+<p></p>
+<p><span>The Conductor app is invoked from JMRI using its Jython extension bridge. Conductor’s main role is to run a script that drives the automation. It uses an event-based language created for that purpose that updates turnouts and engines in reaction to a combination of sensors and timer inputs. Sensors can be either activation buttons or track occupancy sensors defined in JMRI. Depending on the state of the automation and the location of the engines, the script can change their speed, change the lights, blow the horn, set turnouts as required. It is essentially a fully automated DCC cab.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:233.66px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:682.00px"><img alt="" src="img_9fe2772c94e91da1ed71faf2095fca6ddc2ac551a1dee5291131808be7f217cbd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p></p>
+<p><span>The Randall museum uses an NCE command station and boosters. Sensors are detected using NCE AIU01 modules. Turnouts are controlled using NCE Switch-8 or Digitrax DS64 modules. Since Conductor interfaces with JMRI, it is not specifically tied to NCE hardware. It can interface with any throttle, sensor or turnout that can be controlled via JMRI.</span></p>
+<p></p>
+<p><span>One key feature of the automation script is that it is both timer-based and sensor-based. Model train motors are analog and their speed and running is not precise enough for automation. The only way for an automation to be reliable is to physically know the location of the train on the track, which is typically done using block occupancy sensors. The track is divided into blocks and electrical sensors detect when a train enters and leaves specific blocks. These events are precise as they are directly related to specific locations on the track that are known and never change. Such location events are ideal to control the speed of the train, to tell it to start, accelerate, stop, etc. Timer events are good enough for less critical tasks like blowing the train horns. Usually both techniques are combined, which results in excellent control, for example a train can be set to stop after entering a block with a delay so that it actually stops in front of a station when taking momentum into account and can then leave after a specific time.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">One of the main improvements of Conductor v2 over the previous version is that the script is designed around the concept of “routes”: a route is a series of blocks traveled by one train. A route is active when a train is traveling on it, and the engine monitors all the blocks on the route, keeping track of where the train is, and ensuring the train actually moves from block to block in the expected fashion and time. It also ensures that no unexpected block shows occupancy -- we don’t want unexpected engines or cars to be present where a train is expected to run.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">This allows the script to now have “recovery routes”: when trains are not at the expected location, the script tries to guess where the train is located on a route and how to bring it back to its original location. The current script implementation only handles the most trivial recovery scenarios. There are a few ambiguous cases which are explicitly not covered for now.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Another main improvements of Conductor v2 over the previous version is a </span><span style="background-color:rgb(255, 255, 255);font-weight:700">simulator</span><span style="background-color:rgb(255, 255, 255)">:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:478.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_17bfb5fe2d0f7077f9fceae2bcd8c1d098e16ef895df3231cfdbbb36f0a9fb29i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The simulator is a </span><span style="background-color:rgb(255, 255, 255);font-style:italic">standalone</span><span style="background-color:rgb(255, 255, 255)">&nbsp;version of Conductor running without JMRI -- it does not need to connect to any command station. The simulator simulates the track sensors and the train positions by examining the current script and figuring the train routes encoded in the script.</span></p>
+<p></p>
+<h2 id="h.jfo0f970rtza" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">3.2- Route Scripting Language for Conductor v2</span></h2>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The scripting language for Conductor v2 has two possible paradigms:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Logical train routes, with managed block occupancy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Isolated events.</span></li>
+</ul>
+<p></p>
+<h3 id="h.vbexfndj718" style="padding-bottom:4pt;padding-top:16pt;page-break-after:avoid"><span style="color:rgb(67, 67, 67);font-size:14pt">3.2.1- Route Logic</span></h3>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">In the automation, a train is always associated with a route. The route defines where this train can go, and which blocks it will occupy to get there. Multiple trains can be active at the same time as long as their routes do not intersect, that is they do not use the same blocks.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">There currently are 3 types of routes in the scripting language: </span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">“Sequence” routes are defined as a sequence of blocks that a train must occupy to go from a point A to a point B.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Sequence routes can define “shuttle” animation (when a train goes to a place then drives back to the starting point), or point-to-point animations, or even “circular” animations where a train performs a full loop and then comes back to its starting position.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">“Idle” routes are, as their name suggests, routes that do nothing. This is used when a train is idle, for example white waiting to be activated and start.</span></li>
+</ul>
+<p><span style="background-color:rgb(255, 255, 255)">Some other types of routes will be added later.</span></p>
+<p><span style="background-color:rgb(255, 255, 255)">A train can only be associated with one route at a time. Typically a train is associated with an “idle route” while it is waiting for activation. When the automation starts, the train is then associated with a corresponding “sequence route”.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Each sequence route is defined as a non-cyclic graph composed of the blocks that the train must traverse in order to reach its destination.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Each node in the graph represents one block with all the associated actions that must happen when the train enters or leaves the block.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">For example, the Brancheline automation at Randall has a simple linear sequence with a graph like this:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:191.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:565.00px"><img alt="" src="img_83d66148faac3dcbc3ef566596644282ceb216e0516e5b8644b2810804cb4f95d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span style="background-color:rgb(255, 255, 255)">Since this is a “shuttle” sequence, the train goes through each block twice, once in forward and then later in reverse. Thus the sequence graph has two nodes for each block -- the script actions are attached to the nodes, and are thus different when the train first goes through a block and later comes back through that same block.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Here’s an excerpt from the corresponding script:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val B801 = block("NS752") named "BLParked"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val B820 = block("NS753") named "BLStation"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val B830 = block("B830v") named "B830"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val B850 = block("NS754") named "BLTunnel"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val B860 = block("NS755") named "BLReverse"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL = throttle(204) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "BL"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onBell &nbsp;{ on -&gt; throttle.f1(on) }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onSound { on -&gt; throttle.f8(on) }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL_Route = routes {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "Branchline"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; toggle = BL_Toggle</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL_Idle_Route = BL_Route.idle {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // The idle route is where we check whether a Branchline train should start.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "Ready"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onIdle {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (BL_Toggle.active &amp;&amp; AIU_Motion.active) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL_Shuttle_Route.activate()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL_Shuttle_Route = BL_Route.sequence {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // The normal "shuttle sequence" for the branchline train.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "Shuttle"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; throttle = BL</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; maxSecondsOnBlock = 120 // 2 minutes per block max</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL801_fwd = node(B801) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.sound(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (8.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(Off)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.light(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.forward(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL820_fwd = node(B820) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(Off)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.forward(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (5.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.forward(6.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; …</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL860 = node(B860) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (8.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.stop()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } and_after (25.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.reverse(6.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; …</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL820_rev = node(B820) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T324.normal()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.reverse(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (6.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.stop()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } and_after (3.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.reverse(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL801_rev = node(B801) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (10.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.stop()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } and_after (3.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(Off)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onActivate { ... }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onError {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL_Recovery_Route.activate()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; sequence = listOf(</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL801_fwd, BL820_fwd, B830_fwd, BL850_fwd,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL860,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL850_rev, B830_rev, BL820_rev, BL801_rev)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Let’s look at some parts of this script.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The script first defines which blocks it can interact with. These map sensor names in JMRI. “NS752” is a JMRI name for an NCE block sensor, whereas “LS01” would be a JMRI name for a LocoNet sensor. No matter what the JMRI name, the script variable can be named anything relevant, and the block can be given a “friendly” name to make it easier to understand by the user: </span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val NceBlock &nbsp; &nbsp; = block("NS752") named "BLParked"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val LocoNetBlock = block("LS01") named "BLStation"</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">A “throttle” defines a DCC throttle, a.k.a. an engine, that can be controlled:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val UP = throttle(8330)<br><br>val BL = throttle(204) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "BL"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onBell &nbsp;{ on -&gt; throttle.f1(on) }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onSound { on -&gt; throttle.f8(on) }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The lines above would declare that we can control engine DCC #8330 (likely a Union Pacific train), and engine DCC #204 is the one on the Brancheline (a.k.a. “BL”). Moreover, we can redefine the DCC functions used for the engine’s bell, sound, or horn.</span></p>
+<p></p>
+<p><span>A “routes” collection is a group of routes, of which only one can be active at the same time. In this case, our branchline train can be idle, running normally, be in recovery, or be in error. Each state is associated with a specific route.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL_Route = routes {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "Branchline"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; toggle = BL_Toggle</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL_Idle_Route = BL_Route.idle {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // The idle route is where we check whether a Branchline train should start.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "Ready"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onIdle {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (BL_Toggle.active &amp;&amp; AIU_Motion.active) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL_Shuttle_Route.activate()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">This block above creates one “routes” collection (named “BL_Route”), to which an idle route is added. The idle route is the default one, and its on-idle callback monitors the activation sensor -- when the sensor becomes active, the shuttle route is activated and becomes the default for that route collection.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The shuttle route is a sequence, which is added to the routes collection:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val BL_Shuttle_Route = BL_Route.sequence {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // The normal "shuttle sequence" for the branchline train.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; name = "Shuttle"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; throttle = BL</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; maxSecondsOnBlock = 120 // 2 minutes per block max</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL801_fwd = node(B801) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL820_fwd = node(B820) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL830_fwd = node(B830) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL850_fwd = node(B850) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL860 &nbsp; &nbsp; = node(B860) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL850_rev = node(B850) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL830_rev = node(B830) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL820_rev = node(B820) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL801_rev = node(B801) { … }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onActivate { ... }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; onError {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL_Recovery_Route.activate()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; sequence = listOf(</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL801_fwd, BL820_fwd, B830_fwd, BL850_fwd,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL860,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; BL850_rev, B830_rev, BL820_rev, BL801_rev)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Since this route is a sequence, the train runs twice through most of the blocks, in different directions. The graph of the sequence encodes the blocks which are visited by the train -- this allows Conductor to know which block is next in the sequence.</span></p>
+<p></p>
+<p class="console "><span style="background-color:rgb(255, 255, 255)">The sequence also defines which DCC throttle is manipulated by the script. </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">maxSecondsOnBlock </span><span style="background-color:rgb(255, 255, 255)">is setting that allows the scripting engine to automatically ensure that the train is not stuck somewhere -- in this case, we tell Conductor that the train always takes less than 2 minutes to cross any block. Any longer would result in an error condition.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The “onError” callback allows us to specify what to do when an error occurs -- in this case, to activate the special recovery route (not shown here).</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">Each node in the graph has its own action blocks. Most of the time, what we want is to define what happens when the train enters a block. For example, at the reversal point, we want the engine to blow the horn, then stop, and later to reverse after a specific amount of time. This is expressed as such:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL860 = node(B860) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (8.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.stop()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } and_after (25.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.reverse(6.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">The node has various callbacks that can be used -- on enter, on exit, while occupied, etc.</span></p>
+<p><span style="background-color:rgb(255, 255, 255)">The “after … then … and_after” are specific commands that trigger delayed actions as long as the train is located on this block. </span></p>
+<p></p>
+<p><span>One particularity of the script above is that the train has very different behaviors on block B820 depending on its direction:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL820_fwd = node(B820) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(Off)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.forward(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (5.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.forward(6.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; …</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; val BL820_rev = node(B820) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.bell(On)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T324.normal()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.reverse(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; after (6.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.stop()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } and_after (3.seconds) then {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.horn()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BL.reverse(4.speed)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">In the forward direction, the engine simply continues forward with a speed change after 5 seconds.</span></p>
+<p><span style="background-color:rgb(255, 255, 255)">However in the reverse direction, when coming back, the engine actually stops as there’s a little sub-station at this location. It stops for 3 seconds before continuing back towards the parking location.</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">There are a few more advanced features to the route logic than can fit in this simple introduction.</span></p>
+<h3 id="h.9eeflt8vhfwm" style="padding-bottom:4pt;padding-top:16pt;page-break-after:avoid"><span style="color:rgb(67, 67, 67);font-size:14pt">3.2.2- Events</span></h3>
+<p></p>
+<p><span>The event language from Conductor v1 is still available in Conductor v2, albeit with a different syntax: events are simple “conditions → actions”. The script engine evaluates all instructions in parallel in a 30 Hz loop and then executes instructions when their conditions match. This is directly inspired by </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.plcdev.com/introduction_grafcets" style="color:inherit;text-decoration:inherit">ladder logic</a></span><span style="background-color:rgb(255, 255, 255)">&nbsp;as used in industrial programmable logic controllers (such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://fr.wikipedia.org/wiki/Grafcet" style="color:inherit;text-decoration:inherit">Grafcet</a></span><span style="background-color:rgb(255, 255, 255)">).</span></p>
+<p></p>
+<p><span style="background-color:rgb(255, 255, 255)">This allows any kind of event to be programmed, even if they are not directly connected to a specific train and its route.</span></p>
+<p></p>
+<p><span>Here’s an example of an event script:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val Block320 = block ("NS770") named "B320"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val Block321 = block ("NS771") named "B321"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val Block330 = block ("NS773") named "B330"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val T330 = turnout("NT330")</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">on { !Block330 &amp;&amp; &nbsp;Block320.active &amp;&amp; !Block321 } then { T330.normal() &nbsp;}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">on { !Block330 &amp;&amp; !Block320 &amp;&amp; &nbsp;Block321.active } then { T330.reverse() }</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>It’s important to remember that all the “conditions → actions” lines are evaluated in parallel, all at the same time. Once they have all been evaluated, the actions will be carried out in the order they are defined in the script.</span></p>
+<p></p>
+<p><span>The “block” line registers a sensor, which must be declared in JMRI. “NS784” is a JMRI sensor for an NCE AIU01 on address 50, bit 1. On a LocoNet bus, a similar line would look like:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val MyBlock = block(“LS01”) as NAME</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The sensor name is used in the script and is independent from the sensor “username” used in JMRI.</span></p>
+<p></p>
+<p><span>Similarly, the “turnout” line defines a turnout which must have been declared in JMRI. In this case, “NT330” is a turnout at DCC address 330 on an NCE bus in JMRI.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">val T330 = turnout("NT330")</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>In JMRI these are the “system names” and they are found in the Sensors and Turnouts tables.</span></p>
+<p></p>
+<p><span>Below are actual conditions → actions lines. </span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">on { !Block330 &amp;&amp; &nbsp;Block320.active &amp;&amp; !Block321 } then { T330.normal() &nbsp;}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">on { !Block330 &amp;&amp; !Block320 &amp;&amp; &nbsp;Block321.active } then { T330.reverse() }</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>These two lines mean that:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If the block B330 is off, and block B320 turns on, then set the turnout T330 to Normal.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Similarly, if the block B330 is off, and block B321 turns on, then set the turnout T330 to Reverse.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If both blocks B320 and B321 turn on, the program does not alter the turnout.</span></li>
+</ul>
+<p></p>
+<p><span>On the Randall Model Railroad, this corresponds to this piece of track:</span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:71.40px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:756.00px"><img alt="" src="img_58c713fa3209029440ca149fbd31f15a781f7da28e8080a18237cf3b6d0ce32ci.jpg" style="height:77.00px;margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>On the layout, operators typically run from right to left on this section of the track. A very common error is for operators to forget to align their turnouts and then be surprised when their train shorts or derails. These two event lines fix that: when a train is on block B320 (right) and block B330 after the turnout is empty, the Sonora turnout can be automatically aligned towards the incoming train on B320. Same pattern for a train coming from B321.</span></p>
+<p></p>
+<p><span>This shows how the script does not have to deal with just the “train automation” of the layout. It can also be used to automate parts of the layout that have simple usage patterns.</span></p>
+<p></p>
+<h1 id="h.eouoduk2s53y" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">4- Conductor v1</span></h1>
+<p><span>The initial version of Conductor is architectured around a custom event-based language. The scripting engine is still available, and is activated when the input script is detected to be using the v1 language.</span></p>
+<h2 id="h.citn41cboe0u" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span>4</span><span>.1- Screenshots &amp; Behavior</span></h2>
+<p><span style="background-color:rgb(255, 255, 255)">Conductor v1 only runs as an extension to JMRI. The interface is a simple text-based status window that opens when the entry-point Conductor.py is loaded as a Jython script in JMRI:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:442.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_c7c51f8410cc8469b78d00d4c2e77210dc63b2753168eed4487b0eb81ac6b885i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>That screenshot looks complex and probably intimidating. This is only seen on the server, and end-users (layout operators, museum staff) &nbsp;do not have to interact with it.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:210.69px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:682.00px"><img alt="" src="img_602f83210408c7fa061764989f9fa9f3ef1cfe7d4253998f9214e45769a54c5dd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The Conductor app is invoked from JMRI using its Jython extension bridge. Conductor’s main role is to run a script that drives the automation. It uses an event-based language I created for that purpose that updates turnouts and engines in reaction to a combination of sensors and timer inputs. Sensors can be either activation buttons or track occupancy sensors defined in JMRI. Depending on the state of the automation and the location of the engines, the script can change their speed, change the lights, blow the horn, set turnouts as required. It is essentially a fully automated DCC cab.</span></p>
+<p></p>
+<p><span>For ease of developing and testing, the Conductor app also has a second custom language to simulate the automation. This simulates the progression of the train through the layout, simulating the activation of track occupancy sensors as if the actual engines were moving along.</span></p>
+<p></p>
+<p><span>Here’s an example of the event-based script on the left and the simulation script on the right:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:401.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_34b7717a9be2ac7b96f4234efd4f14279fe21a7b20329494124afff480e048ffi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>In this example the piece of script on the left above indicates that when the train is stopped on block B503b (the main passenger station) and the activation button is pressed, turn on the train sound &amp; lights and start moving at a reduced station speed. After 2 seconds, blow the horn. Once the train reaches block B503a, accelerate to full speed.</span></p>
+<p><span>On the right side, the simulation script waits for the same activation button to be pressed and once pressed simulates the train moving from block B503b to B503a after 8 seconds. The simulation script can then be used to test the automation script even when the computer is not connected to the layout and no train is actually moving. Once the simulation is perfected, the system can be connected to the layout to try with actual trains.</span></p>
+<p></p>
+<p><span>Contrary to Conductor v2, the script has no knowledge of routes. It is essentially a fairly large state machine. Keeping track of which train is running and in which direction is done by using a variety of enum state variables.</span></p>
+<h2 id="h.vcm2s8wc36s3" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span>4.2</span><span style="font-size:16pt">- Event Language for Conductor v1</span></h2>
+<p><span>The event language uses a simple “conditions → actions” model. The script engine evaluates all instructions in parallel in a 30 Hz loop and then executes instructions when their conditions match. This is directly inspired by </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.plcdev.com/introduction_grafcets" style="color:inherit;text-decoration:inherit">ladder logic</a></span><span style="background-color:rgb(255, 255, 255)">&nbsp;</span><span style="background-color:rgb(255, 255, 255)">as used in industrial programmable logic controllers (such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://fr.wikipedia.org/wiki/Grafcet" style="color:inherit;text-decoration:inherit">Grafcet</a></span><span style="background-color:rgb(255, 255, 255)">)</span><span style="background-color:rgb(255, 255, 255)">.</span></p>
+<p></p>
+<p><span>Here’s an example of an event script:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Sensor B320 &nbsp;= NS784</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Sensor B321 &nbsp;= NS785</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Sensor B330 &nbsp;= NS786</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Turnout T330 = NT330</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">!PA-Toggle &amp; !B330 &amp; B320 -&gt; T330 Normal</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">!PA-Toggle &amp; !B330 &amp; B321 -&gt; T330 Reverse</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>It’s important to remember that all the “conditions → actions” lines are evaluated in parallel, all at the same time. Once they have all been evaluated, the actions will be carried out in the order they are defined in the script.</span></p>
+<p></p>
+<p><span>The “Sensor” line registers a sensor, which must be declared in JMRI. “NS784” is a JMRI sensor for an NCE AIU01 on address 50, bit 1. On a LocoNet bus, a similar line would look like:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Sensor NAME = LS01</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The sensor name is used in the script and is independent from the sensor “username” used in JMRI.</span></p>
+<p></p>
+<p><span>Similarly, the “Turnout” line defines a turnout which must have been declared in JMRI. In this case, “NT330” is a turnout at DCC address 330 on an NCE bus in JMRI.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Turnout T330 = NT330</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>In JMRI these are the “system names” and they are found in the Sensors and Turnouts tables.</span></p>
+<p></p>
+<p><span>Below are actual conditions → actions lines. </span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">!B330 &amp; B320 &amp; !B321 -&gt; T330 Normal</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">!B330 &amp; B321 &amp; !B320 -&gt; T330 Reverse</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>These two lines mean that:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If the block B330 is off, and block B320 turns on, then set the turnout T330 to Normal.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Similarly, if the block B330 is off, and block B321 turns on, then set the turnout T330 to Reverse.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If both blocks B320 and B321 turn on, the program does not alter the turnout.</span></li>
+</ul>
+<p></p>
+<p><span>On the Randall Model Railroad, this corresponds to this piece of track:</span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:71.40px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:756.00px"><img alt="" src="img_58c713fa3209029440ca149fbd31f15a781f7da28e8080a18237cf3b6d0ce32ci.jpg" style="height:77.00px;margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>On the layout, operators typically run from right to left on this section of the track. A very common error is for operators to forget to align their turnouts and then be surprised when their train shorts or derails. These two event lines fix that: when a train is on block B320 (right) and block B330 after the turnout is empty, the Sonora turnout can be automatically aligned towards the incoming train on B320. Same pattern for a train coming from B321.</span></p>
+<p></p>
+<p><span>This shows how the script does not have to deal with just the “animation” of the layout. It can also be used to automate parts of the layout that have simple usage patterns.</span></p>
+<p></p>
+<p><span>Let’s take another example, which this time is a simplified version the Passenger Automation train as can be seen in the video above:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Define which DCC engine to control</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Throttle Loco = 204</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Define various states for the automation</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Enum State = Idle Station Up Summit Down</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Define some speeds to use</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Int Station-Speed = 8</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Int Summit-Speed &nbsp;= 12</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Define some timers</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Timer Timer-Acquire-Route = 1</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Timer Timer-Release-Route = 1</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># --- Train starts in "Idle" state.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Once the main automation toggle is turned on, turn on the sound and light,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># and set the train in the "Station" state.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Idle &amp; Toggle -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Sound = 1; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Light = 1;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Stop ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; State = Station</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># --- State: Station</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Departure from Station (going up) when users press the activation button</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Station &amp; B503b &amp; Toggle &amp; Loco Stopped &amp; Run3 -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; State = Up ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Reset Timers</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># --- State: Going Up</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Start the train at station speed and align all turnouts as desired.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &amp; B503b &amp; Loco Stopped -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Light = 1 ; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Sound = 1 ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Forward = Station-Speed ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Horn ; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Timer-Acquire-Route Start</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Timer-Acquire-Route -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T311 Reverse;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T320 Reverse ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T321 Normal ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; T330 Normal</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Once we reach the next block, go to full track speed &nbsp; &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &amp; B503a -&gt; Loco Forward = Full-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Mid-Station doppler sound on the way up</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &amp; &nbsp;B320 + 27 -&gt; Loco F3 = 1 ; Loco F3 = 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Reduce speed when reaching the Sonora bridge</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Speed up again after the tunnel on the way up</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &amp; &nbsp;B330 -&gt; Loco Forward = Sonora-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &amp; &nbsp;B330 + 12 -&gt; Loco Forward = Full-Speed ; Loco Horn</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Reaching the Summit, change the state of the automation</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &amp; B360 -&gt; State = Summit</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># --- State: Summit</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># At the top first reduce a bit the speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Summit &amp; B370 + &nbsp;9 -&gt; Loco Forward = Summit-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Then stop and after a delay and a few horn effects, reverse direction.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Summit &amp; B370 + 14 -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Stop ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Horn</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Summit &amp; B370 + 22 -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Horn;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Reverse = Summit-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Once the train reaches the next block, change to the "going down" state of the automation</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># and make sure all turnouts are still aligned as desired.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Summit &amp; !B370 &amp; B360 &amp; Loco Reverse -&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; State = Down ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Timer-Acquire-Route Start</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">...</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>There are a few interesting things to point out here.</span></p>
+<p></p>
+<p><span>First, this line defines which DCC address (a.k.a. throttle) to use:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Throttle Loco = 204</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Many throttles can be defined, each with a specific name. Each throttle represent one or more DCC addresses, so it’s easy to create “soft consists”.</span></p>
+<p></p>
+<p><span>These are then used in the script as actions to stop the engine, change the speed or act on functions. For example the following line defines multiple actions to be done on that DCC address when the conditions are met, namely turn the lights on (F0), set the sound (F8), set the seed to forward, blow the horn (F2) and turn on function F3:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">conditions </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">-&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Light = 1 ; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Sound = 1 ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Forward = Station-Speed ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco Horn ;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Loco F3 = 1</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The speed can be set using direct values or using named integer constants. The advantage of using the named constants is that they can be easily changed in a script and cary their own semantics:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Throttle Loco = 204</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Int Diverging-Speed = 8</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Int Full-Speed = 24</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">condition-1 </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">-&gt;</span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;Loco Forward = Full-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">condition-2 -&gt; Loco Forward = 28</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">condition-3 -&gt; Loco Reverse = Diverging-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">condition-4 -&gt; Loco Stop</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The engine’s direction can be used as a condition, so it’s easy to have different behavior when the engines are going forward or reverse; for example the following lines would set different speed on a given block depending on the direction of the engine, or would blow the horn when it stops:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Block-1 &amp; Loco Forward -&gt; Loco Forward = Full-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">Block-1 &amp; Loco Reverse </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">-&gt;</span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;Loco Reverse = Diverging-Speed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Block-1 &amp; Loco Stopped -&gt; Loco Horn</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>An integral part of the automation is having actions vary with time. For this, timers can be defined with a predetermined time in seconds. An action starts a timer and when the timer goes off, it can execute one or more actions. Example:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Timer Delayed-Horn = 2</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Timer Delayed-Speed-Reduction = 4</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Int Diverging-Speed = 8</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">Block-1 &amp; Loco Forward </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">-&gt;</span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;Delayed-Horn Start ; Delayed-Speed-Reduction Start</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">Delayed-Horn </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">--&gt;</span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;Loco Horn</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">Delayed-Speed-Reduction &amp; Loco Forward </span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">-&gt;</span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;Loco Forward = Diverging-Speed</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Since a lot of the program has to deal with performing an action a number of seconds after a train enters a specific block, there is a special shortcut syntax for this:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Int Diverging-Speed = 8</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Block-1 + 2 &amp; Loco Forward -&gt; Loco Horn</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Block-1 + 4 &amp; Loco Forward -&gt; Loco Forward = Diverging-Speed</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Both examples above do the same thing: the train enters block-1 and this starts a timer. 2 seconds in the block the horn is blown, and 4 seconds in the block, the speed is changed. However these actions only happen if the train is moving forward </span><span style="font-style:italic">when the timer expires</span><span>, so there could be a different behavior if the train is going in reverse or stopped.</span></p>
+<p></p>
+<p><span>Finally, an important part of the automation program is defining “states”. States are free-form keywords defined for whatever makes sense in the current program. For example the Randall Passenger automation has states for the train being idle (automation is turned off), waiting at the station, going up, reaching the summit and then going down. This allows the program to easily have different behaviors depending on the state of the automation.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(243, 243, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Enum State = Idle Station Up Summit Down</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Station &amp; Block-Station &amp; Button-Pushed &amp; Loco Stopped -&gt; State = Up; Loco Forward = 8</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Up &nbsp; &amp; Block-1 -&gt; do something</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">State == Down &amp; Block-1 -&gt; do something else</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>In this made-up example, the first line indicates if the train is in state “station” and on the station block, then pushing the automation button starts the train and changes it to the “going up” state. This makes the program much easier to understand and follow.</span></p>
+<p></p>
+<p><span>The states can then be used to differentiate the behavior of the train on a given block depending on whether it’s going in one direction or another. This is similar to using the engine’s direction, only with an easier to understand semantic.</span></p>
+<h1 id="h.4872t6a07wp" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>5</span><span>- </span><span style="font-size:20pt">RTAC, the Android Software</span></h1>
+<p><span>Once the system is installed on the Randall Model Railroad, the staff in charge does not have to access the computer. It is &nbsp;essentially running as a “headless” computer hidden away under the layout, set to automatically turn on when the layout’s power is turned on and then to automatically shutdown when the layout power is turned off.</span></p>
+<p></p>
+<p><span>To be able to easily interact and monitor the state of the automation, two tablets are provided that run a custom Android app named “RTAC”, which is the visible part of </span><span style="background-color:rgb(255, 255, 255)">the “Randall Train Automation Controller”.</span></p>
+<p></p>
+<p><span>Features of RTAC:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">RTAC is a custom Android app that runs on two tablets.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">It’s synchronized with Conductor to display the automation status and the track occupancy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">RTAC automatically connects to the Conductor server using the Zeroconf protocol.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">RTAC features an “Emergency Stop” which users can use to stop the automation, for example if a train derails. Once the Conductor software goes in emergency stop, the tablet can be used to reset the system with some clear indication on screen of what to do.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="background-color:rgb(255, 255, 255)">Both tablets are synchronized so that the display is the same on both and either can be used to trigger the emergency stop or reset the automation.</span></li>
+</ul>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:510.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_e708d31dc0c418392fb35facd438540d26818b0da1a0880cde9636165a526758i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The Conductor app is also a server. It communicates with the two tablets to display the status of the automation and the track occupancy. The tablets are connected over wifi with the same private network as the computer driving the automation. The Conductor app and the tablets find each other using Zeroconf; no configuration is needed on the tablet side.</span></p>
+<p></p>
+<p><span>The tablet software is designed to operate in “kiosk mode” meaning that as soon as the tablet is turned on, the RTAC software takes over and prevents users from doing anything else with the tablet. Normally only the museum staff should have access to these tablets, and they should not be able to close or dismiss the app by mistake.</span></p>
+<p></p>
+<p><span>Pressing the “E-Stop” (Emergency Stop) button on either tablet asks for a confirmation dialog. Once the staff confirms the order, the Conductor app stops the train immediately using the NCE/DCC emergency stop command (which means trains stop immediately, regardless of their decelerating momentum). The staff is then instructed to bring back the trains to their expected origin location and then reset the automation.</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:510.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_95c13f044f87e942447e73a5980385bc159d088e5b2f16e022c9c260da25a483i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Although Conductor and RTAC are specific to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.randallmuseum.org" style="color:inherit;text-decoration:inherit">Randall Museum</a></span><span>'s model railroad for now, they are designed to be flexible and be reused to automate other model train layouts. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor" style="color:inherit;text-decoration:inherit">source is available here</a></span><span>; it is a standard Android application built using Android Studio and Gradle; it uses Dagger, Mockito, Robolectric, JSON; it relies on my own custom RX library, and my own KV network protocol. Please contact me if interested in details.</span></p>
+<p></p>
+<p><span>RTAC is also available for download on the Google Play store.</span></p>
+<p></p>
+<h1 id="h.5z1zog9kjm89" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">6- Privacy Policy for RTAC</span></h1>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.google.com/document/d/1dONgR1cS5073jHYlxyktt7s-TzJg5EtEzMkf_uozPNs/pub" style="color:inherit;text-decoration:inherit">Alf-Labs Android App Privacy Policy</a></span><span>:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The application complies with the privacy and security policies set by the Android Play Store.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The application does not collect nor transmit personal or sensitive user data.</span></li>
+</ul>
+<p></p>
+<p><span>The following non-exclusive list explains Android permissions usage:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="font-style:italic">Internet</span><span>: This application accesses your local network to perform automatic discovery of Conductor servers via the ZeroConf protocol and communicate with the selected Conductor server.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="font-style:italic">Access Wifi State</span><span>: This application queries the state of the WiFi. If wifi is not enabled, the application does not try to connect to servers. The application only queries the wifi state, it cannot change it.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="font-style:italic">Wake Lock</span><span>: This application maintains a “wake lock” to prevent the device from sleeping once connected to a Conductor server. The lock is released when the app is disconnected from the server. This prevents the tablet from entering sleep mode while the automation is running.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="font-style:italic">Foreground Service</span><span>: A “foreground service” is used to maintain a permanent connection to a Conductor server once connected. When the service is running, the app icon is clearly visible in the notification bar to remind you that the app is still running. Tap the notification icon to return to the app and use it or disconnect from the server if you are done using it.</span></li>
+</ul>
+<p></p>
+<p><span>~~</span></p>
+<p><span>[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span>]</span></p>
+<p><span>~~</span></p>
+<p><span></span></p>
+<p></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

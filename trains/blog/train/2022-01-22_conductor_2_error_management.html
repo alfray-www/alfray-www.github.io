@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2022-01-22_conductor_2_error_management.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: Error Management" />
+
+<meta property="og:description" content="We need to dwell a bit more on error management in Conductor 2. What is the current situation, versus what we really want?" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_b4b11ad94227fc7dcb0a2d9ce16f416e706c5f83dd425c8c23247e321ab7f621d.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: Error Management" />
+
+<meta name="twitter:description" content="We need to dwell a bit more on error management in Conductor 2. What is the current situation, versus what we really want?" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_b4b11ad94227fc7dcb0a2d9ce16f416e706c5f83dd425c8c23247e321ab7f621d.png" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0005.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-01-22_conductor_2_startup_correcti_ce159044.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2022-01-21_reboot_on_the_reboot_on_conductor_2.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2022-01-22 - Conductor 2: Error Management</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>We need to dwell a bit more on error management in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>. What is the current situation, versus what we really want?</span></p>
+<p></p>
+<p><span>In Conductor 1, error management is made ad-hoc by the script. For each individual route (branchlines vs mainline), there’s a timer, and the goal is that each shuttle should complete its travel within 5 minutes. The implementation is rather simple: the timer is started when the engine starts in either direction, and stopped when the engine reaches the target block. If the timer expires, the global state is changed to error, which stops everything for that route. There is nothing in the script to get out of that error state. A manual reset (via the tablets) is necessary.</span></p>
+<p></p>
+<p><span>In Conductor 2, the error management should depend on the route manager. Here we’re only concerned with the shuttle “sequence” manager. We can decide to keep it as simple as it was in Conductor 1 -- namely that the route must complete in a given time.</span></p>
+<p style="text-align:left"><span></span></p>
+<p></p>
+<p><span>The other thing we can do is take advantage of the block sequence, since we know which blocks the train must travel. The manager also keeps track of the train progression so in theory it knows which blocks must be occupied and more importantly which ones must be free. So we can also take advantage of that. Thus, upfront, the rules would be something like this:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The current active block must be occupied.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There should not be any inactive block occupied.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This rule requires a caveat as a train traveling can temporarily occupy 2 blocks. To solve that, we add the notion of a “trailing” block, which is the block the train just exited -- it can be occupied, even though it’s not the active block.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If the train is moving, it should change to the next expected block within a given time. </span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>That time should be configurable for each route. A large enough default (e.g. 5 minutes) would work, and we might want to tighten it per route.</span></li>
+ </ul>
+</ul>
+<p><span>So in essence we change the timer from “overall route timer” to “to the next block timer”. Each time a train enters a block, we restart the timer. If a train is stopped, we must also stop the timer.</span></p>
+<p><span>If the “next block timer” expires, the route enters error mode.</span></p>
+<p></p>
+<p><span>Script wize, the choice is to have a layered error management:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Each Route has its own error property: Self.Error.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The route script can set it to true:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self.Error = True</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It cannot be set to false.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Each Route has an OnError event function that can be implemented.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The ActiveRoute also has an error property that is an OR combination of each sub-route’s error. Thus as soon as any route is in error, the larger ActiveRoute object is in error too.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A global condition “ActiveRoute.Error -&gt; …” can be defined.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It is not possible to activate a Route or an ActiveRoute that is in error.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Errors are fatal like in Conductor 1. There is no clearing of the error except doing a full reset. That’s a simplification that could be easily lifted.</span></li>
+</ul>
+<p></p>
+<p><span>Since the route manager is going to enforce that only the expected blocks are occupied, we also may want to define 2 more properties for a shuttle behavior:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We defined the expected route blocks to monitor.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We also could define </span><span style="font-style:italic">unexpected</span><span>&nbsp;route blocks… Blocks to monitor that the train should </span><span style="font-style:italic">not</span><span>&nbsp;reach.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We also may want to define exceptions for these. For example in both Randall shuttles cases, it would be ok for the train to overrun its stopping blocks. In Conductor 1, there’s a rule that forces the train in reverse if that happens. This is, in essence, a </span><span style="font-style:italic">recoverable error</span><span>.</span></li>
+</ul>
+<p></p>
+<p><span>It’s worth keeping in mind that if we monitor non-route blocks, we don’t know for sure what is occupying them. The simplest option is to not monitor them as part of the manager, and let the script handle that. </span></p>
+<p></p>
+<p><span>For one thing, we miss the capacity to </span><span style="font-style:italic">pause</span><span>&nbsp;the route. In an ideal world if an unexpected monitor block becomes occupied, it would be nice to be able to pause the automation while operators rectify the situation. We can expect operators to have that kind of awareness as they lack proper feedback from the automation. </span></p>
+<p></p>
+<p><span>The shuttle overrun case is worth handling. Currently the behavior would be to have block “X then Y” occupied. But if we overrun, none of the expected blocks will be occupied. The manager would need to know what is the overrun block and where it fits in the block sequence, as well as know when the situation has been rectified.</span></p>
+<p><span>For example for the Freight route we have:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Normal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B311 → B321 → stop/reverse → B321 → B311.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Overrun:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B311 → B321 → (B330 overrun) → B321 → B311.</span></li>
+</ul>
+<p><span>A possible syntax would be to describe this as:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Normal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self.Blocks = B311, B321, B311.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Overrun:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self.Blocks = B311, B321 (overrun = B330), B311.<br>Or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self.Blocks = B311, B321, (recoverable B330 to B321), B311.</span></li>
+</ul>
+<p><span>The first example of syntax makes B330 an extra annotation to B321, whereas the second one adds a potential node in the graph.</span></p>
+<p></p>
+<p><span>What is important is to realize we're building a graph with 2 nodes out of B321.</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:186.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:380.00px"><img alt="" src="img_b4b11ad94227fc7dcb0a2d9ce16f416e706c5f83dd425c8c23247e321ab7f621d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span>When viewed that way, B330 becomes a “normal” block in the sequence. That dictates it should not be treated as some exception, it’s just one of the two blocks that can be activated out of B321. The script engine just doesn’t know which one, and should accept both.</span></p>
+<p></p>
+<p><span>So we changed our linear “block list sequence” in a free “block graph”. That’s neat.</span></p>
+<p><span>One important detail is that our “block graph” is not encoding the direction of the engine when changing between nodes.</span></p>
+<p></p>
+<p><span>That is something we may want to consider. See below.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-01-22_conductor_2_startup_correcti_ce159044.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2022-01-21_reboot_on_the_reboot_on_conductor_2.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

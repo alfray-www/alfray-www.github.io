@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Randall Museum Model Railroad" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/randall/2022-01-11_train_vision_detection_and_p_136b337d.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Train Vision Detection and Perfetto Tracing" />
+
+<meta property="og:description" content="Back in November, I did a major update to the Vision&nbsp;software that drives the Vision computer&nbsp;at the museum for the Train Vision Project. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the chrome://tracing protocol&nbsp;and the Perfetto web UI, which I can then collect remotely and analyze later." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_df9ade82487782d54fd4e880a4053d4694ceb4d2c770eeeeb5d6dccaa2cad84fi.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Train Vision Detection and Perfetto Tracing" />
+
+<meta name="twitter:description" content="Back in November, I did a major update to the Vision&nbsp;software that drives the Vision computer&nbsp;at the museum for the Train Vision Project. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the chrome://tracing protocol&nbsp;and the Perfetto web UI, which I can then collect remotely and analyze later." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_df9ade82487782d54fd4e880a4053d4694ceb4d2c770eeeeb5d6dccaa2cad84fi.png" />
+
+<title>Blog: Randall Museum Model Railroad</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="000b.html">Blog: Randall Museum Model Railroad</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">Introduction</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Blog &amp; News</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">About the Model Railroad</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/videos.html" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="font-style:italic">The Randall Museum in San Francisco hosts a large HO-scale model model railroad. Created by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span style="font-style:italic">&nbsp;starting in 1961, the layout was donated to the Museum in 2015. Since then I have started automatizing trains running on the layout. I am also the model railroad maintainer. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">This blog</a></span><span style="font-style:italic">&nbsp;describes various updates on the Randall project and I maintain a separate </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">blog for all my electronics</a></span><span style="font-style:italic">&nbsp;not directly related to Randall. </span><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-01-16_randall_repairs_turnout_t111.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2022-01-10_planning_for_2022.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2022-01-11 - Train Vision Detection and Perfetto Tracing</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Randall</span>
+    </span>
+    </div>
+
+
+    <p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-11-27_new_version_for_train_vision.html" style="color:inherit;text-decoration:inherit">Back in November</a></span><span>, I did a major update to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/" style="color:inherit;text-decoration:inherit">Vision</a></span><span>&nbsp;software that drives the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;at the museum for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-09-20_train_vision.html" style="color:inherit;text-decoration:inherit">Train Vision Project</a></span><span>. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool/" style="color:inherit;text-decoration:inherit">chrome://tracing protocol</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ui.perfetto.dev/" style="color:inherit;text-decoration:inherit">Perfetto web UI</a></span><span>, which I can then collect remotely and analyze later.</span></p>
+<p></p>
+<p><span>Here’s an example of run from last Saturday:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:249.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_df9ade82487782d54fd4e880a4053d4694ceb4d2c770eeeeb5d6dccaa2cad84fi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>What we see above is an automated run from the mainline Freight train. Rows represent cameras 1, 2, and 3 respectively. Let’s look at camera 1 in detail:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:227.02px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:634.00px"><img alt="" src="img_7f3ea6295f722a0f0d98b8f2f6a671bcab40d548c1efcb90fb68a344a7016528d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span></span></p>
+<p><span>Starting at the bottom, we have the two pixel detection lines. This counts how many pixels change in an image. At time +8s, as the train comes into the image, we have a large “volume” of pixels changing, and as the train moves away from the camera, the pixel count gets smaller and smaller. Later, around time +170s, the train comes back and the pixel motion gets progressively larger as the train approaches the camera.</span></p>
+<p><span>Thus we have these little “mountain” patterns and they are composed of two parts, with a large bump as the train near generates a lot of pixel motion, and a flat tail as the train far away generates little pixel motion; yet that “flat” part is quite relevant and still needs to be detected.</span></p>
+<p><span>When looking at the bottom line, the raw pixel detection, it’s really hard to even see that “flat” part where the train is moving but far away. To account for that, I take a first order derivative, and then I smooth that with a 1-second average window. That gives us the “corrected” pixel motion detection, which is more stable and easier to analyze using a basic threshold.</span></p>
+<p></p>
+<p><span>The middle line with the square boxes labeled “cam1_hl” (for “camera 1 highlight”) indicates when the algorithm decided there was enough movement detection to feature an actual motion trigger and display the corresponding video. Here we see the large boxes left and right match the actual train movement, and the two small boxes (around times +25s and +160s) are just false triggers. </span></p>
+<p></p>
+<p><span>False triggers are what I really tried to address. Before, the thing was littered with them. I found out the RTSP stream I get from the cameras is of mediocre quality and often I get entire images that are distorted or half drawn. Luckily these result in huge spikes of pixel “motion” changes so I can filter them out. There are still a few mirror false triggers, however they are relatively minor and short.</span></p>
+<p></p>
+<p><span>The other realization is that camera placement matters a lot:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:92.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:610.00px"><img alt="" src="img_085eae65dd7c96b6fb479ba4577f80cab6fa1f8c83f3d0812e1897cae0123b05d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span>This is the same train as seen by these cameras. Due to the perspective, the amount of pixel motion detected changes drastically with the distance. So even with “full view” of the train, cameras 2 and 3 have much lower thresholds than camera 1. That also means noise in the video feed is potentially a larger problem with these cameras. </span></p>
+<p></p>
+<p><span>However what I had seen is that noise is very short and transient, occurring only in a few frames here and there. The combination of the delta and the window average filters it out neatly in most cases. I was envisioning using an adapting learning algorithm to figure the ideal threshold detection values, yet right now the system is stable enough not to need that extra complexity.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-01-16_randall_repairs_turnout_t111.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2022-01-10_planning_for_2022.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

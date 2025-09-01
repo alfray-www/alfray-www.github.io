@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2024-12-25_conductor_2_activated_block_handling.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: Activated Block Handling" />
+
+<meta property="og:description" content="These two&nbsp;commits&nbsp;address the recent issue of spurious block activation breaking the automation." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_b880d6adf45f75fb66e6ab03c21065be0c082d7ec4af4e8a82e86a1d98843d0bi.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: Activated Block Handling" />
+
+<meta name="twitter:description" content="These two&nbsp;commits&nbsp;address the recent issue of spurious block activation breaking the automation." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_b880d6adf45f75fb66e6ab03c21065be0c082d7ec4af4e8a82e86a1d98843d0bi.jpg" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="index.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2025-01-16_conductor_2_email_notificati_0ac70a31.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-12-16_conductor_2_new_mqtt_support.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2024-12-25 - Conductor 2: Activated Block Handling</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>These </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/6f773e498a944fc4d840977e8383a00e79e324b5" style="color:inherit;text-decoration:inherit">two</a></span><span>&nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/133cf7a2bd6ddaa1a68edd02f2d7f9923895ac17" style="color:inherit;text-decoration:inherit">commits</a></span><span>&nbsp;address the recent issue of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ralf.alfray.com/trains/blog/train/2024-10-14_conductor_2_freight_starts_w_ce787171.html" style="color:inherit;text-decoration:inherit">spurious block activation breaking the automation</a></span><span>.</span></p>
+<p></p>
+<p><span>Recently a new sensor-related issue arose with block B360. Last time, it was because some track was </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2024-10-12_conductor_2_sensor_issues_on_483b2f5d.html" style="color:inherit;text-decoration:inherit">occupied somewhere else</a></span><span>&nbsp;on the layout. This time, the issue is different: the automated passenger train is going to Summit (the top of the mountain), where it stops and returns back down. It goes through these blocks:</span></p>
+<p></p>
+<p style="text-align:center"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B370</span><span>&nbsp;(Summit) → </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B360</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B340</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B330</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B321</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B311</span><span>&nbsp;(Station)</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:188.00px;margin:-0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b880d6adf45f75fb66e6ab03c21065be0c082d7ec4af4e8a82e86a1d98843d0bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The new problem with block B360: after the train has left block B360 and entered block B340, block B360 should register as “empty”. After all, the train isn’t on the block anymore. But from time to time -- very rarely -- the block will keep staying on, sometimes as long as a minute and half! Now two adjacent blocks can be active at the same time -- that happens when a train crosses a block boundary. But once the train reaches block B330, it is an error for block B360 to still be active. </span></p>
+<p></p>
+<p><span>When that happens, the automation enters the error mode, stops the train, and tries to do a recovery. Interestingly as soon as the train stops, that “frees” block B360 too. Thus the recovery mechanism notices that only block B330 is active, deduces the train must be there, and brings it back home. From a viewer point of view, that all happens almost instantly so it’s hard to notice visually that something went wrong. But from a software perspective, it was all wrong for sure.</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>The “fix” is an idea I had a while ago: right now the automation checks </span><span style="font-style:italic">all</span><span>&nbsp;the blocks on the route. If any block suddenly happens to activate </span><span style="font-style:italic">anywhere</span><span>&nbsp;on the route, that’s a sign something unexpected happens, and we better stop the automation. However, in this case, we don’t need to care about block B360 because it is </span><span style="font-style:italic">behind</span><span>&nbsp;the train. The change I made is to only look at the blocks “in front” of the train. If any of these suddenly become unexpectedly occupied, we better stop right away. If anything happens to blocks that we will not reach, then it’s fine and we can ignore them during </span><span style="font-style:italic">this</span><span>&nbsp;run -- if they are still active the next time the automation tries to start, then that will be a problem and the route won’t get activated, but it doesn’t need to stop the current train.</span></p>
+<p></p>
+<p><span>So that’s what the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/6f773e498a944fc4d840977e8383a00e79e324b5" style="color:inherit;text-decoration:inherit">first commit</a></span><span>&nbsp;does -- it computes only the forward-reachable nodes in the route’s node graph. It’s just your basic directed graph traversal algorithm, nothing fancy. The change is minimal, and the bulk of the commit is just a bunch of validation unit tests. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/133cf7a2bd6ddaa1a68edd02f2d7f9923895ac17" style="color:inherit;text-decoration:inherit">second commit</a></span><span>&nbsp;is even smaller, and just checks the forward-reachable blocks instead of all the route blocks. </span></p>
+<p></p>
+<p><span>Once tested “in real life”, this behaved as expected. </span></p>
+<p></p>
+<p><span>The last piece of the puzzle isn’t software -- it’s to try to understand why that block B360 suddenly behaves like this -- why does it register as occupied (meaning the sensor detects current going through the power lead) when the train is two blocks away?</span></p>
+<p><span>I just ordered and received two new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">IAScaled CKT-BD1</a></span><span>&nbsp;sensors. One will be used to replace the current NCE BD20 to see if it changes the behavior.</span></p>
+<p></p>
+<p><span>The other realization is that a lot of mountain track is just weird -- you might have noticed there’s no “B350” in the block list above. There is a section of track between 340 and 350, but despite my early attempts the track power lead for 350 never activated. Instead, the trains are detected on 340. I know that blocks B340 and B350 have been soldered together a while ago, because I </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2019-08-26_randall_repairs_block_b350.html" style="color:inherit;text-decoration:inherit">previously fixed such a broken joint</a></span><span>. I suspect originally B350 had its own power lead and maybe it broke or something like that and a quick repair was done by bridging it with the nearby B340 block. Now that I have more hands-on background on this layout, maybe it’s time I revisit this, yet it’s still a low-priority item as it works “good enough.”</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2025-01-16_conductor_2_email_notificati_0ac70a31.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-12-16_conductor_2_new_mqtt_support.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

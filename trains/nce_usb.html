@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/nce_usb.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="NCE USB Interface and Arduino" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_fdec6072bed9bb0a87bbdadc4de7498bd8632b68524efe5d130eff3d93042a66i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="NCE USB Interface and Arduino" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_fdec6072bed9bb0a87bbdadc4de7498bd8632b68524efe5d130eff3d93042a66i.jpg" />
+
+<title>NCE USB Interface and Arduino</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="nce_usb.html">NCE USB Interface and Arduino</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700">NCE USB Interface and Arduino</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2016-01</span></p>
+<p></p>
+<p><span>This article explains what is the NCE USB interface, how it works, and more important how can we simply and efficiently use it with an Arduino directly with a simple serial port instead of USB. </span></p>
+<h1 id="h.xxgbrvvkw4q5" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">The NCE USB interface</span></h1>
+<p><span>The USB interface connects a computer to an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ncedcc.com" style="color:inherit;text-decoration:inherit">NCE</a></span><span>&nbsp;command station.</span></p>
+<p><span>It's available from the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ncedcc.com/#!online-store/c1n1m/!/USB-Interface-for-Powercab/p/38322160/category=10026301" style="color:inherit;text-decoration:inherit">NCE online store</a></span><span>&nbsp;as well as many eBay or Amazon-based stores.</span></p>
+<p></p>
+<p><span>This is a fairly simple and modest looking board:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:304.60px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:797.00px"><img alt="" src="img_fdec6072bed9bb0a87bbdadc4de7498bd8632b68524efe5d130eff3d93042a66i.jpg" style="height:454.52px;margin-left:0.00px;margin-top:-75.40px" title=""></span></p>
+<p></p>
+<p><span>On one side is a USB type B connector, and on the other side is the RJ12 which connects to an NCE cab bus using &nbsp;RS485. </span></p>
+<p><span>There are 4 jumpers to configure depending on the kind of command station is used with it.</span></p>
+<p></p>
+<p><span>NCE provides a bunch of technical info on their </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201567339-Cab-Bus-Items" style="color:inherit;text-decoration:inherit">cab bus page</a></span><span>:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200502179/USB-Jumpers-7_3_x.pdf" style="color:inherit;text-decoration:inherit">Jumper configuration</a></span><span>&nbsp;(PDF)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200502169/USB_V7.pdf" style="color:inherit;text-decoration:inherit">NCE ops/command protocol</a></span><span>&nbsp;(PDF)</span></li>
+</ul>
+<p></p>
+<p><span>On the cab bus, the interface shows up as cab number 3. </span></p>
+<p><span>Depending on how you configure it using the jumpers that cab number might be fixed or changeable via software. </span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://sites.google.com/site/markgurries/home/nce-info/nce-usb-limitations" style="color:inherit;text-decoration:inherit">Mark Gurries</a></span><span>&nbsp;has a very good description of how to configure it, so check </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://sites.google.com/site/markgurries/home/nce-info/nce-usb-limitations" style="color:inherit;text-decoration:inherit">his NCE USB page</a></span><span>&nbsp;for details, which explains the differences between V6 and V7 and the various limitations..</span></p>
+<p></p>
+<p><span>So, what we really have here is basically a cab throttle, but without any buttons nor screen. The whole point is to have a computer operate and interact with the layout. The board doesn't do anything by itself, it needs to be controlled by something. For most people that means running </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/" style="color:inherit;text-decoration:inherit">JMRI</a></span><span>&nbsp;or </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.rocrail.net" style="color:inherit;text-decoration:inherit">RocRail</a></span><span>, which both have excellent support for this board:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/help/en/html/hardware/nce/NCE.shtml#connecting" style="color:inherit;text-decoration:inherit">JMRI page for the NCE USB</a></span><span>&nbsp;connection.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://wiki.rocrail.net/doku.php?id=nce-en" style="color:inherit;text-decoration:inherit">RocRail page for the NCE USB</a></span><span>&nbsp;connection.</span></li>
+</ul>
+<p></p>
+<p><span>I personally use both. If all you're going to use is either JMRI or RocRail, you can't stop reading at that point.</span></p>
+<p><span>Sometimes I also want to go beyond what JMRI or RocRail offer and have direct control on my layout with my own software, either running on Linux or Arduino. For that, let's talk internals. </span></p>
+<p></p>
+<p><span>Now all that follows is based on my own limited understanding of the board so take it with a grain of salt. Also note that I'm using the NCE USB V7. </span></p>
+<p></p>
+<p><span>First, how does the board work? At a high level, it's extremely simple:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:152.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8268c471730c898212ff4ac93ef6d4722cf0bfdec426eef905adac7efe87af74d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>On the USB side this is nothing more than a serial port using the ubiquitous </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.silabs.com/products/interface/usbtouart/Pages/usb-to-uart-bridge.aspx" style="color:inherit;text-decoration:inherit">CP2102</a></span><span>. Which means drivers are readily available for Mac, Windows or Linux and can be found on this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/categories/200075925-Cab-Bus-Products-and-Information" style="color:inherit;text-decoration:inherit">NCE web page</a></span><span>. For Linux you probably already have the cp210x driver installed. For Windows, I think you can now let Windows find it automatically for you.</span></p>
+<p></p>
+<p><span>The board itself is really composed of 2 obvious parts: the USB port and the CP2102 on one side, powered by the USB bus. On the other side is the PIC16 and the RJ12 jack, powered by the cab bus. In the middle is a simple dual opto coupler that carries the serial TX and RX yet isolates both parts. The USB part runs at 3.4V and the PIC16 part runs at 5V.</span></p>
+<p></p>
+<p><span>Note: some NCE documentation refers to their cab bus connector as an RJ11, others as an RJ12. The RJ12 is a 6P6C and the RJ11 is a 6P4C means 6 wire "slots" but only 4 actually being used. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200500679/cab_bus_wiring.JPG" style="color:inherit;text-decoration:inherit">NCE cab bus wiring schema</a></span><span>&nbsp;actually shows the latter.</span></p>
+<p></p>
+<p><span>Protocol is all serial and fairly well documented by NCE in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200502169/USB_V7.pdf" style="color:inherit;text-decoration:inherit">accompanying documentation</a></span><span>. Commands are defined using one byte with high-bit set (0x80 or above) followed by a few bytes for parameters, and replies are generally one byte for status.</span></p>
+<p><span>The 4 jumpers on the board control the baud rate (9600 or 19200) and the capabilities depending on which command station is being used. That part is important because the jumpers are actually used to limit what can be done, with the idea of disabling commands that a command station could not understand. </span></p>
+<p><span>The serial protocol is similar to what a PowerPro gives via its serial port but with more limitations, for example the clock commands are indicated as not supported. </span></p>
+<h1 id="h.c8hr1krrrbbk" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Python Access</span></h1>
+<p><span>So let's use it directly. First connect the board to a computer via USB, install drivers if necessary and plug the cab bus.</span></p>
+<p><span>I generally like to do a quick check with JMRI that the board is properly recognized. That also conveniently gives me the port to use, e.g. right now I have COM8 on the Windows box and /dev/ttyS2 on the Linux one. Port numbers will change of course with your own setup.</span></p>
+<p></p>
+<p><span>I've used that setup at GGMRC with a Raspberry Pi and it worked like a charm. No drivers to install (the cp210x module was already in Raspbian if I remember correctly).</span></p>
+<p><span>However on Linux I have another arduino that shows up as a ttyS and I use an udev rule to fix the port:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">$ cat /etc/udev/rules.d/052_nce.rules</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0666", OWNER:="root", GROUP:="root", SYMLINK+="usb/nce"</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Once we've verified that the board works with JMRI, close the app to release the comm port and try our own.</span></p>
+<p></p>
+<p><span>For a quick test we'll use a Python script and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://pyserial.readthedocs.org/" style="color:inherit;text-decoration:inherit">pyserial library</a></span><span>:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt"># Install PIP from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://pip.pypa.io/en/stable/installing/" style="color:inherit;text-decoration:inherit">https://pip.pypa.io/en/stable/installing/</a></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;if needed</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">$ pip install pyserial</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p></p>
+<p><span>The program itself:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#!/usr/bin/python</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Program to test communicating directly with NCE USB over COM port</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># Requires: PySerial: pip install pyserial (http://pyserial.readthedocs.org/)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">import serial</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">import time</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># COM port to use. That can take any of the following forms:</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline"># COM8 for Python Windows, /dev/com8 or /dev/ttyS7 for Cygwin, /dev/ttyS2 for Linux</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">COM = "/dev/ttyS2"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">LOCO = 4014</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">LOCO_H = 0xC0 + (LOCO &gt;&gt; 8)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">LOCO_L = LOCO &amp; 0xFF</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">def test_check_version(ser):</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; # NCE USB 0xAA return C/S software version</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; n = ser.write(bytearray([0xAA]))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0xAA Write reply", n</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; v = ser.read(size=3) &nbsp;# 3 bytes</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0xAA Read reply", repr(v)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">def test_send_dummies(ser):</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; # NCE USB 0x80 should always reply with a single !, 0x8C with 3 bytes ! \n\r</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; n = ser.write(bytearray([0x80]))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0x80 Write reply", n</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; v = ser.read() &nbsp;# 1 byte</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0x80 Read reply", repr(v)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; n = ser.write(bytearray([0x8C]))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0x8C Write reply", n</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; v = ser.read(size=3)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0x8C Read reply", repr(v)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">def test_headlight_F4_on_off(ser):</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; # NCE USB 0xA2 &lt;adr H/L&gt; 07 10|00 (4=F0/light on/off), reply 1 byte status</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; for state in [0x10, 0x00]:</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; n = ser.write(bytearray([0xA2, LOCO_H, LOCO_L, 0x07, state]))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; print "0xA2 light Write reply", n</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; v = ser.read() &nbsp;# 1 byte</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; print "0xA2 light Read reply", repr(v)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; time.sleep(2)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">def test_move_forward_stop(ser):</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; # NCE USB 0xA2 &lt;adr H/L&gt; 04 0..7F (forward 128) and 06 00 (estop forward), reply 1 byte status</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; for speed in [0x02, 0x00]:</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; n = ser.write(bytearray([0xA2, LOCO_H, LOCO_L, 0x04, speed]))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; print "0xA2 fwd Write reply", n</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; v = ser.read() &nbsp;# 1 byte</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; print "0xA2 fwd Read reply", repr(v)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; time.sleep(2)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; n = ser.write(bytearray([0xA2, LOCO_H, LOCO_L, 0x06, 0x00]))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0xA2 estop Write reply", n</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(0.01)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; v = ser.read() &nbsp;# 1 byte</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print "0xA2 estop Read reply", repr(v)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; time.sleep(2)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">def main():</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; print COM, "open port"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; ser = serial.Serial(port=COM, baudrate=9600, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, timeout=None)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; try:</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; test_check_version(ser)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; test_send_dummies(ser)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; test_headlight_F4_on_off(ser)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; test_move_forward_stop(ser)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; finally:</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; ser.close()</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; print COM, "closed port"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">if __name__ == "__main__":</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; main()</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>I think the program is self explanatory: open the comm port, send a few commands, close the port.</span></p>
+<p><span>All error checking code is omitted for brevity. One obvious omission is that the serial port access will block when the command station is not connected or not powered up. In a real program you'd use the timeout option of pyserial and deal with the error (retry later, notify the user, etc.).</span></p>
+<p></p>
+<p><span>The commands are described in detail in this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200502169/USB_V7.pdf" style="color:inherit;text-decoration:inherit">NCE documentation</a></span><span>. In my case the only commands I need are:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>0xAA to read the software version in the PIC16. I'll use that as a comm test, and also to make sure I'm talking to the right kind of board.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>0xA2 to control a locomotive: address, operation and parameters.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I only need a handful of operations: 03 to send a reverse 128 speed, 04 for a forward 128 speed, 05 for estop reverse, 06 for estop forward and 07-09 for controlling functions F0..F12.</span></li>
+</ul>
+<p></p>
+<p><span>Note that setting the speed to zero and using estop is not the same thing. Obviously both stop an engine but on a few decoders I've tried such as the Tsunami the estop also turns off the engine sound by running the shutdown sound sequence, whereas speed zero leaves it with the idling sound. It's not clear why there are two estop operations though.</span></p>
+<p><span>One thing I did not see was a way to read the current functions states for a given engine. Setting them is done in groups of 5 bits for F0..F3 and groups of 4 bits above. That means we'll always be setting F1..F3 at the same as F0.</span></p>
+<h1 id="h.osxq7hxl7juq" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">A closer look</span></h1>
+<p><span>The previous part was good when using the board as intended via USB. A typical example is to connect the board to a Raspberry Pi and then program it directly. But what if we have something more basic like, say, an Arduino?</span></p>
+<p><span>In practice, that means I'd have to use an Arduino with a micro-USB and somehow manage to make it talk to the USB type B on this board. That's what USB-OTG is designed for, except I don't think this board supports OTG.</span></p>
+<p><span>Bottom line, it seems a bit overkill to use USB. Remember the USB is just a glorified serial port, and Arduinos are generally loaded with a couple serial ports or even more.</span></p>
+<p></p>
+<p><span>That's why I started looking a bit closer at the board and I noticed that at the core, the design looks like this:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:270.51px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_8b51cf3bf83fd149a71f8700b721ed02b6b365323e24cf1f06e912875a26ae64d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>In case that's not obvious, I'll spell it out:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The USB connector is directly connected to a CP2102, a typical USB to serial TTL converter.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The CP2102 takes D+/D- from the USB on one side and transforms that in an UART RX/TX on the other side.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The RX/TX connects to the RX/TX UART port of a PIC16F via an optocoupler (D213).</span></li>
+</ul>
+<p></p>
+<p><span>So can we have an Arduino bypass the USB part and talk directly to the PIC16?</span></p>
+<p></p>
+<p><span>A few data sheet references would be useful here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>SILABS CP2102, a typical USB to serial TTL converter:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.mouser.com/ds/2/368/silicon%20laboratories_102-short-552101.pdf" style="color:inherit;text-decoration:inherit">http://www.mouser.com/ds/2/368/silicon%20laboratories_102-short-552101.pdf</a></span><span><br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/CP2102-9.pdf" style="color:inherit;text-decoration:inherit">https://www.silabs.com/Support%20Documents/TechnicalDocs/CP2102-9.pdf</a></span><span><br></span><span>Only UART pins used are TXD (left) and RXD (right) on top.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Fairchild D213, dual channel phototransistor:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.mouser.com/ds/2/149/MOCD213M-116327.pdf" style="color:inherit;text-decoration:inherit">http://www.mouser.com/ds/2/149/MOCD213M-116327.pdf</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>PIC16F913, a nice "old school" microprocessor in 28-pin SOIC format:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41250F.pdf" style="color:inherit;text-decoration:inherit">http://ww1.microchip.com/downloads/en/DeviceDoc/41250F.pdf</a></span><span><br></span><span>Pin 18: RC7 / RX / DT / SDI / SDA / SEG8<br>Pin 17: RC6 / TX / CK / SCK / SCL / SEG9</span></li>
+</ul>
+<p></p>
+<p><span>I love this design. It's super simple and efficient. Not to mention that the PCB is a simple dual layer and extremely trivial to follow the routes. Anyway, enough drooling, moving on.</span></p>
+<p></p>
+<p><span>One thing to remember is that we have two independent modules here. The power supplies are separated:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The USB side is powered by the USB bus and the CP2102 includes its own voltage regulator. Testing it shows it seems to be around 3.4 V, confirmed by the datasheet.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The PIC16 side is at 5 V, powered by the cab bus via a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ti.com/lit/ds/symlink/lm78l05.pdf" style="color:inherit;text-decoration:inherit">78L05</a></span><span>&nbsp;in SOIC form.</span></li>
+</ul>
+<p></p>
+<p><span>That's important because in my case I use a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/wiki/digix/digix" style="color:inherit;text-decoration:inherit">DigiX</a></span><span>&nbsp;with 3.3V logic levels. This has the same 3.3 V limitation as the Raspberry Pi GPIO which means we can't randomly connect 5V I/O without a level shifter. But in this case we don't have to, because all we need is to connect directly to the D213 on the CP2102 "side." There's an optocoupler on that board, we might as well use it just for that.</span></p>
+<p></p>
+<p><span>It's interesting to note that the board has 7-pin through-hole "header" which is the PIC16F's ICSP (In-Circuit Serial Programming, see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf" style="color:inherit;text-decoration:inherit">datasheet</a></span><span>&nbsp;chapter 28, page 361). </span></p>
+<p><span>The pins connect to the PIC16 as follows:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>1 = Pin 1 (Vpp / !MCLR)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>2 = Header 1 with a 10k resistor to Pin 20 (Vdd)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>3 = GND / Pin 8 (Vss)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>4 = Pin 28 (ICSPDATA)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>5 = Pin 27 (ICSPCLK)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>6 = Not Connected</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>7 = Not Connected</span></li>
+</ul>
+<p></p>
+<p><span>Note: Vss is the ground ref, Vdd is the positive supply, Vpp is the programming voltage.</span></p>
+<p><span>Vdd max is +5.5 V and Vpp max is +9 V.</span></p>
+<p></p>
+<p><span>Even if I had an Arduino that supports 5 V levels, I'd still use the optocoupler to make sure not to mix ground and power levels from the cab bus with the arduino power source. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200500679/cab_bus_wiring.JPG" style="color:inherit;text-decoration:inherit">NCE cab bus wiring schema</a></span><span>&nbsp;indicates the cab bus carries 12 V, but I don't remember reading how much power the accessories can draw from that. Mine takes 1A @ 5 V so that's probably too much anyway.</span></p>
+<h1 id="h.1jktf2ywelha" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Bypassing the USB port</span></h1>
+<p><span>Let's put the findings from the previous paragraph in application. First we need access to the RX and TX serial signals on the CP2102 side. What I ended up doing is drilling 4 little holes in the board just above the USB port in an empty location and then added a 4-pin header. The header carries 4 signals:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A +3.3 V power for the USB side, which will be delivered by the Arduino.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The TX pin from the CP2102.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The RX pin from the CP2102.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The ground for the USB side, which will be connected to the Arduino ground.</span></li>
+</ul>
+<p></p>
+<p><span>I can't solder on the CP2102 as it's using a surface mount pitch which is way too small for me. However the D213 optocoupler is a standard size SOIC and is something I could solder onto with some care.</span></p>
+<p><span>I noticed that pin 1 of the D213 was connected to Vcc on the large capacitor nearby via a pull-up and I wanted to keep it that way. The other pin I need is pin 5 on the D213 and that's connected to ground.</span></p>
+<p><span>Turns out this large capacitor is perfect for bridging the Vcc and the ground I need, so that was a good place to pick up both ground and the 3.3 Vcc.</span></p>
+<p></p>
+<p><span>Here's the result of this little kitbash:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:214.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_eef6f58997308fcbbcb43f2fa4123eb7b8a55491827d82088005ed655039bf2ai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The little green wires are a bit hard to see and that's exactly why I choose this color.</span></p>
+<p></p>
+<p><span>Note that I must not power via both the USB and the new header at the same time, but that's the whole point. This way the board is still usable via regular USB if I later change my mind. I didn't have to cut any traces or desolder anything. Note that this applies the Arduino's 3.3 V to the Vdd pin #6 of the CP2102 and should match its self-powered mode used to bypass its internal voltage regulator (see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/CP2102-9.pdf" style="color:inherit;text-decoration:inherit">page 19 on the datasheet here</a></span><span>).</span></p>
+<p></p>
+<p><span>Now to use this:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The TX pin from the CP2102 goes to the TX1 pin 17 from the DigiX.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The RX pin from the CP2102 goes to the RX1 pin 18 from the DigiX.</span></li>
+</ul>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/wiki/_media/digix/tutorials/digix-pinout-beta-097.pdf" style="color:inherit;text-decoration:inherit">DigiX pinout available here</a></span><span>.</span></p>
+<p><span>Of course I originally got this in the wrong order -- usually we want to cross RX/TX with UARTs but here we are in fact replacing the output of the CP2102 but the DigiX. It's when it gets to the PIC16 that RX/TX are crossed at the optocoupler level.</span></p>
+<p></p>
+<p><span>Note that Serial1 on the DigiX is connected to the wifi module. I can use it as in this case the wifi module is deactivated by removing the </span><span style="font-style:italic">wifi enable</span><span>&nbsp;jumper. Otherwise the DigiX has other options since it has 4 serial ports (Serial0 goes to USB, Serial1 to wifi and there's Serial2 and 3 which are free to use).</span></p>
+<p></p>
+<p><span>Here's a trivial sketch that will toggle a locomotive headlight:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Serial1.begin(9600 /*SERIAL_8N1*/);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define LOCO 1538</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">byte cmd_buf[10];</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void headlight(int light) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; int LOCO_H = 0xC0 + (LOCO &gt;&gt; 8);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; int LOCO_L = LOCO &amp; 0xFF;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cmd_buf[0] = 0xA2;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cmd_buf[1] = LOCO_H;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cmd_buf[2] = LOCO_L;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cmd_buf[3] = 0x07;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cmd_buf[4] = light ? 0x10 : 0;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Serial1.write(cmd_buf, 5);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; if (Serial1.available()) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; // '!' on success</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; char c = Serial1.read(); </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; lcd.setCursor(pos, 1);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; lcd.print(c);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>You can clearly recognize the 0xA2 byte sequence from the previous Python script.</span></p>
+<p><span>Note that you must match the baud rate with the one of the board, controlled by JP1.</span></p>
+<p></p>
+<p><span>To finish here's the module being used on the prototype board for my current project:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:536.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_de17790776e3c7d5b880965d31554a53fd1a9eb6a463685f02b100d9663dc7c6i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The DigiX (top left) drives the 20x4 blue LCD via I</span><span style="vertical-align:super">2</span><span>C and the NCE card via Serial1. </span></p>
+<p><span>At the bottom there's the gray cable from my cab bus on the RJ12 connected.</span></p>
+<p><span>In the middle on the breadboard is a Xminilab that displays the NCE protocol that goes over the serial port. It clearly shows the 0xA2 commands being sent and the 0x21 ('!') replies. </span></p>
+<p><span>The breadboard also has a light-dependent resistor connected on analog pin 0. </span></p>
+<p></p>
+<p><span>To close this, I will add that there are a few electronics articles online that explain how to create your own DCC controller using an Arduino -- such as the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://opendcc.sourceforge.net/" style="color:inherit;text-decoration:inherit">OpenDCC project</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://mrrwa.org/" style="color:inherit;text-decoration:inherit">MRRWA</a></span><span>. But most of them take the holistic approach of creating a command station from scratch. Instead what I showed you here is a simple way to relegate the Arduino as a mere cab throttle for an existing NCE-powered layout. No change needed on my layout, I can still use the same command station, the same ProCab or engineer throttles, and I can still use my computer with JMRI, but whilst I can still do all that I can also have a small dedicated automation controlled by a fully separate Arduino and its own logic.</span></p>
+<p></p>
+<p><span>~~</span></p>
+<p><span>[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span>]</span></p>
+<p><span>~~</span></p>
+<p><span></span></p>
+<p></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

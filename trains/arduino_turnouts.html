@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/arduino_turnouts.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Arduino control of Twin-Coil Turnouts" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_fb3f30c002bc0169cdd7e934313130969db0c7bb3b0a01142eaa43a953ea580fd.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Arduino control of Twin-Coil Turnouts" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_fb3f30c002bc0169cdd7e934313130969db0c7bb3b0a01142eaa43a953ea580fd.png" />
+
+<title>Arduino control of Twin-Coil Turnouts</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="arduino_turnouts.html">Arduino control of Twin-Coil Turnouts</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700;vertical-align:baseline">Layout Automation:<br>Arduino control of Twin-Coil Turnouts</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2015-09</span></p>
+<p></p>
+<h1 id="h.dp6wr2aht9x4" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">The case for DCC control of Turnouts</span></h1>
+<p><span>If you have a DCC layout, there are many ways to control turnouts via DCC. Typically you might have turnouts controlled by fascia push buttons. DCC accessories allow turnouts to be controlled via a remote controller (e.g. ProCab) or by software such as JMRI or RocRail.</span></p>
+<p></p>
+<p><span>But first, we need to answer the main question: why bother in the first place?</span></p>
+<p><span>In my case:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Automated control by software, which means my custom software needs a way to control the turnouts.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Less wiring. I have no physical control panel on my small toy layout -- it's all done via phone, tablet or computer.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I can also toggle turnouts using the “Accy” button on the NCE ProCab controller.</span></li>
+</ul>
+<p></p>
+<p><span>Even if you're not in automation, DCC control of turnouts is still interesting. A club for example could have a dispatcher operate the turnouts remotely during an operating session.</span></p>
+<p></p>
+<p><span>If you have existing turnouts, making them controllable via DCC simply means adding an electronic module that will do the control, for example:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Digitrax offers the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.digitrax.com/products/stationary-decoders/ds64/" style="color:inherit;text-decoration:inherit">DS64 Stationary Decoder</a></span><span>&nbsp;to control both twin-coil and slow-motion turnouts (e.g. Tortoise).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>NCE offers the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/202446835-Switch-IT-MK2" style="color:inherit;text-decoration:inherit">Switch-It</a></span><span>&nbsp;for slow-motion machines and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526409-Snap-IT-for-Atlas-Peco-Bachmann-EZ-or-other-Twin-Coil-Switch-Machines" style="color:inherit;text-decoration:inherit">Snap-It</a></span><span>&nbsp;or </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279-Q-Snap-For-Atlas-Peco-Bachmann-EZ-Or-Other-Twin-Coil-Switch-Machines" style="color:inherit;text-decoration:inherit">Q-Snap</a></span><span>&nbsp;for twin-coil ones. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>EZTrack users can simply use DCC versions of their turnouts (e.g. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://shop.bachmanntrains.com/index.php?main_page=product_info&amp;cPath=258_366_367&amp;products_id=2505" style="color:inherit;text-decoration:inherit">E-Z Track #6 DCC</a></span><span>). </span></li>
+</ul>
+<p></p>
+<p><span>All of these allow for either manual operation or via typical fascia push buttons (more wiring!).</span></p>
+<p></p>
+<p><span>The NCE module is controlled by DCC commands that are sent over the track -- that means it is connected directly to the DCC power bus to receive turnout commands. It can thus be mounted just next to the turnouts to control. No need to have long wires from the turnouts to a control panel. The Digitrax can similarly be connected to the track but also to a LocoNet bus.</span></p>
+<p></p>
+<p><span>One factor is that's all obviously a bit more expensive but probably less than one may think. </span></p>
+<p><span>For example at the time I wrote this, prices worked that way:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An E-Z Track DCC turnout is about $30 more than the non-DCC one, so $30 per turnout. That’s expensive.. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/202446835-Switch-IT-MK2" style="color:inherit;text-decoration:inherit">NCE Switch-It</a></span><span>&nbsp;controls 2 slow-motion turnouts for $30, so $15 per turnout.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526429-Switch-8-Mk2" style="color:inherit;text-decoration:inherit">NCE Switch-It 8</a></span><span>&nbsp;controls up to 8 slow-motion turnouts for $70, so $8.75 per turnout.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526409-Snap-IT-for-Atlas-Peco-Bachmann-EZ-or-other-Twin-Coil-Switch-Machines" style="color:inherit;text-decoration:inherit">NCE Snap-It</a></span><span>&nbsp;controls one twin-coil turnout for $20.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279-Q-Snap-For-Atlas-Peco-Bachmann-EZ-Or-Other-Twin-Coil-Switch-Machines" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>&nbsp;controls 4 twin-coil turnouts for $70, so $17.50 per turnout.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.digitrax.com/products/stationary-decoders/ds64/" style="color:inherit;text-decoration:inherit">Digitrax DS64</a></span><span>&nbsp;controls up to 4 slow-motion or 4 twin-coil turnouts for $60, so $15 per turnout.</span></li>
+</ul>
+<p></p>
+<p><span>When dealing with Tortoise motors, another option is the Hare or </span><span>Wabbit</span><span>&nbsp;from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.dccspecialties.com/" style="color:inherit;text-decoration:inherit">DCC Specialties</a></span><span>&nbsp;that have more bells and whistles. This list is not exhaustive.</span></p>
+<h1 id="h.gisejc3z9s8" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Track Power vs Separate Power Supply</span></h1>
+<p><span>One interesting thing for twin-coil turnouts: twin-coils need a sudden flow of current to switch. Electronics modules as those listed above can draw that power from either the DCC power bus or from an auxiliary bus (typically a secondary AC or DC power supply). </span></p>
+<p></p>
+<p><span>Let's take a concrete example: the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279-Q-Snap-For-Atlas-Peco-Bachmann-EZ-Or-Other-Twin-Coil-Switch-Machines" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>&nbsp;has a 2-pin connector to connect to the DCC power bus. It </span><span style="font-style:italic">also</span><span>&nbsp;has a barrel plug to provide it with DC power. There's a small interruptor in the board to determine if power comes from the power bus or from the DC plug. The commands always come from the DCC bus.</span></p>
+<p></p>
+<p><span>How do you choose which one to use?</span></p>
+<p></p>
+<p><span>These modules can draw a small amount of power from the track, accumulate it in capacitors and use this for snapping the coils. This way there's no need to have a separate DC or AC accessory bus for the turnouts -- the immediate benefit is one less power supply or bus to maintain. If you have too many modules, they will eventually draw too much power from the DCC bus, but that would probably the case of a large layout that would require additional DCC boosters.</span></p>
+<p></p>
+<p><span>The drawback is that an engine shorting the DCC power bus will also render the turnouts inoperative on that block (let's assume block-level short circuit protection is present). And where do we short the most? On turnouts of course. Kind of a catch-22 here… My experience is that it’s always better to power turnouts motors or twin-coils from a power bus that is independent from the DCC power bus.</span></p>
+<h1 id="h.7gdjdpisv07r" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Arduino versus Off-the-Shelf Solutions</span></h1>
+<p><span>This is an article about controlling turnouts using Arduinos so you might think you can see the choice I’ll make here.</span></p>
+<p></p>
+<p><span>Or maybe not. To jump to the conclusion: using off-the-shelf solutions is most of the time the best way to go.</span></p>
+<p></p>
+<p><span>First rationale: Cost. I listed the cost </span><span style="font-style:italic">per turnout</span><span>&nbsp;of the various NCE / Digitrax choices above. </span></p>
+<p><span>Second rationale: Time and reliability.</span></p>
+<p><span>Third rationale: Ease of replacement.</span></p>
+<p></p>
+<p><span>A custom Arduino based solution won't necessarily be much cheaper especially once you factor the time spent working on it. For my own home layout, I use both. I have one QSnap module, one Switch-It module and also my own Arduino-based solution.</span></p>
+<p></p>
+<p><span>I went the custom route for the sake of experimenting. I like software, electronics, and DIY stuff for the sake of experimenting. Spending time figuring out all of this and playing with Arduino and electronics and integrating custom software with more or less compatible one, that's the whole game that I'm looking for. Using off the shelf solutions that work out of the box, that's boring! Yet I do that too because it's easier and I was curious what's available out there.</span></p>
+<p></p>
+<p><span>When I did the automation work on the layout at the Randall Museum, I directly chose NCE and Digitrax solutions. It was a lot easier to budget (x turnouts = x / 4 &nbsp;or x / 8 modules). More importantly it means the day one of them fails, whoever will be in charge of maintenance can purchase the same module and replace it by just wiring it in place. With a custom Arduino solution, it would be required to understand the custom solution and reprogram the Arduino.</span></p>
+<p></p>
+<p><span>As much as I like DIY solutions, they are not always the way to go.</span></p>
+<h1 id="h.xxgbrvvkw4q5" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Relays and Twin-Coils</span></h1>
+<p><span>In the discussion below I will be using both Bachmann EZ-Track non-DCC turnouts and Atlas Snap switches as examples. Let's look at how these work and how to control them.</span></p>
+<p></p>
+<p><span>All twin-coil "snap" turnouts work pretty much the same way: two solenoids act as temporary magnets to pull or push a pin that in turn moves the points. In most turnouts I've seen there are 2 coils back-to-back which kind of look like a single one. Both the Atlas Snap and the Bachmann come with a cheap little push button thing: when you push the button, it momentarily powers one of the coils and the magnet moves in either direction to bring the points in normal or reverse.</span></p>
+<p></p>
+<p><span>One drawback from coils is that they overheat. They must not be powered for too long or they will just fry.</span></p>
+<p></p>
+<p><span>Controlling this is trivial: all we need is to have 2 relays that power the coils like the fascia buttons would. The computer or Arduino just needs to activate one of the two relays for a few milliseconds to put the turnout in the desired position.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.91px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:707.00px"><img alt="" src="img_fb3f30c002bc0169cdd7e934313130969db0c7bb3b0a01142eaa43a953ea580fd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p></p>
+<p><span>The only important difference is whether the solenoids are AC or DC. Generally speaking solenoids can be designed for either AC or DC or both. The cheap DC power supplies we use in HO always come with an AC auxiliary bus so one could reasonably assume these twin-coils will work better in AC. My experience with the Bachmann is that using the 16V AC from an accessory power pack worked very reliably, however using the 12V DC power supply I had around didn't work for all of them (their EZ-Track #4 switched properly but not the EZ-Track #6, nor did the Atlas Snap).</span></p>
+<p></p>
+<p><span>But there's another reason we want to care: it depends on the relays we're going to use.</span></p>
+<p></p>
+<p><span>For my first attempt, I used mechanical relays such as these </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2iH72Nj" style="color:inherit;text-decoration:inherit">SainSmart 5V DC relays</a></span><span>. These work very well yet are quite noisy. The 5V DC indicates what you need to control the board. The relays themselves can handle up to 250V AC or 30V DC in 10A, way more than we need here (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.google.com/?ion=1&amp;espv=2#q=songle%20srd-05vdc-sl-c" style="color:inherit;text-decoration:inherit">actual spec can be found online easily</a></span><span>). This board proved problematic as I wanted to use it with a Digistump DigiX, and even when using the 5V pin from that board, the relays would not all switch properly.</span></p>
+<p></p>
+<p><span>Instead I opted to use Solid State Relays, namely these </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2hhsncD" style="color:inherit;text-decoration:inherit">SainSmart 5V SSR</a></span><span>. The relays are actually </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://media.digikey.com/pdf/Data%20Sheets/Omron%20PDFs/G3MB.pdf" style="color:inherit;text-decoration:inherit">Omron G3MB-202P</a></span><span>&nbsp;which supposedly require 5V in input but they work fine when the relays are powered using the 3V pin from a DigiX. These however have an important limitation: the supported load in the spec is only AC. They internally use phototriacs, and a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/TRIAC" style="color:inherit;text-decoration:inherit">TRIAC</a></span><span>, although designed to switch AC can also in theory switch DC, which a small catch: triacs are latching devices. Once triggered, they will only release the output (load) once the current or voltage drops under a certain level. The spec of the G3MB-202P indicates this is 1V. In an AC load, that occurs naturally with the AC cycle. In a DC load, it doesn't, which means triggering the SSR will turn on the load but it will never turn off even when the relay input is released -- and this application would probably fry the coils.</span></p>
+<p></p>
+<p><span>If you need to drive your twin-coals turnouts in DC, you need a different relay, for example the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2gJcFGs" style="color:inherit;text-decoration:inherit">SainSmart 8-CH SSR 5A DC-DC 5V-220V SSR</a></span><span>. When you get these boards, look carefully at the specs of the relays if possible.</span></p>
+<h1 id="h.yb4pou4izxvi" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid;text-align:left"><span style="font-size:20pt">Arduino and Relays</span></h1>
+<p style="text-align:left"><span>Since in this demo I had a single turnout, I chose to control the Atlas twin-coil turnout directly using relays rather than using an NCE Snap-It module or using an Atlas DCC control unit.</span></p>
+<p style="text-align:left"></p>
+<p><span>The operation of a twin-coil turnout is fairly simple: two coils are used as magnets to pull a pin in one direction or another. The pin moves the turnout. The coils must be energized only very briefly (I used 150 ms for example) otherwise they will overheat and burn out. The power for the coils typically comes from an accessory transformer pack. Some twin-coil turnouts can be energized using AC, others DC, others both. The kind I use (either Atlas or Bachmann) seem to work better with 16 V AC.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>I choose to use the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1rsFsCl" style="color:inherit;text-decoration:inherit">SainSmart 5V 2-channel solid state relay</a></span><span>. Now there are a couple things to mention about it:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>It's a solid state relay, not mechanical, which means it's silent. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The relays on the board are Omron G3MB-202P which spec can be found </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://media.digikey.com/pdf/Data%20Sheets/Omron%20PDFs/G3MB.pdf" style="color:inherit;text-decoration:inherit">here</a></span><span>.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Now that last detail is important</span></p>
+<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://media.digikey.com/pdf/Data%20Sheets/Omron%20PDFs/G3MB.pdf" style="color:inherit;text-decoration:inherit">Omron G3MB-202P</a></span><span>&nbsp;supposedly requires 5V in input but they work fine when the relays are powered using the 3V pin from a 3V-level Arduino (e.g. all the ARM-based ones or a typical Raspberry Pi).</span></p>
+<p style="text-align:left"><span>These however have an important limitation: the supported load in the spec is only AC. They internally use phototriacs, and a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/TRIAC" style="color:inherit;text-decoration:inherit">TRIAC</a></span><span>, although designed to switch AC can also in theory switch DC, which a small catch: triacs are latching devices. Once triggered, they will only release the output (load) once the current or voltage drops under a certain level. The spec of the G3MB-202P indicates this is 1V. In an AC load, that occurs naturally with the AC cycle. In a DC load, it doesn't, which means triggering the SSR will turn on the load but it will never turn off even when the relay input is released -- and in this application that will definitely fry the coils.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>So this relay board works for me because I use the 16V AC from an accessory power pack to power the Atlas twin-coils, and these SSR will properly release on AC, but they won't on DC.</span></p>
+<p style="text-align:left"><span>If you need to drive your twin-coils turnouts in DC, you need a different relay, for example the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1W7ZAa4" style="color:inherit;text-decoration:inherit">SainSmart 8-CH SSR 5A DC-DC 5V-220V SSR</a></span><span>. When you get these boards, look carefully at the specs of the relays if possible. </span></p>
+<h1 id="h.boforjsvcbvu" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid;text-align:left"><span style="font-size:20pt">Example 1: Single Turnout</span></h1>
+<p style="text-align:left"><span>Here's a concrete example, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/arduino_nce.html" style="color:inherit;text-decoration:inherit">taken from this page</a></span><span>. In this case, I'm controlling an Atlas "Snap" Twin-Coil using an Arduino Mega 2560. For a single twin-coil turnout, I only need 2 relays, which is provided by a &nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1rsFsCl" style="color:inherit;text-decoration:inherit">SainSmart 5V 2-channel solid state relay</a></span><span>. Since this Arduino has 5V logic, there is no need for a 3V-5V level shifter (otherwise, you need to either use a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/23nQDbc" style="color:inherit;text-decoration:inherit">level shifter</a></span><span>&nbsp;or make sure the relay board still accepts 3V inputs, e.g. that one technically requires a 5V input but it will still work with a 3V input).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Connection is fairly trivial, the relay can be controlled using any of the digital IO pins and the Mega has a ton of them.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:227.40px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:668.00px"><img alt="" src="img_36e290269501c07d833fafa560d2517c991001ba0d82aa767299140ad56ad02fd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Please note that the Arduino is entirely separated from the AC accessory power. The solid state relays provide opto-isolation.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Controlling the relays is trivial. In this case the relays need to be triggered about 150 milliseconds to trip the twin-coil in the desired position.</span></p>
+<p style="text-align:left"></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY1_PIN &nbsp; &nbsp; &nbsp;52</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY2_PIN &nbsp; &nbsp; &nbsp;53</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY_TIME_MS &nbsp; 150</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; pinMode(RELAY1_PIN, OUTPUT);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; pinMode(RELAY2_PIN, OUTPUT);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(RELAY1_PIN, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(RELAY2_PIN, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Direction: 0=Normal (PIN1), 1=Reverse (PIN2)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void set_turnout(int direction) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; int pin = direction ? RELAY2_PIN : RELAY1_PIN;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(pin, HIGH);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; delay(RELAY_TIME_MS);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(pin, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p style="text-align:left"></p>
+<h1 id="h.bg3sznyii6po" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Example 2: Multiple Turnouts</span></h1>
+<p><span>This is a more beefy version of the previous schema so I'm not repeating the schema part, only showing the end result.</span></p>
+<p></p>
+<p><span>In this case I have a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/products/50" style="color:inherit;text-decoration:inherit">DigiStump DigiX</a></span><span>&nbsp;which is an Arduino Due clone.</span></p>
+<p></p>
+<p><span>I had 5 turnouts to control. Since they are twin-coils, 2 relays are needed per turnouts, one for normal and one reverse (a.k.a. thrown state.) I thus need 10 relays and 10 digital outputs. I have 2 </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2iFUWnE" style="color:inherit;text-decoration:inherit">Sain-Smart 8-channel relay boards</a></span><span>&nbsp;for a total of 16 relays, so technically I could go up to 8 turnouts with the same hardware if I want to expand the layout later.</span></p>
+<p></p>
+<p><span>The Arduino Due, the DigiX and pretty much all the ARM-based Arduino boards run at 3.3V. The relay board technically requires 5V in inputs but in fact it switches nicely using the 3.3V inputs. No need for level shifters.</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:466.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_530cfdf16d8d6d0b6e60ac7cd07a056e393a1ebf8764fcc8c2fc79e742f21432i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The hardware part is fairly straightforward: 8 digital output pins are used on the arduino, connected to the 8 relay inputs. Relays are grouped in pairs, one to throw the switch in normal and one in reverse. </span></p>
+<p></p>
+<p><span>The relays take 16V AC from a power brick and connect directly to the turnouts, in this case EZ-Track twin-coils which I was reusing, as shown in the schema about for the single turnout example.</span></p>
+<p></p>
+<p><span>One thing that image above shows is the complete lack of DCC power bus. In both examples, I do not control the turnouts from the power bus. This means I can't use my NCE ProCab to switch them. In the single turnout example, the turnout was all controlled by an arduino based on sensor feedback. In this example with the DigiX and the 5 turnouts, the control is done via JMRI -- I have </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/layout-wifi" style="color:inherit;text-decoration:inherit">a custom program</a></span><span>&nbsp;that emulates an NCE bus (for JMRI) or an SRCP bus (for RocRail), receives the commands from JMRI or RocRail and then sends them over wifi to the DigiX. This way I control them using a tablet and JMRI's WiThrottle or the JMRI web server.</span></p>
+<p></p>
+<p><span>Here's an extract of the Arduino code that is relevant for the relay control (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/layout-wifi/blob/main/digix/LayoutWifi/LayoutWifi.ino" style="color:inherit;text-decoration:inherit">full version here</a></span><span>):</span></p>
+<p style="text-align:left"></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// There are 2 relays (one normal, one reversed) per turnout.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// There are 2 cards of 8 relays, so we can have a max of 8 relays</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// and we need 16 output pins: 90-105.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY_PIN_1 90</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define TURNOUT_N &nbsp; &nbsp;8</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY_N &nbsp; &nbsp; (2 * TURNOUT_N)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY_NORMAL( T) (2 * (T))</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY_REVERSE(T) ((2 * (T)) + 1)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define RELAY_TIME_MS &nbsp; 100</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define TURNOUT_NORMAL &nbsp;'N'</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define TURNOUT_REVERSE 'R'</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">unsigned char _turnouts[TURNOUT_N];</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void trip_relay(int);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup_relays() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // initialize digital pin 90+ as an output.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; for (int i = 0; i &lt; RELAY_N; i++) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; pinMode(RELAY_PIN_1 + i, OUTPUT);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; digitalWrite(RELAY_PIN_1 + i, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; for (int i = 0; i &lt; TURNOUT_N; i++) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; _turnouts[i] = TURNOUT_NORMAL;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; trip_relay(RELAY_NORMAL(i));</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; setup_relays();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // etc</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void trip_relay(int index /* 0..RELAY_N-1 */) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; digitalWrite(RELAY_PIN_1 + index, HIGH);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; delay(RELAY_TIME_MS);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; digitalWrite(RELAY_PIN_1 + index, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void set_turnout(int turnout /* 0..TURNOUT_N-1 */, int direction) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; if (_turnouts[turnout] != direction) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; trip_relay(direction == TURNOUT_NORMAL ? RELAY_NORMAL(turnout) </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: RELAY_REVERSE(turnout));</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; _turnouts[turnout] = direction;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p style="text-align:left"></p>
+<p><span>Fairly simple. Enjoy.</span></p>
+<p></p>
+<p><span>~~</span></p>
+<p><span>[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span>]</span></p>
+<p><span>~~</span></p>
+<p><span></span></p>
+<p></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

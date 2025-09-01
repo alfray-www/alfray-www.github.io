@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2023-05-06_conductor_2_the_flaky_sensors_issue.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: The “Flaky” Sensors Issue" />
+
+<meta property="og:description" content="I’m still trying to deploy Conductor 2&nbsp;and it’s clearly not ready yet. I keep finding issues, some expected, some not." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: The “Flaky” Sensors Issue" />
+
+<meta name="twitter:description" content="I’m still trying to deploy Conductor 2&nbsp;and it’s clearly not ready yet. I keep finding issues, some expected, some not." />
+
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0002.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-05-10_conductor_2_crossing_block_boundaries.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-04-24_conductor_2_dsl_throttle_onl_87348bbf.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2023-05-06 - Conductor 2: The “Flaky” Sensors Issue</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>I’m still trying to deploy </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;and it’s clearly not ready yet. I keep finding issues, some expected, some not.</span></p>
+<p></p>
+<p><span>The Freight automation has been an interesting source of such unexpected issues. It’s a simple reversing shuttle automation across two blocks, yet it has proven more challenging than the complex Passenger and Branchline automations -- these two actually perform quite well. Yet the “simpler” Freight one does not.</span></p>
+<p></p>
+<p><span>The most notable “bug” here is with the Freight automation: the engine starts on the first block, travels to the second block as expected…, and then instead of reversing the engine back to the beginning of the route, it decides the engine is back on the first block when it’s clearly still on the second block. At that point the automation panics because the engine is obviously not back at the starting point. The programming is entirely skipping half of the route automation, for no apparent reason. Why?</span></p>
+<p></p>
+<p><span>One of the issues which I was more or less expecting was dealing with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2023-05-01_adjusting_the_mountain_bd20_sensors.html" style="color:inherit;text-decoration:inherit">“flaky” sensor on B321, as I explain in detail on that post on the other blog</a></span><span>. There’s some of that here, but there’s also something else entirely going on that I have not figured out yet.</span></p>
+<p></p>
+<p><span>Even after a bit of adjusting, the mountain sensors are still flaky, notably B321 and B370 with the Passenger train. I adjusted B321 for the Freight train but the newer PA engine is still borderline.</span></p>
+<p></p>
+<p><span>Of importance, these sensors detect current consumption. In the case of the reversing train, the sensor turns off when the train is stopped.</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>I cannot adjust these sensors to make them more sensitive -- I’m already running them at the most sensitive setting. Essentially this points out a </span><span style="font-style:italic">clear</span><span>&nbsp;issue with “flaky” sensors handling -- I thought I had accounted for this in the design, and I was </span><span style="font-style:italic">partly</span><span>&nbsp;wrong, or maybe my implementation is wrong, and I should understand why.</span></p>
+<p></p>
+<p><span>From my old design notes, this was supposed to take care of this:</span></p>
+<p></p>
+<p style="margin-left:36pt"><span>The currently occupied block has a timer. As long as the block is occupied, we “don’t care” if the sensor temporarily turns off, and we still consider the block occupied. We only care when the </span><span style="font-style:italic">next</span><span>&nbsp;block becomes active. In essence, the “occupied block” state is a deflaked nature of the “sensor active” state.</span></p>
+<p></p>
+<p><span>That design seems sound. The implementation is also apparently adequate:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The timer gets reset when the train stops. That’s because the timer uses the block timeout, which is the time to </span><span style="font-style:italic">traverse</span><span>&nbsp;the block; thus the intent was for a reversing block to have “initial timeout going in + stop time + initial timeout going out”. But in fact we don’t </span><span style="font-style:italic">reset</span><span>&nbsp;the time when the train stops, we actually </span><span style="font-style:italic">stop</span><span>&nbsp;the timer.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This should make the timeoutExpired() method return always false -- the timeout can only be expired if the timer has been started, and we just stopped it.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Thus I don’t think it’s an issue of timeout expiring, and in fact I don’t remember seeing that in the logs.</span></li>
+</ul>
+<p></p>
+<p><span>So </span><span style="font-weight:700">issue #1</span><span>: Why does the Freight automation route end when the train has not returned?</span></p>
+<p></p>
+<p><span>It’s worth noting that the implementation works for the “running blocks” like B321 and B340 when the train is merely going through the block. The issue for now was only observed with the Freight stopping at B321. I realize I have not observed it with the Passenger train on B370. The log captured last week made no sense, as they seemed to indicate that the </span><span style="font-style:italic">next</span><span>&nbsp;block B311 had auto-magically activated -- which of course cannot be since there was no train on it.</span></p>
+<p></p>
+<p><span>Eventually I’ll get to the bottom of that. In between, let’s move on and identify the other issues.</span></p>
+<p></p>
+<p></p>
+<p><span style="font-weight:700">Issue #2</span><span>: Recovery with a flaky sensor is flawed.</span></p>
+<p></p>
+<p><span>That’s another interesting case noticed last week: the “flaky” sensors tend to be off when the train is stopped. That wreaks the current route recovery algorithms which are inherently based on detecting where the train is located to decide how to recover it. Worse, if we don’t recognize the Freight is stopped in B321, the initial algorithm was still trying to start the Passenger train and it would collide with it -- that has been orthogonally fixed by adding an interlock: PA can’t start if the FR is not at the home location.</span></p>
+<p></p>
+<p><span>The current recovery algorithm is inherently simplified anyway. For example, it does not handle a train stopped on a block boundary. If more than one block is active, the algorithm just gives up. This limitation is a delivery decision to get started with the easy cases.</span></p>
+<p></p>
+<p><span>So how can we recover a stopped train? </span></p>
+<p></p>
+<p><span>One suggestion is to force any missing train to move, hoping that would trigger enough current usage to trip the sensor. Since the block activation state is cached, we can’t move and detect the train in the same engine cycle; thus we’ll need a timer, something like this:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">val recoveryTimer = timer(1.second)</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">fun RecoverTrainsStart() {</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; // Move a train if we don’t find an active block on its route</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; if (PA.blocks { active }.isEmpty) PA.reverse(1.speed)</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; if (FR.blocks { active }.isEmpty) FR.reverse(1.speed)</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; recoveryTimer.reset()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; recoveryTimer.start()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">}</span></p>
+<p style="margin-left:36pt"></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">on { recoveryTimer } then { RecoverTrainsPart2() }</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">fun RecoverTrainsPart2() {</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; // This is 1 second later. Blocks may have become active.</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; PA.stop()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; FR.stop()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; // Detect active blocks for each train route again, and use that info.</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">}</span></p>
+<p></p>
+<p><span>Well, that may </span><span style="font-style:italic">almost</span><span>&nbsp;work. It will likely fail though: let’s assume the FR train needs to be moving to be able to detect it on the block. This above moves it such that the second part of the recovery can find where it is. Then it stops it, and again the block sensor will fail to find the train. Then we move to the recovery route, which first checks that the initial block is properly active, and it won’t, thus it will fail again.</span></p>
+<p></p>
+<p><span>What we need is to </span><span style="font-style:italic">not</span><span>&nbsp;stop the train which we’re going to recover, something like this:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">on { recoveryTimer } then { RecoverTrainsPart2() }</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">fun RecoverTrainsPart2() {</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; // This is 1 second later. Blocks may have become active.</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; // Detect active blocks for each train route again, and use that info.</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; if (PA is ok but FR is not OK) {</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; PA.stop()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; recover_fr()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; } else if (FR is ok but PA is not OK) {</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; FR.stop()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; recover_pa()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; } else {</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; log(“Nothing we can do, aborting.”</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; PA.stop()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; FR.stop()</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; }</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">}</span></p>
+<p></p>
+<p><span style="font-weight:700">Issue #3</span><span>: “On” rules should not use a flaky sensor as an activation trigger.</span></p>
+<p></p>
+<p><span>I do note that if we have an on rule that checks whether a sensor becomes </span><span style="font-style:italic">active</span><span>, it will have problems dealing with these flaky sensors -- the rule will get executed every time the sensor flakes. We could compensate for this by rewriting these rules to use the block occupied state instead:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">on { B321.active &nbsp; } then { action }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# don’t write this</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">on { B321.occupied } then { action }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# write this instead</span></p>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">Note that IBlock does not expose a boolean “</span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">isOccupied” property</span><span>. It does now.</span></p>
+<p></p>
+<p class="console "><span>Update: Or here’s another approach: each sensor should keep a log of say, the last 10 activations. Then we could have a command such as “</span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">sensor.activeWithin(2.second)</span><span>” or something like that. That would be a “soft” way of performing debouncing where needed at the script level. This can work both in an “on rule” and in a “if” in a whileOccupied check. When used in an “on rule”, it would automatically debounce that rule for the time given.</span></p>
+<p></p>
+<p><span>Actually that “soft” debouncing could also help solve the issue #2 above: to start a route, we enforce that the start block appears active and sensing a train. This totally fails on the flaky B321 block, and prevents successful recovery. However it would work if instead we could check whether the sensor had been active within a small amount of time.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-05-10_conductor_2_crossing_block_boundaries.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-04-24_conductor_2_dsl_throttle_onl_87348bbf.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

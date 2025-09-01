@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2023-02-25_split_core_hall-effect_sensors.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Split Core & Hall-Effect Sensors" />
+
+<meta property="og:description" content="For now I’ve been doing block detection on the Randall layout using NCE BD20 current detectors. They work well. There are others DCC-compatible detectors but they all use through-hole core transformers, which means they cannot be used with existing wiring without desoldering or disconnecting something." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_78ebe4eb64f53bb4971cf12cf82c27e1f6d9b5b892d267c9bf3e379f0e7d64d1i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Split Core & Hall-Effect Sensors" />
+
+<meta name="twitter:description" content="For now I’ve been doing block detection on the Randall layout using NCE BD20 current detectors. They work well. There are others DCC-compatible detectors but they all use through-hole core transformers, which means they cannot be used with existing wiring without desoldering or disconnecting something." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_78ebe4eb64f53bb4971cf12cf82c27e1f6d9b5b892d267c9bf3e379f0e7d64d1i.jpg" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0003.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-02-28_sdb_using_freertos_tasks_priorities.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-02-24_sdb_mqtt.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2023-02-25 - Split Core & Hall-Effect Sensors</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Electronics</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p><span>For now I’ve been doing block detection on the Randall layout using NCE BD20 current detectors. They work well. There are others DCC-compatible detectors but they all use through-hole core transformers, which means they cannot be used with existing wiring without desoldering or disconnecting something.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:265.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_78ebe4eb64f53bb4971cf12cf82c27e1f6d9b5b892d267c9bf3e379f0e7d64d1i.jpg" style="height:597.75px;margin-left:-0.00px;margin-top:-292.37px" title=""></span></p>
+<p></p>
+<p><span>There are other contenders to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201254549-BD20-Block-Detector" style="color:inherit;text-decoration:inherit">BD20</a></span><span>, such as the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.modelrailroadcontrolsystems.com/cpod-control-point-occupancy-detector/" style="color:inherit;text-decoration:inherit">cpOD</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">CKT-BD1</a></span><span>. I plan to switch to these once I exhaust my current supply of BD20. But the bottom line is that they all use these “through-hole CT”, and sometimes I wished I had the convenience of a split core transformer that I could quickly snap around a track feeder wire.</span></p>
+<p></p>
+<p><span>I had two goals in mind:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Main goal: Have an alternative to the through-hole CT block detection sensors that do not require disconnecting nor cutting wires to install them.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Secondary goal: Make a little portable “current detector” that I could quickly snap around a track feed wire to trace wire continuity.</span></li>
+</ul>
+<p></p>
+<p><span>Thus a while ago I got two sensors, with the purpose of figuring out to use them to monitor train track current with an ESP32:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3q7qG4z" style="color:inherit;text-decoration:inherit">https://amzn.to/3q7qG4z</a></span><span>&nbsp;</span><span>Hall-sensing ACS712-5A current module.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3AJM5FP" style="color:inherit;text-decoration:inherit">https://amzn.to/3AJM5FP</a></span><span>&nbsp;</span><span>Split core SCT013-005 5A 1V current transformer.</span></li>
+</ul>
+<p></p>
+<p><span>Spoiler alert: I discussed that topic on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.mrhmag.com/post/equivalent-of-bd20-block-detector-with-split-core-transformers-12438761" style="color:inherit;text-decoration:inherit">MRH forum</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://groups.io/g/arduini/topic/93449311" style="color:inherit;text-decoration:inherit">Arduini forum</a></span><span>&nbsp;and I was clearly told that would not work, and to make a long story short, I never managed to make them work for this application.</span></p>
+<p></p>
+<p><span>Upfront I want to indicate why that was anyway not a surprise and I was likely to fail:</span></p>
+<p><span></span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>My end goal would have been to connect the sensors pretty much directly to an Arduino or ESP32 </span><span style="font-style:italic">with no other circuitry</span><span>&nbsp;-- an important point -- and then deal with the sensor in software. </span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>By contrast the BD20, even though it’s the one with the simplest board, still clearly has 4 diodes (likely a bridge rectifier), 3 transistors, and a few other discrete SMD components. The cpOD and the CKT-BD1 have even more circuitry, including a small microcontroller likely to perform some noise filtering.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The split core transformer I got as well as the ACS712 are typically used in home automation systems to monitor power line current anywhere from 1A to 100A, and at either 50 or 60 Hz. By contrast, current on a DCC track feeder may be maybe 2~4A max on a heavy load, and our DCC signal runs at 8 kHz. The dedicated block detectors above are extremely sensitive -- they will detect an engine not running and sitting idle on the track when properly configured!</span></li>
+</ul>
+<p></p>
+<p><span>Anyway, I’ve done the test and I failed. I’d venture one could still probably use these sensors with some additional circuitry, but I have not tried that… yet -- my goal was not to replicate the behavior of the dedicated sensors cited above.</span></p>
+<p></p>
+<p><span style="font-weight:700">BD20 Reference</span></p>
+<p></p>
+<p><span>My reference is one of my BD20 sensors. These are designed to do just that -- block detection for DCC. It detects when an engine is on the track, even if it’s not running. This implies it’s sensitive enough to detect the current used by the engine’s decoder. It also detects lighted cars. When we want to detect rolling stock that does not have any active electronics inside, the typical trick is to glue a surface mount resistor on the axle between the wheels, and these can be in the range 5k-40kΩ.</span></p>
+<p></p>
+<p><span>To test the behavior of a BD20 sensor, I used a piece of test track connected to my DCC system. I don’t have a reliable amp-meter to use (the amp-meter in my multimeter died a while ago; I must have abused it somehow). So instead I’ve placed a 10kΩ resistor in series with one of the DCC wires and measured the voltage across that. The DCC is a square signal at 8 kHz and neither the DC nor the AC voltage measure of the multimeter are appropriate for this; instead I connected a small digital scope to the resistor and looked visually at the DCC signal on screen, approximately guessing the voltage peak-to-peak.</span></p>
+<p><span>What I get is:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Bridge rails with a 100kΩ resistor ⇒ measured +/- 0.12 mA ⇒ BD20 does not trigger.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Bridge rails with a 22kΩ resistor ⇒ measured +/- 0.4 mA ⇒ BD20 does trigger.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Bridge rails with a 10kΩ resistor ⇒ measured +/- 0.7 mA ⇒ BD20 does trigger.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Placed an engine (idle) on the track ⇒ measured +/- 1 mA ⇒ BD20 did trigger.</span></li>
+</ul>
+<p></p>
+<p><span>All these measurements are approximate, but they give us a rough idea of the current that the BD20 can detect -- it seems to detect something as low as +/- 0.4 mA used symmetrically on the DCC signal. Let’s assume the circuitry on the BD20 rectifies the signal, that means they trigger a bit under 1 mA of current usage.</span></p>
+<p></p>
+<p><span>Let’s compare this with the two sensors I’m trying to use.</span></p>
+<p></p>
+<p></p>
+<p><span style="font-weight:700">ACS712 Module</span></p>
+<p></p>
+<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3q7qG4z" style="color:inherit;text-decoration:inherit">https://amzn.to/3q7qG4z</a></span><span>&nbsp;ACS712-5A is already mounted on a 3-pin “arduino compatible” board.<br>This one is rated at 5 amps, which is the minimum available.</span></p>
+<p></p>
+<p><span>Here’s the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.allegromicro.com/en/products/sense/current-sensor-ics/zero-to-fifty-amp-integrated-conductor-sensor-ics/acs712" style="color:inherit;text-decoration:inherit">ACS712 data sheet from allegro</a></span><span>:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Chip: ACS712ELC-05B</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Supply power: 5V (min 4.5V, typ max 5.5V)</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Measuring range: 5A</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Analog output: 185 mV/A</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When there is no the detection current through, the output voltage is VCC / 2</span></li>
+</ul>
+<p></p>
+<p><span>Application note #4 shows output should be placed on a resistor divider for a typical 3.3V ADC. Shows a 1 nF cap on filter pin 6 -- without detailing what frequency cut-off that gives us here. There's a diode and a "user cap C1" too, without explanations either.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:188.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:287.12px"><img alt="" src="img_7bd7225fdcca19005fbf09c7e10ac293d9dec7dfad0f1b1d1b8b9e3aea155324i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Do I need D1 &amp; C1 on this application?</span></p>
+<p></p>
+<p><span>What is the schematics of the little board I actually got? Looking at it:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:349.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_085209d9f2616e928ab66dee59043e027c6798f6df769e2d829cb175298a3290i.jpg" style="height:424.00px;margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>I couldn’t measure the values of the caps on the board, and I did not want to desolder them.</span></p>
+<p><span>The design matches the application note:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a cap between VCC and GND. Let’s assume it’s 0.1 µF.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>FILTER</span><span>&nbsp;pin connects to GND via a cap. Unfortunately that’s the one I’d like to know the value of and I can’t seem to measure it. It’s a slightly different shape than the one on VCC and we can infer it’s likely not the same value, whatever value that is.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>VIOUT pin connects directly to OUT with no other circuitry. It’s up to me to add resistors.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>LED is driven directly off VCC via a 1000Ω resistor. I couldn’t measure the Vf but looking at samples from Mouser a typical green SMD LED would be either around 2 V or 3.3 V, and let’s say 1V for a red one.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>5V-1V=4V / 1000Ω = 4mA.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>5V-2V=3V / 1000Ω = 3mA.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>5V-3.3V=1.7V / 1000Ω = 1.7mA.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>⇒ When trying the schematics above on a single wire of DCC bus with a single engine running, and looking at the output using a small digital scope, I get basically nothing but noise. Signal is at ~2.04 V and doesn’t move from there. By contrast, a single through-wire with a BD20 triggers instantly in the same conditions.</span></p>
+<p></p>
+<p><span>Let’s look at the spec above: 185 mV/A is the theoretical ratio. What does that give us, when we know our BD20 can detect as much as 1 mA?</span></p>
+<p><span>If we want to detect 1 mA on the input, we’ll get 0.185 mV on the output. That is… not a lot.</span></p>
+<p><span>If we were to feed this to an ADC on a theoretical 3.3V ramp at 10 bits, that’s 4096/3.3V*0.185mV = 0.23 ticks… Less than one tick of precision. We’re not going to measure that.</span></p>
+<p><span>Let’s reverse this: 3.3V/4096 = 0.8mV is the least we could measure with one tick, which would be ~4mA on the input per ADC tick. We’re not measuring anything under 4 mA, and that’s not even counting the ADC noise. Upfront, that’s not going to work.</span></p>
+<p></p>
+<p><span>I’m not going to dwell too much on that sensor since I’d rather have something with the convenience of a split core that I quickly snap around an existing wire, without having to cut it. So let’s look at the other sensor</span></p>
+<p></p>
+<p></p>
+<p><span style="font-weight:700">Split Core Transformer</span></p>
+<p></p>
+<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3AJM5FP" style="color:inherit;text-decoration:inherit">https://amzn.to/3AJM5FP</a></span><span>&nbsp;split core is a 5A/1V model with a sampling resistor. </span></p>
+<p><span>There are two versions of these split cores:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Without a resistor: it’s a coil, and one measures current through it.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>WIth a resistor: a resistor in series with the internal coil, and one measures voltage across that resistor.</span></li>
+</ul>
+<p><span>I have the latter one.</span></p>
+<p></p>
+<p><span>What’s inside:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:300.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:714.60px"><img alt="" src="img_7a1d7ed9dbad00e615c11f06052ef85f58c647af3d1426c9733311c0902f9e30i.jpg" style="height:597.00px;margin-left:-82.40px;margin-top:-121.00px;width:797.00px" title=""></span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An SMD marked “WP”. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://smd.yooneed.one/code5750.html" style="color:inherit;text-decoration:inherit">That marking could denote</a></span><span>&nbsp;a diode or a “transient voltage suppressor”. The latter seems more likely, and matches the “TVS” indication on the datasheet linked above. Here’s such </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.vishay.com/docs/88390/smaj50a.pdf" style="color:inherit;text-decoration:inherit">a Vishay component</a></span><span>&nbsp;(to be clear I couldn’t recognize the logo on the TVS so I am in no way assuming it is a Vishay nor that one in particular)</span><span>. Did I mention I have no idea how a “TVS” behaves? What does it do to a 8 kHz signal?</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>2 resistors in parallel, marked 4300 and 7501: 430 Ω // 7.5 kΩ. Eq = 406 Ω.</span></li>
+</ul>
+<p></p>
+<p><span>Let’s compare this with the specs of 5A ⇒ 1V.</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>U=RI ⇒ 1V = 406Ω * I ⇒ I = 1/406 = 2.46 mA.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>5A/2.46mA gives a ratio of 1:2030 for the primary/secondary windings.</span></li>
+</ul>
+<p></p>
+<p><span>Datasheet found online, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://datasheetspdf.com/pdf/1328320/YHDC/SCT-013-050/1" style="color:inherit;text-decoration:inherit">https://datasheetspdf.com/pdf/1328320/YHDC/SCT-013-050/1</a></span><span>:</span></p>
+<p><span>Some notes:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Output is a 3.5 mm jack with 2 outer rings used (middle one “vacant”).</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All the ESP/Arduino schematics I find using the SCT013 in voltage mode power it via a 2-resistor voltage divider with a 10 µF cap (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://savjee.be/2019/07/Home-Energy-Monitor-ESP32-CT-Sensor-Emonlib/" style="color:inherit;text-decoration:inherit">example</a></span><span>). None explain why.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Another </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://how2electronics.com/iot-based-electricity-energy-meter-using-esp32-blynk/" style="color:inherit;text-decoration:inherit">one</a></span><span>&nbsp;points out they use a 5V input, but I don’t understand what that 100Ω resistor does in there so I’m going to ignore this wiring schematics.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Why use a voltage divider? Output will be zero and +/- so it’s easier to deal with if it’s centered on half the analog Vin reference voltage -- which is exactly how an ACS712 operates, which also makes all these Arduino sketches more or less interchangeable.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It would make more sense to power the transformer from the 3.3V output of the ESP32, which is what the first example does.</span></li>
+</ul>
+<p></p>
+<p><span>We’ll use this schematic:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:194.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:286.92px"><img alt="" src="img_635e076141bfd3e62caf56dc341fb18b336105e19e042365a5ced3d870e9d1bci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>⇒ When trying the schematics above on a single wire of DCC bus with one engine running, I get basically nothing but noise. There seems to be a voltage when measured solely on the output of the sensor using the digital scope only. The scope registers it in the 24 mVmrs range. I can’t measure it with a voltmeter. It’s very inconclusive.</span></p>
+<p><span>Even when trying to loop one DCC wire 3 times around the coil, I got absolutely nothing (I was naively expecting 3 times more on the output). By contrast, a single through-wire with a BD20 triggers instantly in the same conditions.</span></p>
+<p></p>
+<p><span>Let’s look at the spec above: 5A/1V is the theoretical ratio, which means 200mV/A (compare with the 185 mV/A ratio for the ACS712 above).</span></p>
+<p><span>What does that give us, when we know our BD20 can detect as much as 1 mA?</span></p>
+<p><span>If we want to detect 1 mA on the input, we’ll get 0.2 mV on the output. That is still not a lot.</span></p>
+<p><span>If we were to feed this to an ADC on a theoretical 3.3V ramp at 10 bits, that’s 4096/3.3V*0.2mV = 0.25 ticks… We’re clear not going to detect that either.</span></p>
+<p><span>Let’s reverse this: 3.3V/4096 = 0.8mV is the least we could measure with one tick, which would be ~4mA on the input per ADC tick. Not very different from the ACS712-5A indeed.</span></p>
+<p></p>
+<p><span>Here’s an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.gowanda.com/application-notes/custom-transformers/split-core-current-transformers/" style="color:inherit;text-decoration:inherit">interesting discussion</a></span><span>&nbsp;about the issues with split core current transformers designs. The bottom line is that the through-hole versions have a much more efficient toroidal shape, whereas the split cores are less efficient due to their shape, with more magnetic leakage. And then we get to the frequency response. The materials used are apparently typically optimized for power line measurements (50~60 Hz) or for the higher frequencies of switch mode power supplies (20 kHz). It’s nice to know our application, at 8 kHz, falls perfectly out of both categories.</span></p>
+<p></p>
+<p><span>Speaking of frequency response, let’s play with that schematic above a bit more.</span></p>
+<p></p>
+<p><span>R1+R2 is a voltage divider, listed as “either 10kΩ or 100kΩ”, connected to either the 5V or the 3.3V Vout (the schema above clearly calls for the latter). </span></p>
+<p></p>
+<p><span>Impedance of C + R1 in parallel: 1/Z = 1/R1 + jwC where w = 2.pi.f</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://keisan.casio.com/exec/system/1258032649" style="color:inherit;text-decoration:inherit">https://keisan.casio.com/exec/system/1258032649</a></span><span>&nbsp;calculator:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">C = 10 µF</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">f = 8 kHz, R1 = &nbsp;10 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ |Z| = 1.9894367492791 Ω</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">f = 8 kHz, R1 = 100 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ |Z| = 1.989436788255 Ω</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">f = 50 Hz, R1 = &nbsp;10 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ |Z| = 318 Ω</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">f = 50 Hz, R1 = 100 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ |Z| = 318 Ω</span></li>
+</ul>
+<p><span>We can see why “10 or 100 kΩ” doesn’t make a big difference here.</span></p>
+<p></p>
+<p><span>I’m not going to compute the impedance of (R2 + (R1 || C1)). I’ll leave that pointless academic exercise to the bored reader.</span></p>
+<p><span>Another way to see it is that R2 + C forms a low-pass filter </span><span style="font-style:italic">if we ignore R1</span><span>. Let’s </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-low-pass-and-high-pass-filter" style="color:inherit;text-decoration:inherit">compute the cut off frequency</a></span><span>&nbsp;at -3 dB using fc = 1 / 2.pi.R.C:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">R2 = &nbsp;10 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ fc = 1.59 Hz</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">R2 = 100 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ fc = 0.1592 Hz</span></li>
+</ul>
+<p><span>So this will be filtering our 8 kHz massively, as expected.</span></p>
+<p><span>Let’s do the reverse computation:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">fc = &nbsp;8 kHz, R2 = &nbsp;10 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C = 1.98 nF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C//R1 |Z| = ~7.1 kΩ at 8 kHz</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">fc = &nbsp;8 kHz, R2 = 100 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C = 198 pF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C//R1 |Z| = ~71 kΩ at 8 kHz</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">fc = 10 kHz, R2 = &nbsp;10 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C = 1.59 nF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C//R1 |Z| = ~7.8 kΩ at 8 kHz</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Consolas&quot;">fc = 10 kHz, R2 = 100 kΩ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C = 159 pF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ C//R1 |Z| = ~78 kΩ at 8 kHz</span></li>
+</ul>
+<p></p>
+<p><span>Side note: -3 dB is ~70% of the signal, which is why the ~7k/70kΩ impedance above is to be expected as being ~70% of R2.</span></p>
+<p></p>
+<p><span>As a reminder, low-pass vs high-pass (copied from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-low-pass-and-high-pass-filter" style="color:inherit;text-decoration:inherit">digikey</a></span><span>):</span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:108.70px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:284.50px"><img alt="" src="img_0c3d27d60e9573e341941a6b6d3cc114b476c9b298637c917cbe88b0537be75di.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:114.37px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:285.50px"><img alt="" src="img_7a336ab5a18a3f9ae059aa476ce6086ecd33bf8685f4428a35949cc8db9b2787i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The bottom line is that all these example schematics are designed to measure 50~60 Hz AC current so I’d have to expect to adjust the cap value for my 8 kHz need. From a discussion on MRH/Arduini, I should expect the magnetic core/coil to be improperly matched for my needs in the first place, and as seen above obviously the capacitor would need to be adjusted.</span></p>
+<p></p>
+<p><span>The original goal was “without added circuitry”.</span></p>
+<p></p>
+<p><span>Now, could we make this work, with some added circuitry? I tend to think maybe a bridge rectifier on the output would be useful, and/or a transistor to boost the current out of the coil would make sense (if using the current version). Since this one measures voltage around a resistor, my first thought would be to use an op-amp in a typical open loop to get an “infinite” gain. That would allow me to use it as an “all or nothing” detector like the BD20 does, assuming I can differentiate a signal from just noise. I was actually thinking we should use the property of the DCC to create an 8 kHz band filter and filter just that.</span></p>
+<p></p>
+<p><span>I have not even addressed the second elephant in the room, namely the fact I was planning to connect that to one of the ESP32 ADC inputs. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/espressif/esp-idf/issues/164" style="color:inherit;text-decoration:inherit">ESP32 is notorious for having a passable / sub-par ADC</a></span><span>, with noise, offset, and non-linearity, made even worse by contamination when its wifi/BLE radio is used at the same time. This is typically “solved” by using an external ADC over I2C, which is a bit ironic and sad. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=UAJMLTzrM9Q" style="color:inherit;text-decoration:inherit">Andreas has a full video</a></span><span>&nbsp;explaining the issues and comparing it with better solutions.</span></p>
+<p></p>
+<p><span>Bottom line, we confirmed neither sensors are appropriate for the task “as-is”, with no added circuitry. That’s exactly what comments in MRH &amp; Arduini indicated, and it was worth verifying. I may revisit the topic of the split core transformer later with some added circuitry.</span></p>
+<p></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-02-28_sdb_using_freertos_tasks_priorities.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-02-24_sdb_mqtt.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

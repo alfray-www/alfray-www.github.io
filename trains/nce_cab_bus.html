@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/nce_cab_bus.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="NCE Cab Bus" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_295a8678800b907c6d1bc3e33632b5fb7e8f80d74f681cda0dacb9b9bfe361f5i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="NCE Cab Bus" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_295a8678800b907c6d1bc3e33632b5fb7e8f80d74f681cda0dacb9b9bfe361f5i.jpg" />
+
+<title>NCE Cab Bus</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="nce_cab_bus.html">NCE Cab Bus</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700">NCE Cab Bus</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2017-2019</span></p>
+<p></p>
+<p><span>The NCE Cab Bus connects peripherals devices such as cabs and sensors to an NCE Command Station.</span></p>
+<p></p>
+<p><span>In this article, we’re going to look at the protocol used by the NCE Cab Bus and how we can use it.</span></p>
+<p></p>
+<p><span>I have two separate goals in mind and we’ll see if they are possible to achieve:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>First I’d like to have an arduino send turnouts commands to my NCE command station via the cab bus.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>DCC accessories such as the Hare control a Tortoise and respond to fascia buttons. However when a turnout is manually switched this way, the command station is unaware that the turnout has changed. The idea here is to have an arduino monitor the turnout state and send corresponding commands to the station to make sure its state reflects reality.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Second, I’d like to use my own ProCab when JMRI is connected to a non-</span><span>NCE command station such as DCC++.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Here the computer running JMRI would drive the NCE cab bus and talk directly to the cabs on the bus.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>These are two different requirements. In the first one, we want to create a compliant device that will work with existing NCE command stations. In the second one we want to “simulate” just enough of the protocol used to be able to communicate with a cab.</span></p>
+<p></p>
+<p><span>There are other possibilities of course. For example an interesting application would be to snoop on the cab bus to list which consists have been defined. An Android tablet could be used to easily create consists (by acting as a cab) and display that list. This is useful in a club that has members with NCE Cab06 cabs which lack the ability to create consists directly. That example is a bit weak as it could probably be implemented differently (e.g. by reading the command station memory).</span></p>
+<p></p>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.98ti4hsaxbc" style="color:inherit;text-decoration:inherit">1- Physical Layer: RS485</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.ss3l8r9863bb" style="color:inherit;text-decoration:inherit">2- The NCE Cab Bus Protocol</a></span></p>
+<p style="margin-left:18pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.aowgglqcyy5y" style="color:inherit;text-decoration:inherit">2.1- Communication with the NCE USB Interface</a></span></p>
+<p style="margin-left:18pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.2fopv98jt7j4" style="color:inherit;text-decoration:inherit">2.2- Communication with the NCE ProCab</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.60ime77imptl" style="color:inherit;text-decoration:inherit">3- Experiment: Display NCE cab bus data</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.mkjbyiwi49eb" style="color:inherit;text-decoration:inherit">4- Arduino and NCE cab bus</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.e9ynti702a37" style="color:inherit;text-decoration:inherit">5- Conclusion</a></span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+<h1 id="h.98ti4hsaxbc" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">1- Physical Layer: RS485</span></h1>
+<p></p>
+<p><span>Rather than reinvent the wheel, NCE chose the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/RS-485" style="color:inherit;text-decoration:inherit">RS485</a></span><span>&nbsp;specification for their cab bus.</span></p>
+<p><span>This is clearly documented in their protocol PDF:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200182749/Cab_bus_protocol.pdf" style="color:inherit;text-decoration:inherit">https://ncedcc.zendesk.com/hc/en-us/article_attachments/200182749/Cab_bus_protocol.pdf</a></span></p>
+<p></p>
+<p><span>Without going too much into the details, it’s useful to know what RS485 is (and what it isn’t): it is a serial bus using a twisted pair of wires. Several devices can be connected on the bus at the same time. Only one device can “transmit” (send bytes) on the bus at a time while the other devices “listen” (receive all bytes exchanged).</span></p>
+<p></p>
+<p><span>Note that the RS485 specification is an “electrical” specification for both receivers and senders. In practice that means one can find RS485 driver components that will do all the dirty work of sending or receiving the electrical signals and from a computer point of view we can treat it as a serial port.</span></p>
+<p></p>
+<p><span>From an electrical perspective, the signal is sent in a mirror fashion on two wires. It’s the difference between both that indicates what is a zero or a one. There is no “+” vs “-” wire. Instead they are called A and B.</span></p>
+<p></p>
+<p><span>One thing that RS485 is not is &nbsp;a protocol. This is application dependent. Since only one device can transmit at the time, it’s up to the devices to define how that works and how they synchronize themselves. How the NCE cab bus works in that regards is clearly defined in the PDF above:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The command station does all the transmitting. Devices mostly listen.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All the devices have a number between 1 and 63.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The command station pings them one by one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When a device sees its number being pinged it has a very specific window (100 µs and 800 µs) to start transmitting.</span></li>
+</ul>
+<p></p>
+<p><span>To experiment, I got a cheap </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2smJ6mK" style="color:inherit;text-decoration:inherit">RS485-to-USB converter</a></span><span>&nbsp;and plugged it on the cab bus using a simple phone plug as adapter: red wire goes to B and green wire goes to A.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:285.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_295a8678800b907c6d1bc3e33632b5fb7e8f80d74f681cda0dacb9b9bfe361f5i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Some RS485 specs allegedly inverted A/B in their nomenclature. As a reference point, the NCE USB interface has an NS DS75176 chip on the RS485 port and this is clearly specified in the NCE documentation.</span></p>
+<p></p>
+<p><span>Tip: When reading data of the RS485, most of the traffic comes from the command station and is mostly composed of bytes in the 0x80-0xC0 range. If you get mostly bytes in the 0xF0 range, that means you should invert the A/B connection on the RS485 adapter.</span></p>
+<p></p>
+<p><span>Note: when using an FTDI clone on a Windows computer, be very careful of “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://hackaday.com/2014/10/24/ftdi-screws-up-backs-down/" style="color:inherit;text-decoration:inherit">FTDIgate</a></span><span>”. The proper alternative is to use Linux for all FTDI devices, or even better to use a device with a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.silabs.com/products/interface/usbtouart/Pages/usb-to-uart-bridge.aspx" style="color:inherit;text-decoration:inherit">CP2102</a></span><span>&nbsp;which doesn’t have this problem</span><span>.</span></p>
+<p></p>
+<hr>
+<p></p>
+<h1 id="h.ss3l8r9863bb" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">2- The NCE Cab Bus Protocol</span></h1>
+<p></p>
+<p><span>NCE description of the cab bus communication protocol:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200182749/Cab_bus_protocol.pdf" style="color:inherit;text-decoration:inherit">https://ncedcc.zendesk.com/hc/en-us/article_attachments/200182749/Cab_bus_protocol.pdf</a></span></p>
+<p></p>
+<p><span>I’ll give a simplified primer here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The protocol is entirely driven by the command station.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Cab bus devices each have an address from 1 up to 63.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The command station sends a “ping” byte to all the devices numbers. Devices reply when it’s their number.</span></li>
+</ul>
+<p><span>The command station sends 2 types of bytes:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Bit 7= 1 / bit 6 = 0 … Bytes range 0x80 .. 0xBF : These are “ping” bytes.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>0x80 is a ping to “broadcast” address zero. This is used to send the fast clock to all devices.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>0x81 up to 0xBF is to ping a specific cab bus. Devices have a specific time to reply before the command station pings the next device.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Bit 7 = 1 / bit 6 = 1 … Bytes range 0xC0 and up: These are “data” bytes sent by the command station.</span></li>
+</ul>
+<p><span>Devices:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Always reply with bytes &lt; 0x80, with bit 7 = 0.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There are “types” of devices: ‘a’, ‘b’, ‘c’, ‘d’, etc.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Devices reply with either a 2-byte protocol or a 5-byte procol. They can’t change their protocol mid-way.</span></li>
+</ul>
+<p></p>
+<p><span>At that point I’m going to jump directly to some examples. In my case I’m only interested in 2 types of devices: the NCE USB interface and the ProCab handheld controller.</span></p>
+<p></p>
+<h2 id="h.aowgglqcyy5y" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">2.1- Communication with the NCE USB Interface</span></h2>
+<p><span>The NCE USB interface is a type ‘c’ device. It always replies with 5 bytes. The 5th byte is an XOR checksum of the previous ones. From what I see, replies have 2 formats:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>addr_high addr_low data_1 data_2 checksum</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>“function” addr_low data_1 data_2 checksum</span></li>
+</ul>
+<p></p>
+<p><span>To understand the behavior, it helps a lot to be familiar with the host serial protocol used by the NCE USB interface:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/115010122086/USBInterface_Ver_7-corrected.pdf" style="color:inherit;text-decoration:inherit">https://ncedcc.zendesk.com/hc/en-us/article_attachments/115010122086/USBInterface_Ver_7-corrected.pdf</a></span></p>
+<p></p>
+<p><span>When using it, I have always been mostly interested in 2 commands: 0xA2 to set an engine speed or use a function, and 0xAD to set a DCC accessory (e.g. throw a turnout). There’s a direct relationship between the host format of the NCE USB and what I see on the RS485 cab bus. The only difference is in the leading function byte.</span></p>
+<p></p>
+<p><span>Examples below; the bytes in bold are the same; the bytes in italics represent addresses:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">NCE USB protocol</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Cab Bus protocol</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Description</span></p></td>
+  </tr>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">A2 </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">C2 19</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">04 13</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-style:italic">04 19</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">04 13</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">&nbsp;0A</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Speed 19 (out of 128) on loco 537</span></p></td>
+  </tr>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">A2 </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">C2 19</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">06 00</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-style:italic">04 19</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">06 00</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">&nbsp;1B</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Stop-forward on loco 537</span></p></td>
+  </tr>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">A2 </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">00 0A</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">06 00</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">4F </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">0A</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">06 00</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">&nbsp;43</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Stop-forward on loco 10 short addr</span></p></td>
+  </tr>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">AD </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">00 30</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">03 00</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">50 </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">30</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">03 00</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">&nbsp;63</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Close/normal on turnout 48</span></p></td>
+  </tr>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">AD </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">00 30</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">04 00</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">50 </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">30</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">04 00</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">&nbsp;64</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Throw/reverse on turnout 48</span></p></td>
+  </tr>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">AD 00 </span><span style="font-family:&quot;Consolas&quot;;font-style:italic">FA</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">04</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">00</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">5</span><span style="font-family:&quot;Consolas&quot;;font-style:italic">1</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-style:italic">7A</span><span style="font-family:&quot;Consolas&quot;">&nbsp;</span><span style="font-family:&quot;Consolas&quot;;font-weight:700">04 00</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">&nbsp;2F</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:left"><span style="vertical-align:baseline">Throw/reverse on turnout 250</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Note that the NCE address range is:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Short DCC engine address: 1-127</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Long DCC engine address: 128-9999 (0x270F)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Stationary decoder address: 1-2048 (0x800) on PowerPro, 1-250 (0xFA) on Powercab.</span></li>
+</ul>
+<p></p>
+<p><span>How to compute the loco address:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>On the NCE USB protocol, this is simply the MSB LSB. Add 0xC0 to the MSB for a long address.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>On the Cab Bus protocol:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Short address is 0x4F + one byte &lt; 0x80 for short address.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Short range: 4F 01 … 4F 7F</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Long address is 2 bytes: MSB = (address &gt;&gt; 7) ; LSB = (address &amp; 0x7F).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Long range: 00 01 … 4E 0F</span></li>
+ </ul>
+</ul>
+<p><span>To compute the stationary decoder address:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>On the NCE USB protocol, this is simply the MSB LSB.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>On the Cab Bus protocol:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>MSB = 0x50 + (address &gt;&gt; 7) ; LSB = (address &amp; 0x7F)</span></li>
+ </ul>
+</ul>
+<p><span>Since bit 7 can never be set on data from a device, the bit 7 from the address is on the hi byte.</span></p>
+<p></p>
+<p><span>Obviously the first byte is both an address range and a function selector at the same time.</span></p>
+<p></p>
+<p><span>The notes in the NCE USB PDF indicate the max stationary address and some important characteristics of the NCE USB and command station (e.g. can it read from the CS, can it use the programming track, etc.) as configured using the jumpers on the card. Given the somewhat precarious software on the NCE command stations, I’d be cautious and make sure to respect the documented limitations.</span></p>
+<p></p>
+<p><span>So we can already get an idea of how to create a stationary decoder that would provide feedback about turnouts being thrown to the command station:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Wait for byte 0x80 at boot as a way to “sync” with the bus.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Wait for the programmed address of the decoder (1..63 + 0x80).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The device has between 100 µs and 800 µs to start replying. ⇒ The doc is adamant the CS will not wait any longer than that.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Reply with 0x50 + (address &gt;&gt; 7) ; address &amp; 0x7F ; (normal = 3 | reverse = 4) ; 0x00 ; xor of the 4 previous bytes.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Ignore </span><span style="font-style:italic">everything</span><span>&nbsp;else on the bus.</span></li>
+</ul>
+<p></p>
+<h2 id="h.2fopv98jt7j4" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span>2.2- </span><span style="font-size:16pt">Communication with the NCE ProCab</span></h2>
+<p><span>The ProCab is a type ‘a’ device, e.g. a </span><span style="font-style:italic">dumb terminal with a display</span><span>.</span></p>
+<p><span>By “dumb”, it means most of the interaction actually happens on the command station.</span></p>
+<p><span>The cab receives orders indicating what to print and simply indicates which keys are pressed on the keypad. </span></p>
+<p></p>
+<p><span>Here’s an example of interaction from a command station and ProCab at address 2:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7E . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;D2 .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;61 a</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C0 . CE N C3 C C5 E E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C2 . C4 D C3 C C3 C E0 &nbsp; D4 T D7 W C9 I CE N</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . E0 &nbsp; D6 V F1 1 EE . F1 1 F2 2 C1 A E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C1 . E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CE . CE .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C0 . CC L CF O C3 C FA : E0 &nbsp; F5 5 F0 0 F5 5</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C2 . C6 F D7 W C4 D FA : E0 &nbsp; F0 0 F0 0 F0 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . E0 &nbsp; ED - ED - ED - ED - ED - ED - ED -</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Lines in bold are communication from the cab to the command station.</span></p>
+<p><span>Each byte is shown in hexadecimal without the 0x prefix followed by the corresponding ASCII letter when relevant.</span></p>
+<p></p>
+<p><span>Note: for brevity all numbers below are mostly in hexadecimal without the 0x prefix.</span></p>
+<p></p>
+<p><span>I omit the “pings”, which precede each command station message. That means on the display above:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The command station sent a 82 ping, to which the cab replied with 7E 7F (request refresh, no speed change). This identifies it as a device that replies using the 2-byte protocol.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The command station sent a 82 D2… The display above omits the 82 “ping” byte. To this the device replies with 61 (“a”) indicating it’s a type “a” device (a dumb terminal).</span></li>
+</ul>
+<p></p>
+<p><span>The cab repeatedly replies with 7D 7F to pings (no key press, no speed change). There are omitted above except for the first occurence.</span></p>
+<p></p>
+<p><span>The C0..C3 commands indicate literally what to print on the 2x16 display, which is what a ProCab has. Some of it makes sense, and there’s a bit of unclear stuff going on.</span></p>
+<p></p>
+<p><span>The display is 2x16 and is thus cut in four quadrants of 8 characters each: C0 / C1 for line 1 and C2 / C3 for line 2:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:115.5pt"><p class="console "><span style="font-family:&quot;Consolas&quot;">C0</span><span style="font-family:&quot;Consolas&quot;">...</span><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">...C1......</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">C2......C3------</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Section C1 is repeatedly overwritten by the fast clock sent by the command station every second.</span></p>
+<p></p>
+<p><span>Although it’s confusingly written, the doc indicates that ASCII 0x20 is encoded as 0xE0, 0x30 is encoded as 0xF0, 0x40 is encoded as 0xC0 and 0x50 is encoded as 0xD0. To convert an NCE “display” byte to ASCII:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Clear bit 7 : nce &amp; 0x7F</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If bit 5 is set, clear bit 6: if (nce &amp; 0x20 != 0) { nce ^= 0x40 }</span></li>
+</ul>
+<p></p>
+<p><span>Let’s start by the last C0, C2 and C3 lines.</span></p>
+<p><span>Remember that each byte must have bit 7 (0x80) and bit 6 (0x40) set. So everything will be &gt;= 0xC0. </span></p>
+<p><span>My cab display looks like this:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:115.5pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">LOC: 505 03:40AM</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;">FWD: 000 -------</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>LOC: &lt;space&gt; 505 is 4C 4F 43 3A 20 35 30 35 in ASCII which is thus encoded as CC CF C3 FA E0 F5 F0 F5.</span></p>
+<p><span>FWD: &lt;space&gt; 000 is 46 57 44 3A 20 30 30 30 in ASCII which is thus encoded as C6 D7 FA E0 F0 F0 F0.</span></p>
+<p></p>
+<p><span>So these display the Loco number and the speed on the left of the display: C0 is the top left quadrant and C2 is the lower left quadrant. Thus C0 followed by CC CF C3 FA E0 F5 F0 F5 prints “LOC: 505” and C2 followed by C6 D7 FA E0 F0 F0 F0 prints “FWD: 000”.</span></p>
+<p></p>
+<p><span>On the top right (C0) we have the fast clock. This is cleared by the line C1 E0 E0 E0 E0 E0 E0 E0 E0 which simply prints 8 spaces there. The fast clock is actually regularly broadcasted by the command station after ping to address zero.</span></p>
+<p></p>
+<p><span>Finally the lower right (C1) has the function indicators on the ProCab. All the functions are turned off so we get a space (20 aka E0) followed by 7 dashes (2D aka ED).</span></p>
+<p></p>
+<p><span>The command CE is to set the cursor off. For some reason it’s repeated twice.</span></p>
+<p></p>
+<p><span>The first C3 command that reads E0 D6 F1 EE F1 F2 C1 E0 &nbsp;decodes to &lt;space&gt; 1.12A &lt;space&gt; and is some kind of version number that displays temporarily when plugging the cab.</span></p>
+<p></p>
+<p><span>The first 2 commands are now easier to understand:</span></p>
+<p style="text-align:left"><span>C0 CE C3 C5 E0 E0 E0 E0 E0 decodes to C0 (top left quadrant) + 4E 43 45 (NCE) + 5 spaces.</span></p>
+<p style="text-align:left"><span>C2 C4 C3 C3 E0 D4 D7 C9 CE decodes to C2 (lower left quadrant) + 44 43 43 (DCC) space 54 57 49 4E (TWIN), which is the NCE name and my command station name (DCC Twin).</span></p>
+<p></p>
+<p><span>And now you can realize something interesting: the display is going to vary based on the command station.</span></p>
+<p></p>
+<p><span>Interestingly the product name and the D2 (query cab type) are only sent by the command station the first time I plug the cab. After it goes directly to the screen refresh.</span></p>
+<p></p>
+<p><span>Second realization: the command station “remembers” the last cab seen (by number). When using a wired cab in a walk-around-the-layout mode, the cab just needs to send a 7E (refresh screen) command to get its screen initialized. All the cab’s state is memorized by the command station. (Anecdote: I’ve noticed when I bring my ProCab at the club and keep on using the same cab address as last time, the cab by default displays the last engine I used, in the same function states… that’s why: the command station keeps the cab’s state even when turned off, unless explicitly cleared.)</span></p>
+<p></p>
+<p><span>Now that we have the basis for how this works in one direction, how does it work in the other direction? For example let’s say I want to be able to create a device that throws a turnout. What does the ProCab do for that? Here’s the exchange to throw turnout 330 in reverse:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;4E . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C0 . C3 C CF O CE N D4 T D2 R CF O CC L E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C2 . C1 A C3 C C3 C E0 &nbsp; CE N D5 U CD M C2 B</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . C5 E D2 R FA : E0 &nbsp; E0 &nbsp; F0 0 F0 0 F1 1</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C8 . CC .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CF .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;53 . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . C5 E D2 R FA : E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C8 . CC .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CA . F3 3</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CA . F3 3</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;53 . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CA . F0 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;50 . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CE .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;40 . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C0 . C1 A C3 C C3 C FA : E0 &nbsp; F3 3 F3 3 F0 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C2 . C1 A C3 C C3 C E0 &nbsp; CE N D5 U CD M C2 B</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . C5 E D2 R FA : E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp; E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C0 . C1 A C3 C C3 C FA : E0 &nbsp; F3 3 F3 3 F0 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C2 . F1 1 FD = CE N E8 ( CF O CE N E9 ) E0 &nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . F2 2 FD = D2 R E8 ( CF O C6 F C6 F E9 )</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;52 . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;CE .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-weight:700;vertical-align:baseline">02 to CS: &nbsp;7D . 7F .</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C0 . CC L CF O C3 C FA : E0 &nbsp; F5 5 F0 0 F5 5</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C2 . C6 F D7 W C4 D FA : E0 &nbsp; F0 0 F0 0 F0 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;vertical-align:baseline">CS to 02: &nbsp;C3 . E0 &nbsp; ED - ED - ED - ED - ED - ED - ED -</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>So first we get 4E from the cab, which is the “Select Accy” key.</span></p>
+<p><span>The command station prints “CONTROL”, “ACC NUMBER: 001”, C8 to move the cursor and CF to enable it.</span></p>
+<p><span>As I’m typing the number 330, the cab sends key presses (53 53 50) and 40 for enter and later 52 as I select 2 (reverse).</span></p>
+<p><span>In return, for every keypress, the command station sends screen updates for the lower quadrant (“ER: spaces”) followed by C8/CA to move the cursor and print a single char as I type.</span></p>
+<p><span>Then there’s a selection screen “1=N (ON) 2=R(OFF)” which is specific to this command station. A PowerPro would have a different answer since it would show the current turnout state.</span></p>
+<p><span>Finally there’s a screen refresh to print the Loco / Speed / Functions.</span></p>
+<p></p>
+<p><span>There’s a bit of a realization here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This is what we call a “</span><span style="font-style:italic">dumb device</span><span>” in computer terminology. In other words the ProCab does literally </span><span style="font-style:italic">nothing</span><span>&nbsp;else than display what the command station asks to print and just send keypress codes. The </span><span style="font-style:italic">entire</span><span>&nbsp;interaction &amp; flow to throw the turnout is handled by the command station.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Similarly, a consist setup is entirely done by the command station. The cab simply sends key presses and updates the display.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When using the Shift key to enter e.g. F10-F19 mode, the cab sends “FA” and it’s the command station that displays the F10-F19 and F20-F28 and then </span><span style="font-style:italic">keeps track</span><span>&nbsp;of the state of the cab. The cab then merely reports that a key 0-9 is pressed, it’s the command station which interprets it as a F10-F28.</span></li>
+</ul>
+<h1 id="h.60ime77imptl" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">3- Experiment: Display NCE cab bus data</span></h1>
+<p><span>I wrote a simple python script that listens to the cab bus and displays the data. That’s where the printouts from above are taken from.</span></p>
+<p></p>
+<p><span>Script is available here:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/layout-wifi/blob/main/experimental/nce_listen_to_cs.py" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/layout-wifi/blob/main/experimental/nce_listen_to_cs.py</a></span></p>
+<p></p>
+<p><span>To use it:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Get an USB-to-RS485 adapter. Plenty to choose from on Amazon / eBay. The one I used has an FTDI chip. It’s the most common type.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The script is made to run on Linux.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It uses /dev/usb/ftdi and ncurses.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Running on Linux means you will avoid any potential &nbsp;“</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://hackaday.com/2014/10/24/ftdi-screws-up-backs-down/" style="color:inherit;text-decoration:inherit">FTDIgate</a></span><span>” issue as there is no way you can know whether the ftdi chip on the adapter is legit or not.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Get an old phone “handset cord” (RJ22 / 4P4C) and cut the end (I used the short part of an old DSL filter).</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Connect red/green to A/B terminals on the RS485 adapter. You don’t need the ground.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Connect the RJ22 to an NCE UTP.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>See picture above for connection.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If you get bytes mostly in the 0xF0 range, reverse the A/B connection.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Run the script. Change the dev port if needed (it defaults to /dev/usb/ftdi, but that may depend on your udev rules).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Display is fairly crude.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A line at the top indicates which device(s) responded to CS pings.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>In the middle it grabs the bytes from whichever devices replies on the bus.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>At the bottom there’s an unfiltered view of the bytes that transit on the bus, both from the CS and from the devices.</span></li>
+ </ul>
+</ul>
+<p></p>
+<h1 id="h.mkjbyiwi49eb" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">4- Arduino and NCE cab bus</span></h1>
+<p><span>I had a few project ideas regarding using an Arduino to simulate NCE cab bus devices. Two ideas I had are these goals I described in the introduction. Eventually I decided to implement them in a completely different way -- e.g. in my case why bother sending data to the NCE Command Station when I can have an Arduino directly send data to the JMRI JSON server, thus bypassing the command station? There are pros and cons for each approach.</span></p>
+<p></p>
+<p><span>That said, if you want to use the NCE cab bus with an Arduino, I’d highly recommend you start with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/mrrwa/NceCabBus" style="color:inherit;text-decoration:inherit">NceCabBus</a></span><span>&nbsp;library and the example sketches provided by </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mrrwa.org/nce-cab-bus-interface/" style="color:inherit;text-decoration:inherit">https://mrrwa.org/nce-cab-bus-interface/</a></span><span>&nbsp;-- chances are they already do what you want, and you can contribute back to them.</span></p>
+<p></p>
+<h1 id="h.e9ynti702a37" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>5</span><span style="font-size:20pt">- Conclusion</span></h1>
+<p><span>I’m just scratching the surface here, although there isn’t much more to it underneath anyway. One thing that I have omitted are the NCE AIU-01 sensor devices. These have their own device type and are out of scope for my initial goals. I don’t have an NCE Mini Panel for testing (my guess is that it probably acts as type ‘c’ like the NCE USB).</span></p>
+<p></p>
+<p><span>Speaking of goals, how do they hold?</span></p>
+<p></p>
+<p><span>The NCE USB protocol (type ‘c’) is suitable to create an arduino-like device that sends turnout commands to the command station. Since a specific timing is required to start transmitting, it would have to be done using e.g. an arduino rather than a computer or Raspberry Pi. However the logic is extremely simple -- wait for one byte matching the device’s cab address and emit 5 bytes with the turnout number, the state and the XOR. So this should be fairly trivial and reliable. The one limitation to remember here is the 63 max addresses on the cab bus. </span></p>
+<p></p>
+<p><span>Simulating a command station to directly interface a cab to JMRI is both easier and harder with a type ‘a’ “dumb cab” device than I expected. </span></p>
+<p></p>
+<p><span>One thing that the bus snooping above shows is the extensive role of the command station in dealing with a ProCab. I really had no idea it was doing literally </span><span style="font-style:italic">everything</span><span>. All the operations whether it’s speed/direction control, momentum, consisting, program key and even handling of the shift-function state is all done by the command station. On one hand it means replicating the exact behavior would be more work than expected, but on the other hand it also means a “virtual command station” does </span><span style="font-style:italic">not</span><span>&nbsp;have to do all of this, and actually doesn’t even have to be any similar at all.</span></p>
+<p></p>
+<p><span>It also means a “virtual command station” would not have </span><span style="font-style:italic">any</span><span>&nbsp;of the NCE “advanced” consisting functionality (i.e. programming CV 19) as this is all done by the command station. However it would be fairly easy to program something similar using soft-consisting, which JMRI can do.</span></p>
+<p></p>
+<p><span>As far as the protocol used itself, there are a few aspects worth point out:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>On “dumb cabs”, there is absolutely no packet checksum. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There is also no ack feedback from the command station. </span></li>
+</ul>
+<p></p>
+<p><span>I think I need to stress that: as far as network protocols go, this one has no feedback and no checksum mechanism whatsoever. It simply does not account for network errors at all. There is absolutely no way in the protocol for a ProCab to detect that a packet was garbled and ask for it to be retransmitted.</span></p>
+<p></p>
+<p><span>That explains why it’s so frequent on a ProCab to have corrupt displays or that it can be really hard to enter loco numbers if a single byte with a keypress is missed or if a screen refresh command is even slightly garbled, or go entirely unresponsive for several seconds like we notice regularly at Randall -- this has nothing to do with the ProCabs, it’s all about the command station and a protocol that does not take network failures into account.</span></p>
+<p></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Trebuchet MS&quot;;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span style="font-family:&quot;Trebuchet MS&quot;">]</span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
+<p><span></span></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/jmri_touch_panel.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="[Blog Post] JMRI & Turnouts Touch Panel" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_7c3b29f9381cf00b7ba372844957fb8bbcfaa298fae66dae4174be80365a3b65i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="[Blog Post] JMRI & Turnouts Touch Panel" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_7c3b29f9381cf00b7ba372844957fb8bbcfaa298fae66dae4174be80365a3b65i.jpg" />
+
+<title>[Blog Post] JMRI & Turnouts Touch Panel</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="jmri_touch_panel.html">[Blog Post] JMRI & Turnouts Touch Panel</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700">JMRI &amp; Turnouts Touch Panel</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2018-01</span></p>
+<p></p>
+<p><span> </span></p>
+<p><span>[s:2018-01-21:Turnouts Touch Panel for JMRI at CMRS]</span></p>
+<p></p>
+<p></p>
+<p><span>Some members at the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.cmrstrainclub.org/" style="color:inherit;text-decoration:inherit">CMRS train club</a></span><span>&nbsp;(the Carquinez Model Railroad Society, in Crockett, CA) desired to have large touch panels that members could use to toggle switches on the mainline. For testing, one of the members procured 32-inch touch panels and I wrote a quick experimental software to display the mainline on it and control turnouts based on touch.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:738.00px"><img alt="" src="img_7c3b29f9381cf00b7ba372844957fb8bbcfaa298fae66dae4174be80365a3b65i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The touch panels rely on the main </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.org/" style="color:inherit;text-decoration:inherit">JMRI server</a></span><span>&nbsp;to trigger turnouts on the mainline.</span></p>
+<p></p>
+<p><span>This post documents my first prototype demonstration for this project. This was going to be an iterative process as I expected to incorporate feedback later. What I came up with is fairly easy to reuse for other layouts -- I’ve implemented something similar at Randall just after, so I’ll explain how it is implemented in the hope others want to use that or get inspired by it..</span></p>
+<p><span></span></p>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.fwt6w8mbf0nr" style="color:inherit;text-decoration:inherit">1- Hardware</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.no22bs3ybbxd" style="color:inherit;text-decoration:inherit">2- Architecture</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.ilsxuwd6np58" style="color:inherit;text-decoration:inherit">3- The Need for Turnout Feedback</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.hpytgk8a8vf" style="color:inherit;text-decoration:inherit">4- Setting up JMRI</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.qizug6j7zgz8" style="color:inherit;text-decoration:inherit">5- Editing the Map &amp; HTML</a></span></p>
+<p style="margin-left:18pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.7hxz6qkl8ldy" style="color:inherit;text-decoration:inherit">The SVG Map</a></span></p>
+<p style="margin-left:18pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.bjjb8oefpy61" style="color:inherit;text-decoration:inherit">The HTML file</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.vyqld4w7clca" style="color:inherit;text-decoration:inherit">6- Configuring Ubuntu on the Intel Compute Stick</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.rin8mm83a8t3" style="color:inherit;text-decoration:inherit">7- Alternatives Considered</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.hn8935kg3rno" style="color:inherit;text-decoration:inherit">8- Conclusion &amp; Updates</a></span></p>
+<p></p>
+<p></p>
+<h1 id="h.fwt6w8mbf0nr" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">1- Hardware</span></h1>
+<p><span>Here is the touch panel, sitting on a cart as a crude temporary support. It should be eventually held higher with a strong support on the top frame. </span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:518.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_6faab8ebda0b789099501ee9bfe64ec4d55c48c59997e9d60d0ef3b7e0e22bc0i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The screen is actually an ELO ET3243L LCD Touchscreen Monitor. It is very responsive. Output comes as a simple USB HID and thus plugging into any computer will instantly give mouse events. It is used here without any specific drivers.</span></p>
+<p></p>
+<p><span>In this project I only focus on the software part, so this is what I will be describing here.</span></p>
+<p></p>
+<p><span>The computing part is achieved using an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2DnbaYe" style="color:inherit;text-decoration:inherit">Intel Compute Stick (BOXSTCK1A8LFC)</a></span><span>:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:397.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_1952a3136271a593cdfc4652761753a3d710be504600dad313feee31fbee6403i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The computer stick connects directly to the HDMI port of the monitor. The black plug at the top is for power and the white plug is the USB from the touch panel. </span></p>
+<p></p>
+<p><span>There are different versions of the Intel Compute Stick. The more expensive versions are more powerful and come with Windows preinstalled, which is not needed here. Instead I choose the cheaper version (around $39) which has lower specifications. It runs a stock Ubuntu with 1 GB of RAM and 4 GB of storage. Amusingly out of the box, Ubuntu takes 90% of these 4 GB of storage, leaving not much room, which is not a problem at all in this application. &nbsp;Storage can be expanded using an SD card slot though (also not needed here). However it has integrated WiFi, which we want in our use case.</span></p>
+<p></p>
+<p><span>The computer does one thing here: it’s just a single Chrome web page on Kiosk mode, and that is absolutely all there is to it.</span></p>
+<h1 id="h.no22bs3ybbxd" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">2- Architecture</span></h1>
+<p><span>If the computer stick just displays a web page, how does this thing actually control any turnouts?</span></p>
+<p></p>
+<p><span>That’s the beauty of it -- everything is on the JMRI server:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI has an integrated web server that can serve any page. I just made a specific web page for this display.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The layout map on the touch panel is an SVG file which I created with Inkscape. The file is served by JMRI.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI has a “JSON server” which can be used to query the status of turnouts and receive commands to change them.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI provides a Javascript extension (“jquery.jmri.js”) that a web page can trivially use to query and set the turnouts. It integrates with the JMRI JSON server seamlessly.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI advertises its server location using ZeroConf, which a custom script on the computer stick reads to figure how to connect to the JMRI web server. This means when the computer stick boots, it automatically finds the JMRI server on the wifi network, and connects to it to retrieve the web page and runs Chrome in Kiosk mode to display it.</span></li>
+</ul>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:321.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:706.00px"><img alt="" src="img_75bbe76aaba8552791e34a8ec928e3f32e27d404599dc648bb011f145602f1a6d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Another nice thing here is that as far as this project is concerned, it does not matter which DCC Command Station is being used, nor which kind of DCC-controlled turnouts are used as long as JMRI can control them. It could be an NCE or Digitrax or even an SPROG or a DCC++ command station for example. Turnouts can be controlled by anything that can read DCC accessory packets on the DCC bus, from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ncedcc.com/" style="color:inherit;text-decoration:inherit">NCE</a></span><span>&nbsp;Switch-8 to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.digitrax.com/products/stationary-decoders/" style="color:inherit;text-decoration:inherit">Digitrax</a></span><span>&nbsp;DS64 or </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.dccspecialties.com/" style="color:inherit;text-decoration:inherit">DCC Specialties</a></span><span>’ Wabbit / Hare. JMRI can also support an heterogeneous mix so it could even be a combination of </span><span style="font-style:italic">all</span><span>&nbsp;of these and more.</span></p>
+<h1 id="h.ilsxuwd6np58" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">3- The Need for Turnout Feedback</span></h1>
+<p><span>Turnout feedback is recommended here; it’s optional yet it does impact how this kind of solution is used if not present.</span></p>
+<p></p>
+<p><span>When a turnout is defined in JMRI, the software has no idea if the physical turnout is closed or thrown so all new turnouts are marked as “undefined” in JMRI. When the software actually throws a turnout, it then consequently knows its position.</span></p>
+<p><span>However if there’s a physical button controlling the turnout, users can change the turnout and the JMRI server will not know about this -- it will only know the last position that it did control.</span></p>
+<p><span>For example let’s say a user aligns turnout 200 to normal using WiThrottle or Engine Driver. This sends a command to JMRI which then knows the turnout is “closed” (JMRI’s terminology for a normal turnout). Then another user uses a fascia button connected to a Wabbit to throw the turnout. JMRI doesn’t know about that state. The touch panel will show the turnout as normal/closed when it is in fact reverse/thrown -- the display will simply be wrong and misleading!</span></p>
+<p><span>JMRI supports reading turnout states from some command stations such as NCE and Digitrax. Even this is not real feedback and only displays the state that the command station knows, typically when users throw a turnout using their cab.</span></p>
+<p></p>
+<p><span>To really have an accurate view of the turnouts states, one needs extra hardware to monitor the position of the turnouts.</span></p>
+<p></p>
+<p><span>There are multiple ways to do that and giving a list of these is out of the scope of this document. A typical and non-exhaustive example is using the extra contacts from a Tortoise or from a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.dccspecialties.com/products/pdf/man-wabbit.pdf" style="color:inherit;text-decoration:inherit">Wabbit</a></span><span>&nbsp;and feed them to a sensor card such as the Team Digital </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.dccspecialties.com/products/src8_dccspecialties.htm" style="color:inherit;text-decoration:inherit">SRC8</a></span><span>, NCE AIU01, Digitrax DS64 or Lenz LR101. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.dccspecialties.com/products/pdf/man-wabbit.pdf" style="color:inherit;text-decoration:inherit">DCC Specialities Wabbit’s documentation</a></span><span>&nbsp;(section D, page 11) has a clear example of how to connect these to get feedback. After that, JMRI can be configured to read the sensors from the Digitrax LocoNet or NCE Cab Bus and update its internal turnout state to match the actual sensors.</span></p>
+<p></p>
+<p><span>Some personal opinions here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Digitrax products work well but their documentation is annoyingly complex and verbose.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>NCE products are ridiculously easy to use but they have noticeable performance issues. For example, from experience, JMRI reads from NCE AIU01 cards by polling each one by one, at a rate of one per second or less. That results in noticeably sluggish feedback.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Is turnout feedback </span><span style="font-style:italic">really</span><span>&nbsp;necessary? Personally I think “really yes” if you have fascia buttons that control turnouts </span><span style="font-style:italic">directly</span><span>&nbsp;and “really no” if you don’t have fascia controls.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I explicitly did not mention custom DIY Arduino-like solutions. I love that kind of stuff. I do it all the time </span><span style="font-style:italic">at home</span><span>. But if this is on a club layout and not on a personal layout, I stick to commercial offerings. It may be a bit more expensive but that way the day the next superintendent is elected, nobody will be cursing my name for having used some kind of obscure and unmaintainable arduino thing that nobody knows how to use anymore. Remember: when people can’t figure out what some device does, they generally trash it or bypass it and then add their own solution instead. It’s easier to reinvent the wheel than to figure how it was made round in the first place.</span></li>
+</ul>
+<p></p>
+<p><span>Turnout feedback means even more wiring on the layout. &nbsp;Using a commercial product like the NCE AIU01 or the Digitrax DS64 means having wires from each turnout DCC decoder to the sensor board, then a bus (NCE cab bus or LocoNet) going to the command station or a PR3. I made a quick prototype of a custom solution based on a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2Bk4ybg" style="color:inherit;text-decoration:inherit">ESP32 board using Wifi</a></span><span>&nbsp;that I should detail in another post.</span></p>
+<h1 id="h.hpytgk8a8vf" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">4- Setting up JMRI</span></h1>
+<p><span>Let’s dig in what needs to be set in JMRI to make this work.</span></p>
+<p></p>
+<p><span>Note: I’m going to do this like a “tutorial”. If interested, just follow the steps as-is and try to get it working. Once it works you can think of customizing it, as you’ll inevitably want to change things like the club name, the map, the turnouts numbers, etc.</span></p>
+<p></p>
+<p><span>For this tutorial, I’d recommend that a new profile be created in JMRI (you do have backups, right?) in case you want to revert any changes. The map provided below expects NCE turnouts with an “N” prefix so that needs to be created first (or edit the files as indicated below).</span></p>
+<p></p>
+<p><span>Both the JSON server and the Web server will be used so they need to be enabled in the JMRI preferences and set to startup automatically:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:245.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:669.00px"><img alt="" src="img_084704b0cb4310ebf4a7e94790e148bdd585c629ee04df97689e277034c3d0e6i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Note that the preference dialog changes slightly based on the version of JMRI yet the concept remains the same: open Edit &gt; Preferences, select the “Start Up” panel, then “Add &gt; Perform Action” for the “Start JMRI JSON Server” and again for “Start Web Server”.</span></p>
+<p></p>
+<p><span>By default JMRI uses port 12080 for the web server (this is configured in Edit &gt; Preferences &gt; Web Server). If you have no idea what that means, just leave it as-is. Simply remember that number and if you use a different port, you’ll want to adjust other files later accordingly.</span></p>
+<p></p>
+<p><span>Then hit “Save” to save these preferences. JMRI will ask if you want to restart now or later. It’s just easier to restart right now.</span></p>
+<p></p>
+<p><span>Next you need to copy 3 files into the JMRI web server directory.</span></p>
+<p><span>Where that folder is located depends on which operating system you use. Typical examples:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Windows 7, 8, 10: C:\Programs Files (x86)\JMRI\web</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Linux: /home/user/JMRI/web</span></li>
+</ul>
+<p><span>First create a new folder in the “web” folder, in my case “cmrs”, and copy these 3 files in there:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI/web/cmrs/</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/index.html" style="color:inherit;text-decoration:inherit">index.html</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI/web/cmrs/</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/map1.svg" style="color:inherit;text-decoration:inherit">map1.svg</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI/web/cmrs/</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/svg-2.6.3.min.js" style="color:inherit;text-decoration:inherit">svg-2.6.3.min.js</a></span></li>
+</ul>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:136.00px;margin:-0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:297.00px"><img alt="" src="img_1dbff7e1175d1fe8a35564d112c49639c1703ff7432bdc62a339ae24589f2758i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The files are stored in this Bitbucket git repository: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cmrs-layout" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/cmrs-layout</a></span></p>
+<p></p>
+<p><span>Next we need to create the turnout entries. The map provided above uses numbers from 200 up to 356 so let’s create them:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Open the Tools &gt; Tables &gt; Turnout dialog</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Select the NCE connection (or whatever else you use), click “Add”, enter 200 as the base number, enable the “sequential range” and enter 157 as the “number to add”. Click OK twice.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Now we have turnouts with a “JMRI system name” of NT200 up to NT356. Note that they start in the “Unknown” state.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:344.43px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_ef0462e3f29ab339f3a33e1e9de44803485925a7743bd31fb51d841c0a03ac7ed.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Check whether your turnouts are created with feedback enabled or not as it will matter later:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:301.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f2ed9962cab15a3bee78c5baa43bbfdd53efcddfa83bf8e842b6d8b8ca4710cfd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The type of feedback available and the default depends on which command station is used in the Edit &gt; Preferences &gt; Connections panel.</span></p>
+<p></p>
+<p><span>If you are not using the default NCE connection with an “N” prefix, you need to edit the “index.html” file.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Open the file with a text editor (I recommend </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://notepad-plus-plus.org/" style="color:inherit;text-decoration:inherit">Notepad++</a></span><span>&nbsp;on Windows, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.vim.org/" style="color:inherit;text-decoration:inherit">vim</a></span><span>&nbsp;on Linux).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Change line 118 that reads: “</span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt;font-weight:700">var</span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt">&nbsp;jmriName </span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt;font-weight:700">=</span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(255, 255, 255);color:rgb(187, 136, 68);font-family:&quot;Roboto Mono&quot;;font-size:9pt">"NT"</span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt;font-weight:700">+</span><span style="background-color:rgb(255, 255, 255);color:rgb(23, 43, 77);font-family:&quot;Roboto Mono&quot;;font-size:9pt">&nbsp;tid;</span><span>”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Replace the “NT” prefix that whichever connection prefix is appropriate for your connection, for example typically “LT” for a LocoNet.</span></li>
+</ul>
+<p></p>
+<p><span>Now we are ready to try this. Open a Chrome window and point it to your JMRI web server.</span></p>
+<p><span>For example if you are reading this on your JMRI computer and it uses the default 12080 port, you can simply click on this link:</span></p>
+<p style="text-indent:36pt"><span>&nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://localhost:12080/web/cmrs/" style="color:inherit;text-decoration:inherit">http://localhost:12080/web/cmrs/</a></span></p>
+<p></p>
+<p><span>Adjust the URL or the port number as needed.</span></p>
+<p></p>
+<p><span>This should load the index.html files, which will in turn load the map1.svg and display it:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:440.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_9dfa06469f3051c8d7273bac5cda1729824e04aed81d7edeb0236debf25d6a28i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Note that the mainline turnouts are represented this way:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:center"><span style="vertical-align:baseline">Unknown State</span></p><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:98.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:87.00px"><img alt="" src="img_4df2ee0034cc15193dc8fa59c2f5408076b1aa195582c02d6d47bf0077d87efbi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:center"><span style="vertical-align:baseline">Closed (a.k.a. Normal)</span></p><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:100.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:86.00px"><img alt="" src="img_03aa7aa379204449e89ac2cb4a2ad2eb76f5b59810c14f9782c16f2acd1af39ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:199.2pt"><p style="text-align:center"><span style="vertical-align:baseline">Thrown (a.k.a. Reverse)</span></p><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:98.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:90.00px"><img alt="" src="img_7c2d3050b035e4ee7fea6f8b2c7fd0fedc19a8fea199f67aa69b9d689b2edbf0i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Clicking a turnout on the mainline should toggle its state between “closed” and “thrown”. When a turnout is “unknown”, it will be set to “closed” first. Depending on the way turnouts are configured, the change on the map can be instantaneous or take several seconds to reflect the command.</span></p>
+<p></p>
+<p><span>What happens exactly: when you click on a turnout on a map, it sends a JSON command to JMRI to toggle the turnout in the desired state. JMRI sends a DCC command via the command station. Then JMRI in turn sends a signal back to the web page to update it to match its current state. The exact behavior depends on how turnouts are configured:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If JMRI turnouts do not use feedback, the new state will be reflected on the web page immediately and purely reflect what JMRI </span><span style="font-style:italic">thinks</span><span>&nbsp;is the state of the turnout.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If JMRI turnouts use feedback, the new state will be reflected only </span><span style="font-style:italic">after</span><span>&nbsp;JMRI got feedback from the command station or the sensors. So there might be a delay between when the turnouts are taped on the map and when the drawing actually changes.</span></li>
+</ul>
+<p></p>
+<p><span>The default depends on the command station used. LocoNet feedback should be fairly fast. NCE feedback using the “Monitoring” option can take a few seconds to happen. The low-cost NCE command stations (PowerCab, DCC Twin) do not support monitoring, in which case the feedback appears to be instant.</span></p>
+<p></p>
+<p><span>You can double check the turnouts states in the JMRI Turnouts Table:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:236.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_fcc77824334cfcf4e41ef6791731585a2bc4d8b821b564a570c803b2320b83fei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<h1 id="h.qizug6j7zgz8" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">5- Editing the Map &amp; HTML</span></h1>
+<h2 id="h.7hxz6qkl8ldy" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">The SVG Map</span></h2>
+<p><span>The latest version of the file can be found here:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/map1.svg" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/map1.svg</a></span></p>
+<p></p>
+<p><span>The SVG map has been created using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://inkscape.org/" style="color:inherit;text-decoration:inherit">Inkscape</a></span><span>. Any other SVG editor will do. Unless you really know what you’re doing, I don’t recommend editing SVG directly by hand. If you know what you’re doing, you’d not be reading this anyway :-)</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:472.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f9bb34b688384e57c82de41e8bf815b23ad94e8f3112ab69a107cc0cf3f193ddi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>I’m only providing some quick notes and not going in extensive details here as I think most of it is fairly self explanatory:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The top layer “Touch Zones” contains yellow rectangles. They must stay visible. The JS code uses them to define hit targets for the turnouts and animates their visibility when they are touched.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>As you can see I started with rectangular hit targets. I plan to switch them all to circles and make sure they don’t overlap.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a layer for all turnouts in the thrown position and another for all the turnouts in normal position. These are clones of master objects so that I can just edit the master and all the clones change at the same time. All these work as overlays -- the normal position object is shown when the turnout is normal and hidden when the turnout is thrown, and vice versa.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All the master objects (before being cloned on each turnout) must be visible and not hidden (otherwise all clones are hidden too). They are simply tucked in a corner of the map, hidden under a rectangle matching the background color. The center objects are for mainline-to-sidings and the outer objects are for the mainline crossovers:</span></li>
+</ul>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:127.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:276.00px"><img alt="" src="img_6820120104269823d701998731f0bf0903c1e6a27536acc9e8242601d397982fi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Naming patterns must match the Javascript:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All touch hit targets are named “Touch123” where 123 is a turnout number, e.g. “Touch200” for turnout number 200.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All “normal position” objects are named “TN123”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>All “reverse position” objects are named “TR123”.</span></li>
+</ul>
+<p></p>
+<p><span>Follow-up: when I did the version for Randall Museum, I revisited the SVG a bit. Using clone elements is actually a problem (the javascript code must be careful not to change the visibility on the original element). Although the blue/red gradient thing looked nice at first, it grew old very quickly and design-wise I prefer a flat look. The one I redesigned for Randall uses less layers and is easier to edit.</span></p>
+<h2 id="h.bjjb8oefpy61" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">The HTML file</span></h2>
+<p><span>The latest version of the HTML file can be found here:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/index.html" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/cmrs-layout/blob/main/jmri/web/cmrs/index.html</a></span></p>
+<p></p>
+<p><span>I’ll go very quickly over this because there’s not much to see here.</span></p>
+<p></p>
+<p><span>The HTML file relies on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://svgjs.com/" style="color:inherit;text-decoration:inherit">SVG.js</a></span><span>&nbsp;library to load and manipulate the SVG file. The minified svg-2.6.3.min.js is saved locally and served by the JMRI server since the wifi network used for WiThrottle does not have internet access.</span></p>
+<p></p>
+<p><span>Loading the SVG is done dynamically:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;body&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;div id="svg_container" class="svg"&gt;&lt;/div&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;div id="loader" class="load"&gt;Please wait, loading...&lt;/div&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;/body&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">…</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">function loadSvg() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; console.log( "document loaded" );</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; $("#svg_container").hide();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; svgDoc = SVG("svg_container");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; $.get(svgUrl, function(contents) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; var _tmp = $("svg", contents);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; svgDoc.attr('viewBox', &nbsp;_tmp.attr('viewBox'));</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; svgDoc.attr('width', &nbsp; &nbsp;_tmp.attr('width'));</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; svgDoc.attr('height', &nbsp; _tmp.attr('height'));</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; svgDoc.svg(_tmp.html());</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; console.log("SVG loaded");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; $("#svg_container").fadeIn();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; $("#loader").fadeOut();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; $("[id^='TN']").hide();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; $("[id^='TR']").hide();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; setupJmri();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; }, "xml");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>JMRI provides a jQuery plugin to communicate with the JMRI JSON server. On Chrome, it uses a websocket. Once the javascript requests the state of a turnout, it will automatically receive updates as soon as the state changes, without having to poll the server periodically. This results in some neat and compact code:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;script src="/js/jquery-1.11.2.min.js"&gt;&lt;/script&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;script src="/js/json2.js"&gt;&lt;/script&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;script src="/js/jquery.websocket.js"&gt;&lt;/script&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&lt;script src="/js/jquery.jmri.js"&gt;&lt;/script&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">… </span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">function setupJmri() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; jmri = $.JMRI(jmriUrl, {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; open : function() { console.log("JMRI: open "); },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; close: function() { console.log("JMRI: close"); },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; console: function(data) { console.log("JMRI: " + data); },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; goodbye : function() { console.log("JMRI: goodbye "); },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; didReconnect : function() { console.log("JMRI: didReconnect "); },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; failedReconnect &nbsp;: function() { console.log("JMRI: failedReconnect &nbsp;"); },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; hello : function() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log("JMRI: hello");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; svgDoc.select("[id^='Touch']").each(function () {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setupTurnout(this);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; },</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; turnout: function (name, state, data) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log("Got turnout \"" + name + "\" with state " + state + ".");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var tid = name.substring(2);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var idNormal = "TN" + tid;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var idThrown = "TR" + tid;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $("#" + idNormal).fadeTo(250, (state === jmri.CLOSED) ? 1 : 0);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $("#" + idThrown).fadeTo(250, (state === jmri.THROWN) ? 1 : 0);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; svgDoc.select("[id=Touch" + tid + "]").each( function() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this._state = state;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; })</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; jmri.connect();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Each touch hit point is selected and configured to have a callback when “clicked” that sends the JRMI setTurnout command. Two important notes here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The “jmri.getTurnout” call does not actually receive anything -- it registers this turnout to receive all updates automatically via the $.JMRI( { turnout } ) object defined previously.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The “jmriName” needs to be tweaked. In particular this implementation just extracts the number and assumes all turnouts are NCE turnouts using the “N” prefix, thus having names such as “NT200”. This needs to be adjusted for specific layouts. For example the turnout prefix could be part of the “Touch” label (e.g. “TouchNT200”) or it could be customized using a range (e.g. “jmriName = &nbsp;(tid &lt; 200 ? “LT” : “NT” ) + tid;”).</span></li>
+</ul>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">function setupTurnout(t) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; var tid = t.attr("id").substring("Touch".length);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; var jmriName = "NT" + tid;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; console.log("Setup turnout: " + jmriName);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; jmri.getTurnout(jmriName);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; t._state = 0;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; t.style("visibility", "visible");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; t.style("opacity", "0");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; t.click(function() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; console.log( t + " " + t._state );</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; t.animate(125, "&lt;&gt;", 0).style("opacity", "1").animate(125, "&lt;&gt;", 0).style("opacity", "0");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (t._state == jmri.CLOSED) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jmri.setTurnout(jmriName, jmri.THROWN);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; } else {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jmri.setTurnout(jmriName, jmri.CLOSED);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; });</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>I see these files as merely templates that need to be adjusted to specific customer developments.</span></p>
+<h1 id="h.vyqld4w7clca" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">6- Configuring Ubuntu on the Intel Compute Stick</span></h1>
+<p><span>The Intel Compute Stick I choose is the “lower-end model” one. It comes with Ubuntu which is much better suited for our needs here than the more powerful version with Windows 10.</span></p>
+<p></p>
+<p><span>First time the computer stick is plugged, it will go through the standard Ubuntu install and there’s nothing very specific to say about this except to set the user to auto-login.</span></p>
+<p></p>
+<p><span>Once the Ubuntu install is finished, I added some convenience packages:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(207, 226, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">$ sudo apt-get install gvim screen openssh-server x11vnc</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">$ printf "set modeline\nsyntax on\n" &gt; ~/.vimrc</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>That way I can easily remotely administer it using SSH and VNC.</span></p>
+<p></p>
+<p><span>The first time I then let the Software Updater update the kitchen sink.</span></p>
+<p><span>Two packages were problematic so I removed them after:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(207, 226, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">$ sudo apt-get remove chestersmill-settings oem-hdmi-audio-dkms</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Next I used the Ubuntu Software Center to remove a bunch of packages that are not needed on this machine: Rhythmbox, Totem, all of Libreoffice (e.g. calc, impress, writer, math, draw, etc), Shotwell, Uunity Lens Photos, Chestersmills.</span></p>
+<p></p>
+<p><span>Out of the box, Chromium was crashing when I was trying to open a page. That was easily solved by removing it using the Software Center then reinstalling it. Once I got Chromium working, I launched it to change some settings:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Settings &gt; Manage Passwords &gt; Turn off</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Settings &gt; Autofill Settings &gt; Turn off</span></li>
+</ul>
+<p></p>
+<p><span>Very important, I had to change the power settings:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>System Settings &gt; Brightness &amp; Lock</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Disable “Dim screem”</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Turn screen of … Never</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Lock Off</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Uncheck require password when waking from suspend</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>System Settings &gt; Power</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Don’t suspend</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>Next I created these 3 files:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The “chrome_loop” file tries to discover the JMRI server using ZeroConf and runs Chromium in Kiosk mode.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The “terminal_kiosk” one simply opens a terminal to run “chrome_loop”. This way the output of the script can be seen and users can alt-tab to select the terminal and close the kiosk.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The “autostart/.desktop” creates an entry that will run “terminal_kiosk” automatically once the user is auto-logged in.</span></li>
+</ul>
+<p></p>
+<p><span>$ cat ~/.config/autostart/.desktop</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(234, 209, 220);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">[Desktop Entry]</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">Type=Application</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">Exec=/home/cmrs/bin/terminal_kiosk.sh</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">Hidden=false</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">NoDisplay=false</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">X-GNOME-Autostart-enabled=true</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">Name=CMRS Kiosk</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">Comment=Startup Script</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>$ cat ~/bin/terminal_kiosk.sh </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 210, 233);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">#!/bin/bash</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">/usr/bin/gnome-terminal --geometry=80x20+200+200 -x sh -c "/home/cmrs/bin/chrome_loop.sh | less"</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>$ cat ~/bin/chrome_loop.sh </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 210, 233);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">#!/bin/bash</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline"># vim: set ts=2 sw=2:</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">#</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline"># Find the first accessible JMRI web server advertised via ZeroConf on the local</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline"># network then opens the CMRS turnouts web page using Chrome in kiosk mode.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">while true; do</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; echo</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; JMRI_IP_PORT=""</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; while [[ -z "$JMRI_IP_PORT" ]]; do</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; for J in $(avahi-browse -a -t -p -r | grep “IPv4” | grep "Web Site" | grep jmri | awk -F ";" '{print $8 ":" $9}'); do</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; IP_PORT="$J"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; IP="${J%:*}"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; PORT="${J#*:}"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; echo "Trying $IP_PORT..."</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; if printf "GET / HTTP/1.0\r\n\r\n" | nc -n -w 2 $IP $PORT | grep -q html ; then</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; echo "Found JMRI Web Server at $IP_PORT"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; JMRI_IP_PORT="$IP_PORT"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; break</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; fi</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; done</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; if [[ -z "$JMRI_IP_PORT" ]]; then</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; sleep 1s</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; echo -e "\nJMRI Web Server not found. Retrying...\n"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; sleep 1s</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; fi</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; done</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; echo -e "Starting Kiosk for $JMRI_IP_PORT\n"</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; sleep 1s</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; chromium-browser --incognito --password-store=basic --kiosk http://$JMRI_IP_PORT/web/cmrs/</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; sleep 1s</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">done</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Let’s look at this last script.</span></p>
+<p></p>
+<p><span>I use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.avahi.org/" style="color:inherit;text-decoration:inherit">avahi-browse</a></span><span>&nbsp;to do ZeroConf discovery. It prints all entries found in a terse “parsable” format. I only want IPv4 entries for jmri with the Web Site service. The awk command filters the </span><span style="font-style:italic">address:port</span><span>&nbsp;from the avahi output:</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">avahi-browse -a -t -p -r | grep “IPv4” | grep "Web Site" | grep jmri | awk -F ";" '{print $8 ":" $9}'</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Next I use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://netcat.sourceforge.net/" style="color:inherit;text-decoration:inherit">netcat</a></span><span>&nbsp;to check if there’s really a web server we can connect to at that </span><span style="font-style:italic">address:port</span><span>&nbsp;combo:</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">printf "GET / HTTP/1.0\r\n\r\n" | nc -n -w 2 $IP $PORT | grep -q html</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Finally I open Chromium with a few options:</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">chromium-browser --incognito --password-store=basic --kiosk http://$JMRI_IP_PORT/web/cmrs/</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>--kiosk puts the display in full screen. Note that it is not very hard to escape the kiosk mode here (see below for discussion on that topic).</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>--password-store=basic prevents Chromium from trying to unlock the standard Ubuntu keychain. If that option were not present, Chromium would show a popup asking for the main user password to unlock the keychain, to be able to auto-save autofill and managed passwords. We don’t want that here. Note that the “basic” store is an unencrypted one, which is fine here.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>--incognito prevents Chromium from remembering this page was open. This prevents it from showing the dialog “do you want to restore pages” if the device is turned off before Chromium is properly closed.</span></li>
+</ul>
+<p></p>
+<p><span>Now we should have a talk about security, and for that we need to start with “who are your users?”</span></p>
+<p></p>
+<p><span>An important point here: in this current setup, it is trivial to “escape” the Kiosk mode by simply hitting Alt-Tab or event just Alt. From there, the terminal with Chromium can be closed and the user can do pretty much anything they want on the machine.</span></p>
+<p></p>
+<p><span>Given this is used in a private club, we don’t have to actively prevent users from being malicious. It’s not the type. However we want to actively prevent them from doing things by mistake, which is way more likely to happen. And for that:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There is no keyboard connected to the machine. The Intel Compute Stick has a single USB port which is connected to the touch panel. So users cannot “Alt-Tab” by mistake.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>They can however long-press by mistake on the touch panel, which currently selects text in the SVG map and opens a menu with a “Copy” option. No harm here, but this is annoying so I’ll override it in javascript. </span></li>
+</ul>
+<p></p>
+<p><span>Now if I were to install this in a public location, I would take a few more drastic measures:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Lock the BIOS with a password. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Disable booting from the SDCard or USB in the BIOS.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Enforce a strong password on the JMRI wifi.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Create a secondary user with no admin privileges and not part of </span><span style="font-style:italic">suoders</span><span>&nbsp;on the computer stick and have this one be the auto-logged one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Modify the kiosk javascript to absorb and ignore all keyboard input using the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.mozilla.org/en-US/docs/Web/Events/keydown" style="color:inherit;text-decoration:inherit">document.onkeydown</a></span><span>&nbsp;event.</span></li>
+</ul>
+<p></p>
+<p><span>To finish, I‘d like to point out that the proper way to use this computer stick with Ubuntu would be simply get rid of Ubuntu and instead create a dedicated </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://debian-live.alioth.debian.org/live-manual/stable/manual/html/live-manual.en.html#tutorial-2" style="color:inherit;text-decoration:inherit">Debian Live CD</a></span><span>. This would allow reducing the OS to the strict minimum needed (x11, chromium and the network wifi stack) and reduce the boot time while making it harder to override behavior.</span></p>
+<h1 id="h.rin8mm83a8t3" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">7- Alternatives Considered</span></h1>
+<p><span>The brainstorming on this project was interesting:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It started with “let’s have a 24-inch touch panel and donated Pentium-powered tower PC to drive it, running its own JMRI server”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I scaled that down to a laptop instead of a tower PC.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Then to a Raspberry Pi 3 or similar.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Then to a </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">Chromestick</span><span>&nbsp;Chromebit.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Then scaled it back to a Intel Compute Stick running Windows 10</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>And finally scaled it down to an Intel Compute Stick running Ubuntu.</span></li>
+</ul>
+<p></p>
+<p><span>On the software side, iterations considered ranged from:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Running a separate instance of JMRI.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Writing my own C# “thin client” on Win</span><span>&nbsp;</span><span>10 (to use the kiosk mode for Universal Windows Apps).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Or simply a Java-based web server coupled with a Jython extension for JMRI and a local browser on the stick.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Then it hit me that JMRI </span><span style="font-style:italic">already</span><span>&nbsp;runs a “Java-based web server”, that the Jython extension would basically do exactly what the JMRI JSON server does and that if we use an Ubuntu stick we have Chrome in kiosk mode.</span></li>
+</ul>
+<p></p>
+<p><span>As far as the Intel Compute Stick goes, I really like it. The “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2DnbaYe" style="color:inherit;text-decoration:inherit">BOXSTCK1A8LFC</a></span><span>” (ouch, you do think Intel’s marketing would step in and come up with a name more catchy than this) is on par or even better than a Raspberry Pi 3. The Intel one comes with a power supply, WiFi, an HDMI cable, an internal 4 GB storage and all wrapped in a convenient form factor, all for the same or smaller price that the RPi 3 which comes with none of it. The equivalent for the RPi 3 would be a kit that adds power supply, wifi, box, sdcard and HDMI cable, which is going to add $20 or so to the base price. So in this regard the Intel stick is a better deal. The only thing the RPi 3 has for it is a catchy name, more hype than you can shake a stick at, and a GPIO which is of no use here.</span></p>
+<p></p>
+<p><span>The likely contender here, which is worth pointing out, is using a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://enterprise.google.com/chrome/devices/chromebit/" style="color:inherit;text-decoration:inherit">Chromebit</a></span><span>&nbsp;-- which is often improperly called a “chrome stick” except that’s not an actual product name, the actual official name is a “single app Chrome kiosk device”. It’s made by ASUS and is more expensive than the Intel one ($85, 2 GB RAM, 16 GB storage). The downside is that to develop a proper kiosk-mode “single-app”, it does require getting an enterprise license and it is not clear to me how it would work on the closed JMRI wifi network with no internet access.</span></p>
+<h1 id="h.hn8935kg3rno" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">8- Conclusion &amp; Updates</span></h1>
+<p><span>Overall I was extremely satisfied with how that was working. I gave a short limited demo of this at the club, and the initial response seemed quite positive. We all agreed I would rework the map to try a few variations. We also quickly identified the need to have turnout feedback, and I later explored that on the side using an ESP32 but I never got to demonstrate it.</span></p>
+<p></p>
+<p><span>The one part that did not work as expected during my demo at the club was the ZeroConf discovery on the closed JMRI wifi network. I didn’t dig too much into what was going on, but I did notice that all Android phones were having trouble finding JMRI. Since they ran that wifi box with a fixed IP, the problem was quickly solved by changing the IP on the Intel stick.</span></p>
+<p></p>
+<p><span>My only concern was the physical screens / touch panels which had been used for the experiment. I personally found the 32-inch panels too bulky and heavy for the task. I believe the logic behind that choice was to have the largest surface area to avoid people tapping the wrong turnout by mistake. But there are other ways to do it, for example it would be a bit more logical to look at the existing physical button panels and match that density, and using additional smaller screens each displaying less of the layout map.</span></p>
+<p></p>
+<p><span>In the meantime, I reused all this when I worked on the automation computer for the Randall Museum. I also have 10-inch tablets (not pictured here) with the map:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:296.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_6b8c888d08a30d2e36358b28067d561071f67b5978cc40ba38db4ffcb44a9909i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The laptop is a Linux server running JMRI. Once started, it also runs a full-screen kiosk-mode version of Chrome with the automated layout map:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:465.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d129fe1adc69db126e3626c7b2b6bc5b43d51accbe1264ab73fa0fe32ec822d5i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>There is one nice thing about this setup. The computer startup is fully scripted, Linux boots automatically, starts JMRI and then starts Chrome with the map, which only displays properly after it connects to JMRI. Thus we know the whole system is up and running when the map is displayed. I can train the Museum staff to simply look at the laptop: if it displays the map, the whole JMRI setup is working as intended. They don’t need to figure out more than that.</span></p>
+<p></p>
+<p><span>In this version I also have block sensors mapped on segments of the track as well as the state of the automation toggle switches clearly indicated. I reworked the way turnouts are represented in the SVG to make it simpler, and added the gray “hot spots” to indicate where the touch-enabled turnouts are located on the screen. The corresponding files are located in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor" style="color:inherit;text-decoration:inherit">randall-railroad git repo</a></span><span>. It’s minimalist in purpose. These do exactly what I need and no more. Feel free to take that and reuse them.</span></p>
+<p></p>
+<p><span></span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Trebuchet MS&quot;;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span style="font-family:&quot;Trebuchet MS&quot;">]</span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
+<p><span></span></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2023-01-31_sdb_overall_module_design.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="SDB: Overall Module Design" />
+
+<meta property="og:description" content="The Software Defined Blocks&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="SDB: Overall Module Design" />
+
+<meta name="twitter:description" content="The Software Defined Blocks&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad." />
+
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0004.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-02-22_alternatives_locations_for_b_d7713a5c.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-01-29_sdb_software_defined_blocks.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2023-01-31 - SDB: Overall Module Design</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">SDB</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span style="font-style:italic">The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/sdb" style="color:inherit;text-decoration:inherit">Software Defined Blocks</a></span><span style="font-style:italic">&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad</span><span>.</span></p>
+<p></p>
+<p><span>T</span><span>he desire for the MVP is to be designed around “modules”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Modules</span></p>
+<p style="text-align:left"><span>Each module should have:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An init method called when the main starts.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>A start method called once all other modules have been initialized.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>A loop method called as part of the main loop.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The loop method will return the max time it wants to sleep before being called again. The loop method may be invoked sooner than requested, but not later.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Its own thread-safe message queue.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Each module is free to start a thread or do their process in the main loop.</span></p>
+<p style="text-align:left"><span></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The main loop will call all the modules’ loop methods, and sleep the minimum time requested by all modules (similar to a classic Arduino sketch main loop). </span></p>
+<p></p>
+<p><span>Care should be taken to avoid having two modules use the same hardware resource -- e.g. the same GPIO pin, or the same I2C controller, etc. One way to ensure this would be to have a global “hardware resource allocator”, e.g. an object which “owns” all hardware resources and panics if a resource is reused without being freed first. This seems overkill in the context of the phase 1 MVP.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Module Manager</span></p>
+<p style="text-align:left"><span>Modules are registered in a global ModuleManager singleton.</span></p>
+<p style="text-align:left"><span>The module manager is also responsible for maintaining a thread-safe message queue per module.</span></p>
+<p style="text-align:left"><span>Each module has a unique identifier code name which will be 2 characters long (see below).</span></p>
+<p></p>
+<p><span style="font-weight:700">Message Queue</span></p>
+<p style="text-align:left"><span>Inter-module communication is done by posting a message on another target module </span><span style="font-style:italic">via the manager</span><span>&nbsp;rather than directly. Modules regularly pool their own message queue.</span></p>
+<p style="text-align:left"><span>Although we could use a notification object to wake up a thread when a message is posted, I do not anticipate having to do that in the first version.</span></p>
+<p></p>
+<p><span>The goal of the message queue is to simplify the need for synchronization if two threaded modules call each other, and to simplify the dependency between modules. We want to avoid one module calling methods from another module directly.</span></p>
+<p></p>
+<p><span>The downside of a message queue is that it is an inefficient mechanism to share large amounts of data </span><span style="font-style:italic">by copy</span><span>, which we posit is not needed in phase 1. This would not work to share image buffers, but it’s enough to share e.g. pointers.</span></p>
+<p></p>
+<p><span style="font-weight:700">Data Store</span></p>
+<p><span>The message queue is also a poor way to share frequently changing data between modules, as well as to handle configuration data.</span></p>
+<p><span>Thus a suggestion is to have a singleton global dictionary as a Data Store. Some keys are transient data, whereas others are backed up to NVR.</span></p>
+<p></p>
+<p><span>Whereas it makes more sense for each module to have its own message queue, the data store is a global singleton. Accessors must be thread safe as they can be used by any threaded module.</span></p>
+<p></p>
+<p><span>The data keys are strings, and one character in the string key indicates whether the value should be automatically loaded/saved into the NVR.</span></p>
+<p><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">The data keys </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline line-through;text-decoration-skip-ink:none"><a href="https://docs.google.com/document/d/1thOXyGH26BolTGAIOSPABzyH8ca_VR7Sr7dq3l9QkYI/edit#heading=h.b29wkxiqg2yi" style="color:inherit;text-decoration:inherit">strings should be interned</a></span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">&nbsp;to speed up access, which may mean enforcing a size limit. A potential key string encoding would be something like:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">2 characters for the module name.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">1 character indicating whether the value should be automatically loaded/saved into the NVR.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">7 characters max for the actual key.</span></li>
+</ul>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">Note that since this is Python, the values themselves can be anything, including object references or dicts, etc. However for these values that must be backed to the NVR, we’ll need to check that API and conform to its limitations</span><span>.</span></p>
+<p></p>
+<p><span>In the first version, the data store will be limited to storing strings and long/ints, which can both easily be saved in the NVR.</span></p>
+<p></p>
+<p><span>The store is potentially accessible by many threads. We want to ensure consistency in reads &amp; writes, not to mention that dictionaries/maps typically do not have thread safe updates. Thus we expect to have to use locks around read/writes.</span></p>
+<p><span>To reduce locking contention, one option is to have a lock per target module since all the keys “belong” to a specific module.</span></p>
+<p></p>
+<p><span>Using a global dictionary is a bit more expensive than writing just global variables. However it is deemed an adequate compromise to prevent strong module interdependence.</span></p>
+<p><span>That means modules should consider store accesses to be expensive. As an example, we can anticipate that the wifi / http module would update the sensor threshold configuration by writing a maximum of a handful of values, then send a message to the adequate module to reload their configuration; that module would read values once from the store and keep them in their own object attributes.</span></p>
+<p></p>
+<p><span>We probably want an API that allows a module to read &amp; write multiple values with a single synchronized access, even possibly a get/condition/update access.</span></p>
+<p></p>
+<p><span style="font-weight:700">Block Logic</span></p>
+<p><span>The core of the project is defining blocks, and the conditions that trigger them.</span></p>
+<p><span>We need to elaborate on the possible conditions here.</span></p>
+<p><span>We have 2 options here:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Use a dedicated module that has the configuration data, reads the state of sensors from the store, and then updates the block state in the store.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There is no dedicated module; instead each sensor module has its own logic to update block state in the store.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>In both cases, a separate JMRI JSON/MQTT module reads that block state from the store, and sends the JSON/MQTT to JMRI when a change is detected.</span></li>
+</ul>
+<p></p>
+<p><span>We’ll start with a dedicated “block module”.</span></p>
+<p><span>The configuration consists of output blocks (JMRI system names).</span></p>
+<p><span>For each block, an input is configured with its own data. For a ToF sensor, that data is the distance threshold, and whether the block is occupied or free when the sensor is below that threshold. To be clear, that means the ToF module only needs to export distance information, and the block module is the one reading the sensor(s) distance and computing the state of the block. That also means the trigger logic will be depending on the type of sensor, and that logic lives in the block module rather than the sensor module.</span></p>
+<p><span>We may want to include debounce capabilities in there in case the measurements are noisy.</span></p>
+<p></p>
+<p><span style="font-weight:700">Foundations</span><span>:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Module Manager</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Message Queue (accessed via Module Manager).</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Data Store.</span></li>
+</ul>
+<p></p>
+<p><span style="font-weight:700">Expect modules</span><span>:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Display.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Owns the OLED + its I2C driver.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Read store for variables to display (e.g. a simple location code + value).</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Wifi + HTTP.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Owns the wifi, handling reconnections.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Owns sending a web page over it.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Read store for states to display on that web page.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>On configuration change, write to store + notify modules.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>ToF sensor.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Manages i2c sensors.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Optional: filter/smooth the readings, discard spikes.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Regularly reads sensor values and updates them into the store.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Block Module.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Regularly reads store for sensor states.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Updates blocks states in store.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Notified by Wifi / HTTP if configuration has changed.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Notify JMRI JSON module when there’s a change.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Notify JMRI MQTT module when there’s a change.</span></li>
+  <ul>
+   <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>(we’ll support both protocols upfront)</span></li>
+  </ul>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>JMRI JSON/MQTT Module.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Manages its own socket to the JMRI server.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Notified by Wifi / HTTP if configuration has changed.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Notified by Block module if blocks states have changed.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-02-22_alternatives_locations_for_b_d7713a5c.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-01-29_sdb_software_defined_blocks.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

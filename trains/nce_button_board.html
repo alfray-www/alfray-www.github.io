@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/nce_button_board.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="NCE Button Board and non-momentary contacts" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_801518cce26ab65f8e79d3deb151f3bdc9a026b7e860d39d2e8339ee68abe54ei.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="NCE Button Board and non-momentary contacts" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_801518cce26ab65f8e79d3deb151f3bdc9a026b7e860d39d2e8339ee68abe54ei.jpg" />
+
+<title>NCE Button Board and non-momentary contacts</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="nce_button_board.html">NCE Button Board and non-momentary contacts</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700">NCE Button Board and non-momentary rotary contacts</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2017-01</span></p>
+<p></p>
+<p><span>I use the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526429-Switch-8-Mk2" style="color:inherit;text-decoration:inherit">NCE Switch-8</a></span><span>&nbsp;to drive Tortoise slow-motion motor turnouts which uses an add-on card, the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201280295-Button-Board" style="color:inherit;text-decoration:inherit">NCE Button Board</a></span><span>, to support local control panel toggles. I originally selected this combo because the Button Board documentation clearly indicated that it supported non-momentary contacts. It turns out the NCE documentation is wrong and in this article I explore the alternatives to make this work.</span></p>
+<p></p>
+<p><span>This is going to be long, so here's a table of content.</span></p>
+<p></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.4nw3cp6luc9o" style="color:inherit;text-decoration:inherit">1 - Background Context</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.m0iyx49lejr1" style="color:inherit;text-decoration:inherit">2- The NCE Button Board</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.3b1yc2x0u89i" style="color:inherit;text-decoration:inherit">3 - Technical Details of the NCE Button Board</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.qykc2paejm8g" style="color:inherit;text-decoration:inherit">4 - Non-momentary contacts are supported</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.h796yoolcr6s" style="color:inherit;text-decoration:inherit">5 - Non-momentary contacts are not supported, after all</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.1rnhqs3h7igm" style="color:inherit;text-decoration:inherit">6 - Reprogramming the NCE Button Board</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.yvp8cjti449e" style="color:inherit;text-decoration:inherit">7 - Arduino Replacement for the NCE Button Board</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.kba6g9mhukjn" style="color:inherit;text-decoration:inherit">8 - Arduino, Second Act… For Science!</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.uilmmhky63d7" style="color:inherit;text-decoration:inherit">9 - Conclusion</a></span></p>
+<p></p>
+<p></p>
+<h1 id="h.4nw3cp6luc9o" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>1 - Background Context</span></h1>
+<p><span>When working on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.randallmuseum.org" style="color:inherit;text-decoration:inherit">Randall Museum</a></span><span>'s layout, built by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span>, I have to deal with a control panel that looks like this:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:310.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_801518cce26ab65f8e79d3deb151f3bdc9a026b7e860d39d2e8339ee68abe54ei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>All the turnouts are controlled using rotary toggles (non-momentary) that are directly connected to their corresponding Tortoise or PFM Fulgurex slow-motion turnout motors. They are wired as such:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:187.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:593.00px"><img alt="" src="img_19ba46c08de258632f9ca4a3ef52485e1ac884a303924a54b082a80f8bf523bbd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>For those not familiar with the term, a "momentary" contact is a push-button: a contact is closed when the button is pushed and the contact is open when the button springs up; if this were to control a light, the light would be on only when the button is held down and the light would turn off as soon as the button is released. By contrast a "non-momentary" contact is one that stays closed in whatever last position was used; a good example of that is a typical household light switch: when the switch is turned on, it stays in the closed position to close the circuit and turn on the light and it stays this way till the switch is thrown in the reverse position.</span></p>
+<p></p>
+<p><span>Here we have the same thing: each rotary switch has two positions and it closes a contact permanently ("non-momentary") in the direction in which it is thrown.</span></p>
+<p></p>
+<p><span>I originally chose NCE Switch-8 as an accessory decoder based on these four principles:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We are dealing with Tortoises, which the Switch-8 supports.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We wanted to control around 45 turnouts total, so having a card supporting 8 at once was very beneficial.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We would connect to a local panel composed of non-momentary rotary toggles, which the NCE Button Board is supposed to support according to its documentation.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The board is </span><span style="font-style:italic">not</span><span>&nbsp;primarily powered by the DCC bus (shorts on the DCC power district should not prevent a turnout from being rectified).</span></li>
+</ul>
+<p></p>
+<p><span>Turns out the first principle was wrong and I realized the layout wasn't only using Tortoise but also Fulgurex turnout motors. I wrote a separate article on how to support these </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/nce_fulgurex.html" style="color:inherit;text-decoration:inherit">PFM Fulgurex Turnout Motor using an NCE Switch-8</a></span><span>.</span></p>
+<p></p>
+<p><span>Here's the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526429-Switch-8-Mk2" style="color:inherit;text-decoration:inherit">NCE Switch-8</a></span><span>:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:357.90px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:573.94px"><img alt="" src="img_1f7fda1f88b9895b8ce478aad63bc95b46c967960460c8d87153f27301549b84i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Power is provided from the DCC bus via the 2-pole terminal block on the top right or from a DC power supply via the barrel plug at the top in the center. Turnouts such as Tortoise slow-motion motors are connected to the A/B outputs at the bottom.</span></p>
+<p></p>
+<p><span>On the left side there are one or two 3-position terminal blocks. The documentation officially only has the upper one labelled "Button Board"; mine somehow includes a lower one labelled as "Relay Board".</span></p>
+<h1 id="h.m0iyx49lejr1" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">2- The NCE Button Board</span></h1>
+<p><span>NCE sells the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/202446835-Switch-IT-MK2" style="color:inherit;text-decoration:inherit">NCE Switch-It</a></span><span>&nbsp;to drive up to two slow-motion turnout motors such as the Tortoise. These have direct contacts to connect push-button for local control (e.g. a fascia panel). The Switch-It documentation clearly indicates only momentary contacts should be used (either push-button or little up/down toggles with a spring) and thus this was not a choice for my case.</span></p>
+<p></p>
+<p><span>One will note that in the above description of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526429-Switch-8-Mk2" style="color:inherit;text-decoration:inherit">NCE Switch-8</a></span><span>&nbsp;nothing is said about local button control. Does it have no such support? Of course it does, using the add-on </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201280295-Button-Board" style="color:inherit;text-decoration:inherit">NCE Button Board</a></span><span>.</span></p>
+<p></p>
+<p><span>Now, some people who are quick to find flaws and criticize </span><span style="font-style:italic">everything</span><span>&nbsp;have asked me why have a separate add-on board. In my point of view this modular design is a win-win -- it keeps the board simpler, those who don't need local control don't need to pay for a more expensive board with external terminals they would not use, and those who need them can add a simple board at a fairly reasonable price. If you have ever seen the complexity of a Digitrax SE8C or a CML DAC20, this board looks simplistic by comparison. And the documentation is accordingly trivial.</span></p>
+<p></p>
+<p><span>And the documentation indicates this supports both momentary and non-momentary contacts. </span></p>
+<p></p>
+<p><span>To make this clear, </span><span style="font-style:italic">today</span><span>&nbsp;the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ncedcc.com/online-store/!/Button-Board-Local-push-button-add-on-for-Switch8-Mk2/p/38322142/category%3D10026286" style="color:inherit;text-decoration:inherit">NCE store page for the Button Board</a></span><span>&nbsp;clearly indicates "</span><span style="font-style:italic">Must be used with momentary normally open (NO) Pushbuttons or toggle switches </span><span>". </span><span>I do not remember if that was the case when I first did my research last year or whether it has since been rectified. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201280295-Button-Board" style="color:inherit;text-decoration:inherit">zendesk help page</a></span><span>&nbsp;clearly indicates it supports push-buttons </span><span style="font-style:italic">and</span><span>&nbsp;toggle switches. In both cases, my definition of a toggle switch is a non-momentary switch (e.g. like a wall light switch) unless specified otherwise. T</span><span>he documentation provided with the board and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/article_attachments/200394085/Button_Board.pdf" style="color:inherit;text-decoration:inherit">available on the web site here</a></span><span>&nbsp;still explicitly indicates (see last sentence):</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:72.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:442.00px"><img alt="" src="img_4e930da31447461be5f2a902126d6f86143c6726a5134ae04cc9ab661c42bb2ci.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span>Consequently, I was initially extremely satisfied with that choice, having finally found something that seemed to explicitly support non-momentary contacts. All the others I had seen either explicitly did </span><span style="font-style:italic">not</span><span>&nbsp;support them (Switch-It, Switch-Kat) or were fairly ambiguous about it (DS64, DAC10/20).</span></p>
+<p></p>
+<p><span>All is nice, so I order a handful of these and start on it.</span></p>
+<p><span>Wiring could not be any simpler, here is the Button Board on the left of the Switch-8:</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:390.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_5a853a53c5c419ca6181f6e0522bbfde98af0b648ace31d5186cbbd3d02bd037i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Just 3 wires need to be connected: data (a serial port), and +/GND for power.</span></p>
+<p><span>The power comes from either the DC barrel plug or the DCC of the Switch-8, depending on the switch selector on the Switch-8 board. The DC is delivered almost as-is (it goes through a diode so there's a minor voltage drop) and the DCC goes through a rectifier bridge first.</span></p>
+<p></p>
+<p><span>On the Button Board itself, the power is delivered to a small 7805 voltage regulator to get the 5 V for the PIC16F microprocessor. The Switch-8 already has its own larger 7805, so they could theoretically have sent that 5 V directly to the add-on board instead of having each their voltage regulator. However doing it this way means we can have a longer cable between the Button Board and the Switch-8 and not worry about voltage attenuation and parasitizing the 5 V line.</span></p>
+<p></p>
+<p><span>The Button Board is extremely simple. In the middle there's the PIC16F (the microprocessor) and its 6-pin ICSP header. On the side there's the 3-position terminal block for power and communication with the Switch-8 and the small 7805 voltage regulator. On top and bottom are the terminal blocks to connect the switches of the 8 turnouts (with Normal and Reverse pins for each) and finally on the other side is a 4-position terminal block all connected to the GND.</span></p>
+<p></p>
+<p><span>Each turnout pin has a pull-up and detection is made when the pin is grounded.</span></p>
+<h1 id="h.3b1yc2x0u89i" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">3 - Technical Details of the NCE Button Board</span></h1>
+<p><span>The board uses a PIC16F1936 microprocessor in its 28 pin package.</span></p>
+<p><span>Datasheet: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf" style="color:inherit;text-decoration:inherit">http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf</a></span></p>
+<p></p>
+<p><span>The board has a 6 through-holes "header" (on the left on the picture above) which is the PIC16F's ICSP (In-Circuit Serial Programming, see datasheet chapter 28, page 361). </span></p>
+<p><span>The 6 pins, from left to right, when holding the PIC16 with 1 at the top-left:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>1 = Pin 1 (Vpp / !MCLR)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>2 = Header 1 with a 10k resistor to Pin 20 (Vdd)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>3 = GND / Pin 8 (Vss)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>4 = Pin 28 (ICSPDATA)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>5 = Pin 27 (ICSPCLK)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>6 = Not Connected</span></li>
+</ul>
+<p></p>
+<p><span>Note: Vss is the ground ref, Vdd is the positive supply, Vpp is the programming voltage.</span></p>
+<p><span>Vdd max is +5.5 V and Vpp max is +9 V.</span></p>
+<p></p>
+<p><span>Only PicKit3 is supported by MPLab 8 or X for the PIC16F1936.</span></p>
+<p><span>Checking the config bits, both CP and CPD in the config are set to ON.</span></p>
+<p><span>Config1 is 0x0E24 (INTOSC, CP, CPD, BOREN); Config2 is 0x1CFF (BORV Lo).</span></p>
+<p></p>
+<p><span>There are 16 inputs (8 turnouts, Normal / Reverse each). Each input is wired from the terminal block to the PIC16F with a 10 kΩ pull-up resistor, a small capacitor to ground and another 10 kΩ resistor to the PIC16F input. </span></p>
+<p></p>
+<p><span>The PIC16F I/Os are used as such (PIC pin order with 1 on the top-left):</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:407.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:430.00px"><img alt="" src="img_c799bb0f239077a8c57912bf8761edbca54766662c719e840e502388e45eadf9i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:298.8pt"><p><span style="vertical-align:baseline">RE3 = Vpp / MCLR</span></p><p><span style="vertical-align:baseline">RA0 = Turnout 1 N</span></p><p><span style="vertical-align:baseline">RA1 = Turnout 1 R</span></p><p><span style="vertical-align:baseline">RA2 = Turnout 2 N</span></p><p><span style="vertical-align:baseline">RA3 = Turnout 2 R</span></p><p><span style="vertical-align:baseline">RA4 = Turnout 3 N</span></p><p><span style="vertical-align:baseline">RA5 = Turnout 3 R</span></p><p><span style="vertical-align:baseline">Vss</span></p><p><span style="vertical-align:baseline">RA7 = Turnout 4 R</span></p><p><span style="vertical-align:baseline">RA6 = Turnout 4 N</span></p><p><span style="vertical-align:baseline">RC0 = Turnout 8 R</span></p><p><span style="vertical-align:baseline">RC1 = Turnout 8 N</span></p><p><span style="vertical-align:baseline">RC2 = Not connected?</span></p><p><span style="vertical-align:baseline">RC3 = Onboard LED via 470 Ω resistor</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:298.8pt"><p><span style="vertical-align:baseline">RB7 / ICSPDATA = ICSP Pin 4</span></p><p><span style="vertical-align:baseline">RB6 / ICSPCLK = ICSP Pin 5</span></p><p><span style="vertical-align:baseline">RB5 = Turnout 7 R</span></p><p><span style="vertical-align:baseline">RB4 = Turnout 7 N</span></p><p><span style="vertical-align:baseline">RB3 = Turnout 6 R</span></p><p><span style="vertical-align:baseline">RB2 = Turnout 6 N</span></p><p><span style="vertical-align:baseline">RB1 = Turnout 5 R</span></p><p><span style="vertical-align:baseline">RB0 = Turnout 5 N</span></p><p><span style="vertical-align:baseline">Vdd</span></p><p><span style="vertical-align:baseline">Vss</span></p><p><span style="vertical-align:baseline">RC7 / RX = Shunted to RC6</span></p><p><span style="vertical-align:baseline">RC6 / TX = DATA via 100 Ω resistor</span></p><p><span style="vertical-align:baseline">RC5 = Not connected?</span></p><p><span style="vertical-align:baseline">RC4 = Not connected?</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The port/input order is inverted for turnouts 4 and 8 (this simplifies the PCB due to the way the pins on the PIC16 are laid out).</span></p>
+<p><span>I didn't see anything obvious used for RC2, RC4 and RC5.</span></p>
+<p><span>It's quite odd that RC6 (TX) and RC7 (RX) are connected together to the DATA pin of the terminal block.</span></p>
+<p></p>
+<p><span>According to NCE's the serial data output by the board works as follows:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-style:italic;vertical-align:baseline">The button board sends two bytes of data (9600,N,8,1) for each button 'event'.</span></p><p style="height:11pt"></p><p><span style="font-style:italic;vertical-align:baseline">The first byte is the actual button data and the second byte is a complement of the first.</span></p><p><span style="font-style:italic;vertical-align:baseline">The second byte when XORed with the first should yield 0xff allowing a modicum of error checking.</span></p><p><span style="font-style:italic;vertical-align:baseline">&nbsp;</span></p><p><span style="font-style:italic;vertical-align:baseline">The button data is as follows (in binary):</span></p><p style="height:11pt"></p><p><span style="font-style:italic;vertical-align:baseline">&nbsp; 1000 nnnn = button pressed, nnnn is the button number (0-F)</span></p><p><span style="font-style:italic;vertical-align:baseline">&nbsp; 0100 nnnn = button released, nnnn is the button number (0-F)</span></p><p style="height:11pt"></p><p><span style="font-style:italic;vertical-align:baseline">Bits 4 and 5 are reserved and may represent additional button numbers in the future so clear both bits when talking to a device that only expects up to 16 buttons. Some devices may choose to ignore button released events.</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Let's plug it into a small UART serial protocol sniffer. I'm using an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1Y4rEID" style="color:inherit;text-decoration:inherit">Xmega XMiniLab</a></span><span>&nbsp;from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.gabotronics.com/development-boards/xmega-xminilab.htm" style="color:inherit;text-decoration:inherit">Gabotronics</a></span><span>&nbsp;and I configured it to 9600 8 N 1 per specs:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:402.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f8c90e2a0a100c624e2a4ee2bf95ec988879873cb2862e9509c1c4f21ab86941i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The black wire connects ground to RX (pin 2) and the orange wire connects DATA to TX (pin 3) via a 4.7 kΩ resistor (needed by the Xmega when connecting a 5 V input).</span></p>
+<p></p>
+<p><span>The middle line of the display appears cut due to the refresh rate of the LCD and the cell phone.</span></p>
+<p><span>Ignoring that cosmetic detail, we see something like this in the picture:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Input #0 (turnout 1 N): 80 7F … 40 BF</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Input #1 (turnout 1 R): 81 7E … 41 BE</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>etc. up to input #15 (turnout 8 R) starting with 8F (not shown here).</span></li>
+</ul>
+<p></p>
+<p><span>The first 2 bytes are sent when the input is connected to ground and the 2 next bytes are sent when the input is released.</span></p>
+<p><span>This matches the doc, we have a push event followed by a release event. In the case of my non-momentary toggle switches, the release event will basically not happen till that turnout toggle is thrown back into its other position.</span></p>
+<p></p>
+<p><span>There's also quite some noise. For example on that screenshot, when asserting input #3, I see this:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>83 7C 43 BC -- that's expected</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>F3 7C 43 BC </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>C3 7C 43 BC </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>and finally 83 7C.</span></li>
+</ul>
+<p></p>
+<p><span>There are two interesting facts here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>These two middle sequences starting with F3 and C3 are invalid as the first byte would not match the FF checksum. That's likely noise in my quick wiring to the UART sniffer.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It ends with the proper 83 7C push event. The release event is missing since the input is still connected using the non-momentary contact so no release event was sent.</span></li>
+</ul>
+<p></p>
+<p><span>Interestingly, one of the many Button Boards I got does not behave the same: turnout #8 inputs (both N and R), when grounded, send a repeated loop of push/release events in rapid succession, whereas inputs for turnouts #1 up to #7 only sends the push event when grounded and the release event when the contact is thrown in the reverse direction. Interestingly, turnout #8 is on I/O port C (RC0 / RC1) on the PIC16 whereas the others are on I/O port A and B. Somehow on this one port C must not be set up the same way. I can see how that infinite loop of serial commands might perturb a Switch-8 connected to it.</span></p>
+<h1 id="h.qykc2paejm8g" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">4 - Non-momentary contacts are supported</span></h1>
+<p><span>That's what the documentation indicates: this supports both momentary and non-momentary contacts. </span></p>
+<p><span>Let's go for it!</span></p>
+<p><span>I wired the whole thing this way:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:498.16px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:593.00px"><img alt="" src="img_09f96be9321bd778b4fc39267ea45cab38da3a0f59f50597dcc690d1ae201334d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The rotary toggles used on the original panel are actually 6PDT. I simply unsolder the turnout output and connect it to the NCE Switch-8. Then I use any unused input of that same rotary toggle to create a Normal/Reverse switch for the NCE Button Board.</span></p>
+<p></p>
+<p><span>I first did a quick test at home, connecting all this to my DCC system and </span><span style="font-style:italic">it worked perfectly</span><span>&nbsp;out of the box as advertised.</span></p>
+<p></p>
+<p><span>Then I started wiring one panel at the museum's layout and things went a bit differently: the Switch-8 part is fine, I had no trouble throwing switches by using the Accessory mode on the NCE ProCab throttle. The button board however did not work, I fiddle with it for a while then it worked. OK so maybe a wire was loose. Then I come back the next day and same, the thing is not working anymore.</span></p>
+<p><span>The Switch-8 was simply not throwing turnouts when a rotary toggle was turned, at least not consistently.</span></p>
+<p><span>I started trying different things. Maybe the serial data wire was too long so I moved the button board closer to the Switch-8. Maybe I had to use the DCC or the DC power on the Switch-8. Maybe that power supply was not good and another one would be better. Maybe I needed a different voltage on the power supply so I tried different voltages in the 7-14 V range (the default was about 11 V, which seemed perfectly reasonable to feed to a 7805, and there was a good solid 5 V on the board behind it).</span></p>
+<p><span>Eventually a pattern emerged: the thing would seem to work when I unplugged the barrel power plug of the Switch-8 and then plugged it back. It clearly seemed to work better when the board was power-cycled, with nothing supporting that in the documentation.</span></p>
+<p></p>
+<p><span>I eventually found a loose workaround: power both the Switch-8 and the Button Board off the same DC power supply, with a switch so that the Button Board was powered </span><span style="font-style:italic">first</span><span>&nbsp;and the Switch-8 was powered </span><span style="font-style:italic">after</span><span>. For some reason that did seem to make it consistently work… for a while. After some time, the thing would stop working again. Clearly not suitable for my application.</span></p>
+<h1 id="h.h796yoolcr6s" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">5 - Non-momentary contacts are not supported, after all</span></h1>
+<p><span>Eventually I emailed NCE's support and the first and definitive reply came right away: toggle switches connected to the Button Board "MUST be momentary".</span></p>
+<p></p>
+<p><span>The story is that they found an issue in the programming after production. That could have used at least a clear rectification on the NCE web site to avoid having users pick up that specific solution for a reason known to not work (and by clear I mean actually writing "the documentation is </span><span style="font-style:italic">wrong</span><span>&nbsp;and non-momentary contacts are </span><span style="font-style:italic">not supported"</span><span>, both in the zendesk help page and the store site -- as it is today, it's a confusing because they say different things and there's no indication of which one is right).</span></p>
+<p></p>
+<p><span>NCE support suggested an easy way to identify this as the cause and a partial workaround: add a push button on the common ground line that goes from the Button Board to the rotary switches, essentially turning a non-momentary contact on a momentary one. I did so and it effectively solves the issue right there. The procedure is of course not optimal since now the use case is to turn a knob and </span><span style="font-style:italic">then</span><span>&nbsp;have to remember to push the temporary button for the turnout to actually align.</span></p>
+<p></p>
+<p><span>Besides, NCE support indicates the Button Board does </span><span style="font-style:italic">not</span><span>&nbsp;work with non-momentary contacts and it will freeze the Switch-8. Yet somehow that is not what happens with mine. It does work </span><span style="font-style:italic">for a while</span><span>&nbsp;and the Switch-8 still responds to DCC commands. I have no idea how they programmed their PIC16 but I find that quite puzzling. I wish they could just share technical details about the core of the issue.</span></p>
+<p></p>
+<p><span>An interesting exercise would be to put my serial protocol analyzer between the Button Board and the Switch-8 and see what happens.</span></p>
+<p></p>
+<p><span>Update 1: The NCE support on this has been less than stellar. I got a first reply real quick indicating the doc was wrong, and after a few back-and-forth I got that hackish proposal to identify this has the issue. But then nothing. It's like my emails are falling into a black hole, which is quite disappointing and not a good prospect. Anyway, I need an actual solution and NCE support has apparently decided it's easier to ignore emails.</span></p>
+<p></p>
+<p><span>Since it looks like I'm on my own, let's see what options I have:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Reprogram the NCE Button Board to fix the issue,</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Replace it by something else that works as I need it to with the existing NCE Switch-8,</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Replace the whole NCE Switch-8 + Button Board by something else, e.g. the Digitrax DS64 maybe.</span></li>
+</ul>
+<p></p>
+<p><span>Let’s explore how we can reprogram the NCE Button Board.</span></p>
+<p></p>
+<p><span>Update 2: Well they didn't forget about me. A week after I finished all these experiments, NCE support contacted me with a HEX file to reflash the NCE Button Board to solve the issue. I'll give it a try and report here.</span></p>
+<h1 id="h.1rnhqs3h7igm" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>6 - </span><span style="font-size:20pt">Reprogramming the NCE Button Board</span></h1>
+<p><span>The proper way to fix the NCE Button Board is to reprogram it to properly support non-momentary contacts.</span></p>
+<p><span>The chapter above about the technical details of the board makes it clear that nothing prevents this. It's just a matter of programming it.</span></p>
+<p></p>
+<p><span>Disclaimer: Altering your board will likely void its warranty. Nothing here is endorsed by NCE.</span></p>
+<p><span>The rest of this section is going to be quite technical. If you have no idea what all this means, please skip this section and check the next one, which offers a much easier way to replace the NCE Button Board.</span></p>
+<p></p>
+<p><span>(Update: NCE now has a proper fix; they can provide an HEX file to reprogram the board or they can be sent the boards and reprogram them for you -- but please make sure to contact the NCE support first and talk to them so that they can best help you.)</span></p>
+<p></p>
+<p><span>As indicated above, the NCE Button Board uses a PIC16F microprocessor, more exactly the PIC16F1936.</span></p>
+<p></p>
+<p><span>To reprogram it, we need a few things:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.microchip.com/mplab/mplab-x-ide" style="color:inherit;text-decoration:inherit">MPLAB X IDE</a></span><span>.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.microchip.com/mplab/compilers" style="color:inherit;text-decoration:inherit">MPLAB XC8 compiler</a></span><span>.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.microchip.com/mplab/mplab-code-configurator" style="color:inherit;text-decoration:inherit">MCC add-on for the MPLAB X</a></span><span>.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A PIC programmer such as the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=PG164130" style="color:inherit;text-decoration:inherit">Microchip</a></span><span>&nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.amazon.com/gp/product/B00E4WFS8Y" style="color:inherit;text-decoration:inherit">PICKit3</a></span><span>.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A Linux or Windows box.</span></li>
+</ul>
+<p></p>
+<p><span>Note that the PicKit2 is </span><span style="font-style:italic">not</span><span>&nbsp;compatible with this specific PIC microcontroller via MPLAB. That said, the PicKit2 is said to work with this device if using the old PicKit2 software, via 3rd-party linux command-line or in PTG mode; I did not try that.</span></p>
+<p><span>I just wanted to keep it easy so I borrowed a PicKit3 at work (thanks Doug!) and used a Windows box. I also tried it under Ubuntu 16 and it worked out of the box (there are many comments online that say there are no Linux drivers for the PicKit3, I think they are just outdated… the MPLAB X installer added some </span><span style="font-style:italic">udev rules</span><span>&nbsp;and the PicKit3 was clearly recognized in </span><span style="font-style:italic">dmesg</span><span>, didn't even have to reboot).</span></p>
+<p></p>
+<p><span>Here it is in action:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:504.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_9b4bfb814c155175680a8c3e14c5312463b14a5547c5338e34791f6e69537028i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>When connecting the PicKit3 6-pin cable, the side with the arrow on the PicKit3 connects to the "1" side on the Button Board.</span></p>
+<p></p>
+<p><span>The source project I created for the MPLAB X is available here:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/tree/main/pic16f/ButtonBoard2.X" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/conductor/tree/main/pic16f/ButtonBoard2.X</a></span><span>&nbsp;</span></p>
+<p></p>
+<p><span>Simply clone this using git then open the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/tree/main/pic16f/ButtonBoard2.X" style="color:inherit;text-decoration:inherit">ButtonBoard2.X</a></span><span>&nbsp;folder in MPLAB X and use the "Make and Program Device Main Project" button to compile the code and reflash the board.</span></p>
+<p></p>
+<p><span>I'm going to jump straight to the main </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/pic16f/ButtonBoard2.X/user.c" style="color:inherit;text-decoration:inherit">user.c</a></span><span>&nbsp;file, edited for brevity (I removed all the watchdog and led control as well as a bunch of comments; see the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/pic16f/ButtonBoard2.X/user.c" style="color:inherit;text-decoration:inherit">source here</a></span><span>&nbsp;for the full version</span><span>):</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/**</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;* Program for Button Board and non-momentary contacts, non-official version.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;* (etc. see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/pic16f/ButtonBoard2.X/user.c" style="color:inherit;text-decoration:inherit">full source</a></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;for details)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;*/</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/* includes omitted */</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">// Number &amp; Time in milliseconds to wait at startup to let the Switch-8<br>// initialize before sending the initial turnout states.<br>#define DELAY_Nx_START 6<br>#define DELAY_MS_START 1000<br><br>// Number &amp; Time in milliseconds to wait after sending a serial command to let<br>// the Switch-8 throw the turnout.<br></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">#define DELAY_Nx_SWITCH 2<br></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define DELAY_MS_SWITCH 500<br><br>// Time in milliseconds before scanning next input.<br>#define DELAY_MS_LOOP 10<br><br>// Time in milliseconds to wait before sending the button-released command.<br>#define DELAY_MS_BTN_RELEASE 500<br><br>#define MAX_INPUT 16<br><br>// Last known state of each input.<br>uint8_t states[MAX_INPUT];<br><br>void sendByte(uint8_t value) {<br> &nbsp; &nbsp;EUSART_Write(value);<br> &nbsp; &nbsp;EUSART_Write(0xFF ^ value);<br>}<br><br>void sendSwitch8Command(uint8_t index) {<br> &nbsp; &nbsp;sendByte(0x80 + index);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; __delay_ms(DELAY_MS_BTN_RELEASE);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; sendByte(0x40 + index);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}<br><br>uint8_t readInput(uint8_t index) {<br> &nbsp; &nbsp;if (index &lt; 6) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Input Turnouts 1..3 N/R are on RA0..RA5<br> &nbsp; &nbsp; &nbsp; &nbsp;unsigned char mask = (1 &lt;&lt; index);<br> &nbsp; &nbsp; &nbsp; &nbsp;return (PORTA &amp; mask) != 0;<br> &nbsp; &nbsp;} else if (index == 6) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Inputs Turnout 4 N/R are on RA7..RA6 in reverse order.<br> &nbsp; &nbsp; &nbsp; &nbsp;return IO_RA7_PORT != 0;<br> &nbsp; &nbsp;} else if (index == 7) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Inputs Turnout 4 N/R are on RA7..RA6 in reverse order.<br> &nbsp; &nbsp; &nbsp; &nbsp;return IO_RA6_PORT != 0;<br> &nbsp; &nbsp;} else if (index &lt; 14) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Inputs Turnouts 5..7 N/R are on RB0..RB5<br> &nbsp; &nbsp; &nbsp; &nbsp;unsigned char mask = (1 &lt;&lt; (index - 8));<br> &nbsp; &nbsp; &nbsp; &nbsp;return (PORTB &amp; mask) != 0;<br> &nbsp; &nbsp;} else if (index == 14) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Inputs Turnout 8 N/R are on RC1..RC0 in reverse order.<br> &nbsp; &nbsp; &nbsp; &nbsp;return IO_RC1_PORT != 0;<br> &nbsp; &nbsp;} else if (index == 15) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Inputs Turnout 8 N/R are on RC1..RC0 in reverse order.<br> &nbsp; &nbsp; &nbsp; &nbsp;return IO_RC0_PORT != 0;<br> &nbsp; &nbsp;}<br> &nbsp; &nbsp;return 0;<br>}<br><br>void sleepAfterSwitch() {<br> &nbsp; &nbsp;for (uint8_t i = 0; i &lt; DELAY_Nx_SWITCH; ++i) {<br> &nbsp; &nbsp; &nbsp; &nbsp;__delay_ms(DELAY_MS_SWITCH);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }<br>}<br><br>// Checks an input and sends a command to the Switch-8 if the input<br>// has changed since last read.<br>uint8_t checkInput(uint8_t index) {<br> &nbsp; &nbsp;uint8_t state = readInput(index);<br><br> &nbsp; &nbsp;if (state != states[index]) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// State has changed.<br> &nbsp; &nbsp; &nbsp; &nbsp;states[index] = state;<br><br> &nbsp; &nbsp; &nbsp; &nbsp;if (state == 0) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// Inputs are active low (when grounded).<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// For any turnout rotary switch, one of the inputs is LOW and<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// the other one is HIGH.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sendSwitch8Command(index);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sleepAfterSwitch();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return 1;<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp;}<br> &nbsp; &nbsp;return 0;<br>}<br><br>void initialSleep() {<br> &nbsp; &nbsp;for (uint8_t i = 0; i &lt; DELAY_Nx_START; ++i) {<br> &nbsp; &nbsp; &nbsp; &nbsp;__delay_ms(DELAY_MS_START);<br> &nbsp; &nbsp;}<br>}<br><br>void InitApp(void) {<br> &nbsp; &nbsp;// Initialize using the MCC generated code<br> &nbsp; &nbsp;SYSTEM_Initialize();<br><br> &nbsp; &nbsp;// Sleep a few seconds to give time to the Switch-8 to start<br> &nbsp; &nbsp;initialSleep();<br><br> &nbsp; &nbsp;for (uint8_t i = 0; i &lt; MAX_INPUT; ++i) {<br> &nbsp; &nbsp; &nbsp; &nbsp;// Set each memorized "previous" state to high. Since the states<br> &nbsp; &nbsp; &nbsp; &nbsp;// are active LOW, this will force the initialization code to send<br> &nbsp; &nbsp; &nbsp; &nbsp;// the current turnout state to the Switch-8 during setup.<br> &nbsp; &nbsp; &nbsp; &nbsp;states[i] = 1;<br> &nbsp; &nbsp; &nbsp; &nbsp;// Checks the input and updates the Switch-8 to match the rotary<br> &nbsp; &nbsp; &nbsp; &nbsp;// switches at startup.<br> &nbsp; &nbsp; &nbsp; &nbsp;checkInput(i);<br> &nbsp; &nbsp; &nbsp; &nbsp;__delay_ms(DELAY_MS_LOOP);<br> &nbsp; &nbsp;}<br>}<br><br>void LoopApp(void) {<br> &nbsp; &nbsp;while (1) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; for (uint8_t i = 0; i &lt; MAX_INPUT; ++i) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;checkInput(i);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; __delay_ms(DELAY_MS_LOOP);<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp;}<br>}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Mode of operation is fairly straightforward:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>At startup, wait before sending any command to the NCE Switch-8.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>After the startup delay, scan the 16 inputs and send commands for all grounded inputs. Since this is designed to work with non-momentary contacts, each turnout should have a LOW input and a HIGH input. This means when the layout is powered up, all the Switch-8 will align to match the rotary toggles from the panels.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>After that, regularly scan the 16 inputs and send a command each time one transitions from a HIGH to LOW state (e.g. grounded).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A command sent to the serial output for the Switch-8 is always comprised of both a push event followed by a release event, regardless of the state of the input. The release events are thus simulated, since they do not occur in any timely manner with non-momentary contacts. There's a pause after sending a command, which should be enough for the Switch-8 to throw the corresponding slow-motion motor.</span></li>
+</ul>
+<p></p>
+<p><span>This has been tested and works equally well with momentary contacts.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:466.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:358.00px"><img alt="" src="img_8d6bd25b0f4e89fba1c658cbec2444242ba1d46857e59be1986af306e02c8d35i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The resulting program is fairly small and uses only 400 bytes out of 8K available.</span></p>
+<p></p>
+<p><span>PIC Configuration:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Configuration is done using the MCC.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Lowest frequency usable is 500 kHz for a reasonable 9600 baud rate.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>WDT is activated, as well as STVREN, and both are probably overkill here. The watchdog time is left at the default 2 seconds value.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>PWRT MUST be disabled. Enabling it would make sense but somehow prevents the proper detection of the serial link by the Switch-8.</span></li>
+</ul>
+<p></p>
+<p><span>Detection of the serial data by the Switch-8 seems oddly finicky when it originates from the PIC on the Button Board. It seems to work better when the Switch-8 is powered </span><span style="font-style:italic">after</span><span>&nbsp;the Button Board, which is the reverse of the current hardware design.</span></p>
+<p><span>I have none of these problems when I generate the serial data using an Arduino.</span></p>
+<p></p>
+<p><span>The PIC on the NCE Button Board comes with program protection, so don't bother even trying to read it as it will just read a bunch of zeroes. It can be programmed by erasing it completely though.</span></p>
+<p></p>
+<p><span>The first time, open the project properties in MPLAB X and configure the PicKit3 to power the target (PicKit3 &gt; Power) and also </span><span style="font-style:italic">disable</span><span>&nbsp;Low Voltage Programming (PicKit3 &gt; Program Options)</span><span>. Once you have flashed the new firmware that you have just built, you can re-enable Low Voltage Programming.</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:380.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b1955c301dd978ca1318ec2cf108ab261568d6c2858414c94a123233684c8aa4i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>This concludes the "proper" and not-so-complicated way to fix the NCE Button Board. </span></p>
+<p><span>Now let's look at another alternative.</span></p>
+<p><span>There's a much easier thing to do to make this work!</span></p>
+<h1 id="h.yvp8cjti449e" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">7 - Arduino Replacement for the NCE Button Board</span></h1>
+<p><span>Ah, almost got you here. I said I was going for the "easiest thing" to do. Arguably, most people at that point would throw the NCE thing away and move on to something else (I think the Digitrax DS64 would be a logical choice).</span></p>
+<p></p>
+<p><span>But that's not what I'm after here. I'm </span><span>curious how this thing can be worked out and exploring options.</span></p>
+<p></p>
+<p><span>The easy thing for me is: when in doubt, throw an Arduino at the problem.</span></p>
+<p></p>
+<p><span>That's an easy one. We need a device that can scan 16 grounded inputs and generate a 2-byte command on a serial port, knowing that the specs for the serial are clearly explained in the NCE doc.</span></p>
+<p></p>
+<p><span>Time to get an Arduino out of its drawer. I have plenty and they are a snap to program.</span></p>
+<p></p>
+<p><span>Let's see. I have a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/products/50" style="color:inherit;text-decoration:inherit">Digistump DigiX</a></span><span>&nbsp;around, which is an Arduino Due clone with about 99 I/Os, wifi, sdcard and the kitchen sink. OK maybe that's a bit too much. I also have an Arduino Mega which has 50 I/Os. Maybe I can do smaller. An Arduino Uno or Micro doesn't have enough input. Oh there we go, the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2jStyz2" style="color:inherit;text-decoration:inherit">Arduino Nano</a></span><span>&nbsp;is a good match:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Input voltage is 7-12 V so we can just use the +/GND power supply that is given to the Button Board by the Switch-8.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>It has 22 I/O pins, but looking more carefully we have available D2-D13 (12 pins) and A0-A5 (6 pins). </span></li>
+</ul>
+<p><span>Pins we don't want to use as I/Os according to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.arduino.cc/en/Main/arduinoBoardNano" style="color:inherit;text-decoration:inherit">documentation</a></span><span>:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D0 / D1 are actually the RX / TX of the serial port, which we need.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D13 is the on-board LED, we'll keep it as-is.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A6-A7 are </span><span style="font-style:italic">real</span><span>&nbsp;ADC inputs, not usable. The rest of A0-A5 are actually the typical Atmel multi-purpose I/Os pins that can be used either as digital or analog.</span></li>
+</ul>
+<p><span>So in the end we have 17 pins usable for I/Os and we need 16 of them.</span></p>
+<p></p>
+<p><span>I ended up with this schematics and a potential PCB for it:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(243, 243, 243);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(243, 243, 243);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(243, 243, 243);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(243, 243, 243);border-top-style:solid;border-top-width:1pt;vertical-align:top;width:298.8pt"><p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:300.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px"><img alt="" src="img_1a3545e6b893984df5bfdd39d51b69c70b9719da5fa8cb53e559a14951e6d35ci.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(243, 243, 243);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(243, 243, 243);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(243, 243, 243);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(243, 243, 243);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:298.8pt"><p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:267.90px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:281.92px"><img alt="" src="img_cb0404ef754da41b9b9e875d5a78c1450ed6ec70e802ec50774391add193ff5di.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>OK let's stop here. That's nice as it simulates the layout of the Button Board but it's too expensive. &nbsp;A PCB custom print is going to be around $20-$30 and one can get an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2keCDSM" style="color:inherit;text-decoration:inherit">Arduino Nano Terminal Adapter</a></span><span>&nbsp;for much less:</span></p>
+<p></p>
+<p><span>This below costs about $4 for an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2jStyz2" style="color:inherit;text-decoration:inherit">Arduino Nano</a></span><span>&nbsp;clone and </span><span>$6 for a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2keCDSM" style="color:inherit;text-decoration:inherit">terminal adapter</a></span><span>:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:391.83px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:690.90px"><img alt="" src="img_161e6debdb261dc07fad7a1f294b71ec1c099c7c1db6f94cf408c78662114eaci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>To use it, connect it as such:</span></p>
+<p></p>
+<p><span>Connections to the Switch-8's Button Board terminal:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Pin 1 (TX1) to "DATA" on the Switch-8 terminal</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Pin VIN to "+" &nbsp;on the Switch-8 terminal</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Pin GND to "GND" &nbsp;on the Switch-8 terminal</span></li>
+</ul>
+<p><span>&nbsp; Connections to the rotary toggles:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D2/D3 &nbsp;: Turnout 1 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D4/D5 &nbsp;: Turnout 2 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D6/D7 &nbsp;: Turnout 3 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D8/D9 &nbsp;: Turnout 4 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D10/D11 : Turnout 5 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>D12/D13 : Do not use.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A0/A1 &nbsp;: Turnout 6 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A2/A3 &nbsp;: Turnout 7 N/R</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A4/A5 &nbsp;: Turnout 8 N/R &nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A6/A7: Do not use.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Use the other GND pin to connect to the other side of your DPDT or rotary toggles.</span></li>
+</ul>
+<p></p>
+<p></p>
+<p><span>I threw together quickly this sketch for the Arduino, find it here on BitBucket, load it in the Arduino IDE and program it on the Arduino Nano:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/arduino/Switch8_Turnouts/Switch8_Turnouts.ino" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/conductor/blob/main/arduino/Switch8_Turnouts/Switch8_Turnouts.ino</a></span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/*<br> &nbsp;Arduino Sketch to control an NCE Switch-8 from non-momentary rotary toggle switches.<br> &nbsp;This replaces an NCE Button Board which does not properly deal with non-momentary rotary switches.<br> &nbsp;(etc., see full source for details).<br>*/<br><br>// Pin number of the Arduino's onboard LED.<br>#define LED 13<br><br>// Time in milliseconds to wait at startup to let the Switch-8 initialize.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define DELAY_MS_START 2000</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Time in milliseconds to wait after sending a serial command to let the Switch-8 throw the turnout.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define DELAY_MS_SWITCH 1000</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Time in milliseconds before scanning next input.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// This crude rate-limiter makes the sketch scan each input roughly once per second.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define DELAY_MS_LOOP 10</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Blink the LED for 100 ms.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define DELAY_MS_BLINK 100</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Time in milliseconds to wait before sending the button-released command to the Switch-8.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define DELAY_MS_BTN_RELEASE 500<br><br>// Number of inputs scanned (8 turnouts, Normal/Release each).<br>#define MAX_INPUT 16<br><br>// Pin numbers of the Digital I/O to scan for the 8 turnouts inputs.<br>// Each turnout uses 2 inputs: one for Normal and one for Reverse.<br>const int inputs[MAX_INPUT] = {<br> &nbsp;2,3, 4,5, 6,7, 8,9, 10,11,<br> &nbsp;A0,A1, A2,A3, A4,A5<br>};<br><br>// Last known state of each input, either LOW (active) or HIGH.<br>int states[MAX_INPUT];<br><br>// Blinks the onboard LED.<br>void blink() {<br> &nbsp;digitalWrite(LED, HIGH);<br> &nbsp;delay(DELAY_MS_BLINK);<br> &nbsp;digitalWrite(LED, LOW);<br>}<br><br>void sendByte(byte value) {<br> &nbsp;Serial.write(value);<br> &nbsp;Serial.write(0xFF ^ value);<br>}<br><br>void sendSwitch8Command(int index) {<br> &nbsp;sendByte(0x80 + index);<br> &nbsp;delay(DELAY_MS_BTN_RELEASE);<br> &nbsp;sendByte(0x40 + index);<br>}<br><br>// Checks an input and sends a command to the Switch-8 if the input<br>// has changed since last read.<br>void checkInput(int index) {<br> &nbsp;int state = digitalRead(inputs[index]);<br><br> &nbsp;if (state != states[index]) {<br> &nbsp; &nbsp;// State has changed.<br> &nbsp; &nbsp;states[index] = state;<br><br> &nbsp; &nbsp;if (state == LOW) {<br> &nbsp; &nbsp; &nbsp;// Inputs are active LOW since we use pull-up resistors.<br> &nbsp; &nbsp; &nbsp;// For any turnout rotary switch, one of the inputs is LOW and the other one is HIGH.<br> &nbsp; &nbsp; &nbsp;blink();<br> &nbsp; &nbsp; &nbsp;sendSwitch8Command(index);<br> &nbsp; &nbsp; &nbsp;delay(DELAY_MS_SWITCH);<br> &nbsp; &nbsp;}<br> &nbsp;}<br>}<br><br>void setup() {<br> &nbsp;// Configure the onboard LED pin to a digital output<br> &nbsp;pinMode(LED, OUTPUT);<br> &nbsp;// Configure the debug pin enabling its internal pull-up.<br> &nbsp;pinMode(DEBUG_PIN, INPUT_PULLUP);<br> &nbsp;for (int i = 0; i &lt; MAX_INPUT; ++i) {<br> &nbsp; &nbsp;// Configure the inputs, enabling their internal pull-up.<br> &nbsp; &nbsp;pinMode(inputs[i], INPUT_PULLUP);<br> &nbsp; &nbsp;// Set each memorized "previous" state to high. Since the states<br> &nbsp; &nbsp;// are active LOW, this will force the initialization code to send<br> &nbsp; &nbsp;// the current turnout state to the Switch-8 during setup.<br> &nbsp; &nbsp;states[i] = HIGH;<br> &nbsp;}<br> &nbsp;<br> &nbsp;// Initialize serial port.<br> &nbsp;Serial.begin(9600, SERIAL_8N1);<br> &nbsp;<br> &nbsp;// Sleep a few seconds to give time to the Switch-8 to start<br> &nbsp;for (int i = 0; i &lt; 4; ++i) {<br> &nbsp; &nbsp;blink();<br> &nbsp; &nbsp;delay(DELAY_MS_START_x4);<br> &nbsp;}<br><br> &nbsp;// Checks the inputs and updates the Switch-8 to match the rotary switches.<br> &nbsp;for (int i = 0; i &lt; MAX_INPUT; ++i) {<br> &nbsp; &nbsp;blink();<br> &nbsp; &nbsp;checkInput(i);<br> &nbsp;}<br>}<br><br>void loop() {<br> &nbsp;for (int i = 0; i &lt; MAX_INPUT; ++i) {<br> &nbsp; &nbsp;checkInput(i); &nbsp; &nbsp;<br> &nbsp; &nbsp;delay(DELAY_MS_LOOP);<br> &nbsp;} &nbsp;<br>}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>All the I/O inputs use their internal pull-ups and the Normal/Reverse for a turnout is generated when the corresponding input is grounded. Pin 13 is used for the LED, it blinks at startup and when throwing a turnout.</span></p>
+<p></p>
+<p><span>Pin 12 was not used so I turned it into a debugging pin. When grounded at startup, the Arduino outputs text on the serial instead of the non-text bytes expected by the Switch-8. It should be left ungrounded in production.</span></p>
+<p></p>
+<p><span>Other than that, I used fairly conservative timings: when the Arduino is powered it waits a few seconds before doing anything, to give time to the Switch-8 to power up. When a turnout is thrown, it waits before considering the next input. This should leave enough time to slow-motion turnout motors to change their course. Finally the sketch is rate-limited by a short pause before scanning the next inputs. Play with the values and reduce them to what fits your turnouts.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:630.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_734bc3e578ee0e6283baf45e2e389519c784f8eeb2b78c1be620182289e06a66i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<h1 id="h.kba6g9mhukjn" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span>8 - </span><span style="font-size:20pt">Arduino, Second Act… For Science!</span></h1>
+<p style="text-align:left"><span>OK this is going to be completely silly but bear with me, it's just for the science: we have a device that emits data on a serial port and that data is not quite as the other device that receives it expects it to be. Or at least that sounds like a good description of the problem. What if we just </span><span style="font-style:italic">filter</span><span>&nbsp;that serial stream and reformat it to be what the NCE Switch-8 expects?</span></p>
+<p></p>
+<p><span>What I saw with the UART sniffer:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The release event may never happen, or at least not on a "push button" timely manner.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There are some invalid commands (arguably maybe noise in my sniffer set up, it wasn't the most tidy wiring).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There's the infinite loop of commands from turnout #8 (arguably only on the first Button Board I tried).</span></li>
+</ul>
+<p></p>
+<p><span>What could help filter that serial data?</span></p>
+<p><span>Oh I know: when in doubt, throw an Arduino at the problem.</span></p>
+<p><span>Didn't I just say that earlier?</span></p>
+<p></p>
+<p><span>So here's the idea: take the TX output of the Button Board, feed it to an Arduino, clean up the commands and output a clean stream. Only look at push events and simulate release events. Dedup events to avoid repeating them in case the Button Board is stuck in a loop with turnout #8.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:154.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:602.00px"><img alt="" src="img_46d56e308a3823d44ecda4250af170fe5ef5d9517d9080e96a913adc039ebc42d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Well that's exactly what I've done here:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:614.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_ead6989c6d709f3e337dd3e506fde76d6b42c4ff022b9068bb17fbb163b1eefci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The Arduino Mega is absolutely overkill here but I had it already setup with the LCD and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1Y4rEID" style="color:inherit;text-decoration:inherit">XMiniLab</a></span><span>&nbsp;on my "portable" experimentation board. Not shown here: the USB is then disconnected after programming and the Button Board connected to the +/GND supply from the Switch-8. That requires the Switch-8 to be powered by the barrel in DC, something in the 8-12 V range. The Mega is powered off that by wiring Vin to the + from the Button Board.</span></p>
+<p></p>
+<p><span>Then I wrote a quick sketch for the Arduino, which can be found here:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/arduino/ButtonBoard_Serial_Filter/ButtonBoard_Serial_Filter.ino" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/conductor/blob/main/arduino/ButtonBoard_Serial_Filter/ButtonBoard_Serial_Filter.ino</a></span></p>
+<p></p>
+<p><span>This is the gist of the sketch, I removed the parts dealing with the LCD for brevity:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/**</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;* Serial Filter for an NCE Button Board.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;* (etc., see full source for details).</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;*/</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#include &lt;stdlib.h&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#include &lt;ctype.h&gt;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#undef DEBUG</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define LED_PIN &nbsp; &nbsp; &nbsp; &nbsp; 13</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/** Milliseconds to pause before generating the release event. */</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">#define PAUSE_RELEASE_MS 250</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// --------------------------------</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void blink() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(LED_PIN, HIGH);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; delay(100 /*ms*/);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(LED_PIN, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup_blink() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; pinMode(LED_PIN, OUTPUT);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; digitalWrite(LED_PIN, LOW);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup_pause() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; for (int i = 0; i &lt; 4; i++) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; blink();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; delay(250);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup_nce() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Serial1.begin(9600 /*SERIAL_8N1*/);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void setup() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; setup_blink();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; setup_pause();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; setup_nce();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// -------------------------------</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">unsigned int serial_data = 0;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">unsigned int serial_last = 0;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/** Read incoming serial bytes in the buffer. */</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void loop_read() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; if (Serial1.available()) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; int data = Serial1.read();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; serial_data = ((serial_data &amp; 0xFF) &lt;&lt; 8) | (data &amp; 0xFF);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; } else {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // 9600 bauds = 104 us per bit = 1.04 ms per byte.</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; delay(1);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/** Detect whether the 2 last bytes received are a proper push event. */</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">bool data_is_valid() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; byte byte1 = (serial_data &gt;&gt; 8) &amp; 0xFF;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; byte byte2 = (serial_data &nbsp; &nbsp; ) &amp; 0xFF;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; if ((byte1 &amp; 0x80) == 0x80) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; if ((byte1 ^ byte2) == 0xFF) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; return true;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; return false;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/** Output the current push event followed by a simulated release event. */</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">bool output_command() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; // Don't send the same command twice in a row</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; if (serial_last == serial_data) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; return false;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; byte byte1 = (serial_data &gt;&gt; 8) &amp; 0xFF;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; byte byte2 = (serial_data &nbsp; &nbsp; ) &amp; 0xFF;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Serial1.write(byte1);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Serial1.write(byte2);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; delay(PAUSE_RELEASE_MS);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; // Release event uses 0x40 instead of 0x80</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; byte1 = 0x40 | (byte1 &amp; 0x00F);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Serial1.write(byte1);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; Serial1.write(byte2);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; // Update last sent command</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; serial_last = serial_data;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; return true;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// -------------------------------</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">void loop() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; loop_read();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; if (data_is_valid()) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; if (output_command()) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; blink();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>That is silly yet it does work quite well and could actually be a proper way to "rectify" the issues with the NCE Button Board out of the box.</span></p>
+<p><span>The Arduino Mega used in this experiment is of course inadequate. It uses too much power, especially with the LCD and the XMiniLab connected. This was powered via the DC power supplied by Switch-8 to the Button Board which I would not recommend. It's OK for a quick validation prototype but I would not run it that way for too long.</span></p>
+<p></p>
+<p><span>If I had to make something more permanent using this, I'd use a simple </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2jStyz2" style="color:inherit;text-decoration:inherit">Arduino Nano</a></span><span>, which is the most affordable one can find these days (about $4 per piece), add $6 for a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/2keCDSM" style="color:inherit;text-decoration:inherit">terminal adapter</a></span><span>&nbsp;to avoid soldering anything and will not draw too much power. But once I have that, I might as well use it to replace the NCE Button Board to begin with instead of trying to apply an ugly bandaid.</span></p>
+<h1 id="h.uilmmhky63d7" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">9 - Conclusion</span></h1>
+<p><span>To conclude, there are many options to fix the issue with the NCE Button Board. I'll recap them here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Contact NCE support, send them back the boards and they can reprogram them with a fixed firmware.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Erase the NCE Button Board program and rewrite it yourself.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Replace the NCE Button Board by an Arduino and program it yourself. </span></li>
+</ul>
+<p></p>
+<p><span>The "obvious" choice people should consider is of course the first one. Use your vendor's support.</span></p>
+<p></p>
+<p><span>I did want to show that it is sometimes easy to work around issues. One thing I do like with NCE hardware is that it is quite simple in design. It's all non-fancy no-nonsense dual-layer PCB with through-hole and surface mounted easy to see components. It's easy to understand and modify if needed. </span></p>
+<p><span>Ironically I've heard comments of people saying NCE stuff looks "too simple". The provided documentation is a mere single page long. That's because it is, it's as simple as it needs to be and no simpler. Yes the boards don't look crammed with tons of complex components and they don't come with a long and obnoxiously complicated documentation (I'm looking at you, Digitrax).</span></p>
+<p></p>
+<p><span>The Arduino replacement was an interesting find. It was trivial to replace and entirely skip the Button Board. Cost comparison, it ends up like this:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>NCE Button Board: $30 per unit.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Arduino Nano + Terminal Adapter: $5 or $15 per unit.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Arduino Nano cost is around $10 and you can get a clone for as low as $4 if you look properly. My experience with the clones is that they work fairly well and I expect 1 out of 4 to not work in a given batch.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Terminal adapters are generally in the $6+ range; if you look farther away, it's easy to reduce its price to around $1 per unit.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Basic soldering is required to assemble it. </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Needs a computer with a USB cable and the Arduino IDE to program the Arduino.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Time figuring it out: priceless.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>So wait, would I recommend to skip the NCE Button Board and directly use an Arduino instead since it's cheaper?</span></p>
+<p><span>Actually no, I don't.</span></p>
+<p><span>Or I'd say it depends. It's the usual philosophical debate that I keep repeating:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If this were for "my layout" at home, I'd go with the Arduino way. That's because playing with such electronics is part of the fun for me. I enjoy it. I also know what I'm doing and when I don't, I enjoy learning how to do it. I also consider that failure is an option -- things rarely work out the first time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Is it really cheaper? Because the raw components are cheaper does not mean the whole thing is cheaper. Time has a cost. The Arduino and the terminal adapter need to be soldered, and the whole thing needs to be programmed. And the program needs to be adjusted, and as I said, if things don't work, then it's more work to figure it out and fix it.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The NCE Button Board hardware may be more expensive up front yet it's a plug'n'play solution. You buy it, you read the doc, you install it, and it works. Voila, done. No tinkering needed. It may look more expensive but it's not, the price is very fair for what is a nice piece of hardware well designed.</span></li>
+</ul>
+<p></p>
+<p><span>It's actually a bit deeper than that. The hidden cost is not in the initial purchase and setup, it's in the longer term maintenance. In my case, I'm wiring turnouts in a large layout in a museum. Years from now, some other folk will be there trying to fix whatever just failed, and although I will leave precise documentation behind me, maybe that doc will get lost. Will it be easier to maintain a custom looking arduino or that NCE board? With the NCE board, the future maintainer can just contact NCE, get a replacement, screw it in and be done with it. With the custom Arduino, it's likely the Nano won't be available anymore, or the terminal adapters won't be there anymore, or that github/bitbucket link will have been lost and the future maintainer will have no idea how to program the thing.</span></p>
+<p></p>
+<p><span>So in the end the proper solution is the NCE Button Board. And if you're like me dealing with non-momentary contacts that are not supported by your board, just contact NCE and they'll help you.</span></p>
+<p></p>
+<p><span>~~</span></p>
+<p><span>[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span>]</span></p>
+<p><span>~~</span></p>
+<p><span></span></p>
+<p></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/elec_cab_throttle.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Electronics: Cab Throttle" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_7cdc2a3fc0a4d5df692f4fe47164efcc1475db7427ab1fbda8ae308561453708i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Electronics: Cab Throttle" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_7cdc2a3fc0a4d5df692f4fe47164efcc1475db7427ab1fbda8ae308561453708i.jpg" />
+
+<title>Electronics: Cab Throttle</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="elec_cab_throttle.html">Electronics: Cab Throttle</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700">Electronics: Cab Throttle</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2016-01</span></p>
+<p></p>
+<p><span>This describes the electronics behind a little project I did for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span>&nbsp;at the Randall Museum in San Francisco, back in 2015.</span></p>
+<p></p>
+<p><span>The project in itself was to provide the club with a way to run their Junior Engineer Days using DCC.</span></p>
+<p></p>
+<p><span>Some background: the club's layout could be operated in both DCC and DC. Daily operations were always done in DCC mode and DC mode was only used for the bimonthly Junior Engineer Day event.</span></p>
+<p><span>During that event, the layout was switched back to DC and kids were given a custom made analog throttle to run the trains. The adult operator supervising the kids would ask them which of 2 trains sitting at the station the kids would want to run, turn on the corresponding blocks and turnouts and kids would run the train forward for half the layout. Once the train reached the back, it would end up in another block controlled by another operator who would bring back the trains to their starting position. That was made possible by the fact that different DC blocks could be operated by different analog throttles.</span></p>
+<p></p>
+<p><span>The kids operated their selected train using this analog throttle -- this is actually a custom made "transformer pack" that directly powered the block:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:426.90px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:617.77px"><img alt="" src="img_7cdc2a3fc0a4d5df692f4fe47164efcc1475db7427ab1fbda8ae308561453708i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Some member would have liked to keep running the layout in DCC but that was not possible since they did not have a suitable way to control the trains. The club uses NCE and it was not deemed satisfactory to handle an expensive NCE ProCab to small kids. The throttle used had to be the most simplistic and sturdy possible.</span></p>
+<p></p>
+<p><span>So how could we run this using DCC? One goal was to keep it simple for kids, which means not giving them something complicated like an NCE Cab Throttle with tons of knobs or buttons. I came up with this design, with a prototype made using an Meccano set followed by a wooden version:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:191.74px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:232.90px"><img alt="" src="img_9c47402d87566b5ea7b58398cf778a4f35cbee6bf777cec491cb7d598adb04bbi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span>&nbsp;</span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:191.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:376.96px"><img alt="" src="img_bd6d3b6198cd9481a2db53113b08808012b1cc453428f72808a6bbaabe112220i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p></p>
+<p><span>This of course was the tip of the iceberg. This is the part of the project that the club members focused on because it was the obvious and visible part. The whole workflow was in fact a bit more involved:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A Raspberry Pi running JMRI and an NCE USB interface connects to the NCE cab bus.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The Raspberry Pi connects to a custom private wifi network and provides a WiThrottle server.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The throttle is made of an Arduino that communicates to an Android tablet which in turns communicates with JMRI using the WiThrottle protocol over wifi.</span></li>
+</ul>
+<p></p>
+<p><span>My project had a larger background. In the actual implementation I had 2 tablets and the operator in the back could see the status of the main throttle and override it at any time. The end goal was for the software on the tablet to also control the turnouts to select which trains were leaving the stations. I'm not describing this part here and only focusing on the throttle.</span></p>
+<h1 id="h.mozcw5uy75bd" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Hardware Part</span></h1>
+<p><span>This is actually the simplest part of the project. </span></p>
+<p></p>
+<p><span>So first the obvious question: was an Arduino and an Android tablet needed for this project? In short, yes and no.</span></p>
+<p></p>
+<p><span>No because if all one wants is to get that kind of design with a big lever in a big box, the simplest approach is to take something like an NCE ProCab or an Engineer Cab and "kitbash" it into a larger throttle with a big lever.</span></p>
+<p><span>Internally the NCE throttle is very simple, it's very easy to disassemble a ProCab and NCE even provides us with the reference to replace the encoder by ourselves, it's all in the documentation! So essentially one could imagine a wooden box with a ProCab mounted on one side and the wheel encoder being offset on the other side of the box with a short cable in between.</span></p>
+<p><span>If all I wanted was a purely standalone solution without the JMRI control, I'd totally go that route now. When I started this project I didn't realize the NCE hardware was so simple and hackable.</span></p>
+<p></p>
+<p><span>However part of the project goal was to take advantage of what JMRI could bring and in this case there was some clear value to it (selecting which train runs by address, setting the turnouts, etc.) </span></p>
+<p></p>
+<p><span>One goal in that project was to keep hardware to a minimum and move most of the logic at the software level which it's easier to control and modify. For that, having something that talks to JMRI is useful. The tablet is a perfect interface for the operator who can use it to select the trains that kids will run and monitor the state of the system.</span></p>
+<p></p>
+<p><span>My first prototype was made using a Meccano set, a potentiometer and an arduino connected to the tablet:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:324.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:436.60px"><img alt="" src="img_8533a431958f98b83d25c12c1eb5e20c3094fff794bfccc1e6a6848b99e5e4fdi.jpg" style="height:474.34px;margin-left:-68.40px;margin-top:-113.24px;width:623.51px" title=""></span><span>&nbsp;</span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:194.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:260.00px"><img alt="" src="img_1a0be3eb9877895ccbcbe162ad91f3fe007103b8c2cdcab463558438b5923c2bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The latter version is simply a wooden enclosure on top of that, with a wooden lever.</span></p>
+<p><span>And the schematics are really simple:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:230.37px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:223.90px"><img alt="" src="img_03e5560c94df9eec837272847f33c211915b3c8ab7c7b4eb5d21f7af8401ccebd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:223.35px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:230.10px"><img alt="" src="img_725a4a48c68bc3da9ac783482e342e4e31247f04d21532f4dd4446ac55da3e77i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>I used a Digistump Digispark Tiny, which is about the size of the USB plug that it connects into. </span></p>
+<p><span>That's all the electronics needed here and this assemble basically forms an encoder wheel.</span></p>
+<p></p>
+<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/products/1" style="color:inherit;text-decoration:inherit">Digispark Tiny</a></span><span>&nbsp;is a very very small electronics board composed of Attiny85 microcontroller with an USB male plug and a few I/O pins. The whole thing is 19 millimeters wide and actually smaller than the USB female plug I was using to connect it. (The actual name is "Digispark" but since the vendor made several various after, I keep calling the original the "Tiny" because I think it properly describes the form factor). The other thing is that it's really cheap -- less than $10 [</span><span style="font-style:italic">Edit: back in 2015, that was about the cheapest Arduino clone I could find. Things have changed since then</span><span>]. The board has 5 I/O pins and in this case 2 of them are used for the USB. That left 3 of them and here we just needed one analog input so we're fine.</span></p>
+<p></p>
+<p><span>Because the USB communication is done in software, it uses 2 pins to drive the D- and D+ and means the USB capabilities are very very limited. In this case that worked to my advantage as all I wanted was to drive it from an Android program running on the tablet without having to deal with too much USB protocol overhead. That was accomplished by treating it as a serial port and exchanging single characters.</span></p>
+<p></p>
+<p><span>Now back to the hardware. What we want is read a lever position. In this case I used a potentiometer mounted on the axis of the lever. I used a 10 kΩ potentiometer as can be seen in the diagram above. My very first design had an extra 1 kΩ on serie with the potentiometer but that was pretty much useless.</span></p>
+<p></p>
+<p><span>One thing one always want to do in electronics, and which I see annoyingly missing in many arduino web pages, is to check voltage levels and compute power dissipation and currents. When you see any web page telling you how to connect an LED to an I/O pin without a resistor in serie, that's a good indication the person has no clue what they are doing (unless they explicitly tell you the LED has an internal resistance).</span></p>
+<p></p>
+<p><span>In this case we need to compute two very simple things up front. </span></p>
+<p></p>
+<p><span>We're using a potentiometer that can do from 0 Ω to 10 kΩ on the middle pin, so we need to care how much current that will draw. For that we just need to look at the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.atmel.com/images/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" style="color:inherit;text-decoration:inherit">ATtiny85 datasheet</a></span><span>&nbsp;and we learn on page 129 that the analog input circuitry is optimized for analog signals with an output impedance of approximatively 10 kΩ or less so we're fine on that side. We also learn that the ADC is 10-bits, like pretty much all Arduinos.</span></p>
+<p></p>
+<p><span>Now all we have to measure is whether our 10 kΩ potentiometer is appropriate for the voltage used. When looking at the schema above, we can clearly see that no matter how much the potentiometer is turned, the resistance between ground and 5V is always 10 kΩ. We simply need to compute the current that it would draw and the power dissipated: </span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>U = R . I -- we're going to have 5 V and 1 kΩ resistor so current I = U / R = 5 / 1000 = 5 mA.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>P = U . I = U . U / R = 5 * 5 / 1000 = 25 mW. </span></li>
+</ul>
+<p><span>&nbsp;</span></p>
+<p><span>So we'll be fine using ¼ or ⅛ W resistors and based on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://digistump.com/wiki/digispark/quickref" style="color:inherit;text-decoration:inherit">Digispark quickref here</a></span><span>&nbsp;we can draw 5 mA easily from the 5 V pin. From that quickref we can also learn there are some I/O pins to avoid and we'll be using pin 2 which is ADC channel 1. Since it's a 10-bit ADC, we'll be reading values between 0 and 1023.</span></p>
+<h1 id="h.fdnlh6qyeo5i" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Arduino Program</span></h1>
+<p><span>Programming is done using the Digispark-specific version of the Arduino IDE and using this program:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="color:rgb(153, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">#define USB_CFG_DEVICE_NAME &nbsp; &nbsp; 'D','i','g','i','T','h','r','o','t'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br></span><span style="color:rgb(153, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">#define USB_CFG_DEVICE_NAME_LEN 9</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br></span><span style="color:rgb(153, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">#include &lt;DigiUSB.h&gt;</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br><br></span><span style="color:rgb(153, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">#define LED &nbsp; &nbsp; 1 &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// on-board led on digital pin 1</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br></span><span style="color:rgb(153, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">#define ADC1 &nbsp; &nbsp;1 &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// ADC channel 1</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br></span><span style="color:rgb(153, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">#define ADC1_P2 2 &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// ADC1 is connected to digital pin 2</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br><br>byte in = </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">0</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br></span><span style="color:rgb(68, 85, 136);font-family:&quot;Consolas&quot;;font-size:10pt">int</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;value = </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">0</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// ADC value is 10-bits</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br></span><span style="color:rgb(68, 85, 136);font-family:&quot;Consolas&quot;;font-size:10pt">char</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">12</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">]; &nbsp; </span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// "-2147483648\0" = 12 characters.</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br><br></span><span style="color:rgb(68, 85, 136);font-family:&quot;Consolas&quot;;font-size:10pt">void</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span><span style="color:rgb(153, 0, 0);font-family:&quot;Consolas&quot;;font-size:10pt">setup</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">() {<br> &nbsp;DigiUSB.begin();<br> &nbsp;pinMode(LED, &nbsp; &nbsp; OUTPUT);<br> &nbsp;pinMode(ADC1_P2, INPUT);<br> &nbsp;blink();<br> &nbsp;digitalWrite(LED, LOW);<br>}<br><br></span><span style="color:rgb(68, 85, 136);font-family:&quot;Consolas&quot;;font-size:10pt">void</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span><span style="color:rgb(153, 0, 0);font-family:&quot;Consolas&quot;;font-size:10pt">blink</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">() {<br> &nbsp;digitalWrite(LED, LOW);<br> &nbsp;delay(</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">50</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">/*ms*/</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">);<br> &nbsp;digitalWrite(LED, HIGH);<br> &nbsp;delay(</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">240</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">/*ms*/</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">);<br> &nbsp;digitalWrite(LED, LOW);<br>}<br><br></span><span style="color:rgb(68, 85, 136);font-family:&quot;Consolas&quot;;font-size:10pt">void</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span><span style="color:rgb(153, 0, 0);font-family:&quot;Consolas&quot;;font-size:10pt">loop</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">() {<br> &nbsp;DigiUSB.refresh();<br> &nbsp;if (DigiUSB.available() &gt; </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">0</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">) {<br> &nbsp; &nbsp;in = DigiUSB.read();<br> &nbsp; &nbsp;if (in == </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'t'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">) {<br> &nbsp; &nbsp; &nbsp;trigger();<br> &nbsp; &nbsp;} else if (in == </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'b'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">) {<br> &nbsp; &nbsp; &nbsp;blink();<br> &nbsp; &nbsp;}<br> &nbsp;}<br>}<br><br></span><span style="color:rgb(68, 85, 136);font-family:&quot;Consolas&quot;;font-size:10pt">void</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span><span style="color:rgb(153, 0, 0);font-family:&quot;Consolas&quot;;font-size:10pt">trigger</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">() {<br> &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// Read 10-bit ADC value and output to usb</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// Take average of 4 reads</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// 10-bits = 1024.</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;value &nbsp;= analogRead(ADC1);<br> &nbsp;value += analogRead(ADC1);<br> &nbsp;value += analogRead(ADC1);<br> &nbsp;value += analogRead(ADC1);<br> &nbsp;value /= </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">4</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br> &nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">5</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">] = </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">0</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br> &nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">4</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">] = </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'0'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">+ (value % </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">); &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// 123x</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;value /= </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br> &nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">3</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">] = </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'0'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">+ (value % </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">); &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// 12x4</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;value /= </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br> &nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">2</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">] = </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'0'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">+ (value % </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">); &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// 1x34</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;value /= </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br> &nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">1</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">] = </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'0'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">+ (value % </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">); &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// x234</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;value /= </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">;<br> &nbsp;buf[</span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">0</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">] = </span><span style="color:rgb(187, 136, 68);font-family:&quot;Consolas&quot;;font-size:10pt">'0'</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">+ (value % </span><span style="color:rgb(0, 153, 153);font-family:&quot;Consolas&quot;;font-size:10pt">10</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt">); &nbsp; &nbsp;</span><span style="color:rgb(153, 153, 136);font-family:&quot;Consolas&quot;;font-size:10pt;font-style:italic">// x1234 -- should be zero</span><span style="color:rgb(51, 51, 51);font-family:&quot;Consolas&quot;;font-size:10pt"><br> &nbsp;DigiUSB.println(buf);<br>}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Let's explain:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Setup configures pin 2 into an input.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Loop waits to read a "b" or "t" character on the USB fake serial port.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When it sees a "b" character, it just blinks the led.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When it sees a "t" character, it performs 4 analog reads, averages them, and writes back the value as 4 digits in decimal on the USB port.</span></li>
+</ul>
+<p></p>
+<p><span>So that's our communication protocol. The tablet needs to open the USB communication, repeatedly sends a "t" character ("t" as in throttle) and reads 4 digits that form a 0..1023 value.</span></p>
+<h1 id="h.xxgbrvvkw4q5" style="padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Android communication with the Digispark/Arduino</span></h1>
+<p><span>That was the part which took the most time to figure out. I was not exactly familiar with the inner works on USB or OTG. I have some vague understanding of how USB drivers are configured but that doesn't mean I knew how to write one. Turns out in fact none of this was needed to understand what was going on.</span></p>
+<p></p>
+<p><span>Here's a non-watered-down version of a post I wrote on the Digispark forum, in case it helps somebody else:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://digistump.com/board/index.php?topic=1675.0" style="color:inherit;text-decoration:inherit">https://digistump.com/board/index.php?topic=1675.0</a></span></p>
+<p></p>
+<p><span>The first thing is to be able to is to discover the Digispark device on the Android USB port.</span></p>
+<p><span>This can be easily be done as follows using the Android UsbManager API:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private static final int DIGISPARK_VID = 0x16C0;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private static final int DIGISPARK_PID = 0x05DF;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private void listDevices() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; HashMap&lt;String, UsbDevice&gt; devices = manager.getDeviceList();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; for (UsbDevice device : devices.values()) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (device.getVendorId() == DIGISPARK_VID &amp;&amp; device.getProductId() == DIGISPARK_PID) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mDevicesList.add(device);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>We can add the device to an ArrayList-backed ListView or RecyclerView or use it directly.</span></p>
+<p><span>Since we're talking about an Android phone or tablet, in most cases there won't be any hub involved so we can pretty much stop iterating after we find one -- in our use case of a fixed cab throttle, we know the hardware and there can't be more than one!</span></p>
+<p></p>
+<p><span>An important detail to remember is that a Digispark Tiny exposes 16D0 / 0753 as VID/PID during its 5 first seconds (for the programming bootstrap) and the VID/PID changes after to 16C0 / 05DF (software USB). This can be ignored, except if that combo is seen more than 5 seconds, we're probably dealing with a Digispark that hasn't been programmed yet. Sometimes it's good to take a generic approach (which is why I document it here) but we need to keep our specific application in perspective -- there's a single USB device and we know it will be properly programmed.</span></p>
+<p></p>
+<p><span>Now one trick is that once we find an UsbDevice instance, we can't quite use it right away. We need to ask permission to the user to use it. This is done by sending a PendingIntent. Android displays a dialog box asking for permission to the user and once granted we get the intent back. We can use any kind of BroadcastReceiver and in my case the easiest thing was to send it to my own activity:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private static final int REQ_USB_PERMISSION = 1;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">public void onUserClickedOnDeviceEntry(@NonNull UsbDevice device) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Intent in = new Intent(context, MyActivity.class);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; Uri u = new Uri.Builder().scheme("usb").path(device.getDeviceName()).build();</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; in.setData(u);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; in.putExtra("device", device); &nbsp;// Parcel</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; PendingIntent pi = PendingIntent.getActivity(context, REQ_USB_PERMISSION, in,</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PendingIntent.FLAG_UPDATE_CURRENT);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; manager.requestPermission(device, pi);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Note that a PendingIntent must be unique and the extra data is ignored for that purpose. Using the device usb path as a URI is a convenient way to make a unique intent for that specific device. On the receiver side we could lookup the usb device path again but it's just easier to parcel the device info into the intent as extra data.</span></p>
+<p></p>
+<p><span>And once the user grants the permission:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">@Override</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">protected void onNewIntent(Intent intent) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; super.onNewIntent(intent);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; if (intent != null &amp;&amp; intent.getData() != null &amp;&amp; "usb".equals(intent.getData().getScheme())) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; UsbDevice device = intent.getParcelableExtra("device");</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (device != null) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onDeviceSelected(device);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>OK now we have a device and we have permission to use it. So how do we use it?</span></p>
+<p><span>That's where I stumbled quite a bit at first. I started digging into the USB protocol and interfaces, end-points and control vs bulk messages, then I realized I had the answer right under my nose: what does the Windows DDK usbview report about a digispark? And what does digiusb.c, the little C client provided to communicate on the desktop, does?</span></p>
+<p></p>
+<p><span>Pro tip: if you want to know how an USB device is structured, grab the Windows Kits 8.1 and run Debuggers\x86\usbview.exe; that will list you all the interfaces and endpoints of a device.</span></p>
+<p></p>
+<p><span>In this case the Digispark Tiny has one interface and one end-point. There's a stack-overflow linked in another post of the Digispark forums that makes a bit deal of iterating through interfaces and end-points and figuring their direction. It turns out this information is actually quite irrelevant. Same as above, we just don't need any of this with the Digispark Tiny!</span></p>
+<p></p>
+<p><span>Yes, even if you know all about interfaces and USB end-points, that's totally useless here.</span></p>
+<p><span>To understand why, simply look at the little digiusb C program that comes with the Digispark. </span></p>
+<p><span>What does it do?</span></p>
+<p></p>
+<p><span>From digiusb/send.cpp, it writes character per character using control messages:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">devHandle = usb_open(digiSpark);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">numInterfaces = digiSpark-&gt;config-&gt;bNumInterfaces; // ⇒ 1</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">interface = &amp;(digiSpark-&gt;config-&gt;interface[0].altsetting[0]); // ⇒ 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/* result = usb_claim_interface(devHandle, interface-&gt;bInterfaceNumber); */</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">result = usb_control_msg(devHandle, (0x01 &lt;&lt; 5), 0x09, 0, argv[1][i], 0, 0, 1000); // * N</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">result = usb_control_msg(devHandle, (0x01 &lt;&lt; 5), 0x09, 0, '\n', 0, 0, 1000); // EOL</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">result = usb_release_interface(devHandle, interface-&gt;bInterfaceNumber);</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">usb_close(devHandle);</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The interface is used to claim and release the device, however the claim part is commented out in the code and the interface itself is never used to send data.</span></p>
+<p></p>
+<p><span>From digiusb/receive.cpp:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">Loop:</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">theChar = 4</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">result = usb_control_msg(devHandle, (0x01 &lt;&lt; 5) | 0x80, 0x01, 0, 0, &amp;thechar, 1, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">if result &lt; 0: break; </span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">if theChar == 4 (not changed): break;</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>From linux usb.h:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">int usb_control_msg(usb_dev_handle *dev, int requesttype, int request, int value, int index, char *bytes, int size, int timeout);</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>requestType: 1&lt;&lt;5=x20 for send,1&lt;&lt;5+x80=xA0 for receive.<br>1&lt;&lt;5 = USB_TYPE_CLASS; &nbsp;0x80=USB_DIR_IN, 0=USB_DIR_OUT</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>request: 9 for send, 1 for receive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>value: 0</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>index: char to send, 0 for receive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>bytes ptr: null for send, &amp;char for receive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>bytes len: 0 for send, 1 for receive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>timeout: 1000.</span></li>
+</ul>
+<p></p>
+<p><span>So what's going on here? It is using "control messages", a mechanism from the USB spec done to communicate with a device directly without having a proper channel (based on my cursory very limited reading of the spec). And by default control messages are sent to the end-point 0. So basically we can ignore we have a HID compliant device and since we know it's a Digispark, we can hack away.</span></p>
+<p></p>
+<p><span>I've listed the usb_control_msg API above from usb.h because, you've probably guessed it, Android has exactly the same function, argument for argument on the Android API side:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">public static final int REQ_OUT = UsbConstants.USB_TYPE_CLASS + UsbConstants.USB_DIR_OUT;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">public static final int REQ_IN &nbsp;= UsbConstants.USB_TYPE_CLASS + UsbConstants.USB_DIR_IN;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">UsbManager manager = (UsbManager) context.getSystemService(Context.USB_SERVICE);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">UsbDeviceConnection cnx = manager.openDevice(device);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Send character 'A'</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">cnx.controlTransfer(REQ_OUT, 9, 0, 'A', null, 0, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">// Read a character</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">byte[] buffer = new byte[16];</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">buffer[0] = 4;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">res = cnx.controlTransfer(REQ_IN, 1, 0, 0, buffer, 1, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">char c = (char) buffer[0];</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">if (res &gt;= 0 &amp;&amp; c != 4) ... use character c</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Obviously since we're reading character by character, we need to deal with \n if they are important for our application. Also we don't want to do that work on the app main UI thread -- always use a thread, or even easier an AsyncTask to do the work.</span></p>
+<p></p>
+<p><span>Here's an example of usage from something that blinks the led of the digispark and reads a value from the ADC:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(252, 229, 205);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private class CalibrationTask extends AsyncTask&lt;UsbDevice, Void, Void&gt; {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; private int mMin;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; private int mMax;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; @Override</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; protected Void doInBackground(UsbDevice... params) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; UsbDevice device = params[0];</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; mMin = 1023;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; mMax = 0;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; publishProgress();</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; UsbManager manager = (UsbManager) MyActivity.this.getSystemService(Context.USB_SERVICE);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; UsbDeviceConnection cnx = manager.openDevice(device);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; // handle openDevice failure as needed for your application</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; while (!isCancelled()) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Thread.sleep(250 /*ms*/);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; doBlink(cnx);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int v = readValueSync(cnx);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (v &gt;= 0 &amp;&amp; v &lt;= 1023) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (v &lt; mMin) mMin = v;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (v &gt; mMax) mMax = v;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; publishProgress();</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } catch (InterruptedException e) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return null; // interrupted on cancel</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; return null;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; @Override</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; protected void onProgressUpdate(Void... values) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; super.onProgressUpdate(values);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; // update the UI here;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">public static final int REQ_OUT = UsbConstants.USB_TYPE_CLASS + UsbConstants.USB_DIR_OUT;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">public static final int REQ_IN &nbsp;= UsbConstants.USB_TYPE_CLASS + UsbConstants.USB_DIR_IN;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private void doBlink(@NonNull UsbDeviceConnection cnx) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cnx.controlTransfer(REQ_OUT, 9, 0, 'b', null, 0, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cnx.controlTransfer(REQ_OUT, 9, 0, '\n', null, 0, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">/** Reads digispark value. Blocks till gets the reply. */</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private int readValueSync(@NonNull UsbDeviceConnection cnx) throws InterruptedException {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // send t + \n</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cnx.controlTransfer(REQ_OUT, 9, 0, 't', null, 0, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; cnx.controlTransfer(REQ_OUT, 9, 0, '\n', null, 0, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; // read numbers back till we get \n</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; byte[] buffer = new byte[16];</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; int value = 0;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; int res;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; while (true) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; buffer[0] = 4;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; res = cnx.controlTransfer(REQ_IN, 1, 0, 0, buffer, 1, 1000);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; char c = (char) buffer[0];</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (res &lt; 0 || c == 4) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return -1;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (c == '\n') break;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; if (Character.isDigit(c)) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value = value * 10 + (c - '0');</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; return value;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">private void onDeviceSelected(@Nullable UsbDevice device) {</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; mCalibTask = new CalibrationTask();</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp; &nbsp; mCalibTask.execute(device);</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">}</span></p><p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt;vertical-align:baseline">&nbsp;</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p></p>
+<p><span>Note that this conveniently provides part of the "calibration task" I implemented on the tablet. The hardware has a potentiometer which value changes when the cab throttle is moved. However the potentiometer can turn almost 270° to provide its full range whereas the lever only moved by about 90°. Depending on how it's mounted, it will thus give a minimal and maximal value in the full 0..1023 range. That's what the calibration does: it's accessed via settings and can be used to record the min/max values that can be read. The Android app then stores that in settings and this provides the full speed range of the throttle.</span></p>
+<p></p>
+<p><span>I hope that will be useful to some of you.</span></p>
+<p></p>
+<p><span>~~</span></p>
+<p><span>[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span>]</span></p>
+<p><span>~~</span></p>
+<p></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

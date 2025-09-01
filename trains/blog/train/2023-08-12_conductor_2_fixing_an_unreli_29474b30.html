@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2023-08-12_conductor_2_fixing_an_unreli_29474b30.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: Fixing an Unreliable Mainline Run" />
+
+<meta property="og:description" content="A few months ago, I changed the automation to use the new Conductor 2 scripting engine as the default. It worked very nicely for a while, and in the last few weeks the behavior had degraded: the mainline automation was ending up in error recovery almost every day. The passenger train would be running fine, yet would end up with the automation in error." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: Fixing an Unreliable Mainline Run" />
+
+<meta name="twitter:description" content="A few months ago, I changed the automation to use the new Conductor 2 scripting engine as the default. It worked very nicely for a while, and in the last few weeks the behavior had degraded: the mainline automation was ending up in error recovery almost every day. The passenger train would be running fine, yet would end up with the automation in error." />
+
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0002.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-08-23_conductor_2_route_statistics.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-07-01_conductor_2_w_google_analytics_4.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2023-08-12 - Conductor 2: Fixing an Unreliable Mainline Run</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>A few months ago, I changed the automation to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-05-21_conductor_2_now_the_default__3eef9fa3.html" style="color:inherit;text-decoration:inherit">use the new Conductor 2 scripting engine as the default</a></span><span>. It worked very nicely for a while, and in the last few weeks the behavior had degraded: the mainline automation was ending up in error recovery almost every day. The passenger train would be running fine, yet would end up with the automation in error.</span></p>
+<p></p>
+<p><span>There’s an interesting side effect here: One of the points of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;is to have error recovery, being able to recover when things go wrong. Thus from an outsider’s point of view, the automation was “working” as in “doing something”, although from my point of view it was operating in a degraded running mode.</span></p>
+<p></p>
+<p><span>Eventually I had enough, reverted the automation computer to run the Conductor 1 script, while I investigated the issue to find the root cause.</span></p>
+<p></p>
+<p><span>First issue was figuring out what was not working, ending with the automated route in error recovery mode? I realized I simply did not have enough information in the logs to understand that after the fact. </span></p>
+<p></p>
+<p><span>That led me to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/eaad12ed1b5cf4f852a34c306fd0f511bfd3e3d8" style="color:inherit;text-decoration:inherit">enhance my logging</a></span><span>: log error cases, log the root cause of an error, and log how long each sensor is triggered. I updated the logging, let it run for a while, and then captured one typical error:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:56:20.416 D 8312 : Horn</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:56:21.117 D 8312 : -12</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:56:34.925 S S/NS771 B321 : ON</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:56:34.926 B S/NS773 B330 : TRAILING after 22.56 seconds</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:56:34.926 B S/NS771 B321 : OCCUPIED</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:56:35.696 S S/NS773 B330 : OFF</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:58:15.785 S S/NS771 B321 : OFF</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:58:35.012 R Sequence Mainline #3 Passenger (8312) : ERROR Sequence Mainline #3 Passenger (8312) current block {B321 [NS771]} suddenly became non-active after 120 seconds.</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:58:35.012 R Sequence Mainline #3 Passenger (8312) : ERROR</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">14:58:35.012 R Sequence Mainline #3 Passenger (8312) : ERROR Sequence Mainline #3 Passenger (8312) current block {B321 [NS771]} still occupied after 120 seconds.</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>In this log, 8312 is the DCC address of the UP train we’re controlling. We start by activating the horn, run in reverse at speed 12, and we have a transition from block B330 to block B321. The actual route is B330 → B321 → B503a (the station). The log indicates we’ve been running on B330 for 22 seconds. Then something odd happens: the script engine complains B321 became “non-active” (aka non-occupied) after 2 minutes, yet it also complains the block is still occupied after 2 minutes. We can’t have both. One of these cannot be right!</span></p>
+<p></p>
+<p><span>Some background is needed here: Conductor 1 was “dumb and simple”. It just automated the running state, with little to no validation (essentially “running blind”). In Conductor 2, I keep track of where an engine is </span><span style="font-style:italic">supposed</span><span>&nbsp;to be and compare that with actual sensors. I also have timing validation in Conductor 2: I define that a train must stay “at least N seconds” on a block, and “at most N seconds” on a block. My current default values are 10 seconds minimum, and 120 seconds maximum. The Randall blocks are fairly uneven in length, but generally we run 20-60 seconds on each so 2 minutes per block seemed like a good default. If a train takes longer to cross a block, there’s something odd going on.</span></p>
+<p></p>
+<p><span>So right there, B321 goes off 1 minute 40 seconds after it turns on. It’s close to the limit yet reasonably well under the 2 minute deadline.</span></p>
+<p></p>
+<p><span>So what’s going on?</span></p>
+<p></p>
+<p><span>Remember how in past posts I complained about </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-05-06_conductor_2_the_flaky_sensors_issue.html" style="color:inherit;text-decoration:inherit">how “flaky” the B321 block detector was</a></span><span>? I simply could not adjust the NCE BD20 to compensate properly so I ended up changing it for an Iowa Scaled BD1 that did the trick. But I also built “flaky sensor” support in the Conductor 2 engine: as long as we’re under our timeout value (2 minutes here), we accept that a sensor goes off and on and </span><span style="font-style:italic">ignore</span><span>&nbsp;it. We only need one “on activation” signal to trigger the block occupation, then we guess the block is still occupied till the next one becomes active, or the timeout expires, whichever comes first. So that’s what is going on there: although the B321 sensor goes off after 1 minute 40 seconds, we assume the train is still on that block because the next one has not activated yet. And if after 2 minutes it has not actived, we end up in error mode. That’s what we’re seeing here and what the last error log “B321 still occupied after 120 seconds” means. At the same time, the flakiness handling code was accepting that B321 was off and was ok about it for up to 2 minutes, but once that time has expired, the flakiness handling code reports that B321 should not be off since we still think the train is on that block, and that’s what “B321 suddenly become non-active after 120 seconds” means.</span></p>
+<p></p>
+<p><span>So really the problem is that we have not moved on to the next block within the 2 minutes deadline.</span></p>
+<p></p>
+<p><span>To understand why, let’s look at </span><span style="font-style:italic">normal</span><span>&nbsp;run, one with no errors, as reported when running now with Conductor 1:</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">09:41:20.736 S S/b321 : ON</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">09:43:00.681 S S/b321 : OFF</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">09:43:20.664 S S/b503a : ON</span></p>
+<p></p>
+<p><span>Interestingly, it takes just under 20 seconds to reach B503a, the next block in the sequence after B321. And more importantly, the time between B321 ON and B503a ON is 0.1 s under 120 seconds. In that case, Conductor 2 would accept the transition as being under the timeout. If the train were 0.1s slower, it would go into error mode.</span></p>
+<p></p>
+<p><span>So that’s why the Conductor 2 automation worked sometimes: we were so close to the limit. Any slow down in the engine by 0.1 seconds on that long run would cause it to go overboard.</span></p>
+<p></p>
+<p><span>What does “it takes 20 seconds to reach B503a from B321” mean?</span></p>
+<p></p>
+<p><span>Well, it turns out that B503a is not </span><span style="font-style:italic">really</span><span>&nbsp;the next block after B321:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Script as programmed right now: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B330 → B321 → B503a</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Reality of the track at Randall: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B330 → B321 → B504 → B503a</span></li>
+</ul>
+<p></p>
+<p><span>There’s a block in between, B504. I typically ignore it in the script because it does not have a block detection sensor “yet”. It’s been on my todo list since 2017 to add it. Real soon now</span><span style="vertical-align:super">tm</span><span>. After all we only spend 20 seconds on that block, do we </span><span style="font-style:italic">really</span><span>&nbsp;care? Well…</span></p>
+<p></p>
+<p><span>Thus we have various solutions available:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The easy “cheat” one: extend the max-time-on-block timeout to be longer than 120 seconds. Even just 130 seconds would work (with about 10 seconds of margin). This is the lowest effort.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/2010b3de013263000a61f27ff82837b5964b6733" style="color:inherit;text-decoration:inherit">Create a virtual block for B504</a></span><span>&nbsp;between B321 and B503a. That would match the current reality. This is a small modest effort, and the most logical one. ⇐ That’s what I did.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Actually wire a block sensor for B504. That’s more involved, and can be a logical second step to move away from a virtual block. ⇐ Still on my todo list. Real soon now</span><span style="vertical-align:super">tm</span><span>.</span></li>
+</ul>
+<p></p>
+<p><span>So what’s a “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/engine2k/src/main/kotlin/com/alfray/conductor/v2/script/dsl/IConductor.kt#L52" style="color:inherit;text-decoration:inherit">virtual block</a></span><span>” anyway? As the name implies, it’s a block in the automation script, except it’s not backed by a physical block detection sensor. It’s “virtual”. The scripting engine tracks its occupancy based on the track schematics and the previous and next block occupancy:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Given a track schema of B330 → B321 (real sensor) → B504 (virtual) → B503a (real sensor)</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If a train is on B321 and that block goes off, we </span><span style="font-style:italic">assume</span><span>&nbsp;the train moved to the next block, namely B504, and we mark it occupied.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Once B503a becomes active, we know the train left B504, and we can mark it empty.</span></li>
+</ul>
+<p></p>
+<p><span>However there’s a trick here… This assumes the block sensors are </span><span style="font-style:italic">reliable</span><span>. If B321 were a flaky block sensor as it was before, then the scripting engine would trigger the “move to block B504” prematurely as soon as B321 becomes off due to flakiness. That’s the reason I never bothered with creating a virtual block here when I rewrote the script for Conductor 2 -- it would not have worked well.</span></p>
+<p></p>
+<p><span>And to be clear, trying to wire a block sensor for B504 may not work. Due to its origin as a DC layout, power routing for some blocks is often done via the turnout’s power routing. That’s especially the case in lead in/out interchange tracks where they are powered via relays from whichever blocks they are connected to. E.g. throwing a turnout to enter a yard from the mainline will often cause the entire mainline block + the turnout + the interchange track to be powered together as a whole, thus totally breaking any block detection sensing. That’s a good behavior in DC but a poor one in DCC with block detection.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-08-23_conductor_2_route_statistics.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-07-01_conductor_2_w_google_analytics_4.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

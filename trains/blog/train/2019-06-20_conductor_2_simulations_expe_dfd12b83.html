@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2019-06-20_conductor_2_simulations_expe_dfd12b83.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Conductor 2: Simulations & Expectations for Occupancy" />
+
+<meta property="og:description" content="Starting to implement the occupancy manager in Conductor 2&nbsp;immediately showed an issue in the default route mapping: the default idle block of one route cannot be part of another route." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Conductor 2: Simulations & Expectations for Occupancy" />
+
+<meta name="twitter:description" content="Starting to implement the occupancy manager in Conductor 2&nbsp;immediately showed an issue in the default route mapping: the default idle block of one route cannot be part of another route." />
+
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0006.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2019-06-22_conductor_2_automatic_route__63607e80.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2019-06-15_cotton_belt_9389.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2019-06-20 - Conductor 2: Simulations & Expectations for Occupancy</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Rtac</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>Starting to implement the occupancy manager in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;immediately showed an issue in the default route mapping: the default idle block of one route cannot be part of another route.</span></p>
+<p></p>
+<p><span>So let’s backup and analyze this.</span></p>
+<p style="text-align:left"><span></span></p>
+<p></p>
+<p><span>First let’s define what is a “sanitized” route. This is a route, composed of blocks, where one and only one block is marked as occupied at a given time. This is the ideal non-ambiguous situation that makes everything easier. At startup it means we can positively identify where the one engine is. When running, given the known position of the train, we can either assert the train is moving through the route as expected </span><span style="font-style:italic">or</span><span>&nbsp;during simulation we can determine the next block.</span></p>
+<p></p>
+<p><span>We define an “idle” block as the expected resting block of the train once it has finished its programming. For a given route, this block is typically a constant. This is not currently codified in the script, although it could (e.g. to validate starting conditions).</span></p>
+<p></p>
+<p><span>One limitation comes from overlapping routes. Let’s say route A is a super-set of route B. Both have “idle” blocks. If route B is purely a subset of route A, it means route A has two occupied blocks when both trains are idle. This is contradictory as it means train A cannot possibly run without colliding with train B. In reality that condition could happen yet be physically safe if the idle block B is a turnout that triggers as occupied once thrown for route B, such as a branch spur. </span></p>
+<p><span>It does not work from a graph perspective, so we’ll </span><span>posit</span><span>&nbsp;these rules:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The idle block of a route cannot be part of another overlapping route.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Routes should be defined such that there is only one occupied block per route when they are all idle.</span></li>
+</ul>
+<p></p>
+<p><span>There are 3 runtime scenarios we must consider:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The case of the initial loading of the script, either for automation or simulation. We want to be able to compute the initial state of the route and determine if it is “safe” in a non-ambiguous way.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The case of an active route during automation.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The case of an active route during simulation.</span></li>
+</ul>
+<p></p>
+<p><span>Routes currently do not have a proper state variable. </span></p>
+<p><span>There are two kinds of states we can associate with a route.</span></p>
+<p><span>A first state would be the </span><span style="font-weight:700">“quality” or “error” state</span><span>&nbsp;of the route:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A “</span><span style="font-weight:700">good</span><span>” state is a “sane” idealized route with a single block occupied.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An “</span><span style="font-weight:700">invalid</span><span>” state is an ambiguous route that has either zero or more than one block occupied. This can be a transient state, for example if two routes share a crossing block.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An “</span><span style="font-weight:700">error</span><span>” state is when a route has been identified as being in error by the script, typically because a moving train failed to reach the next checkpoint within a certain time. That typically denotes a permanent error where the script determines that a human verification of the state is required before doing a full reset.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A “</span><span style="font-weight:700">paused</span><span>” route is an active route (with a running train) where that train has been stopped due to a possible transient and rectifiable error situation.</span></li>
+</ul>
+<p></p>
+<p><span>Orthogonal to this, there’s a </span><span style="font-weight:700">“programmatic” state</span><span>&nbsp;(needs a better name!):</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An </span><span style="font-weight:700">empty</span><span>&nbsp;route -- no block is known to be occupied. It has no trains as far as the “blind” detectors allow us to determine. Such a route cannot be started.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An “</span><span style="font-weight:700">idle</span><span>” route -- this is a “sane” idealized route with a single block occupied, where the said block is the expected idle block for the route. As far as the automation knows, there is one train at the expected location, thus we’re going to assume it is the </span><span style="font-style:italic">proper</span><span>&nbsp;train (e.g. with the expected DCC address defined for that route).</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Next state: Active, or Locked.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An “</span><span style="font-weight:700">active</span><span>” route is a route where movement has started. There can be more than one active route in the script as long as they do not overlap.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Next state: Idle.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A “</span><span style="font-weight:700">locked</span><span>” route is an idle route that cannot run as it currently overlaps with an active route.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Next state: Idle.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>It is important to indicate that here we deal with “absolute locked” routes. As indicated before, there is some value in having different route management strategies. Another obvious strategy is a “window block occupancy” that would automatically lock blocks as a train advances and release them behind. The current manager would not have to deal with that.</span></p>
+<p></p>
+<p><span>In the current Conductor 1 script, the route programmatic state is not explicit. It is implicit via the script’s internal enum states. As such the mainline has two overlapping routes and which one is running is determined by the AM vs SP enum states. There is some value in making that explicit.</span></p>
+<p><span>The script would be structured as such:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When both AM &amp; SP routes are in a good + idle state, and motion is triggered, then the AM or SP route is set to active (alternatively).</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Once the AM route is active do all its conditions/actions.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Same for the SP route.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>At the end, set the active route to idle.</span></li>
+</ul>
+<p><span>The semantic difference is that:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Checking the route is in a “good state” validates only one block is active.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Checking the route is in the “idle” state validates only that the idle block is active.</span></li>
+</ul>
+<p><span>This removes a bunch of confusing checks in the script.</span></p>
+<p></p>
+<p><span>We do not explicitly need to check against locked routes for now. That dependency can be computed on the fly, or pre-computed and changed when a route becomes active or inactive.</span></p>
+<p></p>
+<p><span>The route occupancy strategy is going to differ slightly between automation and simulation.</span></p>
+<p></p>
+<p><span>During automation, trains move and thus trigger the “next” block. If the route is well defined, this should be the block just “after” the one currently occupied. The notion of “next block” depends on the route definition, and not on the engine running direction -- even for a shuttle operation, the blocks are present twice in the route. In other words the current block moves from index N to index N+1. This matters since by definition a shuttle route will have every block appearing twice in the route, but at different indexes corresponding to different running directions.</span></p>
+<p><span>There may be a period of time when both the “active” block and the “next” one are going to be activated as the engine transitions from one to the other. That period of time will be longer if the train has for example a powered rear engine or car. This matters because in that case we don’t want the route to transition from a good state to an invalid one, so we need a way to mark the block as being occupied by a “trailing” portion of the train, ideally with a sanity check as we expect that status to be cleared within a certain time (unless the train needs to stop on a two block boundary, which is not a very desirable scenario).</span></p>
+<p></p>
+<p><span>In the previous post from 2018-12-08, I did define that a “Block Reservation model” with the values (free, occupied, or trailing). This is circling back to exactly that same model. </span></p>
+<p></p>
+<p><span>There is an important detail in the block reservation model so I’ll put this on bold here:</span></p>
+<p><span style="font-weight:700">An occupied block must not be conflated with an active sensor/block</span><span>.</span></p>
+<p><span>An “active” block (or sensor) is a physical state. An “occupied” block is a </span><span style="font-style:italic">modeled</span><span>&nbsp;state. They must be allowed to sometimes differ.</span></p>
+<p></p>
+<p><span>The reservation model is especially useful for an ABS running strategy with a train controlled by looking at N blocks ahead. However we can generalize it for all kinds of running strategies:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The train is on a given block N, which is the occupied block.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>As the train moves to the next block in the route, block N becomes “trailing” and block N+1 becomes “occupied”. From a sensor perspective, block N (the exited block) may be either off or active, so it’s important here to not conflate block sensor activation and block occupancy.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>In this scheme, the “previous” block is always reserved as a trailing block as long as the train is moving.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Thus it’s only when the train moves to block N+2 that block N becomes free, block N+1 becomes trailing, and block N+2 becomes occupied.</span></li>
+</ul>
+<p></p>
+<p><span>There are however two problems with this scheme:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a deadlock situation in a shuttle route when the train reaches the reversal point. By definition the N-1 block would never be free, and the train could never return. </span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>⇒ This can trivially be solved by indicating the “trailing” block is freed when the train stops voluntarily, or by having an explicit “route recompute” action in the script.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This scheme does not work for a route that has only two blocks.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>⇒ Unless that happens to be a shuttle route since the reversal action will reset the trailing block which is the only other block in the route.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>How does this scheme work in a simulation mode?</span></p>
+<p></p>
+<p><span>It should work pretty much the same way. The only difference is that for each block we need an implicit timer to advance to the block N+1. This would be done by simulating a sensor activation for N+1 and a sensor inactivation for N.</span></p>
+<p></p>
+<p><span>How does this scheme work with Virtual Blocks?</span></p>
+<p></p>
+<p><span>First they need to work the same work for automation and simulation.</span></p>
+<p><span>The previous reasoning was to automatically trigger them with a simple rule:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If a block N becomes occupied in the route and N+1 is a virtual block, we automatically make block N+1 occupied too. Virtual Block N+1 is reset when trains enter block N+2.</span></li>
+</ul>
+<p><span>One issue with that is that we now have 2 occupied blocks on the route, which is contrary to our definition of a “sane” route. It is also wrong, from a physical point of view, for a train to simultaneously occupy blocks N and N+1 at the same time when entering a single block, since the virtual blocks are here to represent non-ambiguous physical blocks that have no sensor.</span></p>
+<p></p>
+<p><span>What matters is that the train entered and left the block </span><span style="font-style:italic">before</span><span>&nbsp;the virtual block. So let’s try this:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Give N a sensor-backed block, N+1 a virtual block, and N+2 a sensor-backed block,</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>If a block N was occupied and changes from active to non-active, then virtual block N+1 is made active, which changes it to occupied, and block N changes to a trailing state as usual.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When block N+2 becomes active, the manager proceeds into making N+2 occupied and N+1 a trailing block, and N becomes free per the usual rules,</span></li>
+</ul>
+<p></p>
+<p><span>This has the advantage that the only difference between a virtual and sensor block is the activation. The rest uses the usual management.</span></p>
+<p></p>
+<p><span>For simulation, no change is needed. The simulation would make virtual block N+1 active and deactivate N, which the virtual block manager would pickup and basically do the same thing, so it’s an idempotent operation.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2019-06-22_conductor_2_automatic_route__63607e80.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2019-06-15_cotton_belt_9389.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

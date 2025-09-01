@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Randall Museum Model Railroad" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/randall/2021-12-23_update_to_vision_computer_vl_557b4ea0.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Update to Vision Computer: VLC with RTSP on Debian Bullseye" />
+
+<meta property="og:description" content="I’ve spent the last couple weeks doing background computer maintenance mostly. The kind of stuff nobody at the layout will notice, because things magically get fixed before they are too broken." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Update to Vision Computer: VLC with RTSP on Debian Bullseye" />
+
+<meta name="twitter:description" content="I’ve spent the last couple weeks doing background computer maintenance mostly. The kind of stuff nobody at the layout will notice, because things magically get fixed before they are too broken." />
+
+
+<title>Blog: Randall Museum Model Railroad</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="000b.html">Blog: Randall Museum Model Railroad</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">Introduction</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Blog &amp; News</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">About the Model Railroad</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/videos.html" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="font-style:italic">The Randall Museum in San Francisco hosts a large HO-scale model model railroad. Created by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span style="font-style:italic">&nbsp;starting in 1961, the layout was donated to the Museum in 2015. Since then I have started automatizing trains running on the layout. I am also the model railroad maintainer. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">This blog</a></span><span style="font-style:italic">&nbsp;describes various updates on the Randall project and I maintain a separate </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">blog for all my electronics</a></span><span style="font-style:italic">&nbsp;not directly related to Randall. </span><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-01-01_happy_new_year.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2021-12-16_randall_layout_git_repositor_6c2286c7.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2021-12-23 - Update to Vision Computer: VLC with RTSP on Debian Bullseye</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Randall</span>
+    </span>
+    </div>
+
+
+    <p><span>I’ve spent the last couple weeks doing background computer maintenance mostly. The kind of stuff nobody at the layout will notice, because things magically get fixed before they are too broken.</span></p>
+<p></p>
+<p><span>If you don’t like computer stuff, you can skip this one as we’re going to get deep in the weeds with Linux commands.</span></p>
+<p><span></span></p>
+<p></p>
+<p><span>About a month ago, I fixed the last issue I was having with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/" style="color:inherit;text-decoration:inherit">Vision</a></span><span>&nbsp;software on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;at the museum. Unfortunately even though I improved the software side, the computer itself decided not to cooperate and the workaround I have to force it to turn on automatically stopped working. </span></p>
+<p><span>Let’s try to summarize the core issue. See I don’t think the museum staff should have the burden of going around and pushing the on button of every single computer in the museum, and surely not in the railroad exhibit. Yet these computers and laptops obstine themselves in staying off when the power is turned on. And that’s why I love these Lenovo T series laptops as they have that magical “Power on AC attach” option in their BIOS.</span></p>
+<p><span>Except Vision is a Lenovo Yoga S15, and the S-series does not have the “Power on AC attach” option in their BIOS, which I didn’t know at first -- I thought all Lenovo laptops had that option, but nope they don’t. Which brings the side question of how I’d figure that out upfront, and my investigation is that it seems related to the presence of the “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Intel_Active_Management_Technology" style="color:inherit;text-decoration:inherit">Intel AMT</a></span><span>” option in the BIOS and is related to those laptops that have the “</span><span>Intel vPro</span><span>” sticker. So maybe that’s a way to figure that out when looking at machines before getting them.</span></p>
+<p><span>So no problem, after mulling at the problem for a while, I found a workaround: the RTC wake up! I created a </span><span style="font-style:italic">udev rule</span><span>&nbsp;that is triggered on power down and schedules an RTC wake up in 5 minutes. When the laptop is powered back later, the 5 minutes have elapsed and the laptop turns on. Worked very well for a while, till it didn’t.</span></p>
+<p></p>
+<p><span>So fine, I took that computer home, realized it would take a while to get it working again as I want. Instead I swapped it for one of my Yoga X1 which has the desired startup option. That involved entirely reformatting that computer, reinstalling a fresh </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.debian.org/releases/bullseye/" style="color:inherit;text-decoration:inherit">Debian 11 </a></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.debian.org/releases/bullseye/" style="color:inherit;text-decoration:inherit">”bullseye”</a></span><span>&nbsp;on it, and installing all the software on it. That’s a full week-end spent right there.</span></p>
+<p></p>
+<p><span>The new computer with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/" style="color:inherit;text-decoration:inherit">Vision</a></span><span>&nbsp;works fine at home so I finally brought it to the museum. And surprise, it can’t connect to the IP cameras providing the live video feed of the trains on the layout. The cameras work fine, the network is fine, but no way to get the RTSP stream out of these cameras from </span><span style="font-style:italic">that</span><span>&nbsp;computer. Works fine on others.</span></p>
+<p></p>
+<p><span>Looking at various things… the usual culprits: IP route issue? No, I can ping these and access the http admin page. NAT or firewall? Nope, nothing in </span><span style="font-style:italic">ip tables</span><span>&nbsp;that could be related.</span></p>
+<p></p>
+<p><span>Along the way, I notice this isn’t quite right:</span></p>
+<p></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo route</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">Kernel IP routing table</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">Destination &nbsp; &nbsp; Gateway &nbsp; &nbsp; &nbsp; &nbsp; Genmask &nbsp; &nbsp; &nbsp; &nbsp; Flags Metric Ref &nbsp; &nbsp;Use Iface</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">default &nbsp; &nbsp; &nbsp; &nbsp; pir &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0.0.0.0 &nbsp; &nbsp; &nbsp; &nbsp; UG &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 wlan0</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">link-local &nbsp; &nbsp; &nbsp;0.0.0.0 &nbsp; &nbsp; &nbsp; &nbsp; 255.255.0.0 &nbsp; &nbsp; U &nbsp; &nbsp; 1000 &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 wlan0</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">192.168.2.0 &nbsp; &nbsp; 0.0.0.0 &nbsp; &nbsp; &nbsp; &nbsp; 255.255.255.0 &nbsp; U &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 wlan0</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">192.168.2.0 &nbsp; &nbsp; 0.0.0.0 &nbsp; &nbsp; &nbsp; &nbsp; 255.255.255.0 &nbsp; U &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 eth0</span></p>
+<p></p>
+<p><span>Duh, w</span><span>lan0 should not be before eth0… it should be after. That’s why I went to all the trouble to bring wired ethernet to that machine. OK fine that’s easily resolved by adding a </span><span style="font-style:italic">metric</span><span>&nbsp;setting for each network:</span></p>
+<p></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo vim /etc/network/interfaces</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">[...]</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">allow-hotplug eth0</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">iface eth0 inet dhcp</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">metric 0</span></p>
+<p style="margin-left:36pt"></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">auto wlan0</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">allow-hotplug wlan0</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">iface wlan0 inet dhcp</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">metric 1</span></p>
+<p></p>
+<p><span>Of course that won’t fix the RTSP problem. So after wasting a ton of time, I narrowed it down to be… a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.videolan.org/" style="color:inherit;text-decoration:inherit">VLC</a></span><span>&nbsp;problem specifically on Debian 11 </span><span style="font-style:italic">”bullseye”</span><span>. That’s because in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/" style="color:inherit;text-decoration:inherit">Vision</a></span><span>, I capture and play the live camera feeds using custom viewers by instances of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/caprica/vlcj" style="color:inherit;text-decoration:inherit">VLCj</a></span><span>&nbsp;in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://capricasoftware.co.uk/projects/vlcj-4/tutorials/direct-rendering" style="color:inherit;text-decoration:inherit">Direct Rendering</a></span><span>, and that uses the VLC libraries installed on the platform.</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.videolan.org/viewtopic.php?t=157795" style="color:inherit;text-decoration:inherit">This forum post</a></span><span>&nbsp;indicates it’s not even a </span><span style="font-style:italic">VLC</span><span>&nbsp;issue itself. It’s due to some genius folk at Debian deciding to just </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=981439" style="color:inherit;text-decoration:inherit">remove the liblivemedia VLC plugin</a></span><span>&nbsp;which is the one handling RTSP here</span><span>. And then they wonder why Linux and the FOSS community gets a bad rap from end-users…</span></p>
+<p></p>
+<p><span>So nowm how do I get this fixed?… The initial forum post was cryptic with the “just recompile it” suggestion. Sure, that’s fine when you know what to do. I guess after a day of work on that, now I know, more or less. Took a lot of guesswork though, so here’s the highlight summary of what worked in the end, without the back-and-forth steps in between:</span></p>
+<p></p>
+<p><span>First we’re going to need to install that “liblivemedia” but it’s been removed from debian, so we can just “apt install” it.</span></p>
+<p><span>Instead we need to search in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://snapshot.debian.org/" style="color:inherit;text-decoration:inherit">http://snapshot.debian.org/</a></span><span>&nbsp;archives for that package: For example searching for “liblivemedia64” on the binary search on the sidebar of that side… </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://snapshot.debian.org/binary/liblivemedia64/" style="color:inherit;text-decoration:inherit">https://snapshot.debian.org/binary/liblivemedia64/</a></span><span>&nbsp;this shows several options, of which I need to pick one reasonable version, install it, realize it needs dependencies, so go search for them, then rinse and repeat till I have it all. In the end I did something like this:</span></p>
+<p></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ wget</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/liblivemedia64_2018.11.26-1.1%2Bb1_amd64.deb" style="color:inherit;text-decoration:inherit">https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/liblivemedia64_2018.11.26-1.1%2Bb1_amd64.deb</a></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ wget </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/libbasicusageenvironment1_2018.11.26-1.1%2Bb1_amd64.deb" style="color:inherit;text-decoration:inherit">https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/libbasicusageenvironment1_2018.11.26-1.1%2Bb1_amd64.deb</a></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ wget </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/libgroupsock8_2018.11.26-1.1%2Bb1_amd64.deb" style="color:inherit;text-decoration:inherit">https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/libgroupsock8_2018.11.26-1.1%2Bb1_amd64.deb</a></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ wget </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/libusageenvironment3_2018.11.26-1.1%2Bb1_amd64.deb" style="color:inherit;text-decoration:inherit">https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/libusageenvironment3_2018.11.26-1.1%2Bb1_amd64.deb</a></span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ wget </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Consolas&quot;;font-size:10pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/liblivemedia-dev_2018.11.26-1.1%2Bb1_amd64.deb" style="color:inherit;text-decoration:inherit">https://snapshot.debian.org/archive/debian/20190819T095315Z/pool/main/libl/liblivemedia/liblivemedia-dev_2018.11.26-1.1%2Bb1_amd64.deb</a></span><span style="font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo apt install ./lib*</span></p>
+<p></p>
+<p><span>Also added the -dev dependency since we’re going to need it later.</span></p>
+<p></p>
+<p class="console "><span>OK but that’s still not enough because </span><span style="font-style:italic">VLC</span><span>&nbsp;has been compiled without the library support, and for that it turns out we need the “live555” module (seriously, what’s with the names?). Trying to do the typical “</span><span style="font-family:&quot;Consolas&quot;">apt source vlc</span><span>” doesn’t really do much and that tells me I need to get a git repo. Then I also needed to figure and install all the dependencies to build a deb package.</span></p>
+<p></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ git clone https://salsa.debian.org/multimedia-team/vlc.git</span></p>
+<p style="margin-left:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo apt install dh-autoreconf build-essential devscripts</span></p>
+<p></p>
+<p class="console "><span>That also required installing a few bazillion dev dependencies for VLC, and there’s one “</span><span style="font-family:&quot;Consolas&quot;">libidn-dev</span><span>” that I could not find anywhere so I got the closest “</span><span style="font-family:&quot;Consolas&quot;">libidn11-dev</span><span>” instead and had to modify the </span><span style="font-family:&quot;Consolas&quot;">debian/control</span><span>&nbsp;file accordingly:</span></p>
+<p></p>
+<p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo apt install liba52-0.7.4-dev libaa1-dev libarchive-dev &nbsp;libaribb24-dev libasound2-dev &nbsp;libass-dev &nbsp;libavahi-client-dev libavc1394-dev &nbsp;libavcodec-dev &nbsp;libavformat-dev &nbsp;libbluray-dev &nbsp;libcaca-dev &nbsp;libcairo2-dev &nbsp;libcddb2-dev libchromaprint-dev &nbsp;libdav1d-dev libdbus-1-dev &nbsp;libdc1394-dev &nbsp;libdca-dev libdvbpsi-dev &nbsp;libdvdnav-dev &nbsp;libdvdread-dev &nbsp;libebml-dev &nbsp;libegl1-mesa-dev libfaad-dev libflac-dev &nbsp;libfluidsynth-dev &nbsp;libfreetype-dev libfribidi-dev libgl1-mesa-dev libgles2-mesa-dev libgnutls28-dev &nbsp;libgtk-3-dev libharfbuzz-dev &nbsp;libiso9660-dev libjack-dev libkate-dev &nbsp;liblirc-dev liblua5.2-dev libmad0-dev libmatroska-dev &nbsp;libmpcdec-dev libmpeg2-4-dev libmpg123-dev libmtp-dev &nbsp;libncursesw5-dev libnfs-dev &nbsp;libnotify-dev libogg-dev &nbsp;libmodplug-dev &nbsp;libopus-dev &nbsp;libplacebo-dev &nbsp;libpng-dev libpostproc-dev &nbsp;libprotobuf-dev &nbsp;libpulse-dev &nbsp;libqt5svg5-dev libqt5x11extras5-dev libraw1394-dev &nbsp;libresid-builder-dev librsvg2-dev libsamplerate0-dev libsdl-image1.2-dev libsdl1.2-dev &nbsp;libsecret-1-dev libshine-dev &nbsp;libshout-dev libsidplay2-dev libsmbclient-dev libsndio-dev libsoxr-dev &nbsp;libspatialaudio-dev libspeex-dev &nbsp;libspeexdsp-dev &nbsp;libssh2-1-dev libswscale-dev &nbsp;libsystemd-dev libtag1-dev &nbsp;libtheora-dev &nbsp;libtwolame-dev &nbsp;libudev-dev libupnp-dev libv4l-dev libva-dev libvcdinfo-dev &nbsp;libvdpau-dev libvncserver-dev &nbsp;libvorbis-dev libx264-dev &nbsp;libx265-dev libxcb-composite0-dev libxcb-keysyms1-dev &nbsp;libxcb-randr0-dev &nbsp;libxcb-shm0-dev libxcb-xv0-dev &nbsp;libxext-dev libxi-dev libxinerama-dev libxpm-dev libzvbi-dev &nbsp;lua5.2 protobuf-compiler qtbase5-dev &nbsp;qtbase5-private-dev &nbsp;wayland-protocols zlib1g-dev zsh</span></p>
+<p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo apt install libidn11-dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ vim debian/control</span></p>
+<p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s/libidn-dev/libidn11-dev</span></p>
+<p></p>
+<p class="console "><span>So now we’re ready to build (I actually did a build using the version out of the box to check it was building before I did any change). Yet we still have to activate that “live555” module we want. I tried to naively enable it in </span><span style="font-family:&quot;Consolas&quot;">debian/rules</span><span>&nbsp;and that didn’t work as it was missing something else… so plan B: this is a git repository, thus I can use it to find the commit where that lib was removed and roll it back:</span></p>
+<p></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ git log</span></p>
+<p style="margin-left:36pt;text-align:left;text-indent:36pt" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">s/live555 ⇒ 4b907f34c</span></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ git revert 4b907f34c</span></p>
+<p class="console "><span>(that will clash with the </span><span style="font-family:&quot;Consolas&quot;">libidn11-dev</span><span>&nbsp;change in </span><span style="font-family:&quot;Consolas&quot;">debian/control</span><span>&nbsp;so just stash it first + unstash or restore the file and redo the change manually.)</span></p>
+<p></p>
+<p><span>Finally we can build VLC:</span></p>
+<p></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ dpkg-buildpackage -us -uc -rfakeroot</span></p>
+<p></p>
+<p><span>And in the end… I decided to not use that VLC build. All I care is for the dynamic live555 module, so I can just copy it in the target plugin directory:</span></p>
+<p></p>
+<p style="margin-left:36pt;text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:10pt">$ sudo cp -v \<br>debian/vlc-plugin-base/usr/lib/x86_64-linux-gnu/vlc/plugins/access/liblive555_plugin.so \<br>/usr/lib/x86_64-linux-gnu/vlc/plugins/access/liblive555_plugin.so</span></p>
+<p></p>
+<p><span>And now trying </span><span style="font-style:italic">vlc</span><span>&nbsp;or </span><span style="font-style:italic">cvlc</span><span>, it can play RTSP streams from the live cameras just fine.</span></p>
+<p></p>
+<p class="console "><span>The only downside of this approach at the end is that next time I do an “</span><span style="font-family:&quot;Consolas&quot;">apt upgrade</span><span>”, I need to either pin VLC so that it doesn’t get updated, or preferably I need to do all this again to rebuild the “</span><span style="font-family:&quot;Consolas&quot;">liblive555_plugin.so</span><span>” in case there’s an ABI change.</span></p>
+<p></p>
+<hr>
+<p></p>
+<p></p>
+<p></p>
+<p><span></span></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-01-01_happy_new_year.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2021-12-16_randall_layout_git_repositor_6c2286c7.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

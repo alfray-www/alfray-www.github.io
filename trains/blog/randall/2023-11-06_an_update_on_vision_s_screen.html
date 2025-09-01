@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Randall Museum Model Railroad" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/randall/2023-11-06_an_update_on_vision_s_screen.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="An Update on Vision’s Screen" />
+
+<meta property="og:description" content="The Vision laptop&nbsp;runs the vision&nbsp;software -- it displays some live views of the automated trains as well as pre-recorded videos. The laptop’s internal screen is no longer actually usable: it looks fine at first, then quickly displays purple strobing/flickering lines. It does that even in the BIOS. I've made many attempts such as switching from CPU graphics to the discrete GPU, trying lower or higher resolutions or refresh frequencies… For a while I had a workaround that involved a specific sequence of DPMS&nbsp;on/off, and that was enough to reset the controller or something. Now, nothing makes it stable anymore. I dismantled the laptop and found no physical issue with it. Trying to replace the screen or its cable would be almost as expensive or more than getting a new laptop or a new screen so…" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_eb8013130926694fcb8f15fe0a39b95d6e45162a849afd5cf84c0381e11c35cei.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="An Update on Vision’s Screen" />
+
+<meta name="twitter:description" content="The Vision laptop&nbsp;runs the vision&nbsp;software -- it displays some live views of the automated trains as well as pre-recorded videos. The laptop’s internal screen is no longer actually usable: it looks fine at first, then quickly displays purple strobing/flickering lines. It does that even in the BIOS. I've made many attempts such as switching from CPU graphics to the discrete GPU, trying lower or higher resolutions or refresh frequencies… For a while I had a workaround that involved a specific sequence of DPMS&nbsp;on/off, and that was enough to reset the controller or something. Now, nothing makes it stable anymore. I dismantled the laptop and found no physical issue with it. Trying to replace the screen or its cable would be almost as expensive or more than getting a new laptop or a new screen so…" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_eb8013130926694fcb8f15fe0a39b95d6e45162a849afd5cf84c0381e11c35cei.jpg" />
+
+<title>Blog: Randall Museum Model Railroad</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="0005.html">Blog: Randall Museum Model Railroad</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/index.html" style="color:inherit;text-decoration:inherit">Introduction</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Blog &amp; News</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">About the Model Railroad</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:119.5pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/videos.html" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="font-style:italic">The Randall Museum in San Francisco hosts a large HO-scale model model railroad. Created by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org" style="color:inherit;text-decoration:inherit">Golden Gate Model Railroad Club</a></span><span style="font-style:italic">&nbsp;starting in 1961, the layout was donated to the Museum in 2015. Since then I have started automatizing trains running on the layout. I am also the model railroad maintainer. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">This blog</a></span><span style="font-style:italic">&nbsp;describes various updates on the Randall project and I maintain a separate </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">blog for all my electronics</a></span><span style="font-style:italic">&nbsp;not directly related to Randall. </span><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-11-11_maintenance_overhead_light_for_lodi.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-10-15_halloween_trains_at_randall__30273e7d.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2023-11-06 - An Update on Vision’s Screen</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Randall</span>
+    </span>
+    </div>
+
+
+    <p></p>
+<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision laptop</a></span><span>&nbsp;runs the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision" style="color:inherit;text-decoration:inherit">vision</a></span><span>&nbsp;software -- it displays some live views of the automated trains as well as pre-recorded videos. The laptop’s </span><span>internal screen is no longer actually usable: it looks fine at first, then quickly displays purple strobing/flickering lines. It does that even in the BIOS. I've made many attempts such as switching from CPU graphics to the discrete GPU, trying lower or higher resolutions or refresh frequencies… For a while I had a workaround that involved a specific sequence of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tldp.org/HOWTO/Battery-Powered/displaytypes.html" style="color:inherit;text-decoration:inherit">DPMS</a></span><span>&nbsp;on/off, and that was enough to reset the controller or something. Now, n</span><span>othing makes it stable anymore. I dismantled the laptop and found no physical issue with it. Trying to replace the screen or its cable would be almost as expensive or more than getting a new laptop or a new screen so…</span></p>
+<p></p>
+<p><span>So instead I did this:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:428.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:767.45px"><img alt="" src="img_eb8013130926694fcb8f15fe0a39b95d6e45162a849afd5cf84c0381e11c35cei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:429.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:765.00px"><img alt="" src="img_aa27e43d48bff7d2c28d9ff7d7dd38379bd436a03211a881fb281f193df4b75fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>I moved the laptop on the side and the main display is a new 22 inch monitor. It's a good size for the space available, without being too distracting. Behind the screen is a small hill, thus we’re not blocking any view of the layout.</span></p>
+<p></p>
+<p><span>Ironically that more or less matches the initial design for this project -- I had anticipated having a computer hidden under the layout driving an external monitor behind the glass.</span></p>
+<p><span>Although my initial design was to hide the machine under the layout, I quickly opted not to do that since that happens to be extremely cumbersome for maintenance, and at the same time I had a laptop with a screen, so why not use it? Similarly, here I decided to just place the laptop on the other side of the “hill” behind the glass, with a linux command to make sure the screen stays turned off. </span></p>
+<p></p>
+<p><span>The only follow-up I need now is to modify the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision" style="color:inherit;text-decoration:inherit">vision</a></span><span>&nbsp;software to turn the external screen on/off when the layout is powered. I just need to hook a script in the existing </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/src/master/src/main/java/com/alflabs/trainmotion/display/DisplayController.java" style="color:inherit;text-decoration:inherit">DisplayController</a></span><span>&nbsp;to control </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tldp.org/HOWTO/Battery-Powered/displaytypes.html" style="color:inherit;text-decoration:inherit">Linux’s DPMS</a></span><span>.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2023-11-11_maintenance_overhead_light_for_lodi.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2023-10-15_halloween_trains_at_randall__30273e7d.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+
