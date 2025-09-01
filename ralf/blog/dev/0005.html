@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0005.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="R’alf Dev Log" />
+<meta property="og:description" content="In the latest version of Android Studio, the emulator shows up in a pane in the IDE. This is annoying and absolutely unusable on a small laptop screen. How do I get rid of that and have a separate window as usual?" />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="R’alf Dev Log" />
+<meta name="twitter:description" content="In the latest version of Android Studio, the emulator shows up in a pane in the IDE. This is annoying and absolutely unusable on a small laptop screen. How do I get rid of that and have a separate window as usual?" />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0005.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0004.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0006.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-06-18_android_studio_emulator.html">
+    <h2 class="post-title">2022-06-18 - Android Studio Emulator</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the latest version of Android Studio, the emulator shows up in a pane in the IDE. This is annoying and absolutely unusable on a small laptop screen. How do I get rid of that and have a separate window as usual?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To get rid of that: AS &gt; File &gt; Settings &gt; Tools &gt; Emulator &gt; uncheck “Launch in a tool window”.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Also keep creating the AVD with the “Cold Boot” setting instead of “Quick Boot”. Most of the time the emulator starts “unpowered” in quick boot, nothing on screen, and no idea on how to fix it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-29_android_simple_games_jump_ca_f1322603.html">
+    <h2 class="post-title">2022-05-29 - Android “simple” games: Jump, Cangrejo, Asqare</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">If I had to rebuild Asqare today, which framework would I choose?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Clearly I would use an existing one instead of rolling my own. There are lots of choices out there.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Godot is one obvious choice. It’s even officially listed in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/games/engines/engines-overview#godot" style="color:inherit;text-decoration:inherit">Using a game engine on Android</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;guide. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">libGDX is another obvious choice for something lower level. It’s not a “full stack” game engine, yet it’s a good foundation for someone to roll their own renderer.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For Jump!, the idea was to use scenes to implement everything in Godot. It’s a Godot thing, which just happens to export to Android. Some functionality can be provided by plugins, such as the screen sharing/export provided by GodotShare.aar → this is done by generating an “aar” library, and making it available to Godot..</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For something like Asqare, the native Android implementation has some advantages as the gameplay screen is a view in an actual activity. It would be nice to know how to implement that level of integration using Godot. E.g. ideally a scene is just one view, or maybe one fragment, which is controlled by an otherwise “pure” Android app. That is, I want the reverse: instead of adding android library functionality to Godot, I’d like Godot to generate a library that I integrate in an external android app. This mode doesn’t quite seem supported but this seems the closer we can get:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/3.5/tutorials/export/android_custom_build.html#" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/3.5/tutorials/export/android_custom_build.html#</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The obvious cons here is that this implies we now have to deal with two tools/frameworks and they might have incompatible release schedules or requirements. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Generally speaking for all these small games, there’s a strong desire to reorganize them in a clear MVP or MVC pattern -- model-view-presenter or model-view-controller. MVC makes the most sense here: the model is the core gameplay, which can be coded in a separate library (e.g. an aar import), the view is an android skeleton and/or godot, and the presenter is godot. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s worth pointing out that games like Asqare and even Nerdkill are already architectured like that.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In a sense that seems to run contrary to the default Godot game implementation: Godot naturally tends to architecture a game around its scene graph as being the directing entity. The scene graph is the model. Furthermore entities in the scene graph embed part of their own logic such as collision and event handling.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the Asqare case, that’s not incompatible with the MVC pattern: the “core” Asqare &nbsp;game can be modeled as a board representation (an array of e.g. integers) and a function computing the name board state as well as a list of view updates. The presenter part in Godot would basically map each board cell to a sprite entity. Updates are actions like select (implemented as blinking or rotating a sprite), vanish, or animate an entry. This is the way the game is currently implemented in its Java micro “game engine”, even though it’s all hard coded functions and nothing is really generic.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">From that description, it does read like using Godot for Asqare would be a bit of a stretch actually:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Godot drives the android app creation, instead of being an embedded view/fragment.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Godot strives to be the model with its scene graph.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The only benefit of using Godot is to use it as an animation engine (and without having to learn a new one). That’s more or less what using libGDX would do.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I should make the point that Nerdkill on Godot does make a lot of sense. The “scene graph is the model” works fine for Nerdkill.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But what about Asqare. If not Godot, then what?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What do I want, ideally?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some kind of scene graph thingy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">An animation engine with some basic effects.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Optional: 3d support with an orthographic top view. Would allow to draw elements in Blender and animate them without having to render them to static image maps</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The cons of that is the added complexity of a 3d GL view.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What if we took a different approach? Kotling game engines:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>MiniGDX: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gamefromscratch.com/minigdx-kotlin-game-development-framework/" style="color:inherit;text-decoration:inherit">https://gamefromscratch.com/minigdx-kotlin-game-development-framework/</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Besides the name, this has no affiliation with libGDX. It uses ljgl and al.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This is just a one-person game engine with no pedigree and no support team.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Same person has contributed to libKTX.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">libGDX is well known and documented.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Does both 2d and 3d.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://libgdx.com/wiki/jvm-langs/using-libgdx-with-kotlin" style="color:inherit;text-decoration:inherit">https://libgdx.com/wiki/jvm-langs/using-libgdx-with-kotlin</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://libktx.github.io/" style="color:inherit;text-decoration:inherit">https://libktx.github.io/</a></span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Korge: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://korge.org/" style="color:inherit;text-decoration:inherit">https://korge.org/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gamefromscratch.com/korge-engine-kotlin-powered-open-source-game-engine/" style="color:inherit;text-decoration:inherit">https://gamefromscratch.com/korge-engine-kotlin-powered-open-source-game-engine/</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Korge is a set of libraries + some IJ plugin.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It focuses on 2d.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Kotlin-is-fabulous indoctrination is a cons.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That Flutter-simple-game thing?</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Meh to Dart.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">No desire to use it long term.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Android Jetpack Compose?</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In my case, looking at the long-term, say I update an app next in 5-10 years:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The IDE project may be obsolete. E.g. some of my projects still use Eclipse.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The project configuration may be obsolete, even if the IDE is still the same.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Example: gradle groovy now vs maybe gradle kotlin later.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Who knows about stuff from e.g. Godot?</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The language could become obsolete.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Example: go1 projects not compatible with go1.5, etc.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">C# has the same issue. I expect Kotlin to have the same issue.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Java has this “legacy” thinking model which saves it for now.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Who knows about GDScript?</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Library support for Android and older API models changes.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Compat library is min 14 these days.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A lot of stuff at G is min 21.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Having an app/game that depends on e.g. Godot + Android means to have to deal with all that, times 2, for each platform, plus their intersection.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-28_android_apps_update_flashlig_8fe84f68.html">
+    <h2 class="post-title">2022-05-28 - Android Apps Update: Flashlight, Brighteriffic</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>I found the sources for both under the old </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/autosettings/src/master/" style="color:inherit;text-decoration:inherit">Autosettings project</a></span><span>.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Back then I was using branches, instead of placing such projects in their own repository.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I should move them under their own git repo under bitbucket/ralfoide.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Flashlight matters; Brighteriffic not so much yet I may update it if it isn’t too cumbersome.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In both cases it makes sense to duplicate the autosettings repo entirely to preserve history, and limit it to these app folders only.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&lt;fork autosettings repo&gt;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ git clone git@bitbucket.org:ralfoide/brighteriffic.git</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ git filter-branch --prune-empty --index-filter 'git rm &nbsp;--ignore-unmatch --cached -r AlarmTest branches Flashlight wiki distrib/[aAfqtT]* trunk/AutoSettings trunk/TimerifficTest'</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ git push --force</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-25_android_apps_update_asqare_bearing.html">
+    <h2 class="post-title">2022-05-25 - Android Apps Update: Asqare, Bearing</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Spent the last week or so </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/asqare/src/master/A2/" style="color:inherit;text-decoration:inherit">“rebuilding” Asqare</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Only needs “one last little change”.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Tradeoffs:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">See plenty of things I could change in the game, but that would delay release.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Did a few minor things to make the game usable on Android 12.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Will release a “1.4” which is mostly the same thing.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Wrote dev notes and maybe will do a “1.5” that has game changes.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One thing that works well: Android 12 + Android Studio chipmunk ⇒ Wireless Debugging. Enable in android settings, customize a quick setting tile to toggle it. Very convenient to push/debug from AS that way.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Question: can command-line adb also use Wireless Debugging?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For release, using the B3 script to create a bundle (aab), without the flavors.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This produces a signed AAB (for Dev Console) + temporary APKS for local deployment.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">My script signs the AAB using the old jarsigner. I had to work around it that way because the key format is old and I failed to update into a newer format.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Issue: the local APKS are signed with a debug key. Which means I can’t push and update an app store signed binary.</span></p>
+<p style="text-align:left"><span>⇒ </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/50419286/install-android-app-bundle-on-device" style="color:inherit;text-decoration:inherit">According to this SO</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, I should be able to sign the AAB with release and thus the APK should be signed too?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For the Dev Console, the only choice is to upload an AAB. I’m using the self-signed method where the console does not sign the APK for me (I think?)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">When uploading the AAB</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: “Error: To upload an Android App Bundle you must be enrolled in Play App Signing.”</span></p>
+<p style="text-align:left"><span style="font-weight:700">When uploading the signed APK</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: “You uploaded an APK with an invalid signature (learn more about signing). Error from apksigner: ERROR: MIN_SIG_SCHEME_FOR_TARGET_SDK_NOT_MET: Target SDK version 32 requires a minimum of signature scheme v2; the APK is not signed with this or a later signature scheme”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The “signature scheme v2” is explained here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://source.android.com/security/apksigning/v2" style="color:inherit;text-decoration:inherit">https://source.android.com/security/apksigning/v2</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The tool to use is “apksigner” available in build-tool 24.0.3 and above.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">However I had already tried it years before and my signature uses an older SHA-1 which is now considered obsolete; I had tried to change the keyfile with no success.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Plan B: </span></p>
+<p style="text-align:left"><span>“Google isn't protecting the app signing key for your app. </span><span style="font-weight:700">Opt in to use Android App Bundles</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I had to do that for Bearing and Seeds: see “\pɔʁt.na.wak\”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Learning for these:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="font-weight:700">Opt In</span><span>&nbsp;selection in the Dev console is </span><span style="font-weight:700">FINAL</span><span>. The choices are confusing, poorly explained, and </span><span style="font-weight:700">there’s no way to change them later on</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. &lt;grrr&gt;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Be </span><span style="font-style:italic">very careful</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to select the option to keep using my signing key and not let the store generate a new one. This is NOT the default and it’s a PITA to use.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need their PEPK tool to sign the release key to set it up the first time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need the upload key from the store.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Opt In:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>In screen “</span><span style="font-weight:700">Let Google Play manage your app signing key</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Use option “</span><span style="font-weight:700">Use existing app signing key from Java KeyStore</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Generated a release key based on my key using PEPK ⇒ that’s the same signature arguments as used for Bearing, so maybe keep that file around and write down where it is!</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Upload release key</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Save</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IMPORTANT:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">My keystore has 2 aliases. Asqare uses alias 1. Bearing/Seeds used alias 2. Because history.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the Dev Console:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Upload an AAB to the Internal Testing track.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">WAIT for an email from Firebase Test to get a health check on many devices.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Takes at least 5 hours, but less than 24 h.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Once it’s fine, convert it to a prod push.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There’s an email when it’s available.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-11_updating_android_apps.html">
+    <h2 class="post-title">2022-05-11 - Updating Android Apps</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The new google play mandate is that apps must somewhat follow the latest API level, or risk getting booted out of the store after a certain delay.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/google/play/requirements/target-sdk" style="color:inherit;text-decoration:inherit">https://developer.android.com/google/play/requirements/target-sdk</a></span></p>
+<p style="text-align:left"><span>“</span><span style="font-weight:700">Starting in November 2022, app updates must target API level 31 or above and adjust for behavioral changes in Android 12;</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/googleplay/android-developer/answer/11926878" style="color:inherit;text-decoration:inherit">https://support.google.com/googleplay/android-developer/answer/11926878</a></span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">New Apps: API 31 by 2022-08-01.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">App Updates: API 31 by 2022-11-01.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Existing Apps: API 31 by 2023-11-01 / API 30 by 2022-11-01.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">TL;DR</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: So that means all apps should be API 30 by Nov 2022, but because they would be updates they need to be API 31, so we might as well bring them to API 32 right away.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The plan is to try to update apps on a rotating basis, for example one per month.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For that, I need a list, and I’ll reuse my gradle-version spreadsheet.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">List has been updated:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Ralf Flashlight (done)</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v123</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">3</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Nerdkill (done)</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v105</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">3</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Mandelbrot Map 2</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v13</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">11</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">11</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Asqare (done)</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v102</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">1</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">1</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">1</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Brighteriffic</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v103</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">3</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(207, 226, 243);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Cangrejo</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Testing v1</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">18</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Jump!</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v4, Testing v3</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">27</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Project E</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Testing v1</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">18</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
+  </tr>
+  <tr style="height:15.8pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Seeds (done)</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">Prod v402005</span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="height:12pt;text-align:right"></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="height:12pt;text-align:right"></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Workbench&quot;;font-size:10pt;vertical-align:baseline">28</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-11_google_i_o_2022.html">
+    <h2 class="post-title">2022-05-11 - Google I/O 2022</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Things to try: </span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Jetpack Compose for Android UI (e.g. Timer app)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Flutter 3</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Google Cloud Run as an alternative to Amazon w/ React</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nerdkill could be a good subject to try the latest “Flutter 3 Casual Game Kit” thingy.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-10_arduino_sequence_controller_.html">
+    <h2 class="post-title">2022-05-10 - Arduino Sequence Controller?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I’ve been thinking about how Lacan uses his Arduino for his aircraft animation.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What he needs is really a sequence controller to create time-base sequences triggered by input events.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">If I had to program this from scratch, what would I do? I’d create a “mini language” using either macro or C++ objects which represents states to change over time:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">LED timings is really just a list of (start timestamp, LED pin, LED state).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Servos: (start timestamp, servo pin, angle to reach, speed or duration)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Motors: (start timestamp, motor pin, power level, direction)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Instructions to end sequence, repeat N times, or chain to another sequence.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Depending on the specific needs:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Sequence(s) are started by an input (with either forced restart or don’t retrigger).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need more than one concurrent sequence? Make each sequence independent. That is each sequence is started and actuates by itself on main clock.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need to make sequences run solo? Have an instruction that stop/cancel all other sequences.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Maybe put sequences in groups (e.g. “servo groups”, “lights groups”) and make the group exclusive as in only 1 sequence runs in the group, or be able to stop any running sequence in the group.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For example for the case of the variable geometry plane:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IR button 1 ⇒ sequence 1 = stop sequence 2, move servo N up to 60. No retrigger.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IR button 2 ⇒ sequence 2 = stop sequence 1, move servo N down to 0. No retrigger.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IR button N ⇒ sequence N for lights.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It seems so obvious that I would be surprised if this had not been done before and be made available as a customizable library for arduino.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For model trains, there are a couple obvious usages:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Sequencing road traffic lights, e.g. to animate a city.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">With the addition of a “random LED value” instruction, animate anything from a camp fire to a building in fire.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-02-20_cat_litter_box_timer.html">
+    <h2 class="post-title">2022-02-20 - Cat Litter Box Timer</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Where’s the source for the current “Timer” app used for the litter box?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Device it uses: Tmo (saffire?) 3g something… running Android 2.2 (aka Froyo).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">API level ⇒ API 8</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">As an exercise, it would be nice to rewrite this in Kotlin to see if it can run on Froyo. (FAQ says there’s no min sdk req).</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-12-25_conductor_2.html">
+    <h2 class="post-title">2021-12-25 - Conductor 2</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)">It's time to reflect on Conductor 2 again</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The repo branch has been going nowhere lately. I moved the project to a new repo (in the randall-layout workspace) and only copied the conductor 1 part. That made me realize I'd be throwing away a valuable part with the SVG map.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So first I want to salvage that part. The UI is and should be separated from the engine. This UI was going to drive a simulator, and I can likely make that happen on top of conductor 1.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The next part I want is to formalize the spec for conductor 2. Forget the syntax for now, I need to get the requirements right first: block handling, route management, and fully convert a current script. Also write some examples for eg window block handling.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">(Reading between the lines, what I’m saying is that the Conductor-2-with-Groovy-DSL shows me that in fact I want more profound changes than “just a DSL”. I really want to rethink the entire way the automation scripting is done.)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Then once we have that we can figure the implementation. Maybe getting entrenched in groovy is not helpful here. There's clearly some value in not writing my own language, unless it slows me down.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The discussion </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">continues in the Conductor 2 doc</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-12-19_status_of_conductor_2.html">
+    <h2 class="post-title">2021-12-19 - Status of Conductor 2</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I haven’t written one so it’s worth explaining the status of Conductor 2:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Entirely rewrote the current v44 script using an “enhanced” version of Conductor 1 syntax to explore a realistic way to describe and use the new routes concept.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Considered whether it’s worth pursuing the Groovy DSL vs extending the Conductor 1 DSL…</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The decision is that the former Conductor 2 Groovy DSL is obsolete. It was premature. Part of the issue was that it was getting entrenched in bridging the functionality and implementation (at the same time) with the former Conductor 1 engine. That is not the proper way to prototype.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Instead, modularized the Conductor 1 source code to move the engine/DSL into a sub-project.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">And added a mock Conductor Groovy DSL rewritten from scratch, focusing on how the syntax would work rather than the actual implementation. There are unit tests but they only validate that the DSL can actually encode what it’s supposed to.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The goal is to later also do a mock Kotlin DSL and compare.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I still need to create a fat jar where this is invoked as Jython add-on from JMRI, to ensure there’s no library mismatch for example when running Groovy or Kotlin runtime code.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That led me to explore the fundamental issue with the current route system, namely that we must have “managers”, “active routes”, and the sequence/shuttle manager should deal with a node graph instead of a “block list”. After much back-and-forth debate, I think I finally have a system I can endorse. Now I must encode it using the Groovy DSL.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0004.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0006.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

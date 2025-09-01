@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0001.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="R’alf Dev Log" />
+<meta property="og:description" content="Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="R’alf Dev Log" />
+<meta name="twitter:description" content="Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0001.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="index.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0002.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-10-06_piface_on_raspberry_pi_4_wit_a6ef1f7e.html">
+    <h2 class="post-title">2024-10-06 - PiFace on Raspberry Pi 4 with Linux Kernel 6.x</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The first (unexpected) change is that we can’t use PIP to install packages in the system-wide Python provided by the Debian install. Instead a virtual env is enforced to ensure such packages do not break the entire system.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>There is apparently a flag “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3" style="color:inherit;text-decoration:inherit">pip --break-system-packages</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">” that works around that check, and interestingly that option is not in the man page.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For a quick test, there’s some value in using a virtual env folder that I’m going to trash later.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The next realization is that none of the stuff works anymore:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Error “No such file or directory: '/sys/class/gpio/gpio25/value” </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">On an RPi 1, that means the user is not part of the group “gpio”.</span></p>
+<p style="text-align:left"><span>Here it is apparently due to the fact that the GPIO driver has been changed and the “sysfs” paths are no longer valid. Fun. The core issue seems to be with GPIO interrupts here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py" style="color:inherit;text-decoration:inherit">https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>This describes the (now deprecated) sysfs interface: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt" style="color:inherit;text-decoration:inherit">https://www.kernel.org/doc/Documentation/gpio/sysfs.txt</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Translating these:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The old way was to “echo 25 &gt; /sys/class/gpio/export”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That would make create/expose “/sys/class/gpio/gpio25/” at which points the pseudo files for direction etc could be used.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">However:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Instead now we have /sys/class/gpio/gpiochip512/base (512) + /sys/class/gpio/gpiochip512/ngpio (58) which means this </span><span style="font-style:italic">controller</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;handles gpio’s in the range 512..up to 570 excluded. Then there’s “gpiochip570” which has base=570 and ngpio=8.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“$ gpioinfo | grep 25” ⇒ this lists all the pins and we can find that “GPIO25” is actually #25 (from 0-base) on that gpiochip0 which is actually the giochip512 above.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">512 + 25 = 537… so that’s the new “sysfs” number for GPIO25.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ echo 537 | sudo tee /sys/class/gpio/export</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ And that makes “/sys/class/gpio/gpio537/” appear.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-10-06_piface_on_raspberry_pi_4_wit_a6ef1f7e.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-09-15_analysis_droidvnc-ng_vnc_server.html">
+    <h2 class="post-title">2024-09-15 - Analysis: DroidVNC-NG VNC Server</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://play.google.com/store/apps/details?id=net.christianbeier.droidvnc_ng" style="color:inherit;text-decoration:inherit">https://play.google.com/store/apps/details?id=net.christianbeier.droidvnc_ng</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bk138/droidVNC-NG" style="color:inherit;text-decoration:inherit">https://github.com/bk138/droidVNC-NG</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are 2 things that interest me here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This app auto-starts using the Accessibility API. I want to understand that API so that I can use it in TCM, since Android 14 does not support the old “Boot Receiver” method.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What are the steps needed to embed a VNC server in an app?</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A use case would be TCM sharing its own view, without access to the entire tablet. Is it worth it to even consider that, or just install DroidVNC-NG on the side?</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">Accessibility Service API</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/guide/topics/ui/accessibility/service" style="color:inherit;text-decoration:inherit">https://developer.android.com/guide/topics/ui/accessibility/service</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What it is:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Android 8 (API 26) and above.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A service, declared in the manifest.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It can listen to events, and inspect the view hierarchy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“Explore by Touch”: respond to gestures by interacting with screen elements.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#performGlobalAction(int)" style="color:inherit;text-decoration:inherit">AccessibilityService#performGlobalAction</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to perform an action.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#getSystemActions()" style="color:inherit;text-decoration:inherit">AccessibilityService#getSystemActions</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to figure available actions.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It doesn’t seem like an AccessibilityService could start an app directly per se.</span></p>
+<p style="text-align:left"><span>However it could potentially use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#GLOBAL_ACTION_HOME" style="color:inherit;text-decoration:inherit">GLOBAL_ACTION_HOME</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to invoke the Home app, then explore the hierarchy and click on the relevant app icon to trigger it. It’s not clear whether the service can do that on its own; it’s likely it needs to respond to a user gesture first.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">ACTION_BOOT_COMPLETED and RECEIVE_BOOT_COMPLETED</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-09-15_analysis_droidvnc-ng_vnc_server.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-08-04_kotlin_kmp.html">
+    <h2 class="post-title">2024-08-04 - Kotlin KMP</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://kotlinlang.org/docs/multiplatform.html" style="color:inherit;text-decoration:inherit">https://kotlinlang.org/docs/multiplatform.html</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Evaluate this against my needs: </span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Android development</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Web development</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Existing libraries</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rationale: KMP is all about the “multiplatform” aspect. I have zero multiplatform projects.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Android development: I don't do Android/iOS parity, so is there a point over Android Kotlin native? I doubt so.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Web development: This is competing with Flutter. I'm fine with Dart and Flutter. It beats anything React, whilst being mostly the same design. There are good libraries to interact with GCloud, Firebase, and it's been easy to find 3rd party libraries when needed.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Framework updates are the only thing tedious.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Before starting the Flutter way, I remember trying “Kotlin for the web” and that was not good. Was it KMP? Worth another look. Criterias are IDE support, Firebase integration support, framework updates, distrib size.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-07-09_godot_gdscript_static_typing.html">
+    <h2 class="post-title">2024-07-09 - Godot GDSCript Static Typing</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>GDSCript: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var damage = 10.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ no typing, this is essentially a Variant</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var damage:= 10.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ inferred typing</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var damage: float = 10.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ explicit typing</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">For constants</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const MOVE_SPEED = 50.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ inferred (= and := are the same)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const MOVE_SPEED := 50.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ inferred</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const MOVE_SPEED: float = 50.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ explicit</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">For functions</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func sum(a: float = 0.0, b: float = 0.0) -&gt; float: … </span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func sum(a := 0.0, b := 0.0) -&gt; float:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Which types to use</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html#what-can-be-a-type-hint" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html#what-can-be-a-type-hint</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Types can be:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Variant, void (only function return, see below)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Built-in types, global classes, inner classes (gdscript has inner classes?!)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Native classes, enums (gdscript has enums?!)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Constants that are preloaded as class types (see below)</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func blah() -&gt; Variant: … &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ forces the function to return something</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func blah() -&gt; void: … &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ forces the function to not return a value</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-07-09_godot_gdscript_static_typing.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-06-03_tablet_10_g10_and_rtac.html">
+    <h2 class="post-title">2024-06-03 - Tablet 10’ “G10” and RTAC</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/4bJ0iUw" style="color:inherit;text-decoration:inherit">https://amzn.to/4bJ0iUw</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is the 10 Inch Android 12 Tablet I’m using for Enphase Enlighen.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It has a 1280x800 screen.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Even though it’s a “production” one, I can run a debug app from Android Studio.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When enabling developer settings, there’s a Drawing &gt; “Plus petite largeur d'écran” to control DPI:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">432 dp ⇒ makes all takes larger (simulates smaller screen)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">592 dp ⇒ the default value.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">601 dp ⇒ better for Enphase (better view of the graph)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">740 dp ⇒ makes everything look smaller (simulates larger screen like 1920x1200)</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When trying out RTAC, the font for the throttles is way too big. It’s calibrated for the Chuwi’s 1920x1200 display. I realize I should customize it by “screen size”.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-04-28_conductor_and_java_1_8_vs_java_11.html">
+    <h2 class="post-title">2024-04-28 - Conductor and Java 1.8 vs Java 11</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A few months ago I updated the Conductor project to new libraries, notably switching to Kotlin DSL 1.9. That made building with Java 11 a requirement.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In turn, that broke the way the Kotlin DSL is loaded under JMRI. I’m not sure why.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So fine, I reverted the Gradle files to a “Java 1_8” compatibility mode, and reverted to the older Kotlin DSL 1.6. This works fine when building the fat JAR, but it fails when trying to run the tests. It works fine when I actually build with a Java 1.8 JDK instead.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>When building with Java 11 and running the tests, I get this cryptic gradle error: “</span><span style="font-style:italic">Incompatible because this component declares an API of a component and the consumer needed a runtime of a component</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To be clear, the “build” part works. I get the fatJAR just fine. It’s the testing that fails, and only when doing it from Gradle on the command line. In IJ, I get the same behavior by selecting Conductor &gt; All Tests on the root project.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I should try to replicate it with the gradle --info flag to see if that gives me more details on what is really breaking.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another limitation is that only LibUtils v2 works with Java 1.8. LibUtils v3 already has Mockito dependencies that require Java 11.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But that seems all academic anyway. What I really want is to build with a Java 11 compatibility target since at this point even JMRI requires 11.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Then once I get that working, I need to retry with Kotlin DSL 1.9.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One thing for sure is from now on, when updating, I need to account for these scenarios:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Testing does not work the same way under IJ or under command-line Gradle.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Kotlin DSL loading does not work the same in standalone (simulator) vs from JMRI.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-02-18_c_unique_ptr.html">
+    <h2 class="post-title">2024-02-18 - C++ unique_ptr</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s time to update SDB to use more unique_ptr and/or shared_ptrs.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some simple examples come to mind:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">class SdbModManager {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbMod*&gt; _mods;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::map&lt;String, SdbMod*&gt; _modsmap;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbSensor*&gt; _sensors;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbServer*&gt; _servers;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbBlock*&gt; _blocks;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">All these should be either unique or shared pointers to clarify the ownership.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are 2 or 3 aspects to clarify:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How a new object is created.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How a ptr is “moved” into the vector.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Users of the vector.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For each collection, I have a simple getter that returns the vector as a reference:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const std::vector&lt;SdbServer*&gt;&amp; servers() const &nbsp;{ return _servers; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and then I use that in a for/auto loop:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">for(auto* s: _manager.servers()) { … s-&gt;name() … &nbsp;}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other kind of usage is the vector for Events. One goal here is to change that from a struct holding to holding unique ptrs, with the goal that events get automatically released when pulled out of the vector and used.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So first, I need to write down a few things about how to use unique_ptrs correctly.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/memory/unique_ptr" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/memory/unique_ptr</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">#include &lt;memory&gt;</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">auto p = std::unique_ptr&lt;Class&gt;(new Class())</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">std::unique_ptr&lt;Class&gt; function() {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; return std::unique_ptr&lt;Class&gt;(new Class());</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>C++ ref mentions creating the instances using std::make_unique(), but apparently I don’t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I’m using the </span><span style="font-style:italic">previous</span><span>&nbsp;one)</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-01-01_defold_vs_godot.html">
+    <h2 class="post-title">2024-01-01 - Defold vs Godot</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Week of 2023-12-24 to 2023-12-31, I wrote </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/#nerdkill" style="color:inherit;text-decoration:inherit">Nerdkill Defold</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. Worked well, was easy to use and get something.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One thing that was nice was that I ported the original game, with all the original 8 “weapons”.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Started looking at Nerdkill w/ Godot 4.2, just to compare with Defold. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Not sure there's a point in concluding that one though.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A new Asqare using Godot 4 for Android would make more sense.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One angle of Nerdkill w/ Godot would be how to create a project that can produce both a web version and a mobile version? More specifically, I’d want the screen form factor to be different.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nerdkill “desktop” in landscape can use the cartouche with the 8 weapons.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nerdkill “mobile” in portrait can use the 5 weapons.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I could of course change the mobile version to have the same 8-weapons row, but I feel the mobile version looks better that way.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">(Alternate idea: consider using 7 weapons on mobile; drop the flag. 2 rows of 5 slots each, the cartouche would occupy the 3 middle bottom slots.)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So one thing I realize I don’t know if it’s possible is to configure the window size dynamically, or at least static by export type. Or maybe it could be two projects using the same resources.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3" style="color:inherit;text-decoration:inherit">https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“get_window().size = Vector2i(width, height)”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“the size in Project Settings &gt; Display &gt; Windows… think of it as the design size”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“to support both landscape and portrait, consider using e.g. 720x720”</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-01-01_defold_vs_godot.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-12-24_defold.html">
+    <h2 class="post-title">2023-12-24 - Defold</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Started going through the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://defold.com/" style="color:inherit;text-decoration:inherit">Defold</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;tutorials.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I have 3 possible learning projects I could try with this:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nerdkill.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Could be limited to an HTML5 output, purely as-is with no changes (e.g. no goals), and visible only via the Nerdkill web page.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Asqare.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This would be an Android output. I’d limit it to one of the 2 engines.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One goal would be to “finish” the game by adding more animation / interactions, and power ups, and better scoring.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Cangrejo.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That could be HTML and Android.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">On the Android side, an aspect would be to check the Play Game integration. E.g. leaderboards, achievements, profile management, saves/restores, etc.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One open question, similar to Godot: how does one separate the engine from UI, and how does one provide unit tests for the engine part? There seems to be a clear lack of MVC or MVP design in these tutorials.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-11-21_rig4_index.html">
+    <h2 class="post-title">2023-11-21 - Rig4 Index</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Just a quick thought on something that still bugs me with Rig4’s generated blog:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I write pages with 10 posts per page, from 00NN.html down to 0001.html.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I then write an index with the 10 most recent posts.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The rationale is:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The numbered pages are “stable”: older pages (with lower numbers) don’t change when new posts are added “normally”, that is when posts are added for the most recent day.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s exceedingly rare that I’d add a “late” post in the middle.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The last numbered page fills up and, once it reaches 10 posts, becomes stable.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I never link to page numbers, but I do expect them to be indexed by search engines and I’d like these links to become stable.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The downside:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The index page necessarily duplicates N &lt; 10 posts from the last page.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When clicking the “next page” button from the index, we land on the top most page, which basically duplicates the same content, and that’s a bit confusing.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That last bit is what annoys me. I don’t have a solution for it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="index.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0002.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

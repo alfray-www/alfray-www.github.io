@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2022-05-25_android_apps_update_asqare_bearing.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Android Apps Update: Asqare, Bearing" />
+
+<meta property="og:description" content="Spent the last week or so “rebuilding” Asqare." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Android Apps Update: Asqare, Bearing" />
+
+<meta name="twitter:description" content="Spent the last week or so “rebuilding” Asqare." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0005.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-05-28_android_apps_update_flashlig_8fe84f68.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2022-05-11_updating_android_apps.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2022-05-25 - Android Apps Update: Asqare, Bearing</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Spent the last week or so </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/asqare/src/master/A2/" style="color:inherit;text-decoration:inherit">“rebuilding” Asqare</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Only needs “one last little change”.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Tradeoffs:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">See plenty of things I could change in the game, but that would delay release.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Did a few minor things to make the game usable on Android 12.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Will release a “1.4” which is mostly the same thing.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Wrote dev notes and maybe will do a “1.5” that has game changes.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One thing that works well: Android 12 + Android Studio chipmunk ⇒ Wireless Debugging. Enable in android settings, customize a quick setting tile to toggle it. Very convenient to push/debug from AS that way.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Question: can command-line adb also use Wireless Debugging?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For release, using the B3 script to create a bundle (aab), without the flavors.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This produces a signed AAB (for Dev Console) + temporary APKS for local deployment.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">My script signs the AAB using the old jarsigner. I had to work around it that way because the key format is old and I failed to update into a newer format.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Issue: the local APKS are signed with a debug key. Which means I can’t push and update an app store signed binary.</span></p>
+<p style="text-align:left"><span>⇒ </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/50419286/install-android-app-bundle-on-device" style="color:inherit;text-decoration:inherit">According to this SO</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, I should be able to sign the AAB with release and thus the APK should be signed too?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For the Dev Console, the only choice is to upload an AAB. I’m using the self-signed method where the console does not sign the APK for me (I think?)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">When uploading the AAB</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: “Error: To upload an Android App Bundle you must be enrolled in Play App Signing.”</span></p>
+<p style="text-align:left"><span style="font-weight:700">When uploading the signed APK</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: “You uploaded an APK with an invalid signature (learn more about signing). Error from apksigner: ERROR: MIN_SIG_SCHEME_FOR_TARGET_SDK_NOT_MET: Target SDK version 32 requires a minimum of signature scheme v2; the APK is not signed with this or a later signature scheme”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The “signature scheme v2” is explained here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://source.android.com/security/apksigning/v2" style="color:inherit;text-decoration:inherit">https://source.android.com/security/apksigning/v2</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The tool to use is “apksigner” available in build-tool 24.0.3 and above.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">However I had already tried it years before and my signature uses an older SHA-1 which is now considered obsolete; I had tried to change the keyfile with no success.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Plan B: </span></p>
+<p style="text-align:left"><span>“Google isn't protecting the app signing key for your app. </span><span style="font-weight:700">Opt in to use Android App Bundles</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I had to do that for Bearing and Seeds: see “\pɔʁt.na.wak\”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Learning for these:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="font-weight:700">Opt In</span><span>&nbsp;selection in the Dev console is </span><span style="font-weight:700">FINAL</span><span>. The choices are confusing, poorly explained, and </span><span style="font-weight:700">there’s no way to change them later on</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. &lt;grrr&gt;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Be </span><span style="font-style:italic">very careful</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to select the option to keep using my signing key and not let the store generate a new one. This is NOT the default and it’s a PITA to use.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need their PEPK tool to sign the release key to set it up the first time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need the upload key from the store.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Opt In:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>In screen “</span><span style="font-weight:700">Let Google Play manage your app signing key</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Use option “</span><span style="font-weight:700">Use existing app signing key from Java KeyStore</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Generated a release key based on my key using PEPK ⇒ that’s the same signature arguments as used for Bearing, so maybe keep that file around and write down where it is!</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Upload release key</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Save</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IMPORTANT:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">My keystore has 2 aliases. Asqare uses alias 1. Bearing/Seeds used alias 2. Because history.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the Dev Console:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Upload an AAB to the Internal Testing track.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">WAIT for an email from Firebase Test to get a health check on many devices.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Takes at least 5 hours, but less than 24 h.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Once it’s fine, convert it to a prod push.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There’s an email when it’s available.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2022-05-28_android_apps_update_flashlig_8fe84f68.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2022-05-11_updating_android_apps.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2024-02-18_c_unique_ptr.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="C++ unique_ptr" />
+
+<meta property="og:description" content="It’s time to update SDB to use more unique_ptr and/or shared_ptrs." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="C++ unique_ptr" />
+
+<meta name="twitter:description" content="It’s time to update SDB to use more unique_ptr and/or shared_ptrs." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0001.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-04-28_conductor_and_java_1_8_vs_java_11.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-01-01_defold_vs_godot.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2024-02-18 - C++ unique_ptr</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s time to update SDB to use more unique_ptr and/or shared_ptrs.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some simple examples come to mind:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">class SdbModManager {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbMod*&gt; _mods;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::map&lt;String, SdbMod*&gt; _modsmap;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbSensor*&gt; _sensors;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbServer*&gt; _servers;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; std::vector&lt;SdbBlock*&gt; _blocks;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">All these should be either unique or shared pointers to clarify the ownership.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are 2 or 3 aspects to clarify:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How a new object is created.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How a ptr is “moved” into the vector.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Users of the vector.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For each collection, I have a simple getter that returns the vector as a reference:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const std::vector&lt;SdbServer*&gt;&amp; servers() const &nbsp;{ return _servers; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and then I use that in a for/auto loop:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">for(auto* s: _manager.servers()) { … s-&gt;name() … &nbsp;}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other kind of usage is the vector for Events. One goal here is to change that from a struct holding to holding unique ptrs, with the goal that events get automatically released when pulled out of the vector and used.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So first, I need to write down a few things about how to use unique_ptrs correctly.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/memory/unique_ptr" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/memory/unique_ptr</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">#include &lt;memory&gt;</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">auto p = std::unique_ptr&lt;Class&gt;(new Class())</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">std::unique_ptr&lt;Class&gt; function() {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; return std::unique_ptr&lt;Class&gt;(new Class());</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>C++ ref mentions creating the instances using std::make_unique(), but apparently I don’t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I’m using the </span><span style="font-style:italic">previous</span><span>&nbsp;one)</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-04-28_conductor_and_java_1_8_vs_java_11.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-01-01_defold_vs_godot.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

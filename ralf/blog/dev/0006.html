@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0006.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="R’alf Dev Log" />
+<meta property="og:description" content="Right now on the laptop for RPisicine I have:" />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="R’alf Dev Log" />
+<meta name="twitter:description" content="Right now on the laptop for RPisicine I have:" />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0006.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0005.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0007.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-11-11__nvm_for_multiple_node_versions.html">
+    <h2 class="post-title">2021-11-11 - “nvm” for Multiple Node Versions</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Right now on the laptop for RPisicine I have:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ node --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ v14.11.0</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ npm --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ 6.14.8</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">https://github.com/nvm-sh/nvm</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ install.sh</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ nvm list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# takes a while...</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Install steps recommend to remove “-g” (global) modules that will likely break when changing version globally:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ nvm use system</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ npm uninstall -g nwb</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ npm uninstall -g serve</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ nvm install v14.11.0</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In rpiscine:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ node --version &gt; .nvmrc</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ nvm use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# in that directory, to switch to that version</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How does changing the Node version with nvm affect the NPM version?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ The NPM version depends (and varies with) the Node version being used. E.g.:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ nvm use node</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now using node v14.11.0 (npm v6.14.8)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ nvm install node</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now using node v17.1.0 (npm v8.1.2)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For Windows, there’s https://github.com/coreybutler/nvm-windows </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To fix the NVM PATH in CMD.exe: Not really an option when installed using nvm-sh since the latter does not create an “nvm.exe” or “nvm.sh” -- instead all the nvm commands are bash functions loaded in the interpreter (meh). But we can work around it:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">cygwin: $ cygpath -w $(dirname $(nvm which --silent))</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ C:\Ralf\.nvm\versions\node\v18.8.0\bin</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Copy path to a CMD.exe.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">cmd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ refreshenv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← optional, because I have chocolatey installed.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ set PATH=C:\Ralf\.nvm\versions\node\v18.8.0\bin;%PATH%</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ echo %PATH%</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-10-11_rpiscine_project.html">
+    <h2 class="post-title">2021-10-11 - RPiscine project</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">An update on Projet RPiscine aka Piscine 2:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Python service: access RPi PiFace, store data, expose data via REST JSON.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">React JS served via nginx to connect to the Python service + visualize the data.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This worked very well. The “backend vs frontend” split was good. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The setup allows for a local react dev on laptop, build on laptop, then push the build site to the RPi.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This runs on an RPi 1 B (the older kind), with Debian buster, and using systemctl services for the python wrapper. Also a reverse-ssh service wrapper is created, which works very nicely. Using the new systemctl service is a nice improvement over the old initd scripts.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-09-09_feature_flag_based_android_app.html">
+    <h2 class="post-title">2021-09-09 - Feature flag based Android app</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What would it take to do an Android app that is modular and where each feature is controlled by a remote server feature flag?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Would I choose something like Firebase, AWS, or a custom server like Alfray or RDRR?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The data itself would likely be json or proto. We would want to have version capabilities.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Notions that become relevant are cold vs hot config, refresh times, networks caching. Also an ETag / checksum system could be used to only send diff/update and minimize network traffic.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-09-03_end_of_summer_project_b3.html">
+    <h2 class="post-title">2021-09-03 - End of Summer Project B3</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Time to end the summer project with Bearing B3. Steps needed:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Publish it!</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Check if I can update only the Installed version, without the “Instant” one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I do realize the Installed-vs-Instant doesn't make a lot of sense in this case due to the preference storage for the Waypoints list. When updating, any waypoints created with the Instant one will be lost.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Either way I’m likely to remove the Instant version as it’s mostly pointless here. It’s only here as an exercise...</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-28_train_motion_fatjar_vs_classpath_.html">
+    <h2 class="post-title">2021-08-28 - Train Motion: FatJar vs ClassPath?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the Train-Motion project, I have a fat jar gradle rule to package all the dependencies in a single jar.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To make it work, I had to create a “configuration” in gradle:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">configurations {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; canBeResolved = true</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; canBeConsumed = true</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; compileClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; testCompileClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; testRuntimeClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Then I use this configuration to include the dependencies:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">dependencies {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile project(":LibUtilsJava")</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "commons-cli:commons-cli:1.4"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacv-platform:1.5.3"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacpp-platform:1.5.3"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "uk.co.caprica:vlcj:4.7.1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.fasterxml.jackson.core:jackson-databind:2.10.2"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.squareup.okhttp3:okhttp:3.10.0"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.eclipse.jetty:jetty-server:9.4.29.v20200521"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.google.dagger:dagger:2.28"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile &nbsp;"com.google.auto.factory:auto-factory:1.0.1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">And finally a fatJar task collects these specific dependencies and packages them together:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">task fatJar(type: Jar) {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; manifest.from jar.manifest</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; classifier = "all"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; from {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; } {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.SF"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.DSA"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.RSA"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; with jar</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note that “runtimeCompile” is a superset of the “compile” configuration, and the artifacts can be found using configurations.compileClasspath.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That’s neat to create the needed single JAR. That jar is ~760 MB with all the OpenCV deps. And it takes an interminable 4 minutes to create the jar itself.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So now the question is whether I can avoid that. I don’t need to distribute the jar, so I'd be fine with crafting a specific command line with the needed classpath. Or even having a “gradle run” task that does not need the fat jar first.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-18_bearing_b3_features.html">
+    <h2 class="post-title">2021-08-18 - Bearing B3 Features</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now that we have a basic “marked locations” list in B3, it’s time to review the UI and adjust.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The goal was to do it in Kotlin, and that’s been done. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One issue was the “Marked Locations” wording, which seems problematic. Isn’t there something better… “waypoints” seem like a better name.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So let’s do a few changes:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Vocabulary:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “Location” is just a raw GPS location coordinate (latitude + longitude).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “Waypoint” is a location coordinate combined with a name.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Screen “Marked Locations” ⇒ “Waypoints”</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“Marked Location” ⇒ “Selected Waypoint”</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“Location N” ⇒ “Waypoint N”</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rename class Mark to Waypoint / Waypoints / WaypointsAdapter.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Screen “Compass”</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“Marked Location” ⇒ “Target Location”</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">(that should make it more obvious it’s the target of the bearing)</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Menu Recall / Edit ⇒ keep as-is for now.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We’ll keep the wording as “Location” (Target vs GPS) in the Compass screen.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-11_android_testing_androidx_and_7a1dff4e.html">
+    <h2 class="post-title">2021-08-11 - Android Testing : AndroidX “AndroidJUnit4” vs Robolectric</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I feel like a case of deja vu so I need to write this down.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Robolectric: simulating an Android runtime working on top of the JVM, local dev machine. No emulator needed.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Used to be simple and straightforward. Since Robolectric 4 and recent android gradle updates, some things have been deprecated / changed making it harder to use.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">AndroidX runner “AndroidJUnitRunner” tests which go in androidTest folder: run on device or emulator, and are essentially the modern version of the instrumentation tests.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Setup for gradle imports is highly modular. For ref:</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/training/testing/set-up-project" style="color:inherit;text-decoration:inherit">https://developer.android.com/training/testing/set-up-project</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">AndroidX runner “AndroidJUnit4” tests which go in androidTest folder: run on device or emulator too ⇒ the test folder name indicates which build rule is used and where the test runs.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">AndroidX runner “MockitoJUnitRunner” tests which go in the test folder: run on JVM.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This is provided by mockito-core and is basically a JUnit runner that also happens to auto-init all the @Mock instances. ⇒ Just a convenience over the usual Mock rule, no relation to Android framework.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How much of the Android framework can be used with that? ⇒ none</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Robolectric with AndroidX tests:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://robolectric.org/androidx_test/" style="color:inherit;text-decoration:inherit">http://robolectric.org/androidx_test/</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Use the “AndroidJUnit4” runner.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Confusing because nothing makes it clear these are Robolectric tests.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What I have done for Cab v2:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Build.gradle &gt; defaultConfig &gt; testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">ServersActivityTest:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">@RunWith(AndroidJUnit4.class)<br>@Config(application = TestMainApp.class)<br>ApplicationProvider.getApplicationContext()<br>ActivityScenario.launch(MainActivity.class)</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The cabv2 TestMainApp derives from the LegacyMainApp and replaces the IAppComponent by the ITestAppComponent for testing. That’s how test modules are injected in the app.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Since updating B3, I was getting errors:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“robolectric RuntimeException Method not mocked”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">They are “solved” by adding this to app gradle:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">testOptions &gt; unitTests &gt; &nbsp;returnDefaultValues = true</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Which in turn creates another error: “java.lang.ClassNotFoundException: android.content.res.ApkAssets”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Real solution: following </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/robolectric/robolectric/issues/4740" style="color:inherit;text-decoration:inherit">https://github.com/robolectric/robolectric/issues/4740</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The dumb solution is to remove the m2 robolectric cache so that it gets downloaded again.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-08_gradle_wrapper_maven_repo_of_72ce091b.html">
+    <h2 class="post-title">2021-08-08 - Gradle Wrapper + Maven Repo Offline caching</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://softwareengineering.stackexchange.com/questions/331817/self-contained-projects-gradle-maven-dependencies-offline" style="color:inherit;text-decoration:inherit">https://softwareengineering.stackexchange.com/questions/331817/self-contained-projects-gradle-maven-dependencies-offline</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This explains:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How to use an offline version of the Gradle wrapper.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How to use an offline version of a project’s Maven repo dependencies (cached once).</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-05_summer_project_bearing_kotlin.html">
+    <h2 class="post-title">2021-08-05 - Summer Project: Bearing + Kotlin</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Kotlin / rig4k is a good potential idea but really a project based around GDoc downloads &amp; APIs sounds like a painful thing to do in PA. It requires internet connection (duh). But also GDoc APIs are notorious to change each time I look at them, requiring even more research -- that is there’s the issue that I’d have to learn the “idiomatic kotlin” and the “idiomatic gdoc API” at the same time.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So instead, what about Bearing? It could be a good Kotlin candidate:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">No new API learning curve. The usual Android stuff, just done as Kotlin.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Can focus on Kotlin syntax &amp; such.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One option would be to rewrite the whole app in Kotlin, however… what’s the benefit?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Can just mix with the current version and add new stuff in Kotlin.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That is the addition would be a new fragment or activity for a mark list management, which is neatly self-contained.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-05_looking_back_at_bearing_b3.html">
+    <h2 class="post-title">2021-08-05 - Looking back at Bearing B3</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When I (re)created Bearing B3, I tried a few things:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “new” ABB (Android Bundle) mode.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Not a big fan but this is the way to go since Play will eventually make AAB mandatory in 2021 or 2022.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It was a good test and useful, and I shall keep it that way for distrib.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The new “instant vs installed” modes. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That was good learning to realize that instant creates some limitations, e.g. can’t bundle analytics stats with it.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Other than that, it makes the build config a bit more complicated by having 2 variants.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Overall it doesn’t bring much in terms of visibility. E.g. how many apps are installed vs run as instant? </span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">FirebaseAnalytics instead of GA.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Same difference?</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Need to constantly update the library… it’s obsolete again IIRC.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Work suggestions:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Remove the “instant” variant. Only keep the installed one.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What about google play? Can I remove the instant version there too?</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ update the “installed” version first and check if the “instant” can be removed from Play. If it does, then cleanup the “instant” build script + code.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Check updating of the Firebase library.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ That’s enough update needed to create the new installed variant.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0005.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0007.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

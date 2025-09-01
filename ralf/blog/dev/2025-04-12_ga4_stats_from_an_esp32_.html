@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2025-04-12_ga4_stats_from_an_esp32_.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="GA4 Stats from an ESP32?" />
+
+<meta property="og:description" content="At Randall, I’ll soon have the Distant Signal&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the CircuitPython&nbsp;script on the ESP32 to send pings to GA4." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="GA4 Stats from an ESP32?" />
+
+<meta name="twitter:description" content="At Randall, I’ll soon have the Distant Signal&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the CircuitPython&nbsp;script on the ESP32 to send pings to GA4." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="index.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2025-04-10_circuitpython_on_esp32_pysta_7694d270.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2025-04-12 - GA4 Stats from an ESP32?</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>At Randall, I’ll soon have the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span>&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://circuitpython.org/" style="color:inherit;text-decoration:inherit">CircuitPython</a></span><span>&nbsp;script on the ESP32 to send pings to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developers.google.com/analytics/devguides/collection/protocol/ga4" style="color:inherit;text-decoration:inherit">GA4</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The goal is to measure the “uptime” of the display. The display is working when it is able to receive messages from the MQTT server. It can receive them when it can connect to the wifi. Thus we want to track the wifi state, or some kind of proxy for it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Since this is CircuitPython, we have </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries" style="color:inherit;text-decoration:inherit">AdaFruit libraries</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to already deal with JSON and network.</span></p>
+<p style="text-align:left"><span>So really “all” I need is something similar to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/common/src/main/java/com/alflabs/conductor/util/Analytics.java" style="color:inherit;text-decoration:inherit">Analytics class in Conductor 2</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Queue stats to be sent.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Stats are sent as JSON payloads.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">POSTs can fail, in which case they need to be retried with a backoff delay.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ Obviously a “wifi lost” event would have no wifi to send the stat.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Do I need to put a real date/timestamp in the events?</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ These ESP32 don’t have a “date” clock, so it’s nice if I don’t have to.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There’s an NTP library which I’ve used on the LitterTimer experiment but it makes the logic more complicated since we need to expect that the device may not have wifi.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>So what do we need to do </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag" style="color:inherit;text-decoration:inherit">custom pings to Google Analytics 4</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “GA4_CLIENT_ID”, typically configured in settings.toml</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “GA4_MEASUREMENT_ID”, also configured in settings.toml</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “GA4_API_SECRET”, also configured in settings.toml</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The feature is disabled if either of these settings is missing.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Placing them in setting.toml avoids leaking these in any GIT source, and it makes it easier to configure a new panel.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">See below on where to find these.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A base URL:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>https://www.google-analytics.com/debug/mp/collect</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; -- debugging version</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>https://www.google-analytics.com/mp/collect</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -- real pings version</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The POST URL is:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">%(base)s?api_secret=%(GA4_API_SECRET)s&amp;measurement_id=%(GA4_MEASUREMENT_ID)s</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">POST mime type: text/plain</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Payload is JSON, and is used as such in Conductor:</span></li>
+</ul>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'client_id': GA4_CLIENT_ID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'events': [ {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'name': event_action ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'params': {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'items': [ ] ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'value' : value_int ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'currency' : USD <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]<br>}</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.circuitpython.org/projects/requests/en/latest/examples.html" style="color:inherit;text-decoration:inherit">AdaFruit “requests” library</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is the simplest way to send a POST request. It accepts either a JSON (using a Python dictionary) or a string payload.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When POSTing to the debug URL, print the response.status_code and the response.content.decode() to get valuable information on why requests fail.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>When POSTing to the real ping version, the GA server replies with 204 (Success w/ No Content) and a complete lack of response body.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some details on the JSON payload:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The only required field is really the event’s name.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “currency” is only needed if there’s a value, which is an optional field.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s possible to provide a date in YYYY-MM-HH-mm-ss to “back timestamp” an event. This is useful when doing some kind of retries with an exponential back-off. However the ESP32 does not have the current date time -- that would require adding an NTP library and corresponding calls to initialize it. Possible, yet extra work for little benefit.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Example of usage for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">GA3 used to have an event with fields “category, “action”, “label” that formed a nice hierarchy. GA4 simplified all that and removed these fields. The only event field is “name”. Custom fields are possible yet they add setup complexity, processing delay, and other complications.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>We need to pass in some kind of “panel id”, to differentiate multiple </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;panels, and some events need to have a parameter that is a string. However the “value” field in the event is really a “currency value” and as such is only a number. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The GA4 event name can </span><span style="font-style:italic">only</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;be alphanumeric and underscore.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A simple solution is to adopt a pattern for the name:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“&lt;turnout&gt;__&lt;category&gt;_&lt;action&gt;___&lt;extra&gt;”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The schema would become:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-weight:700">Event Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Value &nbsp; &nbsp; &nbsp;Description</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt"><br>&lt;ID&gt;__wifi_connected &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;rssi&gt; &nbsp; &nbsp; WiFi connected<br>&lt;ID&gt;__wifi_hb &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;rssi&gt; &nbsp; &nbsp; WiFi heart-beat<br>&lt;ID&gt;__mqtt_connected &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;rssi&gt; &nbsp; &nbsp; MQTT connected callback<br>&lt;ID&gt;__mqtt_disconnected &nbsp; &nbsp; &nbsp; &nbsp;&lt;rssi&gt; &nbsp; &nbsp; MQTT disconnected callback<br>&lt;ID&gt;__msg_script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n/a &nbsp; &nbsp; &nbsp; &nbsp;MQTT “script” message received<br>&lt;ID&gt;__msg_turnout___&lt;state&gt; &nbsp; &nbsp;n/a &nbsp; &nbsp; &nbsp; &nbsp;MQTT “turnout/state” message received<br>&lt;ID&gt;__msg_block___&lt;block&gt; &nbsp; &nbsp; &nbsp;1 or 0 &nbsp; &nbsp; MQTT “block/state” message received</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Explanation:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The point of the wifi / MQTT messages is to also convey the state of the wifi.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We do that by passing the wifi RSSI (signal strength) as a value to graph it over time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We don’t have a callback when the wifi is lost, nor could we send a ping to GA4 (since there would be no network, duh). Instead we’ll use a heart-beat, say every 15 minutes or every 30 minutes. I don’t need much more granularity than that.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The MQTT library has its own heart-beat and thus can call a “disconnected” callback. That can happen due to lack of wifi (in which case we won’t receive the event), or due to the MQTT broker server being offline. Consequently, we shall treat that event as unreliable. A good proxy for it is the MQTT “connected” event -- by definition it happens when the network is up, and it happens once at startup and then once after each disconnection.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>My main goal is currently to track the wifi health, but let’s future proof it by also sending pings for the obvious core task of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, which is to process the MQTT messages.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “turnout” message selects a state, which is a string. Thus we cannot place it in the “value” field of the GA4 payload (it’s a currency, really). Instead we’ll sanitize it and append it to the event name, making it easier to split/extract later if needed.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “block” message has 2 values: the block name, and its state. The state can easily be converted to a value (1 for ‘active’, 0 for ‘inactive’), and the block name can be sanitized and appended to the event name.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using this pattern, we can use get these in the graphs using custom filters:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“starts with PanelID__” to filter specific panels.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“contains -mqtt_dis” to filter specific categories/actions.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Filter “everything after ___” to display a table with turnouts/blocks changes.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">Configuring Google Analytics</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now we need to set up GA and “prime” it to make this all work.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Head to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://analytics.google.com/" style="color:inherit;text-decoration:inherit">Google Analytics</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;web site.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Create an Account if you don’t have one, or use an existing one. We don’t need its ID.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using the Admin toolbar on the left, create a Property.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>If asked what type of property you need, make sure to select a </span><span style="font-style:italic">web property</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. That’s important.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Give it some dummy base URL, something that belongs to you. We won’t be using that URL anyway. I typically select &lt;my web site/my project name&gt; even if there’s no such web page.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Under Data settings, select the Data Stream that has been created when creating the new Property. That’s the key to use the Measurement API. If you were using an existing property, you might want to add a new Data Stream to separate things. The point is that the Data Stream has to be a “web” one.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Enter the “Web stream details” screen. This gives us what we need:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">GA4_CLIENT_ID is named the “Stream ID” on this page. IIRC “client id” is the old nomination under GA3, and GA4 refers to it as a “stream ID” in the configuration pages, whilst the JSON payload keep the old name of “client_id”. Same stuff. It looks like a large int64 number.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">GA4_MEASUREMENT_ID is the “Measurement ID” on this page. It’s the “G-&lt;letter&gt;” code that we use in the gtag.js block.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Down in the “Web stream details” screen, select the “Measurement Protocol API secrets” and create a new one. The secret values goes in GA4_API_SECRET.</span></li>
+  </ul>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Now at this point, I typically run everything using the debug POST URL and check the server’s response and fix issues as reported. A typical issue is that I always forget that the event name must be </span><span style="font-style:italic">only</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;alphanumeric and underscore, and I often start with some more fancy event names that I need to simplify.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The second point is that at first nothing will work. POSTs will properly return a 204 indicating they are accepted, yet no stats are visible in the GA4 dashboard, and the Admin page has a cryptic message about “no data received in past 48 hours”. The fix is that data collection needs to be “initialized” by sending at least some successful pings from a real web page using the proper gtag.js library.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">On a web server you own, create a new page. I typically match the one used for the stream URL.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Copy paste the Google tag Javascript using the link at the bottom of the “Web stream details” page.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Load that page to execute the google tag with your measurement ID in it.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Don’t forget to disable any ad blocker you’d have since they may be blocking the Google Analytics pings in the first place!</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">After a while, you should see the “Web stream details” having a green banner at the top with “Data collection is active in the past 48 hours”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-style:italic">However at first, it will still display “no data” for a while</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. That page is really misleading, and instead you want to use the “home” button in the left toolbar, and that should indicate “your data collection is active”, with hopefully something in the “active users in the last 30 minutes”. Clicking the “View Realtime” link should show more. That’s progress yet it’s a bit early, and as the disclaimer indicates on the page, you will likely find no data if you try to create a custom dashboard right away. </span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Generally speaking, one major change from GA3 to GA4 is the major loss of “realtime” processing in the dashboards. Whilst the GA page can display some “real time” data in the one pre-made existing “Realtime overview” dashboard, that’s about it. I find that custom dashboards never have real time data. The processing delay seems to be at least 12 hours, especially if you use the GA connector for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://lookerstudio.google.com/" style="color:inherit;text-decoration:inherit">Google Looker Studio</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2025-04-10_circuitpython_on_esp32_pysta_7694d270.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

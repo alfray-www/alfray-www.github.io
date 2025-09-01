@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2024-10-06_piface_on_raspberry_pi_4_wit_a6ef1f7e.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="PiFace on Raspberry Pi 4 with Linux Kernel 6.x" />
+
+<meta property="og:description" content="Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="PiFace on Raspberry Pi 4 with Linux Kernel 6.x" />
+
+<meta name="twitter:description" content="Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0001.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-11-09_rig4j_addressing_pagination.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-09-15_analysis_droidvnc-ng_vnc_server.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2024-10-06 - PiFace on Raspberry Pi 4 with Linux Kernel 6.x</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The first (unexpected) change is that we can’t use PIP to install packages in the system-wide Python provided by the Debian install. Instead a virtual env is enforced to ensure such packages do not break the entire system.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>There is apparently a flag “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3" style="color:inherit;text-decoration:inherit">pip --break-system-packages</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">” that works around that check, and interestingly that option is not in the man page.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For a quick test, there’s some value in using a virtual env folder that I’m going to trash later.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The next realization is that none of the stuff works anymore:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Error “No such file or directory: '/sys/class/gpio/gpio25/value” </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">On an RPi 1, that means the user is not part of the group “gpio”.</span></p>
+<p style="text-align:left"><span>Here it is apparently due to the fact that the GPIO driver has been changed and the “sysfs” paths are no longer valid. Fun. The core issue seems to be with GPIO interrupts here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py" style="color:inherit;text-decoration:inherit">https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>This describes the (now deprecated) sysfs interface: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt" style="color:inherit;text-decoration:inherit">https://www.kernel.org/doc/Documentation/gpio/sysfs.txt</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Translating these:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The old way was to “echo 25 &gt; /sys/class/gpio/export”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That would make create/expose “/sys/class/gpio/gpio25/” at which points the pseudo files for direction etc could be used.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">However:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Instead now we have /sys/class/gpio/gpiochip512/base (512) + /sys/class/gpio/gpiochip512/ngpio (58) which means this </span><span style="font-style:italic">controller</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;handles gpio’s in the range 512..up to 570 excluded. Then there’s “gpiochip570” which has base=570 and ngpio=8.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“$ gpioinfo | grep 25” ⇒ this lists all the pins and we can find that “GPIO25” is actually #25 (from 0-base) on that gpiochip0 which is actually the giochip512 above.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">512 + 25 = 537… so that’s the new “sysfs” number for GPIO25.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ echo 537 | sudo tee /sys/class/gpio/export</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ And that makes “/sys/class/gpio/gpio537/” appear.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Thus in essence all we need is to “translate” the old GPIO number to the new sysfs numbers. Even though the sysfs interface is deprecated, it seems to still be present and should likely work as usual.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Considering that </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py#L17" style="color:inherit;text-decoration:inherit">https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py#L17</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;only seems to access one pin (GPIO25) this way and that we don’t need to be generic, it seems to me like a little fork of that project to rename the number to 537 would be just good enough for my needs. Let’s try that.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Here’s my fork with this change:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ralfoide/pifacecommon" style="color:inherit;text-decoration:inherit">https://github.com/ralfoide/pifacecommon</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and the documentation on how to use it:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"># Create a new Python Virtual Environment</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ python3 -m venv my_piface</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ cd my_piface</span></p>
+<p style="height:12pt;margin-left:36pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"># Install PiFaceCommon from a locally checked out source</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ git clone https://github.com/ralfoide/pifacecommon.git</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ bin/pip3 install pifacecommon/</span></p>
+<p style="height:12pt;margin-left:36pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"># Install PiFaceDigitalio from the repository</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ bin/pip3 install pifacedigitalio</span></p>
+<p style="height:12pt;margin-left:36pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"># Try one of the examples</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ git clone https://github.com/piface/pifacedigitalio.git</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ bin/python3 pifacedigitalio/examples/presslights.py</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-11-09_rig4j_addressing_pagination.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-09-15_analysis_droidvnc-ng_vnc_server.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0003.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="R’alf Dev Log" />
+<meta property="og:description" content="Back there on the RIG 4 Spec [Idea] project page, I have a different angle for a rewrite of Rig4." />
+<meta property="og:image"       content="http://www.alfray.com/ralf/blog/dev/img_673fbb030272c01233bd80c03a06b5c0324fce61192038e863fd5a48ce27f759i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="R’alf Dev Log" />
+<meta name="twitter:description" content="Back there on the RIG 4 Spec [Idea] project page, I have a different angle for a rewrite of Rig4." />
+<meta name="twitter:image"       content="http://www.alfray.com/ralf/blog/dev/img_673fbb030272c01233bd80c03a06b5c0324fce61192038e863fd5a48ce27f759i.jpg" />
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0003.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0002.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0004.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-06-09_rig4j_needs_a_rewrite.html">
+    <h2 class="post-title">2023-06-09 - Rig4j Needs a Rewrite</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Back there on the RIG 4 Spec [Idea] project page, I have a different angle for a rewrite of Rig4.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The summary is that the current version of Rig4j is still running the “early experiment”. Code base was mostly “feasibility”. When exploring the Rust-based Rig4r, I realized it would be better structured by separating the gdoc functionality from the “rig” generator functionality: one tool does the gdoc fetching, and then Rig works on purely local files.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The new angle is that the gdoc fetching should actually generate izu files, by parsing the gdoc html exports and rewriting them as izu/markdown text files. There would be some limitations on the format. Not all the formatting would make it through.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This would also involve looking at the format I use in the train blog, making an exhaustive list of features used, and try to match some level of parity. Luckily I don’t use too much stuff, but tables seem like they could be tricky, and I’d also want to support the linkable TOCs and their existing hrefs. Some things like usage of titles in article pages did not exist in izu.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I may also want to consider dropping my izu format, and focus on “official” markdown.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I can probably fairly simply translate old izu pages to markdown if such support is needed.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">OTOH it would solve one of the current problems, namely that the page format is dictated by the gdoc html export, and that has been known to change substantially over the time. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The end goal is to not have such a strong dependence on gdoc. That makes gdoc merely a convenience to more easily write the izu files, and then the izu files become the “source of truth” that I need to backup.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-06-07_rig4j_this_file_is_too_large_389f9203.html">
+    <h2 class="post-title">2023-06-07 - Rig4j: "This file is too large to be exported."</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This is new:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">java.lang.RuntimeException: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">{</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; "code" : 403,</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; "errors" : [ {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "domain" : "global",</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "message" : "This file is too large to be exported.",</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "reason" : "exportSizeLimitExceeded"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; } ],</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; "message" : "This file is too large to be exported."</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.gdoc.GDocHelper.lambda$getGDocAsync$0(GDocHelper.java:491)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.struct.GDocEntity.getContent(GDocEntity.java:54)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.blog.BlogGenerator.parseSource(BlogGenerator.java:135)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.blog.BlogGenerator.parseSources(BlogGenerator.java:120)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.blog.BlogGenerator.processEntries(BlogGenerator.java:69)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.exp.Exp.start(Exp.java:60)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.EntryPoint.main(EntryPoint.java:53)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">As usual, that makes me reconsider my dependency on the GDrive API.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-06-04_davinci_fusion_fuse.html">
+    <h2 class="post-title">2023-06-04 - DaVinci Fusion Fuse</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Here’s the end result of the Fuse to perform image removal on my train videos:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/alf-labs/lightworks/src/master/fusion/fuses/RalfCamCarRodRemoval.fuse" style="color:inherit;text-decoration:inherit">https://bitbucket.org/alf-labs/lightworks/src/master/fusion/fuses/RalfCamCarRodRemoval.fuse</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and here’s an example of the result:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html" style="color:inherit;text-decoration:inherit">https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:228.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_673fbb030272c01233bd80c03a06b5c0324fce61192038e863fd5a48ce27f759i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-05-21_lua_optimization_tips.html">
+    <h2 class="post-title">2023-05-21 - Lua Optimization Tips</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.lua.org/gems/sample.pdf" style="color:inherit;text-decoration:inherit">https://www.lua.org/gems/sample.pdf</a></span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Locals are faster to access than globals. Copy globals to locals especially for loop access.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Tables are composed of an array (storing integer keys from 1..n) and a hash map for any other keys.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-05-17_davinci_fusion_plugin.html">
+    <h2 class="post-title">2023-05-17 - DaVinci Fusion Plugin</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How to write a Fusion video effect plugin?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>This </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://video.stackexchange.com/questions/30864/looking-to-write-a-davinci-resolve-plugin" style="color:inherit;text-decoration:inherit">SO answer</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;leads to “we suck less” (aka WSL), and “eyeon”.</span></p>
+<p style="text-align:left"><span>That last name “eyeon” is the company which </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.premiumbeat.com/blog/why-you-should-care-about-blackmagics-acquisition-of-eyeon-fusion/" style="color:inherit;text-decoration:inherit">originally created Fusion before being acquired</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;by BlackMagic to integrate it in DaVinci Resolve.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.steakunderwater.com/wesuckless/" style="color:inherit;text-decoration:inherit">https://www.steakunderwater.com/wesuckless/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is the place to find a community behind plugins.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">API should be available via Help &gt; Documentation &gt; Developer. There’s a PDF IIRC.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An older version (Fusion 8, 2016) can be found here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://documents.blackmagicdesign.com/UserManuals/Fusion8_Scripting_Guide.pdf" style="color:inherit;text-decoration:inherit">https://documents.blackmagicdesign.com/UserManuals/Fusion8_Scripting_Guide.pdf</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Scripting:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“FusionScript”, to be used either in Lua or Python.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Uses LuaJIT for performance. Lua is the preferred choice.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Choice of Python 2 or 3.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Fuses:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">OpenCL for tools &amp; filters</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Scripts:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Composition scripts (a “composition” is a full Fusion document)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Tool scripts (for a “single tool” aka a single node?)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Bin scripts (as in “media bin”)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Utility scripts (act on Fusion itself)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Script libraries (scriptlib, used by other scripts)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">External command-line script which can act on a composition.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Event scripts.</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Composition callbacks (load, save, render, etc)</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Button callbacks (for UI)</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">InTool scripts (executed when evaluating each frame)</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Fuses has its own SDK documentation:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://documents.blackmagicdesign.com/UserManuals/Fusion_Fuse_SDK.pdf?_v=1658361162000" style="color:inherit;text-decoration:inherit">https://documents.blackmagicdesign.com/UserManuals/Fusion_Fuse_SDK.pdf?_v=1658361162000</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Locally as “Fusion Fuse Manual.pdf” in C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Fusion Fuse</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Plugin types: </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Image Processing, with inspector and onscreen crosshair.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Metadata processing.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Modified plugins (affects number inputs)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">View LUT plugins.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using Lua with LuaJIT.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What I’d use is an Image Processing “Tool” plugin.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Plugin has code to register its name.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Code to register inputs (UI controls) but also Image input/output.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Callback NotifyChanged when UI controls change (e.g. to adjust UI).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Callback Process to process an image and compute an output.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Native methods that apply to the entire image:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">ColorMatrixFull (RGBA offset, scale, etc)</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">RGBA Color Gain, Gamma, Saturate.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Color Space conversion (RGB, HSV, etc)</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Clear/Fill</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Channel operations on 1 image with + - * / and RGB coefficients.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Channel operations on 2 images with RGB fg vs bg: Copy, Add, Multiply, Subtract, Divide, Threshold, And, Or, Xor, Negative, Difference.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Transform or Merge (center, pivot, size, angle, edge wrapping)</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Crop, Resize</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Blur (also for Glow)</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pixel Processing : create functions that take pixels from 2 images and return the resulting pixel. </span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Functions are “pre declared” and stored in an array, then used in Process.</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Processing has 8 channels: 4x RGBA and 4x Bg-RGBA (I guess for the background?)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Shapes: created using MoveTo/LineTo + matrix operations then filled and merged with image.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Text overlays: font management, then draw as shapes.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Per-pixel processing using for y/for x/getPixel/setPixel.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">DCTL (DaVinci Color Transform Language) &nbsp;is a shader-style processing.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">C-like syntax, operates om x,y individual pixels.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Converted to GPU as needed.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Transform DCTL to change color data in one image.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Transition DCTL to compute transition between two images.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">OpenFX</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">C/C++ shader with VS.Net SLN project.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some example of Fuses here:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.steakunderwater.com/VFXPedia/96.0.243.189/index8be6.html?title=Eyeon:Script/Reference/Applications/Fuse/Example_Fuses#Example_Fuses" style="color:inherit;text-decoration:inherit">https://www.steakunderwater.com/VFXPedia/96.0.243.189/index8be6.html?title=Eyeon:Script/Reference/Applications/Fuse/Example_Fuses#Example_Fuses</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-05-16_video_camera_object_removal.html">
+    <h2 class="post-title">2023-05-16 - Video Camera Object Removal</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Filming trains with the video car pulled by my “extended” coupler leaves that coupler visible on screen. It’s a tad distracting.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One question I had is: Can I write a Fusion plugin that would “erase” this object?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Let’s look at the obvious part: how would I erase this object?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We can split the problem in two: how to detect the object, and how to erase it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">First, the “coupler” appears as a gray-ish rectangle. It always touches the bottom edge of the screen and extends upwards. It’s roughly centered horizontally, but can move left and right as the train takes on curves. If we had to modify a movie frame by frame, one optimization would be on a given frame the coupler will very close to its position in the previous frame.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The coupler is more or less a vertical rectangle.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">If we were operating as a plugin in Fusion, ideally we could use a 2d ui crosshair to define its initial position, but we would also have to deal with the fact it moves slowly from frame to frame, and tracking would be ideal.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">If we were operating as command-line script without UI, the initial position could be given as parameters.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Its width is constant. It tapers as it gets farther from the camera, but overall we could parametrize the max/min width we are looking for -- e.g. what looks like a vertical gray box of W pixels wide and at least H pixels height starting from the bottom of the screen, roughly centered?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">If we have a UI giving us a starting pixel position, we can use a basic flood algorithm to detect the boundaries.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When looking at a still image capture, the coupler edges are naturally fuzzy. We cannot expect a stark transition between the coupler and its background. However we can parametrize this, as typically the fuzzy border will have a predictable width.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Although the coupler is mostly of the same gray color, that color can vary depending on illumination, not to mention tunnels, and there’s bound to be shade variation across the length of the object.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One option is to look at the image in HSL -- the coupler being gray should not have a hue.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Assuming we can detect the coupler, how do we “erase” it?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One suggestion is to treat the coupler as a mask of width W:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Shift the image horizontally left and right by W pixels.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Merge this over the coupler using an averaging algorithm.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using the luminance as the coefficient to merge it.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Assuming this works for one image, the obvious concern is how will it look once applied to a 30 fps movie? We may need to do some temporal averaging -- that is apply a percentage of the last frame to smooth the output.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Implementation wise, why kind of framework would be used?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One option is to make a standalone processing app, either in Java/Kotlin/C++, with its own movie decoding + UI rendering. The input movie decoding would take advantage of either ffmpeg or vlc as libraries or avcodec on linux. Similarly this can write a movie result on the fly.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In this mode, we would convert a raw footage upfront -- cam files ar 10 minutes long.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other option is to use a Fusion plugin as the framework -- in this case Fusion provides the input and the output. Debugging seems potentially more challenging this way. The Fuse SDK doc indicates the Lua code can be reloaded “live” to ease debugging. This has the side benefit that we can judge performance immediately, and that we can take advantage of the fuse UI widgets to e.g. select the initial position to look at or to select some parameters (width, blending, etc).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In this mode, we could apply the tool to only the segments being rendered in the final production rather than on the entire raw footage.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One thing I don’t see in the Fuse SDK is a way for a “tool” to incrementally operate across frames in an animation. We want to do some basic tracking of the coupler position, and it would be nice if it could be automated. The other option is to simply animate the initial position, and/or to use a planar tracker to define it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-02-24_mqtt.html">
+    <h2 class="post-title">2023-02-24 - MQTT</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Just leaving this here to explore it later: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html" style="color:inherit;text-decoration:inherit">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Guides:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/alltheiot-protocols/mqtt" style="color:inherit;text-decoration:inherit">https://learn.adafruit.com/alltheiot-protocols/mqtt</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-mqtt-device-to-device" style="color:inherit;text-decoration:inherit">https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-mqtt-device-to-device</a></span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Spec for MQTT v5:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html" style="color:inherit;text-decoration:inherit">https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html</a></span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This would be useful for SDB: make it an MQTT client.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But potentially that can be useful for other projects.</span></p>
+<p style="text-align:left"><span>For example, my current layout stats from Randall are sent via very </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">hackish</span><span>&nbsp;REST post (</span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">hackish in the sense it’s received via a BASH CGI</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;:-p ⇒ not anymore, it’s a CGI py), and it may be better served by using this protocol: e.g. Conductor sending events to home via broker/gateways, and I'd want to better understand the possibilities.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">From the adafruit guide above:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An </span><span style="font-weight:700">MQTT broker</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is a “stable” node to which (potentially ephemeral) MQTT clients connect. It’s basically the “local server” of a bunch of clients.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Brokers typically have their own local database but they do not have to.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An </span><span style="font-weight:700">MQTT client</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is any end-point sending or receiving messages.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">Publish</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: A client sends a message to a broker.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">Subscribe</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">: A client receives messages from a broker.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A client keeps an open connection to a broker. The connection open/close is lightweight enough that it can be beneficial to open/close it when needed.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">MQTT messages have a fairly lightweight header, designed for lightweight payloads.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The protocol is mostly transport-agnostic.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The spec above recommends TCP, TLS, or WebSockets, and recommends avoiding UDP due to lack of ordering guarantee.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">QOS: 0=at most once delivery, 1=at least once delivery, 2=exactly once delivery.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Messages are sent to “</span><span style="font-weight:700">topics</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”: a hierarchical string e.g. /root/part1/…/partn.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Concrete example: /building1/sensors/floor1/division2/temperature.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Subscription can be done using wildcards: + for any given part, and # for “anything till the end”.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Topics should be carefully defined upfront, as changing the schema later is not trivial especially with regards to wildcard subscriptions.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An </span><span style="font-weight:700">MQTT gateway</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is a client/bridge translating data from sensors to MQTT messages (example: sensor ⇔ RF/BLE ⇔ gateway ⇔ MQTT messages ⇔ &nbsp;broker).</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">MQTT Libraries</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Comprehensive list of brokers/clients here </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mqtt.org/software/" style="color:inherit;text-decoration:inherit">https://mqtt.org/software/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ Note that most of the time I want a “client” and not a “broker” (server).</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ESP-IDF has </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html" style="color:inherit;text-decoration:inherit">ESP-MQTT</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/arduino-libraries/ArduinoMqttClient" style="color:inherit;text-decoration:inherit">ArduinoMqttClient</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.eclipse.org/paho/index.php?page=clients/java/index.php" style="color:inherit;text-decoration:inherit">Eclipse Paho MQTT Client</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;Java library.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.mqttv5.client/1.2.5" style="color:inherit;text-decoration:inherit">https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.mqttv5.client/1.2.5</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;⇒ Last updated in 2020, seems dead in Java?</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/" style="color:inherit;text-decoration:inherit">Eclipse Mosquitto</a></span><span>&nbsp;open source broker: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/" style="color:inherit;text-decoration:inherit">https://mosquitto.org/</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Part of Debian or RPi packages. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/download/" style="color:inherit;text-decoration:inherit">https://mosquitto.org/download/</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Mosquitto public “test” broker: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://test.mosquitto.org/" style="color:inherit;text-decoration:inherit">https://test.mosquitto.org/</a></span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Moquette : Java MQTT “lightweight” broker </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/moquette-io/moquette" style="color:inherit;text-decoration:inherit">https://github.com/moquette-io/moquette</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note that most MQTT brokers try to be “comprehensive” with persistence support built on top of some database; there are very very few light Java libraries brokers.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Apache ActiveMQ: a broker and a client.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://activemq.apache.org/version-5-getting-started.html" style="color:inherit;text-decoration:inherit">https://activemq.apache.org/version-5-getting-started.html</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mvnrepository.com/artifact/org.apache.activemq/activemq-client" style="color:inherit;text-decoration:inherit">https://mvnrepository.com/artifact/org.apache.activemq/activemq-client</a></span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>HiveMQ MQTT Client - </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/hivemq/hivemq-mqtt-client" style="color:inherit;text-decoration:inherit">https://github.com/hivemq/hivemq-mqtt-client</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That looks fairly used, recent, instantly documented in the README with no need to go fishing around.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mvnrepository.com/artifact/com.hivemq/hivemq-mqtt-client" style="color:inherit;text-decoration:inherit">https://mvnrepository.com/artifact/com.hivemq/hivemq-mqtt-client</a></span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-31_diy_esp32_mount_hardware_design.html">
+    <h2 class="post-title">2023-01-31 - DIY ESP32 Mount/Hardware Design</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some interesting things here:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.mrhmag.com/post/an-operating-steam-throttle-you-can-customize-12548356?&amp;trail=25" style="color:inherit;text-decoration:inherit">https://forum.mrhmag.com/post/an-operating-steam-throttle-you-can-customize-12548356?&amp;trail=25</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I don’t care about the “steam throttle” part. What I do care is this is using:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A 3d printed case.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">An ESP32 and other arduino-like accessories, such as OLED screens, buttons, etc.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I realize I can use a principle like that for my own contraptions. For example for the ToF sensor for the Software Defined Blocks [research] project, I was wondering whether I should solder pin headers on the sensors and the ESP32 to use. The headers make it easier to prototype, but then they expose contacts that I may not want exposed during the real application -- and once soldered, the headers are impossible to remove neatly.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So here’s what I could be doing:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">3d print my own case / support.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In there, have holes for the pin headers.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This would support the part in the direction I want.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Just solder connections on the back on the appropriate pins.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Or use Dupont connectors.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The soldering can also help hold the part in place.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s still possible to unsolder and remove the part.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other option I had used before (for the motion sensor at Randall) was to use Dupont connectors for all the usable pins. That can also be worked in the 3d print to make room for only what I need, helping connect to the right pins.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Finally, for something like Software Defined Blocks [research], I’d want the sensor encased in a little box mimicking a railroad “trackside equipment house”, whatever that thing is called. It can just be a 3d printed rectangular box with a slanted root, painted in gray. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.hobbylinc.com/blms-modern-medium-electrical-box-large-ho-scale-model-railroad-trackside-accessory-4312" style="color:inherit;text-decoration:inherit">Example 1</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. These are called “electrical cabinet”, or “equipment house”, “relay house”, etc.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-29_vscode_and_terminal_and_cygwin.html">
+    <h2 class="post-title">2023-01-29 - VSCode and Terminal and Cygwin</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">VSCode &gt; Terminal &gt; use “v” icon &gt; Terminal Settings</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">or</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">VSCode &gt; File &gt; Preferences &gt; Settings (Ctrl + ,)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Scroll to Features &gt; Terminal &gt; Integrated &gt; Automation Profile: Windows (or Linux)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“Edit in settings.json” → creates C:\Users\%USER%\AppData\Roaming\Code\User\settings.json</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the JSON section:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">replace by:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "terminal.integrated.shell.windows": "C:\\cygwin64\\bin\\bash.exe",</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "terminal.integrated.shellArgs.windows": [</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; "--login",</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; "-i"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; ],</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; "terminal.integrated.env.windows": {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; "CHERE_INVOKING": "1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; },</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Try it with Ctrl-` (or Terminal &gt; New)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Also copy that in the workspace profile rather than the user-wide profile.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note that this method is deprecated as now there are “terminal profiles” but it still works.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-29_esp32_variants_available.html">
+    <h2 class="post-title">2023-01-29 - ESP32 Variants Available</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I have 3 types of ESP32 hardware available around:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="font-weight:700">HelTex WIFI_Kit_32</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, an ESP32 with Wifi/BT and an OLED screen (I2C).</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IDF config: CPU freq 240 MHz, XTAL 26 MHz, SPI flash 4 MB (no RAM), internal SRAM 520 kB.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Features: USB serial CP2101, Wifi, BT, OLED (cannot be removed), battery plug.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Does NOT have: sdcard. No SPIRAM.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="font-weight:700">ESP32-CAM</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, an ESP32 with Wifi/BT, sdcard, camera.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">IDF config: CPU freq 240 MHz, XTAL 40 Mhz, SPIRAM 4MB (on SPI bus), SPI flash 4 MB (no RAM), internal SRAM 520 kB.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Features: Wifi, BT, OV2640, sdcard (shared with onboard LED!).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Does NOT have: USB serial, no OLED. Requires FTDI for access/program</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3QLqvZ5" style="color:inherit;text-decoration:inherit">ESP-32S</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;…Should have similar specs to the HelTek Wifi Kit 32, without the OLED or sdcard or camera. It has a micro USB and a CP2102 UART. The ESP-WROOM-32 is listed as having a XTAL 40 Mhz in the Espressif docs.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Features: USB serial (CP2102), Wifi, BT.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Does NOT have: No sdcard. No OLED. No SPIRAM.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0002.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0004.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

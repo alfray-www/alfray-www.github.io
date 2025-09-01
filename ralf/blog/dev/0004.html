@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0004.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="R’alf Dev Log" />
+<meta property="og:description" content="TinyGo is not ready, and Rust is a crappy language." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="R’alf Dev Log" />
+<meta name="twitter:description" content="TinyGo is not ready, and Rust is a crappy language." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0004.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0003.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0005.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-28_esp32_rust_vs_tinygo_are_both_no-go.html">
+    <h2 class="post-title">2023-01-28 - ESP32: Rust vs TinyGo are both no-go</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">TinyGo is not ready, and Rust is a crappy language.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">TinyGo</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So first let's have a look at TinyGo. </span></p>
+<p style="text-align:left"><span>This seems promising: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tinygo.org/docs/concepts/faq/what-about-esp8266-esp32/" style="color:inherit;text-decoration:inherit">https://tinygo.org/docs/concepts/faq/what-about-esp8266-esp32/</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“As of September 2020, we now have support for the ESP32 and ESP8266 in TinyGo!”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">OK but below we find they support 2 boards: a “mini32” and an ESP8266 NodeMCU.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>They also explain that they get their </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/posborne/cmsis-svd/blob/master/data/Espressif-Community/esp32.svd" style="color:inherit;text-decoration:inherit">ESP32 device definitions from the Rust esp-rs project</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, which recreates them from the ESP-IDF source. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">No idea what a “mini32” is but it’s based on an ESP32 so it may work for us?</span></p>
+<p style="text-align:left"><span>We can find this: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/LilyGO/ESP32-MINI-32-V1.3" style="color:inherit;text-decoration:inherit">https://github.com/LilyGO/ESP32-MINI-32-V1.3</a></span></p>
+<p style="text-align:left"><span>It’s not clear which ESP32 CPU that covers, so it </span><span style="font-style:italic">may</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;work with my modules. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But we have a bigger problem:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tinygo.org/docs/reference/microcontrollers/esp32-mini32/" style="color:inherit;text-decoration:inherit">https://tinygo.org/docs/reference/microcontrollers/esp32-mini32/</a></span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">SPI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ TinyGo Support = Yes.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>I2C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ TinyGo Support = </span><span style="font-weight:700">Not Yet</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Wifi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ TinyGo Support = </span><span style="font-weight:700">Not Yet</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That makes it… pointless. At least for now.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/tinygo-org/tinygo/blob/release/src/machine/i2c.go" style="color:inherit;text-decoration:inherit">https://github.com/tinygo-org/tinygo/blob/release/src/machine/i2c.go</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is the implementation of the i2c interface for machines. I note the file is prefixed by “//go:build atmega || nrf || sam || stm32 || fe310 || k210 || rp2040”. Clearly esp32 is not in the list.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">From what I can see, the doc is up-to-date and that I2C is really not supported on their ESP32 port yet. It’s worth noting that none of their projects support an embedded wifi driver like the ESP32 contains. They have the usual “Arduino Wifi via UART with AT commands” support, which is not at all the same thing as it does not imply a “network stack”, even limited.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So right now TinyGo can be skipped. It’s only useful for projects not requiring wifi and no I2C.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">Rust</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">2 main issues with Rust in this project:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The language is insufferable.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The ownership rules are inscrutable, and the data types are impossible to understand clearly.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The libraries are not helping much.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Sure the esp_idf_hal seems to add an “oriented object” layer to the ESP IDF C functions, but overall it’s just the same API with lipstick on it, if and when I can find it. </span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The small project with 2 blinking LEDs builds a 230 kB binary.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are just so many libraries injected in the build… Very similar in nature to a Node.JS build</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Obviously the initial part is a problem of familiarity with the Rust language. One could claim it can be fixed by learning the language more to understand the complex ownership rules, the insane trait types, and the box/ref count thing. But that’s also the worry -- generating write-only code that will be inscrutable when I pick up a side project years later.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So that’s going to be the end of this doc: TinyGo is a no-go, and Rust ESP-RS is a no-go.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For the SDB project, there are 2 possible options:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Regular C/C++.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">MicroPython was fairly reasonable and worth looking at again.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>There are projects that rebuild OpenCV as static *.a for ESP32: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/joachimBurket/esp32-opencv" style="color:inherit;text-decoration:inherit">https://github.com/joachimBurket/esp32-opencv</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-28_esp32_micropython.html">
+    <h2 class="post-title">2023-01-28 - ESP32: MicroPython</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the same vein that I tried Rust &amp; TinyGo using the “Software Defined Blocks” project as an excuse, we’re going to restart all over again but this time with MicroPython.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Links for MicroPython:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.micropython.org/en/latest/esp32/quickref.html" style="color:inherit;text-decoration:inherit">https://docs.micropython.org/en/latest/esp32/quickref.html</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>esp32 module: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.micropython.org/en/latest/library/esp32.html#module-esp32" style="color:inherit;text-decoration:inherit">https://docs.micropython.org/en/latest/library/esp32.html#module-esp32</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There’s access to the NVM and a few other hardware centric properties.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>threads: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.micropython.org/en/latest/library/_thread.html" style="color:inherit;text-decoration:inherit">https://docs.micropython.org/en/latest/library/_thread.html</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;[tutorial]</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">However:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">FreeRTOS is used and pinned to core 0.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Micropython is pinned to core 1, including all threads.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For SDB, it is expected that some of the camera/vision part will have to be written in C, and then made available to MicroPython as a module. The goal is to never make image processing in Python; instead MicroPython will be the glue e.g. to get images from a driver/module, and pass around to an analyzer module.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>One thing I tried in the past is this customized version of MicroPython with the OV driver. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.google.com/search?q=micropython+esp32-cam" style="color:inherit;text-decoration:inherit">https://www.google.com/search?q=micropython+esp32-cam</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;for more links.</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/lemariva/micropython-camera-driver" style="color:inherit;text-decoration:inherit">https://github.com/lemariva/micropython-camera-driver</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;specifically of interest.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This rebuilds uPy with a dedicated camera driver. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It can be a good example of how to add C level code to a forked MicroPython.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-21_django_with_nginx_.html">
+    <h2 class="post-title">2023-01-21 - Django with NGinx?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Since the kids are doing Python, I think it’s time to show them how to build a self-hosted web site. Django comes to mind since it’s Python, and as an exercise we would expose it on my NGinx server.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Django tutorial: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.djangoproject.com/en/4.1/intro/tutorial01/" style="color:inherit;text-decoration:inherit">https://docs.djangoproject.com/en/4.1/intro/tutorial01/</a></span></p>
+<p style="text-align:left"><span>Django / NGinx tutorial: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://realpython.com/django-nginx-gunicorn/" style="color:inherit;text-decoration:inherit">https://realpython.com/django-nginx-gunicorn/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;-- focuses on serving from a VM (in this case amazon), and using WSGI Http Server via GUnicorn.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another obvious way to run this would be to run Django’s python-http server and then proxy from NG to that server.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The advantage of that is that the python server can be hosted on another machine on the local network, so that shows a real example of a distributed environment, and is likely easier for the tutorial aspect of this exercise.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-14_esp32_rust_vs_tinygo.html">
+    <h2 class="post-title">2023-01-14 - ESP32: Rust vs TinyGo</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I’ll just leave this here: another option for ESP32 is TinyGo:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://medium.com/vacatronics/lets-go-embedded-with-esp32-cb6bb3043bd0" style="color:inherit;text-decoration:inherit">https://medium.com/vacatronics/lets-go-embedded-with-esp32-cb6bb3043bd0</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tinygo.org/docs/concepts/faq/what-about-esp8266-esp32/" style="color:inherit;text-decoration:inherit">https://tinygo.org/docs/concepts/faq/what-about-esp8266-esp32/</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>And of course </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tinygo.org/docs/concepts/faq/why-go-instead-of-rust/" style="color:inherit;text-decoration:inherit">https://tinygo.org/docs/concepts/faq/why-go-instead-of-rust/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;has actually the obvious 2 sides of the coin.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-11-13_software_defined_blocks.html">
+    <h2 class="post-title">2022-11-13 - Software Defined Blocks</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Time to look at the ESP32-CAM to create a Software Defined Block solution again. This time I can use it at home first, then apply to Randall.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This was the rationale behind the ESP32-CAM Grade Crossing controller.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Coding the ESP32 as I wanted in C++ was a bit of PITA and thus I started looking at alternatives, namely Rust would seem appropriate for that task. There’s now more embedded Rust for ESP32 than 2 years ago so that’s good.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">OTOH a goal would be to use OpenCV and I don’t think there’s a good solution there. Preliminary research shows either OpenCV-for-Rust /or/ OpenCV-for-ESP32, but not sure there are libs for OpenCV-for-Rust-for-ESP32 yet.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Also to be honest, I’m not a big fan of Rust. I’m not super familiar with Rust so that may cause more problems than it would solve. “What would I expect from Rust” is the essential question. The answer is clear pointers/memory ownership especially in the context of multi-threading. From my cursory trying of Rust, it does solve the problem of “clarifying” at compile phase that memory management is sound. The syntax is a pile of crap, though.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-09-17_screen_alternative_tmux.html">
+    <h2 class="post-title">2022-09-17 - Screen Alternative: TMUX</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I tried tmux a while ago, and didn’t like it, can’t remember why. Time to look at it again.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Let’s try it:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">$ sudo apt install tmux</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That does also require a few libs, libjpeg, lua (?!), etc.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now the test is that I’m going to run Screen from Portal, and then inside I have Tmux on PiR.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">[pir] $ tmux</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">[pir] $ tmux a &nbsp;| attach &nbsp;| &nbsp;attach-session&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# equivalent to -r -d </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">[pir] $ tmux list-sessions</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Tmux has “windows” and “panes”: a window contains 1 or more panes.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Contrary to screen, “split” creates a new “pane” with its own shell. I don’t see how to “bring” a different window pane into the current one like I do with screen.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Contrary to screen, re-attaching preserves the split panes in a window.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tmuxcheatsheet.com/" style="color:inherit;text-decoration:inherit">https://tmuxcheatsheet.com/</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nesting screen in tmux in screen:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I have this setup: screen &gt; tmux &gt; screen. I know 😕</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Ctrl-a + key for the first screen</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Ctrl-b + key for the first tmux.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Ctrl-a + a + key does send to the 2nd screen</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>That actually works well, and it’s better than nesting 3 screen sessions inside each other.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-08-31_android_kingdom_rush_td.html">
+    <h2 class="post-title">2022-08-31 - Android Kingdom Rush TD</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://love2d.org/" style="color:inherit;text-decoration:inherit">https://love2d.org/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;-- open source 2d game framework over Lua</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://luajit.org/" style="color:inherit;text-decoration:inherit">https://luajit.org/</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Another site online mentioned the use of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Cocos2d" style="color:inherit;text-decoration:inherit">cocos2d</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;which is not very interesting.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-08-14_nerdkill_android_and_godot.html">
+    <h2 class="post-title">2022-08-14 - Nerdkill Android and Godot</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nerdkill needs to be updated to satisfy the Play store requirements.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I started an “N2” branch in the Nerdkill Android repo, simply rebuilding the existing Android source under a modern AS / gradle project. This should be considered 90% done. The only known issues are:</span></p>
+<ol start="1" style="margin:0;padding:0">
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">As for Asqare, I had to implement a “canvas zoom” in the rendering engine to simulate a smaller screen. This results in the desired pixelated look.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The weapon / cartouche area is 50% height. Probably needs to be adjusted by the canvas zoom or similar. [⇒ FIXED]</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Lack of default Android menu. In Asqare, I fixed that by adding the window nav bar and populating a menu icon. I can do the same here, or I can just add a 3-dot menu icon in the intro screen. [⇒ Not Needed]</span></li>
+</ol>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I’m likely going to just fix issue #2 (or maybe even not) and release the game as-is to meet the store requirements to avoid delisting. That’s the “immediate band-aid” strategy. [⇒ DONE, submitted to the store]</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But a bit more long term, I’ve been wanting to put out a Godot-based game, and after contemplating doing that for Asqare, I’ll use Nerdkill instead. After all that’s the core leitmotif of the project, to be a test bed for platform adoptance.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-07-01_d3_js_chart_library_and_react.html">
+    <h2 class="post-title">2022-07-01 - D3 js chart Library and React</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Thinking of using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/D3.js" style="color:inherit;text-decoration:inherit">D3</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;for learning how to use it, and RPisicine could be a good candidate for that. It’s a React app so how do we integrate them?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Many D3 tutorials: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.google.com/search?q=d3+js+tutorial" style="color:inherit;text-decoration:inherit">https://www.google.com/search?q=d3+js+tutorial</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">With React, apparently an obvious complexity is that they both manipulate the DOM, so need to use state/useEffects to combine them. This has more details:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.pluralsight.com/guides/using-d3.js-inside-a-react-app" style="color:inherit;text-decoration:inherit">https://www.pluralsight.com/guides/using-d3.js-inside-a-react-app</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://blog.griddynamics.com/using-d3-js-with-react-js-an-8-step-comprehensive-manual/" style="color:inherit;text-decoration:inherit">https://blog.griddynamics.com/using-d3-js-with-react-js-an-8-step-comprehensive-manual/</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are some wrappers to help with that:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://react-d3-library.github.io/" style="color:inherit;text-decoration:inherit">https://react-d3-library.github.io/</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>In npm </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.npmjs.com/search?q=react%20d3" style="color:inherit;text-decoration:inherit">https://www.npmjs.com/search?q=react%20d3</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, projects fall under 2 categories: “generic d3-in-react” libraries, and dedicated graphic components.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-06-18_bearing_waypoints.html">
+    <h2 class="post-title">2022-06-18 - Bearing Waypoints</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Current waypoint management needs some improvements:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Compass screen</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Label Target waypoint (saved name)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Display save name, truncate as needed.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Menu save if new, vs edit if saved.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Waypoint screen</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Label list as "saved Waypoints"</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Change selected buttons as row below text field. </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Separate the delete button</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">"Set target" button to match the compass screen, with same icon.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Share to map on this screen</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A more menu with 3 dot icon</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Export all (use a simple JSON)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Import from JSON</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"><a href="0003.html">⇐ Newer Posts</a><br/></span>
+    <span class="next-page"><a href="0005.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

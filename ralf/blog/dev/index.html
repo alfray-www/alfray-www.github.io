@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/index.html" />
+<meta property="og:type"        content="article" />
+
+<meta property="og:title"       content="R’alf Dev Log" />
+<meta property="og:description" content="At Randall, I’ll soon have the Distant Signal&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the CircuitPython&nbsp;script on the ESP32 to send pings to GA4." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+
+<meta name="twitter:title"       content="R’alf Dev Log" />
+<meta name="twitter:description" content="At Randall, I’ll soon have the Distant Signal&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the CircuitPython&nbsp;script on the ESP32 to send pings to GA4." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="index.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="0001.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+
+
+    <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-04-12_ga4_stats_from_an_esp32_.html">
+    <h2 class="post-title">2025-04-12 - GA4 Stats from an ESP32?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>At Randall, I’ll soon have the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span>&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://circuitpython.org/" style="color:inherit;text-decoration:inherit">CircuitPython</a></span><span>&nbsp;script on the ESP32 to send pings to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developers.google.com/analytics/devguides/collection/protocol/ga4" style="color:inherit;text-decoration:inherit">GA4</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The goal is to measure the “uptime” of the display. The display is working when it is able to receive messages from the MQTT server. It can receive them when it can connect to the wifi. Thus we want to track the wifi state, or some kind of proxy for it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Since this is CircuitPython, we have </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/welcome-to-circuitpython/circuitpython-libraries" style="color:inherit;text-decoration:inherit">AdaFruit libraries</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to already deal with JSON and network.</span></p>
+<p style="text-align:left"><span>So really “all” I need is something similar to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/common/src/main/java/com/alflabs/conductor/util/Analytics.java" style="color:inherit;text-decoration:inherit">Analytics class in Conductor 2</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Queue stats to be sent.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Stats are sent as JSON payloads.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">POSTs can fail, in which case they need to be retried with a backoff delay.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ Obviously a “wifi lost” event would have no wifi to send the stat.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Do I need to put a real date/timestamp in the events?</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ These ESP32 don’t have a “date” clock, so it’s nice if I don’t have to.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There’s an NTP library which I’ve used on the LitterTimer experiment but it makes the logic more complicated since we need to expect that the device may not have wifi.</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>So what do we need to do </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developers.google.com/analytics/devguides/collection/protocol/ga4/sending-events?client_type=gtag" style="color:inherit;text-decoration:inherit">custom pings to Google Analytics 4</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “GA4_CLIENT_ID”, typically configured in settings.toml</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “GA4_MEASUREMENT_ID”, also configured in settings.toml</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A “GA4_API_SECRET”, also configured in settings.toml</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The feature is disabled if either of these settings is missing.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Placing them in setting.toml avoids leaking these in any GIT source, and it makes it easier to configure a new panel.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">See below on where to find these.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A base URL:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>https://www.google-analytics.com/debug/mp/collect</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; -- debugging version</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>https://www.google-analytics.com/mp/collect</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -- real pings version</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The POST URL is:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">%(base)s?api_secret=%(GA4_API_SECRET)s&amp;measurement_id=%(GA4_MEASUREMENT_ID)s</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">POST mime type: text/plain</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Payload is JSON, and is used as such in Conductor:</span></li>
+</ul>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'client_id': GA4_CLIENT_ID,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'events': [ {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'name': event_action ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'params': {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'items': [ ] ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'value' : value_int ,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'currency' : USD <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} ]<br>}</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.circuitpython.org/projects/requests/en/latest/examples.html" style="color:inherit;text-decoration:inherit">AdaFruit “requests” library</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is the simplest way to send a POST request. It accepts either a JSON (using a Python dictionary) or a string payload.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When POSTing to the debug URL, print the response.status_code and the response.content.decode() to get valuable information on why requests fail.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>When POSTing to the real ping version, the GA server replies with 204 (Success w/ No Content) and a complete lack of response body.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some details on the JSON payload:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The only required field is really the event’s name.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “currency” is only needed if there’s a value, which is an optional field.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s possible to provide a date in YYYY-MM-HH-mm-ss to “back timestamp” an event. This is useful when doing some kind of retries with an exponential back-off. However the ESP32 does not have the current date time -- that would require adding an NTP library and corresponding calls to initialize it. Possible, yet extra work for little benefit.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Example of usage for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">GA3 used to have an event with fields “category, “action”, “label” that formed a nice hierarchy. GA4 simplified all that and removed these fields. The only event field is “name”. Custom fields are possible yet they add setup complexity, processing delay, and other complications.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>We need to pass in some kind of “panel id”, to differentiate multiple </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;panels, and some events need to have a parameter that is a string. However the “value” field in the event is really a “currency value” and as such is only a number. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The GA4 event name can </span><span style="font-style:italic">only</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;be alphanumeric and underscore.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A simple solution is to adopt a pattern for the name:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“&lt;turnout&gt;__&lt;category&gt;_&lt;action&gt;___&lt;extra&gt;”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The schema would become:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-weight:700">Event Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Value &nbsp; &nbsp; &nbsp;Description</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt"><br>&lt;ID&gt;__wifi_connected &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;rssi&gt; &nbsp; &nbsp; WiFi connected<br>&lt;ID&gt;__wifi_hb &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;rssi&gt; &nbsp; &nbsp; WiFi heart-beat<br>&lt;ID&gt;__mqtt_connected &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;rssi&gt; &nbsp; &nbsp; MQTT connected callback<br>&lt;ID&gt;__mqtt_disconnected &nbsp; &nbsp; &nbsp; &nbsp;&lt;rssi&gt; &nbsp; &nbsp; MQTT disconnected callback<br>&lt;ID&gt;__msg_script &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; n/a &nbsp; &nbsp; &nbsp; &nbsp;MQTT “script” message received<br>&lt;ID&gt;__msg_turnout___&lt;state&gt; &nbsp; &nbsp;n/a &nbsp; &nbsp; &nbsp; &nbsp;MQTT “turnout/state” message received<br>&lt;ID&gt;__msg_block___&lt;block&gt; &nbsp; &nbsp; &nbsp;1 or 0 &nbsp; &nbsp; MQTT “block/state” message received</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Explanation:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The point of the wifi / MQTT messages is to also convey the state of the wifi.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We do that by passing the wifi RSSI (signal strength) as a value to graph it over time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We don’t have a callback when the wifi is lost, nor could we send a ping to GA4 (since there would be no network, duh). Instead we’ll use a heart-beat, say every 15 minutes or every 30 minutes. I don’t need much more granularity than that.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The MQTT library has its own heart-beat and thus can call a “disconnected” callback. That can happen due to lack of wifi (in which case we won’t receive the event), or due to the MQTT broker server being offline. Consequently, we shall treat that event as unreliable. A good proxy for it is the MQTT “connected” event -- by definition it happens when the network is up, and it happens once at startup and then once after each disconnection.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>My main goal is currently to track the wifi health, but let’s future proof it by also sending pings for the obvious core task of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, which is to process the MQTT messages.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “turnout” message selects a state, which is a string. Thus we cannot place it in the “value” field of the GA4 payload (it’s a currency, really). Instead we’ll sanitize it and append it to the event name, making it easier to split/extract later if needed.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “block” message has 2 values: the block name, and its state. The state can easily be converted to a value (1 for ‘active’, 0 for ‘inactive’), and the block name can be sanitized and appended to the event name.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using this pattern, we can use get these in the graphs using custom filters:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“starts with PanelID__” to filter specific panels.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“contains -mqtt_dis” to filter specific categories/actions.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Filter “everything after ___” to display a table with turnouts/blocks changes.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">Configuring Google Analytics</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now we need to set up GA and “prime” it to make this all work.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Head to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://analytics.google.com/" style="color:inherit;text-decoration:inherit">Google Analytics</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;web site.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Create an Account if you don’t have one, or use an existing one. We don’t need its ID.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using the Admin toolbar on the left, create a Property.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>If asked what type of property you need, make sure to select a </span><span style="font-style:italic">web property</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. That’s important.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Give it some dummy base URL, something that belongs to you. We won’t be using that URL anyway. I typically select &lt;my web site/my project name&gt; even if there’s no such web page.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Under Data settings, select the Data Stream that has been created when creating the new Property. That’s the key to use the Measurement API. If you were using an existing property, you might want to add a new Data Stream to separate things. The point is that the Data Stream has to be a “web” one.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Enter the “Web stream details” screen. This gives us what we need:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">GA4_CLIENT_ID is named the “Stream ID” on this page. IIRC “client id” is the old nomination under GA3, and GA4 refers to it as a “stream ID” in the configuration pages, whilst the JSON payload keep the old name of “client_id”. Same stuff. It looks like a large int64 number.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">GA4_MEASUREMENT_ID is the “Measurement ID” on this page. It’s the “G-&lt;letter&gt;” code that we use in the gtag.js block.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Down in the “Web stream details” screen, select the “Measurement Protocol API secrets” and create a new one. The secret values goes in GA4_API_SECRET.</span></li>
+  </ul>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Now at this point, I typically run everything using the debug POST URL and check the server’s response and fix issues as reported. A typical issue is that I always forget that the event name must be </span><span style="font-style:italic">only</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;alphanumeric and underscore, and I often start with some more fancy event names that I need to simplify.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The second point is that at first nothing will work. POSTs will properly return a 204 indicating they are accepted, yet no stats are visible in the GA4 dashboard, and the Admin page has a cryptic message about “no data received in past 48 hours”. The fix is that data collection needs to be “initialized” by sending at least some successful pings from a real web page using the proper gtag.js library.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">On a web server you own, create a new page. I typically match the one used for the stream URL.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Copy paste the Google tag Javascript using the link at the bottom of the “Web stream details” page.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Load that page to execute the google tag with your measurement ID in it.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Don’t forget to disable any ad blocker you’d have since they may be blocking the Google Analytics pings in the first place!</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">After a while, you should see the “Web stream details” having a green banner at the top with “Data collection is active in the past 48 hours”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-style:italic">However at first, it will still display “no data” for a while</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. That page is really misleading, and instead you want to use the “home” button in the left toolbar, and that should indicate “your data collection is active”, with hopefully something in the “active users in the last 30 minutes”. Clicking the “View Realtime” link should show more. That’s progress yet it’s a bit early, and as the disclaimer indicates on the page, you will likely find no data if you try to create a custom dashboard right away. </span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Generally speaking, one major change from GA3 to GA4 is the major loss of “realtime” processing in the dashboards. Whilst the GA page can display some “real time” data in the one pre-made existing “Realtime overview” dashboard, that’s about it. I find that custom dashboards never have real time data. The processing delay seems to be at least 12 hours, especially if you use the GA connector for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://lookerstudio.google.com/" style="color:inherit;text-decoration:inherit">Google Looker Studio</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-04-10_circuitpython_on_esp32_pysta_7694d270.html">
+    <h2 class="post-title">2025-04-10 - CircuitPython on ESP32: “pystack exhausted”</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Well, that escalated quickly.</span></p>
+<p style="text-align:left"><span>I’ve been battling with this in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span>@@ MQTT: Failed with &nbsp;</span><span style="font-weight:700">pystack exhausted<br></span><span>Traceback (most recent call last):<br> &nbsp;File "code.py", line 498, in &lt;module&gt;<br> &nbsp;File "code.py", line 354, in _mqtt_loop<br> &nbsp;File "adafruit_minimqtt/adafruit_minimqtt.py", line 956, in loop<br> &nbsp;File "adafruit_minimqtt/adafruit_minimqtt.py", line 1027, in _wait_for_msg<br> &nbsp;File "adafruit_minimqtt/adafruit_minimqtt.py", line 381, in _handle_on_message<br> &nbsp;File "code.py", line 328, in _mqtt_on_message<br> &nbsp;File "script_loader.py", line 27, in newScript<br> &nbsp;File "script_parser.py", line 316, in parseJson<br> &nbsp;File "script_parser.py", line 289, in _parseGroup<br> &nbsp;File "script_parser.py", line 214, in _parseInstructions<br> &nbsp;File "script_parser.py", line 278, in _parseInstructions<br> &nbsp;File "adafruit_display_text/label.py", line 88, in __init__<br> &nbsp;File "adafruit_display_text/__init__.py", line 273, in __init__<br> &nbsp;File "adafruit_display_text/__init__.py", line 294, in _get_ascent_descent<br></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">RuntimeError: pystack exhausted</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It turns out that CircuitPython is built with a max stack depth of 15-16 calls (*), at least for this version of the MatrixPortal S3.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s entirely possible to rebuild it with a different stack depth, if one is inclined to do so.</span></p>
+<p style="text-align:left"><span>The stack size is controlled by CIRCUITPY_PYSTACK_SIZE which is defined globally here:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455" style="color:inherit;text-decoration:inherit">https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455</a></span><span><br></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and is also architecture dependent -- e.g. the SAM arch overrides the default.</span></p>
+<p style="text-align:left"><span>Documentation on CIRCUITPY_PYSTACK_SIZE is here:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/adafruit/circuitpython/blob/HEAD/docs/environment.rst#circuitpy_pystack_size" style="color:inherit;text-decoration:inherit">https://github.com/adafruit/circuitpython/blob/HEAD/docs/environment.rst#circuitpy_pystack_size</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">(*) As can be seen above, the “stack size” is not really a number of calls but really a size in bytes. Thus I expect calls with more arguments will exhaust the stack faster, or whatever else needs to be pushed on the stack for each call.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">At runtime, the “ustack” module can give the current max and used size:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline line-through;text-decoration-skip-ink:none"><a href="https://docs.circuitpython.org/en/latest/shared-bindings/ustack/index.html" style="color:inherit;text-decoration:inherit">https://docs.circuitpython.org/en/latest/shared-bindings/ustack/index.html</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Well, not on the MatrixPortal S3 port at least.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So how does one solve that? Since I do not want to rebuild CircuitPython, it means I can just amend the code to reduce stack usage.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For example the main starts with this:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">if __name__ == "__main__":<br> &nbsp; &nbsp;setup()<br> &nbsp; &nbsp;loop()</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This conveniently mimics an Arduino sketch setup. But we don’t need that “loop()” function. Just place everything under the “if main” and save one call stack entry.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The MQTT error above happened when a message was received -- I’d parse the script right there in the MQTT handler. Instead, what I do is save the script in a temporary global variable, and process it from the main loop, after the MQTT handler has returned. That way we’re “saving” about 5 calls depth on the stack.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The parser is about 5 calls deep. I could probably save one call in there, if I really have to.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another easy strategy is to create lambdas, and queue them for processing in the main loop.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That’s more or less what I do with the delayed processing of the script, except since there’s only one thing to do, I keep the string reference around rather than wrap the processing in a lambda. Delayed processing can quickly become hard to follow, it’s harder to understand and debug.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-04-07_the_hub75_protocol_for_led_m_3fc341e2.html">
+    <h2 class="post-title">2025-04-07 - The HUB75 Protocol for LED Matrix Displays</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Over there in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">trains/electronics blog</a></span><span>, I have a little write up about the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ralf.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html" style="color:inherit;text-decoration:inherit">HUB75 Protocol for LED Matrix Displays</a></span><span>, as used in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span>&nbsp;project. Go read it </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ralf.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html" style="color:inherit;text-decoration:inherit">there</a></span><span>.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-02-09_wifi_apis_on_android_13.html">
+    <h2 class="post-title">2025-02-09 - Wifi APIs on Android 13</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>I’m still in the process of updating </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;to work properly on Android 13.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">RTAC uses a number of APIs which have been deprecated since Android 10. Since it was running on 2017 hardware with Android 9, that wasn’t much of a problem. Now I want to move to newer hardware that runs Android 13 so I need to deal with it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">WifiLock:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/net/wifi/WifiManager.WifiLock" style="color:inherit;text-decoration:inherit">WifiManager.WifiLock</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;API is still present and usable.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>I’ve added a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/commit/15cdab990476a53f704ad4c4570f8eb0fee3e235" style="color:inherit;text-decoration:inherit">handler class</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;for it in TCM.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">However it’s not absolutely clear what it really provides.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/net/wifi/WifiManager#enableNetwork(int,%20boolean)" style="color:inherit;text-decoration:inherit">WifiManager#enableNetwork</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is reserved to “Device Owners” and system apps.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>It seems that </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/net/ConnectivityManager#requestNetwork(android.net.NetworkRequest,%20android.app.PendingIntent)" style="color:inherit;text-decoration:inherit">ConnectivityManager#requestNetwork</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;could be an adequate replacement?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A first try of the ConnectivityManager#requestNetwork API wasn’t conclusive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The app suddenly displayed a model dialog “connecting to device” with a spinner, which has the undesirable side-effect of pausing the main TCM activity.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Configuring the request for a known SSID did… nothing. It stayed on that spinner and did not switch to that wifi network.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Configuring the request for a known SSID and its WPA password did something weird where the wifi list showed a second entry of the SSID “for this particular app”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So far that didn’t work as expected. My goal is to switch the wifi to an already known SSID that has already been configured in the Android wifi setting and already set up with password et al.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To be continued.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-02-05_here_we_go_again_.html">
+    <h2 class="post-title">2025-02-05 - Here we go again…</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Somehow the same wishes always circle back: </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">“Aww, wouldn't it be cool if &lt;insert random unfinished project name&gt; had a built-in editor and I could code the app on my {phone, PDA} whilst I'm using it?”</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>A few decades ago that's how the Hint project started, which quickly got nowhere -- mostly because I was trying to get </span><span style="font-style:italic">everywhere</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;at the same time.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">And of course later I realized the goal is its own anti-goal -- it's already hard to finish one project, so adding another project inside that project pretty much guarantees that neither gets anywhere, fast.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-01-29_moving_again_.html">
+    <h2 class="post-title">2025-01-29 - Moving Again…</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another month, another problem… I’ll spare you 2 days of internal discussion and I’ll just summarize it in one sentence:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I pretty much have decided to move all my open source repositories from BitBucket to GitHub.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Historically I had all my code on Google Code. When that service shut down, a lot of folks went to GitHub and I had my reservations about that service. Instead I chose BitBucket. I still have some philosophical issues with GitHub, but right now I have even more of them with BitBucket so… a lengthy migration is in order.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-01-06_motivation_to_write_games.html">
+    <h2 class="post-title">2025-01-06 - Motivation to Write Games</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Recently I’ve started two game projects at home, none of which are in a good enough state to be published. One of them is TD1 which I’ve discussed here in the previous years, and I finally built a prototype, originally to have a concrete way to explore the issues in a specific defense-vs-attack gameplay. There were some interesting challenges. Then I’ve discussed that with some friends. Now that this is done, I have had little motivation to actually implement the discussed gameplay changes. Instead I have thoughts on other projects.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Then I see a lot of little short games on Itch.io that are “playable” -- small scopes and essentially “mostly” finished. But I honestly don’t feel like playing them much besides the initial intro. Each time I think I’m maybe jealous because these games are finished and mine aren’t… but is that really the case?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Well, let’s analyze this a bit more.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">1- I’m jealous these games are “finished” and I don’t finish mine.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Well, it turns out the first part is only the appearance of it. I fully understand some of the games I see in the various itch.io Jams are only finished “on the surface” -- good enough for a Jam deadline. Each time I try some, I feel like there’s a lack of depth.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>It’s not true that I don’t finish my games. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/" style="color:inherit;text-decoration:inherit">My Labs</a></span><span>&nbsp;has </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/archived/Nerdkill/" style="color:inherit;text-decoration:inherit">Nerdkill</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/asqare/" style="color:inherit;text-decoration:inherit">Asqare</a></span><span>&nbsp;which, also on the surface, can appear “finished” -- and in fact these 2 are actually finished from </span><span style="font-style:italic">my</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;point of view.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">2- These games lack gameplay depth. Well, yeah. Totally. All of them.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/archived/Nerdkill/" style="color:inherit;text-decoration:inherit">Nerdkill</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;is a good example as I never intended for the “game” to have a scoring system because then it would become the game I don’t want it to be (gratification of violence). Not having a scoring system is a core part of this gameplay (“violence is pointless”).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/asqare/" style="color:inherit;text-decoration:inherit">Asqare</a></span><span>&nbsp;could do more, but really what for? It’s a me-too kind of gameplay and the more I add to it, the more it would be clear it’s not Bejeweled -- when I started, I was trying to not be that game, as part of the original implementation was to try </span><span style="font-style:italic">different</span><span>&nbsp;gameplays</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;-- but the problem is that no matter what, it would be compared to that baseline.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">3- I do have a number of totally unfinished games. Or maybe it’s better to see them as “not even really started”. They are not even on the Labs page or anywhere to be found.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Cangrejo is one. It’s 200% me-too and not even clearly defined where it was going anyway. Jump! is another one such. They are essentially technological demos with a complete lack of interest in producing even a finished MVP. I only started them because I saw some other game and I thought “hey how would I implement </span><span style="font-style:italic">this</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”. But once I found the core engine implementation, I didn't really care about all the work needed to make it a playable game.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In a way TD1 falls into that category as well. I had a vague idea, but I see a huge gap between what the prototype is and where I’d want it to be, and it’s not clear to me the end result would be interesting. Thus, yeah, I have little motivation to put in the effort to bridge that gap, only to end up with something I don’t care for at the end.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>In essence, that last part is key: I measure the cost of the project in terms of involvement versus result, and I don’t find it motivation compared to other stuff I may be doing. For example stuff like </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor" style="color:inherit;text-decoration:inherit">Conductor</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC</a></span><span>, or even </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/sdb" style="color:inherit;text-decoration:inherit">SDB</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;have a high involvement cost, yet on the other hand I can see the tangible benefits to me of having them working -- the Randall Museum visitors may not see the software behind the train automation, yet I know what drives that automation and I’m proud of it.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other aspect of these game projects is that I tend to focus on the wrong thing. I find it more interesting to focus on the engine and the framework than the gameplay or the rendering itself. I’m not really a game designer, and I’m definitely not a graphic artist. Eventually implementing the gameplay is the least interesting part of game development so far.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-12-29_kotlin_web.html">
+    <h2 class="post-title">2024-12-29 - Kotlin Web</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It's time to look again at Kotlin for web development. Last time I tried it, a few years ago, it was embryonic and really not suitable for usage. Since then things have changed. </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The entry point is Kotlin Multi Platform. It has now a version of Jetpack Compose: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.jetbrains.com/lp/compose-multiplatform/" style="color:inherit;text-decoration:inherit">https://www.jetbrains.com/lp/compose-multiplatform/</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The goal is to evaluate that against my use of Dart / Flutter on Firebase GCP.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There's currently some uncertainty in the future of Flutter. Dart should survive a bit longer as it still seems to be used internally by core projects, however the same can't be said of Flutter according to the water tank hearsay.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Evaluation criteria:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">How to build a Kotlin MP project.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">What can Compose do for the web.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Overall app architecture. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Integration with Firebase authentication.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Integration with Firebase DB.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Ecosystem of 3rd party libraries.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Ease of maintenance over time.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">These are all points where Flutter more or less excels. Dart seemed like a barrier at first, until I understood it as basically “Java/Kotlin meets Typescript”. After that, it just made sense and it's easy to work with and pick it up again when I only tweak a project once a year. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “web UI” aspect of Flutter is familiar -- it's basically ReactJS, but easier to use, and better documented. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The Flutter doc is very strong, and the IJ plugin is a delight to use. </span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-12-29_kotlin_web.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-11-11_esp32_with_arduino-esp32_idf_7a53fbf9.html">
+    <h2 class="post-title">2024-11-11 - ESP32 with Arduino-esp32, IDF 5.1.x, and C++20</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Time to try again if this combo finally works.</span></p>
+<p style="text-align:left"><span>My main motivation is to use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/modules" style="color:inherit;text-decoration:inherit">C++20 Modules</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>(TL;DR Summary: it works… and yet it doesn’t. C++ Modules require a very specific compilation ordering due to cross module dependencies, and the Arduino CLI simply </span><span style="font-style:italic">cannot</span><span>&nbsp;do that. However with ESP-IDF and CMake, it should be fine.</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-11-09_rig4j_addressing_pagination.html">
+    <h2 class="post-title">2024-11-09 - Rig4j: Addressing Pagination</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are 2 issues, which keep haunting me:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The “N+1” problem with the first page repeating some but not all of the index.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using the “next page” is “page N” and “next page” after that is “N-1” till page 1.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I have reverse ordering. The design is that each blog page has a stable URL with N articles each, so let’s say 10: page 1 is 1..10, page 2 is 11..20, etc. up to page N that “fills” up to N articles so that the last page always has an overlap with the index.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It’s telling that even I get surprised when I click on the “Next Page” link on the index and end up on “Page 6” rather than “Page 1”.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Issue 1: Previous / Next Links</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other issue is the navigation links.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I went from this, which was problematic:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Previous Posts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next Posts ⇒ <br>to this, which IMHO has other issues:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Previous Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next Page ⇒ </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The problem with “previous/next post” is that it’s ambiguous: “previous” is implied to mean “page N-1” or “older in time”, and “next” would mean “page N+1” or “newer in time”. But because the pages are in reverse chronological order, the “next” link actually points to an older-in-time content and page N-1. That’s the reverse of what one would expect.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I think we can solve that conundrum by renaming the links to be more technically correct:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Newer Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Older Page ⇒ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Newer Post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Older Post ⇒ </span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That’s a small trivial change that I think that would be less ambiguous:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Newer / Older only imply time-based ordering, not index-based ordering.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">We’re not implied what is a “previous” or a “next page” anymore.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Navigation is “[page N+1] &lt;&lt; Newer || current is page N || Older &gt;&gt; [page N-1]”.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ Done. Implemented. Seems very nice.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Also added an “{{If.IsIndex}}” command in the template so that we can have “Newer Post” in the single blog full page vs “Newer Posts” in the index blog pages. This required adding a crude support for nested {{If}}...{{Endif}}.</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-11-09_rig4j_addressing_pagination.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+
+
+
+
+
+<div class="prev-next-container">
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="0001.html">Older Posts ⇒</a><br/></span>
+
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

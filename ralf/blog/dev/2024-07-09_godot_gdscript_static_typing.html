@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2024-07-09_godot_gdscript_static_typing.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Godot GDSCript Static Typing" />
+
+<meta property="og:description" content="GDSCript: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html" />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Godot GDSCript Static Typing" />
+
+<meta name="twitter:description" content="GDSCript: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html" />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0001.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-08-04_kotlin_kmp.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-06-03_tablet_10_g10_and_rtac.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2024-07-09 - Godot GDSCript Static Typing</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>GDSCript: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/index.html</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var damage = 10.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ no typing, this is essentially a Variant</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var damage:= 10.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ inferred typing</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var damage: float = 10.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ explicit typing</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">For constants</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const MOVE_SPEED = 50.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ inferred (= and := are the same)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const MOVE_SPEED := 50.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ inferred</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">const MOVE_SPEED: float = 50.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ explicit</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">For functions</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func sum(a: float = 0.0, b: float = 0.0) -&gt; float: … </span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func sum(a := 0.0, b := 0.0) -&gt; float:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Which types to use</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html#what-can-be-a-type-hint" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html#what-can-be-a-type-hint</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Types can be:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Variant, void (only function return, see below)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Built-in types, global classes, inner classes (gdscript has inner classes?!)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Native classes, enums (gdscript has enums?!)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Constants that are preloaded as class types (see below)</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func blah() -&gt; Variant: … &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ forces the function to return something</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func blah() -&gt; void: … &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ forces the function to not return a value</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">A note about class_name</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">When used, it “registers” the class name globally, and it can be used anywhere.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Without it, one can “locally” preload a gd into a constant to create a class name:</span></li>
+</ul>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const Rifle = preload("res://player/weapons/rifle.gd")</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var rifle: Rifle</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">load(“some.gd”) happens at runtime and can go only into a “var”.</span></p>
+<p style="text-align:left"><span>preload(“some.gd”) happens at compile time (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#classes-as-resources" style="color:inherit;text-decoration:inherit">reference</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">) and goes into a “const”.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Array types</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The syntax is “ var: Array[type]”:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var scores: Array[int] = [10, 20, 30]</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var vehicles: Array[Node] = [$Car, $Plane]</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var items: Array[Item] = [Item.new()]</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Used for for loops, but ignored in array methods and operators (array + array, or array[index]).</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In Godot 4.2, an untyped array can be locally typed in a for loop:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for name: String in names: …</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Typed dictionaries are currently not supported</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Type casting and checking</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Example:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func _on_body_entered(body: PhysicsBody2D) -&gt; void:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var player := body as PlayerController&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ⇐ null if it cannot cast</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not player:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The type casting keyword is “as” : “instance as type”.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Warning ⇒ Use := to force the var to be typed -- apparently, it would not be overwise.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The destination var would be null if the type cannot be cast.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Warning ⇒ The silent null in case of non cast is allegedly a frequent source of bugs.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A safer way is thus to do an “is” check (like I was doing, because I didn’t know better anyway):</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not (body is Type): … skip or pass</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var player: Type = body&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ⇐ this throws if it cannot cast</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;etc</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">(I typically just write “if not body is Type” but I notice the example wraps that in parentheses??)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">Inner Classes</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Not related to type hinting, just types in general, GDScript does have inner classes:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#doc-gdscript-basics-inner-classes" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#doc-gdscript-basics-inner-classes</a></span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">class_name SomeClass</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">…</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">class SomeInnerClass:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var a = 5</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func someFunc(): …</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func _init():</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var c = SomeInnerClass.new()</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Question: are these static inner classes or are they bound to their parent class?</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">Class Constructor vs Static Constructor</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">An init constructor can call a parent base class:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">class_name SomeClass</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">func _init(arg):</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(“some value”, arg)</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">and have a static initializer:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">static var my_static_var = 1</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">static func _static_init():</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my_static_var = 2</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Typed Getters and Setters</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Example:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var seconds: int:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return milliseconds / 1000</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set(value):</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;milliseconds = value * 1000</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note the “: Type:” syntax.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">If the getter/setters have functions, there’s an alternative syntax:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var my_prop:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get = get_my_prop, set = set_my_prop</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">var my_prop: get = get_my_prop, set = set_my_prop</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Lambda Functions</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Lambda functions are created inline as such:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myLambda1 = func (param1, …paramN):</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myLambda2 = func(): print(“something”)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">or directly as arguments:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;someobject.connect( func(): print(“blah”) )</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>The type of a lambda is a Callable </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/classes/class_callable.html#callable" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/classes/class_callable.html#callable</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note that a Callable is also a type that can call any function by name:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func something(arg1, arg2) : …</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var myCallable = Callable(self, “something”).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myCallable.call(arg1, arg2)...</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2024-08-04_kotlin_kmp.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2024-06-03_tablet_10_g10_and_rtac.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

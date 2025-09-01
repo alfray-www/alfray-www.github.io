@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2020-11-25_blinking_led_-_astable_trans_c141203b.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Blinking LED - Astable transistor/555 approach" />
+
+<meta property="og:description" content="Another surely doomed attempt using an RC and a transistor. As expected, it did not work." />
+<meta property="og:image"       content="http://www.alfray.com/ralf/blog/dev/img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Blinking LED - Astable transistor/555 approach" />
+
+<meta name="twitter:description" content="Another surely doomed attempt using an RC and a transistor. As expected, it did not work." />
+<meta name="twitter:image"       content="http://www.alfray.com/ralf/blog/dev/img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png" />
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Workbench", monospace;
+    margin: 0;
+    background: #000;
+    color: #0A0;
+
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 10;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="0007.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2020-11-30_blinking_led_-_pir_approach.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2020-11-24_blinking_led_--_arduino_esp3_ae4e30a8.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2020-11-25 - Blinking LED - Astable transistor/555 approach</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another surely doomed attempt using an RC and a transistor. As expected, it did not work.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Although it is inherently flawed, I’ll put it here:</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:407.00px"><img alt="" src="img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>Transistor is a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" style="color:inherit;text-decoration:inherit">2N3904</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This obviously does create a delay starting the LED. Then there’s nothing to stop it. The futile idea was to add a second transistor between “ground” and the battery minus side to cut the circuit. Problem is that there’s nothing here that would generate something suitable to trigger it. Something like this:</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:402.00px"><img alt="" src="img_ada9f29123ced05afc3358dcb1219bb93f7e3bfcd1ef34d88d8800744e6fae9bi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Closer but obviously very wrong. That top Q3 transistor has to be at the “ground” level and mirror Q2, which I tried in the simulator but I screwed it up and didn’t want to get the embarrassingly bad schema. Anyhow, two Q2/Q3 in symmetry… &nbsp;which seems familiar… if only that had been solved...</span></p>
+<p style="text-align:left"><span>What I want is an “astable multivibrator”: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.electronics-tutorials.ws/waveforms/astable.html" style="color:inherit;text-decoration:inherit">https://www.electronics-tutorials.ws/waveforms/astable.html</a></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:202.18px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:378.50px"><img alt="" src="img_eec0b66f5649f6a15e286b9f6819b6d3927f8786ad96f8bf770545fb01fb3b69i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:142.84px"><img alt="" src="img_50ddce57274030c0c4446af06de32deb174028582e7b82c29ac48ec783fad4d4i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Let’s compute some values.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Desired: t1=0.5s, t2=2s (just making that up).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T1 = 0.69 C1 R3</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T2 = 0.69 C2 R2</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">C1 = 10u ⇒ R3 = 0.5 / 0.69 / 10e-6 = 72.4k Ω</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rounding up: R3 = 100k Ω ⇒ t1 = 0.69 s</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">C2 = 10u ⇒ R2 = 2 / 0.69 / 10e-6 = 188k Ω</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rounding up: R2 = 220k Ω ⇒ t2 = 2.2s</span></li>
+ </ul>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Of note, to control the LED, we need a 3rd transistor on the emitter of TR1/TR2 as shown above. That’s interesting as I’d have driven it out of the Q output using a high value resistor.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:164.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_898fef18a25da19aa62de914a588316b5d22ecd0109719b02dbc2289e895145fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span>So I built that circuit using 3 transistors </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" style="color:inherit;text-decoration:inherit">2N3904</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. R1 = R4 = 10k Ω, R2 = 220k Ω, R3 = 100k Ω, C1 = C2 = 10uF. For the LED part, I have a 1.88 Vf red LED with a 470 Ω resistor.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">For a better timing, I changed R2 to 1M Ω ⇒ t2 = 6.9 s.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That would bring t1+t2 to around 8 seconds. I measured around 8~9 s for t1+t2.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Duty cycle is t1 / t1+t2 = 9.1% LED on.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I am failing to measure actual current usage with a multimeter.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">With the simulator in National Instruments Multisim:</span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:292.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_98644137b548dd32953b71467de1514e8c820e5ce2090a8a594a12583d5361a7i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I have no idea what kind of transistor they are modeling here. Doesn’t look like a 2N3904.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This gives me A=5 mA when the LED is on, and 0.3 mA when the LED is off.</span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:121.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_b354d355cf6d64f7cde8140a959c14bfa2a717bb4ee7a696975209d2e2b5a403i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Combined with the duty cycle: (0.69s*5mA + 6.9s*0.3mA) / 7.59s = 0.72 mA/s = 2618 mA/h.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Technically a bit lower as the LED is not fully at 5 mA while on; it turns on progressively. But even if the on cycle was half current at 2.5 mA, it would be (0.69s*2.5mA + 6.9s*0.3mA) / 7.59s * 3600 = 1800 mA/h.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A typical AA alkaline battery has a capacity of 2500 mAh. Since I use 2 of them, I’d expect this to last 2~3 hours before the batteries are depleted.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Update: Tried this and it lasted at least 3 days with little impact on battery. That 300 uA quiescent current seems like a lot.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt;font-weight:700">555 timer</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The obvious choice is to go with a 555 timer. I realize I don’t have any around.</span></p>
+<p style="text-align:left"><span>Now there are plenty of schematics built around the 555. What I want is one giving me a configurable square wave. Like this one: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.electronics-tutorials.ws/waveforms/555_oscillator.html" style="color:inherit;text-decoration:inherit">https://www.electronics-tutorials.ws/waveforms/555_oscillator.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So let’s compute the RC values needed.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Desired: t2=0.5s, t1=2s (just making that up).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T1 = 0.693 (R1 + R2) &nbsp;C1</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T2 = 0.693 R2 C</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">C=10u ⇒ R2=0.5 / 0.693 / 10e-6 = 72k Ω</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rounding up: R2 = 100k Ω ⇒ t2 = 0.693 s</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">R1= 2 / 0.693 / 10e-6 - 100k = 188.6k Ω</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rounding up: R1 = 220k Ω ⇒ t1 = 2.2 s</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Duty cycle is (R1+R2)/(R1+2 R2) = 76%</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">There are variations to improve on the duty cycle using diodes.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">As a demonstration, that was successful using the transistor version of the astable.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I’d see some value in having a few 555s around, as it makes this kind of project a breeze, so that’s something to look into.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I do realize I do not know how to estimate battery longevity.</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Side note: There are cheap “10x 555” deals for $1 on ebay from China of course.</span></p>
+<p style="text-align:left"><span>There are also packages with e.g. “120 pcs” of “IC assorted” components on Amazon. Not sure they are interesting. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3mb3AX9" style="color:inherit;text-decoration:inherit">Let’s take one listing</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;and understand what the “ICs” are:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>LM324&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.mouser.com/datasheet/2/149/LM324-195664.pdf" style="color:inherit;text-decoration:inherit">Quad AmOp</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, up to 32 V, 1.3 W.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>LM339&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/lm339.pdf" style="color:inherit;text-decoration:inherit">Quad Differential Voltage Comparator</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, up to 30 V, 20 mA out.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ULN2003AN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/uln2003a.pdf?HQS=TI-null-null-digikeymode-df-pf-null-wwe&amp;ts=1606439103966&amp;ref_url=http%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttp%25253A%25252F%25252Fwww.ti.com%25252Flit%25252Fgpn%25252Fuln2003a" style="color:inherit;text-decoration:inherit">Darlington Array</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;(aka 8x 500 mA output drivers). I have 4x, never used.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ULN2803APG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Same, from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://cdn-shop.adafruit.com/datasheets/ULN2803A.pdf" style="color:inherit;text-decoration:inherit">Toshiba</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>LM358P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/lm358.pdf" style="color:inherit;text-decoration:inherit">Dual AmOp</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">,up to 30 V, 20 mA out.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>LM386&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/lm393.pdf" style="color:inherit;text-decoration:inherit">Low Voltage Audio Amp</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, in 4-12 V, gain 20-200. 300 mA out.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>LM393&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/lm393.pdf" style="color:inherit;text-decoration:inherit">Dual Comparators</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, up to 30 V.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>NE5532P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/ne5532.pdf" style="color:inherit;text-decoration:inherit">Dual Low-Noise AmOp</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>NE555P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/ne555.pdf" style="color:inherit;text-decoration:inherit">“Precision” Timer</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>UA741CN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/ua741.pdf" style="color:inherit;text-decoration:inherit">General Purpose AmOp</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">, the typical 741...</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>JRC4558D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Aka RC4558, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ti.com/lit/ds/symlink/rc4558.pdf" style="color:inherit;text-decoration:inherit">General Purpose AmpOp</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>PC817&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.farnell.com/datasheets/73758.pdf" style="color:inherit;text-decoration:inherit">General Purpose Photocoupler</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. I have a set of 10x of similar ones.</span></li>
+</ul>
+<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So bottom line here we have 1 type of timer, 1 type of optocoupler, 6 types of AmOp, 2 types of comparators, and 2 types of darlington drivers. I don’t see myself using many of these. I have so far used 1 of the optos I have (and just for testing, although I was supposed to need 10x for a Randall project), and I never used the 2003 drivers I got (that was to drive mechanical relays for the sprinkler project which I never started), and here I would be using maybe 1x 555 timer for a quick test (for a project I already decided I’m unlikely to finalize using a 555).</span></p>
+<p style="height:12pt;text-align:left"></p>
+<p style="height:12pt;text-align:left"></p>
+<hr>
+<p style="height:12pt;text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2020-11-30_blinking_led_-_pir_approach.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2020-11-24_blinking_led_--_arduino_esp3_ae4e30a8.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+
