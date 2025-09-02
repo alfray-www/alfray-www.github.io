@@ -250,17 +250,17 @@ td p {
 <p></p>
 <p><span>This now results in a web page giving a dashboard like this: </span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:321.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:575.81px"><img alt="" src="img_a6ff5c56b7eaa5211a32c220a0a3a465f1be9e5f136d442da040789b52983deei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:321.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:575.81px"><img alt="" src="img_4b35daa447ac582316576154103a0fb48d7a5d76d9e4cbd341a11902254fff0ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>This page gives me an overview of which computers are on, wherever the automated lines are active (the “toggles”), and which train ran last, and whether it completed its run properly.</span></p>
 <p></p>
 <p><span>The major visible part is this new “performance” tab that lets me see how the trains behave on their respective route:</span></p>
 <p><span></span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:424.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:575.39px"><img alt="" src="img_a63d6b6ec80a38597a088f2d1c47c3f01391ca3ecda0b6534eec5f33a570aa67i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:424.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:575.39px"><img alt="" src="img_8e32d6fce9c3cd7728dc819c8f1bf3240f8609a75e517ac64fdff216fe70035bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>For each block, the automation keeps track of the time the train should spend in that block -- there’s a minimum time, a maximum, and the performance tab shows a color based on the “ideal” time spent in each block:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:131.04px;margin:-0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.90px"><img alt="" src="img_62eaa0e159d417997d955152f166bb20575eac195328cc499263483a9fd7b572i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:131.04px;margin:-0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.90px"><img alt="" src="img_d9b461825c0936afc81b022c0ad829d23e216c0faf809146075ae292e281da1ai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>That allows the automation to detect anomalies as soon as possible. If a train spends too long in a block, that means either the engine has a problem or maybe it derailed and it’s not moving. The minimum timing also detects anomalies -- since the trains move at a very specific speed, they can’t magically cross a block too fast. Since we rely on electrical detection of the train in a block, that’s generally the sign there’s a problem with a sensor or a train that derailed and shorts the track for example, among other possible causes. In any case, the automation program will automatically stop the current train and attempt to do a “recovery” where it runs </span><span style="font-style:italic">another</span><span>&nbsp;program to bring the train back to the station. </span></p>
 <p></p>
@@ -269,12 +269,12 @@ td p {
 <p><span>That said, the web page dashboard is only the tip of the iceberg, and updating the dashboard web site was the easiest part. </span></p>
 <p></p>
 <p><span>The real magic starts by an update to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/tree/main/jmri/conductor" style="color:inherit;text-decoration:inherit">Conductor Automation Script Engine</a></span><span>. The script language gets a new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/engine2k/src/main/kotlin/com/alfray/conductor/v2/script/dsl/IConductor.kt#L99" style="color:inherit;text-decoration:inherit">“dazz event” command</a></span><span>&nbsp;that lets the script register any kind of event to be reported to the dashboard. This is used, for example, to keep track of the automation toggles on the main control panel, and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/engine2k/src/main/resources/v2/script/script_v35.01_bl191%2Bml9538%2B1072%2Btl6885.conductor.kts" style="color:inherit;text-decoration:inherit">latest script_v35</a></span><span>&nbsp;uses it as such:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:139.00px;margin:-0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:692.00px"><img alt="" src="img_03327d38462cdb5fcfd87c762dcd8ca77cc19e5f9a1730f9daec131cdecc62e9i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:139.00px;margin:-0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:692.00px"><img alt="" src="img_012fd7bf69498100a79a3fee0ada9e74ef87d243daae6831ccd97213fd038adci.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>This allows the automation script to dictate which events get reported and collected, instead of just hardcoding them in the Conductor program. Right now I only collect when computers turn on and off, and when the automation is started or stopped -- which happens automatically when the museum staff turns the exhibit on and off, but can also be the result of the Saturday Operators manually turning the system on and off.</span></p>
 <p></p>
 <p><span>The other part of the Conductor script engine is the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/engine2k/src/main/kotlin/com/alfray/conductor/v2/script/impl/SequenceRoute.kt" style="color:inherit;text-decoration:inherit">SequenceRoute class</a></span><span>. This is the core route management that drives a train through a defined route, and it has been updated to emit route statistics when a train starts and when a train ends its route:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:272.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:579.00px"><img alt="" src="img_536b92ea6050a18c5cc5beeb5d0d0c2e0bf7a34c8dd1ab1982531fbfa3f78e72i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:272.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:579.00px"><img alt="" src="img_f7e55c69d47a990d5b2a5472f57e5f393d1ff1c45d4bc03a000e319c3434fbd1i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>That one is a bit more interesting because we have 3 cases:</span></p>
 <ul style="margin:0">
@@ -310,7 +310,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

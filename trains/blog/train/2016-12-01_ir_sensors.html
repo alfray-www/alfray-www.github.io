@@ -13,14 +13,14 @@
 <meta property="og:title"       content="IR Sensors" />
 
 <meta property="og:description" content="To detect trains on the branchline, I experimented with using IR reflective sensors instead of block detectors. These have the advantage that they are inexpensive and can be connected directly to an NCE AIU01&nbsp;board." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_67a1665aeeac9a09b815020214bcc165e23f4183f770fafce354dc27691031b4i.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_57c7e189932a1554934abe8d4c5b7b72e9fbee661dd19708c2e04dee61c5d6c0i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="IR Sensors" />
 
 <meta name="twitter:description" content="To detect trains on the branchline, I experimented with using IR reflective sensors instead of block detectors. These have the advantage that they are inexpensive and can be connected directly to an NCE AIU01&nbsp;board." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_67a1665aeeac9a09b815020214bcc165e23f4183f770fafce354dc27691031b4i.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_57c7e189932a1554934abe8d4c5b7b72e9fbee661dd19708c2e04dee61c5d6c0i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -247,7 +247,7 @@ td p {
 <p><span>To detect trains on the branchline, I experimented with using IR reflective sensors instead of block detectors. These have the advantage that they are inexpensive and can be connected directly to an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>&nbsp;board.</span></p>
 <p></p>
 <p><span>The original idea was to embed the sensors in the track bed. The sensors are fairly small and fit nicely between ties. The one chosen have a detection range of 2-15 mm, which would be ideal to detect when an engine truck passes over the sensor. </span></p>
-<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:159.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:98.00px"><img alt="" src="img_67a1665aeeac9a09b815020214bcc165e23f4183f770fafce354dc27691031b4i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:159.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:98.00px"><img alt="" src="img_57c7e189932a1554934abe8d4c5b7b72e9fbee661dd19708c2e04dee61c5d6c0i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="text-align:left"><span>The IR reflective sensor used are </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/26NywA3" style="color:inherit;text-decoration:inherit">TCRT5000</a></span><span>. The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.vishay.com/docs/83760/tcrt5000.pdf" style="color:inherit;text-decoration:inherit">Vishay spec</a></span><span>&nbsp;can be found </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.vishay.com/docs/83760/tcrt5000.pdf" style="color:inherit;text-decoration:inherit">here</a></span><span>. </span></p>
 <p><span>This model is nothing more than 2 separate "LEDs" stuck together in a flimsy small plastic shell. They can be easily removed from the plastic shell and mounted in the track flush with the ties, pointing upwards (technically one LED is an emitter and the other is a receiver so calling it a LED is abusing the term, although it may look like one).</span></p>
 <p style="text-align:left"></p>
@@ -257,7 +257,7 @@ td p {
 <p style="text-align:left"><span>How is the IR sensor going to connect to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>?</span></p>
 <p style="text-align:left"><span></span></p>
 <p style="text-align:left"><span>This is how I use the IR sensors with an Arduino using the internal pull-up and next to it is the AIU input circuitry:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:217.07px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:221.50px"><img alt="" src="img_b56fcf770c69c388b126823e70081ceb1899d0d3ad3ded182eb776699a3a9d73d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span>&nbsp; </span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:226.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:326.00px"><img alt="" src="img_ae02a670c98fd5cc615cab8f0e567cdb431241b7abd4e90f5ecae76ee1fd884ai.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:217.07px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:221.50px"><img alt="" src="img_b56fcf770c69c388b126823e70081ceb1899d0d3ad3ded182eb776699a3a9d73d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span>&nbsp; </span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:226.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:326.00px"><img alt="" src="img_1209aee838432695eaf1ffe715138f74f553f325909bea0977bf2e04629bb243i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="text-align:left"></p>
 <p><span>There's a good match here: connecting the IR receiver collector to the 5V/pull-up side of the AIU should do exactly what we want with the AIU input driven low when an IR reflection occurs.</span></p>
 <p style="text-align:left"></p>
@@ -325,7 +325,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

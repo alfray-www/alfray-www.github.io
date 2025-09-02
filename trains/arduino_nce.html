@@ -10,13 +10,13 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Automation: Arduino NCE" />
 
-<meta property="og:image"       content="https://www.alfray.com/trains/img_bc7eeb2e51f57817767c5154b2cf19ba0233f0b8f7558c33f64387c6d2763cbai.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/img_e2e1f6159bb8294f58d56eb595d010ee9ce9ffb89ab4322ff5d303947abbf3c3i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Automation: Arduino NCE" />
 
-<meta name="twitter:image"       content="https://www.alfray.com/trains/img_bc7eeb2e51f57817767c5154b2cf19ba0233f0b8f7558c33f64387c6d2763cbai.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_e2e1f6159bb8294f58d56eb595d010ee9ce9ffb89ab4322ff5d303947abbf3c3i.jpg" />
 
 <title>Automation: Arduino NCE</title>
 
@@ -176,7 +176,7 @@ td p {
 <p><span>Before going into too many details, here's a small experiment I made at home that illustrates this and a few other things.</span></p>
 <p><span>The first version was based around a DigiX:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:376.85px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:559.50px"><img alt="" src="img_bc7eeb2e51f57817767c5154b2cf19ba0233f0b8f7558c33f64387c6d2763cbai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:376.85px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:559.50px"><img alt="" src="img_e2e1f6159bb8294f58d56eb595d010ee9ce9ffb89ab4322ff5d303947abbf3c3i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>which I then updated to use an Arduino Mega and more peripherals, as can be seen on </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=PP1nxWi8WeM" style="color:inherit;text-decoration:inherit">this video demonstration</a></span><span>:</span></p>
 <p style="text-align:left"></p>
@@ -210,7 +210,7 @@ td p {
 <p></p>
 <p><span>Now to continue on the primer, regarding LCD screens. There are a few form factors out there: 1 line, 2 lines, 4 lines, 10 characters wide, 20 characters wide, green or blue backlights. There are also the graphic dot matrixes ones, very convenient if you need to display curves and not just text. Now the thing is that the text displays are typically controlled by a 16-pin bus, which is of course quite inconvenient to connect to an Arduino. Instead there exist small add-on boards that allow an Arduino to drive the LCD via the 4-pin I²C bus. I²C is nothing more than a serial link. You can either buy the LCD board and the IIC/I²C board separately and solder them together or you can buy a board like the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1W5n3Zt" style="color:inherit;text-decoration:inherit">SainSmart LCD2004</a></span><span>&nbsp;that already has the add-on module on the back, which is what I did; it looks like this:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:120.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:419.00px"><img alt="" src="img_956ec6c904ea1cf5096ce8dd958020a454fc9de4067313046d303f48e7278953i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:120.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:419.00px"><img alt="" src="img_f6c4bed8d323de487e93d22550cae9ae6850fc0bebcaddbbac269d8fc8aed28ei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p style="text-align:left"><span>Here you can see that the LCD uses an IIC (parallel data, 16-pins at the top) with an add-on "IIC/I2C" board. It features an NXP PCF8574T to convert to I²C, which spec is here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.nxp.com/documents/data_sheet/PCF8574.pdf" style="color:inherit;text-decoration:inherit">http://www.nxp.com/documents/data_sheet/PCF8574.pdf</a></span></p>
 <p></p>
@@ -361,7 +361,7 @@ td p {
 <p><span>The Arduino Mega's spec puts the internal pull-ups at 20-50 kΩ which is a good match for us.</span></p>
 <p style="text-align:left"><span>In the end, t</span><span>hat's the schematics we get:</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:261.04px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:390.50px"><img alt="" src="img_74bfd97b969c02b07618da011b87618dbeed0dfb92e7391a13942a989040d4b9d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span>&nbsp;</span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:159.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:98.00px"><img alt="" src="img_f80289b278d4cbe67d624ab9c88979bfbd475e6ac350076aaf877678d21b2d8di.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:261.04px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:390.50px"><img alt="" src="img_74bfd97b969c02b07618da011b87618dbeed0dfb92e7391a13942a989040d4b9d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span>&nbsp;</span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:159.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:98.00px"><img alt="" src="img_57c7e189932a1554934abe8d4c5b7b72e9fbee661dd19708c2e04dee61c5d6c0i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>That does mean that the value measured on the ADC is high when there's no infrared being received. The value lowers when we detect an object, and the amount depends on the amount of light reflected, which depends on material and distance.</span></p>
 <p></p>
@@ -387,7 +387,7 @@ td p {
 <p></p>
 <p><span>This is what the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1T0uU9H" style="color:inherit;text-decoration:inherit">NCE USB interface</a></span><span>&nbsp;looked like originally:</span></p>
 <p></p>
-<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:304.60px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:797.00px"><img alt="" src="img_5f1f4018684bb1908a9129e476b11bad24d494176e94ead3cf375f57f5084277i.jpg" style="height:454.52px;margin-left:0.00px;margin-top:-75.40px" title=""></span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:304.60px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:797.00px"><img alt="" src="img_c46a71967d51466cdbb5cc33500ce9c491411366d6512bdffbec3c3f3d25c77ei.jpg" style="height:454.52px;margin-left:0.00px;margin-top:-75.40px" title=""></span></p>
 <p></p>
 <p><span>Normally, one side plugs to a computer via USB. The other side plugs into an NCE command station via the RJ12 jack.</span></p>
 <p></p>
@@ -409,7 +409,7 @@ td p {
 <p></p>
 <p><span>Rather than solder wires directly to the optocoupler going to the Arduino, I drilled 4 small holes in the board and glued a 4-pin header. The RX/TX are soldered to the D213 optocoupler and the Gnd and 5V pins are soldered to the large condenser visible nearby:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:146.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:627.00px"><img alt="" src="img_aab47d4e9a0b5b560386ebc636ba78f7a07ea36243eaf549ea8e5f72d6e28fd7i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:146.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:627.00px"><img alt="" src="img_497b18a10561a26e33c60198dd7b888fdb608e3c4c8265ff9862c69f402524e8i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>Given the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.mouser.com/ds/2/149/MOCD213M-116327.pdf" style="color:inherit;text-decoration:inherit">pinout of the D213 optocoupler</a></span><span>&nbsp;(PDF), here's how this is all connected:</span></p>
 <ul style="margin:0">
@@ -458,7 +458,7 @@ td p {
 <h2 id="h.76ub1koxjhvt" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">Xminilab</span></h2>
 <p><span>In the introduction image, there's a second green LCD display on my setup:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:258.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:468.00px"><img alt="" src="img_51dd71617ecd0e1223bcc65d35fd6d78d6739bc8e8461a19de037f7f8ee4c4edi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:258.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:468.00px"><img alt="" src="img_30991da8595dd264cfbc9af5571670c5686ee6aad4b8165728b8fdf46f08bc6ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>This is an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://amzn.to/1Y4rEID" style="color:inherit;text-decoration:inherit">Xmega XMiniLab</a></span><span>&nbsp;from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.gabotronics.com/development-boards/xmega-xminilab.htm" style="color:inherit;text-decoration:inherit">Gabotronics</a></span><span>. I use it just for debugging. It's a very convenient small board that primarily acts as a basic oscilloscope and can also do voltage meter, but it comes with 2 specific features which are extremely convenient: it can display serial data from either an I²C bus or a regular serial port.</span></p>
 <p></p>
@@ -484,7 +484,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
 <script>

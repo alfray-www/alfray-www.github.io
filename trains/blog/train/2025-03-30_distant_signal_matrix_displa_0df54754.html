@@ -13,14 +13,14 @@
 <meta property="og:title"       content="Distant Signal: Matrix Display for Turnout T330, Continued" />
 
 <meta property="og:description" content="A bit more progress on the Distant Signal&nbsp;project: the initial configuration script&nbsp;consisted of purely graphics primitives, and the automation would select which of the predetermined states to display." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_92efae915635512bbe59131f3cecc68a8f2c5a995a7e09641d98f7b5a8711812i.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_a1c5b44182109ded196892e53814eaae322ee6b054b467a52d0b392ea078b353i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Distant Signal: Matrix Display for Turnout T330, Continued" />
 
 <meta name="twitter:description" content="A bit more progress on the Distant Signal&nbsp;project: the initial configuration script&nbsp;consisted of purely graphics primitives, and the automation would select which of the predetermined states to display." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_92efae915635512bbe59131f3cecc68a8f2c5a995a7e09641d98f7b5a8711812i.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_a1c5b44182109ded196892e53814eaae322ee6b054b467a52d0b392ea078b353i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -255,10 +255,10 @@ td p {
 </ul>
 <p></p>
 <p><span>With that approach, we can change the display to look like this:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:402.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_92efae915635512bbe59131f3cecc68a8f2c5a995a7e09641d98f7b5a8711812i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:402.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_a1c5b44182109ded196892e53814eaae322ee6b054b467a52d0b392ea078b353i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>[Edit: And future me even added a view of this panel with a further style update, seen here in-situ:]</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:349.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_ca4662920500f41363e1d44467a2506122a29cdcdbd6fac10d10a0c7664dd369i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:349.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_35fa0cf0851544c9c6af1ca46d8711a2249d7f5f89031158185433f915e89feci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p><span></span></p>
 <p><span>The large “T330” is the title of that panel. The track shows a turnout is either a normal or a divergent/reverse pattern. Finally there are 3 block numbers.</span></p>
 <p></p>
@@ -267,7 +267,7 @@ td p {
 <p><span>Once a display is initialized with its configuration script, it receives the turnout state to draw, &nbsp;as well as the state of the blocks to show them as occupied or empty.</span></p>
 <p></p>
 <p><span>Thus I changed the configuration script from purely a “list of drawing primitives” to something that has a lot more semantics to it. The custom-made text syntax didn’t scale very well. Instead I decided to opt for a JSON-based “syntax”, and here’s an example that defines the panel seen above:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:909.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b1e43192a5998359bf8eba5b06d2f916ed847a3442fee5b2c94ef906c12589d3i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:909.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_c2c329720bf6c115299bf0d21357767a250dc972612797bf24aa3c2b80079954i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>This is definitely more verbose, and one can question the use of JSON dictionaries as a way to encode “instructions”, yet overall it’s less cryptic than the previous version as the JSON dictionaries keys form a sort of self-documentation. I shall point out that I’m honestly not a huge fan of JSON -- I personally prefer </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://yaml.org/" style="color:inherit;text-decoration:inherit">YAML</a></span><span>&nbsp;for configuration files. However I need to keep in mind this runs on an embedded system after all, and CircuitPython has a native json parsing library that gets the job done -- “keep it simple” is all about tradeoffs.</span></p>
 <p></p>
@@ -292,7 +292,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

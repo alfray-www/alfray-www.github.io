@@ -13,14 +13,14 @@
 <meta property="og:title"       content="Blinking LED - Astable transistor/555 approach" />
 
 <meta property="og:description" content="Another surely doomed attempt using an RC and a transistor. As expected, it did not work." />
-<meta property="og:image"       content="http://www.alfray.com/ralf/blog/dev/img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png" />
+<meta property="og:image"       content="http://www.alfray.com/ralf/blog/dev/img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Blinking LED - Astable transistor/555 approach" />
 
 <meta name="twitter:description" content="Another surely doomed attempt using an RC and a transistor. As expected, it did not work." />
-<meta name="twitter:image"       content="http://www.alfray.com/ralf/blog/dev/img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png" />
+<meta name="twitter:image"       content="http://www.alfray.com/ralf/blog/dev/img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" />
 
 <title>R’alf Dev Log</title>
 
@@ -237,17 +237,17 @@ td p {
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another surely doomed attempt using an RC and a transistor. As expected, it did not work.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Although it is inherently flawed, I’ll put it here:</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:407.00px"><img alt="" src="img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:407.00px"><img alt="" src="img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span>Transistor is a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" style="color:inherit;text-decoration:inherit">2N3904</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This obviously does create a delay starting the LED. Then there’s nothing to stop it. The futile idea was to add a second transistor between “ground” and the battery minus side to cut the circuit. Problem is that there’s nothing here that would generate something suitable to trigger it. Something like this:</span></p>
 <p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:402.00px"><img alt="" src="img_ada9f29123ced05afc3358dcb1219bb93f7e3bfcd1ef34d88d8800744e6fae9bi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:402.00px"><img alt="" src="img_30d6f24c028533b8298608992d6a23ee308e841c9048b59a97b7c3aacaaa7276i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Closer but obviously very wrong. That top Q3 transistor has to be at the “ground” level and mirror Q2, which I tried in the simulator but I screwed it up and didn’t want to get the embarrassingly bad schema. Anyhow, two Q2/Q3 in symmetry… &nbsp;which seems familiar… if only that had been solved...</span></p>
 <p style="text-align:left"><span>What I want is an “astable multivibrator”: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.electronics-tutorials.ws/waveforms/astable.html" style="color:inherit;text-decoration:inherit">https://www.electronics-tutorials.ws/waveforms/astable.html</a></span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:202.18px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:378.50px"><img alt="" src="img_eec0b66f5649f6a15e286b9f6819b6d3927f8786ad96f8bf770545fb01fb3b69i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:142.84px"><img alt="" src="img_50ddce57274030c0c4446af06de32deb174028582e7b82c29ac48ec783fad4d4i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:202.18px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:378.50px"><img alt="" src="img_3062170944b42d02e5802a08037c742b6acb985fda982957f0fb8c4a2813b82ei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:142.84px"><img alt="" src="img_84396ff2cf0577f15fcf89d1384ae1248d9e51b5aa599d4ba837d947d9306771i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Let’s compute some values.</span></p>
 <ul style="margin:0">
@@ -266,7 +266,7 @@ td p {
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Of note, to control the LED, we need a 3rd transistor on the emitter of TR1/TR2 as shown above. That’s interesting as I’d have driven it out of the Q output using a high value resistor.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:164.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_898fef18a25da19aa62de914a588316b5d22ecd0109719b02dbc2289e895145fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:164.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_5fdf2454d1d90d5d9e0b7341346c65c8fe15671ac2b927bc78d3b529c287a355i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span>So I built that circuit using 3 transistors </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" style="color:inherit;text-decoration:inherit">2N3904</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">. R1 = R4 = 10k Ω, R2 = 220k Ω, R3 = 100k Ω, C1 = C2 = 10uF. For the LED part, I have a 1.88 Vf red LED with a 470 Ω resistor.</span></p>
 <p style="height:12pt;text-align:left"></p>
@@ -276,11 +276,11 @@ td p {
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I am failing to measure actual current usage with a multimeter.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">With the simulator in National Instruments Multisim:</span></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:292.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_98644137b548dd32953b71467de1514e8c820e5ce2090a8a594a12583d5361a7i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:292.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_dac35036daeebe2f89dd64161a699033cd41a1bb689836cb5cc7de1104cb4f11i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I have no idea what kind of transistor they are modeling here. Doesn’t look like a 2N3904.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">This gives me A=5 mA when the LED is on, and 0.3 mA when the LED is off.</span></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:121.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_b354d355cf6d64f7cde8140a959c14bfa2a717bb4ee7a696975209d2e2b5a403i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:121.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_4ade89b16c6d9077e3400ad90d3a405eaac031dd2634e7a64c45110dde44ce16i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Combined with the duty cycle: (0.69s*5mA + 6.9s*0.3mA) / 7.59s = 0.72 mA/s = 2618 mA/h.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Technically a bit lower as the LED is not fully at 5 mA while on; it turns on progressively. But even if the on cycle was half current at 2.5 mA, it would be (0.69s*2.5mA + 6.9s*0.3mA) / 7.59s * 3600 = 1800 mA/h.</span></p>
@@ -352,7 +352,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

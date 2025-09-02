@@ -13,14 +13,14 @@
 <meta property="og:title"       content="Conductor 2 w/ Google Analytics 4" />
 
 <meta property="og:description" content="One of the cornerstones of maintaining any automated process, especially daily automated running of little HO-sized trains on a public music model railroad, is to have dashboards to track the status of the automated processes and being able to see at a glance whether they are healthy." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_b83b22e1c30077f46868f4595e03b12aa8bee5e395ac4df56df471a1597445c9i.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_5be8931741fd913034b5cf00f732dca8381233bba85470ef5f165beceda220aci.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Conductor 2 w/ Google Analytics 4" />
 
 <meta name="twitter:description" content="One of the cornerstones of maintaining any automated process, especially daily automated running of little HO-sized trains on a public music model railroad, is to have dashboards to track the status of the automated processes and being able to see at a glance whether they are healthy." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_b83b22e1c30077f46868f4595e03b12aa8bee5e395ac4df56df471a1597445c9i.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_5be8931741fd913034b5cf00f732dca8381233bba85470ef5f165beceda220aci.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -248,7 +248,7 @@ td p {
 <p><span>One of the cornerstones of maintaining any automated process, especially daily automated running of little HO-sized trains on a public music model railroad, is to have dashboards to track the status of the automated processes and being able to see at a glance whether they are healthy.</span></p>
 <p></p>
 <p><span>For example this is part of a dashboard that I look multiple times a day:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:233.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b83b22e1c30077f46868f4595e03b12aa8bee5e395ac4df56df471a1597445c9i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:233.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_5be8931741fd913034b5cf00f732dca8381233bba85470ef5f165beceda220aci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>My dashboards have a few moving parts:</span></p>
 <ul style="margin:0">
@@ -264,13 +264,13 @@ td p {
 <p></p>
 <p><span>One main issue I have is that since the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/analytics/answer/10089681" style="color:inherit;text-decoration:inherit">Google Analytics Transition to GA4</a></span><span>, the GA4 Looker Studio connector does not refresh hourly anymore. Data seems to only be available 12-hours in the past, even when I configure the GA4 connector to “hourly”. I also have a hard time figuring out the timestamp format to use -- by default only hourly dates work in the charts where a few of my charts are at the 15-minute granularity like this wifi status one below:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:230.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f653be65217d97913decd0eda7c61735d6b1914be16839166c3d61a311a0c980i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:230.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_e67d1e6541802a80b1ce2cd81eb6e79d4d63e3062bfe98e95493cde274671928i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>I was able to replicate that wifi-ping-every-15-minutes in the new GA4 + Looker Studio by sending the timestamp as a custom event property.</span></p>
 <p></p>
 <p><span>Luckily, most of my stats were just hourly, which works well with the new GA4 + Looker Studio -- except before they updated on the hour, whereas now I get them with a 12-hour delay:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:470.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_08fc18dbf74a3613e314f115c31cdadb5a41444342c86304622a09c46d97b036i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:470.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_cf313ab1edb115a6faead80a2d73b02a4002e7b7c579aa15ba140a964aaa2e9bi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p></p>
 <hr>
@@ -294,7 +294,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

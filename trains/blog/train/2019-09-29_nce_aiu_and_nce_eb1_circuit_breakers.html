@@ -287,10 +287,10 @@ td p {
 <p></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:427.91px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:621.05px"><img alt="" src="img_0091f4e1d4db43de75e66511f43f7567ad0d8d835a213f2c0a6ff96d8664625cd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
-<p><span>When there’s a short, the EB1 turns off the status LED, and thus the AIU input is read as a 0. However, being a self-reset device, the EB1 just keeps trying to re-apply power every few seconds, which makes its status LED blink briefly -- this has a nice side effect allowing for easier visual identification. Due to the NCE cab bus pathetic refresh rate for these AIU01 cards, there is a tiny possibility that each AIU read would be aligned on the time where the LED blinks, and thus the shorting status would be missed. This needs to be identified and tested first. If that’s an issue, it can be solved by just adding a capacitor on the output like I did to solve the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ralf.alfray.com/trains/randall/about.html#h.g3i8lbjtmb8z" style="color:inherit;text-decoration:inherit">missed button presses</a></span><span>&nbsp;issue.</span></p>
+<p><span>When there’s a short, the EB1 turns off the status LED, and thus the AIU input is read as a 0. However, being a self-reset device, the EB1 just keeps trying to re-apply power every few seconds, which makes its status LED blink briefly -- this has a nice side effect allowing for easier visual identification. Due to the NCE cab bus's pathetic refresh rate for these AIU01 cards, there is a tiny possibility that each AIU read would be aligned on the time where the LED blinks, and thus the shorting status would be missed. This needs to be identified and tested first. If that’s an issue, it can be solved by just adding a capacitor on the output like I did to solve the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.g3i8lbjtmb8z" style="color:inherit;text-decoration:inherit">missed button presses</a></span><span>&nbsp;issue.</span></p>
 <p></p>
 <p><span>This is the 2630 optocoupler I plan to use (the prefix name depends on the supplier):</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:366.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_d1acfda719453482727baaa8f10e2691adf9b7cddf5abcf50949d68f87378162i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:366.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_e2f71cd7284cf8bb4f1f1a80214affb6e2d6c674af576969b6ae34dac57eeffdi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>It’s also possible to use the 6N137 single-channel optocouplers instead, one per EB1 output to monitor.</span></p>
 <p></p>
@@ -434,7 +434,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

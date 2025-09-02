@@ -13,14 +13,14 @@
 <meta property="og:title"       content="Conductor 2: Activated Block Handling" />
 
 <meta property="og:description" content="These two&nbsp;commits&nbsp;address the recent issue of spurious block activation breaking the automation." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_b880d6adf45f75fb66e6ab03c21065be0c082d7ec4af4e8a82e86a1d98843d0bi.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_6a346d5d29deaaadc78aef01a9e0dff2b223776e40c9669bc6eb964092769e27i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Conductor 2: Activated Block Handling" />
 
 <meta name="twitter:description" content="These two&nbsp;commits&nbsp;address the recent issue of spurious block activation breaking the automation." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_b880d6adf45f75fb66e6ab03c21065be0c082d7ec4af4e8a82e86a1d98843d0bi.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_6a346d5d29deaaadc78aef01a9e0dff2b223776e40c9669bc6eb964092769e27i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -245,13 +245,13 @@ td p {
 
     <p><span></span></p>
 <p></p>
-<p><span>These </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/6f773e498a944fc4d840977e8383a00e79e324b5" style="color:inherit;text-decoration:inherit">two</a></span><span>&nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/133cf7a2bd6ddaa1a68edd02f2d7f9923895ac17" style="color:inherit;text-decoration:inherit">commits</a></span><span>&nbsp;address the recent issue of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ralf.alfray.com/trains/blog/train/2024-10-14_conductor_2_freight_starts_w_ce787171.html" style="color:inherit;text-decoration:inherit">spurious block activation breaking the automation</a></span><span>.</span></p>
+<p><span>These </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/6f773e498a944fc4d840977e8383a00e79e324b5" style="color:inherit;text-decoration:inherit">two</a></span><span>&nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commit/133cf7a2bd6ddaa1a68edd02f2d7f9923895ac17" style="color:inherit;text-decoration:inherit">commits</a></span><span>&nbsp;address the recent issue of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2024-10-14_conductor_2_freight_starts_w_ce787171.html" style="color:inherit;text-decoration:inherit">spurious block activation breaking the automation</a></span><span>.</span></p>
 <p></p>
 <p><span>Recently a new sensor-related issue arose with block B360. Last time, it was because some track was </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2024-10-12_conductor_2_sensor_issues_on_483b2f5d.html" style="color:inherit;text-decoration:inherit">occupied somewhere else</a></span><span>&nbsp;on the layout. This time, the issue is different: the automated passenger train is going to Summit (the top of the mountain), where it stops and returns back down. It goes through these blocks:</span></p>
 <p></p>
 <p style="text-align:center"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B370</span><span>&nbsp;(Summit) → </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B360</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B340</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B330</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B321</span><span>&nbsp;→ </span><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">B311</span><span>&nbsp;(Station)</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:188.00px;margin:-0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_b880d6adf45f75fb66e6ab03c21065be0c082d7ec4af4e8a82e86a1d98843d0bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:188.00px;margin:-0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_6a346d5d29deaaadc78aef01a9e0dff2b223776e40c9669bc6eb964092769e27i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>The new problem with block B360: after the train has left block B360 and entered block B340, block B360 should register as “empty”. After all, the train isn’t on the block anymore. But from time to time -- very rarely -- the block will keep staying on, sometimes as long as a minute and half! Now two adjacent blocks can be active at the same time -- that happens when a train crosses a block boundary. But once the train reaches block B330, it is an error for block B360 to still be active. </span></p>
 <p></p>
@@ -291,7 +291,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-01 by Rig4j 0.1-Exp-0c45755&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-02 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

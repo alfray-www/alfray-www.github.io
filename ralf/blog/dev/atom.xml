@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-09-01T01:07:08.269903-07:00</updated>
+<updated>2025-09-02T14:27:55.799933-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="http://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="http://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>http://www.alfray.com/ralf/blog/dev/atom.xml</id>
-<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-0c45755">Rig4j</generator>
+<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-05cc7b2">Rig4j</generator>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">GA4 Stats from an ESP32?</title>
@@ -193,12 +193,12 @@
 <id>http://www.alfray.com/ralf/blog/dev/2025-04-07_the_hub75_protocol_for_led_m_3fc341e2.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="http://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Over there in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;trains/electronics blog&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I have a little write up about the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HUB75 Protocol for LED Matrix Displays&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, as used in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project. Go read it &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;there&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Over there in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;trains/electronics blog&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I have a little write up about the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HUB75 Protocol for LED Matrix Displays&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, as used in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project. Go read it &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;there&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-04-07T00:00:13-07:00</updated>
+<updated>2025-04-07T00:00:35-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1501,15 +1501,15 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;and here&#8217;s an example of the result:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2023-06-04 - DaVinci Resolve Plugin for the Mobius Car Ride Videos&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:228.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_673fbb030272c01233bd80c03a06b5c0324fce61192038e863fd5a48ce27f759i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:228.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5af2b29a67ee8c6bf888b849efb93d2ce0bff0bd7b6736c50d95eb87178e02bbi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2023-06-04T00:00:11-07:00</updated>
+<updated>2023-06-04T00:00:21-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -3330,17 +3330,17 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Another surely doomed attempt using an RC and a transistor. As expected, it did not work.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Although it is inherently flawed, I&#8217;ll put it here:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:407.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_52f52efd68160ca33dc64e8304a812b6f2d2d3b48034e6b0d18dc224b4b59df2i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:407.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Transistor is a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.onsemi.com/pub/Collateral/2N3903-D.PDF&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2N3904&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;This obviously does create a delay starting the LED. Then there&#8217;s nothing to stop it. The futile idea was to add a second transistor between &#8220;ground&#8221; and the battery minus side to cut the circuit. Problem is that there&#8217;s nothing here that would generate something suitable to trigger it. Something like this:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;background-color:rgb(255, 255, 0)&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:402.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ada9f29123ced05afc3358dcb1219bb93f7e3bfcd1ef34d88d8800744e6fae9bi.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:402.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_30d6f24c028533b8298608992d6a23ee308e841c9048b59a97b7c3aacaaa7276i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Closer but obviously very wrong. That top Q3 transistor has to be at the &#8220;ground&#8221; level and mirror Q2, which I tried in the simulator but I screwed it up and didn&#8217;t want to get the embarrassingly bad schema. Anyhow, two Q2/Q3 in symmetry&#8230; &amp;nbsp;which seems familiar&#8230; if only that had been solved...&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;What I want is an &#8220;astable multivibrator&#8221;: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.electronics-tutorials.ws/waveforms/astable.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.electronics-tutorials.ws/waveforms/astable.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:202.18px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:378.50px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_eec0b66f5649f6a15e286b9f6819b6d3927f8786ad96f8bf770545fb01fb3b69i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:142.84px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_50ddce57274030c0c4446af06de32deb174028582e7b82c29ac48ec783fad4d4i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:202.18px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:378.50px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3062170944b42d02e5802a08037c742b6acb985fda982957f0fb8c4a2813b82ei.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:142.84px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_84396ff2cf0577f15fcf89d1384ae1248d9e51b5aa599d4ba837d947d9306771i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Let&#8217;s compute some values.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
@@ -3359,7 +3359,7 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Of note, to control the LED, we need a 3rd transistor on the emitter of TR1/TR2 as shown above. That&#8217;s interesting as I&#8217;d have driven it out of the Q output using a high value resistor.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:164.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_898fef18a25da19aa62de914a588316b5d22ecd0109719b02dbc2289e895145fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:164.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5fdf2454d1d90d5d9e0b7341346c65c8fe15671ac2b927bc78d3b529c287a355i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;So I built that circuit using 3 transistors &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.onsemi.com/pub/Collateral/2N3903-D.PDF&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2N3904&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;. R1 = R4 = 10k &#8486;, R2 = 220k &#8486;, R3 = 100k &#8486;, C1 = C2 = 10uF. For the LED part, I have a 1.88 Vf red LED with a 470 &#8486; resistor.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
@@ -3369,11 +3369,11 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;I am failing to measure actual current usage with a multimeter.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;With the simulator in National Instruments Multisim:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:292.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_98644137b548dd32953b71467de1514e8c820e5ce2090a8a594a12583d5361a7i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:292.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_dac35036daeebe2f89dd64161a699033cd41a1bb689836cb5cc7de1104cb4f11i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;I have no idea what kind of transistor they are modeling here. Doesn&#8217;t look like a 2N3904.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;This gives me A=5 mA when the LED is on, and 0.3 mA when the LED is off.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:121.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b354d355cf6d64f7cde8140a959c14bfa2a717bb4ee7a696975209d2e2b5a403i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:121.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_4ade89b16c6d9077e3400ad90d3a405eaac031dd2634e7a64c45110dde44ce16i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Combined with the duty cycle: (0.69s*5mA + 6.9s*0.3mA) / 7.59s = 0.72 mA/s = 2618 mA/h.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Technically a bit lower as the LED is not fully at 5 mA while on; it turns on progressively. But even if the on cycle was half current at 2.5 mA, it would be (0.69s*2.5mA + 6.9s*0.3mA) / 7.59s * 3600 = 1800 mA/h.&lt;/span&gt;&lt;/p&gt;
@@ -3428,7 +3428,7 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2020-11-25T00:00:48-08:00</updated>
+<updated>2020-11-25T00:00:04-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -3495,14 +3495,14 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This does not work, as tried in N&lt;/span&gt;&lt;span&gt;ational Instruments Multisim&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:251.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:466.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_693beb7f72ccf4ee5ca77dfcfb7f372a859f5c0bba36ee07e649f4920b415610i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:251.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:466.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_eb7218448385532ded717edf2472a1d81ecf9420b35a0fc857e4231391e809a1i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:375.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:385.30px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_bb24cad6604c86c231cc5b0431790869ba6c4c7fef5894fb122eb4dc61c9d4f2i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:375.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:385.30px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_c83002441b2843ce9bb89db303591a603b89a64a016a8466e0bafc52b219ec3ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2020-11-17T00:00:40-08:00</updated>
+<updated>2020-11-17T00:00:46-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -4775,12 +4775,12 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;In this case, the value of the ESP32 is fairly reduced. It only needs to act as a crude frame server. The benefits are a small footprint, and real 1080p or better.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The contenders are &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;mini pinhole wifi cameras like the one I tried earlier&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;. This would be an almost ideal choice if it were really a 1080p and not a marketing gimmick using a fairly old 720p @ 30 Hz.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The contenders are &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;mini pinhole wifi cameras like the one I tried earlier&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;. This would be an almost ideal choice if it were really a 1080p and not a marketing gimmick using a fairly old 720p @ 30 Hz.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2019-08-31T00:00:18-07:00</updated>
+<updated>2019-08-31T00:00:37-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -5936,7 +5936,7 @@
 <id>http://www.alfray.com/ralf/blog/dev/2017-01-01_cmrs_touch_panels.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="http://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2018-01-21_turnouts_touch_panel_for_jmri_at_cmrs.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Proposal doc as been sent&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;: &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2018-01-21_turnouts_touch_panel_for_jmri_at_cmrs.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Proposal doc has been sent&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;: &lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Option A: use the cheaper Intel &#8220;Ubuntu&#8221; stick. Fairly good price at $39. Use it as a dumb remote and just display a web page served by the JMRI server.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Option B: use the beefier Intel Windows 10 stick. $125 or such. Run a C# or Java app that displays an SVG map and communicates with JMRI via the JSON server or the WiThrottle server.&lt;/span&gt;&lt;/li&gt;
@@ -5967,7 +5967,7 @@
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2017-01-01T00:00:30-08:00</updated>
+<updated>2017-01-01T00:00:06-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
