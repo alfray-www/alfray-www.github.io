@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-09-02T14:27:13.949547-07:00</updated>
+<updated>2025-09-02T17:12:15.482068-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -238,7 +238,7 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;3 &#8220;sidings&#8221; tracks for the DFS on the right.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;These are the tracks in green on the schema / plan v8: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/static/Randall%20Map%20-%20Track%20Plan%20+%20Sensors%208.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Track Plan + Sensors 8.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;These are the tracks in green on the schema / plan v8: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Map%20-%20Track%20Plan%20+%20Sensors%208.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Track Plan + Sensors 8.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:220.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_085ef294f9bd7a1169ae4c038981f2b11a9a045d398d2eb98478e8ac7590cb96i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -322,7 +322,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-06-04T00:00:28-07:00</updated>
+<updated>2025-06-04T00:00:44-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -356,7 +356,7 @@
 &lt;p&gt;&lt;span&gt;One issue is that I have &#8220;dead/DC&#8221; engines and cars on these tracks.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I should redo the testing without the static display equipment, and I should measure voltage at the panel. Also I have a perfectly valid RRAmpMeter that would be awesome for that which I&#8217;m not using -- what we really need is a test involving a light bulb to force current consumption.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Looking at Plan+Sensors v7, this is what I had planned in 2017: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/static/Randall%20Map%20-%20Sensors%206.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Sensors 6.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Looking at Plan+Sensors v7, this is what I had planned in 2017: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Map%20-%20Sensors%206.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Sensors 6.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:181.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_01773b2e22808d32ec1d67e9c4255221623e3d7888ef223669d470563c2bae5ai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -364,7 +364,7 @@
 &lt;p&gt;&lt;span&gt;I already have AIU 50 in place: it has the B503 track + B504 + the motion sensor.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:314.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:574.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_819a96240e43fa34eed5721756e67c819dd5050f01d29ad5a596e0929ebc10d1i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;In the Presentation doc, I have the last &#8220;desired&#8221; mapping, the actual sensors used, and a projected drawing of the sensors board -- that was last updated on 2023: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/randall/about.html#h.rzh5ct8v9cze&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Presentation &amp;amp; Automation of the Randall Museum Model Railroad, &#8267;19.5.1&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the Presentation doc, I have the last &#8220;desired&#8221; mapping, the actual sensors used, and a projected drawing of the sensors board -- that was last updated on 2023: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.rzh5ct8v9cze&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Presentation &amp;amp; Automation of the Randall Museum Model Railroad, &#8267;19.5.1&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Reusing this, here&#8217;s a revised view:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -481,7 +481,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-05-27T00:00:15-07:00</updated>
+<updated>2025-05-27T00:00:46-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -490,7 +490,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2025-04-17_distant_signal_turnout_t330__4561da12.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I have installed my latest experiment at Randall: the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project.&lt;br&gt;This displays the status of &lt;/span&gt;&lt;span&gt;the turnout T330 to the Saturday Operators, using a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LED Matrix Display&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I have installed my latest experiment at Randall: the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project.&lt;br&gt;This displays the status of &lt;/span&gt;&lt;span&gt;the turnout T330 to the Saturday Operators, using a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LED Matrix Display&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/rQUtq7l8v6g&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -500,7 +500,7 @@
 &lt;p&gt;&lt;span&gt;The display is mounted in a way to be clearly visible for the Saturday Operators when they stand at the Stockton Yard -- that&#8217;s the location from which they operate their trains, and from this vantage point of view, it&#8217;s impossible to know how the turnout is aligned -- and that&#8217;s exactly what this new panel is supposed to clarify:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:406.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_bd0c5db634916f88be7479571b8d54dabcf215cfc1744ac5d9f96242097d5d62i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;As explained in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2025-03-26_distant_signal_matrix_displa_08700264.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post about the Distant Signal project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;last month, the display connects to the main automation computer over wifi. Since it derives the state from JMRI and the NCE Command Station, the display is in sync with turnout changes whether they are initiated by the automation computer or by a user changing the turnout using a NCE controller.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As explained in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-03-26_distant_signal_matrix_displa_08700264.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post about the Distant Signal project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;last month, the display connects to the main automation computer over wifi. Since it derives the state from JMRI and the NCE Command Station, the display is in sync with turnout changes whether they are initiated by the automation computer or by a user changing the turnout using a NCE controller.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:194.89px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a74075d904bc3a1bffe00bb6318dea14d69b0c823762136fe73afdd64822a157d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -511,7 +511,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-04-17T00:00:32-07:00</updated>
+<updated>2025-04-17T00:00:56-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -524,13 +524,13 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/_8BO7WeUBTA&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I recently finished &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-03-03_rdc_sp10_is_back_on_the_auto_b1ed6fc1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;overhauling the Rapido RDC SP-10&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as well as the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2019-04-07_rdc_santa_fe_on_branchline_automation.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Rapido RDC ATSF 192/192&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: new speakers, new motor(s), a single running motor/truck per engine (the other one is idle), and more little people details in there. And they run surprisingly well together on the Branchline at the Randall Museum between the Angels Camp and the You Bet stations!&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I recently finished &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-03-03_rdc_sp10_is_back_on_the_auto_b1ed6fc1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;overhauling the Rapido RDC SP-10&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as well as the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-04-07_rdc_santa_fe_on_branchline_automation.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Rapido RDC ATSF 192/192&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: new speakers, new motor(s), a single running motor/truck per engine (the other one is idle), and more little people details in there. And they run surprisingly well together on the Branchline at the Randall Museum between the Angels Camp and the You Bet stations!&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Obviously the entire thing is tongue-in-check / fiction. Happy April&#8217;s Fool Day! The automation doesn&#8217;t run the three RDCs together as shown above, or &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-07-27_rdc_update.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;does it&lt;/a&gt;&lt;/span&gt;&lt;span&gt;? Right now we have &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-03-03_rdc_sp10_is_back_on_the_auto_b1ed6fc1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RDC SP-10 running&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and later I may switch to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2019-04-07_rdc_santa_fe_on_branchline_automation.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RDC ATSF pair as I had it in the past&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;&amp;nbsp;We try to run stuff as prototypical as we can.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Obviously the entire thing is tongue-in-check / fiction. Happy April&#8217;s Fool Day! The automation doesn&#8217;t run the three RDCs together as shown above, or &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-07-27_rdc_update.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;does it&lt;/a&gt;&lt;/span&gt;&lt;span&gt;? Right now we have &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-03-03_rdc_sp10_is_back_on_the_auto_b1ed6fc1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RDC SP-10 running&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and later I may switch to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-04-07_rdc_santa_fe_on_branchline_automation.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RDC ATSF pair as I had it in the past&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;&amp;nbsp;We try to run stuff as prototypical as we can.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-04-01T00:00:06-07:00</updated>
+<updated>2025-04-01T00:00:26-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -611,11 +611,11 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The decoder, besides being an ESU LokSound (they don&#8217;t really seem resilient in the long term), is doing reasonably well on these units. In this case, it has only one small residual issue which is that sometimes the engine stops responding to sound-off commands until it is power-cycled -- which will happen at the end of the day anyway when the museum staff turns off the layout.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The only issue remaining is that the RDC SP 10 derails on the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2024-10-27_branchline_turnout_t324_repa_0323bc2c.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;new Branchline turnout replaced by Orion&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. Consequently, I changed the automation to have the engine stop at the station before the turnout. That means that I can&#8217;t program it to clear the branchline and allow a train to divert from the mainline to the branchline.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The only issue remaining is that the RDC SP 10 derails on the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-10-27_branchline_turnout_t324_repa_0323bc2c.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;new Branchline turnout replaced by Orion&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. Consequently, I changed the automation to have the engine stop at the station before the turnout. That means that I can&#8217;t program it to clear the branchline and allow a train to divert from the mainline to the branchline.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-03-03T00:00:44-08:00</updated>
+<updated>2025-03-03T00:00:25-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -624,7 +624,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2025-02-07_pending_projects.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;After a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2025-02-06_retrospective_of_pending_projects.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;not-so-short retrospective&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, let&#8217;s look at the future/pending projects in the pipeline:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;After a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-02-06_retrospective_of_pending_projects.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;not-so-short retrospective&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, let&#8217;s look at the future/pending projects in the pipeline:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
  &lt;tbody&gt;
@@ -824,7 +824,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-02-07T00:00:26-08:00</updated>
+<updated>2025-02-07T00:00:21-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -834,7 +834,7 @@
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;It&#8217;s been a while since I&#8217;ve updated my &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2021-01-18_pending_work_on_the_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;public project list&#8230; 2021 in fact&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as well as a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2021-06-29_pending_work_on_the_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;follow up in June 2021&lt;/a&gt;&lt;/span&gt;&lt;span&gt;!&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;So it&#8217;s time to look back at what has been accomplished and what the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2025-02-07_pending_projects.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;future/pending projects are in the pipeline&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;So it&#8217;s time to look back at what has been accomplished and what the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-02-07_pending_projects.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;future/pending projects are in the pipeline&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;First, it&#8217;s important to remember that the goal of such a project list is just to give an overall direction and priorities. As such it needs to be kept dynamic. And indeed since 2021, a lot of work has been done that was never anticipated -- a few planned things got done, and a few new projects were added and completed:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -1015,12 +1015,12 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Half of my time is ensuring the automation runs smoothly. Another half is software development for future projects. The third half of the time is figuring out repairs to dead spots or turnouts. Pick 2 out of 3. Guess which tasks get deprioritized?&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;It&#8217;s worth noting that time being limited, these new projects necessarily &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;displaced&lt;/span&gt;&lt;span&gt;&amp;nbsp;previously planned projects. Thus &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2025-02-07_pending_projects.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;in the next post&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, we&#8217;ll discuss an overview of pending projects -- some of them dating back from 2018 or 2019, and that I just kept postponing due to on-the-spot re-prioritization.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;It&#8217;s worth noting that time being limited, these new projects necessarily &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;displaced&lt;/span&gt;&lt;span&gt;&amp;nbsp;previously planned projects. Thus &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-02-07_pending_projects.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;in the next post&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, we&#8217;ll discuss an overview of pending projects -- some of them dating back from 2018 or 2019, and that I just kept postponing due to on-the-spot re-prioritization.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-02-06T00:00:18-08:00</updated>
+<updated>2025-02-06T00:00:47-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1225,7 +1225,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2024-11-24_napa_yard_turnout_power.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I was told yesterday that the turnouts in Napa Yard were inoperative. Now, that&#8217;s not a huge shock since &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;last week I worked on the Richmond Panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and disconnected a couple unused DC track power leads. It would not be the first time that we find some &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2020-12-31_cleanup_mystery_junior_engin_0ead9837.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;totally unrelated connection between distant places on the layout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I was told yesterday that the turnouts in Napa Yard were inoperative. Now, that&#8217;s not a huge shock since &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;last week I worked on the Richmond Panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and disconnected a couple unused DC track power leads. It would not be the first time that we find some &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2020-12-31_cleanup_mystery_junior_engin_0ead9837.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;totally unrelated connection between distant places on the layout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;So let&#8217;s look at the Napa Yard:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:332.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b56738f7e5820c7acdc7646eb126f5b95208c3f4bd1cbe80e3f0ad9eb105fa4ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -1287,7 +1287,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2024-11-24T00:00:05-08:00</updated>
+<updated>2024-11-24T00:00:32-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1655,7 +1655,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:240.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:556.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8ef052b876a980c185161577f380e5f996f6ec3327a2e9f8d380279de58e7f18i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Screenshot of a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://youtu.be/sJEp4L1V_Lw?t=379&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2015 cab ride video&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;&amp;nbsp;showing the broken point on T830.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Back in 2019, the throwbar on this turnout started shifting, and the gap was opening in the top switch rail -- engines or cars were derailing as they were mistakenly trying to take the diverging direction. I &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2019-02-22_rdc_atsf_branchline_and_old_turnouts.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;addressed that in 2019 by spiking the turnout throwbar&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. Apparently the issue started appearing again:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Back in 2019, the throwbar on this turnout started shifting, and the gap was opening in the top switch rail -- engines or cars were derailing as they were mistakenly trying to take the diverging direction. I &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-02-22_rdc_atsf_branchline_and_old_turnouts.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;addressed that in 2019 by spiking the turnout throwbar&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. Apparently the issue started appearing again:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:141.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_93d510d23f37ba916a9cc2693c077426ad19217f14329eb6a5eecf9336b90fe1i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;As the branchline train backs up towards Angel Camp (right), the rear truck of the lighted coach is mistakenly pulled on the diverging track and derails&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
@@ -1676,7 +1676,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2024-07-29T00:00:35-07:00</updated>
+<updated>2024-07-29T00:00:44-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1721,7 +1721,7 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The DCC output of the relay goes to the red/black wires. Before, this was going through the Lenz LK100 polarity reverser. That&#8217;s the part we simply bypassed and removed.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The only issue we encountered was a short when trying to use turnout T324 to go to the mainline. This was due to a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/randall/2019-03-09_rdc_atsf_branchline_continued.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;fix I did in 2019&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;where I &#8220;joined&#8221; the turnout T821 to the adjacent track where there was an obvious gap. So basically we undoed that work -- Orion&#8217;s opinion is that the gap was intentional, and I concur with that as it is needed for the turnout to be able to change polarity when thrown for the mainline. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The only issue we encountered was a short when trying to use turnout T324 to go to the mainline. This was due to a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-03-09_rdc_atsf_branchline_continued.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;fix I did in 2019&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;where I &#8220;joined&#8221; the turnout T821 to the adjacent track where there was an obvious gap. So basically we undoed that work -- Orion&#8217;s opinion is that the gap was intentional, and I concur with that as it is needed for the turnout to be able to change polarity when thrown for the mainline. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:220.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:690.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_aecf9ebbf69f165b3ae69378c0fe9e093000121112dd27b3c36919c9d5340c72d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;This undoes the gap bridge I added in 2019 to fix a dead spot issue&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -1765,7 +1765,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2024-07-29T00:00:07-07:00</updated>
+<updated>2024-07-29T00:00:04-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -2221,7 +2221,7 @@
 &lt;p&gt;&lt;span&gt;Now to be fair, this is not a new idea. I got this idea back in&#8230; &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;2019 &#8230; yep 2019 !&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I tried to implement it using the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/rtac.html#h.eouoduk2s53y&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor v1 script&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span&gt;in 2019, but the logic became frankly quickly overwhelming. So I put this aside and worked instead of enhancing the automation software to be able to cope with more complex tasks. I started working on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/rtac.html#h.k17dr0id5zrq&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor 2 instead&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. Then there&#8217;s this Covid Lockdown thing that threw a wrench in any plans whoever had anyway, and finally in 2022 I had my 2nd prototype version of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2022-04-25_conductor_2_kotlin_dsl_vs_groovy_dsl.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor 2 starting to work&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and it took most of 2023 to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://ralf.alfray.com/trains/blog/train/2023-04-02_conductor_2_live_test_deployment.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;deploy and fix issues&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as they came along&lt;/span&gt;&lt;span&gt;. And finally I was in a position to work on that feature I had put aside years ago.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I tried to implement it using the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/rtac.html#h.eouoduk2s53y&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor v1 script&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span&gt;in 2019, but the logic became frankly quickly overwhelming. So I put this aside and worked instead of enhancing the automation software to be able to cope with more complex tasks. I started working on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/rtac.html#h.k17dr0id5zrq&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor 2 instead&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. Then there&#8217;s this Covid Lockdown thing that threw a wrench in any plans whoever had anyway, and finally in 2022 I had my 2nd prototype version of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2022-04-25_conductor_2_kotlin_dsl_vs_groovy_dsl.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor 2 starting to work&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and it took most of 2023 to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2023-04-02_conductor_2_live_test_deployment.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;deploy and fix issues&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as they came along&lt;/span&gt;&lt;span&gt;. And finally I was in a position to work on that feature I had put aside years ago.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Even that way, the first deployments were&#8230; interesting. Took me a couple weeks to fine tune the &#8220;saturday mode&#8221; logic to be reliable and iron out some edge cases. I also found 2 interesting bugs in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/rtac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor 2 engine&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and fixed them as well.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -2232,7 +2232,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2024-04-25T00:00:23-07:00</updated>
+<updated>2024-04-25T00:00:07-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -4712,7 +4712,7 @@
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Now for something a bit different&#8230; understanding &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;power routing&lt;/span&gt;&lt;span&gt;&amp;nbsp;on turnouts as used at Randall on the mainline.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This replies to a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2022-02-02_turnout_t161_and_a_philosoph_12eb69dd.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;question I had recently&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and eventually I&#8217;ll add it to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Layout documentation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;because it&#8217;s good for future reference. Once again I was tempted to write here an explanation of why turnouts are wired the way they are, yet that would be long and convoluted. For that, I&#8217;ll just refer to the excellent material at &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://dccwiki.com/Turnout&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://dccwiki.com/Turnout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;which is complete with detailed schematics and presents the various ways a turnout can be wired.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This replies to a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2022-02-02_turnout_t161_and_a_philosoph_12eb69dd.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;question I had recently&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and eventually I&#8217;ll add it to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Layout documentation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;because it&#8217;s good for future reference. Once again I was tempted to write here an explanation of why turnouts are wired the way they are, yet that would be long and convoluted. For that, I&#8217;ll just refer to the excellent material at &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://dccwiki.com/Turnout&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://dccwiki.com/Turnout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;which is complete with detailed schematics and presents the various ways a turnout can be wired.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;For our mainline turnouts, here&#8217;s a concrete example by taking an overhead shot of Turnout T05 and coloring the rails A and B and all the parts which are electrified the same way:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -4761,7 +4761,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2022-02-09T00:00:06-08:00</updated>
+<updated>2022-02-09T00:00:21-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -5412,14 +5412,14 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The story about this is that I had ordered two &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.tamvalleydepot.com/products/dccfrogjuicers.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Tam Valley Dual Frog Juicers&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to be installed and configured as auto-reversers, one per balloon track. Unfortunately in the order I was sent a DCC Hex Frog Juicer by mistake. The Dual Frog Juicers can use up to 4 amps per track, whereas the Hex Frog Juicer can only only 1 amp per track and that&#8217;s not enough when running multiple engines in consist with sound. So now I just got around to installing the proper board. It was a rather trivial swap since I had done all the prep work when installing the Hex Frog Juicer, so really only terminals to unscrew/rescrew. Probably took more time to take the pictures and write this post than actually installing the board. But hey, one more &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.j53vr0a7rw9f&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;task is complete on my long list&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The more exciting news is that I got around to update my &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Layout Presentation Documentation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. I know, exciting, isn&#8217;t it? &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://knowyourmeme.com/memes/see-nobody-cares&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;See? Nobody cares&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&#8221; Well I do. I added a whole chapter on the computer setup used in the &#8220;train room exhibit&#8221;, and updated the pending work list, and I think that&#8217;s pretty neat. I&#8217;ve also updated the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.bz9kni24b6d6&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Known Issues list&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The more exciting news is that I got around to update my &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Layout Presentation Documentation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. I know, exciting, isn&#8217;t it? &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://knowyourmeme.com/memes/see-nobody-cares&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;See? Nobody cares&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&#8221; Well I do. I added a whole chapter on the computer setup used in the &#8220;train room exhibit&#8221;, and updated the pending work list, and I think that&#8217;s pretty neat. I&#8217;ve also updated the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.bz9kni24b6d6&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Known Issues list&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;In the kind of even more silent maintenance that nobody will notice yet is crucial is that I&#8217;m updating the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.debian.org/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Debian&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;version on all the computers. I used to run &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.debian.org/releases/stretch/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Debian 9&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(&#8220;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;stretch&lt;/span&gt;&lt;span&gt;&#8221;) on them with the latest updates, and I have them upgraded to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.debian.org/releases/buster/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Debian 10&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(&#8220;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;buster&lt;/span&gt;&lt;span&gt;&#8221;) and another one to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.debian.org/releases/bullseye/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Debian 11&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(&#8220;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;bullseye&lt;/span&gt;&lt;span&gt;&#8221;). One more to go and I&#8217;m done for a little while. I will likely keep the automation under Debian 10 for now and switch to Debian 11 after its first update. I never like to run the latest hotness on these, as long as I have all the security updated &amp;amp; backports applied.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2021-11-22T00:00:30-08:00</updated>
+<updated>2021-11-22T00:00:17-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -7501,7 +7501,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2020-05-24_work_continues_on_the_napa_approach.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;As indicated in the latest update, I added some LEDs indicating when the turnouts are left thrown on the mainline. After &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2020-03-15_dwarf_signal_for_turnout_continued.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;experimenting with some LEDs at home&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I&#8217;m using a single red LED that is on when the turnouts are thrown:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As indicated in the latest update, I added some LEDs indicating when the turnouts are left thrown on the mainline. After &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2020-03-15_dwarf_signal_for_turnout_continued.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;experimenting with some LEDs at home&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I&#8217;m using a single red LED that is on when the turnouts are thrown:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/vWV2SJ7Gg_c&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -7511,7 +7511,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2020-05-24T00:00:12-07:00</updated>
+<updated>2020-05-24T00:00:00-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -7535,7 +7535,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;While I was there, I demonstrated the fixed turnout T151 for the Napa approach to Jim. One thing I did notice is that the point does not always close fully when the turnout is thrown. I pointed that out as it&#8217;s a potential source of derailment. Ideally I&#8217;ll leave this task to Allen when we can have him back with us, he&#8217;s good at that -- either it&#8217;s a cleaning job around the point, which I know he does well, or it requires to align the Fulgurex motor below in which case having two of us doing it would be ideal.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Regarding the Napa approach, the one task I have left is to add some clear indication that the turnouts are left thrown on the mainline. After &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2020-03-15_dwarf_signal_for_turnout_continued.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;experimenting with some LEDs at home&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I&#8217;m going to use a single red LED temporarily mounted near the fascia and wired directly to the terminal powering the frog. See the link above for an example.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Regarding the Napa approach, the one task I have left is to add some clear indication that the turnouts are left thrown on the mainline. After &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2020-03-15_dwarf_signal_for_turnout_continued.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;experimenting with some LEDs at home&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I&#8217;m going to use a single red LED temporarily mounted near the fascia and wired directly to the terminal powering the frog. See the link above for an example.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Eventually I&#8217;d like to put a nice signal mast there, yet that task will have to wait as it is more involved than I want: need to carefully select the signals, validate clearance, install them in what is a tricky part of the layout, etc. Doing it properly is a job all by itself, whereas what I want is to have a quick thing to make sure operators do not leave the turnouts thrown and short the mainline -- which is located on the back of the mountain where they can&#8217;t see it. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -7543,16 +7543,16 @@
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I do have a plan to provide more video of the layout to the public -- both live and recorded. I need to set that up at home, validate my ideas, then demonstrate a proof-of-concept to the museum staff, and then implement.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;On the electronics side, I made a proof-of-concept that I can monitor the EB1 circuit breakers using an NCE AIU interface. This would allow the automation computer to be aware of shorts on the layout, stop trains, and warn us.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I have started to gather what I need to create a proof-of-concept to automate the Fairfield industrial complex using &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-02-10_fairfield_industrial_yard.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the plan I outlined last year&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I have started to gather what I need to create a proof-of-concept to automate the Fairfield industrial complex using &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-02-10_fairfield_industrial_yard.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the plan I outlined last year&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span&gt;So lots of &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;realistic&lt;/span&gt;&lt;span&gt;&amp;nbsp;ideas flying around, with some early experimentation of what could work or not, and how it could work. These will take weeks to come to fruition.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;There&#8217;s no shortage of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2020-02-29_pending_work_on_the_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;work that can be done on the layout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;There&#8217;s no shortage of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2020-02-29_pending_work_on_the_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;work that can be done on the layout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The only shortage is time, and often exasperation at the &#8220;are we there yet&#8221; comments. A lot of the time I get these ambiguous &#8220;this is fine but&#8230;&#8221; feedback. No &#8220;but&#8221; -- just stop at &#8220;this is fine&#8221;, otherwise you&#8217;re ruining it. This is volunteer work after all.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2020-05-02T00:00:08-07:00</updated>
+<updated>2020-05-02T00:00:07-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -7571,15 +7571,15 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://sf.gov/topics/coronavirus-covid-19&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://sf.gov/topics/coronavirus-covid-19&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;As a volunteer, my presence there is non essential. I have a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2020-02-29_pending_work_on_the_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;lot of work pending on the layout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;that will just have to wait.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As a volunteer, my presence there is non essential. I have a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2020-02-29_pending_work_on_the_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;lot of work pending on the layout&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;that will just have to wait.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;From a technical point of view, that means the layout will not run for many weeks in a row. That may be a problem as tracks oxidize and gather dust when there are no trains running for a long period of time. Thus I fully expect we (and by &#8220;we&#8221; I mean essentially just me alone) will have to spend quite some time going in there and manually scrub the track to make sure trains still run smoothly. Some folks naively think it&#8217;s as easy as just running a track cleaning car, and my experience is that nothing beats actual elbow grease to scrub the track in the accessible areas.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I could ask the museum staff to run the trains once a week. I&#8217;m going to venture that they have reduced staff numbers and more urgents things to focus on. And even that would just induce a different issue, namely that all that dust accumulates over time as gunk on the train wheels. We need to clean them monthly or it can become significant enough to derail them.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I could ask the museum staff to run the trains once a week. I&#8217;m going to venture that they have reduced staff numbers and more urgent things to focus on. And even that would just induce a different issue, namely that all that dust accumulates over time as gunk on the train wheels. We need to clean them monthly or it can become significant enough to derail them.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2020-03-18T00:00:07-07:00</updated>
+<updated>2020-03-18T00:00:08-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -7921,7 +7921,7 @@
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Now that I got the Napa yard fixed and working again, it&#8217;s time to use it for staging. Which means taking trains to and from the mainline..&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-05-18_work_update_napa_and_sultan.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;From my own blog notes&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-05-18_work_update_napa_and_sultan.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;From my own blog notes&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt&quot;&gt;&lt;span&gt;&#8220;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Let&#8217;s look at the track schematic on how to go from the yard to the mainline. The &#8220;normal forward&#8221; direction on the mainline (when operators run in a continuous loop) on this schema is from right to left:&lt;/span&gt;&lt;span&gt;&#8221;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:271.30px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3c213908802b5238a6fe1f75ef9c006e3aadb769b10fbadf3c84e5bbb43aec33d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -7960,7 +7960,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2020-02-29T00:00:42-08:00</updated>
+<updated>2020-02-29T00:00:45-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8354,7 +8354,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2019-11-07_follow_up_on_warped_track_maintenance.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Back in the &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-11-02_warp_drive.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Warp Drive&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; entry from 11-02, I was mentioning how some of the track from Napa yard had very badly warped.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Back in the &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-11-02_warp_drive.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Warp Drive&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; entry from 11-02, I was mentioning how some of the tracks from Napa yard had very badly warped.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;It is worth noting the warping issue also somewhat affected the Richmond yard. I had also noticed that somehow the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;front panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;of the Stockton Yard &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;had a similar issue, the panel no longer laying flat on its support.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Today I got it to work on this, and to my surprise the track had started fixing itself, here&#8217;s a side-by-side comparison:&lt;/span&gt;&lt;/p&gt;
@@ -8386,7 +8386,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Since the Napa yard is easy to access, I started working on it. My guess is that there is either track expansion or shrinkage of the wood bed support somehow. Either way, the track lacks expansion gaps. My first idea was to remove all the nails holding the track -- the yard track is obviously not glued there, just nailed, and a quick test showed me I could easily pull the nails carefully using flat cutters. I was careful not to break any tie, and collected all the nails without damaging them which means I can reuse them later. This was easy in the exposed area, but then I reached the part where the track is under the Bridgeport Yard, and the lack of clearance and distance made it impossible to neatly remove the tie nails.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;At the end of the Napa yard ladder, there are huge blocks of foam. I&#8217;m guessing to act as a nice buffer. To my surprise they also contain a big screw in them and they were glued in place with the end of the track. To make an expansion gap, the easiest thing to do is simply cut the track in front of the glued part using a rail handsaw:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;At the end of the Napa yard ladder, there are huge blocks of foam. I&#8217;m guessing to act as a nice buffer. To my surprise they also contained a big screw in them and they were glued in place with the end of the track. To make an expansion gap, the easiest thing to do is simply cut the track in front of the glued part using a rail handsaw:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:374.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_bfbb009f3272326d26091670f2714e9f40618197aa41d459cdd28d19f03529f8i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8412,7 +8412,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-11-07T00:00:22-08:00</updated>
+<updated>2019-11-07T00:00:28-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8421,7 +8421,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2019-11-03_recent_randall_maintenance.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I don&#8217;t usually blog about all the little things that happen on the Randall Museum&#8217;s train layout here. There&#8217;s been a few in the couple past months that I did not blog about so let&#8217;s compile them here for the sake of completeness. While I get some compliments for the automation running smoothly, I want to keep educating people that this does not happen magically. This is an old layout and it does require quite a bit of maintenance.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I don&#8217;t usually blog about all the little things that happen on the Randall Museum&#8217;s train layout here. There&apos;ve been a few in the couple past months that I did not blog about so let&#8217;s compile them here for the sake of completeness. While I get some compliments for the automation running smoothly, I want to keep educating people that this does not happen magically. This is an old layout and it does require quite a bit of maintenance.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Let&#8217;s look at the most recent maintenance tasks:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8431,11 +8431,11 @@
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;2019-10-06&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Mainline in front of Stockton Yard suddenly became non-functional for some engines. That took some time to understand. Turned out to be an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-10-06_layout_electrical_complexiti_4c3956a8.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;old power selector that had been toggled by mistake&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(follow link &lt;/span&gt;&lt;span&gt;for details).&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Mainline in front of Stockton Yard suddenly became non-functional for some engines. That took some time to understand. Turned out to be an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-10-06_layout_electrical_complexiti_4c3956a8.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;old power selector that had been toggled by mistake&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(follow link &lt;/span&gt;&lt;span&gt;for details).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:373.84px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ce49382492db2be82ba9f4b9de0b54ccb2ef293dd03e3a9614d9c683cb7575e1d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;2019-10-12&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Noticed yard track warping in Napa. See entry &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-11-02_warp_drive.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Warp Drive&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; for details. This still needs to be fixed.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Noticed yard track warping in Napa. See entry &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-11-02_warp_drive.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Warp Drive&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; for details. This still needs to be fixed.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:190.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_35f5e1242fadb9c85acf79629ed70a6a0a1b03449dd0e5ffaa06a08b78cc1dfdi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;2019-10-26&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;/p&gt;
@@ -8454,7 +8454,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-11-03T00:00:14-07:00</updated>
+<updated>2019-11-03T00:00:00-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8479,18 +8479,18 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;One difference is that the track at this location is not held in place by ballast like the rest of the layout.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;In Napa, the end of the each yard track is solidly anchored using a large nail holding a piece of foam. The roadbed is made of homasote or similar. The other side is the yard turnout ladder, and by the way, one of the rails has warped enough in one of the turnouts that the gauge is obviously wrong and the inside of the rail is missing the little plastic tabs that hold it in place:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In Napa, the end of each yard track is solidly anchored using a large nail holding a piece of foam. The roadbed is made of homasote or similar. The other side is the yard turnout ladder, and by the way, one of the rails has warped enough in one of the turnouts that the gauge is obviously wrong and the inside of the rail is missing the little plastic tabs that hold it in place:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:285.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_e9050e25b98a4a94290b5eb398a3cb3587e11f0fb95b1e0ca2a72cbd2b55f54ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The track does not appear glued there. Instead the flex track is merely nailed every foot or so. I guess we&#8217;ll have to remove the nails and rework it straight starting at the turnout for each yard track in the ladder. I should also bring my HO track gauge and check the track. I&#8217;d suggest fixing the track using liquid nails or a similar product when we reinstall it.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Luckily this has not happened anywhere else on the layout that I could notice, but maybe I should try to do a full survey of the layout using a cab ride camera.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Update&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-11-07_follow_up_on_warped_track_maintenance.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;&quot;2019-11-07 - Follow up on Warped Track Maintenance&quot;&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Update&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-11-07_follow_up_on_warped_track_maintenance.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;&quot;2019-11-07 - Follow up on Warped Track Maintenance&quot;&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-11-02T00:00:14-07:00</updated>
+<updated>2019-11-02T00:00:11-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8508,7 +8508,7 @@
 &lt;p&gt;&lt;span&gt;The engine was sitting on block B21, controlled by the Valley Panel 1. Out of curiosity I turned off that block and&#8230; surprise, the engine still had lights on. Wait, what?&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Since we have this delightfully complicated panel scheme left over from the layout DC&#8217;s era that confuses so many of our operators, I powered the block B21 from the Valley Panel 2. And ta da! The engine ran just fine, with movement and what not. When I say complicated, I mean &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.xkiidqbm55a3&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;something like this complicated wiring&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Since we have this delightfully complicated panel scheme left over from the layout DC&#8217;s era that confuses so many of our operators, I powered the block B21 from the Valley Panel 2. And ta da! The engine ran just fine, with movement and what not. When I say complicated, I mean &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.xkiidqbm55a3&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;something like this complicated wiring&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:401.93px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:767.33px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_35dd90a0b23752fd8fbb35beff2b623e375ffb3737a498c6047d72be95ec2808d.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I came in today to try to elucidate this. How can an engine have some power yet not run, even when the block is turned off? &lt;/span&gt;&lt;/p&gt;
@@ -8517,7 +8517,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;My technique to &#8220;solve&#8221; these is fairly simple. Each panel gets power from one NCE booster, via an EB1 circuit breaker. Then the power goes into a DC / DCC relay which is somewhat &#8220;useless&#8221; now since there&#8217;s no DC part any more. But here I can just pull the relay from its socket and it totally isolates a full panel from its power source. That&#8217;s a wonderful debugging tool to isolate cross-panel issues which I have used in the past and is the main reason why I keep these relays.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;So in this case even when pulling the relay out of Valley Panel 1, the track still had some power, when it was supposed to not be powered anymore. Not the full power though. It measured something like 11V instead of the expected 12-14V. Enough to power basic stuff like the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2019-09-21_searchlight_car_conversion_to_led.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Searchlight Car&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;which I modified recently to use a simple LED. So where does that power come from?&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;So in this case even when pulling the relay out of Valley Panel 1, the track still had some power, when it was supposed to not be powered anymore. Not the full power though. It measured something like 11V instead of the expected 12-14V. Enough to power basic stuff like the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2019-09-21_searchlight_car_conversion_to_led.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Searchlight Car&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;which I modified recently to use a simple LED. So where does that power come from?&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Well, after unplugging panels one by one, I finally found out that block B21 could be powered either via the Valley Panel 2, which is sensible, or via the Mountain Panel 2, which is &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;not&lt;/span&gt;&lt;span&gt;&amp;nbsp;at all sensible. And in any case, it clearly was not powered or linked to the Valley Panel 1, which is the one we had been using all along for that. Another of these &#8220;what?!&#8221; realizations.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8530,7 +8530,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Thus the cause of the failure on the spot was human error. I&#8217;m not even going to bother asking the Saturday Operators who did this. This is not a finger pointer exercise, and I&#8217;m not trying to alienate these poor folks who likely don&#8217;t even have a clue they touched that critical yet innocent looking toggle. Suffice enough to say it was changed. Instead we should focus on how we can mitigate it to prevent this from occurring again. And for that we need to understand what it does.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;So I did just that, and the explanation is a bit too long for here, so if you want to understand why, I suggest you read the complete rationale behind its existence in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.44k0om9cvnsr&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Layout Presentation page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. &lt;/span&gt;&lt;span&gt;It is best explained by this schema and you&#8217;ll have to read the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.44k0om9cvnsr&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;presentation page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to get the full picture&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;So I did just that, and the explanation is a bit too long for here, so if you want to understand why, I suggest you read the complete rationale behind its existence in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.44k0om9cvnsr&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Layout Presentation page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. &lt;/span&gt;&lt;span&gt;It is best explained by this schema and you&#8217;ll have to read the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.44k0om9cvnsr&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;presentation page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to get the full picture&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:433.89px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ee33d26c24be96f3f5118bd0947c3a5e4f9c535d872db0baa99f691ab32f0090d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8538,7 +8538,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;How can we mitigate this and prevent this issue from reappearing? The explanation is that this toggle is obsolete and needs to be removed. Thus today I consequently also cleaned that up by having the panel powered directly by the DCC relay, bypassing the toggle. Next I will just need to physically remove that toggle too, and then I need to do the same work on the Valley Panel 2.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Next I wanted to understand how it was possible that a block that is not connected to any panel could still have some power, yet just a weak voltage. Just phrased that way, you can see where this is going. Weak voltage means there&#8217;s a resistor involved somewhere. And what if you had a leftover DC resistor network injecting a DC bias voltage in all your blocks as a left over from a long-gone Twin T track detector setup? Wouldn&#8217;t that, by definition, make powered blocks leak into unpowered ones? Well yes of course it would. And it would look exactly like that odd contraption that I described in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.z6m48pko6foq&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Layout Presentation on the Wiring page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next I wanted to understand how it was possible that a block that is not connected to any panel could still have some power, yet just a weak voltage. Just phrased that way, you can see where this is going. Weak voltage means there&#8217;s a resistor involved somewhere. And what if you had a leftover DC resistor network injecting a DC bias voltage in all your blocks as a left over from a long-gone Twin T track detector setup? Wouldn&#8217;t that, by definition, make powered blocks leak into unpowered ones? Well yes of course it would. And it would look exactly like that odd contraption that I described in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.z6m48pko6foq&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Layout Presentation on the Wiring page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:325.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:573.95px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fbe4fabae47832c15beb1d304f90dfc2ceb1ea75ac1c5584a2066dda790d0eb8i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8556,7 +8556,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-10-06T00:00:24-07:00</updated>
+<updated>2019-10-06T00:00:06-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8701,7 +8701,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:362.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_79afe82ba25e11e8d40a04ed6e413294b7e4ee4f5710ac254535d3f172676a0ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I was &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-07-28_elusive_electrical_issues_wi_42dbc261.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;barking at the wrong tree&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;before, and I only found the culprit by sheer luck.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I was &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-07-28_elusive_electrical_issues_wi_42dbc261.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;barking at the wrong tree&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;before, and I only found the culprit by sheer luck.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I originally suspected the issue to be on the panel side. Maybe the toggle switch was wrong, so I bypassed it. Nope, it wasn&#8217;t that. Maybe the feed wire was wrong, so I disconnected it. Neither solved anything as the block was still powered -- but huh, did I just say it&#8217;s powered even when the feed wire was disconnected? So that means it&#8217;s powered from somewhere else and it was quickly obvious it was powered from block B340.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8733,7 +8733,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2019-08-26T00:00:00-07:00</updated>
+<updated>2019-08-26T00:00:29-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8941,7 +8941,7 @@
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;span&gt;Today was another cleanup day. Mr. Morgan was here and helped me clean Napa quite a bit.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;While he was doing this, I was trying to get this running for Jim, as detailed on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;my train blog page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;While he was doing this, I was trying to get this running for Jim, as detailed on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the train blog page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:272.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:770.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_80189da38fbe73dcc02a5dc912fa85e166148a36e5a4f9849013c7b558a4ae0ai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -8955,7 +8955,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-06-15T00:00:31-07:00</updated>
+<updated>2019-06-15T00:00:12-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -8967,11 +8967,11 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/5zgsYMEsdCo&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I had some issues with power pickup with this so I decided to toy a bit with it.&lt;br&gt;You can read the details on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;my train blog page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I had some issues with power pickup with this so I decided to toy a bit with it.&lt;br&gt;You can read the details on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the train blog page&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-06-03T00:00:46-07:00</updated>
+<updated>2019-06-03T00:00:26-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9002,7 +9002,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2019-05-18_work_update_napa_and_sultan.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Last week I spend most of the Sunday cleaning the Napa yard and its balloon track. The goal is to eventually be able to get a train out of the Napa yard and on the mainline. There&#8217;s still a number of challenges.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last week I spent most of the Sunday cleaning the Napa yard and its balloon track. The goal is to eventually be able to get a train out of the Napa yard and on the mainline. There&#8217;s still a number of challenges.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;This Saturday, I did install a&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.tamvalleydepot.com/products/dccfrogjuicers.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Frog Juicer Auto-reverser&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;on the Napa &lt;/span&gt;&lt;span&gt;balloon track. I simply put it in series with the reversing toggle, which means power can still be cut simply by using the &#8220;A power&#8221; 3-state toggle (yard, N, valley). Usage is thus simplified, one just needs to select the A or B push-buttons to align the entry turnout and the yard ladder.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9045,7 +9045,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;An important consideration is that due to the physical design of the layout room, all these operations involving turnout T140 &#8220;Sultan&#8221; or the leads to the Napa or Richmond happen in the a public and congested place. The turnout control panels are on the opposite side of the room, with a mountain in between, offering thus no visibility on the operations. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Even if we have remote operation of the turnouts, it means the operators need to be next to the location. I can partially solve the lack of visibility by &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;adding a small pinhole camera&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and set up a tablet for remote view of that turnout.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Even if we have remote operation of the turnouts, it means the operators need to be next to the location. I can partially solve the lack of visibility by &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;adding a small pinhole camera&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and set up a tablet for remote view of that turnout.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;However one thing I cannot solve is that this all needs coordination between operators, to ensure another train is not going down the mainline while one is entering or leaving the yard. Lack of operator communication and attention to what&#8217;s ahead of their train is still a typical issue that I observe every Saturday due to the &#8220;passive&#8221; nature of a run-around-the-loop operation scheme, coupled with the lack of visibility. Operators just naively assume there&#8217;s nothing possibly wrong in front of their train when they lose sight of it, and just expect it to come back fine on the other side of the layout. I&#8217;ve done so myself so I&#8217;m exempt here. The rigor is just not there, and it is bound to be error prone.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9053,7 +9053,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-05-18T00:00:24-07:00</updated>
+<updated>2019-05-18T00:00:45-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9086,7 +9086,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:284.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_cffb4e1cec3da1649fda404453cb98d9942a234c423fadb3d093117d67518fc0i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Previously the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-01-27_nyc_4-6-4_hudson_pulling_the_b4cb68a0.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;automated freight train was pulled by the NYC 4-6-4 Hudson&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. This engine has worked flawlessly and superbly. It will likely return after a well deserved break.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Previously the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-01-27_nyc_4-6-4_hudson_pulling_the_b4cb68a0.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;automated freight train was pulled by the NYC 4-6-4 Hudson&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. This engine has worked flawlessly and superbly. It will likely return after a well deserved break.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Video of both automated mainline trains in action:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
@@ -9101,7 +9101,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-05-03T00:00:23-07:00</updated>
+<updated>2019-05-03T00:00:06-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9133,12 +9133,12 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I observed three differences:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;On the Branchline Panel, there is a rotary toggle to select power for B322. As indicated in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.frbaeoqrvbt&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;panel description here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, it is currently not connected to anything.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;On the Branchline Panel, there is a rotary toggle to select power for B322. As indicated in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.frbaeoqrvbt&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;panel description here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, it is currently not connected to anything.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;An important difference I observed before was that rail polarity is inverted. It &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;should&lt;/span&gt;&lt;span&gt;&amp;nbsp;match and yet clearly branchline was opposite of mainline at Angels Camp when I tested it.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When the whole layout is unpowered, there is a very low resistance between both rails. That is not expected at all.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Rail polarity is supposed to match here and be inverted at Rodgers Junction -- we need to remember the Branchline is essentially a long reversing loop. I did notice that the wires out of the Lenz LK100 (polarity reverser, &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.hwfbvmf4r07n&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;see picture here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) were opposite the input, and even after bypassing the LK100, it was still inverted. So something somewhere does not match expectations.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Rail polarity is supposed to match here and be inverted at Rodgers Junction -- we need to remember the Branchline is essentially a long reversing loop. I did notice that the wires out of the Lenz LK100 (polarity reverser, &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.hwfbvmf4r07n&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;see picture here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) were opposite the input, and even after bypassing the LK100, it was still inverted. So something somewhere does not match expectations.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;A recent development is that throwing T324 right now shorts the branchline. This used to work a month or two ago. In between I fixed a broken solder on the Branchline side of T322 (denoted &#8220;AC Switch&#8221; on the schema above), but that is not enough to explain it. At first I thought it could have something to do with the opposite polarity of the branchline, but the schema above clearly shows there should not be any direct link between the branchline and the mainline at any time.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9159,7 +9159,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-04-09T00:00:14-07:00</updated>
+<updated>2019-04-09T00:00:36-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9326,13 +9326,13 @@
 &lt;/table&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.u7c1xabra5iw&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Issue&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;A few hours after temporarily &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2019-02-13_randall_repairs_turnout_t320.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;fixing T320 on 2019-02-13&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, the mainline turnouts stopped working while I was trying to switch in the Stockton Yard.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;A few hours after temporarily &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-02-13_randall_repairs_turnout_t320.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;fixing T320 on 2019-02-13&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, the mainline turnouts stopped working while I was trying to switch in the Stockton Yard.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Slow-motion turnouts are powered by &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/about.html#h.5kt7q355mzwd&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;two regulated DC power supplies&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, one for DCC turnouts and one for non-DCC turnouts (there&#8217;s a 3rd AC power supply for twin-coil turnouts as used in the yards). Checking them showed that the non-DCC turnout power supply had shutdown. This happens would typically when there&#8217;s a short on the power bus and the power supply protects itself.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Slow-motion turnouts are powered by &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/about.html#h.5kt7q355mzwd&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;two regulated DC power supplies&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, one for DCC turnouts and one for non-DCC turnouts (there&#8217;s a 3rd AC power supply for twin-coil turnouts as used in the yards). Checking them showed that the non-DCC turnout power supply had shut down. This happens typically when there&#8217;s a short on the power bus and the power supply protects itself.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:238.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_955459be5d248a6761da2a18f27da5e16603509977812a6d2ef97b16e4aca2b9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The power supply has a 10A fuse in serie on its output, so a quick test is to simply open the fuse, and indeed this allows the power supply to start again. Once the circuit was open, with a ohmmeter I checked the turnout power bus and it cleared showed a short.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The power supply has a 10A fuse in series on its output, so a quick test is to simply open the fuse, and indeed this allows the power supply to start again. Once the circuit was open, with an ohmmeter I checked the turnout power bus and it clearly showed a short.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.kbrmrq1grlo4&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Fix&lt;/span&gt;&lt;/h2&gt;
@@ -9353,9 +9353,9 @@
 &lt;p&gt;&lt;span&gt;I followed with the Mountain Panel (white wire at the terminal block):&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:277.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7975d20a647878a9cdae21bac7a9a580d2dfe87c125d104d53129be8f472803ad.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Unplugging the white wire from the terminal block (bottom part) did the trick and restore the power to the all the other turnouts.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Unplugging the white wire from the terminal block (bottom part) did the trick and restored the power to all the other turnouts.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Once the short was isolated, I simply used the ohmmeter and tried all the turnout toggles from the panel connected to the non-DCC power supply. This showed that the culprit was the T320 toggle which I was having problem with two days ago: when set in Normal position, it would create an intermittent short on its input pins if the toggle was pushed in a certain way. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Once the short was isolated, I simply used the ohmmeter and tried all the turnout toggles from the panel connected to the non-DCC power supply. This showed that the culprit was the T320 toggle which I was having a problem with two days ago: when set in Normal position, it would create an intermittent short on its input pins if the toggle was pushed in a certain way. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Temporary Fix&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9394,15 +9394,15 @@
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;There are 20 turnout toggles on this panel so it needs 3 Switch-8 total.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Add two more Switch-8.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Some of these are Fulgurex and not Tortoise turnout motors. They cannot be connected to the Switch-8 directly, they need an extra intermediary relay board. 6 are needed. The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/index.html#h.itbsoqhccaq2&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;main track map&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;lists exactly which ones.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Some of these are Fulgurex and not Tortoise turnout motors. They cannot be connected to the Switch-8 directly, they need an extra intermediary relay board. 6 are needed. The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/index.html#h.itbsoqhccaq2&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;main track map&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;lists exactly which ones.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Wire the turnout green/white wires directly to the Switch-8, with a row of relay boards where needed. That will eliminate many intermediary wiring to and from a secondary set of terminal blocks.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;All power bus can be removed from turnout toggles.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Optionally, wire the turnout toggles to NCE Button Boards to still have some remnants of manual control. 3 of them are needed and they need to be reprogrammed using &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/nce_button_board.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;my special firmware&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;since the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/nce_button_board.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCE Button Boards are not compatible with permanent contact toggles&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as used on these panels. However since this panel is seldomly used, I really wonder if that&#8217;s actually useful. It&#8217;s easier to switch the turnouts using the NCE ProCab.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Optionally, wire the turnout toggles to NCE Button Boards to still have some remnants of manual control. 3 of them are needed and they need to be reprogrammed using &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/nce_button_board.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;my special firmware&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;since the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/nce_button_board.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCE Button Boards are not compatible with permanent contact toggles&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as used on these panels. However since this panel is seldom used, I really wonder if that&#8217;s actually useful. It&#8217;s easier to switch the turnouts using the NCE ProCab.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-02-15T00:00:08-08:00</updated>
+<updated>2019-02-15T00:00:15-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9439,11 +9439,11 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Issue 1: Turnout Toggle / Selector&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;One minor issue that has been present since 2017 concerns the rotary turnout toggle on the panel. These toggles normally have a little tab that sticks into the wood panel to prevent them from turning. In this case the wood has softened and the rotary toggle turns freely. It&#8217;s visual orientation on the panel does not bear any indication of the actual position of the toggle.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;One minor issue that has been present since 2017 concerns the rotary turnout toggle on the panel. These toggles normally have a little tab that sticks into the wood panel to prevent them from turning. In this case the wood has softened and the rotary toggle turns freely. Its visual orientation on the panel does not bear any indication of the actual position of the toggle.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:204.80px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_d8671cc60b0b14e2b1d56f7bbac2de9c7e2459527a95bfda9f598902029846dfd.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This panel is nowaday rarely used and since this turnout has DCC control, it can be more easily thrown using the ACCY function of the NCE ProCab controllers. Consequently, the &#8220;loose&#8221; toggle issue has not been fixed yet. It is recorded on the task list as a low-priority item.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This panel is nowadays rarely used and since this turnout has DCC control, it can be more easily thrown using the ACCY function of the NCE ProCab controllers. Consequently, the &#8220;loose&#8221; toggle issue has not been fixed yet. It is recorded on the task list as a low-priority item.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Issue 2: Misaligned Point&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9486,7 +9486,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Disconnect the Turnout from the Switch-8&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The last thing I did is disconnect the Tortoises control wires from the Switch-8 outputs #2 (yellow wire on #2-A and green wire on #2-B) at the Mountain Panel. The two control wires are clearly labelled and just need to be screwed back into the outputs.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This will prevent anyone from mistakenly throw the cross-over since only one side of the cross-over would throw.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This will prevent anyone from mistakenly throwing the cross-over since only one side of the cross-over would throw.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Fix time: 2 hours.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9504,7 +9504,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-02-13T00:00:48-08:00</updated>
+<updated>2019-02-13T00:00:27-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9525,7 +9525,7 @@
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:592.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ca758d9e0aa0a879b22ac7f725ef1f30aff6692451effbe122bdc3a8a20cf975d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Blue labels on the track plan denote individually powered blocks. This was wired for DC and the green &#8220;Y1&#8221; section has polarity inversion which needs to adjusted based on the state of the turnouts T1 and T4 (you can see that T1 - T4 - T9 form a delta &#916; reversing loop).&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Blue labels on the track plan denote individually powered blocks. This was wired for DC and the green &#8220;Y1&#8221; section has polarity inversion which needs to be adjusted based on the state of the turnouts T1 and T4 (you can see that T1 - T4 - T9 form a delta &#916; reversing loop).&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The first track is nicely split in blocks: 1A, 1B, 1C, 1D and 1E.&lt;br&gt;The inner tracks are split in 3 blocks: Y1 is the reversing part, and Y2 and Y3 have different polarities.&lt;br&gt;The panel has a toggle to align Y1 either on the polarity of 1A or the one of Y3.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9649,7 +9649,7 @@
    &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:middle;width:43.4pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;font-size:10pt;vertical-align:baseline&quot;&gt;11&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
    &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:middle;width:91.6pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-size:10pt;vertical-align:baseline&quot;&gt;No idea, must check&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
    &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:middle;width:100.5pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-size:10pt;vertical-align:baseline&quot;&gt;No idea, must check&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:middle;width:362.2pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-size:10pt;vertical-align:baseline&quot;&gt;Was ok going straight, didn&apos;t try switching to cement factory.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:middle;width:362.2pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-size:10pt;vertical-align:baseline&quot;&gt;Was ok going straight, didn&apos;t try switching to the cement factory.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
   &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -9670,19 +9670,19 @@
 &lt;p&gt;&lt;span&gt;First let&#8217;s reduce the field to a known and manageable quantity:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Let&#8217;s posit that the automation does not touch any turnout. They are placed in a fixed state. This simplifies a lot of things and avoids a lot of issues (especially when power routing is done via the turnout, never good for DCC block detection).&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Let&#8217;s posit we don&#8217;t use block detection on that case. Either infrared or some camera-based system is used.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Let&#8217;s posit we don&#8217;t use block detection in that case. Either infrared or some camera-based system is used.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Let&#8217;s posit we use purely Y2 or Y3 blocks and &#8220;never cross the beams&#8221;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Using these axioms, we can still do some basic shuttle-style automation:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;A small trolley can get out of the tunnel on the right bottom side and go up Y2 via T5. This stays on Y2.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;A small switcher with maybe one car could travel on Y3 via T7 and T10 or T11. There&#8217;s would be very small visual enhancement by trying to thrown T10 or T11 to create some variety in the route, but it&#8217;s a substantial technical effort and may result only a in minor subtle change that most people may not notice; I&#8217;ll elaborate on that below.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;A small switcher with maybe one car could travel on Y3 via T7 and T10 or T11. There would be very small visual enhancement by trying to throw T10 or T11 to create some variety in the route, but it&#8217;s a substantial technical effort and may result only in minor subtle changes that most people may not notice; I&#8217;ll elaborate on that below.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;There&#8217;s some potential running on 1A-1E also in a shuttle manner with another switcher or similar.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;A better potential would be going from 1E to T8 / T6 and up to the Y1 crossing then shuttle back.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I&#8217;d call that &#8220;phase 1&#8221;: These are very simple linear routes, which could operate on a simple timer with the usual motion-activation trigger used elsewhere. Actual control could be done locally using an Arduino or offset to the main automation computer. The idea is to treat the whole yard a single DCC-controlled block and forget block detectors and its design is not at all well suited for it. Instead point-to-point detection using track-embedded &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2016-12-01_ir_sensors.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;infrared-reflectance detectors&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;would be more suited, as I had experimented with a couple years ago. The other detection that would work well here is &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2018-10-01_cameras_opencv_and_occupancy_d4e79a5c.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;camera-vision based&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as we have a fairly compact field to monitor. Follow the links for technical details if interested, including pros &amp;amp; cons.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;d call that &#8220;phase 1&#8221;: These are very simple linear routes, which could operate on a simple timer with the usual motion-activation trigger used elsewhere. Actual control could be done locally using an Arduino or offset to the main automation computer. The idea is to treat the whole yard as a single DCC-controlled block and forget block detectors and its design is not at all well suited for it. Instead point-to-point detection using track-embedded &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2016-12-01_ir_sensors.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;infrared-reflectance detectors&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;would be more suited, as I had experimented with a couple years ago. The other detection that would work well here is &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2018-10-01_cameras_opencv_and_occupancy_d4e79a5c.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;camera-vision based&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;as we have a fairly compact field to monitor. Follow the links for technical details if interested, including pros &amp;amp; cons.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;One could trivially define a &#8220;phase 2&#8221; with more advanced automation. As pointed above, if turnout control is included in the automation, there are more route choices. However it adds one more dimension in what can go wrong in the automation, and the result may be sub-par. Let me elaborate on this as it boils down to the usual &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;most&lt;/span&gt;&lt;span&gt;&amp;nbsp;important question: &#8220;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;who&lt;/span&gt;&lt;span&gt;&amp;nbsp;is your target&#8221;. If the target is to entertain people who can appreciate the subtlety of a train changing tracks, it&#8217;s worth the effort. However if the target is to entertain bystanders who are fine with &#8220;stuff moves&#8221;, then whether a train changes track or not is lost in value. Yet it&#8217;s a major effort to move to that level. So it better be worth it.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -9690,7 +9690,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2019-02-10T00:00:50-08:00</updated>
+<updated>2019-02-10T00:00:35-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -9958,7 +9958,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2018-11-22_more_automated_routes.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Based on last week experimentation at Randall, here are a few more idea of automated routes, with a focus on what would be needed to make them happen. To be clear, none of this will happen any time soon, or even at all. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Based on last week&apos;s experimentation at Randall, here are a few more ideas of automated routes, with a focus on what would be needed to make them happen. To be clear, none of this will happen any time soon, or even at all. &lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;h.8cq7i7pq2oj1&quot; style=&quot;line-height:1.15;padding-bottom:4pt;padding-top:16pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;color:rgb(67, 67, 67);font-size:14pt&quot;&gt;1- Trolley&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_042ffa28a46588b3ba9b13e20fd713279d0ac9b10c9f151e401f74cb4d12e8efi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -9973,7 +9973,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Requirements:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Some kind of way to detect both ends / or location of trolley on spur. E.g. camera, reflective IR (side mounted or on end bumper could work there, see warning note at the end), or create additional blocks (cut 1 rail, add feeder + BD20, one each end).&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Some kind of way to detect both ends / or location of the trolley on the spur. E.g. camera, reflective IR (side mounted or on end bumper could work there, see warning note at the end), or create additional blocks (cut 1 rail, add feeder + BD20, one each end).&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Add end bumpers if not present as there is no &#8220;overshoot&#8221; space.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Bumpers can be mixed with a contact or a reflective IR detector, so they both act as stoppers too.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Optional: DCC turnout control/interlock to prevent it from being thrown.&lt;/span&gt;&lt;/li&gt;
@@ -9989,7 +9989,7 @@
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;This is a potentially usable path, so a way to stop &amp;amp; park the automation out of the way is needed.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;This route crosses several booster boundaries. Notably it triggers the branchline reverser, which may or may not have an impact on the BL automation.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Momentum + current keeper needed to ensure train goes through the blocks properly.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Momentum + current keeper needed to ensure the train goes through the blocks properly.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Block detectors could likely be used here: one in the tunnel, two on the SIA side (one stop block + one overshoot block).&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Optional: DCC turnout control/interlock.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -10009,9 +10009,9 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;h3 id=&quot;h.qhbwe05e92w0&quot; style=&quot;line-height:1.15;padding-bottom:4pt;padding-top:16pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;color:rgb(67, 67, 67);font-size:14pt&quot;&gt;2- Switcher in SIA&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The SIA has all these yard tracks which are mostly unused. A &#8220;simple&#8221; idea is to have 1 or 2 swithers with attached freight cars. Switchers can pull out of a yard track into a spur/interchange, then push back into another yard track. Even more interesting with 2 switchers.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The SIA has all these yard tracks which are mostly unused. A &#8220;simple&#8221; idea is to have 1 or 2 switchers with attached freight cars. Switchers can pull out of a yard track into a spur/interchange, then push back into another yard track. Even more interesting with 2 switchers.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;A couple years I wanted to do an automated &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Inglenook_Sidings&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Inglenook Sidings&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;puzzle solver (with, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;ahem&lt;/span&gt;&lt;span&gt;, OpenCV and camera detection of the cars &amp;amp; their location). At the same time Jim wanted an automation with a switcher automatically shuttling freight cars. &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/arduino_nce.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;I actually started building one&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;at home and I put the project aside as I got busy with Randall&#8217;s more mundane tasks&lt;/span&gt;&lt;span&gt;. However here I would put Jim&#8217;s idea of coupling/uncoupling freight cars automatically aside as it proved unreliable or at least extremely finicky, and that&#8217;s not something I want for a daily automation. Instead we can have for example 2 switchers with 2-3 freight cars each, in a fixed setup. The program could randomize which trains leaves a yard track and which yard track it goes into. If that can be made reliable enough, I&#8217;d totally give another look at the automatic coupling issue (actually &#8220;uncoupling&#8221; reliably on magnets was the actual hard part).&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;A couple years ago, I wanted to do an automated &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Inglenook_Sidings&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Inglenook Sidings&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;puzzle solver (with, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;ahem&lt;/span&gt;&lt;span&gt;, OpenCV and camera detection of the cars &amp;amp; their location). At the same time Jim wanted an automation with a switcher automatically shuttling freight cars. &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/arduino_nce.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;I actually started building one&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;at home and I put the project aside as I got busy with Randall&#8217;s more mundane tasks&lt;/span&gt;&lt;span&gt;. However here I would put Jim&#8217;s idea of coupling/uncoupling freight cars automatically aside as it proved unreliable or at least extremely finicky, and that&#8217;s not something I want for daily automation. Instead we can have for example 2 switchers with 2-3 freight cars each, in a fixed setup. The program could randomize which train leaves a yard track and which yard track it goes into. If that can be made reliable enough, I&#8217;d totally give another look at the automatic coupling issue (actually &#8220;uncoupling&#8221; reliably on magnets was the actual hard part).&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The engines would be &#8220;pushing&#8221; the freight cars into the yard tracks. This means we can use an electrical block detector on the yard track feeder to know when the engine is there. We do have to make sure the engine clears the turnout.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -10059,7 +10059,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2018-11-22T00:00:16-08:00</updated>
+<updated>2018-11-22T00:00:23-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -10090,7 +10090,7 @@
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;span&gt;The Stockton Station is certainly the most visible feature of the layout when visitors walk in the room and approach the middle of the room.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:286.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7eccd24371cbac98cbb282f94b6da4872652447fa1035f082820522418df38fdi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Last week, I wondered &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2018-11-03_stockton_passenger_station_power.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Where does the power from the Stockton Passenger Station come from?&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last week, I wondered &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2018-11-03_stockton_passenger_station_power.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Where does the power from the Stockton Passenger Station come from?&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Resolving that question took a full week, and was accomplished with the help of Mr. Perry who provided his extremely well detailed original schematics of the power routing to the station, which I turned into these schematics:&lt;/span&gt;&lt;/p&gt;
 &lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
@@ -10102,7 +10102,7 @@
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;For a full size readable version of the schematics, please refer to the &#8220;SD+DOW&#8221; PDF in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;resources pages&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;under the schematics section.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;For a full size readable version of the schematics, please refer to the &#8220;SD+DOW&#8221; PDF in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;resources pages&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;under the schematics section.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Not only did I get the schematics, but I got to ask how the station was &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;designed&lt;/span&gt;&lt;span&gt;&amp;nbsp;to be used. I also verified all the schematics and they still match the current layout electrical installation. Nothing significant had been changed, which is good. I redrew all the schematics using colors to identify things such as blocks &amp;amp; common rails continuity. I also annotated them with which DCC booster / circuit-breaker is connected today, and I added notes to help me locate the relays under the layout. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -10133,7 +10133,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2018-11-11T00:00:58-08:00</updated>
+<updated>2018-11-11T00:00:27-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -10377,7 +10377,7 @@
 <id>https://www.alfray.com/trains/blog/randall/2018-09-08_rtac_update.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall_rtac.html#h.4872t6a07wp&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RTAC&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;is the software running on the Android tablets. I&#8217;ve made some modifications these past two weeks and I just finished enough to deploy the first changes at the museum:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall_rtac.html#h.4872t6a07wp&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RTAC&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;is the software running on the Android tablets. I&#8217;ve made some modifications these past two weeks and I just finished enough to deploy the first changes at the museum:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:598.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_9ba268ec5340bb4ba81c8f3a5c8e92dc5a2ac6afbbdefc09f1f48bd0c76d712fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
@@ -10385,13 +10385,13 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:302.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_04433a9d3001af7223b9e3e352abbd9bcd94b00ccd3df9ccc0b9263e350738eai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The PIR sensor is connected to a Digispark Tiny, which is polled by the tablet over USB. You can read more about the hardware part here: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/train/2018-09-02_digispark_tiny.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;http://ralf.alfray.com/trains/blog/train/2018-09-02_digispark_tiny.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The PIR sensor is connected to a Digispark Tiny, which is polled by the tablet over USB. You can read more about the hardware part here: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2018-09-02_digispark_tiny.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2018-09-02 - Digispark Tiny&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The tablet now also displays some prominent message. The example above is shown when the layout, the DCC, or the computer are turned off. There is no automation running and now the tablet quite explicitly says so. I hope that will help the public and the museum staff.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;When the layout is powered, the message indicates whether the trains are waiting for the green activation button to be pushed, or whether a train is currently running. And for Saturday when operators are running their own trains, the tablet displays a clear &#8220;Automation Stopped&#8221; message.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Finally, I made a non-visible change to the main &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/randall_rtac.html#h.wvt4jys24nsw&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor script&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. It now has a built-in timer to send an emergency stop command to all trains if they don&#8217;t reach their destination within a specified time. This should &#8220;alleviate&#8221; some derailment problems we had in the past, and I had been eager to do it for a while -- lack of time and priorities had delayed that effort. Not anymore. However now it&#8217;s even better since I also integrated it with the tablet&#8217;s messaging display. Not only failure to reach destination will stop the trains, but it will also display a prominent &#8220;Automation Error&#8221; message on the tablet for all to see.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Finally, I made a non-visible change to the main &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall_rtac.html#h.wvt4jys24nsw&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Conductor script&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. It now has a built-in timer to send an emergency stop command to all trains if they don&#8217;t reach their destination within a specified time. This should &#8220;alleviate&#8221; some derailment problems we had in the past, and I had been eager to do it for a while -- lack of time and priorities had delayed that effort. Not anymore. However now it&#8217;s even better since I also integrated it with the tablet&#8217;s messaging display. Not only failure to reach destination will stop the trains, but it will also display a prominent &#8220;Automation Error&#8221; message on the tablet for all to see.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The second tablet, located inside next to the main Valley Panel, displays the same information. This should be useful for Saturday operators. Except I&#8217;ve noticed twice the tablet&#8217;s display not working properly (e.g. displaying some random static / garbled pixels, and that gets fixed by rebooting it). So I may have one more thing to fix on my hands.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -10399,7 +10399,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2018-09-08T00:00:53-07:00</updated>
+<updated>2018-09-08T00:00:30-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -10517,7 +10517,7 @@
 &lt;p&gt;&lt;span&gt;That left me speechless. Not for long though.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;In the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/blog/randall/2018-03-28_error_conditions.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2018-03-28 post &#8220;Error Conditions&#8221;&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I explained the idea of detecting errors and stopping the automation/layout. It&#8217;s something I considered last year before the museum opened and the idea seemed way overkill back then.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2018-03-28_error_conditions.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;2018-03-28 post &#8220;Error Conditions&#8221;&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I explained the idea of detecting errors and stopping the automation/layout. It&#8217;s something I considered last year before the museum opened and the idea seemed way overkill back then.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;So here&#8217;s a thought, or more exactly a few of them:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
@@ -10576,7 +10576,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2018-07-18T00:00:39-07:00</updated>
+<updated>2018-07-18T00:00:17-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -10750,9 +10750,9 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;What I was less than impressed by is whoever manufacturer who provided these motors to Rapido. Apparently all the first batch of Rapido RDCs started failing with the same issue -- motors contacts would oxidize and motors would stop working. Unfortunately not an issue of &#8220;if&#8221; but &#8220;when&#8221;. The RDC has 2 motors, one per truck. In our case, the Randall RDC had one that stopped and one that was sort of working but very weak.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/ho_rapido_rdc.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Opening the RDC&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to access the motors is not too bad yet it&#8217;s not trivial either. Rapido&#8217;s design makes that simple (but time consuming and tricky) to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://ralf.alfray.com/trains/ho_rapido_rdc.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;assemble and disassemble&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;-- and more important, to put back together at the end (with a lot of patience). I had already opened the RDC to add a current keeper, and I wanted to open it again to put passengers in it. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/ho_rapido_rdc.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Opening the RDC&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to access the motors is not too bad yet it&#8217;s not trivial either. Rapido&#8217;s design makes it simple (but time consuming and tricky) to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/ho_rapido_rdc.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;assemble and disassemble&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;-- and more important, to put back together at the end (with a lot of patience). I had already opened the RDC to add a current keeper, and I wanted to open it again to put passengers in it. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This I opened it again and decided to &#8220;fix&#8221; the motors. Nothing that a small bit of CRC 2-26 Electrical Contact Cleaner can fix, right? Well that didn&#8217;t do it. After realizing that was not cutting it, I contacted the support at Rapido and Michael sent me new motors, as well as new motor mounts. He also gave me extras, and I&#8217;m glad he did as the first 2 new motors I tried didn&#8217;t even work properly -- one had a bad contact in the soldering pin and the other didn&#8217;t run smoothly at all.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Thus I opened it again and decided to &#8220;fix&#8221; the motors. Nothing that a small bit of CRC 2-26 Electrical Contact Cleaner can fix, right? Well that didn&#8217;t do it. After realizing that was not cutting it, I contacted the support at Rapido and Michael sent me new motors, as well as new motor mounts. He also gave me extras, and I&#8217;m glad he did as the first 2 new motors I tried didn&#8217;t even work properly -- one had a bad contact in the soldering pin and the other didn&#8217;t run smoothly at all.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;OK let me rephrase that last part. The 2nd motor I tried seemed to work, so I mounted it, started assembling the chassis and before putting the shell back I tried it again and one truck was not running. Sigh. So back at dismantling things. And then the motor works, wait what? Grrr. I suspected an issue with a wire contact, thus the picture above trying to check the contact at the motor under various conditions.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Turns out the flywheel on that second motor was 1 mm farther than on the other ones and was rubbing against the case once assembled, but seemed fine when running it unscrewed. I don&#8217;t have the tool needed to properly push in the flywheel. And these motors were in sealed plastic bags, so likely came as-is from their motor&#8217;s manufacturer factory.&lt;/span&gt;&lt;/p&gt;
@@ -10769,7 +10769,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2018-06-16T00:00:02-07:00</updated>
+<updated>2018-06-16T00:00:27-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
