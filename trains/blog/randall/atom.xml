@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-09-02T17:12:15.482068-07:00</updated>
+<updated>2025-09-02T22:34:01.87389-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -238,7 +238,7 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;3 &#8220;sidings&#8221; tracks for the DFS on the right.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;These are the tracks in green on the schema / plan v8: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Map%20-%20Track%20Plan%20+%20Sensors%208.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Track Plan + Sensors 8.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;These are the tracks in green on the schema / plan v8: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/maps/Randall%20Map%20-%20Track%20Plan%20%2B%20Sensors%208.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Track Plan + Sensors 8.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:220.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_085ef294f9bd7a1169ae4c038981f2b11a9a045d398d2eb98478e8ac7590cb96i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -322,7 +322,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-06-04T00:00:44-07:00</updated>
+<updated>2025-06-04T00:00:34-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -356,7 +356,7 @@
 &lt;p&gt;&lt;span&gt;One issue is that I have &#8220;dead/DC&#8221; engines and cars on these tracks.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I should redo the testing without the static display equipment, and I should measure voltage at the panel. Also I have a perfectly valid RRAmpMeter that would be awesome for that which I&#8217;m not using -- what we really need is a test involving a light bulb to force current consumption.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Looking at Plan+Sensors v7, this is what I had planned in 2017: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Map%20-%20Sensors%206.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Sensors 6.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Looking at Plan+Sensors v7, this is what I had planned in 2017: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/maps/Randall%20Map%20-%20Sensors%206.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Map - Sensors 6.pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:181.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_01773b2e22808d32ec1d67e9c4255221623e3d7888ef223669d470563c2bae5ai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -481,7 +481,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-05-27T00:00:46-07:00</updated>
+<updated>2025-05-27T00:00:45-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -3154,7 +3154,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That way, we can identify if the connection is broken, and where. Then we can narrow it down.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:348.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:785.40px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_678a4b1b17f88493af95ccc3238c595ce2a13ef3ab26abb75b899b9472be579fi.jpg&quot; style=&quot;margin-left:-6.40px;margin-top:0.00px;width:797.40px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Schematics for the station and the terminal block. &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Schemas%20-%20SD+DOW%20-%202018-11-11.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Click here for full PDF&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:348.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:785.40px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_678a4b1b17f88493af95ccc3238c595ce2a13ef3ab26abb75b899b9472be579fi.jpg&quot; style=&quot;margin-left:-6.40px;margin-top:0.00px;width:797.40px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Schematics for the station and the terminal block. &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/Randall%20Schemas%20-%20SD%2BDOW%2BDFS%20-%202018-11-11.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Click here for full PDF&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Remember that a continuity check can only be done when the track power is off. So if the DCC is off, set the multimeter to ohmmeter/continuity. If the DCC is on, instead use the multimeter in voltmeter mode in the AC setting and check for a ~14 V AC against any of the common rail references.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -3172,7 +3172,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2023-08-11T00:00:41-07:00</updated>
+<updated>2023-08-11T00:00:18-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -6745,7 +6745,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:288.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_71544376fff08315cbe312cbed9b81633225dab1b4a3bfb1ac54d72dfbac64b2i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Details can be found on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Schemas%20-%20SD+DOW%20-%202018-11-11.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;drawing #4 on the Station Schematics&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, which I recreated based on info provided by Mr. Perry. These details the power routing for each station block. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Details can be found on &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/Randall%20Schemas%20-%20SD%2BDOW%2BDFS%20-%202018-11-11.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;drawing #4 on the Station Schematics&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, which I recreated based on info provided by Mr. Perry. These details the power routing for each station block. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That complicated power routing made sense when the layout operated in DC: an operator willing to take a train in or out of the station would select a direction -- East towards the yard, or West towards the mountain -- and then the blocks would be directly powered based on the turnouts thrown to get in or out of the yard. That&#8217;s necessary since in DC the voltage controls the speed.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;For example when a train needs to get out of the station, if we select the &#8220;West&#8221; position for the station blocks, it leads the train to the mainline B321 block, and thus the routing powers the station block from the B321 block via a complex system of interlocking relays.&lt;/span&gt;&lt;/p&gt;
@@ -6759,7 +6759,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:312.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_e452d41913a3a85615889830eeed804e0c4eb1b0cc6e10b565837a8a15973234d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;As the image above is likely a bit fuzzy, please look at the original &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/static/Randall%20Schemas%20-%20SD+DOW%20-%202018-11-11.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;drawing #4 on the Station Schematics&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As the image above is likely a bit fuzzy, please look at the original &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/Randall%20Schemas%20-%20SD%2BDOW%2BDFS%20-%202018-11-11.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;drawing #4 on the Station Schematics&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:287.10px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:668.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_c7119aa4f989393ff8062d11c3fbb7f0c4961c26902b4d79054e02668a56473ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;RJRL3 and RJRL4 are located somewhere under Rodger&#8217;s Junction.&lt;br&gt;The &#8220;Local Station West Terminal&#8221; can be found there too and it connects to...&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:348.90px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:668.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ddd0795c5b52665a8b194038fd745aadaac525ab3e1b4832961612c7b6d60e45i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;...the &#8220;+ W STN / - CONT&#8221; behind the Stockton Passenger Panel.&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:203.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:460.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3be93b889005de2bceed6d4109e8bf07fc35b3843c2ec29fefde13b12708f024i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The &#8220;E/W&#8221; feed terminal, behind the concrete pillar by the station.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -6775,7 +6775,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2020-12-29T00:00:16-08:00</updated>
+<updated>2020-12-29T00:00:11-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
