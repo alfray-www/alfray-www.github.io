@@ -18,7 +18,6 @@ _site/
 Gemfile.lock
 temp/
 
-labs/apps/tangram
 labs/archived/TrainDef*
 *.db
 
