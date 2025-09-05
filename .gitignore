@@ -20,4 +20,5 @@ temp/
 
 labs/archived/TrainDef*
 *.db
+_update.sh
 
