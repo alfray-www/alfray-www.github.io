@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-09-02T22:34:11.773415-07:00</updated>
+<updated>2025-09-04T22:31:52.644274-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-05cc7b2">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Conductor 2: Startup Time</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/train/2025-09-04_conductor_2_startup_time.html"/>
+<id>https://www.alfray.com/trains/blog/train/2025-09-04_conductor_2_startup_time.html</id>
+<category term="RTAC" label="Rtac"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/train/">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;One of the things I get from the new version of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/wazz/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Wazz&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-08-23_dashboard_update.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;dashboard keeping track of the automation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, are timings when the automation computer starts in the morning:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:308.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:550.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1af5f922b381a636bd4462f104726884b867c92d66664452d9cae81e9b6ae851i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;So here are the events listed above:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Computer is powered on by the staff&#8230; It takes some time for Linux to book and go through the systemd init. I don&#8217;t have that timing in the events above. Measuring it with a watchclock a while ago, I believe it&#8217;s in the 10-20 seconds range.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;9:47:25am: The &#8220;computer consist&#8221; event is sent as soon as we reach &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;runlevel 5&lt;/span&gt;&lt;span&gt;, the multi-user GUI. That starts a script which runs a git update on the JMRI roster, and then starts JMRI software. &lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;9:48:46am: 81 seconds later, the &#8220;conductor running&#8221; event indicates that Conductor add-on software is loaded in JMRI. These 81 seconds correspond to the loading time of JMRI, before it invokes a Jython add-on trampoline that loads the Kotlin program Conductor in the JVM. It&#8217;s all a game of classloaders and stuff, and they essentially all run in the same JVM. But still, we basically have little control on that 81 seconds timing. It&#8217;s what JMRI takes to load.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;9:49:15am: 29 seconds later, the &#8220;conductor script&#8221; event indicates that Conductor is loading the Kotlin Script for the actual automation script. That includes Conductor opening its UI, loading the SVG map, etc.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;9:49:15am: Less than a second later, the &#8220;toggle&#8221; events are emitted by the automation script as soon as it starts executing. At that point, the automation is &#8220;live&#8221;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In total, it takes about 2 minutes from cold &#8220;computer off&#8221; to the automation being active.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2025-09-04T00:00:24-07:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Wazz Web Dashboard Update</title>
@@ -430,10 +459,10 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I also stick that script invoked from a crontab every 5 minutes with the exception that the receiver side is offset to run 10 seconds after the sending side. That way I have at most a 5-minute delay before being notified of an automation error.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-01-16T00:00:21-08:00</updated>
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-01-16T00:00:29-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
