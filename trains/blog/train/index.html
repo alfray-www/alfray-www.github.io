@@ -261,8 +261,9 @@ td p {
 
 <p><span></span></p>
 <p></p>
-<p style="text-align:left"><span>I have </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html" style="color:inherit;text-decoration:inherit">detailed in a previous post</a></span><span>&nbsp;how I create my “car/cab ride” videos: a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-01-01_mobius_maxi_4k.html" style="color:inherit;text-decoration:inherit">Mobius Maxi 4K</a></span><span>&nbsp;is placed on a flat car, and either pulled or pushed by the train using a custom “3D-printed rod” draw-bar connector, then I use a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfCamCarRodRemoval.fuse" style="color:inherit;text-decoration:inherit">DaVinci “Fuse” script</a></span><span>&nbsp;that I wrote to remove that gray rod from the image.</span></p>
-<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+<p><span>I have </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html" style="color:inherit;text-decoration:inherit">detailed in a previous post</a></span><span>&nbsp;how I create my “car/cab ride” videos: a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-01-01_mobius_maxi_4k.html" style="color:inherit;text-decoration:inherit">Mobius Maxi 4K</a></span><span>&nbsp;is placed on a flat car, and either pulled or pushed by the train using a custom “3D-printed rod” draw-bar connector, then I use a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfCamCarRodRemoval.fuse" style="color:inherit;text-decoration:inherit">DaVinci “Fuse” script</a></span><span>&nbsp;that I wrote to remove that gray rod from the image.</span></p>
+<p style="text-align:center"></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
  <tbody>
   <tr style="height:12.8pt">
    <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:297.8pt"><p style="text-align:left"><span style="vertical-align:baseline">The plugin transforms this image:</span></p></td>
@@ -274,6 +275,7 @@ td p {
   </tr>
  </tbody>
 </table>
+<p style="text-align:center"></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:186.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_85fe3c03fcf8fc8af80bdee86af60db7c57e26170b6c4f3b184afae4826c678ai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>That </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfCamCarRodRemoval.fuse" style="color:inherit;text-decoration:inherit">DaVinci plugin</a></span><span>&nbsp;has a lot of idiosyncrasies though. It’s based on a line-per-line contrast analysis, so it has no semantic of where the rod vs the rails are. When the rod gets very close to the rails in a curve, that analysis totally fails. And the backfill is extremely basic -- it’s a simple horizontal interpolation between both sides of the detected rod, line per line. That’s why it creates these horizontal bands in the middle, as there’s no pattern to it.</span></p>
@@ -282,7 +284,7 @@ td p {
 <hr style="display:none;page-break-before:always">
 <p></p>
 <p style="text-align:center"></p>
-<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
  <tbody>
   <tr style="height:21pt">
    <td colspan="2" rowspan="1" style="border-bottom-color:rgb(153, 153, 153);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(153, 153, 153);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(153, 153, 153);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(153, 153, 153);border-top-style:solid;border-top-width:0pt;padding:5pt 5pt 5pt 5pt;vertical-align:middle;width:595.5pt"><p style="text-align:center"><span>Original image (direct footage from camera):<br></span><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:214.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.00px"><img alt="" src="img_ff9b2d296e7ef8bf85f17096dc18ae146f9124cc3171e2461be17dd6b2b28338i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
