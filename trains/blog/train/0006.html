@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="Here’s a concrete example that shows how to wire LEDs directly to a turnout frog, as explained here, and makes it obvious how trivial this is:" />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_70f1ff27d99b6d1de1828aadf3a55f3745f155098d0fd111ff9794794dee12e3i.jpg" />
+<meta property="og:description" content="Today on the bench, we have two things going on:" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_308e931cfa7fbf6275099d56a9b6de6059f9d4e237a2c2feaf5f1642aca0cc11i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="Here’s a concrete example that shows how to wire LEDs directly to a turnout frog, as explained here, and makes it obvious how trivial this is:" />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_70f1ff27d99b6d1de1828aadf3a55f3745f155098d0fd111ff9794794dee12e3i.jpg" />
+<meta name="twitter:description" content="Today on the bench, we have two things going on:" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_308e931cfa7fbf6275099d56a9b6de6059f9d4e237a2c2feaf5f1642aca0cc11i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -247,6 +247,33 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-04-24_dcc_ex_support_in_android_ca_b8011aaf.html">
+    <h2 class="post-title">2021-04-24 - DCC++ EX support in Android Cab Engineer app</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Jmri
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>Today on the bench, we have two things going on:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:524.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_308e931cfa7fbf6275099d56a9b6de6059f9d4e237a2c2feaf5f1642aca0cc11i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>On the left side, we have a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3gDnQAC" style="color:inherit;text-decoration:inherit">“Wifi Kit 32” ESP32</a></span><span>&nbsp;running a fork of the latest </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dcc-ex.com/" style="color:inherit;text-decoration:inherit">DCC++ EX firmware</a></span><span>.<br>On the right side, we have my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://play.google.com/store/apps/details?id=com.alflabs.dcccab" style="color:inherit;text-decoration:inherit">Cab Engineer DCC Throttle</a></span><span>&nbsp;app for Android communicating with the DC++ EX command station.</span></p>
+<p></p>
+<p><span>A few clarifications and explanations are needed here.</span></p>
+<p><span></span></p>
+
+<a href="2021-04-24_dcc_ex_support_in_android_ca_b8011aaf.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-03-15_dwarf_signal_for_turnout_continued.html">
     <h2 class="post-title">2020-03-15 - Dwarf Signal for Turnout, Continued</h2>
@@ -494,35 +521,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-04-14_conductor_2_includes_routes__b779f39a.html">
-    <h2 class="post-title">2019-04-14 - Conductor 2: Includes, Routes, and Profiles -- Revisited</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Rtac
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span>Routes, Profiles, or even the latter idea of Includes for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;are all vaguely unsatisfactory.</span></p>
-<p><span>Includes are just a hack in the current v1 script language which do not really solve anything.</span></p>
-<p></p>
-<p><span>The core issue is modularization of the script.</span></p>
-<p></p>
-<p><span>One concept I explored earlier in the 2018-12-08 post and that I still want are routes.</span></p>
-<p></p>
-<p><span>A route is a sequence of blocks and a reservation principle. They have different modes, e.g. global interlocking vs ABS window interlocking. I think this concept is good and should be kept as-is. </span></p>
-<p style="text-align:left"><span></span></p>
-
-<a href="2019-04-14_conductor_2_includes_routes__b779f39a.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -541,7 +539,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-05 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-08 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

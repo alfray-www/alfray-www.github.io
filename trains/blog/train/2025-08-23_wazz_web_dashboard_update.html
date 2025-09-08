@@ -299,9 +299,9 @@ td p {
 <p><span>Finally, the other interesting part of the work was the piece “in the middle”: we have </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">Conductor</a></span><span>&nbsp;emitting events, and we have a web site that needs to collect event statistics from some place… That’s where </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/tree/main/web/DazzServ" style="color:inherit;text-decoration:inherit">DazzServ</a></span><span>&nbsp;comes in, a small server running on the local network and accumulating all these statistics and events, to serve them later to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/tree/main/web/wazz" style="color:inherit;text-decoration:inherit">Wazz</a></span><span>.</span></p>
 <p><span>For the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/tree/main/web/DazzServ" style="color:inherit;text-decoration:inherit">Dazz implementation</a></span><span>, I considered a few options. Maybe some cool hype stuff in Rust, or a server framework like Ktor and Netty? After considering a few options for the Dazz implementation, I threw all these choices away and opted for something fairly classic: it’s a simple </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://jetty.org/" style="color:inherit;text-decoration:inherit">Jetty</a></span><span>&nbsp;REST server written in Kotlin, and using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gradle.org/" style="color:inherit;text-decoration:inherit">Gradle</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dagger.dev/dev-guide/" style="color:inherit;text-decoration:inherit">Dagger</a></span><span>&nbsp;and JUnit4. The server has a minimalist REST API and JSON payloads. It’s a 100% no-hype implementation, it works well, I’ve used all of these before so I know the APIs well, and it’s rock solid. Low learning curve, and, most importantly, very easy to maintain later. I run it locally on one of the layout’s Linux computers with a simple </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://wiki.debian.org/systemd/Services" style="color:inherit;text-decoration:inherit">Debian systemd service</a></span><span>.</span></p>
 <p></p>
+<p></p>
 <hr>
 <p></p>
-<p><span></span></p>
 
 
     </div>
@@ -321,7 +321,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-05 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-08 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

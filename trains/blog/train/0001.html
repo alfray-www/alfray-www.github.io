@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="This is what I used for the red door: https://amzn.to/43dp9e9&nbsp;“USB Lights Bars 12 Inch, 3 bars chained”." />
+<meta property="og:description" content="There’s been a few changes in Conductor 2 in the recent weeks." />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_c981768a78bb8cd719e1015d92d0893cefb6d45a32c3f95eeb7f7d003de8ce24i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="This is what I used for the red door: https://amzn.to/43dp9e9&nbsp;“USB Lights Bars 12 Inch, 3 bars chained”." />
+<meta name="twitter:description" content="There’s been a few changes in Conductor 2 in the recent weeks." />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_c981768a78bb8cd719e1015d92d0893cefb6d45a32c3f95eeb7f7d003de8ce24i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -247,6 +247,38 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-12-16_conductor_2_new_mqtt_support.html">
+    <h2 class="post-title">2024-12-16 - Conductor 2: New MQTT Support</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>There’s been a few changes in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/commits/main/" style="color:inherit;text-decoration:inherit">Conductor 2 in the recent weeks</a></span><span>.</span></p>
+<p></p>
+<p><span>The first major change has been to add </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mqtt.org/" style="color:inherit;text-decoration:inherit">MQTT</a></span><span>&nbsp;support. The custom script language now exposes an “mqtt” object. Once configured, one can publish </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/man/mqtt-7.html" style="color:inherit;text-decoration:inherit">MQTT topics/messages</a></span><span>. This is used to control the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/ambiance" style="color:inherit;text-decoration:inherit">Ambiance LED string display</a></span><span>. Here’s an example of usage in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/main/jmri/conductor/engine2k/src/main/resources/v2/script/script_v30.02_bl204%2Bml8312%2B1225%2Btl6885.conductor.kts" style="color:inherit;text-decoration:inherit">latest script</a></span><span>:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(207, 226, 243);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">mqtt.configure("~/bin/JMRI/rtac_mqtt_conf.json")</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">mqtt.publish("ambiance/script/init", "Brightness 0.5 ; Fill #000000 1 ; SlowFill 0.1 #FF1000 40 #FF4000 10")</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">mqtt.publish("ambiance/script/event", "Slide -0.05 100")</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">var _ambiance_counter = 0</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">fun Ambiance_Trigger() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; mqtt.publish("ambiance/event/trigger", _ambiance_counter.toString())</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; _ambiance_counter++</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">}</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp;</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">fun Ambiance_Off() {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; mqtt.publish("ambiance/script/init", "Brightness 0.5 ; SlowFill 0.25 #000000 1")</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">}</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p><span></span></p>
+
+<a href="2024-12-16_conductor_2_new_mqtt_support.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2024-11-25_red_side_door_usb_light.html">
     <h2 class="post-title">2024-11-25 - Red Side Door USB Light</h2>
@@ -548,35 +580,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-09-18_converting_a_bachmann_spectr_f4f13891.html">
-    <h2 class="post-title">2023-09-18 - Converting a Bachmann Spectrum Shay to DCC</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    DCC
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="560" height="315" src="https://www.youtube.com/embed/LaWar07neX4" frameborder="0" allowfullscreen></iframe></span><span><br></span><span style="font-style:italic">The Shay running at Randall after DCC conversion</span><span>.</span></p>
-<p></p>
-<p><span>I recently got a Bachmann Spectrum Shay -- the “80-ton 3 truck Shay” #81901. The one I got is an unlettered black version, used, and in good condition. All gears work. It has an 8-pin NMRA / NEM652 connector, and it screams to be converted to DCC so we’ll discuss this effort here.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:392.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_56ce127f7cdbd95e5a2ac07557ddfbe917c3cb36e511ab2db101c1fa02761886i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">The Bachmann Shay before DCC conversion, as unboxed.</span></p>
-<p></p>
-<p><span style="font-weight:700">Initial Observations</span></p>
-<p></p>
-<p><span>Here are the initial observations:</span></p>
-<p><span></span></p>
-
-<a href="2023-09-18_converting_a_bachmann_spectr_f4f13891.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -595,7 +598,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-05 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-08 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

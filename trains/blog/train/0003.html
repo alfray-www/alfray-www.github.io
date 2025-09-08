@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="Right now we load a single map via the Conductor script. That SVG map is displayed on the remote tablet and also on the automation computer’s main screen." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_a829f4e69484dc20cd40f3a6598bf44058b39b80c08877b3ca33902362f14562i.jpg" />
+<meta property="og:description" content="Let’s implement virtual blocks. These have been part of the original design and I now have a need for them." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="Right now we load a single map via the Conductor script. That SVG map is displayed on the remote tablet and also on the automation computer’s main screen." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_a829f4e69484dc20cd40f3a6598bf44058b39b80c08877b3ca33902362f14562i.jpg" />
+<meta name="twitter:description" content="Let’s implement virtual blocks. These have been part of the original design and I now have a need for them." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -247,6 +247,40 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-04-09_conductor_2_virtual_blocks_i_4b939f77.html">
+    <h2 class="post-title">2023-04-09 - Conductor 2: Virtual Blocks Implementation</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>Let’s implement virtual blocks. These have been part of the original design and I now have a need for them.</span></p>
+<p></p>
+<p><span>As a reminder, what is a virtual block and what is it good for?</span></p>
+<p><span>Let’s look at the Branchline. It’s is a simple straight chain of blocks as shown in yellow on this map:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:165.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:357.00px"><img alt="" src="img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span>Because the track is curved and goes through tunnels, it looks complicated, yet it’s really a straight line:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>[ B801 parking ] ⇒ [ B820 station ] ⇒ [ B830 canyon ] ⇒ [ B850 tunnel ] ⇒ [ B860 reversing block ]</span></li>
+</ul>
+<p></p>
+<p><span>One thing not obvious on this map is that B830 has no track sensor associated with it. When I did the original sensor wiring back in 2017, I simply couldn’t identify the corresponding track feeders, and I suspect (or hope) there are actually two blocks in there because it’s a fairly long segment. That’s why I left a B840 in my naming scheme, for potential later usage.</span></p>
+<p></p>
+<p><span>But now the concept behind the Conductor 2 automation is for the engine to track on which block the train is </span><span style="font-style:italic">supposed to be</span><span>, and match that with the reality of the track sensors. That’s a problem in this case since after moving out of block B820 we have no idea… the track appears empty, and that’s a definite error condition. How do we solve that in the script?</span></p>
+<p><span></span></p>
+
+<a href="2023-04-09_conductor_2_virtual_blocks_i_4b939f77.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-04-05_conductor_2_maps.html">
     <h2 class="post-title">2023-04-05 - Conductor 2: Maps</h2>
@@ -514,40 +548,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-02-24_sdb_mqtt.html">
-    <h2 class="post-title">2023-02-24 - SDB: MQTT</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    SDB
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span style="font-style:italic">The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/sdb" style="color:inherit;text-decoration:inherit">Software Defined Blocks</a></span><span style="font-style:italic">&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad</span><span>.</span></p>
-<p></p>
-<p><span>The base idea is to use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/alltheiot-protocols/mqtt" style="color:inherit;text-decoration:inherit">MQTT</a></span><span>&nbsp;to publish block changes, instead of targeting the JMRI JSON protocol. I was originally going to support both, but that seems redundant. We’ll see. JSON is simple and very convenient for debugging, so it’s always a great idea to get started.</span></p>
-<p></p>
-<p><span>Here we’ll detail how that works for this specific project:</span></p>
-<ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ESP32 monitors sensors, sends messages to an MQTT broker.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>JMRI MQTT subscribes to messages from the MQTT broker.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Requirement: An MQTT broker running on the network (either the same machine as JMRI, or another local one, or a public one).</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Requirement: Set up the ESP32 with the broker IP, and block/sensor topics.</span></li>
-</ul>
-<p></p>
-<p><span>For background, my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Conductor automation software</a></span><span>&nbsp;embeds “KV Server”, a distributed key-value server/client architecture which is fundamentally very similar to MQTT, except mine is nowhere as ubiquitous and it is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ralfoide/libutils/tree/android-lib-v2" style="color:inherit;text-decoration:inherit">buried somewhere in my LibUtils project</a></span><span>. In the case of the Conductor automation software, I use the KV Server as a way to distribute configuration from the automation script to the accessories. Which means we can do the same here with MQTT, and we can take advantage of that to configure the ESP32 with block triggers defined in the automation script.</span></p>
-<p><span></span></p>
-
-<a href="2023-02-24_sdb_mqtt.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -566,7 +566,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-05 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-08 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 

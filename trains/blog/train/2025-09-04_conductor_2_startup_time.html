@@ -239,7 +239,7 @@ td p {
 <div class="prev-next-container">
 
 
-    <span class="prev-page"></span>
+    <span class="prev-page"><a href="2025-09-08_thoughts_on_the_car_ride_video_plugin.html">⇐ Newer Post</a><br/></span>
     <span class="next-page"><a href="2025-08-23_wazz_web_dashboard_update.html">Older Post ⇒</a><br/></span>
 
 </div>
@@ -270,11 +270,17 @@ td p {
 </ul>
 <p></p>
 <p><span>In total, it takes about 2 minutes from cold “computer off” to the automation being active.</span></p>
+<p></p>
+<p><span>And to be clear, that's one minute too much </span></p>
 <p><span></span></p>
 <p></p>
-<p><span>This used to be about 30 seconds faster in the past. A few years ago, I updated JMRI from version 4 to 5 and that increased the loading time. That’s also when I rewrote Conductor 1 as Conductor 2 in Kotlin, and that also increased the loading time. Using Kotlin and its Scripting Engine has a cost -- it’s after all a fairly large set of JVM libraries that are loaded dynamically into the JVM at runtime </span><span style="font-style:italic">after</span><span>&nbsp;JMRI has finished loading. So that amounted to about 30 seconds extra boot time.</span></p>
+<p><span>The automation used to boot in 1 minute from a cold start when I was running Conductor 1.</span></p>
 <p></p>
-<p><span>Note how I wrote above it all gets loaded into the same JVM? That matters. Conductor 2 is for now sort of stuck on an older Kotlin 1.6 version. My attempts to update to Kotlin 1.9 had failed last year, as some of the dynamically loaded libraries conflicted with something loaded earlier by JMRI or Jython. I had not figured out what exactly, and in between Kotlin is already at version 2.1 so whatever little analysis I had done is already obsolete. </span></p>
+<p><span>The second stage used to be about 30 seconds faster in the past. A few years ago, I updated JMRI from version 4 to 5 and that increased the loading time. That’s also when I rewrote Conductor 1 as Conductor 2 in Kotlin, and that also increased the loading time. Using Kotlin and its Scripting Engine has a cost -- it’s after all a fairly large set of JVM libraries that are loaded dynamically into the JVM at runtime </span><span style="font-style:italic">after</span><span>&nbsp;JMRI has finished loading. So that amounted to about 30 seconds extra boot time.</span></p>
+<p></p>
+<p><span>Then the Kotlin Scripting Engine needs to compile the automation script at runtime and that takes an extra 20 seconds. By comparison, my old Conductor 1 ANTLR-based custom language loaded my old script in a couple seconds.</span></p>
+<p></p>
+<p><span>Note how I wrote above it all gets loaded into the same JVM? That matters. Conductor 2 is for now sort of stuck on an older Kotlin 1.6 version. My attempts to update to Kotlin 1.9 had failed last year, as some of the dynamically loaded libraries conflicted with something loaded earlier by JMRI or Jython. I had not figured out what exactly, and in between Kotlin is already at version 2.1 so whatever little analysis I had done is already obsolete. Most notably, I rely on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://blog.jetbrains.com/kotlin/2024/11/state-of-kotlin-scripting-2024/" style="color:inherit;text-decoration:inherit">Kotlin JSR-223 support which is planned to be deprecated in Kotlin 2.3</a></span><span>.</span></p>
 <p></p>
 <p></p>
 <hr>
@@ -289,7 +295,7 @@ td p {
 <div class="prev-next-container">
 
 
-    <span class="prev-page"></span>
+    <span class="prev-page"><a href="2025-09-08_thoughts_on_the_car_ride_video_plugin.html">⇐ Newer Post</a><br/></span>
     <span class="next-page"><a href="2025-08-23_wazz_web_dashboard_update.html">Older Post ⇒</a><br/></span>
 
 </div>
@@ -299,7 +305,7 @@ td p {
 
 <div class="sharethis-inline-share-buttons"></div>
 
-<div class="bottom-container">&nbsp;Generated on 2025-09-05 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
+<div class="bottom-container">&nbsp;Generated on 2025-09-08 by Rig4j 0.1-Exp-05cc7b2&nbsp;</div>
 
 </main>
 
