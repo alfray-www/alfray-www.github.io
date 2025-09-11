@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-09-02T14:27:55.799933-07:00</updated>
+<updated>2025-09-11T16:06:28.542322-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="http://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="http://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>http://www.alfray.com/ralf/blog/dev/atom.xml</id>
-<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-05cc7b2">Rig4j</generator>
+<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-f3ee0b3">Rig4j</generator>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">GA4 Stats from an ESP32?</title>
@@ -6968,9 +6968,11 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;Hint: delayed again.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Workbench&amp;quot;;font-size:12pt&quot;&gt;mod&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;height:12pt;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2013-04-30T00:00:54-07:00</updated>
+<updated>2013-04-30T00:00:02-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
