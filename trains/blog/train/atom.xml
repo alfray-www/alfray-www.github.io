@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-09-08T14:32:01.611019-07:00</updated>
+<updated>2025-09-11T03:00:23.161116-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -59,7 +59,7 @@
 &lt;p&gt;&lt;span&gt;OK, that was quite interesting. First, Gemini produced the resulting image in a couple seconds whilst it took ChatGPT almost a minute to give me back an image. Comparing both images:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Gemini: The result is pretty much exactly what&#8217;s expected. The gray rod is gone, and the track in between has been not only smoothed, but its pattern looks actually pretty impressive. We can also see that the rod &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;shadow&lt;/span&gt;&lt;span&gt;&amp;nbsp;has been removed, something my plugin can&#8217;t do.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;ChatGPT: For some reason, the image is zoomed in, and the aspect ratio changed. The gray rod is gone, and the track in between the rails looks really good. The rod shadow is also gone. But&#8230; there&#8217;s more. Other parts of the image have changed. The ceiling on the left side no longer has ceiling lights, and the entire lighting of the image has consequently darkened. The spot light on the top left has changed shape. All the text has become some kind of gibberish and the engine itself has somewhat changed, it&#8217;s more vertical. Finally&#8230; and it took me a few seconds to realize, the entire image is now super crisp. The focus depth from the camera is gone, and everything including the baggage car on the left and the track is in focus. Image details have literally been added that did not exist before.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;ChatGPT: For some reason, the image is zoomed in, and the aspect ratio changed. The gray rod is gone, and the track in between the rails looks really good. The rod shadow is also gone. But&#8230; there&#8217;s more. Other parts of the image have changed. The ceiling on the left side no longer has ceiling lights, and the entire lighting of the image has consequently darkened. The spot light on the top left has changed shape. All the text has become some kind of gibberish and the engine itself has somewhat changed, it&#8217;s more vertical. The stairs on the platform have entirely vanished! Finally&#8230; and it took me a few seconds to realize, the entire image is now super crisp. The focus depth from the camera is gone, and everything including the baggage car on the left and the track is in focus. Image details have literally been added that did not exist before.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
@@ -73,7 +73,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-09-08T00:00:33-07:00</updated>
+<updated>2025-09-08T00:00:39-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
