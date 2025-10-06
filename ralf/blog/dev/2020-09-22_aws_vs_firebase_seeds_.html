@@ -28,21 +28,19 @@
 <!-- custom fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <style type="text/css">
 body {
-    font-family: "Workbench", monospace;
+    font-family: "Roboto Mono", monospace;
     margin: 0;
-    background: #000;
-    color: #0A0;
+    background: #EFE;
+    /* color: #000; */
 
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "BLED" 0, "SCAN" 10;
 }
 
 .main {
@@ -209,11 +207,11 @@ td p {
 <div class="main">
 <div class="container center-horiz">
 
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
 
 <div class="prev-next-container">
 
@@ -234,22 +232,22 @@ td p {
 
 
     <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Currently working on Inkblot v2 Scoring Web App.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The suggestion was to evaluate AWS vs Firebase (nodejs based, not Android as I usually do).</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">AWS is working really well work Inkblot v2 right now, so there’s little incentive to also do a Firebase version.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Currently working on Inkblot v2 Scoring Web App.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The suggestion was to evaluate AWS vs Firebase (nodejs based, not Android as I usually do).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">AWS is working really well work Inkblot v2 right now, so there’s little incentive to also do a Firebase version.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I’d still like to do a web app using Firebase to have a comparison with AWS, and Seeds seems like a good candidate for this. I have the Android app working fine, however my old Chrome extension does not work anymore since the AppScript-based apps have been deprecated.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rebuilding it using Firebase would be a good target:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I’d still like to do a web app using Firebase to have a comparison with AWS, and Seeds seems like a good candidate for this. I have the Android app working fine, however my old Chrome extension does not work anymore since the AppScript-based apps have been deprecated.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rebuilding it using Firebase would be a good target:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Rely on their free tier, and measure cold latency (one of the big drawbacks of app engine in their free tier, which I do not see in AWS).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Nodejs + React + Bootstrap, similar to what’s used in Inkblot v2.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Google-only auth… how well do they integrate that in Firebase?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Backend storage… how does it compare with GraphQL + DynamoDB?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note: the only thing I really need is to store the GDrive doc id.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Deployment/hosting… this one would likely go on something like “seeds.alfray.com”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rely on their free tier, and measure cold latency (one of the big drawbacks of app engine in their free tier, which I do not see in AWS).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Nodejs + React + Bootstrap, similar to what’s used in Inkblot v2.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Google-only auth… how well do they integrate that in Firebase?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Backend storage… how does it compare with GraphQL + DynamoDB?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Note: the only thing I really need is to store the GDrive doc id.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Deployment/hosting… this one would likely go on something like “seeds.alfray.com”.</span></li>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Updated 2020-09-24: That project could also be a candidate to look again at Angular. I remember looking at Angular before React and couldn’t figure out the model… However now that I’m familiar with React (non native), looking at Angular a second time would be worth it, for a good comparison. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Updated 2020-09-24: That project could also be a candidate to look again at Angular. I remember looking at Angular before React and couldn’t figure out the model… However now that I’m familiar with React (non native), looking at Angular a second time would be worth it, for a good comparison. </span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
 <hr>
@@ -271,7 +269,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-09-11 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

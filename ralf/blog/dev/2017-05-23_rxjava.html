@@ -28,21 +28,19 @@
 <!-- custom fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <style type="text/css">
 body {
-    font-family: "Workbench", monospace;
+    font-family: "Roboto Mono", monospace;
     margin: 0;
-    background: #000;
-    color: #0A0;
+    background: #EFE;
+    /* color: #000; */
 
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "BLED" 0, "SCAN" 10;
 }
 
 .main {
@@ -209,11 +207,11 @@ td p {
 <div class="main">
 <div class="container center-horiz">
 
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
 
 <div class="prev-next-container">
 
@@ -234,88 +232,88 @@ td p {
 
 
     <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Still trying to wrap around the basics. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Still trying to wrap around the basics. </span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Some high level vocabulary:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Some high level vocabulary:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observable = iterator == the stream.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Source / emitter == produce values (into an Observable) via onNext / onCompleted.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observer = consumer == callback (onNext / onError / onCompleted).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observable = iterator == the stream.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Source / emitter == produce values (into an Observable) via onNext / onCompleted.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observer = consumer == callback (onNext / onError / onCompleted).</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">"Subscribe to an observable using an observer".</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">"Subscribe to an observable using an observer".</span></li>
  </ul>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">⇒ This is my main grip with RxJava: the vocabulary is nonsensical and confusing. It means as soon as I stop using it I will get confused when I get back to it later.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">⇒ This is my main grip with RxJava: the vocabulary is nonsensical and confusing. It means as soon as I stop using it I will get confused when I get back to it later.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The flow in a nutshell: </span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">(emitter) ⇒ Observable ⇒ Observer[s].</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But in fact it is implemented as such:</span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observable.onSubscribe(emitter code) ⇒ Observer/Subscriber(receiving code)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">with various intermediate steps in the stream.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A Disposable/Subscription represents the link from an Observer/Subscriber to an Observable/stream.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The flow in a nutshell: </span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">(emitter) ⇒ Observable ⇒ Observer[s].</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">But in fact it is implemented as such:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observable.onSubscribe(emitter code) ⇒ Observer/Subscriber(receiving code)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">with various intermediate steps in the stream.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A Disposable/Subscription represents the link from an Observer/Subscriber to an Observable/stream.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Core to remember:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observable.{from|create}(source) ---&gt; the observable</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribeOn(Schedulers.io())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.observeOn(AndroidSchedulers.mainThread())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe(an observer).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Core to remember:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observable.{from|create}(source) ---&gt; the observable</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribeOn(Schedulers.io())</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.observeOn(AndroidSchedulers.mainThread())</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe(an observer).</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">RxJava2 has Observable vs Flowable:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">RxJava2 has Observable vs Flowable:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observable = no back pressure.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observable = no back pressure.</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observer type: #onNext / #onComplete / #onError / #onSubscribe(Disposable).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Disposable: #dispose.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Specialized types: Single, Completable, Maybe (types of Observable)</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Source: fromCallable(() -&gt; return value), </span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Source: Observable.create() using a "subscriber" with an "emitter" object.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observer type: #onNext / #onComplete / #onError / #onSubscribe(Disposable).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Disposable: #dispose.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Specialized types: Single, Completable, Maybe (types of Observable)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Source: fromCallable(() -&gt; return value), </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Source: Observable.create() using a "subscriber" with an "emitter" object.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Flowable = has back pressure built-in.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Flowable = has back pressure built-in.</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Subscriber type: #onNext / #onComplete / #onError / #onSubscribe(Subscription).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Subscription: #cancel, #request.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Subscriber type: #onNext / #onComplete / #onError / #onSubscribe(Subscription).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Subscription: #cancel, #request.</span></li>
  </ul>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">RxStreams:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">RxStreams:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Publisher: #subscribe(Subscriber)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Subscriber: #onSubscribe(Subscription)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Subscription: #request, #cancel</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Processor&lt;T, R&gt;: converts a Subscriber T into a Publisher R.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Publisher: #subscribe(Subscriber)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Subscriber: #onSubscribe(Subscription)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Subscription: #request, #cancel</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Processor&lt;T, R&gt;: converts a Subscriber T into a Publisher R.</span></li>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A few links:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A few links:</span></p>
 <ul style="margin:0">
  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The missing intro: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754" style="color:inherit;text-decoration:inherit">https://gist.github.com/staltz/868e7e9bc2a7b8c1f754</a></span></li>
  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>RxJava Android tips: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://futurice.com/blog/top-7-tips-for-rxjava-on-android" style="color:inherit;text-decoration:inherit">http://futurice.com/blog/top-7-tips-for-rxjava-on-android</a></span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Using it to replace an Event Bus:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Using it to replace an Event Bus:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/" style="color:inherit;text-decoration:inherit">http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba" style="color:inherit;text-decoration:inherit">https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/" style="color:inherit;text-decoration:inherit">http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba" style="color:inherit;text-decoration:inherit">https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Useful videos:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Useful videos:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=k3D0cWyNno4" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=k3D0cWyNno4</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=htIXKI5gOQU" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=htIXKI5gOQU</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=k3D0cWyNno4" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=k3D0cWyNno4</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=htIXKI5gOQU" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=htIXKI5gOQU</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></li>
 </ul>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The most obvious pattern is to replace async tasks:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Observable.just( input data )</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map( async lambda, transforming input to output type )</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribeOn(Schedulers.io())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.observeOn(AndroidSchedulers.mainThread())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe( observer using the output )</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The most obvious pattern is to replace async tasks:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Observable.just( input data )</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map( async lambda, transforming input to output type )</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribeOn(Schedulers.io())</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.observeOn(AndroidSchedulers.mainThread())</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe( observer using the output )</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To replace a timer task:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">subscription = Observable.timer(delay, interval, TimeUnit.unit)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.take(20) / map, etc. # for example</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe( observer doing something at interval )</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">subscription.unsubscribe() # equivalent to timer.cancel</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">To replace a timer task:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">subscription = Observable.timer(delay, interval, TimeUnit.unit)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.take(20) / map, etc. # for example</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe( observer doing something at interval )</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">subscription.unsubscribe() # equivalent to timer.cancel</span></p>
 <p style="height:12pt;text-align:left"></p>
 <hr>
 <p style="height:12pt;text-align:left"></p>
@@ -336,7 +334,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-09-11 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

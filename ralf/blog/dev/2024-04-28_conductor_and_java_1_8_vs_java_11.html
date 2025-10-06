@@ -28,21 +28,19 @@
 <!-- custom fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <style type="text/css">
 body {
-    font-family: "Workbench", monospace;
+    font-family: "Roboto Mono", monospace;
     margin: 0;
-    background: #000;
-    color: #0A0;
+    background: #EFE;
+    /* color: #000; */
 
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "BLED" 0, "SCAN" 10;
 }
 
 .main {
@@ -209,11 +207,11 @@ td p {
 <div class="main">
 <div class="container center-horiz">
 
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
 
 <div class="prev-next-container">
 
@@ -234,24 +232,24 @@ td p {
 
 
     <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A few months ago I updated the Conductor project to new libraries, notably switching to Kotlin DSL 1.9. That made building with Java 11 a requirement.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A few months ago I updated the Conductor project to new libraries, notably switching to Kotlin DSL 1.9. That made building with Java 11 a requirement.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In turn, that broke the way the Kotlin DSL is loaded under JMRI. I’m not sure why.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So fine, I reverted the Gradle files to a “Java 1_8” compatibility mode, and reverted to the older Kotlin DSL 1.6. This works fine when building the fat JAR, but it fails when trying to run the tests. It works fine when I actually build with a Java 1.8 JDK instead.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">In turn, that broke the way the Kotlin DSL is loaded under JMRI. I’m not sure why.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So fine, I reverted the Gradle files to a “Java 1_8” compatibility mode, and reverted to the older Kotlin DSL 1.6. This works fine when building the fat JAR, but it fails when trying to run the tests. It works fine when I actually build with a Java 1.8 JDK instead.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>When building with Java 11 and running the tests, I get this cryptic gradle error: “</span><span style="font-style:italic">Incompatible because this component declares an API of a component and the consumer needed a runtime of a component</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">”</span></p>
+<p style="text-align:left"><span>When building with Java 11 and running the tests, I get this cryptic gradle error: “</span><span style="font-style:italic">Incompatible because this component declares an API of a component and the consumer needed a runtime of a component</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">”</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To be clear, the “build” part works. I get the fatJAR just fine. It’s the testing that fails, and only when doing it from Gradle on the command line. In IJ, I get the same behavior by selecting Conductor &gt; All Tests on the root project.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">I should try to replicate it with the gradle --info flag to see if that gives me more details on what is really breaking.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Another limitation is that only LibUtils v2 works with Java 1.8. LibUtils v3 already has Mockito dependencies that require Java 11.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">To be clear, the “build” part works. I get the fatJAR just fine. It’s the testing that fails, and only when doing it from Gradle on the command line. In IJ, I get the same behavior by selecting Conductor &gt; All Tests on the root project.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I should try to replicate it with the gradle --info flag to see if that gives me more details on what is really breaking.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Another limitation is that only LibUtils v2 works with Java 1.8. LibUtils v3 already has Mockito dependencies that require Java 11.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">But that seems all academic anyway. What I really want is to build with a Java 11 compatibility target since at this point even JMRI requires 11.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Then once I get that working, I need to retry with Kotlin DSL 1.9.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">But that seems all academic anyway. What I really want is to build with a Java 11 compatibility target since at this point even JMRI requires 11.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Then once I get that working, I need to retry with Kotlin DSL 1.9.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">One thing for sure is from now on, when updating, I need to account for these scenarios:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">One thing for sure is from now on, when updating, I need to account for these scenarios:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Testing does not work the same way under IJ or under command-line Gradle.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Kotlin DSL loading does not work the same in standalone (simulator) vs from JMRI.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Testing does not work the same way under IJ or under command-line Gradle.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Kotlin DSL loading does not work the same in standalone (simulator) vs from JMRI.</span></li>
 </ul>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
@@ -274,7 +272,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-09-11 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

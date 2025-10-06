@@ -28,21 +28,19 @@
 <!-- custom fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <style type="text/css">
 body {
-    font-family: "Workbench", monospace;
+    font-family: "Roboto Mono", monospace;
     margin: 0;
-    background: #000;
-    color: #0A0;
+    background: #EFE;
+    /* color: #000; */
 
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "BLED" 0, "SCAN" 10;
 }
 
 .main {
@@ -209,11 +207,11 @@ td p {
 <div class="main">
 <div class="container center-horiz">
 
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
 
 <div class="prev-next-container">
 
@@ -234,54 +232,54 @@ td p {
 
 
     <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In the Train-Motion project, I have a fat jar gradle rule to package all the dependencies in a single jar.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">In the Train-Motion project, I have a fat jar gradle rule to package all the dependencies in a single jar.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">To make it work, I had to create a “configuration” in gradle:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">To make it work, I had to create a “configuration” in gradle:</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">configurations {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; canBeResolved = true</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; canBeConsumed = true</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; }</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; compileClasspath.extendsFrom(runtimeCompile)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeClasspath.extendsFrom(runtimeCompile)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; testCompileClasspath.extendsFrom(runtimeCompile)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; testRuntimeClasspath.extendsFrom(runtimeCompile)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">configurations {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; canBeResolved = true</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; canBeConsumed = true</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; compileClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; testCompileClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; testRuntimeClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">}</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Then I use this configuration to include the dependencies:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">dependencies {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile project(":LibUtilsJava")</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "commons-cli:commons-cli:1.4"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacv-platform:1.5.3"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacpp-platform:1.5.3"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "uk.co.caprica:vlcj:4.7.1"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.fasterxml.jackson.core:jackson-databind:2.10.2"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.squareup.okhttp3:okhttp:3.10.0"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.eclipse.jetty:jetty-server:9.4.29.v20200521"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.google.dagger:dagger:2.28"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile &nbsp;"com.google.auto.factory:auto-factory:1.0.1"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Then I use this configuration to include the dependencies:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">dependencies {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile project(":LibUtilsJava")</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "commons-cli:commons-cli:1.4"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacv-platform:1.5.3"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacpp-platform:1.5.3"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "uk.co.caprica:vlcj:4.7.1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.fasterxml.jackson.core:jackson-databind:2.10.2"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.squareup.okhttp3:okhttp:3.10.0"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "org.eclipse.jetty:jetty-server:9.4.29.v20200521"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile "com.google.dagger:dagger:2.28"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; runtimeCompile &nbsp;"com.google.auto.factory:auto-factory:1.0.1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">}</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">And finally a fatJar task collects these specific dependencies and packages them together:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">task fatJar(type: Jar) {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; manifest.from jar.manifest</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; classifier = "all"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; from {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; } {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.SF"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.DSA"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.RSA"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; }</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; &nbsp; with jar</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">}</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">And finally a fatJar task collects these specific dependencies and packages them together:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">task fatJar(type: Jar) {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; manifest.from jar.manifest</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; classifier = "all"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; from {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; } {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.SF"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.DSA"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.RSA"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; with jar</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">}</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Note that “runtimeCompile” is a superset of the “compile” configuration, and the artifacts can be found using configurations.compileClasspath.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Note that “runtimeCompile” is a superset of the “compile” configuration, and the artifacts can be found using configurations.compileClasspath.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">That’s neat to create the needed single JAR. That jar is ~760 MB with all the OpenCV deps. And it takes an interminable 4 minutes to create the jar itself.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">That’s neat to create the needed single JAR. That jar is ~760 MB with all the OpenCV deps. And it takes an interminable 4 minutes to create the jar itself.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So now the question is whether I can avoid that. I don’t need to distribute the jar, so I'd be fine with crafting a specific command line with the needed classpath. Or even having a “gradle run” task that does not need the fat jar first.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So now the question is whether I can avoid that. I don’t need to distribute the jar, so I'd be fine with crafting a specific command line with the needed classpath. Or even having a “gradle run” task that does not need the fat jar first.</span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
 <hr>
@@ -303,7 +301,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-09-11 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

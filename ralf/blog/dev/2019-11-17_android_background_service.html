@@ -28,21 +28,19 @@
 <!-- custom fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <style type="text/css">
 body {
-    font-family: "Workbench", monospace;
+    font-family: "Roboto Mono", monospace;
     margin: 0;
-    background: #000;
-    color: #0A0;
+    background: #EFE;
+    /* color: #000; */
 
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "BLED" 0, "SCAN" 10;
 }
 
 .main {
@@ -209,11 +207,11 @@ td p {
 <div class="main">
 <div class="container center-horiz">
 
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
 
 <div class="prev-next-container">
 
@@ -234,59 +232,59 @@ td p {
 
 
     <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">A few of my older apps rely on a common principle of having a permanent background service. This broke with the API changes in Android O &amp; P (API 26).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A few of my older apps rely on a common principle of having a permanent background service. This broke with the API changes in Android O &amp; P (API 26).</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Trying to fix T3 &amp; RTAC in-situ has been a bit of a PITA, so it’s time to do an isolated “canonical example” app to figure that out. But first I need to understand why I have a background service and how to adjust it for these API. Also to clearly list which API levels are the issues.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Trying to fix T3 &amp; RTAC in-situ has been a bit of a PITA, so it’s time to do an isolated “canonical example” app to figure that out. But first I need to understand why I have a background service and how to adjust it for these API. Also to clearly list which API levels are the issues.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Existing cases:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Existing cases:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">RTAC: </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">RTAC: </span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Needs to run on Hi10 tablets, Android 5.1 (API 22, Lollipop MR1).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Permanent background service.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Designed to keep the app alive at all times, even if not in foreground. Keep all the network connections active. Wakelock to make sure the tablet never sleeps.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Notification shown when main activity is in background.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Needs to run on Hi10 tablets, Android 5.1 (API 22, Lollipop MR1).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Permanent background service.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Designed to keep the app alive at all times, even if not in foreground. Keep all the network connections active. Wakelock to make sure the tablet never sleeps.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Notification shown when main activity is in background.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">DccThrottle:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">DccThrottle:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Same as RTAC. Permanent, active even when in background.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Same as RTAC. Permanent, active even when in background.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Bearing v1:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Bearing v1:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Similar to RTAC. Permanent, active even when in background.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Similar to RTAC. Permanent, active even when in background.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T2:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">T2:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T2 is API 9+, T3 is API 26+.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Job-oriented background service.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Started by “check” menu, alarm, or receiver, only for the duration of the operation.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">T2 is API 9+, T3 is API 26+.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Job-oriented background service.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Started by “check” menu, alarm, or receiver, only for the duration of the operation.</span></li>
  </ul>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The needs for T3 are very different and ideally we would not use a service for that if we can avoid it. The only reason a service was used here is because that was the recommended design at the time. I understand OS requirements can change, but it’s somewhat ironic an app breaks when it was following the recommended design, with undertones of “you’re doing it wrong”.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The needs for T3 are very different and ideally we would not use a service for that if we can avoid it. The only reason a service was used here is because that was the recommended design at the time. I understand OS requirements can change, but it’s somewhat ironic an app breaks when it was following the recommended design, with undertones of “you’re doing it wrong”.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The T3 case was handled in 2019-07-08.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It uses:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The T3 case was handled in 2019-07-08.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">It uses:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">JobService to schedule a task.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Still relies on an UpdateReceiver starting an actual Service.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Boot_Received triggers the UpdateReceiver.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">JobService to schedule a task.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Still relies on an UpdateReceiver starting an actual Service.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Boot_Received triggers the UpdateReceiver.</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Now the question is whether a service is even needed at all. Does the new API offer something else?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Now the question is whether a service is even needed at all. Does the new API offer something else?</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all" style="color:inherit;text-decoration:inherit">https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
-<p style="text-align:left"><span>In theory that doc seems fine: start a service using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/content/Context#startForegroundService(android.content.Intent)" style="color:inherit;text-decoration:inherit">startForegroundService</a></span><span>, then call </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/app/Service.html#startForeground(int,%20android.app.Notification)" style="color:inherit;text-decoration:inherit">startForeground</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;with a notification &nbsp;In practice that seems to fail, and the service still gets killed 5 minutes later when testing on an Android O device or emulator.</span></p>
-<p style="text-align:left"><span>There’s a lot of that on SO:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all" style="color:inherit;text-decoration:inherit">https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></p>
+<p style="text-align:left"><span>In theory that doc seems fine: start a service using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/content/Context#startForegroundService(android.content.Intent)" style="color:inherit;text-decoration:inherit">startForegroundService</a></span><span>, then call </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/app/Service.html#startForeground(int,%20android.app.Notification)" style="color:inherit;text-decoration:inherit">startForeground</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;with a notification &nbsp;In practice that seems to fail, and the service still gets killed 5 minutes later when testing on an Android O device or emulator.</span></p>
+<p style="text-align:left"><span>There’s a lot of that on SO:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Thus my suggestion is to create two simple samples/demo apps:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Thus my suggestion is to create two simple samples/demo apps:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">T2 case: a “short job”, triggered by a button, an alarm (specific time), or a boot receiver.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Permanent case (e.g. RTAC, DccThrottle, etc) of a permanent “foreground” service.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">T2 case: a “short job”, triggered by a button, an alarm (specific time), or a boot receiver.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Permanent case (e.g. RTAC, DccThrottle, etc) of a permanent “foreground” service.</span></li>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>For the latter, integrate some external lib such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/doubledotlabs/doki" style="color:inherit;text-decoration:inherit">Doki</a></span><span>&nbsp;that shows details from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://dontkillmyapp.com" style="color:inherit;text-decoration:inherit">dontkillmyapp.com</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp;for a specific device.</span></p>
+<p style="text-align:left"><span>For the latter, integrate some external lib such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/doubledotlabs/doki" style="color:inherit;text-decoration:inherit">Doki</a></span><span>&nbsp;that shows details from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://dontkillmyapp.com" style="color:inherit;text-decoration:inherit">dontkillmyapp.com</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;for a specific device.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/</a></span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">&nbsp; is a good place to store these.</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; is a good place to store these.</span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
 <hr>
@@ -308,7 +306,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-09-11 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

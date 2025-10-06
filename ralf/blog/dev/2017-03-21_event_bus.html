@@ -28,21 +28,19 @@
 <!-- custom fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Workbench&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <style type="text/css">
 body {
-    font-family: "Workbench", monospace;
+    font-family: "Roboto Mono", monospace;
     margin: 0;
-    background: #000;
-    color: #0A0;
+    background: #EFE;
+    /* color: #000; */
 
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
-    font-variation-settings: "BLED" 0, "SCAN" 10;
 }
 
 .main {
@@ -209,11 +207,11 @@ td p {
 <div class="main">
 <div class="container center-horiz">
 
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Workbench&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
 
 <div class="prev-next-container">
 
@@ -234,28 +232,28 @@ td p {
 
 
     <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">CabThrottle uses the new Event Bus design I made up in 2014.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">CabThrottle uses the new Event Bus design I made up in 2014.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pros and cons:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Pros and cons:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pro: The event bus implementation is simple and minimalist. </span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pro: There is no annotation processor to find subscribers, so no complicated build setup.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Cons: It suffers from the typical good/bad part of a disconnected sub-system. The whole point is to remove hard dependencies, but the side effect is that it hides the dependencies. They are still there, just not so visible.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Pro: The "user" dependencies are simple enough to find. Search for code using any of the bus constants to find the users. Done.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Cons: The bus messages rely on a numeric ID and the simple naive approach used is to create "namespaces", a.k.a. ID ranges. E.g. 1000 is the base for the Discovery bus messages. But it doesn't say what is the max, and there's no centralized place to look at all the usage ranges (on purpose, because decentralized). That means it's hard to place it in a library and be sure there won't be conflicts down the road with something else.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Cons: There's some inefficiency in sending messages to subscribers without knowing if they want to listen to them. The receivers can subscribe to message class types, but that's not too useful when for example sending a string notification.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Pro: The event bus implementation is simple and minimalist. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Pro: There is no annotation processor to find subscribers, so no complicated build setup.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Cons: It suffers from the typical good/bad part of a disconnected sub-system. The whole point is to remove hard dependencies, but the side effect is that it hides the dependencies. They are still there, just not so visible.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Pro: The "user" dependencies are simple enough to find. Search for code using any of the bus constants to find the users. Done.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Cons: The bus messages rely on a numeric ID and the simple naive approach used is to create "namespaces", a.k.a. ID ranges. E.g. 1000 is the base for the Discovery bus messages. But it doesn't say what is the max, and there's no centralized place to look at all the usage ranges (on purpose, because decentralized). That means it's hard to place it in a library and be sure there won't be conflicts down the road with something else.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Cons: There's some inefficiency in sending messages to subscribers without knowing if they want to listen to them. The receivers can subscribe to message class types, but that's not too useful when for example sending a string notification.</span></li>
 </ul>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">So really the weakness is the ID range issue. Ideally each message would use an enum but the Java implementation of enums kind of sucks -- can't make a "generic" enum, and they are too heavy for serialized number sequences. Another alternative is to use a hash code as a base (e.g. NSD DiscoveryMixin.class.getHashCode() but even that is not guaranteed to not have collisions and it would prevent from making static final int IDs.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So really the weakness is the ID range issue. Ideally each message would use an enum but the Java implementation of enums kind of sucks -- can't make a "generic" enum, and they are too heavy for serialized number sequences. Another alternative is to use a hash code as a base (e.g. NSD DiscoveryMixin.class.getHashCode() but even that is not guaranteed to not have collisions and it would prevent from making static final int IDs.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">It does bring back some potential for dagger. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">It does bring back some potential for dagger. </span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">In usage, I mostly use the event bus for notification, obviously. E.g. NSD discovery mixing sends bus messages when a new host appears or vanishes. Well I can just register a listener and be done with it, since that's essentially what the event bus does. One point of the event bus is that the subscriber could be a view or something that does not have access to the sender object because it would require passing everything via globals or something, as I used to do before. Well that particular problem is well solved by dagger. E.g. there would be a module for the discovery client and whatever code need to use it, be it the activity to start the client or the UI to display its state, can simply access it via injection, then subscribe a listener as needed.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Same goes for throttles for example. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">In usage, I mostly use the event bus for notification, obviously. E.g. NSD discovery mixing sends bus messages when a new host appears or vanishes. Well I can just register a listener and be done with it, since that's essentially what the event bus does. One point of the event bus is that the subscriber could be a view or something that does not have access to the sender object because it would require passing everything via globals or something, as I used to do before. Well that particular problem is well solved by dagger. E.g. there would be a module for the discovery client and whatever code need to use it, be it the activity to start the client or the UI to display its state, can simply access it via injection, then subscribe a listener as needed.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Same goes for throttles for example. </span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">The other realization is that this seems to also fit the Reactive pattern of having observable streams. Each bus is essentially a stream, and users can get the stream via dagger.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The other realization is that this seems to also fit the Reactive pattern of having observable streams. Each bus is essentially a stream, and users can get the stream via dagger.</span></p>
 <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Workbench&quot;;font-size:12pt">Worth looking into it.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Worth looking into it.</span></p>
 <p style="height:12pt;text-align:left"></p>
 <p style="height:12pt;text-align:left"></p>
 <hr>
@@ -277,7 +275,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-09-11 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
