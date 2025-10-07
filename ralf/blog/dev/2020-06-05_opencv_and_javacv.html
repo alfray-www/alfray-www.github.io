@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -231,46 +231,46 @@ td p {
     </div>
 
 
-    <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">JavaCV</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">: Used in Randall’s camera proxy app to capture data from an RTSP h264 / MJPEG feed, and produce jpeg images or publish an MJPEG web (via a Jetty web server).</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">OpenCV</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">: for the Randall camera proxy project, need basic motion detection.</span></p>
-<p style="height:12pt;text-align:left"></p>
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">JavaCV</span><span style="font-family:&quot;Roboto Mono&quot;">: Used in Randall’s camera proxy app to capture data from an RTSP h264 / MJPEG feed, and produce jpeg images or publish an MJPEG web (via a Jetty web server).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">OpenCV</span><span style="font-family:&quot;Roboto Mono&quot;">: for the Randall camera proxy project, need basic motion detection.</span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span>Some good tutorials here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_bg_subtraction/py_bg_subtraction.html" style="color:inherit;text-decoration:inherit">https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_bg_subtraction/py_bg_subtraction.html</a></span></p>
 <p style="text-align:left"><span>Example in Python. Java API available here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/master/javadoc/org/opencv/video/package-summary.html" style="color:inherit;text-decoration:inherit">https://docs.opencv.org/master/javadoc/org/opencv/video/package-summary.html</a></span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>And in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bytedeco/javacv" style="color:inherit;text-decoration:inherit">JavaCV</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;it shows how to convert frames between the FFMPEG input and what’s needed by the OpenCV library using “Mat” and an OpenCV converter.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-style:italic">Update 2020-06-09</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">: The “cam-proxy” project is working nicely.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">One realisation: I picked up the JavaCV approach as it seemed easier to get started, and that paid off. However it’s worth pointing out that the generated fatJar is an impressive 760 MB!</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">That is quite a feat.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Looking at the APIs, do I need all of JavaCV, or could I use only OpenCV with its Java bindings? Let’s see which APIs I’m using here:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>And in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bytedeco/javacv" style="color:inherit;text-decoration:inherit">JavaCV</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;it shows how to convert frames between the FFMPEG input and what’s needed by the OpenCV library using “Mat” and an OpenCV converter.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-style:italic">Update 2020-06-09</span><span style="font-family:&quot;Roboto Mono&quot;">: The “cam-proxy” project is working nicely.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One realisation: I picked up the JavaCV approach as it seemed easier to get started, and that paid off. However it’s worth pointing out that the generated fatJar is an impressive 760 MB!</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That is quite a feat.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking at the APIs, do I need all of JavaCV, or could I use only OpenCV with its Java bindings? Let’s see which APIs I’m using here:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">JavaCV.FFMpegFrameGrabber ⇒ there’s an OpenCV specific one.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">JavaCV.FFMpegFrameRecorder ⇒ to generate the MJPEG stream. Alternative?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">JavaCV.2dFrameConverters + CanvasFrame ⇒ there’s an OpenCV one.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">OpenCV core: IplImage, Size, Rect, Mat</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">OpenCV imgproc: resize</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">OpenCV video: cvCreateImage, mediamBlur, createBackgroundSubstractorMOG2.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JavaCV.FFMpegFrameGrabber ⇒ there’s an OpenCV specific one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JavaCV.FFMpegFrameRecorder ⇒ to generate the MJPEG stream. Alternative?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JavaCV.2dFrameConverters + CanvasFrame ⇒ there’s an OpenCV one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OpenCV core: IplImage, Size, Rect, Mat</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OpenCV imgproc: resize</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OpenCV video: cvCreateImage, mediamBlur, createBackgroundSubstractorMOG2.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Thus one question is whether it’s possible to generate the output stream (MJPEG or h264) using OpenCV and its Java wrappers, or is FFMpeg needed for that?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Uncompressed fatJar size: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,762,758,664 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">org/ part of the jar: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,227,823,156 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Opencv:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,065,264,936 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">lib/ part of the jar:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;629,358,581 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Ffmpeg:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;371,946,457 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Javacpp:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 10,261,365 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Javacv:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;921,733 bytes</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Jetty part: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;318,8118 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus one question is whether it’s possible to generate the output stream (MJPEG or h264) using OpenCV and its Java wrappers, or is FFMpeg needed for that?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Uncompressed fatJar size: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,762,758,664 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">org/ part of the jar: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,227,823,156 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Opencv:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,065,264,936 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">lib/ part of the jar:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;629,358,581 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ffmpeg:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;371,946,457 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Javacpp:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 10,261,365 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Javacv:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;921,733 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jetty part: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;318,8118 bytes</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So essentially trying to only use OpenCV would likely not save that much. A huge part of the JavaCV package is indeed OpenCV and a quick look at the final Jar shows that it contains not only java wrappers but also hpp headers, some xml, and most important the jni+si native libs for a lot of architectures (e.g. armhf, armeabi-v7, arm64-v8a, x86, x86_64). If an effort was needed to trim the jar file, it could be by avoiding packaging these in the first place by removing all the arm ones (3 out of 5 archs).</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So essentially trying to only use OpenCV would likely not save that much. A huge part of the JavaCV package is indeed OpenCV and a quick look at the final Jar shows that it contains not only java wrappers but also hpp headers, some xml, and most important the jni+si native libs for a lot of architectures (e.g. armhf, armeabi-v7, arm64-v8a, x86, x86_64). If an effort was needed to trim the jar file, it could be by avoiding packaging these in the first place by removing all the arm ones (3 out of 5 archs).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
     </div>

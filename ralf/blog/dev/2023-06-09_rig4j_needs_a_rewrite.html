@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -231,25 +231,25 @@ td p {
     </div>
 
 
-    <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Back there on the RIG 4 Spec [Idea] project page, I have a different angle for a rewrite of Rig4.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The summary is that the current version of Rig4j is still running the “early experiment”. Code base was mostly “feasibility”. When exploring the Rust-based Rig4r, I realized it would be better structured by separating the gdoc functionality from the “rig” generator functionality: one tool does the gdoc fetching, and then Rig works on purely local files.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The new angle is that the gdoc fetching should actually generate izu files, by parsing the gdoc html exports and rewriting them as izu/markdown text files. There would be some limitations on the format. Not all the formatting would make it through.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">This would also involve looking at the format I use in the train blog, making an exhaustive list of features used, and try to match some level of parity. Luckily I don’t use too much stuff, but tables seem like they could be tricky, and I’d also want to support the linkable TOCs and their existing hrefs. Some things like usage of titles in article pages did not exist in izu.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I may also want to consider dropping my izu format, and focus on “official” markdown.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I can probably fairly simply translate old izu pages to markdown if such support is needed.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">OTOH it would solve one of the current problems, namely that the page format is dictated by the gdoc html export, and that has been known to change substantially over the time. </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The end goal is to not have such a strong dependence on gdoc. That makes gdoc merely a convenience to more easily write the izu files, and then the izu files become the “source of truth” that I need to backup.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Back there on the RIG 4 Spec [Idea] project page, I have a different angle for a rewrite of Rig4.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The summary is that the current version of Rig4j is still running the “early experiment”. Code base was mostly “feasibility”. When exploring the Rust-based Rig4r, I realized it would be better structured by separating the gdoc functionality from the “rig” generator functionality: one tool does the gdoc fetching, and then Rig works on purely local files.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The new angle is that the gdoc fetching should actually generate izu files, by parsing the gdoc html exports and rewriting them as izu/markdown text files. There would be some limitations on the format. Not all the formatting would make it through.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This would also involve looking at the format I use in the train blog, making an exhaustive list of features used, and try to match some level of parity. Luckily I don’t use too much stuff, but tables seem like they could be tricky, and I’d also want to support the linkable TOCs and their existing hrefs. Some things like usage of titles in article pages did not exist in izu.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I may also want to consider dropping my izu format, and focus on “official” markdown.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I can probably fairly simply translate old izu pages to markdown if such support is needed.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OTOH it would solve one of the current problems, namely that the page format is dictated by the gdoc html export, and that has been known to change substantially over the time. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The end goal is to not have such a strong dependence on gdoc. That makes gdoc merely a convenience to more easily write the izu files, and then the izu files become the “source of truth” that I need to backup.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
     </div>

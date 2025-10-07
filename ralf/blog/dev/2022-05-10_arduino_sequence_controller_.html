@@ -198,7 +198,7 @@ td p {
         <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
-        <a href="0005.html">R’alf Dev Log</a>
+        <a href="0006.html">R’alf Dev Log</a>
         
     </div>
 </header>
@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -231,43 +231,43 @@ td p {
     </div>
 
 
-    <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I’ve been thinking about how Lacan uses his Arduino for his aircraft animation.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">What he needs is really a sequence controller to create time-base sequences triggered by input events.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">If I had to program this from scratch, what would I do? I’d create a “mini language” using either macro or C++ objects which represents states to change over time:</span></p>
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’ve been thinking about how Lacan uses his Arduino for his aircraft animation.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What he needs is really a sequence controller to create time-base sequences triggered by input events.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I had to program this from scratch, what would I do? I’d create a “mini language” using either macro or C++ objects which represents states to change over time:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">LED timings is really just a list of (start timestamp, LED pin, LED state).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Servos: (start timestamp, servo pin, angle to reach, speed or duration)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Motors: (start timestamp, motor pin, power level, direction)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Instructions to end sequence, repeat N times, or chain to another sequence.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">LED timings is really just a list of (start timestamp, LED pin, LED state).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Servos: (start timestamp, servo pin, angle to reach, speed or duration)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Motors: (start timestamp, motor pin, power level, direction)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Instructions to end sequence, repeat N times, or chain to another sequence.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Depending on the specific needs:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Depending on the specific needs:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Sequence(s) are started by an input (with either forced restart or don’t retrigger).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Need more than one concurrent sequence? Make each sequence independent. That is each sequence is started and actuates by itself on main clock.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Need to make sequences run solo? Have an instruction that stop/cancel all other sequences.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Maybe put sequences in groups (e.g. “servo groups”, “lights groups”) and make the group exclusive as in only 1 sequence runs in the group, or be able to stop any running sequence in the group.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sequence(s) are started by an input (with either forced restart or don’t retrigger).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need more than one concurrent sequence? Make each sequence independent. That is each sequence is started and actuates by itself on main clock.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need to make sequences run solo? Have an instruction that stop/cancel all other sequences.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Maybe put sequences in groups (e.g. “servo groups”, “lights groups”) and make the group exclusive as in only 1 sequence runs in the group, or be able to stop any running sequence in the group.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">For example for the case of the variable geometry plane:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example for the case of the variable geometry plane:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">IR button 1 ⇒ sequence 1 = stop sequence 2, move servo N up to 60. No retrigger.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">IR button 2 ⇒ sequence 2 = stop sequence 1, move servo N down to 0. No retrigger.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">IR button N ⇒ sequence N for lights.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button 1 ⇒ sequence 1 = stop sequence 2, move servo N up to 60. No retrigger.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button 2 ⇒ sequence 2 = stop sequence 1, move servo N down to 0. No retrigger.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button N ⇒ sequence N for lights.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">It seems so obvious that I would be surprised if this had not been done before and be made available as a customizable library for arduino.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">For model trains, there are a couple obvious usages:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It seems so obvious that I would be surprised if this had not been done before and be made available as a customizable library for arduino.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For model trains, there are a couple obvious usages:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Sequencing road traffic lights, e.g. to animate a city.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">With the addition of a “random LED value” instruction, animate anything from a camp fire to a building in fire.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sequencing road traffic lights, e.g. to animate a city.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">With the addition of a “random LED value” instruction, animate anything from a camp fire to a building in fire.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
     </div>

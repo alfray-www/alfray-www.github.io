@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -231,34 +231,34 @@ td p {
     </div>
 
 
-    <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">However, I did a change in Rig3. I was glad to see this old project had some tests. Lots of verbose warnings when running them, but at least they gave me a baseline for the one change I had to make… it showed me how my own code was running, since I had largely forgotten. And I was able to break the tests as expected with my change, then adjust the tests. Thus they served their role in a TDD scenario.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Now I’m looking at Inkblot2 and I skipped the testing part for all the React code. After all it’s just presentation, right? I have only a couple unit test methods for computational functions.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A decade ago, I wrote a little backend for Timeriffic to enable themes per user. It’s just a simple REST API served by a Go app-engine with a CRUD admin frontend. And it’s written in Go 1.1 (IIRC), and now I need to update to Go 1.9. I seriously hope I wrote some tests, and here’s what I expect of these tests:</span></p>
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">However, I did a change in Rig3. I was glad to see this old project had some tests. Lots of verbose warnings when running them, but at least they gave me a baseline for the one change I had to make… it showed me how my own code was running, since I had largely forgotten. And I was able to break the tests as expected with my change, then adjust the tests. Thus they served their role in a TDD scenario.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now I’m looking at Inkblot2 and I skipped the testing part for all the React code. After all it’s just presentation, right? I have only a couple unit test methods for computational functions.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A decade ago, I wrote a little backend for Timeriffic to enable themes per user. It’s just a simple REST API served by a Go app-engine with a CRUD admin frontend. And it’s written in Go 1.1 (IIRC), and now I need to update to Go 1.9. I seriously hope I wrote some tests, and here’s what I expect of these tests:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">First run them ideally with a Go 1.1 runtime (assuming I still have that), and validate they work.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Next run them with a Go 1.9 runtime, and if the app builds, see which part of the test works or breaks. In essence, I just want a baseline of what’s broken by the change.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First run them ideally with a Go 1.1 runtime (assuming I still have that), and validate they work.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Next run them with a Go 1.9 runtime, and if the app builds, see which part of the test works or breaks. In essence, I just want a baseline of what’s broken by the change.</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Which parts do I expect to be covered?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which parts do I expect to be covered?</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">On the backend REST API side, a get without a valid auth, and a get with a valid auth. That last one should also cover reading from a mock db.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">On the admin frontend, render the page without login, with login, and validate a simple CRUD usage (create an entry, see it listed, remote it, see it gone).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the backend REST API side, a get without a valid auth, and a get with a valid auth. That last one should also cover reading from a mock db.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the admin frontend, render the page without login, with login, and validate a simple CRUD usage (create an entry, see it listed, remote it, see it gone).</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">These tests are not designed to do 100% coverage, yet they should cover the basic usage scenarios. Even if a full CRUD cycle is not exercised, the viewing part should be tested, e.g. login and display an empty list, login and display a list with known data.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I want to emphasize this is not the TDD philosophy here. We’re not using tests to validate every single inch of the app, every single little possible case. At the contrary, the tests should cover large strokes, making sure the obvious is not broken.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Thus Inkblot2 really needs something like that.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I do remember that my little dabbing in Go did not show great ways to mock whole components such as database or logging auth. That’s one of the reasons I went back to liking Java all because of Dagger and how it enables that trivially, all at compile time. I’m curious what React JS has to offer in that regard.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">These tests are not designed to do 100% coverage, yet they should cover the basic usage scenarios. Even if a full CRUD cycle is not exercised, the viewing part should be tested, e.g. login and display an empty list, login and display a list with known data.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I want to emphasize this is not the TDD philosophy here. We’re not using tests to validate every single inch of the app, every single little possible case. At the contrary, the tests should cover large strokes, making sure the obvious is not broken.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus Inkblot2 really needs something like that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I do remember that my little dabbing in Go did not show great ways to mock whole components such as database or logging auth. That’s one of the reasons I went back to liking Java all because of Dagger and how it enables that trivially, all at compile time. I’m curious what React JS has to offer in that regard.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
     </div>

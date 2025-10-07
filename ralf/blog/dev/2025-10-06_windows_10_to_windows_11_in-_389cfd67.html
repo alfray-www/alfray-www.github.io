@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/2025-10-06_windows_10_to_windows_11_in-_389cfd67.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Windows 10 to Windows 11 In-Place Upgrade" />
+
+<meta property="og:description" content="I’ve had a couple people ask me about upgrading to Windows 11, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide." />
+
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Windows 10 to Windows 11 In-Place Upgrade" />
+
+<meta name="twitter:description" content="I’ve had a couple people ask me about upgrading to Windows 11, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide." />
+
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+    background: #EFE;
+    /* color: #000; */
+
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="index.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2025-10-04_the_broken_promise_of_rust_f_d81d3911.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2025-10-06 - Windows 10 to Windows 11 In-Place Upgrade</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’ve had a couple people ask me about upgrading to Windows 11, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.s0f9vqvfqf9v" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">What this is Not</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">TL;DR</span><span style="font-family:&quot;Roboto Mono&quot;">: This is no shortcut TL;DR here.<br>If you’re not willing to read it all, I suggest you don’t bother.<br>If you don’t understand what you’re doing, I suggest you don’t bother.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If you’re not familiar and comfortable with changing BIOS options or changing an SSD, I suggest you don’t bother either.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’ve updated 5 machines using the steps listed below so I’m confident I know what I’m doing. But I’m not claiming it’s an easy nor obvious nor quick process at all. It’s neither of these things.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If you need a lazy one-click do-it-all-for-me thingy, this guide is not for you. Try something like Flyoobe at your own risk -- I haven’t tried it so I’m not going to claim anything for or against it, nor even link to it. Just google it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also just to state the obvious, if you don’t want to put in the effort, then you don’t have to. You can either just keep running Windows 10, or get a new machine with Windows 11. After all, that’s what MS wants you to do.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.cjxz2g9sut3b" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">High Level Summary</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To do a successful update to Windows 11 in-place, we need the following steps:</span></p>
+<ol start="1" style="margin:0;padding:0">
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Examine the system: CPU, TPM, disk mode.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Absolutely do a backup clone of the main drive and verify it.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Enable TPM if needed.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Perform an MBR to GPT disk conversion if needed.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Switch the BIOS to UEFI if needed.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Finally install Windows 11 in “unsupported” mode.</span></li>
+</ol>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let’s detail these steps below one by one.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<h2 id="h.z0nq1xqrnzvx" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Examining the System</span></h2>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s the easy part. “knowing is half the battle”, and we need to know a few things.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Open the following tool:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Windows Start Menu &gt; search for “System Information” &gt; Run as Administrator</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and note the following details:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">System Summary &gt; Processor (e.g. “Intel Core i5-6600” etc.)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">System Summary &gt; BIOS Mode (e.g. “Legacy” or “UEFI”)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">System Summary &gt; Secure Boot state.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Check the CPU:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If your CPU is an 8th gen (Intel 8xxx), then Windows 11 is supported without doing any tricks.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If your CPU is a 6th or 7th gen (Intel 6xxx or 7xxx), then Windows 11 can still be installed if the other parts of the machine are set up as needed.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>If it’s an earlier CPU like an Intel gen 4th or 5th, forget it. Windows 11 will </span><span style="font-style:italic">never</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;work on it because it requires some CPU instructions that did not exist in the CPU back then.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I know nothing of modern AMD processors so I can’t say what works or doesn’t for them.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Check the BIOS Mode</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s either “Legacy” or “UEFI”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If it’s “UEFI”, good news, you don’t have to deal with it.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>If it’s “Legacy”, we’ll need to change it to UEFI mode </span><span style="font-style:italic">later</span><span style="font-family:&quot;Roboto Mono&quot;">. Don’t change it right away or the machine won’t boot anymore.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Check the Secure Boot state</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That can be “Unsupported”, “Supported”, or “Enabled”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Windows 11 requires it to be at least supported. It doesn’t have to be enabled.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If Secure Boot is Unsupported, Windows 11 will never work on that machine.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Check the System Disk partition style</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Open PowerShell</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Run the command “Get-Disk”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This will clearly indicate the model number and the “Partition Style” of the main drive -- Windows is typically Disk 0 (a.k.a. C:).</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If the Windows system drive has a “GPT” partition style, we’re good and there’s nothing to change.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If the Windows system drive has an “MBR” partition style, we’ll need to change it later as this is a legacy feature that Windows 11 voluntarily does not support.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Check the TPM mode</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Open the following tool:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Windows Start menu &gt; search for “tpm.msc” &gt; Run as Administrator</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Windows 11 needs at least a TPM 1.2 or ideally a TPM 2.0.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ideally this tool would indicate “The TPM is ready for use” and indicate a TPM version number (1.2 or 2.0).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If this tool says “Compatible TPM cannot be found”, it’s possible there is a TPM chip which is disabled in the BIOS.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Reboot in the BIOS (*) and check if there’s a TPM option you can enable (typically under “security”).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If there is, enable it and check again using “tpm.msc”. There’s no downside to enabling this, Windows 10 will run just the same with it.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So at this point, you should have a feel of whether Windows 11 can potentially run on this computer or laptop at all:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Is the CPU modern enough? (e.g. Intel 6th gen or better).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Is there a TPM chip that you have actually enabled?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Is the Secure Boot mode available? (doesn’t have to be enabled)</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If the answer is no to any of the above, don’t bother continuing.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.db2fbnfe885q" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">How to Reboot in the BIOS</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(* Yep I didn’t indicate “how to reboot in the BIOS” above.)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s not a mistake. I assume you know. If you have never dealt with the computer BIOS before, now may not be the time to get started.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But I’ll tell you how anyway. Open Windows &gt; Settings and search for “Advanced Startup”. The Windows 10 settings have a “Restart now” button under the “Advanced Startup” options. That brings you to some cryptic blue screens with choices and you need to carefully select the option to go change the UEFI settings -- and be careful not to select e.g. the one that wipes Windows. If unsure, google it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<h2 id="h.kspmc8gvefrb" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Performing a Main Disk Backup</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The reason I do in-place updates of Windows 10 to 11 is because I hate having to reinstall the machine if something goes wrong.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Thus my absolute primary requirement is to have an entire duplicate of the Windows 10 drive that boots and have </span><span style="font-style:italic">verified</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;that I can boot from it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Yes it’s extra work, but without that, it’s just flying without a protection net. If you’re willing to lose all your data, why make extra work to preserve it when you could just install a fresh Windows 11 from scratch?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The way I do entire system drive backups is easy yet requires a bit of extra hardware.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First, figure the size of the C: drive where Windows is installed:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Windows Start menu &gt; search for “Computer Management” &gt; Run as Administrator.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Expand Storage &gt; Disk Management.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Disk 0 is generally the system drive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The size reflected in the Disk Management is the </span><span style="font-style:italic">formatted</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;size. The real drive has a higher capacity than the formatted size.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right click Disk 0 &gt; Properties &gt; General &gt; note the model number.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>That gives us the </span><span style="font-style:italic">exact</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;size of the drive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example, I have a Crucial CT1000MX500SSD1… That’s a “1TB” drive, even though the Disk 0 is listed in Windows as “931 GB” (that’s the formatted size).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">My technique is simple and brutal:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I buy an exact duplicate of the system drive (same brand, same model, same capacity, no less, no more).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>I get an SSD NVMe/NGFF external adapter, namely this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/4nAHWuT" style="color:inherit;text-decoration:inherit">Sabrent USB 3.2 Type-C M.2 NVMe</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>I perform an entire clone copy of the system drive using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.diskgenius.com/" style="color:inherit;text-decoration:inherit">DiskGenius</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To duplicate the system drive:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Download and install </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.diskgenius.com/free.php" style="color:inherit;text-decoration:inherit">DiskGenius V5.6</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Reboot the system and use airplane mode (to have a maximum of apps closed).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In DiskGenius, select HD0 &gt; OS Migration </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Target disk: Select the external NVMe or NGFF SSD on the external USB-C enclosure.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Check “prevent system from sleeping during execution”</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Make sure “USB bootable” is </span><span style="font-style:italic">not</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;checked.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Perform the copy as-is, no need to reboot in the WinRE mode.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The time needed to make the backup depends on the size of the disk and the USB cable. A USB C-to-C of 1 TB takes about 30 minutes. The same with a USB A-to-C cable takes about 2 hours.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Do not use </span><span style="font-style:italic">any</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;other option from DiskGenius except that “OS Migration” one. A number of them can render the system disk unbootable if you don’t know what you’re doing.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note that above we used the “Computer Management” console to get the disk model and size. You can also get it from DiskGenius. Both will also indicate whether the disk uses a GPT or an MBR partition style.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Whilst in DiskGenius, note the number of partitions on the system drive. That will become useful in the next step.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Now the “boring” part: shutdown the computer/laptop, and </span><span style="font-weight:700">replace the existing system drive with the new system backup</span><span style="font-family:&quot;Roboto Mono&quot;">. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the Lenovo T460/ T480 laptops that I use, this requires going into the BIOS and checking the BIOS option Config &gt; Power &gt; “Disable Built-in Battery” ⇒ Hit Enter. The laptop will TURN OFF, and then disconnect the AC power cable if connected. Only then it is safe to unscrew the back and exchange the SSD.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Note that this step is </span><span style="font-style:italic;font-weight:700">not optional</span><span style="font-weight:700">:</span><span>&nbsp;it is the entire requirement that ensures that the system copy is in fact properly executed. It’s tempting to just assume the “copy is good”, but </span><span style="font-weight:700">skipping this step makes the entire copy moot</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;as it provides no guarantee that a proper clone has been executed.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Moreover, this allows me to then perform the Windows 11 update on the new cloned drive, ensuring that I have an entirely </span><span style="font-style:italic">pristine</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;original system disk in case I want to revert to the previous Windows 10 system. I’m going to keep that original system disk pristine as long as we’re in that transition process, and often I even keep it longer like a month or so just in case.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.eknoc7xzf26b" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Convert System Disk from MBR to GPT</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If the main system disk is already using a “GPT” partition style, you can skip this entire section and go to the next one.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If we have noticed above that the system disk uses the legacy “MBR” partition style, we need to convert it to the newer “GPT” mode.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s the kind of operation that can make the system disk entirely unbootable if not done properly. Thus it is mandatory to only perform it on the backup we created in the previous step.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Although DiskGenius does have an option to convert the drive to the GTP partition style, I have never succeeded in making it work “in-place” ⇒ Do not use DiskGenius for that task.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The way I do it is by using the MBR2GPT tool that is present on the Windows 10 Repair disk. All the steps are detailed here:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.microsoft.com/en-us/windows/deployment/mbr-to-gpt" style="color:inherit;text-decoration:inherit">https://learn.microsoft.com/en-us/windows/deployment/mbr-to-gpt</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One downside is that this tool only works if the MBR contains 3 partitions, and it needs to be able to find around 512 MB of free space to shrink the main system partition.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We need a Windows 10 install disk, and by “disk” I mean a USB drive. If you don’t have one, it’s easy to make one:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Go to the Microsoft Windows 10 site at </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.microsoft.com/en-us/software-download/windows10" style="color:inherit;text-decoration:inherit">https://www.microsoft.com/en-us/software-download/windows10</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Download the “Windows 10 installation media creation tool”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Follow the instructions to flash it on a blank USB drive (it will erase everything).</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IIRC, it needs around 6 or 8 GB on the USB drive.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>A while ago I got a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/48X7JsC" style="color:inherit;text-decoration:inherit">5-pack of PNY 32 GB USB 3 flash drives</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;just for that purpose (that way I have one to install Windows 10, one for Windows 11, one for Linux Debian, and one for Raspberry Pi’s Debian flavor).</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Once you have that, boot the machine from the Windows 10 USB drive. On a Lenovo laptop, that requires using F12 to access the media boot selector:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the first screen, select the “Repair” option instead of “Install”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Then use “CMD” to get the command-prompt shell.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the CMD shell:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; mbr2gpt /validate<br>&gt; mbr2gpt /convert</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The first command validates that all the disk information is as expected by the tool. If there’s a problem, it will clearly indicate it, but it won’t necessarily indicate what to do to fix it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The typical issue I found is MBR2GPT reporting “MBR2GPT: cannot find OS partition”.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To solve that, still in the same CMD shell, run these commands:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; diskpart</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">select disk 0</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">select part 2 (the main Windows one)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">active &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ this makes partition 2 active</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">assign letter=c</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&lt;exit diskpart, return to the shell&gt;</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; bcdboot c:\windows /s c:<br>&gt; bootrec /fixmbr<br>&gt; bootrec /scanos</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Try the mbr2gpt /validate and mbr2gpt /convert again.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Generally speaking, just google any error you find; someone has had the same problem before.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now assuming the entire operation has worked, “diskpart” can clearly indicate whether the disk is in GTP partition style.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Final step: early we checked whether the BIOS Mode was “Legacy” or “UEFI”. That’s where it matters now. If the BIOS is still in “Legacy” mode, it won’t be able to boot off a GPT drive. It needs to be in the “UEFI” mode for that. So:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Exit the Windows 10 repair mode.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Boot back into the BIOS.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Find the category that has the BIOS mode.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the Lenovo T460 / T480, that’s in the last category named “Startup” under “Boot Priority”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change it to “UEFI only”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>S</span><span style="font-family:&quot;Roboto Mono&quot;">ave and reboot. </span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We should be able to boot back into Windows 10, but this time with a disk using the GPT partition style with an UEFI BIOS.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Remember we did all these MBR/GTP changes on the duplicate backup disk on purpose: if there’s a problem, we can go back to the previous pristine original disk. However if we want to revert and use the original disk and it had an MBR partition style, we’ll also need to change the BIOS mode to Legacy -- an UEFI BIOS cannot boot off an MBR disk.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.epu0mm89oxj9" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Windows 11 Install on an Intel 8th Gen CPU</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The steps before were all about making the machine “compatible” with Windows 11:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">we needed an TPM (enabled in the BIOS as needed),</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">we needed an UEFI BIOS (also enabled in the BIOS),</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and we needed a GTP partition style disk.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>If we have all that and an Intel 8th Gen CPU or better, we have a machine that is all ready to install Windows 11 </span><span style="font-style:italic">the easy way</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;as it was intended to be installed.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Just to be clear, I would still recommend making a backup copy of the system drive as explained above. That’s not a gimmick. It’s my guarantee that I can always revert back to the </span><span style="font-style:italic">pristine</span><span>&nbsp;Window 10 disk if anything goes wrong.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The simplest way to force the install on Windows 11 on compatible hardware is to download the “Installation Assistant” from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.microsoft.com/en-us/software-download/windows11" style="color:inherit;text-decoration:inherit">https://www.microsoft.com/en-us/software-download/windows11</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;and follow the steps.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s it. No drama. You’re done.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Once in Windows 11, reconfigure the taskbar to something more decent.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.n334yh881hp2" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Windows 11 Install on an Intel 6th or 7th Gen CPU</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The steps before were all about making the machine “compatible” with Windows 11:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">we needed an TPM (enabled in the BIOS as needed),</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">we needed an UEFI BIOS (also enabled in the BIOS),</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and we needed a GTP partition style disk.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>But because the CPU is not “officially supported”, we have a tiny bit more work than the “official” support in the previous section, yet really not that much, and all the steps here are actually </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.zdnet.com/article/how-to-upgrade-an-incompatible-windows-10-pc-to-windows-11-two-ways/" style="color:inherit;text-decoration:inherit">extracted from this zdnet article</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>And just to be double extra clear, I would still recommend making a backup copy of the system drive as explained above. That’s not a gimmick. It’s my guarantee that I can always revert back to the </span><span style="font-style:italic">pristine</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;Window 10 disk if anything goes wrong.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Preliminaries:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Apply updates to Windows 10 first</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Go to Windows Settings &gt; Windows Updates and ensure you have the most up to date version of Windows 10 already installed.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Do not install the undesirable “preview” updates, just install the regular ones.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Make sure to have a full and tested copy of the drive, and work on a backup/clone.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If needed, do the MBR to GPT conversion as described above.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If needed, switch the BIOS to UEFI (Start &gt; UEFI Only) as explained above.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Run System Information (aka msinfo32):</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">System Summary &gt; BIOS Mode ⇒ Must be UEFI</span></li>
+  </ul>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Secure Boot must be supported, but doesn’t need to be enabled, as explained above.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">BIOS &gt; Security &gt; Secure Boot &gt; Disabled</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Valid the TPM using tpm.msc (Win-R) ⇒ TPM should be ready to use, with version 2.0.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If needed, remember to enable it in the BIOS!</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">BIOS &gt; Security &gt; Security Chip &gt; Intel PTT for a TPM 2.0.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OK now we’re ready to bypass the CPU check:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Open regedit32 as administrator.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Navigate to the registry for HKEY_LOCAL_MACHINE\SYSTEM\Setup</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If there’s no key “MoSetup” there, create it:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right click on “Setup” in the folder list &gt; New &gt; Key</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Create Key “MoSetup”</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Navigate to the registry for HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right click on “MoSetup” &gt; New &gt; DWORD</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Name: AllowUpgradesWithUnsupportedTPMOrCPU</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Value: 1</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Double check and triple check the spelling of that name above. It’s “Upgrades” plural, and “Unsupported” with 2 “p”, and “TPMOrCPU” exactly as-is at the end.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The astute reader will notice it’s possible to install Windows 11 without TPM enabled. That’s right. However TPM 1.2 is an old thing. If your BIOS does not even have that, honestly you’re better off not trying to run Windows 11. YMMV.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now we can install Windows 11:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Grab a copy of Windows 11 Downloadable ISO (6 GB) from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.microsoft.com/en-us/software-download/windows11" style="color:inherit;text-decoration:inherit">https://www.microsoft.com/en-us/software-download/windows11</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note that you don’t want “Create Windows 11 Installation Media”.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">You want the “Download Windows 11 Disk Image (ISO) for x64 devices” category.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Do NOT “burn” the ISO to a DVD nor to a USB flash drive.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Once the ISO is downloaded, double-click the ISO file to mount it as a </span><span style="font-weight:700">virtual drive</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Run the setup.exe directly from the mounted ISO.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The setup will take forever to perform a few updates.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">By “forever” I mean literally 2-3 hours with absolutely no progress bar movement.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Seems like it needs to be online to do that update.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Eventually the setup will indicate the platform isn’t supported but still offer to continue. Just click “Accept” to continue.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>If instead you get an “unsupported CPU message” with no “Accept” option, double check the registry key for </span><span style="font-style:italic">exact</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;spelling (e.g. “Upgrades” plural) or case-sensitiveness and value 1. It’s easy to make a typo in that silly name and I’ve done it twice already.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The setup will proceed to install Windows 11, leaving all apps unchanged.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This part of the install takes an hour or two.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Once in Windows 11, reconfigure the taskbar to something more decent.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And voila, a working in-place update to Windows 11.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That may sound like a lot of steps yet it’s honestly not so bad.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.rzhsurxt9q2" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">How to Make Windows 11 Instantly More Palatable</span></h2>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Once you upgrade in-place from Windows 10 to Windows 11, you’ll realize that it’s after all mostly… the same thing.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The only major change is that new taskbar, and it’s IMHO not a good default. It’s designed to be MacOS like. So here’s how to make it look like a good ol’ Windows 10 taskbar:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right click on Task bar &gt; Taskbar Settings</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Search: Hide</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Task view: Off</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Widgets: Off</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pen Menu: Off</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Expand “Taskbar behaviors”</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Taskbar Alignment: Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← the key setting to change here</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the left pane, select “Personalization”</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Select Personalization &gt; Colors:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Choose your mode: Custom</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Choose your default Windows mode: Dark</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Choose your Default app mode: Light</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Show accent color on Start and Taskbar: On</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Show accent color on title bars and window borders: On</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Select Personalization &gt; Background:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Personalize your background: Picture.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change background image from that annoyingly in-your-face blue wave thingy to something more subtle.</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Select Personalization &gt; Lock Screen:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Disable that annoying “Get fun facts” (which are all but fun).</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Select an agreeable picture.</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Select Personalization &gt; Start:</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Layout: Default</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Show most used apps: Off (YMMV)</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Show recommendations/notifications: all Off</span></li>
+  </ul>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And voila, Windows 11 now looks vaguely acceptable. Then of course, you can later lament once you realize they removed the most essential taskbar feature → the vertical taskbar on the side of the screen. \o/ Pourquoi tant de haine ?!</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2025-10-04_the_broken_promise_of_rust_f_d81d3911.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+

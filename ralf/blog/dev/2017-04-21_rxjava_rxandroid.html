@@ -198,7 +198,7 @@ td p {
         <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
-        <a href="000d.html">R’alf Dev Log</a>
+        <a href="000e.html">R’alf Dev Log</a>
         
     </div>
 </header>
@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -231,28 +231,28 @@ td p {
     </div>
 
 
-    <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Looking into RxJava 2 for usage in CabThrottle and derived apps.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">RxJava 2 has 2 kinds of streams: "observables" (no back pressure, no blocking) and "flowable" (back pressure, blocking). Still trying to figure the APIs correctly, but let's see where these would be needed:</span></p>
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking into RxJava 2 for usage in CabThrottle and derived apps.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RxJava 2 has 2 kinds of streams: "observables" (no back pressure, no blocking) and "flowable" (back pressure, blocking). Still trying to figure the APIs correctly, but let's see where these would be needed:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Mountain throttle: stream from the hardware throttle to notify of throttle changes.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">CabThrottle:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Mountain throttle: stream from the hardware throttle to notify of throttle changes.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">CabThrottle:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">NSD/Discovery stream (add/remove).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Throttle UI to controller.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Throttle controller to network.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Network back to throttle controller/UI.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">NSD/Discovery stream (add/remove).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle UI to controller.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle controller to network.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Network back to throttle controller/UI.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">KeyServer changes.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">KeyServer changes.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Some of these were done using the event bus and instead would map nicely in the concept of a stream with subscribers being notified. They are not pull events, mostly push events.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">All of these map on the observable (no back pressure / no blocking) pattern.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some of these were done using the event bus and instead would map nicely in the concept of a stream with subscribers being notified. They are not pull events, mostly push events.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">All of these map on the observable (no back pressure / no blocking) pattern.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
     </div>

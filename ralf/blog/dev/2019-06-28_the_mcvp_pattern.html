@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -231,32 +231,32 @@ td p {
     </div>
 
 
-    <p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A while ago I wanted to take a consistent approach at splitting my projects into a “UI vs core” pattern. My old C# skeleton generated 2 libs upfront for that. In other android apps, I have either an android lib or at least clear packages “core vs ui”.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Looking at something like Flutter, the benefits would be useful if the app and UI is using one framework and then the “core” of the app uses another framework, namely a POJO or at least an Android lib. In the case of a game, the latter could be a Unity library.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">When doing a pure Android app of a limited scope, there’s little value in that separation. It becomes more useful when I try alternate frameworks, for example Flutter or Kotlin. The idea is that if I write the UI part in Flutter now and the framework falls in desuetude, I could rewrite just the UI later.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">One thing I noticed is that if I do not force myself to do the split upfront using actual libraries, it will not happen easily after. Forcing to have an android app + an android lib imposes some constraints in the import/dependency structure. It forces us to make callbacks instead of direct bi-directional calls. It forces us to make the boundaries clear. Dagger would help a bit to ease using one with the other.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">As far as patterns go, there’s MVP and MVC. I suggest a mix, which I’m calling MCVP:</span></p>
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A while ago I wanted to take a consistent approach at splitting my projects into a “UI vs core” pattern. My old C# skeleton generated 2 libs upfront for that. In other android apps, I have either an android lib or at least clear packages “core vs ui”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking at something like Flutter, the benefits would be useful if the app and UI is using one framework and then the “core” of the app uses another framework, namely a POJO or at least an Android lib. In the case of a game, the latter could be a Unity library.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When doing a pure Android app of a limited scope, there’s little value in that separation. It becomes more useful when I try alternate frameworks, for example Flutter or Kotlin. The idea is that if I write the UI part in Flutter now and the framework falls in desuetude, I could rewrite just the UI later.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing I noticed is that if I do not force myself to do the split upfront using actual libraries, it will not happen easily after. Forcing to have an android app + an android lib imposes some constraints in the import/dependency structure. It forces us to make callbacks instead of direct bi-directional calls. It forces us to make the boundaries clear. Dagger would help a bit to ease using one with the other.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As far as patterns go, there’s MVP and MVC. I suggest a mix, which I’m calling MCVP:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Model: Model data/classes, in the core feature library.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Controllers: Action classes acting solely on the model, in the core feature library.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Views: Pure UI elements display model, in the app/ui library.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Presenters: Action classes managing the interaction, in the app/ui library.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Model: Model data/classes, in the core feature library.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Controllers: Action classes acting solely on the model, in the core feature library.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Views: Pure UI elements display model, in the app/ui library.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Presenters: Action classes managing the interaction, in the app/ui library.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The app logic would be both in controllers and presenters. The controllers are purely model-oriented and by having them in the core lib, they have no impact on the UI. The presenters on the other hand coordinate between the views, model, and controllers. They are the “business logic” that is located at the app/ui level.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">As a graph, we would have:</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">[model] ⇐⇒ [controllers] ⇐⇒ [presenters] ⇐⇒ [views] </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The app logic would be both in controllers and presenters. The controllers are purely model-oriented and by having them in the core lib, they have no impact on the UI. The presenters on the other hand coordinate between the views, model, and controllers. They are the “business logic” that is located at the app/ui level.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As a graph, we would have:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">[model] ⇐⇒ [controllers] ⇐⇒ [presenters] ⇐⇒ [views] </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
     </div>

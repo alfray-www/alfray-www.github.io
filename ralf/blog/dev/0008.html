@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA." />
-
+<meta property="og:description" content="An even easier way to blink a LED is to not use a LED. An ESP32 or an Arduino Nano both have a LED onboard. All I need is the smallest program that would turn on the onboard LED on a timer/interrupt, and ideally keep the CPU sleeping/idle/suspended the rest of the time." />
+<meta property="og:image"       content="http://www.alfray.com/ralf/blog/dev/img_eb7218448385532ded717edf2472a1d81ecf9420b35a0fc857e4231391e809a1i.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA." />
-
+<meta name="twitter:description" content="An even easier way to blink a LED is to not use a LED. An ESP32 or an Arduino Nano both have a LED onboard. All I need is the smallest program that would turn on the onboard LED on a timer/interrupt, and ideally keep the CPU sleeping/idle/suspended the rest of the time." />
+<meta name="twitter:image"       content="http://www.alfray.com/ralf/blog/dev/img_eb7218448385532ded717edf2472a1d81ecf9420b35a0fc857e4231391e809a1i.png" />
 
 <title>R’alf Dev Log</title>
 
@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -225,6 +225,200 @@ td p {
 
     <div class="post-container">
 <div class="post-title-container">
+<a class="post-title-link" href="2020-11-24_blinking_led_--_arduino_esp3_ae4e30a8.html">
+    <h2 class="post-title">2020-11-24 - Blinking LED -- Arduino/ESP32 approach</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An even easier way to blink a LED is to not use a LED. An ESP32 or an Arduino Nano both have a LED onboard. All I need is the smallest program that would turn on the onboard LED on a timer/interrupt, and ideally keep the CPU sleeping/idle/suspended the rest of the time.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some ESP32 dev boards come with a connector designed to power them from a battery, like the “Heltec Wifi Kit 32” ones I have.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Arduino Nano dev boards have 4 leds (RX, TX, PowerOn, IO). The Power-On is always one when the device is powered. The trace leading to the LED can be cut. A quick online search indicates it can be powered by 3xAA (~ 6V) using the last 2 pins (GND / VIN). However the same research indicates on a Nano board, the FTDI/USB chip will use about 30-40 mA all the time, rendering the effort quite moot.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Another choice is the Digistump Digispark 1. It also has a green Power-On LED as well as an IO LED.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What about the Arduino? How do you “suspend” the Atmega328P in a Nano or the ATTiny?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>From this thread: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://thekurks.net/blog/2018/1/24/guide-to-arduino-sleep-mode" style="color:inherit;text-decoration:inherit">https://thekurks.net/blog/2018/1/24/guide-to-arduino-sleep-mode</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;avr/sleep.h defines a sleep_enable() + set_sleep_mode(SLEEP_MODE_PWR_DOWN).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It also indicates the only way to wake it up is using an external RTC timer on an interrupt (for example an Adafruit DS3231 Precision RTC controlled via I2C).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The ESP32 for sure has APIs to put it in deep-sleep mode. It’s designed for that: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/sleep_modes.html" style="color:inherit;text-decoration:inherit">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/sleep_modes.html</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">esp_bluedroid_disable(), esp_bt_controller_disable(), esp_wifi_stop().</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">rtc_gpio_isolate(pins...) to disable pullups/pulldowns on IOs.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">esp_light_sleep_start() or esp_deep_sleep_start().</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">esp_sleep_enable_timer_wakeup() ⇒ wake up from deep sleep using timer.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Can the ULP Processor be used to trigger the LED directly?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/ulp.html" style="color:inherit;text-decoration:inherit">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/ulp.html</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">No, it won’t drive IOs but it can wake up the processor.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-11-17_blinking_led_--_naive_rc_approach.html">
+    <h2 class="post-title">2020-11-17 - Blinking LED -- Naive RC approach</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Goal: blinking led in the garage when the side bolt is closed. Ideally battery powered.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Idea is to have it blink to save energy and work longer in battery.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What is the simplest way to blink a led, or more exactly the less current usage?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How much can I expect of e.g. an AA battery? Or a couple add I have a holder for that.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Random idea: use a led forward voltage, resistor slowly charging a cap and when above the led voltage it would discharge.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-time-constant" style="color:inherit;text-decoration:inherit">Resistor-Capacitor (RC) Time Constant Calculator | DigiKey Electronics</a></span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To compute a RC time:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Tau = R.C = 63% of final charge time.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>This does not work, as tried in N</span><span>ational Instruments Multisim</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:251.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:466.00px"><img alt="" src="img_eb7218448385532ded717edf2472a1d81ecf9420b35a0fc857e4231391e809a1i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:375.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:385.30px"><img alt="" src="img_c83002441b2843ce9bb89db303591a603b89a64a016a8466e0bafc52b219ec3ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-11-12_remote_plug_motion.html">
+    <h2 class="post-title">2020-11-12 - Remote plug + motion</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For the daily Xmas lights, what I’d like is to have:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Person detection, likely using an existing PIR.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Light detection, to turn it on when it gets dark.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Server/wifi control so that I could rifle it from the phone.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One option is to take the existing timer plug and control it from an ESP32. Doesn't even have to be a cam one, using a PIR in max range could work.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I'd like to have a second ESP+PIR across the room for more coverage. Whenever any of these detect motion, light would stay on for e.g. 15 minutes. The second ESP can send an ESP-NOW data packet to the first one.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A local button toggle would be ideal.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other option would be to use a dedicated wifi plug like the sonoff. I do want something absolutely local that does not use any cloud.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-10-11_remote_plug_control.html">
+    <h2 class="post-title">2020-10-11 - Remote Plug Control</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>8 Channel Smartphone Relay WiFi Remote Control Kit: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3VZSvw1" style="color:inherit;text-decoration:inherit">https://amzn.to/3VZSvw1</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note: Not a SainSmart, seems like “TOSR08” but really looks like the former</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>More description in the kit here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.tinyosshop.com/8-channel-wifi-relay-module-remote-control-kit" style="color:inherit;text-decoration:inherit">https://www.tinyosshop.com/8-channel-wifi-relay-module-remote-control-kit</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;[$88 !!]</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">TOSR0x module has a FT232RL USB-to-UART input + 5V barrel DC</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Control done by sending one byte.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Module has a switch: USB or separate “extension port” (not both)</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And the kit provides:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">WifiBee wireless module</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">XBee USB adapter</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(so wait, do they mean phone &gt; wifi &gt; wifi-to-xbee &gt; xbee-to-usb &gt; usb-to-uart? Very likely.)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A better option is to get the TOSROx module and plug that on an arduino / ESP32.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But that $88 cost is definitely a non-starter.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Sonoff 4-channel “R2” wifi w/ Android app [$28]: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3VXmuVf" style="color:inherit;text-decoration:inherit">https://amzn.to/3VXmuVf</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Is “R2” a “revision 2”? It must be as there’s a “4CHR3” for about the same price.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Described as “is an ESP8285 WiFi module based 4 channel (4-way) WiFi wireless switch.”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Somehow “Sonoff” and “ITEAD” are the same thing/company/something related?</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.itead.cc/wiki/Sonoff_4CH" style="color:inherit;text-decoration:inherit">https://www.itead.cc/wiki/Sonoff_4CH</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Question: is there an API to use that without their app? ⇒ Not the 4CH one.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html" style="color:inherit;text-decoration:inherit">http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;“The DIY Mode is designed for IoT home automation users and developers who would like to control the SONOFF device via existing home automation open-source platform or local HTTP client instead of eWeLink App.”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Supported: “BasicR3”, “RFR3”, “MINI”, “D1” (dimmer) (these only toggle 1 output)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One direct application would be control of the xmas lights from server -- time based and/or image based. Ideal detection would be “any kind of motion detection” in living room, kitchen, and hallway leaving the lights on for 10+ minutes.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An ESP32-CAM with the widest lens possible would be ideal, or even 2 of them (one by chimney).</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Options on how to control the lights:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DYI:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add a 3-to-5V converter.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add a 250V 2-channel relay (to switch both L1+N).</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use something like a Sonoff or a more “serious” option for the plug control.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Modify an existing timer switch. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The one I’m using right now is essentially a relay switching the hot wire (small prong of the polarized plug).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It has 2 boards: power + relay vs control board.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Connector with 3 wires: Vss, Vcc, On. (voltages?)</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
 <a class="post-title-link" href="2020-10-06_of_the_importance_of_unit_te_e8767268.html">
     <h2 class="post-title">2020-10-06 - Of the Importance of Unit Tests for Server-side Projects</h2>
 </a>
@@ -236,34 +430,34 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">However, I did a change in Rig3. I was glad to see this old project had some tests. Lots of verbose warnings when running them, but at least they gave me a baseline for the one change I had to make… it showed me how my own code was running, since I had largely forgotten. And I was able to break the tests as expected with my change, then adjust the tests. Thus they served their role in a TDD scenario.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Now I’m looking at Inkblot2 and I skipped the testing part for all the React code. After all it’s just presentation, right? I have only a couple unit test methods for computational functions.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A decade ago, I wrote a little backend for Timeriffic to enable themes per user. It’s just a simple REST API served by a Go app-engine with a CRUD admin frontend. And it’s written in Go 1.1 (IIRC), and now I need to update to Go 1.9. I seriously hope I wrote some tests, and here’s what I expect of these tests:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">However, I did a change in Rig3. I was glad to see this old project had some tests. Lots of verbose warnings when running them, but at least they gave me a baseline for the one change I had to make… it showed me how my own code was running, since I had largely forgotten. And I was able to break the tests as expected with my change, then adjust the tests. Thus they served their role in a TDD scenario.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now I’m looking at Inkblot2 and I skipped the testing part for all the React code. After all it’s just presentation, right? I have only a couple unit test methods for computational functions.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A decade ago, I wrote a little backend for Timeriffic to enable themes per user. It’s just a simple REST API served by a Go app-engine with a CRUD admin frontend. And it’s written in Go 1.1 (IIRC), and now I need to update to Go 1.9. I seriously hope I wrote some tests, and here’s what I expect of these tests:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">First run them ideally with a Go 1.1 runtime (assuming I still have that), and validate they work.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Next run them with a Go 1.9 runtime, and if the app builds, see which part of the test works or breaks. In essence, I just want a baseline of what’s broken by the change.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First run them ideally with a Go 1.1 runtime (assuming I still have that), and validate they work.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Next run them with a Go 1.9 runtime, and if the app builds, see which part of the test works or breaks. In essence, I just want a baseline of what’s broken by the change.</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Which parts do I expect to be covered?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which parts do I expect to be covered?</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">On the backend REST API side, a get without a valid auth, and a get with a valid auth. That last one should also cover reading from a mock db.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">On the admin frontend, render the page without login, with login, and validate a simple CRUD usage (create an entry, see it listed, remote it, see it gone).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the backend REST API side, a get without a valid auth, and a get with a valid auth. That last one should also cover reading from a mock db.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the admin frontend, render the page without login, with login, and validate a simple CRUD usage (create an entry, see it listed, remote it, see it gone).</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">These tests are not designed to do 100% coverage, yet they should cover the basic usage scenarios. Even if a full CRUD cycle is not exercised, the viewing part should be tested, e.g. login and display an empty list, login and display a list with known data.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I want to emphasize this is not the TDD philosophy here. We’re not using tests to validate every single inch of the app, every single little possible case. At the contrary, the tests should cover large strokes, making sure the obvious is not broken.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Thus Inkblot2 really needs something like that.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I do remember that my little dabbing in Go did not show great ways to mock whole components such as database or logging auth. That’s one of the reasons I went back to liking Java all because of Dagger and how it enables that trivially, all at compile time. I’m curious what React JS has to offer in that regard.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">These tests are not designed to do 100% coverage, yet they should cover the basic usage scenarios. Even if a full CRUD cycle is not exercised, the viewing part should be tested, e.g. login and display an empty list, login and display a list with known data.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I want to emphasize this is not the TDD philosophy here. We’re not using tests to validate every single inch of the app, every single little possible case. At the contrary, the tests should cover large strokes, making sure the obvious is not broken.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus Inkblot2 really needs something like that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I do remember that my little dabbing in Go did not show great ways to mock whole components such as database or logging auth. That’s one of the reasons I went back to liking Java all because of Dagger and how it enables that trivially, all at compile time. I’m curious what React JS has to offer in that regard.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -280,25 +474,25 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">In my perpetual reshuffling of home projects, I need to bump up rig4j, and abandon rig4r.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4r: It was somewhat useful to learn Rust lang. However I really don’t care much about it. That language does not solve any problem that I don’t really have.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">That said, it wasn’t a complete loss. The rig4r project showed me there’s some value in splitting rig4 in a gdoc-downloader vs a generator. </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">In the current train site+blog, a simple blog update results in a 6-7 minutes rig4j run time. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">90% of that time is in checking images/graphics have not changed -- it takes about forever to pull them off gdoc using the current gdoc API… this will get addressed whenever I focus on rig4j again and implement the caching I specified from the start yet never fully implemented yet.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">It’s also worth noting that the current rig4j is really “0.1-exp”. &nbsp;There would be some value in taking the learnings from that experiment -- what worked well, what did not work --, cross-reference that with the initial spec, and maybe re-implement from there.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The main pain point is looking up all these gdoc images instead of relying on cached blobs.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>The second pain point is the HTML exported by gdoc. I have it </span><span style="font-style:italic">somewhat</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;cleaned up, yet I think even more could be done. On one hand I’d like to strip it down as much as I can to the level of what is/was supported by izumi’s syntax, and on the other hand I’d like to retain some complex elements such as tables.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In my perpetual reshuffling of home projects, I need to bump up rig4j, and abandon rig4r.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4r: It was somewhat useful to learn Rust lang. However I really don’t care much about it. That language does not solve any problem that I don’t really have.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That said, it wasn’t a complete loss. The rig4r project showed me there’s some value in splitting rig4 in a gdoc-downloader vs a generator. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the current train site+blog, a simple blog update results in a 6-7 minutes rig4j run time. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">90% of that time is in checking images/graphics have not changed -- it takes about forever to pull them off gdoc using the current gdoc API… this will get addressed whenever I focus on rig4j again and implement the caching I specified from the start yet never fully implemented yet.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s also worth noting that the current rig4j is really “0.1-exp”. &nbsp;There would be some value in taking the learnings from that experiment -- what worked well, what did not work --, cross-reference that with the initial spec, and maybe re-implement from there.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The main pain point is looking up all these gdoc images instead of relying on cached blobs.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The second pain point is the HTML exported by gdoc. I have it </span><span style="font-style:italic">somewhat</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;cleaned up, yet I think even more could be done. On one hand I’d like to strip it down as much as I can to the level of what is/was supported by izumi’s syntax, and on the other hand I’d like to retain some complex elements such as tables.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -315,63 +509,63 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The latest Debian Busty offers Java 11 via OpenJDK. There’s also a comment on the OpenJDK web site that from now on all official Java releases are done via the OpenJDK (site/framework)... does that mean one no longer has to wonder about Java vs OpenJDK compatibility? That would be nice.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Of note: Debian has an openjdk-11-headless… no more need to drag X libs pointlessly.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">It also begs the question of “what’s new in Java 11”... and what can be used on Android.</span></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The latest Debian Busty offers Java 11 via OpenJDK. There’s also a comment on the OpenJDK web site that from now on all official Java releases are done via the OpenJDK (site/framework)... does that mean one no longer has to wonder about Java vs OpenJDK compatibility? That would be nice.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Of note: Debian has an openjdk-11-headless… no more need to drag X libs pointlessly.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It also begs the question of “what’s new in Java 11”... and what can be used on Android.</span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://simply-how.com/getting-started-with-java-11" style="color:inherit;text-decoration:inherit">https://simply-how.com/getting-started-with-java-11</a></span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Java 9:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 9:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A new concept of “modules”, a “self describing collection of code and data”.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Jlink, a tool with a link time phase vs compile time phase, using modules.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Jshell, a REPL … that can come in handy.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Multi-release JAR files: version-specific of classes in the same JAR.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Private methods on interfaces, which can be used by default methods.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rx compliant Flow API.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Factory/collections methods: Set.of, List.of…</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Stuff I don’t care, e.g. garbage collector changed. (skipping those below).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A new concept of “modules”, a “self describing collection of code and data”.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jlink, a tool with a link time phase vs compile time phase, using modules.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jshell, a REPL … that can come in handy.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Multi-release JAR files: version-specific of classes in the same JAR.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Private methods on interfaces, which can be used by default methods.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rx compliant Flow API.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Factory/collections methods: Set.of, List.of…</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Stuff I don’t care, e.g. garbage collector changed. (skipping those below).</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Java 10:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 10:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">“Var” keyword for local type inference.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Optional.orElseThrow.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Unmodifiable collections: List.copyOf, etc.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Var” keyword for local type inference.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Optional.orElseThrow.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Unmodifiable collections: List.copyOf, etc.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Java 11:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 11:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">HTTP Client API (do I care?)</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">“Singe-file source-code programs”... sounds like scripting to me.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">“Var” keyword can be used in lambda parameters.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">HTTP Client API (do I care?)</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Singe-file source-code programs”... sounds like scripting to me.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Var” keyword can be used in lambda parameters.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Java 12:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 12:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">More garbage collector whatever this or that.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Mostly nothing except some *preview* of a condensed switch/case/break syntax (e.g. the “break” also acts as a “return”, and can be further condensed to an -&gt; arrow syntax)... meh.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">More garbage collector whatever this or that.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Mostly nothing except some *preview* of a condensed switch/case/break syntax (e.g. the “break” also acts as a “return”, and can be further condensed to an -&gt; arrow syntax)... meh.</span></li>
  </ul>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Bottom line: mostly nothing to see here.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So overall a fairly incremental update to the language. The most notable useful thing is the “var” keyword. Since it is type-inference, I expect it can generate backward-compatible bytecode running fine with older JREs. New APIs like collections would obviously require the latest JRE to run.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">We still don’t have support for “safe-dereference” (?. which was proposed for Java 7!) and folks horrendously suggest using Optional instead.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">For gradle, the usual:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">targetCompatibility = 11</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">sourceCompatibility = 11</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Or</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">compileOptions {</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; targetCompatibility JavaVersion.VERSION_12</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; &nbsp; sourceCompatibility JavaVersion.VERSION_12</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">}</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Thus it seems to me overall I’d want something along the lines of “target 8… source 11”.</span></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bottom line: mostly nothing to see here.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So overall a fairly incremental update to the language. The most notable useful thing is the “var” keyword. Since it is type-inference, I expect it can generate backward-compatible bytecode running fine with older JREs. New APIs like collections would obviously require the latest JRE to run.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We still don’t have support for “safe-dereference” (?. which was proposed for Java 7!) and folks horrendously suggest using Optional instead.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For gradle, the usual:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">targetCompatibility = 11</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">sourceCompatibility = 11</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Or</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">compileOptions {</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; targetCompatibility JavaVersion.VERSION_12</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; sourceCompatibility JavaVersion.VERSION_12</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus it seems to me overall I’d want something along the lines of “target 8… source 11”.</span></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -388,27 +582,27 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Currently working on Inkblot v2 Scoring Web App.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The suggestion was to evaluate AWS vs Firebase (nodejs based, not Android as I usually do).</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">AWS is working really well work Inkblot v2 right now, so there’s little incentive to also do a Firebase version.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I’d still like to do a web app using Firebase to have a comparison with AWS, and Seeds seems like a good candidate for this. I have the Android app working fine, however my old Chrome extension does not work anymore since the AppScript-based apps have been deprecated.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rebuilding it using Firebase would be a good target:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Currently working on Inkblot v2 Scoring Web App.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The suggestion was to evaluate AWS vs Firebase (nodejs based, not Android as I usually do).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">AWS is working really well work Inkblot v2 right now, so there’s little incentive to also do a Firebase version.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’d still like to do a web app using Firebase to have a comparison with AWS, and Seeds seems like a good candidate for this. I have the Android app working fine, however my old Chrome extension does not work anymore since the AppScript-based apps have been deprecated.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rebuilding it using Firebase would be a good target:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rely on their free tier, and measure cold latency (one of the big drawbacks of app engine in their free tier, which I do not see in AWS).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Nodejs + React + Bootstrap, similar to what’s used in Inkblot v2.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Google-only auth… how well do they integrate that in Firebase?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Backend storage… how does it compare with GraphQL + DynamoDB?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Note: the only thing I really need is to store the GDrive doc id.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Deployment/hosting… this one would likely go on something like “seeds.alfray.com”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rely on their free tier, and measure cold latency (one of the big drawbacks of app engine in their free tier, which I do not see in AWS).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nodejs + React + Bootstrap, similar to what’s used in Inkblot v2.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Google-only auth… how well do they integrate that in Firebase?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Backend storage… how does it compare with GraphQL + DynamoDB?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note: the only thing I really need is to store the GDrive doc id.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Deployment/hosting… this one would likely go on something like “seeds.alfray.com”.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Updated 2020-09-24: That project could also be a candidate to look again at Angular. I remember looking at Angular before React and couldn’t figure out the model… However now that I’m familiar with React (non native), looking at Angular a second time would be worth it, for a good comparison. </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Updated 2020-09-24: That project could also be a candidate to look again at Angular. I remember looking at Angular before React and couldn’t figure out the model… However now that I’m familiar with React (non native), looking at Angular a second time would be worth it, for a good comparison. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -425,60 +619,60 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Current projects, either actually ongoing or started/pending:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Current projects, either actually ongoing or started/pending:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Conductor 2, the rewrite using a Groovy DSL. Want to continue. Perpetual hold.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Conductor 2, the rewrite using a Groovy DSL. Want to continue. Perpetual hold.</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Low interest as the current version is “working fine” (with its limitations).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I would have some renewed interest combined with home usage.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Low interest as the current version is “working fine” (with its limitations).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I would have some renewed interest combined with home usage.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Timeriffic 3… </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Timeriffic 3… </span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">2019 attempt did not work, it crippled most of the functionality, the impl was borked, it didn’t even really work well for basic stuff.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">That needs a full reboot if it’s going to go anywhere.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">This could be a candidate to do an app using RxJava + Kotlin.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">2019 attempt did not work, it crippled most of the functionality, the impl was borked, it didn’t even really work well for basic stuff.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That needs a full reboot if it’s going to go anywhere.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This could be a candidate to do an app using RxJava + Kotlin.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Jump Godot game.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jump Godot game.</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">This is mostly a “technology” demo for Godot 3d to understand limitations.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Got initial MVP (without the IAB part) on Play.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">There is no interest in making it a full blown complex play.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I should take the MVP down, e.g. keep it alpha instead of public.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is mostly a “technology” demo for Godot 3d to understand limitations.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Got initial MVP (without the IAB part) on Play.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There is no interest in making it a full blown complex play.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I should take the MVP down, e.g. keep it alpha instead of public.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Asqare.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Asqare.</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A reboot using Godot 2d.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A reboot using Godot 2d.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Sudoku</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sudoku</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">May have some limited interest if it were to be a Kotlin + RxJava test bed.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Risks having the usual issue of not going past the MVP.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">May have some limited interest if it were to be a Kotlin + RxJava test bed.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Risks having the usual issue of not going past the MVP.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Dcc Cab:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Dcc Cab:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Current version is on Play. Not advertised much. Does what I need from it.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Current version is on Play. Not advertised much. Does what I need from it.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4r:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4r:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Limited interest in Rust itself, however I can see how it is appropriate here.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">May continue… slowly?</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Limited interest in Rust itself, however I can see how it is appropriate here.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">May continue… slowly?</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">ESP32 vision.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ESP32 vision.</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The 2 initial targets for this are crossing signal and virtual block detection.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The 2 initial targets for this are crossing signal and virtual block detection.</span></li>
  </ul>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Starting one and exploring a tech is easy and fun. Jump/Godot is an example where I had fun starting it. It fell a bit flat once I had the premise of a working version. I lack a push to complete these, and once the novelty wears off, there’s little incentive to continue adding to it instead of focusing on another idea.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">For Rig4r, the initial objective was to spend a long week-end learning what Rust is all about. I’ve done that. I have no specific love for the new language, but neither did I for any other new language I’ve tried recently (Haskell, Go, Kotlin,... and now Rust). That’s because these languages do not fill any need that I don’t really have -- they really do not do anything Java can’t already do, no matter what the fanboys say. For example I’m not really happy with the current implementation of Rig4j, and that’s really not a Java/Dagger issue at all. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">No amount of language hype is going to magically fix an implementation.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The other realization I made with Rig4j, the Java version, is that external libraries are what matters. In this case, the availability of a G Drive API and the HTML jsoup parsers were keys. </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Starting one and exploring a tech is easy and fun. Jump/Godot is an example where I had fun starting it. It fell a bit flat once I had the premise of a working version. I lack a push to complete these, and once the novelty wears off, there’s little incentive to continue adding to it instead of focusing on another idea.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For Rig4r, the initial objective was to spend a long week-end learning what Rust is all about. I’ve done that. I have no specific love for the new language, but neither did I for any other new language I’ve tried recently (Haskell, Go, Kotlin,... and now Rust). That’s because these languages do not fill any need that I don’t really have -- they really do not do anything Java can’t already do, no matter what the fanboys say. For example I’m not really happy with the current implementation of Rig4j, and that’s really not a Java/Dagger issue at all. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">No amount of language hype is going to magically fix an implementation.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other realization I made with Rig4j, the Java version, is that external libraries are what matters. In this case, the availability of a G Drive API and the HTML jsoup parsers were keys. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -495,163 +689,33 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Would a rig4 reboot be a good target for Rust?</span></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Would a rig4 reboot be a good target for Rust?</span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span>Rust and Google drive api: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/google-drive3/1.0.14+20200618/google_drive3/" style="color:inherit;text-decoration:inherit">https://docs.rs/google-drive3/1.0.14+20200618/google_drive3/</a></span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>Rust and html soup parsing: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/scraper/0.12.0/scraper/" style="color:inherit;text-decoration:inherit">https://docs.rs/scraper/0.12.0/scraper/</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;and some more references.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A real reboot needs to focus on 2 different issues:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Rust and html soup parsing: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/scraper/0.12.0/scraper/" style="color:inherit;text-decoration:inherit">https://docs.rs/scraper/0.12.0/scraper/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;and some more references.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A real reboot needs to focus on 2 different issues:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The GDrive api to fetch docs is slow as molasses. It would make sense to separate this process, e.g. download and cache locally. The obvious issue is that fetching a doc requires parsing it to find its dependencies.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">More robust sanitizing of that drive html into rig 3 syntax.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The tree parser and generator.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The GDrive api to fetch docs is slow as molasses. It would make sense to separate this process, e.g. download and cache locally. The obvious issue is that fetching a doc requires parsing it to find its dependencies.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">More robust sanitizing of that drive html into rig 3 syntax.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The tree parser and generator.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The focus here should be on caching to avoid fetching from drive as much as possible.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The other focus is on parsing that html and stripping it even more than I do now.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">There could be 2 tools:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The focus here should be on caching to avoid fetching from drive as much as possible.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other focus is on parsing that html and stripping it even more than I do now.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There could be 2 tools:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4 docs downloader that takes drive docs, the index, the blogs, and generates local rig4 files, updating assets when needed.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4 generator that only works locally.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4 docs downloader that takes drive docs, the index, the blogs, and generates local rig4 files, updating assets when needed.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4 generator that only works locally.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-08-30_asqare.html">
-    <h2 class="post-title">2020-08-30 - Asqare</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Currently Asqare is totally off Google Play due to an injection vulnerability in the SQL code handling the score saves. The issue is rather irrelevant, but the automated Play tools don’t care and backlisted the app years ago.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rebuilding it is possible… One reasoning a while ago was to do a reboot.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Today if I had to do Asqare again, I’d do it in Godot.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-08-29_godotlib.html">
-    <h2 class="post-title">2020-08-29 - GodotLib</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">When a “custom Android build” gets created from the Godot android export, the generated GodotApp contains references to a GodotLib, which is provided as an AAR in the project.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A quick look at it in Studio shows references to a lot of stuff like event management, but also Payments classes, etc. </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So let’s look at what Godot has that is linked to Android:</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/plugins/android/android_plugin.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/plugins/android/android_plugin.html</a></span><span>: </span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A “Godot Android plugin” is an independent AAR that one can add to a Godot project, and then use from the GDScript.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>For example there’s a plugin for Oculus VR, and an official one for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/godotengine/godot-google-play-billing" style="color:inherit;text-decoration:inherit">Google Play Billing</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;compatible starting with Godot 3.2.2.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/platform/android_in_app_purchases.html#migrating-from-godot-3-2-1-and-lower-godotpaymentsv3" style="color:inherit;text-decoration:inherit">GodotPaymentsV3</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;is an older library that is superseded by the above Play billing plugin.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-08-21_godot_and_3d.html">
-    <h2 class="post-title">2020-08-21 - Godot and 3d</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Now it's time to take [...] and understand Godot with 3d. &nbsp;</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Link to blender 2 godot exporter:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gamefromscratch.com/blender2godot-add-on-released/" style="color:inherit;text-decoration:inherit">https://gamefromscratch.com/blender2godot-add-on-released/</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Points to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.zammedev.com/home/wip_projects/blender2godot" style="color:inherit;text-decoration:inherit">https://www.zammedev.com/home/wip_projects/blender2godot</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Points to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gitlab.com/Zamme/blender2godot" style="color:inherit;text-decoration:inherit">https://gitlab.com/Zamme/blender2godot</a></span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">This seems like a good way to get started. Create something in Blender and convert it to Godot.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">One obvious teaching from some games is that a 3D game can basically be just a 2d game with a 3d rendering. That is probably the easiest way to get started.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-08-13_rust_language_.html">
-    <h2 class="post-title">2020-08-13 - Rust Language?</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Here’s an interesting topic to look into: Rust language, which presents itself as a Go / C++ alternative. But more importantly, how would it far in the content of:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">ESP32 or Arduin dev</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Integration with current libraries for Arduino.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Integration with “generic” libraries such as OpenCV.</span></li>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>There’s something here for ESP32: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/MabezDev/xtensa-rust-quickstart" style="color:inherit;text-decoration:inherit">https://github.com/MabezDev/xtensa-rust-quickstart</a></span></p>
-<p style="text-align:left"><span>Several comments indicate that the </span><span style="font-style:italic">rustc</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;compiler can target ARM CPUs; and while not stated I’m guessing that would exclude all the AT-based Arduinos.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>OpenCV bindings for Rust: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/opencv/0.45.0/opencv/" style="color:inherit;text-decoration:inherit">https://docs.rs/opencv/0.45.0/opencv/</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So that seems like it is a choice.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Apparently Rust stuff is packaged in “crates” and using a tool named “cargo”.</span></p>
-<p style="text-align:left"><span>This </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.reddit.com/r/rust/comments/3lhygu/rustfacedetect_a_nontrivial_example_using_opencv/" style="color:inherit;text-decoration:inherit">reddit post</a></span><span>&nbsp;indicates that “The only complete binding to the C++ API is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/kali/opencv-rust" style="color:inherit;text-decoration:inherit">opencv-rust</a></span><span>, not to be confused with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/woxtu/rust-opencv" style="color:inherit;text-decoration:inherit">rust-opencv</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/renato-zannon/rust-opencv-sys" style="color:inherit;text-decoration:inherit">rust-opencv-sys</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">, which bind the C API.”</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>Here’s a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/" style="color:inherit;text-decoration:inherit">random post</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;on doing a React-like single page web application. One keyword I see often is “documentation is sparse”. One thing a lot of people misunderstand with new languages is that doxygen-style or javadoc-style API documentation is not a developer usage guide.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Apart from that, code examples seem fairly Go-like in spirit. </span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">(Future self comment: I’ve made 2 attempts at jumping on the Rust hype bandwagon so far, one for server and one for ESP32, and these efforts didn’t go anywhere. I wasn’t exactly impressed.)</span></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>

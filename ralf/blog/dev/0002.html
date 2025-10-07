@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Trying to make any sense of the “T&amp;&amp;” notation in C++." />
+<meta property="og:description" content="It’s time to update SDB to use more unique_ptr and/or shared_ptrs." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Trying to make any sense of the “T&amp;&amp;” notation in C++." />
+<meta name="twitter:description" content="It’s time to update SDB to use more unique_ptr and/or shared_ptrs." />
 
 
 <title>R’alf Dev Log</title>
@@ -208,10 +208,10 @@ td p {
 <div class="container center-horiz">
 
 <p style="text-align:left"><span> </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"> </span></p>
-<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 
 <div class="prev-next-container">
 
@@ -225,6 +225,198 @@ td p {
 
     <div class="post-container">
 <div class="post-title-container">
+<a class="post-title-link" href="2024-02-18_c_unique_ptr.html">
+    <h2 class="post-title">2024-02-18 - C++ unique_ptr</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s time to update SDB to use more unique_ptr and/or shared_ptrs.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some simple examples come to mind:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">class SdbModManager {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbMod*&gt; _mods;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::map&lt;String, SdbMod*&gt; _modsmap;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbSensor*&gt; _sensors;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbServer*&gt; _servers;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbBlock*&gt; _blocks;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">All these should be either unique or shared pointers to clarify the ownership.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are 2 or 3 aspects to clarify:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How a new object is created.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How a ptr is “moved” into the vector.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Users of the vector.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For each collection, I have a simple getter that returns the vector as a reference:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">const std::vector&lt;SdbServer*&gt;&amp; servers() const &nbsp;{ return _servers; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and then I use that in a for/auto loop:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">for(auto* s: _manager.servers()) { … s-&gt;name() … &nbsp;}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other kind of usage is the vector for Events. One goal here is to change that from a struct holding to holding unique ptrs, with the goal that events get automatically released when pulled out of the vector and used.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So first, I need to write down a few things about how to use unique_ptrs correctly.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/memory/unique_ptr" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/memory/unique_ptr</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">#include &lt;memory&gt;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">auto p = std::unique_ptr&lt;Class&gt;(new Class())</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">std::unique_ptr&lt;Class&gt; function() {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; return std::unique_ptr&lt;Class&gt;(new Class());</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>C++ ref mentions creating the instances using std::make_unique(), but apparently I don’t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I’m using the </span><span style="font-style:italic">previous</span><span>&nbsp;one)</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-01-01_defold_vs_godot.html">
+    <h2 class="post-title">2024-01-01 - Defold vs Godot</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Week of 2023-12-24 to 2023-12-31, I wrote </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/#nerdkill" style="color:inherit;text-decoration:inherit">Nerdkill Defold</a></span><span style="font-family:&quot;Roboto Mono&quot;">. Worked well, was easy to use and get something.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing that was nice was that I ported the original game, with all the original 8 “weapons”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Started looking at Nerdkill w/ Godot 4.2, just to compare with Defold. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Not sure there's a point in concluding that one though.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A new Asqare using Godot 4 for Android would make more sense.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One angle of Nerdkill w/ Godot would be how to create a project that can produce both a web version and a mobile version? More specifically, I’d want the screen form factor to be different.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill “desktop” in landscape can use the cartouche with the 8 weapons.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill “mobile” in portrait can use the 5 weapons.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I could of course change the mobile version to have the same 8-weapons row, but I feel the mobile version looks better that way.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(Alternate idea: consider using 7 weapons on mobile; drop the flag. 2 rows of 5 slots each, the cartouche would occupy the 3 middle bottom slots.)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So one thing I realize I don’t know if it’s possible is to configure the window size dynamically, or at least static by export type. Or maybe it could be two projects using the same resources.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3" style="color:inherit;text-decoration:inherit">https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“get_window().size = Vector2i(width, height)”</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“the size in Project Settings &gt; Display &gt; Windows… think of it as the design size”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“to support both landscape and portrait, consider using e.g. 720x720”</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-01-01_defold_vs_godot.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-12-24_defold.html">
+    <h2 class="post-title">2023-12-24 - Defold</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Started going through the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://defold.com/" style="color:inherit;text-decoration:inherit">Defold</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;tutorials.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I have 3 possible learning projects I could try with this:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Could be limited to an HTML5 output, purely as-is with no changes (e.g. no goals), and visible only via the Nerdkill web page.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Asqare.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This would be an Android output. I’d limit it to one of the 2 engines.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One goal would be to “finish” the game by adding more animation / interactions, and power ups, and better scoring.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Cangrejo.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That could be HTML and Android.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the Android side, an aspect would be to check the Play Game integration. E.g. leaderboards, achievements, profile management, saves/restores, etc.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One open question, similar to Godot: how does one separate the engine from UI, and how does one provide unit tests for the engine part? There seems to be a clear lack of MVC or MVP design in these tutorials.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-11-21_rig4_index.html">
+    <h2 class="post-title">2023-11-21 - Rig4 Index</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Just a quick thought on something that still bugs me with Rig4’s generated blog:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I write pages with 10 posts per page, from 00NN.html down to 0001.html.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I then write an index with the 10 most recent posts.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The rationale is:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The numbered pages are “stable”: older pages (with lower numbers) don’t change when new posts are added “normally”, that is when posts are added for the most recent day.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s exceedingly rare that I’d add a “late” post in the middle.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The last numbered page fills up and, once it reaches 10 posts, becomes stable.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I never link to page numbers, but I do expect them to be indexed by search engines and I’d like these links to become stable.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The downside:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The index page necessarily duplicates N &lt; 10 posts from the last page.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When clicking the “next page” button from the index, we land on the top most page, which basically duplicates the same content, and that’s a bit confusing.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That last bit is what annoys me. I don’t have a solution for it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
 <a class="post-title-link" href="2023-10-16_c_r-value_reference_t_.html">
     <h2 class="post-title">2023-10-16 - C++ “r-value reference T&&”</h2>
 </a>
@@ -236,41 +428,41 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Trying to make any sense of the “T&amp;&amp;” notation in C++.</span></p>
-<p style="text-align:left"><span>It means </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">“an r-value reference”</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;“a forwarding reference”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Trying to make any sense of the “T&amp;&amp;” notation in C++.</span></p>
+<p style="text-align:left"><span>It means </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">“an r-value reference”</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;“a forwarding reference”.</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/4549151/c-double-address-operator" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/4549151/c-double-address-operator</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;(*)</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">It’s referenced in the C++11 “range-based for loop” loop construct:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;(*)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s referenced in the C++11 “range-based for loop” loop construct:</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/range-for" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/language/range-for</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">for (auto&amp;&amp; [first, second] : mymap) { … }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← WAT?</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The summary of the SO (*) above is:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto&amp;&amp; [first, second] : mymap) { … }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← WAT?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The summary of the SO (*) above is:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">rvalue is the result of an expression or any temporary (e.g. type conversion).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Typically, it would be used as a “copy” using a “const T&amp;” reference and becomes an lvalue. E.g. the user cannot modify the value (since it becomes const).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">T&amp;&amp; is used as a receiving argument type in a function.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">An argument of “T&amp;&amp;” preserves (forwards) the “rvalue” property and passes it down as-is. The user can modify the value (since it is not const).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">When used in a template, “T&amp;&amp;” becomes either “T&amp;” (for an lvalue), or “T” (for an rvalue / temporary).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">As such it’s named a “forwarding reference” and is associated with std::forward&lt;T&gt;.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">rvalue is the result of an expression or any temporary (e.g. type conversion).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Typically, it would be used as a “copy” using a “const T&amp;” reference and becomes an lvalue. E.g. the user cannot modify the value (since it becomes const).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T&amp;&amp; is used as a receiving argument type in a function.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An argument of “T&amp;&amp;” preserves (forwards) the “rvalue” property and passes it down as-is. The user can modify the value (since it is not const).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When used in a template, “T&amp;&amp;” becomes either “T&amp;” (for an lvalue), or “T” (for an rvalue / temporary).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As such it’s named a “forwarding reference” and is associated with std::forward&lt;T&gt;.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">About std::forward&lt;&gt;, it’s equivalent to performing a static cast of “T&amp;&amp;” to preserve its rvalue:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">About std::forward&lt;&gt;, it’s equivalent to performing a static cast of “T&amp;&amp;” to preserve its rvalue:</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/3582001/what-are-the-main-purposes-of-stdforward-and-which-problems-does-it-solve/3582313#3582313" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/3582001/what-are-the-main-purposes-of-stdforward-and-which-problems-does-it-solve/3582313#3582313</a></span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Coming back to that “range-based for loop” construct:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Coming back to that “range-based for loop” construct:</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/range-for" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/language/range-for</a></span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">for (auto x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by value (I guess “copy”)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">for (const T&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by const reference</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">for (auto&amp;&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by “forwarding reference” (not const)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by value (I guess “copy”)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (const T&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by const reference</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto&amp;&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by “forwarding reference” (not const)</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">are all possible.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">are all possible.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -287,23 +479,23 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" style="color:inherit;text-decoration:inherit">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">In a file called CMakeLists.txt:</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">cmake_minimum_required(version) </span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">project(name)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">set(CMAKE_CXX_STANDARD 11)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">set(CMAKE_CXX_STANDARD_REQUIRED True)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">target_include_directories(ProjectName PUBLIC list_of_dirs)</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">for an exe, the minimum is add_executable(Name file_list)</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">for a library, add_library(Name file_list)</span></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a file called CMakeLists.txt:</span></p>
+<p style="text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cmake_minimum_required(version) </span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">project(name)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">set(CMAKE_CXX_STANDARD 11)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">set(CMAKE_CXX_STANDARD_REQUIRED True)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">target_include_directories(ProjectName PUBLIC list_of_dirs)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for an exe, the minimum is add_executable(Name file_list)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for a library, add_library(Name file_list)</span></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -320,17 +512,17 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Game engines to look at:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Game engines to look at:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>2D: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://defold.com/" style="color:inherit;text-decoration:inherit">https://defold.com/</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>2D: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://defold.com/" style="color:inherit;text-decoration:inherit">https://defold.com/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Defold seems like an interesting choice to explore. It’s the King (candy crush) engine. I don’t think it’s truly open source. Programming is done in Lua.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Defold seems like an interesting choice to explore. It’s the King (candy crush) engine. I don’t think it’s truly open source. Programming is done in Lua.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -347,31 +539,31 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Over here on the servers, I know have a script that monitors the Raspberry Pi (1 or 4) temperature and prints it when it rises:</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">#!/bin/bash</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">CA=0</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">CI=90000</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">while true; do</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; C=$(&lt;/sys/class/thermal/thermal_zone0/temp)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; if [[ "$C" -gt "$CA" ]]; then CA="$C"; fi</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; if [[ "$C" -lt "$CI" ]]; then CI="$C"; fi</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; D=$(date)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; T=$(python3 -c "print('min: %f C | curr: %f C | max: %f C' % ($CI/1000., $C/1000., $CA/1000.))")</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; echo "$D : $T"</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp; sleep 5s</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">done</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Note this is not a service, just a basic shell/python script to run ad-hoc.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The RPi 4 is currently around ~50 C, with no fan.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">According to sources, it can go up to 80-85 C before it starts throttling to reduce heat.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Over here on the servers, I know have a script that monitors the Raspberry Pi (1 or 4) temperature and prints it when it rises:</span></p>
+<p style="text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">#!/bin/bash</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">CA=0</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">CI=90000</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">while true; do</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; C=$(&lt;/sys/class/thermal/thermal_zone0/temp)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; if [[ "$C" -gt "$CA" ]]; then CA="$C"; fi</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; if [[ "$C" -lt "$CI" ]]; then CI="$C"; fi</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; D=$(date)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; T=$(python3 -c "print('min: %f C | curr: %f C | max: %f C' % ($CI/1000., $C/1000., $CA/1000.))")</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; echo "$D : $T"</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; sleep 5s</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">done</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note this is not a service, just a basic shell/python script to run ad-hoc.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The RPi 4 is currently around ~50 C, with no fan.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">According to sources, it can go up to 80-85 C before it starts throttling to reduce heat.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -388,32 +580,32 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>So first, let’s make this clear: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dwm.suckless.org/" style="color:inherit;text-decoration:inherit">DWM</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;is both terribly good, and terribly bad.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>So first, let’s make this clear: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dwm.suckless.org/" style="color:inherit;text-decoration:inherit">DWM</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is both terribly good, and terribly bad.</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Excellent small footprint and minimal functionality.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Keyboard only usage is both excellent yet terrible. I generally don’t remember the shortcuts except for the 3 main ones: Alt-S (new shell), Alt-1..9 to select a workspace, and Shift-Alt-1...9 to move a window to a workspace (they call them “tags”).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">A lot of programs aren’t designed for the “full screen / forced tiling” approach and require some kind of floating windows to be usable.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">DWM has basically one “window model”: a main shell, and a stack of secondary windows opening on the right of it. It’s really designed to have one shell per workspace.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Excellent small footprint and minimal functionality.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Keyboard only usage is both excellent yet terrible. I generally don’t remember the shortcuts except for the 3 main ones: Alt-S (new shell), Alt-1..9 to select a workspace, and Shift-Alt-1...9 to move a window to a workspace (they call them “tags”).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A lot of programs aren’t designed for the “full screen / forced tiling” approach and require some kind of floating windows to be usable.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DWM has basically one “window model”: a main shell, and a stack of secondary windows opening on the right of it. It’s really designed to have one shell per workspace.</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>My window manager of choice is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.lxde.org/" style="color:inherit;text-decoration:inherit">LXDE</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">. It’s very light in resources, and in features, yet it’s a “proper” window manager. I could do without the session manager aspect.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">As a thought exercise, how would I use Consist with DWM?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>My window manager of choice is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.lxde.org/" style="color:inherit;text-decoration:inherit">LXDE</a></span><span style="font-family:&quot;Roboto Mono&quot;">. It’s very light in resources, and in features, yet it’s a “proper” window manager. I could do without the session manager aspect.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As a thought exercise, how would I use Consist with DWM?</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I have 3 shells that start. Ideally they could be tiled on space 1.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">JMRI needs 3 windows: JMRI main, WiThrottle, and Conductor. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I have 3 shells that start. Ideally they could be tiled on space 1.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JMRI needs 3 windows: JMRI main, WiThrottle, and Conductor. </span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">JMRI main + WiThrottles could be tiled on space 2.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Conductor should be tiled on its own space. Is that possible, or does it need to be with the rest of the app?</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JMRI main + WiThrottles could be tiled on space 2.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Conductor should be tiled on its own space. Is that possible, or does it need to be with the rest of the app?</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">When debugging, I like to have Conductor + the JMRI shell window together.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">When resetting a failed automation, I like to have Conductor + 1 or 2 new JMRI Throttle windows together.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When debugging, I like to have Conductor + the JMRI shell window together.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When resetting a failed automation, I like to have Conductor + 1 or 2 new JMRI Throttle windows together.</span></li>
 </ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">That’s the part where DWM starts to suck. It’s not designed for this kind of functionality.</span></p>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s the part where DWM starts to suck. It’s not designed for this kind of functionality.</span></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
@@ -430,230 +622,36 @@ td p {
     </span>
 </span></div>
 
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">On the GA4 front</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">, I now have some basic dashboards working for Randall:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">On the GA4 front</span><span style="font-family:&quot;Roboto Mono&quot;">, I now have some basic dashboards working for Randall:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;text-decoration:none">Alfray blog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;text-decoration:none">GGMRC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;text-decoration:none">Conductor 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;text-decoration:none">Server Pings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;text-decoration:none">Inkblot3 (flutter)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Already GA4</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">RTAC (tablet)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;text-decoration:none">Vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Other web pages?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;text-decoration:none">Alfray blog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;text-decoration:none">GGMRC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;text-decoration:none">Conductor 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;text-decoration:none">Server Pings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;text-decoration:none">Inkblot3 (flutter)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Already GA4</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RTAC (tablet)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left;text-decoration:line-through"><span style="font-family:&quot;Roboto Mono&quot;;text-decoration:none">Vision&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DONE</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Other web pages?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD</span></li>
 </ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">On the Rig4 front</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">On the Rig4 front</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
 <ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4k is slowly starting. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4k is slowly starting. </span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Have some good skeleton around.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Gdoc separation/caching is not as clean as desired.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Starting to focus on the html-to-izu.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Have some good skeleton around.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Gdoc separation/caching is not as clean as desired.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Starting to focus on the html-to-izu.</span></li>
  </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Rig4j:</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4j:</span></li>
  <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Found a way to re-inject the missing CSS styles, so this temporarily fixes the web site's lack of bold / italics / tables.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">So basically one more little bandaid keeps this working for now.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Found a way to re-inject the missing CSS styles, so this temporarily fixes the web site's lack of bold / italics / tables.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So basically one more little bandaid keeps this working for now.</span></li>
  </ul>
 </ul>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 <hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-29_spa_web_alternatives_flutter_0382f95a.html">
-    <h2 class="post-title">2023-06-29 - SPA Web Alternatives: Flutter / ReactJS vs Smalltalk Seaside / AIDAweb</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Something to try:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Aida/Web: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.aidaweb.si/tutorial" style="color:inherit;text-decoration:inherit">https://www.aidaweb.si/tutorial</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Seaside: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.seaside.st/documentation/tutorials" style="color:inherit;text-decoration:inherit">https://www.seaside.st/documentation/tutorials</a></span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Book: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://book.seaside.st/book" style="color:inherit;text-decoration:inherit">https://book.seaside.st/book</a></span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&nbsp;</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Pharo-by-example is a hijacked web site, just ignore it.</span></li>
- </ul>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The critical question is why bother? Flutter / React already offer well-rounded frameworks, and Smalltalk is just yet-another-esoteric language. It’s on the same level as JS/TS/Dart when it comes to “stuff I only use occasionally”, with the typical issue of feeling mostly write-only.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">On that part, I ended up actually enjoying Dart as it seemed like a suitable compromise between Java, JS, and TS.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Flutter vs ReactJS:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Pro of Flutter = dev in IJ… The integration is excellent.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Cons of Flutter = dev in IJ… Requires IJ to edit a project.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Same goes for ReactJS. The VS Code integration is good, but lacks an IJ-level project management.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">VS Code is good for short-sided projects (e.g. Wazz), whereas IJ is better for large project organization.</span></li>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-26_web_stats_alternatives_-_mqtt_.html">
-    <h2 class="post-title">2023-06-26 - Web Stats Alternatives - MQTT?</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The Looker+GA4 behavior is currently limiting. It also exposes the typical issue when relying on external “free” services. Are there ways I can bring my stats in-house?</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">2 aspects come to mind:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Sending the event data… </span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">With the usual caveat of outage reliability, the data would be better hosted on my own server.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">An option would be to use MQTT to transport that data around.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Viewing the data…</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Can I write my own Looker connector pulling data from my server?</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Are there other MQTT-based or similar web-based stats pages I can reuse?</span></li>
- </ul>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">I’m not particularly interested in writing my own graphs, even though I’ve certainly done that.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">There are Linux packages that can pre-render graphs and I can expose them via ssl.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Can MQTT be used as either a transport mechanism, storage, or a data source?</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-17_bitbucket_ssh_host_key_migration.html">
-    <h2 class="post-title">2023-06-17 - BitBucket SSH Host Key Migration</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>What: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/blog/ssh-host-key-changes" style="color:inherit;text-decoration:inherit">https://bitbucket.org/blog/ssh-host-key-changes</a></span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Verify by running this command on each host:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">$ ssh git@bitbucket.org host_key_info</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&gt; You are using host key with fingerprint:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&gt; ssh-ed25519 SHA256:ybgmFkzwOSotHTHLJgHO0QN8L0xErw6vd0VhFA9m3SM</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">&gt; ecdsa-sha2-nistp256 SHA256:FC73VB6C4OQLSCrjEayhMp9UMxS97caD/Yyi2bhW/J0</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">ECDA or ED25519 are GOOD.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Got “Permission denied”?</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://confluence.atlassian.com/bbkb/permission-denied-publickey-302811860.html" style="color:inherit;text-decoration:inherit">https://confluence.atlassian.com/bbkb/permission-denied-publickey-302811860.html</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">⇒ This should happen for any machine where I did not load an SSH Key in my Bitbucket account. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">⇒ If I have an ssh-agent key, load it first.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">⇒ If I don’t expect to have ssh auth, then it’s fine. In this case, grep bitbucket ~/.ssh/known_hosts ⇒ vim ~/.ssh/known_hosts and remove any reference to bitbucket).</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">To accept the new host on a machine that needs git access:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">$ ssh-keygen -R bitbucket.org &amp;&amp; curl https://bitbucket.org/site/ssh &gt;&gt; ~/.ssh/known_hosts</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">then rerun the host_key_info cmd, access the key with “yes”, and repeat again to remove any duplicated host entry.</span></p>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-10_brace_yourself_google_analyt_941602d6.html">
-    <h2 class="post-title">2023-06-10 - Brace Yourself, Google Analytics 4 is Coming</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">No choice, GA is giving me more and more warnings about the incoming GA4 migration.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Tasks:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Build an exhaustive list of projects actually exporting to GA4.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Find how to send GA4 events from my bash scripts.</span></li>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Taking a reverse approach to that, the Stats Pages I look daily are:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The Randall Camera Access stats. Data comes from wazz.js.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">⇒ This seems like a good contender to learn the “official” JS API.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The Train Activation stats generated by Conductor.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">This uses ad-hoc URL pings.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">And also uses bash-based wget pings.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The Servers Ping stats. &nbsp;This uses bash-based wget pings.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">⇒ This seems like the best candidate to look for a wget alternative.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The Inkblot Access stats. This uses the official Flutter library.</span></li>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="text-align:left"><span>Migration guide: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/analytics/answer/10759417" style="color:inherit;text-decoration:inherit">https://support.google.com/analytics/answer/10759417</a></span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Universal Analytics (UA) is the old one.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Setup Assistant: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/analytics/answer/9744165" style="color:inherit;text-decoration:inherit">https://support.google.com/analytics/answer/9744165</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Account Structure: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/analytics/answer/9679158" style="color:inherit;text-decoration:inherit">https://support.google.com/analytics/answer/9679158</a></span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">UA structure: Account ⇒ N * Properties (e.g. website) ⇒ M * Views.</span></li>
-  <ul>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The Property number starts with UA-</span></li>
-  </ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">GA4 Structure: Account ⇒ N * Properties (e.g. website) ⇒ Data Streams.</span></li>
-  <ul>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">The property number is a long number.</span></li>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">Looks like GA4 numbers have already been created for each one.</span></li>
-  </ul>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Events are changing: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/analytics/answer/11091422" style="color:inherit;text-decoration:inherit">https://support.google.com/analytics/answer/11091422</a></span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">UA events have events category &gt; event action &gt; event label.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">GA4 events are firebase events: event name + event parameters.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">UA event action becomes the new GA4 event name</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">UA event category becomes a GA4 event custom parameter</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt">UA event label becomes a GA4 event custom parameter</span></li>
- </ul>
-</ul>
-<p style="height:12pt;text-align:left"></p>
-<p style="height:12pt;text-align:left"></p>
-<hr>
-<p style="height:12pt;text-align:left"></p>
+<p style="text-align:left"></p>
 
 
 </div>
