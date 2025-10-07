@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-10-07T14:28:50.59541-07:00</updated>
+<updated>2025-10-07T15:42:49.303518-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -14,7 +14,7 @@
 <category term="win" label="WIN"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I&#8217;ve had a couple people ask me about &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;upgrading to Windows 11&lt;/span&gt;&lt;span&gt;, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide..&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I&#8217;ve had a couple people ask me about &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;upgrading to Windows 11&lt;/span&gt;&lt;span&gt;, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.s0f9vqvfqf9v&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span&gt;What this is Not&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -407,7 +407,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-06T00:00:13-07:00</updated>
+<updated>2025-10-06T00:00:56-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
