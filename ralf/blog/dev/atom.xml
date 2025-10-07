@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-10-06T21:51:19.931343-07:00</updated>
+<updated>2025-10-06T22:14:19.41377-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="http://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="http://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>http://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -232,7 +232,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Now assuming the entire operation has worked, &#8220;diskpart&#8221; can clearly indicate whether the disk is in GTP partition style.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Final step: early we checked whether the BIOS Mode was &#8220;Legacy&#8221; or &#8220;UEFI&#8221;. That&#8217;s where it matters now. If the BIOS is still in &#8220;Legacy&#8221; mode, it won&#8217;t be able to boot off a GPT drive. It needs to be in the &#8220;UEFI&#8221; mode for that. So:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Final step: earlier, we checked whether the BIOS Mode was &#8220;Legacy&#8221; or &#8220;UEFI&#8221;. That&#8217;s where it matters now. If the BIOS is still in &#8220;Legacy&#8221; mode, it won&#8217;t be able to boot off a GPT drive. It needs to be in the &#8220;UEFI&#8221; mode for that. So:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Exit the Windows 10 repair mode.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Boot back into the BIOS.&lt;/span&gt;&lt;/li&gt;
@@ -262,7 +262,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The simplest way to force the install on Windows 11 on compatible hardware is to download the &#8220;Installation Assistant&#8221; from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/software-download/windows11&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.microsoft.com/en-us/software-download/windows11&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;and follow the steps.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;That&#8217;s it. No drama. You&#8217;re done.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Once in Windows 11, reconfigure the taskbar to something more decent.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Once in Windows 11, reconfigure the taskbar to something more decent (see below).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.n334yh881hp2&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt&quot;&gt;Windows 11 Install on an Intel 6th or 7th Gen CPU&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -297,7 +297,7 @@
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;BIOS &amp;gt; Security &amp;gt; Secure Boot &amp;gt; Disabled&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Valid the TPM using tpm.msc (Win-R) &#8658; TPM should be ready to use, with version 2.0.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Validate the TPM using tpm.msc (Win-R) &#8658; TPM should be ready to use, with version 2.0.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If needed, remember to enable it in the BIOS!&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;BIOS &amp;gt; Security &amp;gt; Security Chip &amp;gt; Intel PTT for a TPM 2.0.&lt;/span&gt;&lt;/li&gt;
@@ -343,13 +343,13 @@
  &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Eventually the setup will indicate the platform isn&#8217;t supported but still offer to continue. Just click &#8220;Accept&#8221; to continue.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;If instead you get an &#8220;unsupported CPU message&#8221; with no &#8220;Accept&#8221; option, double check the registry key for &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;exact&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;spelling (e.g. &#8220;Upgrades&#8221; plural) or case-sensitiveness and value 1. It&#8217;s easy to make a typo in that silly name and I&#8217;ve done it twice already.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;If instead you get an &#8220;unsupported CPU message&#8221; with no &#8220;Accept&#8221; option, double check the registry key for &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;exact&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;spelling (e.g. &#8220;Upgrades&#8221; plural) or case-sensitiveness and value 1. It&#8217;s easy to make a typo in that silly name; I&#8217;ve done so twice already.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The setup will proceed to install Windows 11, leaving all apps unchanged.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This part of the install takes an hour or two.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Once in Windows 11, reconfigure the taskbar to something more decent.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Once in Windows 11, reconfigure the taskbar to something more decent (see below).&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;And voila, a working in-place update to Windows 11.&lt;/span&gt;&lt;/p&gt;
@@ -359,7 +359,7 @@
 &lt;h2 id=&quot;h.rzhsurxt9q2&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt&quot;&gt;How to Make Windows 11 Instantly More Palatable&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Once you upgrade in-place from Windows 10 to Windows 11, you&#8217;ll realize that it&#8217;s after all mostly&#8230; the same thing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The only major change is that new taskbar, and it&#8217;s IMHO not a good default. It&#8217;s designed to be MacOS like. So here&#8217;s how to make it look like a good ol&#8217; Windows 10 taskbar:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The only major change is that new taskbar, and it&#8217;s IMHO not a good default. It&#8217;s designed to be MacOS-like. So here&#8217;s how to make it look like a good ol&#8217; Windows 10 taskbar:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Right click on Task bar &amp;gt; Taskbar Settings&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
@@ -406,7 +406,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-06T00:00:21-07:00</updated>
+<updated>2025-10-06T00:00:01-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
