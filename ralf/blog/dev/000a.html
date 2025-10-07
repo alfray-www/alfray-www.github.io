@@ -8,18 +8,18 @@
 
 <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
 
-<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/000a.html" />
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/000a.html" />
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="[win] d: t/dev/jadx … jadx-gui" />
+<meta property="og:description" content="Here’s an interesting problem in Cab v2:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="[win] d: t/dev/jadx … jadx-gui" />
+<meta name="twitter:description" content="Here’s an interesting problem in Cab v2:" />
 
 
 <title>R’alf Dev Log</title>
@@ -195,7 +195,7 @@ td p {
 <header class="blog-header">
 
     <div class="title-container">
-        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
         <a href="000a.html">R’alf Dev Log</a>
@@ -224,6 +224,60 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-05-02_dagger_and_libraries.html">
+    <h2 class="post-title">2020-05-02 - Dagger and Libraries</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s an interesting problem in Cab v2:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Main app: Main app component.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">WiThrottle library: Lib component.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The design I want is for the library to be an extension to the main app. The library provides components/modules that the main app can use and inject. The library itself cannot use anything from the app (since it is app-agnostic).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In terms of components/scopes: the library is the outer component, and the app is a sub-component of the library. The app can use elements provided by the library.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When using component dependencies, which one depends on which?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://proandroiddev.com/dagger-2-part-ii-custom-scopes-component-dependencies-subcomponents-697c1fa1cfc" style="color:inherit;text-decoration:inherit">https://proandroiddev.com/dagger-2-part-ii-custom-scopes-component-dependencies-subcomponents-697c1fa1cfc</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://proandroiddev.com/dagger-component-dependencies-for-library-development-e2df7ce68233" style="color:inherit;text-decoration:inherit">https://proandroiddev.com/dagger-component-dependencies-for-library-development-e2df7ce68233</a></span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I think that means the app component has a dependency on the lib component.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This seems to work with some caveats:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">@Singleton @Component AppComponent // dependencies = { LibComponent.class }</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Issue:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">At build time “dagger AppComponent scoped may not reference bindings with different scopes”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Two ways to fix that: either remove all scoping info from the dependencies component and everything provided; Can’t even be in the same @Singleton. Obviously that’s not right.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Both components can have and likely should have different scopes. However the “root” component must provide everything explicitly by using getters in the component.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">E.g.:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">@Component LibComponent {<br> &nbsp;ExportedType1 getExportedType1();<br> &nbsp;ExportedType2 getExportedType2();<br>}<br>Etc</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Module providers in the LibComponent are not exported to the dependent component unless explicitly stated that way. If something needs an explicit module provider, it also needs an “exporter” declaration in the component. If something is not explicitly exported by the root component, dagger will try to use the type as-is, notice the scope discrepancy and basically ask for either a different scope or an explicit provider if the object has no scope.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-04-29_jadx_apk_to_gradle_project.html">
     <h2 class="post-title">2020-04-29 - Jadx: APK to gradle project</h2>
@@ -568,65 +622,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-11-29_background_foreground_demo_a_95ed3307.html">
-    <h2 class="post-title">2019-11-29 - Background Foreground Demo Android App</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Just completed this yesterday, and it works as expected:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(In retrospect, I should have called the demo “fg-demo”).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First off, I’d say duplicating the job-demo project was easy and the way to go: dup the folder, remove app/build as well as anything excluded by gitconfig, then do a simple grep/sed on “job.demo”. The only 2 places where it was used was in the app name.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The demo uses a “startForegroundService”, a regular Service, and a “startForeground” from the onStartCommand of the service, with a notification. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The service is started when the activity is started/resumed. The service is only stopped when the stop button in the activity is explicitly used. The service itself runs a thread that updates a counter. The activity binds to the service to give a callback, used to update the counter on screen.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As this is both a “bound” service (for the activity) and a “started” service, it keeps running until it is both stopped and unbound from the UI.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are a few cases where the system may kill &amp; restart the service immediately.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which project make sense using that, and which do not?</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the past, I’ve been using background services for applications that:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Do some kind of system control and need to run in the background all the time.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Those that have expensive/complicated startup, for example with network connections to hold the update state.</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In these cases, it’s a bit wasteful to stop everything as soon as the user switches between apps.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a post-Android-O world, one should balance between this and using a JobService, or neither.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How would I use these for current, former, or future projects:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DccThrottle: Foreground service is a logical choice. User is expected to switch between apps, not lose control, and be able to change back immediately. Service only needs to be started once at least one engine is in command; stopped by asking for confirmation when trying to exit the app (or the double-back pattern).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RTAC: Background service is a logical choice, but not necessary. The app is supposed to be used in foreground. Instead it could just use an app singleton thread.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T3: JobService + AlarmManager.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bearing: This was using a background service before. The new version just uses an activity-centric update. State is lost/reconstructed when outside of the activity.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Follow up work:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change on-going notification to “App Blah is Running”.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change notification setting so that it does not beep at me (lower priority).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add 1 or 2 notification actions: “quit now” vs “open”.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Open would do what the current notification click does, bring the activity.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Quite would both stop the service and kill the app (or more exactly stop the activity if it’s open).</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -643,7 +638,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

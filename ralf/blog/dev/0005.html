@@ -8,18 +8,18 @@
 
 <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
 
-<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0005.html" />
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/0005.html" />
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="https://love2d.org/&nbsp;-- open source 2d game framework over Lua" />
+<meta property="og:description" content="I tried tmux a while ago, and didn’t like it, can’t remember why. Time to look at it again." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="https://love2d.org/&nbsp;-- open source 2d game framework over Lua" />
+<meta name="twitter:description" content="I tried tmux a while ago, and didn’t like it, can’t remember why. Time to look at it again." />
 
 
 <title>R’alf Dev Log</title>
@@ -195,7 +195,7 @@ td p {
 <header class="blog-header">
 
     <div class="title-container">
-        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
         <a href="0005.html">R’alf Dev Log</a>
@@ -224,6 +224,55 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-09-17_screen_alternative_tmux.html">
+    <h2 class="post-title">2022-09-17 - Screen Alternative: TMUX</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I tried tmux a while ago, and didn’t like it, can’t remember why. Time to look at it again.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let’s try it:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ sudo apt install tmux</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That does also require a few libs, libjpeg, lua (?!), etc.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now the test is that I’m going to run Screen from Portal, and then inside I have Tmux on PiR.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">[pir] $ tmux</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">[pir] $ tmux a &nbsp;| attach &nbsp;| &nbsp;attach-session&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# equivalent to -r -d </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">[pir] $ tmux list-sessions</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Tmux has “windows” and “panes”: a window contains 1 or more panes.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Contrary to screen, “split” creates a new “pane” with its own shell. I don’t see how to “bring” a different window pane into the current one like I do with screen.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Contrary to screen, re-attaching preserves the split panes in a window.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://tmuxcheatsheet.com/" style="color:inherit;text-decoration:inherit">https://tmuxcheatsheet.com/</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nesting screen in tmux in screen:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I have this setup: screen &gt; tmux &gt; screen. I know 😕</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ctrl-a + key for the first screen</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ctrl-b + key for the first tmux.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ctrl-a + a + key does send to the 2nd screen</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>That actually works well, and it’s better than nesting 3 screen sessions inside each other.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-08-31_android_kingdom_rush_td.html">
     <h2 class="post-title">2022-08-31 - Android Kingdom Rush TD</h2>
@@ -722,35 +771,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-05-11_google_i_o_2022.html">
-    <h2 class="post-title">2022-05-11 - Google I/O 2022</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Things to try: </span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jetpack Compose for Android UI (e.g. Timer app)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Flutter 3</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Google Cloud Run as an alternative to Amazon w/ React</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill could be a good subject to try the latest “Flutter 3 Casual Game Kit” thingy.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -767,7 +787,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

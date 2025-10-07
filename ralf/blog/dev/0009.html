@@ -8,18 +8,18 @@
 
 <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
 
-<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0009.html" />
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/0009.html" />
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Currently Asqare is totally off Google Play due to an injection vulnerability in the SQL code handling the score saves. The issue is rather irrelevant, but the automated Play tools don’t care and backlisted the app years ago." />
+<meta property="og:description" content="Would a rig4 reboot be a good target for Rust?" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Currently Asqare is totally off Google Play due to an injection vulnerability in the SQL code handling the score saves. The issue is rather irrelevant, but the automated Play tools don’t care and backlisted the app years ago." />
+<meta name="twitter:description" content="Would a rig4 reboot be a good target for Rust?" />
 
 
 <title>R’alf Dev Log</title>
@@ -195,7 +195,7 @@ td p {
 <header class="blog-header">
 
     <div class="title-container">
-        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
         <a href="0009.html">R’alf Dev Log</a>
@@ -224,6 +224,49 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-08-30_rig4_rust_.html">
+    <h2 class="post-title">2020-08-30 - Rig4 Rust?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Would a rig4 reboot be a good target for Rust?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Rust and Google drive api: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/google-drive3/1.0.14+20200618/google_drive3/" style="color:inherit;text-decoration:inherit">https://docs.rs/google-drive3/1.0.14+20200618/google_drive3/</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Rust and html soup parsing: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/scraper/0.12.0/scraper/" style="color:inherit;text-decoration:inherit">https://docs.rs/scraper/0.12.0/scraper/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;and some more references.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A real reboot needs to focus on 2 different issues:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The GDrive api to fetch docs is slow as molasses. It would make sense to separate this process, e.g. download and cache locally. The obvious issue is that fetching a doc requires parsing it to find its dependencies.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">More robust sanitizing of that drive html into rig 3 syntax.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The tree parser and generator.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The focus here should be on caching to avoid fetching from drive as much as possible.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other focus is on parsing that html and stripping it even more than I do now.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There could be 2 tools:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4 docs downloader that takes drive docs, the index, the blogs, and generates local rig4 files, updating assets when needed.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4 generator that only works locally.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-08-30_asqare.html">
     <h2 class="post-title">2020-08-30 - Asqare</h2>
@@ -571,60 +614,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-05-02_dagger_and_libraries.html">
-    <h2 class="post-title">2020-05-02 - Dagger and Libraries</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s an interesting problem in Cab v2:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Main app: Main app component.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">WiThrottle library: Lib component.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The design I want is for the library to be an extension to the main app. The library provides components/modules that the main app can use and inject. The library itself cannot use anything from the app (since it is app-agnostic).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In terms of components/scopes: the library is the outer component, and the app is a sub-component of the library. The app can use elements provided by the library.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When using component dependencies, which one depends on which?</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://proandroiddev.com/dagger-2-part-ii-custom-scopes-component-dependencies-subcomponents-697c1fa1cfc" style="color:inherit;text-decoration:inherit">https://proandroiddev.com/dagger-2-part-ii-custom-scopes-component-dependencies-subcomponents-697c1fa1cfc</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://proandroiddev.com/dagger-component-dependencies-for-library-development-e2df7ce68233" style="color:inherit;text-decoration:inherit">https://proandroiddev.com/dagger-component-dependencies-for-library-development-e2df7ce68233</a></span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I think that means the app component has a dependency on the lib component.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This seems to work with some caveats:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">@Singleton @Component AppComponent // dependencies = { LibComponent.class }</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Issue:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">At build time “dagger AppComponent scoped may not reference bindings with different scopes”.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Two ways to fix that: either remove all scoping info from the dependencies component and everything provided; Can’t even be in the same @Singleton. Obviously that’s not right.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Both components can have and likely should have different scopes. However the “root” component must provide everything explicitly by using getters in the component.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">E.g.:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">@Component LibComponent {<br> &nbsp;ExportedType1 getExportedType1();<br> &nbsp;ExportedType2 getExportedType2();<br>}<br>Etc</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Module providers in the LibComponent are not exported to the dependent component unless explicitly stated that way. If something needs an explicit module provider, it also needs an “exporter” declaration in the component. If something is not explicitly exported by the root component, dagger will try to use the type as-is, notice the scope discrepancy and basically ask for either a different scope or an explicit provider if the object has no scope.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -641,7 +630,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

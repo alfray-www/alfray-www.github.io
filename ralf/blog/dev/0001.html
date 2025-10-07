@@ -8,18 +8,18 @@
 
 <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
 
-<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0001.html" />
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/0001.html" />
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Recently I’ve started two game projects at home, none of which are in a good enough state to be published. One of them is TD1 which I’ve discussed here in the previous years, and I finally built a prototype, originally to have a concrete way to explore the issues in a specific defense-vs-attack gameplay. There were some interesting challenges. Then I’ve discussed that with some friends. Now that this is done, I have had little motivation to actually implement the discussed gameplay changes. Instead I have thoughts on other projects." />
+<meta property="og:description" content="Another month, another problem… I’ll spare you 2 days of internal discussion and I’ll just summarize it in one sentence:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Recently I’ve started two game projects at home, none of which are in a good enough state to be published. One of them is TD1 which I’ve discussed here in the previous years, and I finally built a prototype, originally to have a concrete way to explore the issues in a specific defense-vs-attack gameplay. There were some interesting challenges. Then I’ve discussed that with some friends. Now that this is done, I have had little motivation to actually implement the discussed gameplay changes. Instead I have thoughts on other projects." />
+<meta name="twitter:description" content="Another month, another problem… I’ll spare you 2 days of internal discussion and I’ll just summarize it in one sentence:" />
 
 
 <title>R’alf Dev Log</title>
@@ -195,7 +195,7 @@ td p {
 <header class="blog-header">
 
     <div class="title-container">
-        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
         <a href="0001.html">R’alf Dev Log</a>
@@ -224,6 +224,32 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-01-29_moving_again_.html">
+    <h2 class="post-title">2025-01-29 - Moving Again…</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Another month, another problem… I’ll spare you 2 days of internal discussion and I’ll just summarize it in one sentence:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I pretty much have decided to move all my open source repositories from BitBucket to GitHub.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Historically I had all my code on Google Code. When that service shut down, a lot of folks went to GitHub and I had my reservations about that service. Instead I chose BitBucket. I still have some philosophical issues with GitHub, but right now I have even more of them with BitBucket so… a lengthy migration is in order.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2025-01-06_motivation_to_write_games.html">
     <h2 class="post-title">2025-01-06 - Motivation to Write Games</h2>
@@ -610,46 +636,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2024-04-28_conductor_and_java_1_8_vs_java_11.html">
-    <h2 class="post-title">2024-04-28 - Conductor and Java 1.8 vs Java 11</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A few months ago I updated the Conductor project to new libraries, notably switching to Kotlin DSL 1.9. That made building with Java 11 a requirement.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In turn, that broke the way the Kotlin DSL is loaded under JMRI. I’m not sure why.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So fine, I reverted the Gradle files to a “Java 1_8” compatibility mode, and reverted to the older Kotlin DSL 1.6. This works fine when building the fat JAR, but it fails when trying to run the tests. It works fine when I actually build with a Java 1.8 JDK instead.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>When building with Java 11 and running the tests, I get this cryptic gradle error: “</span><span style="font-style:italic">Incompatible because this component declares an API of a component and the consumer needed a runtime of a component</span><span style="font-family:&quot;Roboto Mono&quot;">”</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To be clear, the “build” part works. I get the fatJAR just fine. It’s the testing that fails, and only when doing it from Gradle on the command line. In IJ, I get the same behavior by selecting Conductor &gt; All Tests on the root project.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I should try to replicate it with the gradle --info flag to see if that gives me more details on what is really breaking.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Another limitation is that only LibUtils v2 works with Java 1.8. LibUtils v3 already has Mockito dependencies that require Java 11.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But that seems all academic anyway. What I really want is to build with a Java 11 compatibility target since at this point even JMRI requires 11.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Then once I get that working, I need to retry with Kotlin DSL 1.9.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing for sure is from now on, when updating, I need to account for these scenarios:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Testing does not work the same way under IJ or under command-line Gradle.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Kotlin DSL loading does not work the same in standalone (simulator) vs from JMRI.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -666,7 +652,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

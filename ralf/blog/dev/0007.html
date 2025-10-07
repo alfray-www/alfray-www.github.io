@@ -8,19 +8,19 @@
 
 <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
 
-<meta property="og:url"         content="http://www.alfray.com/ralf/blog/dev/0007.html" />
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/0007.html" />
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I feel like a case of deja vu so I need to write this down." />
-<meta property="og:image"       content="http://www.alfray.com/ralf/blog/dev/img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" />
+<meta property="og:description" content="Now that we have a basic “marked locations” list in B3, it’s time to review the UI and adjust." />
+
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I feel like a case of deja vu so I need to write this down." />
-<meta name="twitter:image"       content="http://www.alfray.com/ralf/blog/dev/img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" />
+<meta name="twitter:description" content="Now that we have a basic “marked locations” list in B3, it’s time to review the UI and adjust." />
+
 
 <title>R’alf Dev Log</title>
 
@@ -195,7 +195,7 @@ td p {
 <header class="blog-header">
 
     <div class="title-container">
-        <a href="http://www.alfray.com/ralf/">Ralf's Home Page</a>
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
         
         /
         <a href="0007.html">R’alf Dev Log</a>
@@ -224,6 +224,57 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-18_bearing_b3_features.html">
+    <h2 class="post-title">2021-08-18 - Bearing B3 Features</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now that we have a basic “marked locations” list in B3, it’s time to review the UI and adjust.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The goal was to do it in Kotlin, and that’s been done. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One issue was the “Marked Locations” wording, which seems problematic. Isn’t there something better… “waypoints” seem like a better name.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So let’s do a few changes:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Vocabulary:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A “Location” is just a raw GPS location coordinate (latitude + longitude).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A “Waypoint” is a location coordinate combined with a name.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Screen “Marked Locations” ⇒ “Waypoints”</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Marked Location” ⇒ “Selected Waypoint”</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Location N” ⇒ “Waypoint N”</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rename class Mark to Waypoint / Waypoints / WaypointsAdapter.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Screen “Compass”</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Marked Location” ⇒ “Target Location”</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(that should make it more obvious it’s the target of the bearing)</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Menu Recall / Edit ⇒ keep as-is for now.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We’ll keep the wording as “Location” (Target vs GPS) in the Compass screen.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-08-11_android_testing_androidx_and_7a1dff4e.html">
     <h2 class="post-title">2021-08-11 - Android Testing : AndroidX “AndroidJUnit4” vs Robolectric</h2>
@@ -685,33 +736,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-11-25_blinking_led_-_astable_trans_c141203b.html">
-    <h2 class="post-title">2020-11-25 - Blinking LED - Astable transistor/555 approach</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Another surely doomed attempt using an RC and a transistor. As expected, it did not work.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Although it is inherently flawed, I’ll put it here:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:407.00px"><img alt="" src="img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Transistor is a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" style="color:inherit;text-decoration:inherit">2N3904</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This obviously does create a delay starting the LED. Then there’s nothing to stop it. The futile idea was to add a second transistor between “ground” and the battery minus side to cut the circuit. Problem is that there’s nothing here that would generate something suitable to trigger it. Something like this:</span></p>
-<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
-
-<a href="2020-11-25_blinking_led_-_astable_trans_c141203b.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -728,7 +752,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-06 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
