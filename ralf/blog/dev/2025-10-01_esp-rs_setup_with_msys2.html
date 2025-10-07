@@ -226,12 +226,13 @@ td p {
     <div class="post-title-container"><h2 class="post-title">2025-10-01 - ESP-RS: Setup with MSYS2</h2>
     <span class="post-cat" title="Category">
             <span class="post-cat-label">Category</span>
-            <span class="post-cat-text">DEV</span>
+            <span class="post-cat-text">Esp32</span>
     </span>
     </div>
 
 
-    <p style="text-align:left"></p>
+    <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Since I’ve installed Rust for my exploratory ESP32 project twice already on different machines, I decided to actually write down my install instructions. There are a couple tricks I need to remember.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>These steps are for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.msys2.org/" style="color:inherit;text-decoration:inherit">MSYS2</a></span><span>&nbsp;on Windows. I used similar steps on my other box where I use my old fashioned </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.cygwin.com/" style="color:inherit;text-decoration:inherit">Cygwin</a></span><span style="font-family:&quot;Roboto Mono&quot;">. Part of these instructions also work with PowerShell if you hate yourself that much.</span></p>
@@ -270,7 +271,7 @@ td p {
 <p style="text-align:left"><span>At that point, we </span><span style="font-style:italic">could</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;build a project, except that it will fail.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The first “cargo build” or “cargo run” we’ll do with an “esp-idf-sys” crate is going to perform an entire checkout of the ESP-IDF toolchain (complete with its own Python env, etc) and build it locally. That will take an extra 3.8 GB once it succeeds, except it will never succeed at first. The main issue is that the ESP-IDF build generates paths which are much longer than what the Windows shell can support. So read below before trying to build.</span></p>
-<h2 id="h.duq1jte1il0o" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Customize the ESP-IDF Toolchain Location</span></h2>
+<h2 id="h.duq1jte1il0o" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Customize the ESP-IDF Toolchain Location</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">By default, “cargo build” will generate a “.embuild” folder in the current project directory, and proceed to perform an entire git checkout of the ESP-IDF toolchain in there and build it. This build has very long paths, and it happens in your own development folder that itself can have fairly long paths. The result is a failure due to the path being longer than Windows can deal with.</span></p>
 <p style="text-align:left"></p>
@@ -291,7 +292,7 @@ td p {
 </ul>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>For my use case, one advantage of “global” is that if you have multiple projects, they will share the same ESP-IDF install. That directly has one sub-dir per ESP-IDF version. Thus I allocate only 3.8 GB for that ESP-IDF install globally instead of per-project.</span></p>
-<h2 id="h.ut0el3leuuww" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Enable Win32 Long Path Supports</span></h2>
+<h2 id="h.ut0el3leuuww" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Enable Win32 Long Path Supports</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This MUST be enabled or the ESP-IDF install will fail:</span></p>
 <ul style="margin:0">
@@ -302,7 +303,7 @@ td p {
 </ul>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I don’t know why modern Windows installs don’t just enable this by default. There’s no downside to having the long path support AFAIK.</span></p>
-<h2 id="h.zijglj2y3d67" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">PowerShell: Check Python with PowerShell</span></h2>
+<h2 id="h.zijglj2y3d67" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">PowerShell: Check Python with PowerShell</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The PowerShell build first failed because “Python.exe” could not be found.</span></p>
 <p style="text-align:left"></p>
@@ -315,14 +316,14 @@ td p {
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Check it’s available in PowerShell:</span></p>
 <p style="text-align:left"></p>
 <p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; python --version<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python 3.11.2</span></p>
-<h2 id="h.jpflihazd8f4" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">PowerShell: Allow to Execute Scripts</span></h2>
+<h2 id="h.jpflihazd8f4" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">PowerShell: Allow to Execute Scripts</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>Open PowerShell and run this command </span><span style="font-family:&quot;Roboto Mono&quot;">once to allow execution of the ps1 script:</span></p>
 <p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">&gt; Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted </span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now we can run the script to change the PATH:</span></p>
 <p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">&gt; C:\Users\$Env:USERNAME\export-esp.ps1</span></p>
-<h2 id="h.px40ocev4u06" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Build esp-idf-sys Once with PowerShell</span></h2>
+<h2 id="h.px40ocev4u06" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Build esp-idf-sys Once with PowerShell</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>Although I want to use MSYS2 later, the first build of the “esp-idf-sys” crate is special. It performs an entire git checkout of the ESP-IDF toolchain and builds many of the tools once. I found that this step worked with Cygwin yet it always failed with MSYS2 due to a path style mismatch. The solution is to build the project </span><span style="font-style:italic">once</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;with PowerShell, then we can use the regular MSYS2 for followup builds.</span></p>
 <p style="text-align:left"></p>

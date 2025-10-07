@@ -226,16 +226,17 @@ td p {
     <div class="post-title-container"><h2 class="post-title">2025-10-02 - Rust Tasks, Threads, Synchronization in ESP-RS</h2>
     <span class="post-cat" title="Category">
             <span class="post-cat-label">Category</span>
-            <span class="post-cat-text">DEV</span>
+            <span class="post-cat-text">Rust</span>
     </span>
     </div>
 
 
-    <p style="text-align:left"></p>
+    <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span>Some notes on how to perform basic Tasks, Threads, Synchronization functions using Rust with ESP-RS. </span><span style="font-family:&quot;Roboto Mono&quot;">And to clarify, by “ESP-RS”, I mean the “std” mode built around the esp-idf-sys/svc/hal crates.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>This isn’t meant to be used as a canonical guide. Most of these are just a quick reminder for myself when I need something so that I don’t need to re-read the docs every time. So basically that only covers stuff I know </span><span style="font-style:italic">I</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;would need. I’m not pretending to be exhaustive here. And since I’m a newbie in Rust, I’m not pretending to be right either. Do your own due diligence by reading the official docs.</span></p>
-<h2 id="h.4gzppor3shk5" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Tasks &amp; Threads</span></h2>
+<h2 id="h.4gzppor3shk5" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Tasks &amp; Threads</span></h2>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The canonical example is in this ThreadSpawnConfiguration example:</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/esp-rs/esp-idf-hal/issues/228#issuecomment-1492483018" style="color:inherit;text-decoration:inherit">https://github.com/esp-rs/esp-idf-hal/issues/228#issuecomment-1492483018</a></span></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
@@ -270,7 +271,7 @@ td p {
 </ul>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
-<h2 id="h.fcbgcsg8sq5s" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Thread Sleep</span></h2>
+<h2 id="h.fcbgcsg8sq5s" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Thread Sleep</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That one is fairly easy:</span></p>
 <p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">thread::sleep(std::time::Duration::from_millis(500));</span></p>
@@ -280,7 +281,7 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Of note, the “sdkconfig.defaults” file can define a constant to change the frequency of the FreeRTOS timer. The file indicates the default frequency is 100 Hz, which translates to a 10 ms precision at most in the “delay_ms()” calls. It can be changed to 1000 Hz if a millisecond precision is needed.</span></p>
 <p style="text-align:left"></p>
-<h2 id="h.v36f1p7kaguh" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Channel: “mpsc::channel”</span></h2>
+<h2 id="h.v36f1p7kaguh" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Channel: “mpsc::channel”</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“mpsc” stands for Multiple Producer → Single Consumer. That says it all.</span></p>
 <p style="text-align:left"></p>
@@ -290,7 +291,7 @@ td p {
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For a bidirectional exchange, two channels are used.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are “Channels” and “Sync Channels”. The former is an unlimited queue, the latter is a bounded queue with blocking semantics.</span></p>
 <p style="text-align:left"></p>
-<h2 id="h.ro8dwdrhvw1h" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Classic Mutex</span></h2>
+<h2 id="h.ro8dwdrhvw1h" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Classic Mutex</span></h2>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Usage:</span></p>
 <p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">use std::sync::{Arc, Mutex};<br>let shared_data = Arc::new(Mutex::new(SharedData { … } ));<br>let shared_data2 = Arc::clone(&amp;shared_data);<br><br>// in one thread:<br>{<br> &nbsp; &nbsp;let mut data = shared_data.lock().unwrap();<br> &nbsp; &nbsp;// exiting the scope releases the lock<br>}<br><br>// in another thread:<br>{<br> &nbsp; &nbsp;let mut data = shared_data2.lock().unwrap();<br> &nbsp; &nbsp;// exiting the scope releases the lock<br>}</span></p>
 <p style="text-align:left"></p>
@@ -301,7 +302,7 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>I was expecting the Mutex to have get/set methods… and actually it does have a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html#method.set" style="color:inherit;text-decoration:inherit">Mutex.set</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;method but I don’t see it used: Mutex implements the “Deref” trait (a.k.a. *foo), and it seems the normal idiom is to access the underlying object as “*mutex_guard” directly instead of using the get/set methods on the Mutex itself.</span></p>
 <p style="text-align:left"></p>
-<h2 id="h.xpjawtnl9us0" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Wait barrier: Condvar</span></h2>
+<h2 id="h.xpjawtnl9us0" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Wait barrier: Condvar</span></h2>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Usage:</span></p>
 <p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">use std::sync::{Arc, Mutex, Condvar};<br>let pair = Arc::new((Mutex::new(false), Condvar::new()));<br>let pair2 = pair.clone();<br><br>// in one thread:<br>let (lock, cvar) = &amp;*pair;<br>let mut started = lock.lock().unwrap();<br>*started = true;<br>cvar.notify_one();<br><br>// in another thread:<br>let (lock, cvar) = &amp;*pair2;<br>let mut started = lock.lock().unwrap();<br>while (!*started) {<br> &nbsp; &nbsp;started = cvar.wait_while(started, |&amp;mut started| !started).unwrap();<br>}</span></p>
 <p style="text-align:left"></p>
@@ -314,7 +315,7 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note how we have “started” vs “*started” above: the Mutex lock returns a “MutexGuard” object. So “started” isn’t really a Mutex object. It’s a “MutexGuard” and it implements Deref (*foo) to access the underlying object protected by the mutex. That kind of subtlety is going to bite me every time.</span></p>
 <p style="text-align:left"></p>
-<h2 id="h.3rfpv5vd2dhq" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">static_cell ⇒ OnceLock ⇒ LazyLock</span></h2>
+<h2 id="h.3rfpv5vd2dhq" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">static_cell ⇒ OnceLock ⇒ LazyLock</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">These are crates that define data as “static” (program’s lifetime) so Arc is not needed to share the references; however Mutex is needed to lock the data access.</span></p>
 <p style="text-align:left"></p>
@@ -324,13 +325,13 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>LazyLock is similar but the value is not initialized until it’s first used. The static creator takes a lambda to initialize the value the first time it’s used. LazyLock is “easier” to use if one needs to create and set a value all at once (OnceLock requires separate calls). Downside: the LazyLock init must be a </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">lambda</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;closure that does not have any function-local captures (the error was that the capture must have a lifetime "greater than static”, which is of course impossible, isn’t it?)</span></p>
 <p style="text-align:left"></p>
-<h2 id="h.ldtzwrvndwdz" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt">Sharing a Simple Counter</span></h2>
+<h2 id="h.ldtzwrvndwdz" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Sharing a Simple Counter</span></h2>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-style:italic">A marine walks into a bar and asks “Where’s my counter?”</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;🤣</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let’s say a thread needs to export a counter and another thread needs to read it.</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">Option 1 is to use LazyLock</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<h3 id="h.nmy01kph75q" style="padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left"><span>Option 1 is to use LazyLock:</span></h3>
 <p style="text-align:left"></p>
 <p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">static COUNTER: LazyLock&lt;Mutex&lt;i32&gt;&gt; = LazyLock::new(|| Mutex::new(0));<br>fn increment_counter() {<br> &nbsp; &nbsp;let mut num = COUNTER.lock().unwrap();<br> &nbsp; &nbsp;*num += 1;<br>}</span></p>
 <p style="text-align:left"></p>
@@ -338,7 +339,7 @@ td p {
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">LazyLock is nice as it exposes the value as “just a &amp;T” so it’s easy to use: the user automatically locks and gets the object in the scope, and the lock is released when the scope ends.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">Option 2 is to use an Atomic type</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<h3 id="h.2ztb5mxm3kl3" style="padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left"><span style="font-weight:700">Option 2 is to use an Atomic type</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;font-weight:700">:</span></h3>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For stuff as simple as an i32, there’s an atomic object just for that:</span></p>
 <p style="text-align:left"></p>
