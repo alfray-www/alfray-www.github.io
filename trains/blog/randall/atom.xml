@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-09-11T03:00:21.574988-07:00</updated>
+<updated>2025-10-08T03:00:24.077033-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
-<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-05cc7b2">Rig4j</generator>
+<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-f3ee0b3">Rig4j</generator>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Dashboard Update</title>
