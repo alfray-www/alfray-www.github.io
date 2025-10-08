@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-10-07T15:42:49.303518-07:00</updated>
+<updated>2025-10-07T23:40:03.111752-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -411,11 +411,13 @@
 </entry>
 <entry>
 <author><name>Ralf</name></author>
-<title type="html">The Broken Promise of Rust for ESP-RS vs. ESP-IDF</title>
-<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-10-04_the_broken_promise_of_rust_f_d81d3911.html"/>
-<id>https://www.alfray.com/ralf/blog/dev/2025-10-04_the_broken_promise_of_rust_f_d81d3911.html</id>
+<title type="html">The Broken Hype of Rust for ESP-RS with ESP-IDF</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-10-04_the_broken_hype_of_rust_for__69e8f2db.html"/>
+<id>https://www.alfray.com/ralf/blog/dev/2025-10-04_the_broken_hype_of_rust_for__69e8f2db.html</id>
 <category term="rust" label="Rust"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;The hype: &#8220;Rust is safer than C++&#8221;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;At that point in my early ESP-RS experimentation, I want to address an important point about stability. &amp;nbsp;And to clarify, by &#8220;ESP-RS&#8221;, I mean the &#8220;std&#8221; mode built around the esp-idf-sys/svc/hal crates.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -424,9 +426,12 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;My experience with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/labs/apps/tangram/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Tangram rgen&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;supported that.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The experience with ESP-RS here however does not match expectations. One little mishap in an ESP-IDF call&#8230; sneeze and the entire framework crashes.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For example, trying to initialize the EspMQTT client before the ESP wifi has connected didn&apos;t just fail -- it rebooted the entire ESP32.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For example, trying to initialize the EspMQTT client before the EspWifi has connected didn&apos;t just fail -- it rebooted the entire ESP32.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The reality is that ESP-RS is essentially a ton of unsafe wrappers directly around the C ESP-IDF stack. And the ESP-IDF is generally quite touchy. For all its promises of type and memory safety, ESP-RS doesn&apos;t save us from that.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The reality is that ESP-RS &#8220;std&#8221; with the esp-idf-sys/svc/hal crates is essentially a ton of unsafe wrappers directly around the C ESP-IDF stack. And the ESP-IDF is generally quite touchy. For all its promises of type and memory safety, ESP-RS doesn&apos;t save us from that.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;It&#8217;s all ESP-IDF and FreeRTOS&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;OTOH, I find the ESP-IDF to be generally predictable. Once things work, they do without surprise. I don&#8217;t have a problem with APIs blowing up predictably during development and giving me a chance to notice newbie mistakes early and taking care of them upfront.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -435,9 +440,21 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Case in point in this case, we have FreeRTOS tasks for std::threads, ESP Wifi, ESP MQTT, etc., and supporting the ESP32 Camera is done directly as an ESP-IDF component right there in the ESP-RS project. It&#8217;s all working quite well. Still, we need to remind ourselves that for all that hype about how Rust is so magically superior to C/C++ (hype that I do not really buy into, in case it&#8217;s not already obvious), ESP-RS is just a bunch of fancy and sometimes way overkill wrappers around a C API with multi-core multi-thread complexity to deal with.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;A Comparison Matrix&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Here&#8217;s my guide to select the proper toolchain for my own projects:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If performance does not matter, MicroPython is the easiest way to go (or CircuitPython on any modern Adafruit board).&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If performance and space matters, C++20 with the ESP-IDF 5 toolchain is the proper way to go.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If performance and ease of programming matters, Rust with ESP-RS in &#8220;std&#8221; mode with the esp-idf-sys/svc/hal crates is a trade off, at the expense of a larger memory footprint.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The build size for a basic &#8220;blinky&#8221; project using ESP-IDF-HAL is around 700 kB (dev mode) on an ESP32-CAM. Add ESP Wifi and ESP MQTT, and that project&#8217;s build goes up to a whopping 1500 kB. That&#8217;s half the 3 MB flash partition available on an ESP32-CAM.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-04T00:00:00-07:00</updated>
+<updated>2025-10-04T00:00:30-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

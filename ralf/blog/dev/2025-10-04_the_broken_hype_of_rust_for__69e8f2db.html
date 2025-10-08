@@ -8,18 +8,18 @@
 
 <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
 
-<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/2025-10-04_the_broken_promise_of_rust_f_d81d3911.html" />
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/2025-10-04_the_broken_hype_of_rust_for__69e8f2db.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="The Broken Promise of Rust for ESP-RS vs. ESP-IDF" />
+<meta property="og:title"       content="The Broken Hype of Rust for ESP-RS with ESP-IDF" />
 
-<meta property="og:description" content="At that point in my early ESP-RS experimentation, I want to address an important point about stability. &nbsp;And to clarify, by “ESP-RS”, I mean the “std” mode built around the esp-idf-sys/svc/hal crates." />
+<meta property="og:description" content="The hype: “Rust is safer than C++”" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
-<meta name="twitter:title"       content="The Broken Promise of Rust for ESP-RS vs. ESP-IDF" />
+<meta name="twitter:title"       content="The Broken Hype of Rust for ESP-RS with ESP-IDF" />
 
-<meta name="twitter:description" content="At that point in my early ESP-RS experimentation, I want to address an important point about stability. &nbsp;And to clarify, by “ESP-RS”, I mean the “std” mode built around the esp-idf-sys/svc/hal crates." />
+<meta name="twitter:description" content="The hype: “Rust is safer than C++”" />
 
 
 <title>R’alf Dev Log</title>
@@ -223,7 +223,7 @@ td p {
 
 
     <div class="post-container">
-    <div class="post-title-container"><h2 class="post-title">2025-10-04 - The Broken Promise of Rust for ESP-RS vs. ESP-IDF</h2>
+    <div class="post-title-container"><h2 class="post-title">2025-10-04 - The Broken Hype of Rust for ESP-RS with ESP-IDF</h2>
     <span class="post-cat" title="Category">
             <span class="post-cat-label">Category</span>
             <span class="post-cat-text">Rust</span>
@@ -233,6 +233,8 @@ td p {
 
     <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
 <p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">The hype: “Rust is safer than C++”</span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">At that point in my early ESP-RS experimentation, I want to address an important point about stability. &nbsp;And to clarify, by “ESP-RS”, I mean the “std” mode built around the esp-idf-sys/svc/hal crates.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One of the arguments for Rust over C++ is a stronger memory management with clear memory ownership. Allegedly that's supposed to translate into better stability, avoiding the typical C/C++ crashes when memory references are improperly used. </span></p>
@@ -240,15 +242,30 @@ td p {
 <p style="text-align:left"><span>My experience with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/tangram/" style="color:inherit;text-decoration:inherit">Tangram rgen</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;supported that.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The experience with ESP-RS here however does not match expectations. One little mishap in an ESP-IDF call… sneeze and the entire framework crashes.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example, trying to initialize the EspMQTT client before the ESP wifi has connected didn't just fail -- it rebooted the entire ESP32.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example, trying to initialize the EspMQTT client before the EspWifi has connected didn't just fail -- it rebooted the entire ESP32.</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The reality is that ESP-RS is essentially a ton of unsafe wrappers directly around the C ESP-IDF stack. And the ESP-IDF is generally quite touchy. For all its promises of type and memory safety, ESP-RS doesn't save us from that.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The reality is that ESP-RS “std” with the esp-idf-sys/svc/hal crates is essentially a ton of unsafe wrappers directly around the C ESP-IDF stack. And the ESP-IDF is generally quite touchy. For all its promises of type and memory safety, ESP-RS doesn't save us from that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">It’s all ESP-IDF and FreeRTOS</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OTOH, I find the ESP-IDF to be generally predictable. Once things work, they do without surprise. I don’t have a problem with APIs blowing up predictably during development and giving me a chance to notice newbie mistakes early and taking care of them upfront.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Since I discovered the ESP32 platform 7 years ago, I preferred it over the Arduino platform. I’ve experimented with the “raw” ESP-IDF toolchain yet I rarely use it directly -- instead it’s been a backbone for something else like the Arduino platform, or the MicroPython/CircuitPython platform, and in the current case for the ESP-RS platform. Still, I’m more familiar with the ESP-IDF modules and don’t mind the mix and match, especially knowing that I can just directly call into ESP-IDF or FreeRTOS functions at any time.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Case in point in this case, we have FreeRTOS tasks for std::threads, ESP Wifi, ESP MQTT, etc., and supporting the ESP32 Camera is done directly as an ESP-IDF component right there in the ESP-RS project. It’s all working quite well. Still, we need to remind ourselves that for all that hype about how Rust is so magically superior to C/C++ (hype that I do not really buy into, in case it’s not already obvious), ESP-RS is just a bunch of fancy and sometimes way overkill wrappers around a C API with multi-core multi-thread complexity to deal with.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">A Comparison Matrix</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s my guide to select the proper toolchain for my own projects:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If performance does not matter, MicroPython is the easiest way to go (or CircuitPython on any modern Adafruit board).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If performance and space matters, C++20 with the ESP-IDF 5 toolchain is the proper way to go.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If performance and ease of programming matters, Rust with ESP-RS in “std” mode with the esp-idf-sys/svc/hal crates is a trade off, at the expense of a larger memory footprint.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The build size for a basic “blinky” project using ESP-IDF-HAL is around 700 kB (dev mode) on an ESP32-CAM. Add ESP Wifi and ESP MQTT, and that project’s build goes up to a whopping 1500 kB. That’s half the 3 MB flash partition available on an ESP32-CAM.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
 <hr>
