@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I tried tmux a while ago, and didn’t like it, can’t remember why. Time to look at it again." />
+<meta property="og:description" content="Time to look at the ESP32-CAM to create a Software Defined Block solution again. This time I can use it at home first, then apply to Randall." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I tried tmux a while ago, and didn’t like it, can’t remember why. Time to look at it again." />
+<meta name="twitter:description" content="Time to look at the ESP32-CAM to create a Software Defined Block solution again. This time I can use it at home first, then apply to Randall." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,36 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-11-13_software_defined_blocks.html">
+    <h2 class="post-title">2022-11-13 - Software Defined Blocks</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Time to look at the ESP32-CAM to create a Software Defined Block solution again. This time I can use it at home first, then apply to Randall.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This was the rationale behind the ESP32-CAM Grade Crossing controller.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Coding the ESP32 as I wanted in C++ was a bit of PITA and thus I started looking at alternatives, namely Rust would seem appropriate for that task. There’s now more embedded Rust for ESP32 than 2 years ago so that’s good.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OTOH a goal would be to use OpenCV and I don’t think there’s a good solution there. Preliminary research shows either OpenCV-for-Rust /or/ OpenCV-for-ESP32, but not sure there are libs for OpenCV-for-Rust-for-ESP32 yet.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also to be honest, I’m not a big fan of Rust. I’m not super familiar with Rust so that may cause more problems than it would solve. “What would I expect from Rust” is the essential question. The answer is clear pointers/memory ownership especially in the context of multi-threading. From my cursory trying of Rust, it does solve the problem of “clarifying” at compile phase that memory management is sound. The syntax is a pile of crap, though.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-09-17_screen_alternative_tmux.html">
     <h2 class="post-title">2022-09-17 - Screen Alternative: TMUX</h2>
@@ -664,115 +694,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-05-11_updating_android_apps.html">
-    <h2 class="post-title">2022-05-11 - Updating Android Apps</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The new google play mandate is that apps must somewhat follow the latest API level, or risk getting booted out of the store after a certain delay.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/google/play/requirements/target-sdk" style="color:inherit;text-decoration:inherit">https://developer.android.com/google/play/requirements/target-sdk</a></span></p>
-<p style="text-align:left"><span>“</span><span style="font-weight:700">Starting in November 2022, app updates must target API level 31 or above and adjust for behavioral changes in Android 12;</span><span style="font-family:&quot;Roboto Mono&quot;">”</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://support.google.com/googleplay/android-developer/answer/11926878" style="color:inherit;text-decoration:inherit">https://support.google.com/googleplay/android-developer/answer/11926878</a></span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">New Apps: API 31 by 2022-08-01.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">App Updates: API 31 by 2022-11-01.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Existing Apps: API 31 by 2023-11-01 / API 30 by 2022-11-01.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">TL;DR</span><span style="font-family:&quot;Roboto Mono&quot;">: So that means all apps should be API 30 by Nov 2022, but because they would be updates they need to be API 31, so we might as well bring them to API 32 right away.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The plan is to try to update apps on a rotating basis, for example one per month.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For that, I need a list, and I’ll reuse my gradle-version spreadsheet.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">List has been updated:</span></p>
-<p style="text-align:left"></p>
-<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
- <tbody>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Ralf Flashlight (done)</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v123</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">3</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Nerdkill (done)</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v105</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">3</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Mandelbrot Map 2</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v13</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">11</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">11</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Asqare (done)</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v102</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">1</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">1</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">1</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Brighteriffic</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v103</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">3</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(207, 226, 243);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">4</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Cangrejo</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Testing v1</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">18</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Jump!</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v4, Testing v3</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">27</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Project E</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Testing v1</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">18</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">29</span></p></td>
-  </tr>
-  <tr style="height:15.8pt">
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:207.5pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Seeds (done)</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:83.2pt"><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">Prod v402005</span></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="height:11pt;text-align:right"></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="height:11pt;text-align:right"></p></td>
-   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(204, 204, 204);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(204, 204, 204);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(204, 204, 204);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(204, 204, 204);border-top-style:solid;border-top-width:1pt;padding:2pt 2pt 2pt 2pt;vertical-align:bottom;width:59.1pt"><p style="text-align:right"><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt;vertical-align:baseline">28</span></p></td>
-  </tr>
- </tbody>
-</table>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -789,7 +710,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

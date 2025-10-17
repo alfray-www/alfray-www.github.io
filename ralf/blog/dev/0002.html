@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="A few months ago I updated the Conductor project to new libraries, notably switching to Kotlin DSL 1.9. That made building with Java 11 a requirement." />
+<meta property="og:description" content="https://amzn.to/4bJ0iUw&nbsp;is the 10 Inch Android 12 Tablet I’m using for Enphase Enlighen." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="A few months ago I updated the Conductor project to new libraries, notably switching to Kotlin DSL 1.9. That made building with Java 11 a requirement." />
+<meta name="twitter:description" content="https://amzn.to/4bJ0iUw&nbsp;is the 10 Inch Android 12 Tablet I’m using for Enphase Enlighen." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,41 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-06-03_tablet_10_g10_and_rtac.html">
+    <h2 class="post-title">2024-06-03 - Tablet 10’ “G10” and RTAC</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Android
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/4bJ0iUw" style="color:inherit;text-decoration:inherit">https://amzn.to/4bJ0iUw</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is the 10 Inch Android 12 Tablet I’m using for Enphase Enlighen.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It has a 1280x800 screen.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Even though it’s a “production” one, I can run a debug app from Android Studio.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When enabling developer settings, there’s a Drawing &gt; “Plus petite largeur d'écran” to control DPI:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">432 dp ⇒ makes all takes larger (simulates smaller screen)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">592 dp ⇒ the default value.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">601 dp ⇒ better for Enphase (better view of the graph)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">740 dp ⇒ makes everything look smaller (simulates larger screen like 1920x1200)</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When trying out RTAC, the font for the throttles is way too big. It’s calibrated for the Chuwi’s 1920x1200 display. I realize I should customize it by “screen size”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2024-04-28_conductor_and_java_1_8_vs_java_11.html">
     <h2 class="post-title">2024-04-28 - Conductor and Java 1.8 vs Java 11</h2>
@@ -611,48 +646,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-07-29_thought_of_the_day_dwm_on_au_95af5628.html">
-    <h2 class="post-title">2023-07-29 - Thought of the Day: DWM on Automation Computers?</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>So first, let’s make this clear: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dwm.suckless.org/" style="color:inherit;text-decoration:inherit">DWM</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is both terribly good, and terribly bad.</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Excellent small footprint and minimal functionality.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Keyboard only usage is both excellent yet terrible. I generally don’t remember the shortcuts except for the 3 main ones: Alt-S (new shell), Alt-1..9 to select a workspace, and Shift-Alt-1...9 to move a window to a workspace (they call them “tags”).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A lot of programs aren’t designed for the “full screen / forced tiling” approach and require some kind of floating windows to be usable.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DWM has basically one “window model”: a main shell, and a stack of secondary windows opening on the right of it. It’s really designed to have one shell per workspace.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>My window manager of choice is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.lxde.org/" style="color:inherit;text-decoration:inherit">LXDE</a></span><span style="font-family:&quot;Roboto Mono&quot;">. It’s very light in resources, and in features, yet it’s a “proper” window manager. I could do without the session manager aspect.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As a thought exercise, how would I use Consist with DWM?</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I have 3 shells that start. Ideally they could be tiled on space 1.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JMRI needs 3 windows: JMRI main, WiThrottle, and Conductor. </span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JMRI main + WiThrottles could be tiled on space 2.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Conductor should be tiled on its own space. Is that possible, or does it need to be with the rest of the app?</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When debugging, I like to have Conductor + the JMRI shell window together.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When resetting a failed automation, I like to have Conductor + 1 or 2 new JMRI Throttle windows together.</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s the part where DWM starts to suck. It’s not designed for this kind of functionality.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -669,7 +662,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

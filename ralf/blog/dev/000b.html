@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Just completed this yesterday, and it works as expected:https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/" />
+<meta property="og:description" content="One discussion on the Arduini mailing list centered about the use of Arduinos to commonly do Crossing Gates mechanisms. The projects are considered “trivial” as they involve commanding servos (to move gate arms) and blinking LEDs for the crossing lights. There are modules to do sound too. Both are ubiquitous with Arduinos and well designed for that." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Just completed this yesterday, and it works as expected:https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/" />
+<meta name="twitter:description" content="One discussion on the Arduini mailing list centered about the use of Arduinos to commonly do Crossing Gates mechanisms. The projects are considered “trivial” as they involve commanding servos (to move gate arms) and blinking LEDs for the crossing lights. There are modules to do sound too. Both are ubiquitous with Arduinos and well designed for that." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,46 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2019-11-30_esp32-cam_project_grade_crossing.html">
+    <h2 class="post-title">2019-11-30 - ESP32-CAM Project: Grade Crossing</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Esp32
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One discussion on the Arduini mailing list centered about the use of Arduinos to commonly do Crossing Gates mechanisms. The projects are considered “trivial” as they involve commanding servos (to move gate arms) and blinking LEDs for the crossing lights. There are modules to do sound too. Both are ubiquitous with Arduinos and well designed for that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Typically inputs come from photoresistor, IR leds for detection, or less commonly from existing block detection modules.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This makes me think an ESP32-CAM would be almost suitable for that. What form would it take?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First, I should wonder whether something like OpenCV is even needed here. I’m not familiar enough with it to know whether it would help. On a fixed camera, simple naive image detection would be enough to see if there’s any motion change on a masked area. A simple average+diff algorithm would probably be good enough.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Second, implementation wise, C or MicroPython? I’m surprised we don’t see more of the latter. It’s certainly slow yet good enough to just blink a LED or move a servo. It would not be suitable for image analysis, though.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The ESP32-CAM MicroPython fork made it clear this is done by taking a specific commit on the ESP32 repo, not all of them are suitable; then add the camera module in C as a Python module, then use it from Python as a black box. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">At that point that does mean that developing on the module is best done in a separate C sketch. And from a distribution model, an Arduino sketch is still the easiest way to deliver this to an end user who needs to tinker with it. What does using ESP IDF or even MicroPython add here? </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MicroPython does add that it becomes trivial to talk to JMRI via a JSON client/server, but that’s not exactly hard from C either, just a bit more clunky. One of the original demo suggestions was to split both.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One does wonder why Swift or GoLang is not more popular on these. They would be good fits. Swift is probably too Apple centric. There’s a TinyGo.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There is one obvious downside to using an ESP32-CAM to do a grade crossing module, and that’s the location of components. The camera is attached to the ESP32 with a short ribbon (either 1 cm or the 10-ish cm one). This cannot be much longer. And mounting location would require a good view of the track that is to be detected. For example directly on the ceiling, or maybe 1-2 meters above. Track level would be possible but would probably be hard. Perspective/distance means that scale/precision won’t be the same in different places of the camera view. A direct view of the track is needed. That precludes having tunnels or bridges in the way, as well as potentially operators.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The connections for the LEDs and servos could be longer, using twisted wire pairs it would not be unreasonable to have 2-4 meters or more.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Another option is to use more than one module, for example an ESP32-CAM can be mounted on the ceiling, communicating to another Arduino next to the crossing with a simple RS485/RS232 link. In that case, a much longer distance can be achieved.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2019-11-29_background_foreground_demo_a_95ed3307.html">
     <h2 class="post-title">2019-11-29 - Background Foreground Demo Android App</h2>
@@ -710,35 +750,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-06-27_flutter.html">
-    <h2 class="post-title">2019-06-27 - Flutter</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s time to get a look at Flutter… What would this be good for?</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://flutter.dev/docs/get-started/install/windows" style="color:inherit;text-decoration:inherit">https://flutter.dev/docs/get-started/install/windows</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now the question is what will be the throw-away project and the goal for it?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing Flutter targets is Android vs iOS and then “rescalable” app for Chrome OS.</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">It does not do “web apps” per se. It is not a server-side html thing</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -755,7 +766,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

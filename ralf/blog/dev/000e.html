@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="App on G Play: "DCC Cab Throttle"" />
+<meta property="og:description" content="I'll reorganize the Cab Throttle project under this structure:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="App on G Play: "DCC Cab Throttle"" />
+<meta name="twitter:description" content="I'll reorganize the Cab Throttle project under this structure:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,38 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-08-12_cab_throttle_v2.html">
+    <h2 class="post-title">2017-08-12 - Cab Throttle v2</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I'll reorganize the Cab Throttle project under this structure:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A WiThrottleLib repo (destined to maybe open source later).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A Cab Throttle v2 repo. The app itself.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Part of the app such as the server list and the default throttle view should go in the lib.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The app repo will keep things that are branding specific. For example if I want to extend the default view with plugins, that goes in the app. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The lib provides hooks that the app extends.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One core change is to move away from the event bus structure and go directly to daggerization.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2017-08-11_cab_throttle.html">
     <h2 class="post-title">2017-08-11 - Cab Throttle</h2>
@@ -667,43 +699,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2016-06-18_firebase.html">
-    <h2 class="post-title">2016-06-18 - Firebase</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking at the firebase tutorials for web / android…</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Web:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Uses nodes.js / npm for local testing + deployment.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Google Cloud Whatever project with console for management.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Firebase console seems to mostly cover deployment &amp; database/files for web, not messaging or analytics. GA can be added separately anyway.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pros: authentication with a variety of platforms (G, Tw, FB, email).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Overall interesting.</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Android:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Seems more refined with a variety of services: database, email app invite, GCM notifications, remote config values, analytics / crash reporting. And of course multiple auth providers. Also as admob support.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Seems like a good value: reduce boilerplate for a bunch of things (auth, crash, ga, db, remote config.)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nothing about IAB, to be done separately.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -720,7 +715,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

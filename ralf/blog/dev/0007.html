@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Now that we have a basic “marked locations” list in B3, it’s time to review the UI and adjust." />
+<meta property="og:description" content="In the Train-Motion project, I have a fat jar gradle rule to package all the dependencies in a single jar." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Now that we have a basic “marked locations” list in B3, it’s time to review the UI and adjust." />
+<meta name="twitter:description" content="In the Train-Motion project, I have a fat jar gradle rule to package all the dependencies in a single jar." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,75 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-08-28_train_motion_fatjar_vs_classpath_.html">
+    <h2 class="post-title">2021-08-28 - Train Motion: FatJar vs ClassPath?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the Train-Motion project, I have a fat jar gradle rule to package all the dependencies in a single jar.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To make it work, I had to create a “configuration” in gradle:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">configurations {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; canBeResolved = true</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; canBeConsumed = true</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; compileClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; testCompileClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; testRuntimeClasspath.extendsFrom(runtimeCompile)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Then I use this configuration to include the dependencies:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">dependencies {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile project(":LibUtilsJava")</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "commons-cli:commons-cli:1.4"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacv-platform:1.5.3"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "org.bytedeco:javacpp-platform:1.5.3"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "uk.co.caprica:vlcj:4.7.1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "com.fasterxml.jackson.core:jackson-databind:2.10.2"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "com.squareup.okhttp3:okhttp:3.10.0"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "org.eclipse.jetty:jetty-server:9.4.29.v20200521"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile "com.google.dagger:dagger:2.28"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; runtimeCompile &nbsp;"com.google.auto.factory:auto-factory:1.0.1"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And finally a fatJar task collects these specific dependencies and packages them together:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">task fatJar(type: Jar) {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; manifest.from jar.manifest</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; classifier = "all"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; from {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; } {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.SF"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.DSA"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; exclude "META-INF/*.RSA"</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; with jar</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note that “runtimeCompile” is a superset of the “compile” configuration, and the artifacts can be found using configurations.compileClasspath.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s neat to create the needed single JAR. That jar is ~760 MB with all the OpenCV deps. And it takes an interminable 4 minutes to create the jar itself.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So now the question is whether I can avoid that. I don’t need to distribute the jar, so I'd be fine with crafting a specific command line with the needed classpath. Or even having a “gradle run” task that does not need the fat jar first.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-08-18_bearing_b3_features.html">
     <h2 class="post-title">2021-08-18 - Bearing B3 Features</h2>
@@ -683,60 +752,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-11-30_blinking_led_-_pir_approach.html">
-    <h2 class="post-title">2020-11-30 - Blinking LED - PIR approach</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So here’s yet another approach: use a small PIR module, like the tiny “arduino” ones I use at Randall. This thing has a 1k Ω resistor on the output, and we can already trigger repeats &amp; duration, so it’s essentially mirroring what a 555 timer would do and at the same time it would only blink the LED when presence is detected in the garage. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That would save on the battery by not blinking it when there’s no one around.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The sensor still needs to be powered.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Links from when I used that kind of sensor at Randall:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Sensor is a HC-SR501. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.mpja.com/download/31227sc.pdf" style="color:inherit;text-decoration:inherit">Datasheet link via Aliexpress</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The SR501 uses a 7133 voltage regulator. We can feed it with the 5V from the AIU’s 7805.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The BISS001 drives the OUT pin directly via a 1kΩ resistor.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Main component is a BISS0001, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ladyada.net/media/sensors/BISS0001.pdf" style="color:inherit;text-decoration:inherit">datasheet link from Ladyada</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Of note:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Input voltage: 5-20 V; and on another page it says 4.5-20 V..</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Power consumption: 65 mA.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Quiescent current: &lt; 50 uA.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Output TTL 3.3 V.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jumper L = single trigger, H = repeat trigger.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pot on the jumper side = sensitivity.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pot farther from the jumper = time delay (5-300 s).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Must be mounted horizontal for a variation left/right (e.g. pins at top or bottom).</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing I had noticed at Randall is that these do not work when powered by 3 V. The unit “blinks” the output repeatedly. My guess is it fails to initialize (they go through a 1-min stabilization phase when first powered).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In my case, that means I need a 3-AA battery holder instead of my current 2-AA battery holder. It does work well with a 3-AAA holder.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the output side, I got the illumination I want using a 1k Ω resistor on the output and a green LED. Red one was a bit weak for the value, although I could remove the extra 1kΩ.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I installed that and it works nicely as I want.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Update: I got about 1-2 years out of 3 AAA batteries powering this with moderate daily usage.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -753,7 +768,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-07 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

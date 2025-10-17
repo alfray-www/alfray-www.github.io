@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-10-16T03:03:11.848284-07:00</updated>
+<updated>2025-10-17T03:02:42.099862-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-f3ee0b3">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Web SPA: Flutter vs React, JavaScript vs TypeScript</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html"/>
+<id>https://www.alfray.com/ralf/blog/dev/2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html</id>
+<category term="dev" label="DEV"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Recently I&apos;ve completed a number of small dynamic website projects, and I want to discuss my view on the way to choose to implement these sites.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This is to be read as an opinionated essay. YMMV.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.y4cib01i7ru5&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;SPA, a Single Page Application&lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Here are a few sites I completed recently: &lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://rorschach-coding.alfray.com/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Rorschach&#8482; Inkblot Coding&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/labs/apps/tangram/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Tangram Viewer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/wazz/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Train Status&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;They all have in common that they are &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Glossary/SPA&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Single Page Application&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; websites. What days does that even mean? In short, that means it&#8217;s a single HTML web page that uses JavaScript to implement a &#8220;full&#8221; web site by &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;simulating&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;several pages.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Let&#8217;s take an example: we want to create a small e-commerce site. We&apos;ll structure our site as different pages, each rendered by their own HTML file: &lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the main entry point&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/about.html &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- a page &#8220;about this company&#8221;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/catalog.html &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the catalog browser&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/product.html&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -- a page detailing a single product&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/purchase.html &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the purchase form&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Instead an SPA web site uses a single file:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html &amp;nbsp; &amp;nbsp;-- the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;sole&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;page of the web site&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;However, using JavaScript, we&#8217;ll change the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;content&lt;/span&gt;&lt;span&gt;&amp;nbsp;of the page to simulate showing the &#8220;about&#8221; page vs the &#8220;catalog&#8221; page, etc. One way to know which one to &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;render&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;is to encode the desired &#8220;page&#8221; using the hash portion of the URL:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#about&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#catalog&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#product/{id}&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#purchase&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;From the web browser point of view, it&apos;s always the same page being rendered (index.html) yet JavaScript is used to read the hash name and decide how to fill the page -- when the page loads, we use JavaScript to literally inject the content we want in the web page at runtime. If you were to read the &#8220;source&#8221; of the main index.html, you&#8217;d find it basically empty (or more exactly having just a single &amp;lt;div&amp;gt; container).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The mechanism above using the hash is called a &#8220;hash router&#8221;. There are other ways to do it, that&apos;s just the one I prefer.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.mtbioauqltcm&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;It&#8217;s all about the frameworks&lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this kind of web app, we rarely write &#8220;vanilla Javascript&#8221; (e.g. &#8220;code every by hand&#8221;). It&#8217;s just too tedious. Instead we use a framework to help us write the web page. There are a ton of frameworks out there, but essentially there are 4 that I consider the most popular and important:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;React JS, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Angular JS.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Vue JS, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Flutter, with code written in Dart.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I believe that also more or less represents their level of popularity. My opinion on them, in a one line summary each:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Flutter is my favourite one, but&#8230; We&#8217;ll discuss the &#8220;but&#8221; later.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;React JS. I started that way, and honestly I hated it. Ironically it&#8217;s only &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;after switching to Flutter&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;that I finally properly understood React.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Vue JS. I tried this one for the sake of trying it. It&#8217;s said to be more approachable when starting than React. I can see why. Still I&#8217;d prefer React for the long run.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Angular is a mastodon. It&#8217;s made to build large sites that scale. It&#8217;s a very complex framework, and it seems like it would scale very well. But for a single little SPA, it&#8217;s totally overkill IMHO.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.wbtj9eet2s37&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Languages: JavaScript, TypeScript, and Dart&lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I&#8217;ll put this upfront to avoid repeating it below.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;React, Vue, and Angular can equally be coded using JavaScript ES6, or TypeScript. In my option, JavaScript is &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;always&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;the wrong choice, no matter what the question is. Period. It&#8217;s an absolutely terrible language. Yes we can hand-code it without a compiler, and yes it runs directly in any web browser. Well, mostly. But it&#8217;s kind of flying without a net. Working with JavaScript is trying to admit that &#8220;hope is a strategy&#8221;. It&#8217;s not. Kids, just learn to say no to JavaScript.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;TypeScript is the &#8220;sanity&#8221; version of JavaScript. It forces us to use a compiler (since it compiles to JavaScript after all), and that&#8217;s a good thing. It forces us to understand the types we&#8217;re using -- as the name of the language implies, it&#8217;s JavaScript with &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actual&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;types, not just &#8220;whatever I can randomly put in a variable and hope it&#8217;s the right thing&#8221;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The only drawback of TypeScript is that it&#8217;s essentially &#8220;JavaScript with lipstick&#8221;. Nothing prevents us from doing all the crappy things that JS allows us to do. However, TypeScript comes with a linter tool which tries to catch us on exactly the common mistakes that everybody makes. Don&#8217;t ignore the warnings, they are here to help us.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Flutter is coded in Dart. That&#8217;s its strength. That&#8217;s also its main hindrance. We have to be willing and make the jump to learn one more language just to write that small SPA thingy. That actually has dragged me down, and I avoided Flutter for a long time just because of that.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;But&#8230; once I jumped into it, I realized that the TL;DR for Dart is &#8220;Java meets TypeScript&#8221;. Seriously. And if, like me, you find the Java syntax to be actually quite agreable, then Dart almost becomes &#8220;TypeScript has it should have been from the beginning&#8221;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Flutter &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I&apos;m not going to try to give you a coding example of a Flutter app here - there are many examples out there already. Instead I&apos;ll try to explain why &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;I &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;liked it. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;One thing you need to know upfront is that Flutter does not pretend to be a web framework. It is first and foremost a cross platform toolkit designed to create apps for mobile and the web (and likely desktop too).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;As such, it will look foreign and weird to an HTML designer. We&apos;re not coding an HTML app with div and span and CSS. Not at all. We&apos;re coding screens using views (named widgets) and layout managers. Exactly like we would do in Java AWT or the Android view system.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;--]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
+<updated>2025-10-16T00:00:16-07:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Windows 10 to Windows 11 In-Place Upgrade</title>
