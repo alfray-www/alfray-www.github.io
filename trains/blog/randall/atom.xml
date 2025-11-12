@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-11-05T03:00:31.261726-08:00</updated>
+<updated>2025-11-11T16:38:46.398082-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-f3ee0b3">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Vision and RTAC Update</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-11-10_vision_and_rtac_update.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-11-10_vision_and_rtac_update.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Here&#8217;s the latest visible change on the &#8220;train exhibit&#8221;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:312.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a29401d10258bfc30f16a024c567ac5f164a575fae10be70f6ae7eb7a048b96bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;By the entrance sits the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2020-06-14__train_motion_video_display__d300ac8f.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;&#8220;Vision&#8221; screen&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;-- it projects videos from a few live cameras around the layout. When there&#8217;s no train motion detected on the cameras, it displays pre-recorded videos I made on the layout -- the same ones I have on my YT channel, &amp;nbsp;I have about &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLjmlvzL_NxLp8GZfdG0cQkg5IwD_PF5Pc&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;140 video clips now&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next to that screen is the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/rtac.html#h.4872t6a07wp&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RTAC tablet display&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. It shows the state of the automation -- which trains are running, or what will run next, and details like speed and direction of the trains. That little 10-inch tablet is a ChuWi Hi10 that I got back in 2017, running my custom Android RTAC app, and it has lasted a surprisingly long time given that it&#8217;s basically on 24/7. A couple times lately the tablet has turned off, but I got it running again after some careful massaging. Still, at some point, I expect it to entirely stop working so I wanted a plan B before that happens.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;And the plan B is to merge the display from the tablet onto the Vision screen display. So that&#8217;s exactly what I&#8217;ve done, the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/vision/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;changes are in the Vision project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and we can see the result above. I actually like it and I removed the tablet since it&#8217;s now redundant. Amusingly, plan A was to update RTAC to run on a more modern Android 13 tablet -- I have done that and I had it at home ready for deployment. Out of curiosity, I implemented plan B integrating both features on the same display screen, and now I like it better. That&#8217;s why I try things. There is no wrong choice here.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Most visitors will only need to see the status line under the videos -- it indicates whether the automation is stopped, or whether a train runs. For my own edification, I have details on the automation shown on the left side:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:309.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2be611d52b0b53ba6f910c20114baa4a98af57713945027bb124b3d6a4b5e1eci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That display on the side is purposely simple and not too fancy. I thought about doing something like an &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Apple_Monitor_II&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;old monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; look or an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/LCARS&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LCARS interface&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and opted not to go for the gimmick.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2025-11-10T00:00:21-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Dashboard Update</title>
@@ -35,11 +64,10 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The web page dashboard is only the tip of the iceberg. There&#8217;s a lot more to making this happen than just displaying the data. Obviously it needs to be collected in the first place. For more detail, please &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-08-23_wazz_web_dashboard_update.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;continue reading here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-08-23T00:00:29-07:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-08-23T00:00:13-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

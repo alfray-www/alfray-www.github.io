@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="The little saga with the new Walthers Mainline SD70ACe&nbsp;continues for UP 8330: The engine had stopped working a few months ago, and it’s now working thanks to the excellent support from Walthers. I really appreciate how they stand behind their product -- seriously." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_32000a421284e83914a3feb5a67829971cf3e322a6c0835d284c65f464862368d.jpg" />
+<meta property="og:description" content="The last 2 days, we had a problem with the UP automated train stopping just out of the Stockton Station:" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_dc2d10cfa5163d53a52d0d4d53e5c6a9b396187ab566cb14c55a68ffc5521e81i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="The little saga with the new Walthers Mainline SD70ACe&nbsp;continues for UP 8330: The engine had stopped working a few months ago, and it’s now working thanks to the excellent support from Walthers. I really appreciate how they stand behind their product -- seriously." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_32000a421284e83914a3feb5a67829971cf3e322a6c0835d284c65f464862368d.jpg" />
+<meta name="twitter:description" content="The last 2 days, we had a problem with the UP automated train stopping just out of the Stockton Station:" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_dc2d10cfa5163d53a52d0d4d53e5c6a9b396187ab566cb14c55a68ffc5521e81i.jpg" />
 
 <title>Blog: Randall Museum Model Railroad</title>
 
@@ -247,6 +247,54 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-09-10_adjusting_the_conductor_2_program.html">
+    <h2 class="post-title">2023-09-10 - Adjusting the Conductor 2 Program</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>The last 2 days, we had a problem with the UP automated train stopping just out of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.1a30ydkpyo99" style="color:inherit;text-decoration:inherit">Stockton Station</a></span><span>:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:174.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_dc2d10cfa5163d53a52d0d4d53e5c6a9b396187ab566cb14c55a68ffc5521e81i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>At first I was a bit puzzled -- the train was fine, there was no dead block, there wasn’t any reason for it to stop.</span></p>
+<p></p>
+<p><span>This, ironically, turned out to be due to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;working as expected: the script had a timing issue, and the automation software was stopping the train because the script said there was an error condition.</span></p>
+<p></p>
+<p><span>To understand the root cause of this, we need to deal with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-09-11_conductor_2_route_statistics_54d3297b.html" style="color:inherit;text-decoration:inherit">route statistics as explained here</a></span><span>, and most specifically this data:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:421.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_dd079d764932e4eed30e1a0cc913c57badac2773e03d38b212bc1d101baf25c8i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-09-11_conductor_2_route_statistics_54d3297b.html" style="color:inherit;text-decoration:inherit">All the details are in the other blog</a></span><span>, so I’ll only provide a brief summary here: the script defines the minimum time that a train should spend on a block, and my default ballpark value for this was 10 seconds for all the routes. The software then enforces that -- if a train activates the </span><span style="font-style:italic">next</span><span>&nbsp;block too fast, something’s definitely unusual and unexpected. In automation, we don’t like “unexpected” things. Typically that means something else (like another train) could be occupying that next block, or that the controlled train is going too fast for some reason, or any unexpected thing that would make that next block look occupied to the block sensor. In either case, that’s an error, and the automation software stops the controlled train right away before it crashes into something.</span></p>
+<p></p>
+<p><span>However it turns out that block B503a is really a very small block, and it really can take 10 seconds to cross it, or even less. For a week or so, the timing was very close to that minimum time, but just a tiny bit above. Then the last two days, the train was initially taking just a bit more than 10 seconds (everything’s good) and then, probably as it warmed up, it was taking around 9.5 seconds to cross that block, fast enough to trigger the error mode for the automation.</span></p>
+<p></p>
+<p><span>The fix is of course very simple: adjust the timing for that specific block. In that case, I’ve set it to 5 seconds minimum.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(236, 242, 247);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; val B503a_fwd = node(B503a) {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; minSecondsOnBlock = 5</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; maxSecondsOnBlock = 30</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; onEnter {</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PA.bell(Off)</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p style="text-align:left" class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt;vertical-align:baseline">&nbsp; &nbsp; }</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>That’s why I added the capability to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-08-23_conductor_2_route_statistics.html" style="color:inherit;text-decoration:inherit">log statistics at the end of a run</a></span><span>, and then made a nice spreadsheet </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-09-11_conductor_2_route_statistics_54d3297b.html" style="color:inherit;text-decoration:inherit">showing every duration spent on every block</a></span><span>. This way I have a complete understanding of how I should adjust these timeouts.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-09-09_up_8330_is_working_again.html">
     <h2 class="post-title">2023-09-09 - UP 8330 is Working Again</h2>
@@ -540,31 +588,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-04-08_museum_bug_day.html">
-    <h2 class="post-title">2023-04-08 - Museum Bug Day</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p></p>
-<p><span>One of the most popular events at </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://randallmuseum.org/" style="color:inherit;text-decoration:inherit">Randall Museum</a></span><span>&nbsp;is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://randallmuseum.org/bug-day/" style="color:inherit;text-decoration:inherit">Bug Day</a></span><span>. </span></p>
-<p></p>
-<p><span>For the occasion, Jim and Orion ran a dedicated “bug train”:</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:602.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:476.85px"><img alt="" src="img_319dcdadfe7283f89d3398eb7a1a6a94483cf82c43b5bfeb7f8209d1bf21d935i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
 
 
 
@@ -586,7 +609,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-10-08 by Rig4j 0.1-Exp-f3ee0b3
+    Generated on 2025-11-11 by Rig4j 0.1-Exp-f3ee0b3
     <!-- )rg-excl -->
     &nbsp;
 </div>

@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="Orion just completed this scenery project in Fairfield:" />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_34a295b5846d49487e77ffe1661645ab86168a95877016cfa2ba85334dadc7d8i.jpg" />
+<meta property="og:description" content="I have continued fighting with the Trolley Automation. A couple months ago, I fixed the turnout&nbsp;where the Orange Trolley&nbsp;kept losing power. However, that did not solve the reliability problem -- the Bowser streetcar&nbsp;just doesn’t run reliably. There’s nothing wrong when I try the LokSound decoder on the bench, but it just doesn’t always start, and it often does not stop. Not a good thing when I’m trying to automate something!" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_f195a0400c06f83027aef6fec6214b1c641136d573d095c6d036a2ca4014f590i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="Orion just completed this scenery project in Fairfield:" />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_34a295b5846d49487e77ffe1661645ab86168a95877016cfa2ba85334dadc7d8i.jpg" />
+<meta name="twitter:description" content="I have continued fighting with the Trolley Automation. A couple months ago, I fixed the turnout&nbsp;where the Orange Trolley&nbsp;kept losing power. However, that did not solve the reliability problem -- the Bowser streetcar&nbsp;just doesn’t run reliably. There’s nothing wrong when I try the LokSound decoder on the bench, but it just doesn’t always start, and it often does not stop. Not a good thing when I’m trying to automate something!" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_f195a0400c06f83027aef6fec6214b1c641136d573d095c6d036a2ca4014f590i.jpg" />
 
 <title>Blog: Randall Museum Model Railroad</title>
 
@@ -247,6 +247,39 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-04-24_yellow_trolley_on_the_automation.html">
+    <h2 class="post-title">2024-04-24 - Yellow Trolley on the Automation</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>I have continued fighting with the Trolley Automation. A </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2024-02-25_trolley_automation_and_turnout.html" style="color:inherit;text-decoration:inherit">couple months ago, I fixed the turnout</a></span><span>&nbsp;where the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2023-11-25_trolley_automation_experiment.html" style="color:inherit;text-decoration:inherit">Orange Trolley</a></span><span>&nbsp;kept losing power. However, that did not solve the reliability problem -- the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.bowser-trains.com/history/streetcarnohistory.html" style="color:inherit;text-decoration:inherit">Bowser streetcar</a></span><span>&nbsp;just doesn’t run reliably. There’s nothing wrong when I try the LokSound decoder on the bench, but it just doesn’t always start, and it often does not </span><span style="font-style:italic">stop</span><span>. Not a good thing when I’m trying to automate something!</span></p>
+<p></p>
+<p><span>Instead, I swapped it for this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.walthers.com/peter-witt-streetcar-standard-dc-baltimore-transit-co-6119-yellow-white-red" style="color:inherit;text-decoration:inherit">Bachmann #6119 Streetcar</a></span><span>:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:189.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f195a0400c06f83027aef6fec6214b1c641136d573d095c6d036a2ca4014f590i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The software part of the automation uses my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/sdb" style="color:inherit;text-decoration:inherit">“Software Defined Block” (SDB) on the ESP32</a></span><span>; this gets the distance sensor data and simulates track occupancy. That is published to </span><span>JMRI using MQTT. My </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC automation controller software</a></span><span>&nbsp;then uses the track occupancy data to control the trolley’s movement.</span></p>
+<p></p>
+<p><span>Here’s a video of the trolley in action:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="560" height="315" src="https://www.youtube.com/embed/4Vd7Z38JEmc" frameborder="0" allowfullscreen></iframe></span></p>
+<p></p>
+<p><span>Now the running characteristics of this trolley are a bit primitive. There’s no sound, and light is minimal. The motor is fairly crude, doesn’t run well at low speed, and it has a distinctive gearing now. Yet it runs reliably, and that’s important for a daily automation routine!</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2024-04-24_fairfield_scenery.html">
     <h2 class="post-title">2024-04-24 - Fairfield Scenery</h2>
@@ -540,33 +573,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2024-01-01_happy_new_year.html">
-    <h2 class="post-title">2024-01-01 - Happy New Year</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p><span>Happy New Year 2024 from the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span>&nbsp;team.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:893.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:686.00px"><img alt="" src="img_13e002d7553c318b1b6a852db016a70b504537aa9530f7425a0598891d0089cei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:center"></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:656.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_340b66031cd3602f17c31cbe3680112ea6d35b9928dee7475e09ad2a968c9b7bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:center"></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:408.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_740fb41e6526f6b411db8ab44a184ad4b586f817ed03cbda76d3e0d30414914ai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
 
 
 
@@ -588,7 +594,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-10-08 by Rig4j 0.1-Exp-f3ee0b3
+    Generated on 2025-11-11 by Rig4j 0.1-Exp-f3ee0b3
     <!-- )rg-excl -->
     &nbsp;
 </div>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-11-05T03:01:05.789274-08:00</updated>
+<updated>2025-11-11T16:38:48.211955-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -279,7 +279,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.aliexpress.us/item/3256808335479840.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;AliExpress listing shows the back of the panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and it looks exactly like the one from AdaFruit.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;But that&#8217;s now what I received. What I got is slightly different, and at first I totally missed the difference:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;But that&#8217;s not what I received. What I got is slightly different, and at first I totally missed the difference:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:401.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_edf6a9e45975042a9e9c20bf41e87128686941e6d915d4a0d985f9c74f5b2992i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -335,7 +335,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-04-07T00:00:07-07:00</updated>
+<updated>2025-04-07T00:00:24-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
