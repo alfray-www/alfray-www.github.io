@@ -13,14 +13,14 @@
 <meta property="og:title"       content="NCE AIU and NCE EB1 Circuit Breakers" />
 
 <meta property="og:description" content="One issue I have on the Randall layout is that operators or automation sometimes short the layout. Then the NCE EB1 circuit breakers take over and of course shut down their corresponding power district. Then operators or staff ask me why things do not work, yet a lot of them fail to check the circuit breakers to see if they are shorting." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_057bb6f1d08fbc01e780b54ca5b71465ee00b1a7e8b5614f1b32daa06d3bd8b9d.png" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_665cf9c49b5a8df2515c81878a55b0472b1710781ccc2f2625eb90d9b045291cd.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="NCE AIU and NCE EB1 Circuit Breakers" />
 
 <meta name="twitter:description" content="One issue I have on the Randall layout is that operators or automation sometimes short the layout. Then the NCE EB1 circuit breakers take over and of course shut down their corresponding power district. Then operators or staff ask me why things do not work, yet a lot of them fail to check the circuit breakers to see if they are shorting." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_057bb6f1d08fbc01e780b54ca5b71465ee00b1a7e8b5614f1b32daa06d3bd8b9d.png" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_665cf9c49b5a8df2515c81878a55b0472b1710781ccc2f2625eb90d9b045291cd.png" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -260,7 +260,7 @@ td p {
 <p><span>One idea I had a while ago was to use an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>&nbsp;to monitor the NCE EB1 circuit breakers. Then I could feed that into my automation software and get reporting of actual shorts right on my status web page.</span></p>
 <p></p>
 <p><span>The proposed solution is to use dual-channel optocouplers to connect the EB1 LED output to the AIU inputs.</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:391.22px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:695.07px"><img alt="" src="img_057bb6f1d08fbc01e780b54ca5b71465ee00b1a7e8b5614f1b32daa06d3bd8b9d.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:391.22px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:695.07px"><img alt="" src="img_665cf9c49b5a8df2515c81878a55b0472b1710781ccc2f2625eb90d9b045291cd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p><span>Here are the details, as updated on 2020-02-04:</span></p>
 <p><span></span></p>
 <ul style="margin:0">
@@ -296,7 +296,7 @@ td p {
 <p></p>
 <p><span>With all this into account, the schematic is thus the following:</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:427.91px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:621.05px"><img alt="" src="img_0091f4e1d4db43de75e66511f43f7567ad0d8d835a213f2c0a6ff96d8664625cd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:427.91px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:621.05px"><img alt="" src="img_81df3e5c0855460a6274e5d9e332b131bea5b4daa4be821bce16abf53d89bb88d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
 <p><span>When there’s a short, the EB1 turns off the status LED, and thus the AIU input is read as a 0. However, being a self-reset device, the EB1 just keeps trying to re-apply power every few seconds, which makes its status LED blink briefly -- this has a nice side effect allowing for easier visual identification. Due to the NCE cab bus's pathetic refresh rate for these AIU01 cards, there is a tiny possibility that each AIU read would be aligned on the time where the LED blinks, and thus the shorting status would be missed. This needs to be identified and tested first. If that’s an issue, it can be solved by just adding a capacitor on the output like I did to solve the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.g3i8lbjtmb8z" style="color:inherit;text-decoration:inherit">missed button presses</a></span><span>&nbsp;issue.</span></p>
 <p></p>
@@ -448,7 +448,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-10-08 by Rig4j 0.1-Exp-f3ee0b3
+    Generated on 2025-11-21 by Rig4j 0.1-Exp-9bafc34
     <!-- )rg-excl -->
     &nbsp;
 </div>

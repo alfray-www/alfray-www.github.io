@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="Let’s implement virtual blocks. These have been part of the original design and I now have a need for them." />
+<meta property="og:description" content="I’m still trying to deploy Conductor 2&nbsp;and it’s clearly not ready yet. I keep finding issues, some expected, some not." />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="Let’s implement virtual blocks. These have been part of the original design and I now have a need for them." />
+<meta name="twitter:description" content="I’m still trying to deploy Conductor 2&nbsp;and it’s clearly not ready yet. I keep finding issues, some expected, some not." />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -248,6 +248,73 @@ td p {
 
     <div class="post-container">
 <div class="post-title-container">
+<a class="post-title-link" href="2023-05-06_conductor_2_the_flaky_sensors_issue.html">
+    <h2 class="post-title">2023-05-06 - Conductor 2: The “Flaky” Sensors Issue</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>I’m still trying to deploy </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;and it’s clearly not ready yet. I keep finding issues, some expected, some not.</span></p>
+<p></p>
+<p><span>The Freight automation has been an interesting source of such unexpected issues. It’s a simple reversing shuttle automation across two blocks, yet it has proven more challenging than the complex Passenger and Branchline automations -- these two actually perform quite well. Yet the “simpler” Freight one does not.</span></p>
+<p></p>
+<p><span>The most notable “bug” here is with the Freight automation: the engine starts on the first block, travels to the second block as expected…, and then instead of reversing the engine back to the beginning of the route, it decides the engine is back on the first block when it’s clearly still on the second block. At that point the automation panics because the engine is obviously not back at the starting point. The programming is entirely skipping half of the route automation, for no apparent reason. Why?</span></p>
+<p></p>
+<p><span>One of the issues which I was more or less expecting was dealing with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2023-05-01_adjusting_the_mountain_bd20_sensors.html" style="color:inherit;text-decoration:inherit">“flaky” sensor on B321, as I explain in detail on that post on the other blog</a></span><span>. There’s some of that here, but there’s also something else entirely going on that I have not figured out yet.</span></p>
+<p></p>
+<p><span>Even after a bit of adjusting, the mountain sensors are still flaky, notably B321 and B370 with the Passenger train. I adjusted B321 for the Freight train but the newer PA engine is still borderline.</span></p>
+<p></p>
+<p><span>Of importance, these sensors detect current consumption. In the case of the reversing train, the sensor turns off when the train is stopped.</span></p>
+<p><span></span></p>
+
+<a href="2023-05-06_conductor_2_the_flaky_sensors_issue.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-04-24_conductor_2_dsl_throttle_onl_87348bbf.html">
+    <h2 class="post-title">2023-04-24 - Conductor 2: DSL Throttle onLight / onSound / onBell</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>Here’s the new syntax:</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; val T1 = throttle(1001) </span><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">{</span></p>
+<p class="console "><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onLight { b -&gt; throttle.f0( b) }</span></p>
+<p class="console "><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onSound { b -&gt; throttle.f8(!b) }</span></p>
+<p class="console "><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onBell &nbsp;{ throttle.f1(it) }</span></p>
+<p class="console "><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; }</span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;named "Throttle1"</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; on { S1 } then {</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T1.light(true)</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T1.sound(true)</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T1.bell(true)</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T1.horn()</span></p>
+<p class="console "><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p>
+<p></p>
+<p><span>Note that it seems quite annoying to have to place the “named ‘Xyz’” after the function block, so this syntax is also allowed:</span></p>
+<p><span></span></p>
+
+<a href="2023-04-24_conductor_2_dsl_throttle_onl_87348bbf.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
 <a class="post-title-link" href="2023-04-09_conductor_2_virtual_blocks_i_4b939f77.html">
     <h2 class="post-title">2023-04-09 - Conductor 2: Virtual Blocks Implementation</h2>
 </a>
@@ -473,81 +540,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-02-28_sdb_using_freertos_tasks_priorities.html">
-    <h2 class="post-title">2023-02-28 - SDB: Using FreeRTOS Tasks & Priorities</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    SDB
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span style="font-style:italic">The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/sdb" style="color:inherit;text-decoration:inherit">Software Defined Blocks</a></span><span style="font-style:italic">&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad</span><span>.</span></p>
-<p></p>
-<p><span>How can the current modules benefit from the FreeRTOS tasks?</span></p>
-<p></p>
-<p><span>An initial prototype was built using MicroPython. There’s good support for ESP32, especially using the Adafruit libraries. Unfortunately, MicroPython on ESP32 still has quite some limitations. For example there’s no OpenCV support, etc. Since the goal is to make the project as accessible as possible, sticking to the regular Arduino / C++ seemed a better option.</span></p>
-<p></p>
-<p><span>One issue with the MicroPython version is that I realized that “MicroPython Threads” are implemented using FreeRTOS tasks all of the same priority. Thus they execute in round robin fashion, with no control from the application. That means a task doing some IO can be pre-empted in the middle of e.g. an I2C-in-software operation.</span></p>
-<p></p>
-<p><span>With better FreeRTOS control, we can use tasks and we can:</span></p>
-<ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Use priorities to ensure some tasks are run before others.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Use critical sections or mutexes to avoid same-priority tasks from interrupting each other.</span></li>
-</ul>
-<p style="text-align:left"><span></span></p>
-
-<a href="2023-02-28_sdb_using_freertos_tasks_priorities.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-02-25_split_core_hall-effect_sensors.html">
-    <h2 class="post-title">2023-02-25 - Split Core & Hall-Effect Sensors</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Electronics
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p><span>For now I’ve been doing block detection on the Randall layout using NCE BD20 current detectors. They work well. There are others DCC-compatible detectors but they all use through-hole core transformers, which means they cannot be used with existing wiring without desoldering or disconnecting something.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:265.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_a829f4e69484dc20cd40f3a6598bf44058b39b80c08877b3ca33902362f14562i.jpg" style="height:597.75px;margin-left:-0.00px;margin-top:-292.37px" title=""></span></p>
-<p></p>
-<p><span>There are other contenders to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201254549-BD20-Block-Detector" style="color:inherit;text-decoration:inherit">BD20</a></span><span>, such as the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.modelrailroadcontrolsystems.com/cpod-control-point-occupancy-detector/" style="color:inherit;text-decoration:inherit">cpOD</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">CKT-BD1</a></span><span>. I plan to switch to these once I exhaust my current supply of BD20. But the bottom line is that they all use these “through-hole CT”, and sometimes I wished I had the convenience of a split core transformer that I could quickly snap around a track feeder wire.</span></p>
-<p></p>
-<p><span>I had two goals in mind:</span></p>
-<ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Main goal: Have an alternative to the through-hole CT block detection sensors that do not require disconnecting nor cutting wires to install them.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Secondary goal: Make a little portable “current detector” that I could quickly snap around a track feed wire to trace wire continuity.</span></li>
-</ul>
-<p></p>
-<p><span>Thus a while ago I got two sensors, with the purpose of figuring out to use them to monitor train track current with an ESP32:</span></p>
-<ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3q7qG4z" style="color:inherit;text-decoration:inherit">https://amzn.to/3q7qG4z</a></span><span>&nbsp;</span><span>Hall-sensing ACS712-5A current module.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3AJM5FP" style="color:inherit;text-decoration:inherit">https://amzn.to/3AJM5FP</a></span><span>&nbsp;</span><span>Split core SCT013-005 5A 1V current transformer.</span></li>
-</ul>
-<p></p>
-<p><span>Spoiler alert: I discussed that topic on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.mrhmag.com/post/equivalent-of-bd20-block-detector-with-split-core-transformers-12438761" style="color:inherit;text-decoration:inherit">MRH forum</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://groups.io/g/arduini/topic/93449311" style="color:inherit;text-decoration:inherit">Arduini forum</a></span><span>&nbsp;and I was clearly told that would not work, and to make a long story short, I never managed to make them work for this application.</span></p>
-<p></p>
-<p><span>Upfront I want to indicate why that was anyway not a surprise and I was likely to fail:</span></p>
-<p><span></span></p>
-
-<a href="2023-02-25_split_core_hall-effect_sensors.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -569,7 +561,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-10-08 by Rig4j 0.1-Exp-f3ee0b3
+    Generated on 2025-11-21 by Rig4j 0.1-Exp-f3ee0b3
     <!-- )rg-excl -->
     &nbsp;
 </div>

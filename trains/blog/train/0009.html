@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="Very interesting discussion here: http://cs.trains.com/mrr/f/744/t/230553.aspx" />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_957a5961a2d5c6fa2cc0cc84ae33d123bc875c6964a5b1c9d22d940e130ec6bfi.jpg" />
+<meta property="og:description" content="Some members at the CMRS train club&nbsp;(the Carquinez Model Railroad Society, in Crockett, CA) desired to have large touch panels that members could use to toggle switches on the mainline. For testing, one of the members procured 32-inch touch panels and I wrote a quick experimental software to display the mainline on it and control turnouts based on touch." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_740b70820c3e1c557ea5985e14f116251735697b69f7374cdc7db4c0a17cd3b6i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="Very interesting discussion here: http://cs.trains.com/mrr/f/744/t/230553.aspx" />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_957a5961a2d5c6fa2cc0cc84ae33d123bc875c6964a5b1c9d22d940e130ec6bfi.jpg" />
+<meta name="twitter:description" content="Some members at the CMRS train club&nbsp;(the Carquinez Model Railroad Society, in Crockett, CA) desired to have large touch panels that members could use to toggle switches on the mainline. For testing, one of the members procured 32-inch touch panels and I wrote a quick experimental software to display the mainline on it and control turnouts based on touch." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_740b70820c3e1c557ea5985e14f116251735697b69f7374cdc7db4c0a17cd3b6i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -247,6 +247,70 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2018-01-21_turnouts_touch_panel_for_jmri_at_cmrs.html">
+    <h2 class="post-title">2018-01-21 - Turnouts Touch Panel for JMRI at CMRS</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    CMRS
+    
+    </span>
+</span></div>
+
+<p></p>
+<p></p>
+<p><span>Some members at the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.cmrstrainclub.org/" style="color:inherit;text-decoration:inherit">CMRS train club</a></span><span>&nbsp;(the Carquinez Model Railroad Society, in Crockett, CA) desired to have large touch panels that members could use to toggle switches on the mainline. For testing, one of the members procured 32-inch touch panels and I wrote a quick experimental software to display the mainline on it and control turnouts based on touch.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:266.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:738.00px"><img alt="" src="img_740b70820c3e1c557ea5985e14f116251735697b69f7374cdc7db4c0a17cd3b6i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The touch panels rely on the main </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.org/" style="color:inherit;text-decoration:inherit">JMRI server</a></span><span>&nbsp;to trigger turnouts on the mainline.</span></p>
+<p></p>
+<p><span>This post documents my first prototype demonstration for this project. This was going to be an iterative process as I expected to incorporate feedback later. What I came up with is fairly easy to reuse for other layouts -- I’ve implemented something similar at Randall just after, so I’ll explain how it is implemented in the hope others want to use that or get inspired by it..</span></p>
+<p><span></span></p>
+
+<a href="2018-01-21_turnouts_touch_panel_for_jmri_at_cmrs.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-10-31_nce_aiu_and_short_trigger_events.html">
+    <h2 class="post-title">2017-10-31 - NCE AIU and Short Trigger Events</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p><span>On the Randall layout, visitors press a button to trigger the trains’ automated sequence to start. Very quickly we noticed that sometimes the system would fail to notice the button was pressed.</span></p>
+<p></p>
+<p><span>We use a large button but that’s irrelevant. The issue has to do with how long it is pressed. Most people give a quick short push, and that’s the problem.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt"><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:241.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px"><img alt="" src="img_3c0dee1fe9afa6378d96b9e39bda694bde0d89c1749aceb2b234f7df25305d97i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt"><p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px"><img alt="" src="img_cf00609e36f28098c30476973c54a2ead12ebb31cba31fba653133ede5c35f56i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>The button directly closes the contacts on an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>&nbsp;(Auxiliary Input Unit), which is regularly polled by the NCE command station. The computer runs my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall_rtac.html" style="color:inherit;text-decoration:inherit">Conductor software</a></span><span>&nbsp;which polls JMRI for the status at at least 30 Hz. The AIU01 is polled by the NCE Command Station at an appalling low refresh rate due to the NCE cab bus implementation: if an input doesn't trigger long enough (e.g. 1 second), it will be easily missed. In this case, it’s enough to give a short but quick push to the button and most of the time miss the polling window. The event is simply missed.</span></p>
+<p></p>
+<p><span>Question is what would be the simplest circuitry possible to make an input trigger longer?</span></p>
+<p><span></span></p>
+
+<a href="2017-10-31_nce_aiu_and_short_trigger_events.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2017-04-12_powering_a_led_off_dcc.html">
     <h2 class="post-title">2017-04-12 - Powering a LED off DCC</h2>
@@ -519,65 +583,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2016-08-25_nce_q-snap_and_eztrack_6_crossovers.html">
-    <h2 class="post-title">2016-08-25 - NCE Q-Snap and EZTrack #6 Crossovers</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    NCE
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p style="text-align:left"><span>Experiment from tonight: control the EZTrack #6 crossovers using the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>. ⇒ Failed.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>I have 2 EZTrack #6 turnouts mounted in cross-over configuration. The idea was to power them from a single Q-Snap output to save one output for each cross-over.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>The Q-Snap has no problem driving a single #6. But ever the largest timing I tried does not make the crossover (2 turnouts in parallel) toggle properly. They either bounce or switch half-way.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>I also tried using a 9V DC power brick instead of the DCC power. That didn't help. Supposedly that way the turnout should get 9x2-2 = 16 VDC. However from experience I remember I always failed to trigger them in DC, which is why I previously used the AC from the EZTrack ACC power brick.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2016-08-22_home_control_panel.html">
-    <h2 class="post-title">2016-08-22 - Home Control Panel</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/train" title="View All Category Posts">Train</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://digistump.com/products/50" style="color:inherit;text-decoration:inherit">DigiX</a></span><span>: 11 x 6 in</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/201689279" style="color:inherit;text-decoration:inherit">NCE Q-Snap</a></span><span>: 4 x 3 in (DCC bus)</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200933435-Auxilliary-Input-Unit-AIU01-" style="color:inherit;text-decoration:inherit">NCE AIU01</a></span><span>: 4 x 3 (2 RJ12, comes with one cable)</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.gabotronics.com/development-boards/xmega-xminilab.htm" style="color:inherit;text-decoration:inherit">XminiLab scope + board</a></span><span>: 2 x 3 // 3.5 x 3 in</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200526389-UTP-Universal-Throttle-Panel" style="color:inherit;text-decoration:inherit">NCE UTP</a></span><span>: 3 x 2 x 2 in deep</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:448.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:621.00px"><img alt="" src="img_c985daf3252ab87f2b786481eb693894a2892801de0919ad7654291ee92b4cadd.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Notes:</span></p>
-<ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Q-Snap really needs 3 outputs per turnouts, it carries its own common per twin-coil. It's not clear whether I can share the commons since each one has its own capacitor.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The DigiX relays OTOH work by sharing the AC common so I have 2 outputs per turnouts plus one common.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -599,7 +604,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-10-08 by Rig4j 0.1-Exp-f3ee0b3
+    Generated on 2025-11-21 by Rig4j 0.1-Exp-f3ee0b3
     <!-- )rg-excl -->
     &nbsp;
 </div>
