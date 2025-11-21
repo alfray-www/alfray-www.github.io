@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-11-21T13:37:11.519432-08:00</updated>
+<updated>2025-11-21T14:01:57.617791-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -14,7 +14,7 @@
 <category term="video" label="Video"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/train/">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This is the camera I&#8217;m starting with on this HO-Size Car Camera project: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43sCfHv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43sCfHv&lt;/a&gt;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;&amp;nbsp;Arducam Module 3, with the 75 degrees FoV.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;m building an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO-Size Car Camera project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(see &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). &lt;br&gt;This is the camera I&#8217;ve selected to use: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43sCfHv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43sCfHv&lt;/a&gt;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;&amp;nbsp;Arducam Module 3, with the 75 degrees FoV.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:287.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.09px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7b0697d05f6860a606e485d28e3138769ba8032af47ff02896e8ab7b991d3eb4i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size:9pt&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-size:9pt;font-style:italic&quot;&gt;stock photo to be replaced later&lt;/span&gt;&lt;span style=&quot;font-size:9pt&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -150,7 +150,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-11-18T00:00:34-08:00</updated>
+<updated>2025-11-18T00:00:27-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -190,28 +190,28 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Camera Module 1: &lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;5 MP, 2013. $25. No longer produced (but many clones available).&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;OmniVision OV5647, 2592x1944 px. 640x480p60, 720p60, 1080p30.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;OmniVision OV5647. Sensor 2592x1944 px. Video 640x480p60, 720p60, 1080p30.&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Depth of field 1m to inf. FoV 53 deg.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Camera Module 2: &lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;8 MP, 2016. $25.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Sony IMX219. 3280x2464 px. 640x480p206 up to 1080p47.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Sony IMX219. Sensor 3280x2464 px. Video 640x480p206 up to 1080p47.&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Depth of field 10 cm to inf. FoV 62 deg.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Camera Module 3: &lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;12 MP, 2023, $25.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Sony IMX708. 4608x2592 px.1536x864p120 up to 2304x1295p56&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Motorized focus (aka Autofocus on some pages)&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Sony IMX708. Sensor 4608x2592 px. Video 1536x864p120 up to 2304x1295p56&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Motorized focus (a.k.a. Autofocus on some pages)&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Standard:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Depth of field 10 cm to inf. FoV 66 deg.&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Wide: &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Depth of field 5 cm to inf. FoV 102 deg.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;&#8220;AI Camera&#8221;: $70.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;&#8220;AI Camera&#8221;:&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Sony IMX500. 4056x3040 px. 4056x3040p10 up to 2028x1520p30.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;$70. Sony IMX500. Sensor 4056x3040 px. Video 4056x3040p10 up to 2028x1520p30.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Note: the FoV listed is the &#8220;widest&#8221; &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;for the sensor&lt;/span&gt;&lt;span&gt;&amp;nbsp;e.g. horizontal one.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Note: the FoV listed is the &#8220;widest&#8221; &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;for the sensor&lt;/span&gt;&lt;span&gt;&amp;nbsp;e.g. horizontal direction.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;For my application, I&#8217;m not interested in having a lot of megapixels, however I&#8217;m interested in having a choice of FoV. For that purpose, the Camera Module 3 seems like the best choice, and after looking around I chose the Arducam ones:&lt;/span&gt;&lt;/p&gt;
@@ -222,7 +222,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The Sony IMX708 was released in 2023 (&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.theverge.com/2023/1/9/23546129/raspberry-pi-camera-module-3-resolution-specs-price-release-date-features&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;link to The Verge article&lt;/a&gt;&lt;/span&gt;&lt;span&gt;).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;&#8220;CSI&#8221; camera connector:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;These connect to the Raspberry Pi using a &#8220;CSI&#8221; camera connector:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Most Pi Cameras as well as the RPi 1-2-3 feature a larger 15-pin connector (1 mm pitch).&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The RPi Zero and the RPi 5 feature a 22-pin connector (it&#8217;s shorter but has higher density, 0.5 mm pitch).&lt;/span&gt;&lt;/li&gt;
@@ -303,11 +303,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Source Code Pro&amp;quot;;font-size:10pt&quot;&gt;$ sudo vim /boot/firmware/config.txt&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size:10pt&quot;&gt;In section [all], add:&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Source Code Pro&amp;quot;;font-size:10pt&quot;&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;dtoverlay=disable-bt&lt;br&gt;$ sudo systemctl disable bluetooth.service&lt;br&gt;$ sudo systemctl stop bluetooth.service&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;# not necessary if rebooting right away&lt;br&gt;$ sudo reboot&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with the Raspberry Pi Camera.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Raspberry Pi Camera&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-15T00:00:20-08:00</updated>
+<updated>2025-11-15T00:00:05-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
