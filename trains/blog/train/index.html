@@ -296,18 +296,18 @@ td p {
 <p></p>
 <p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html" style="color:inherit;text-decoration:inherit">A few years ago I explored creating an HO-size live camera car</a></span><span>&nbsp;</span><span>using an old pin-point IP sec camera. It had terrible quality and I dropped the project. I also explored using an ESP32-CAM and abandoned it as the quality was not impressive. This time I want to start again, yet using a Raspberry Pi Camera as the basis.</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:296.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8a7292bc066617122bbeac222c410fb04d53e9a8d73aa7f7f162f2ea655ad34fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">A quick prototype test, disabling the camera video on a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">tablet running TCM</a></span><span>.</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:296.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8a7292bc066617122bbeac222c410fb04d53e9a8d73aa7f7f162f2ea655ad34fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">A quick prototype test, displaying the camera video on a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">tablet running TCM</a></span><span>.</span></p>
 <p></p>
-<p><span>The problem with the ESP32-CAM is that the default camera that ships with it is an OV2640 (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.uctronics.com/download/cam_module/OV2640DS.pdf" style="color:inherit;text-decoration:inherit">datasheet here</a></span><span>), which is an image sensor from OmniVision released in 2005. It’s not a bad image sensor, except that this thing is seriously outdated and has a crappy image quality out of the box -- there’s been a ton of progress on image sensors in between. </span></p>
+<p><span>The problem with the ESP32-CAM is that the default camera that ships with it is an OV2640 (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.uctronics.com/download/cam_module/OV2640DS.pdf" style="color:inherit;text-decoration:inherit">datasheet here</a></span><span>), which is an image sensor from OmniVision released in 2005. It’s not a bad image sensor, except that this thing is seriously outdated and has a crappy image quality out of the box -- there’s been a ton of progress on image sensors since then. </span></p>
 <p></p>
 <h2 id="h.qsf1bqtpmtpu" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span>Hardware Choice</span></h2>
 <p><span>Instead, the new project is going to be based on a Raspberry Pi. After looking at the various options, I opted for a Raspberry Pi Zero 2 W:</span></p>
 <ul style="margin:0">
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This is a fairly compact board that fits nicely on an HO-size car. </span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Processor is a 1GHz quad-core 64-bit Arm Cortex-A53 CPU, similar to the one of an RPi 3.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>512 MB SDRAM</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>512 MB SDRAM.</span></li>
 </ul>
-<p><span>There is no reason to use a Raspberry Pi Zero -- this one is only marginally cheaper but has the single-core CPU from an RPi 1. From direct experience, this is extremely limited and slow. The Raspberry Pi Zero 2 W is a much better choice.</span></p>
+<p><span>There is no reason to use a Raspberry Pi Zero -- it's only marginally cheaper yet has the single-core CPU from an RPi 1. From direct experience, this is extremely limited and slow. The Raspberry Pi Zero 2 W is a much better choice.</span></p>
 <p></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:308.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_16b10d92e180ef06544971c2898d5d2cb5d027ea8f8544440288aae9ead3347bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">The Raspberry Pi Zero 2 W neatly fits in an HO-size gondola car!</span></p>
 <p></p>
@@ -663,7 +663,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-21 by Rig4j 0.1-Exp-9bafc34
+    Generated on 2025-11-23 by Rig4j 0.1-Exp-9bafc34
     <!-- )rg-excl -->
     &nbsp;
 </div>

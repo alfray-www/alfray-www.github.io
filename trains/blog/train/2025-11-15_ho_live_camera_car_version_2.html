@@ -258,18 +258,18 @@ td p {
 <p></p>
 <p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html" style="color:inherit;text-decoration:inherit">A few years ago I explored creating an HO-size live camera car</a></span><span>&nbsp;</span><span>using an old pin-point IP sec camera. It had terrible quality and I dropped the project. I also explored using an ESP32-CAM and abandoned it as the quality was not impressive. This time I want to start again, yet using a Raspberry Pi Camera as the basis.</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:296.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8a7292bc066617122bbeac222c410fb04d53e9a8d73aa7f7f162f2ea655ad34fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">A quick prototype test, disabling the camera video on a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">tablet running TCM</a></span><span>.</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:296.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8a7292bc066617122bbeac222c410fb04d53e9a8d73aa7f7f162f2ea655ad34fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">A quick prototype test, displaying the camera video on a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">tablet running TCM</a></span><span>.</span></p>
 <p></p>
-<p><span>The problem with the ESP32-CAM is that the default camera that ships with it is an OV2640 (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.uctronics.com/download/cam_module/OV2640DS.pdf" style="color:inherit;text-decoration:inherit">datasheet here</a></span><span>), which is an image sensor from OmniVision released in 2005. It’s not a bad image sensor, except that this thing is seriously outdated and has a crappy image quality out of the box -- there’s been a ton of progress on image sensors in between. </span></p>
+<p><span>The problem with the ESP32-CAM is that the default camera that ships with it is an OV2640 (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.uctronics.com/download/cam_module/OV2640DS.pdf" style="color:inherit;text-decoration:inherit">datasheet here</a></span><span>), which is an image sensor from OmniVision released in 2005. It’s not a bad image sensor, except that this thing is seriously outdated and has a crappy image quality out of the box -- there’s been a ton of progress on image sensors since then. </span></p>
 <p></p>
 <h2 id="h.qsf1bqtpmtpu" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span>Hardware Choice</span></h2>
 <p><span>Instead, the new project is going to be based on a Raspberry Pi. After looking at the various options, I opted for a Raspberry Pi Zero 2 W:</span></p>
 <ul style="margin:0">
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This is a fairly compact board that fits nicely on an HO-size car. </span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Processor is a 1GHz quad-core 64-bit Arm Cortex-A53 CPU, similar to the one of an RPi 3.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>512 MB SDRAM</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>512 MB SDRAM.</span></li>
 </ul>
-<p><span>There is no reason to use a Raspberry Pi Zero -- this one is only marginally cheaper but has the single-core CPU from an RPi 1. From direct experience, this is extremely limited and slow. The Raspberry Pi Zero 2 W is a much better choice.</span></p>
+<p><span>There is no reason to use a Raspberry Pi Zero -- it's only marginally cheaper yet has the single-core CPU from an RPi 1. From direct experience, this is extremely limited and slow. The Raspberry Pi Zero 2 W is a much better choice.</span></p>
 <p></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:308.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_16b10d92e180ef06544971c2898d5d2cb5d027ea8f8544440288aae9ead3347bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">The Raspberry Pi Zero 2 W neatly fits in an HO-size gondola car!</span></p>
 <p></p>
@@ -364,9 +364,9 @@ td p {
 <p></p>
 <p><span>It’s possible to entirely set up a Raspberry Pi in absolute headless mode (with no HDMI video connection) but in my experience it’s an exercise in frustration as one cannot see the boot messages in case of failure. So just grab a mini HDMI adapter and connect to some monitor for the initial setup, then later go fully headless over SSH once wifi + SSH is set up.</span></p>
 <p></p>
-<p><span>Plug the HDMI via a mini adapter, plug the sdcard, plug USB power and… it bootloops. That sounds like a lack of power. After trying various other 5V/2A USB bricks, I solved it by changing… the USB cable. That’s exactly the kind of thing which is impossible to diagnose without a screen.</span></p>
+<p><span>Plug the HDMI via a mini adapter, plug the sdcard, plug USB power and… it bootloops. That sounds like a lack of power. After trying various other 5V/2A USB bricks, I solved it by changing… the USB cable. That’s exactly the kind of thing which is hard to diagnose without a screen.</span></p>
 <p></p>
-<p><span>In the Raspberry Pi Imager customization, I requested to enable the SSH service and I pre-entered a wifi SSID and password. Apparently that did not stick, and wlan0 was not up at boot. That would have allowed me to log in directly without ever needing a keyboard… &nbsp;⇒ That didn’t work as wlan0 wasn’t connected at first. I used an USB OTG cable w/ a USB keyboard, then:</span></p>
+<p><span>In the Raspberry Pi Imager customization, I requested to enable the SSH service and I pre-entered a wifi SSID and password. Apparently that did not stick, and wlan0 was not up at boot (edit: when I set up the second RPi, it worked, so that was likely user error). That would have allowed me to log in directly without ever needing a keyboard… &nbsp;⇒ That didn’t work as wlan0 wasn’t connected at first. I used an USB OTG cable w/ a USB keyboard, then:</span></p>
 <p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-size:10pt">$ sudo raspi-config<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 System Options &gt; 2 S1 Wireless → enter wifi SSID<br>$ ip addr<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ wlan0 is up, and has an IP address<br>$ sudo apt update<br>$ sudo apt upgrade<br>$ sudo apt install htop git openssh-server sudo ethstatus net-tools rsync curl wget vim screen tmux</span></p>
 <p></p>
 <h2 id="h.hftm65xtvzm4" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Minimal X via VNC</span></h2>
@@ -399,6 +399,23 @@ td p {
 <p style="text-align:left"></p>
 <p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Source Code Pro&quot;;font-size:10pt">$ sudo vim /boot/firmware/config.txt<br></span><span style="font-size:10pt">In section [all], add:</span><span style="font-family:&quot;Source Code Pro&quot;;font-size:10pt"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtoverlay=disable-bt<br>$ sudo systemctl disable bluetooth.service<br>$ sudo systemctl stop bluetooth.service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# not necessary if rebooting right away<br>$ sudo reboot</span></p>
 <p></p>
+<h2 id="h.2lqbp89eq9sg" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Comparison Raspberry Pi OS Lite 32-bit vs 64-bit</span></h2>
+<p style="text-align:left"><span>I have installed the same RPi Zero 2W with Raspberry Pi OS Lite 32-bit vs 64-bit.<br>They both have the same minimal apt install.<br>This below is measured after a reboot, no specific services are started except the default out-of-the-box stuff. SSH is in use over Wifi, X is not running, BT has been disabled. Htop shows a handful of services running using almost no CPU.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Raspberry Pi OS Lite 32-bit:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt">$ df -h<br>Filesystem &nbsp; &nbsp; &nbsp;Size &nbsp;Used Avail Use% Mounted on<br>udev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 80M &nbsp; &nbsp; 0 &nbsp; 80M &nbsp; 0% /dev<br>/dev/mmcblk0p2 &nbsp; 29G &nbsp;3.1G &nbsp; 24G &nbsp;12% /<br>/dev/mmcblk0p1 &nbsp;510M &nbsp; 78M &nbsp;433M &nbsp;16% /boot/firmware</span></p>
+<p style="margin-left:36pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt">$ cat /proc/meminfo<br>MemTotal: &nbsp; &nbsp; &nbsp; &nbsp; 436200 kB<br>MemFree: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;191404 kB<br>MemAvailable: &nbsp; &nbsp; 323144 kB</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Raspberry Pi OS Lite 64-bit:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt">$ df -h<br>Filesystem &nbsp; &nbsp; &nbsp;Size &nbsp;Used Avail Use% Mounted on<br>udev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 74M &nbsp; &nbsp; 0 &nbsp; 74M &nbsp; 0% /dev<br>/dev/mmcblk0p2 &nbsp; 29G &nbsp;3.4G &nbsp; 24G &nbsp;13% /<br>/dev/mmcblk0p1 &nbsp;510M &nbsp; 66M &nbsp;445M &nbsp;13% /boot/firmware</span></p>
+<p style="margin-left:36pt;text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt">$ cat /proc/meminfo<br>MemTotal: &nbsp; &nbsp; &nbsp; &nbsp; 426128 kB<br>MemFree: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;184448 kB<br>MemAvailable: &nbsp; &nbsp; 277860 kB</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>OK so there is indeed a tiny bit less </span><span style="font-style:italic">available</span><span>&nbsp;RAM on the 64-bit install (see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773" style="color:inherit;text-decoration:inherit">here for why MemAvailable</a></span><span>&nbsp;is the number to look at instead of MemFree).</span></p>
+<p style="text-align:left"><span>The disk space difference is rather insignificant (I have a couple wireshark dumps stored on the 32-bit box; if we remove these, that’s really the same count).</span></p>
+<p style="text-align:left"><span>Out of the theoretical 512 MB, the memory available is 61% for 32-bit vs 53% for 64-bit. Depending on usage, that could make a difference.</span></p>
+<p></p>
 <p><span>Next, let’s deal with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam.html" style="color:inherit;text-decoration:inherit">Raspberry Pi Camera</a></span><span>.</span></p>
 <p></p>
 <hr>
@@ -425,7 +442,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-21 by Rig4j 0.1-Exp-9bafc34
+    Generated on 2025-11-23 by Rig4j 0.1-Exp-9bafc34
     <!-- )rg-excl -->
     &nbsp;
 </div>
