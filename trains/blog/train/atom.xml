@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-11-23T10:53:48.336333-08:00</updated>
+<updated>2025-11-23T12:00:50.545628-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -16,7 +16,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I&#8217;m building an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO-Size Car Camera project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(see &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). &lt;br&gt;This is the camera I&#8217;ve selected to use: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43sCfHv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43sCfHv&lt;/a&gt;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;&amp;nbsp;Arducam Module 3, with the 75 degrees FoV.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:287.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.09px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7b0697d05f6860a606e485d28e3138769ba8032af47ff02896e8ab7b991d3eb4i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size:9pt&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;font-size:9pt;font-style:italic&quot;&gt;stock photo to be replaced later&lt;/span&gt;&lt;span style=&quot;font-size:9pt&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size:9pt;font-style:italic&quot;&gt;Raspberry Pi 2 W w/ Arducam Module 3&lt;/span&gt;&lt;span style=&quot;font-size:9pt&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The paper &#8220;doc&#8221; points to this:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
@@ -36,6 +36,16 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;and this displays a preview in full screen on the HDMI output, using X or Linux Direct Rendering Manager (DRM) if there&#8217;s no X -- obviously you won&#8217;t see anything if Raspberry Pi is headless over SSH, but if you have an HDMI connected, you will see something even in non-X console mode:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Source Code Pro&amp;quot;;font-size:10pt&quot;&gt;$ rpicam-hello&lt;br&gt;$ rpicam-still -t 0&lt;br&gt;$ rpicam-vid&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.nala5iu5zi5z&quot; style=&quot;line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Sensor Datasheet&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Unfortunately there&#8217;s no official public datasheet for the IMX708.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That&#8217;s a common issue with all these hardware components: the datasheet is always &#8220;confidential&#8221; for whatever reason. We can only hope to find &#8220;leaked&#8221; versions of it in a few years circulating on some random web site. I don&#8217;t really see the value of that. It&#8217;s too bad because things like the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.uctronics.com/download/cam_module/OV2640DS.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;OV2640 datasheet here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;make for a fascinating read. YMMV.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The closest info I could find this &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/Hermann-SW/imx708_regs_annotated&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/Hermann-SW/imx708_regs_annotated&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;This site also links to other datasheets worth reading.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.z5gn4qspyksf&quot; style=&quot;line-height:1.14;padding-bottom:6pt;padding-top:0pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Stream Video over Network&lt;/span&gt;&lt;/h2&gt;
@@ -144,7 +154,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-11-18T00:00:19-08:00</updated>
+<updated>2025-11-18T00:00:20-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

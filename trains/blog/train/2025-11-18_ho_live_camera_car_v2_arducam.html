@@ -13,14 +13,14 @@
 <meta property="og:title"       content="HO Live Camera Car v2: Arducam" />
 
 <meta property="og:description" content="I’m building an HO-Size Car Camera project&nbsp;(see first post here). This is the camera I’ve selected to use: https://amzn.to/43sCfHv,&nbsp;Arducam Module 3, with the 75 degrees FoV." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_7b0697d05f6860a606e485d28e3138769ba8032af47ff02896e8ab7b991d3eb4i.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="HO Live Camera Car v2: Arducam" />
 
 <meta name="twitter:description" content="I’m building an HO-Size Car Camera project&nbsp;(see first post here). This is the camera I’ve selected to use: https://amzn.to/43sCfHv,&nbsp;Arducam Module 3, with the 75 degrees FoV." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_7b0697d05f6860a606e485d28e3138769ba8032af47ff02896e8ab7b991d3eb4i.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -258,7 +258,7 @@ td p {
 <p></p>
 <p><span>I’m building an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">HO-Size Car Camera project</a></span><span>&nbsp;(see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">first post here</a></span><span>). <br>This is the camera I’ve selected to use: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/43sCfHv" style="color:inherit;text-decoration:inherit">https://amzn.to/43sCfHv</a></span><span>,</span><span>&nbsp;Arducam Module 3, with the 75 degrees FoV.</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:287.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.09px"><img alt="" src="img_7b0697d05f6860a606e485d28e3138769ba8032af47ff02896e8ab7b991d3eb4i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:9pt">(</span><span style="font-size:9pt;font-style:italic">stock photo to be replaced later</span><span style="font-size:9pt">)</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:9pt;font-style:italic">Raspberry Pi 2 W w/ Arducam Module 3</span><span style="font-size:9pt">.</span></p>
 <p></p>
 <p style="text-align:left"><span>The paper “doc” points to this:</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/" style="color:inherit;text-decoration:inherit">https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/</a></span></p>
@@ -278,6 +278,16 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>and this displays a preview in full screen on the HDMI output, using X or Linux Direct Rendering Manager (DRM) if there’s no X -- obviously you won’t see anything if Raspberry Pi is headless over SSH, but if you have an HDMI connected, you will see something even in non-X console mode:</span></p>
 <p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Source Code Pro&quot;;font-size:10pt">$ rpicam-hello<br>$ rpicam-still -t 0<br>$ rpicam-vid</span></p>
+<p></p>
+<p></p>
+<h2 id="h.nala5iu5zi5z" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Sensor Datasheet</span></h2>
+<p></p>
+<p><span>Unfortunately there’s no official public datasheet for the IMX708.</span></p>
+<p></p>
+<p><span>That’s a common issue with all these hardware components: the datasheet is always “confidential” for whatever reason. We can only hope to find “leaked” versions of it in a few years circulating on some random web site. I don’t really see the value of that. It’s too bad because things like the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.uctronics.com/download/cam_module/OV2640DS.pdf" style="color:inherit;text-decoration:inherit">OV2640 datasheet here</a></span><span>&nbsp;make for a fascinating read. YMMV.</span></p>
+<p></p>
+<p><span>The closest info I could find this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/Hermann-SW/imx708_regs_annotated" style="color:inherit;text-decoration:inherit">https://github.com/Hermann-SW/imx708_regs_annotated</a></span><span><br>This site also links to other datasheets worth reading.</span></p>
+<p></p>
 <p></p>
 <p></p>
 <h2 id="h.z5gn4qspyksf" style="line-height:1.14;padding-bottom:6pt;padding-top:0pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Stream Video over Network</span></h2>
