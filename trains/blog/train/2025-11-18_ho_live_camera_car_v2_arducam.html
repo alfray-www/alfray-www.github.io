@@ -258,7 +258,7 @@ td p {
 <p></p>
 <p><span>I’m building an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">HO-Size Car Camera project</a></span><span>&nbsp;(see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">first post here</a></span><span>). <br>This is the camera I’ve selected to use: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/43sCfHv" style="color:inherit;text-decoration:inherit">https://amzn.to/43sCfHv</a></span><span>,</span><span>&nbsp;Arducam Module 3, with the 75 degrees FoV.</span></p>
 <p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:9pt;font-style:italic">Raspberry Pi 2 W w/ Arducam Module 3</span><span style="font-size:9pt">.</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:9pt;font-style:italic">Raspberry Pi Zero 2 W w/ Arducam Module 3</span><span style="font-size:9pt">.</span></p>
 <p></p>
 <p style="text-align:left"><span>The paper “doc” points to this:</span></p>
 <p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/" style="color:inherit;text-decoration:inherit">https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/</a></span></p>
@@ -286,7 +286,7 @@ td p {
 <p></p>
 <p><span>That’s a common issue with all these hardware components: the datasheet is always “confidential” for whatever reason. We can only hope to find “leaked” versions of it in a few years circulating on some random web site. I don’t really see the value of that. It’s too bad because things like the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.uctronics.com/download/cam_module/OV2640DS.pdf" style="color:inherit;text-decoration:inherit">OV2640 datasheet here</a></span><span>&nbsp;make for a fascinating read. YMMV.</span></p>
 <p></p>
-<p><span>The closest info I could find this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/Hermann-SW/imx708_regs_annotated" style="color:inherit;text-decoration:inherit">https://github.com/Hermann-SW/imx708_regs_annotated</a></span><span><br>This site also links to other datasheets worth reading.</span></p>
+<p><span>The closest info I could find is this: &nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/Hermann-SW/imx708_regs_annotated" style="color:inherit;text-decoration:inherit">https://github.com/Hermann-SW/imx708_regs_annotated</a></span><span><br>This site also links to other datasheets worth reading.</span></p>
 <p></p>
 <p></p>
 <p></p>
@@ -310,7 +310,7 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>With VLC, open a Network Stream to URL “</span><span style="font-weight:700">tcp://&lt;ip addr&gt;:1990</span><span>” and that worked like a charm.</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span>Even though that works, that’s not what I really want. Instead I want an RTSP stream, and I want it to work with my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">TCM software on the Android tablet</a></span><span>&nbsp;-- the issue with VLC is that it doesn’t auto-reconnect when the stream breaks, and TCM takes care of reconnections.</span></p>
+<p style="text-align:left"><span>Even though that works, that’s not what I really want. Instead I want an RTSP stream, and I want it to work with my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">TCM software on the Android tablet</a></span><span>&nbsp;-- the issue with VLC is that it doesn’t auto-reconnect when the stream breaks, and TCM takes care of reconnections -- TCM is designed to be a kiosk mode always-on video viewer.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>The Raspberry Pi doc above tells us how to produce an RTSP stream:</span></p>
 <p style="text-align:left"></p>
@@ -326,7 +326,7 @@ td p {
 <h2 id="h.b22w501q5ark" style="line-height:1.14;padding-bottom:6pt;padding-top:0pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Stream Video to TCM</span></h2>
 <p style="text-align:left"><span>Now, when I tried this, it worked with VLC on the desktop or on Android, yet my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/" style="color:inherit;text-decoration:inherit">TCM android app</a></span><span>&nbsp;failed to connect to the stream. Why?</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span>TCM uses the native Android FFMpeg audio-video libraries. It opens an RTPS stream, so in theory it </span><span style="font-style:italic">should</span><span>&nbsp;work. Thus the first thing I did is enabled the FFMpeg verbose mode and check logcat for error, and that’s what I found:</span></p>
+<p style="text-align:left"><span>TCM uses the native Android FFMpeg audio-video libraries. It opens an RTPS stream, so in theory it </span><span style="font-style:italic">should</span><span>&nbsp;work. Thus the first thing I did is enable the FFMpeg verbose mode and check logcat for errors, and that’s what I found:</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-weight:700">ffmpeg Error: [rtsp @ 0xb40000759966da90] method SETUP failed: 461 Unsupported transport</span></p>
 <p style="text-align:left"></p>
@@ -375,9 +375,9 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>Yep that seems to match.</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span>So here’s what happens: when I coded the first version of TCM, I was only dealing with IP Sec cameras. In TCM, I use “ffmpeg rtsp_transport=tcp”. This is the “lower-level transport protocol used for RTSP streams”. RTSP can be over TCP or UDP, with UDP being the default. And in this case, the VLC documentation indicates that they </span><span style="font-style:italic">do not</span><span>&nbsp;support TCP at all.</span></p>
+<p style="text-align:left"><span>So here’s what happens: when I coded the first version of TCM, I was only dealing with IP Sec cameras. In TCM, I use “ffmpeg rtsp_transport=tcp”. This is the “lower-level transport protocol used for RTSP streams”. RTSP can be over TCP or UDP, with UDP being the default. And in this case, the VLC </span><span style="font-style:italic">server</span><span>&nbsp;(sout) documentation indicates that they </span><span style="font-style:italic">do not</span><span>&nbsp;support TCP at all.</span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span>We thus can’t change the “cvlc” command line to request sending over TCP. Thus we want to change TCM to use UDP. Since that’s my own Android app, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/commit/e26409b65a1a708c9c1a92d7fc13b11fdfa4d03c" style="color:inherit;text-decoration:inherit">that’s an easy change</a></span><span>: I added the option to entirely reconfigure each FFMpeg stream and override all the defaults I use with a simple “name=value;name=value” string in camera preferences.</span></p>
+<p style="text-align:left"><span>We thus can’t change the “cvlc” server command line to request sending over TCP. Thus we want to change TCM to use UDP. Since that’s my own Android app, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm/commit/e26409b65a1a708c9c1a92d7fc13b11fdfa4d03c" style="color:inherit;text-decoration:inherit">that’s an easy change</a></span><span>: I added the option to entirely reconfigure each FFMpeg stream and override all the defaults I use with a simple “name=value;name=value” string in camera preferences.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>That way, I can now configure this camera with “rtsp_transport=udp”.</span></p>
 <p style="text-align:left"><span>And… tada! that now works:</span></p>
@@ -418,7 +418,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-23 by Rig4j 0.1-Exp-b292492
+    Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492
     <!-- )rg-excl -->
     &nbsp;
 </div>
