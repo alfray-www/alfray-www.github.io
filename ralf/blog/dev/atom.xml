@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-11-25T17:41:58.146773-08:00</updated>
+<updated>2025-11-25T17:44:44.676899-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -109,7 +109,6 @@
 &lt;h2 id=&quot;h.y4cib01i7ru5&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;SPA, a Single Page Application&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Here are a few sites I completed recently:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://rorschach-coding.alfray.com/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Rorschach&#8482; Inkblot Coding&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/labs/apps/tangram/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Tangram Viewer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
@@ -142,7 +141,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;From the web browser point of view, it&apos;s always the same page being rendered (index.html) yet JavaScript is used to read the hash name and decide how to fill the page -- when the page loads, we use JavaScript to literally inject the content we want in the web page at runtime. If you were to read the &#8220;source&#8221; of the main index.html, you&#8217;d find it basically empty (or more exactly having just a single &amp;lt;div&amp;gt; container).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The mechanism above using the hash is called a &#8220;hash router&#8221;. There are other ways to do it, that&apos;s just the one I prefer.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.mtbioauqltcm&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;It&#8217;s all about the frameworks&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this kind of web app, we rarely write &#8220;vanilla Javascript&#8221; (e.g. &#8220;code everything by hand&#8221;). It&#8217;s just too tedious. Instead we use a framework to help us write the web page. There are a ton of frameworks out there, but essentially there are 4 that I consider the most popular and important:&lt;/span&gt;&lt;/p&gt;
@@ -214,7 +213,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-16T00:00:57-07:00</updated>
+<updated>2025-10-16T00:00:49-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
