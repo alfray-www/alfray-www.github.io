@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="One discussion on the Arduini mailing list centered about the use of Arduinos to commonly do Crossing Gates mechanisms. The projects are considered “trivial” as they involve commanding servos (to move gate arms) and blinking LEDs for the crossing lights. There are modules to do sound too. Both are ubiquitous with Arduinos and well designed for that." />
+<meta property="og:description" content="Specs:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="One discussion on the Arduini mailing list centered about the use of Arduinos to commonly do Crossing Gates mechanisms. The projects are considered “trivial” as they involve commanding servos (to move gate arms) and blinking LEDs for the crossing lights. There are modules to do sound too. Both are ubiquitous with Arduinos and well designed for that." />
+<meta name="twitter:description" content="Specs:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,43 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2019-12-10_new_project_litter_timer.html">
+    <h2 class="post-title">2019-12-10 - New Project: Litter Timer</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Specs:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Target: Froyo Android 2.2</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Keep screen on when plugged in.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Release screen lock when on battery.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Remember timer / restore after restart. Compensate for time off (if accurate).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change timer color:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">white default.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">orange if &gt; 24h</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">red if &gt; 48h</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">red blink if &gt; 72h</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Email updates notifications.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And yes, the target really is Froyo Android 2.2. I like to reuse old phones as dedicated one-off appliances.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2019-11-30_esp32-cam_project_grade_crossing.html">
     <h2 class="post-title">2019-11-30 - ESP32-CAM Project: Grade Crossing</h2>
@@ -708,48 +745,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-06-28_the_mcvp_pattern.html">
-    <h2 class="post-title">2019-06-28 - The MCVP pattern</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A while ago I wanted to take a consistent approach at splitting my projects into a “UI vs core” pattern. My old C# skeleton generated 2 libs upfront for that. In other android apps, I have either an android lib or at least clear packages “core vs ui”.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking at something like Flutter, the benefits would be useful if the app and UI is using one framework and then the “core” of the app uses another framework, namely a POJO or at least an Android lib. In the case of a game, the latter could be a Unity library.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When doing a pure Android app of a limited scope, there’s little value in that separation. It becomes more useful when I try alternate frameworks, for example Flutter or Kotlin. The idea is that if I write the UI part in Flutter now and the framework falls in desuetude, I could rewrite just the UI later.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing I noticed is that if I do not force myself to do the split upfront using actual libraries, it will not happen easily after. Forcing to have an android app + an android lib imposes some constraints in the import/dependency structure. It forces us to make callbacks instead of direct bi-directional calls. It forces us to make the boundaries clear. Dagger would help a bit to ease using one with the other.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As far as patterns go, there’s MVP and MVC. I suggest a mix, which I’m calling MCVP:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Model: Model data/classes, in the core feature library.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Controllers: Action classes acting solely on the model, in the core feature library.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Views: Pure UI elements display model, in the app/ui library.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Presenters: Action classes managing the interaction, in the app/ui library.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The app logic would be both in controllers and presenters. The controllers are purely model-oriented and by having them in the core lib, they have no impact on the UI. The presenters on the other hand coordinate between the views, model, and controllers. They are the “business logic” that is located at the app/ui level.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As a graph, we would have:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">[model] ⇐⇒ [controllers] ⇐⇒ [presenters] ⇐⇒ [views] </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -766,7 +761,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

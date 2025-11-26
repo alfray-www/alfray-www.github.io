@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I've added a new idea/research page for BX07." />
+<meta property="og:description" content="How to currently install/build go 1.5 from source on Linux:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I've added a new idea/research page for BX07." />
+<meta name="twitter:description" content="How to currently install/build go 1.5 from source on Linux:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,45 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2015-09-10_how_to_install_build_go_1_5__8c57f07a.html">
+    <h2 class="post-title">2015-09-10 - How to install/build go 1.5 from source on Linux</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How to currently install/build go 1.5 from source on Linux:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ cd ~</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ git clone https://go.googlesource.com/go</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ cd go</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"># create the go 1.4 bootstrap using gcc</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ git checkout go1.4</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ ( cd src ; ./make.bash )</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ mkdir ~/go1.4</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ cp -rv bin pkg src ~/go1.4</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ (cd src ; ./clean.bash )</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"># build latest version</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ git checkout go1.5</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ ( cd src ; ./all.bash )</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ export GOROOT=~/go</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2014-10-09_research_page_for_bx07.html">
     <h2 class="post-title">2014-10-09 - Research page for BX07</h2>
@@ -617,29 +656,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2014-03-05_music_app.html">
-    <h2 class="post-title">2014-03-05 - Music App</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Did some work on the Music App this week-end: I kind of like and hate the little script language implementation. It would be interesting to formalize its implementation into a design doc and write a standalone library for it, working on separating "core" language from app-specific extensions.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">[update 2014-03-09, here it is: NovaScript [idea]] </span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -656,7 +672,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

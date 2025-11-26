@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Current projects, either actually ongoing or started/pending:" />
+<meta property="og:description" content="Currently working on Inkblot v2 Scoring Web App." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Current projects, either actually ongoing or started/pending:" />
+<meta name="twitter:description" content="Currently working on Inkblot v2 Scoring Web App." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,43 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-09-22_aws_vs_firebase_seeds_.html">
+    <h2 class="post-title">2020-09-22 - AWS vs Firebase… Seeds?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Currently working on Inkblot v2 Scoring Web App.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The suggestion was to evaluate AWS vs Firebase (nodejs based, not Android as I usually do).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">AWS is working really well work Inkblot v2 right now, so there’s little incentive to also do a Firebase version.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’d still like to do a web app using Firebase to have a comparison with AWS, and Seeds seems like a good candidate for this. I have the Android app working fine, however my old Chrome extension does not work anymore since the AppScript-based apps have been deprecated.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rebuilding it using Firebase would be a good target:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rely on their free tier, and measure cold latency (one of the big drawbacks of app engine in their free tier, which I do not see in AWS).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nodejs + React + Bootstrap, similar to what’s used in Inkblot v2.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Google-only auth… how well do they integrate that in Firebase?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Backend storage… how does it compare with GraphQL + DynamoDB?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note: the only thing I really need is to store the GDrive doc id.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Deployment/hosting… this one would likely go on something like “seeds.alfray.com”.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Updated 2020-09-24: That project could also be a candidate to look again at Angular. I remember looking at Angular before React and couldn’t figure out the model… However now that I’m familiar with React (non native), looking at Angular a second time would be worth it, for a good comparison. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-09-09_current_project_list.html">
     <h2 class="post-title">2020-09-09 - Current Project List</h2>
@@ -608,30 +645,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-07-13_android_dark_mode.html">
-    <h2 class="post-title">2020-07-13 - Android dark mode</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Android development: what is needed to do a theme changer that supports light, dark, and system dynamic theming?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>A good candidate is </span><span style="font-style:italic">Seeds</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -648,7 +661,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-10-17 by Rig4j 0.1-Exp-f3ee0b3 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
