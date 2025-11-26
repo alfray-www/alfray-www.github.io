@@ -13,14 +13,14 @@
 <meta property="og:title"       content="Automated PA Announcement on the NCRy" />
 
 <meta property="og:description" content="The NCRy train&nbsp;could use some kind of automation in their PA announcement system. Consider this some kind of design doc / proposal document. I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This isn’t that different." />
-
+<meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Automated PA Announcement on the NCRy" />
 
 <meta name="twitter:description" content="The NCRy train&nbsp;could use some kind of automation in their PA announcement system. Consider this some kind of design doc / proposal document. I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This isn’t that different." />
-
+<meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" />
 
 <title>R’alf Dev Log</title>
 
@@ -249,7 +249,10 @@ td p {
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>Rather than think in terms of GPS position, my suggestion is that we convert GPS positions into a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Milestone" style="color:inherit;text-decoration:inherit">milepost (MP) number</a></span><span style="font-family:&quot;Roboto Mono&quot;">. That’s more familiar with everyone involved on the railroad.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus a “voice track” is actually a succession of “voice segments” -- each segment is a snippet of voice recording, with an MP interval in which it plays, and optionally a direction.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example a “brightside” segment could have MP 35.5-36.5 -- it would start playing at MP 35.5 when coming from Sunol, or at MP 36.5 when coming from Niles, or right away if the track playback is activated within the yard.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:260.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example a “brightside” segment could have MP 33.5~34.5 -- it would start playing at MP 34.5 when westbound from Sunol, or at MP 33.5 when eastbound from Niles, or right away if the track playback is activated within the yard.</span></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Two segments could have the same milepost range if they have different direction flags. It's useful to record something like “look at this landmark on the left” vs “look on the right” depending on the direction of travel -- which is always either eastbound vs westbound.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
@@ -335,7 +338,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-26 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

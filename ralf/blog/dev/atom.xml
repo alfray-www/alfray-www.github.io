@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-11-25T20:57:27.759324-08:00</updated>
+<updated>2025-11-26T09:35:26.078763-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -30,7 +30,10 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Rather than think in terms of GPS position, my suggestion is that we convert GPS positions into a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Milestone&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;milepost (MP) number&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That&#8217;s more familiar with everyone involved on the railroad.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Thus a &#8220;voice track&#8221; is actually a succession of &#8220;voice segments&#8221; -- each segment is a snippet of voice recording, with an MP interval in which it plays, and optionally a direction.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For example a &#8220;brightside&#8221; segment could have MP 35.5-36.5 -- it would start playing at MP 35.5 when coming from Sunol, or at MP 36.5 when coming from Niles, or right away if the track playback is activated within the yard.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:260.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For example a &#8220;brightside&#8221; segment could have MP 33.5~34.5 -- it would start playing at MP 34.5 when westbound from Sunol, or at MP 33.5 when eastbound from Niles, or right away if the track playback is activated within the yard.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Two segments could have the same milepost range if they have different direction flags. It&apos;s useful to record something like &#8220;look at this landmark on the left&#8221; vs &#8220;look on the right&#8221; depending on the direction of travel -- which is always either eastbound vs westbound.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -99,7 +102,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-11-25T00:00:07-08:00</updated>
+<updated>2025-11-25T00:00:59-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
