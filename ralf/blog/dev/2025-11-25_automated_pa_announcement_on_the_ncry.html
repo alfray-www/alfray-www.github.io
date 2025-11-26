@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Automated PA Announcement on the NCRy" />
 
-<meta property="og:description" content="The NCRy train&nbsp;could use some kind of automation in their PA announcement system. Consider this some kind of design doc / proposal document. I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This isn’t that different." />
+<meta property="og:description" content="The NCRy train&nbsp;could use some kind of automation in their PA announcement system. Currently, the passenger train relies on a volunteer manning the PA system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the PA system at specific points in the train’s route. As with most automation, it should be supplementary&nbsp;and a PA volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. Consider this document to be a design doc / proposal document." />
 <meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 <meta name="twitter:title"       content="Automated PA Announcement on the NCRy" />
 
-<meta name="twitter:description" content="The NCRy train&nbsp;could use some kind of automation in their PA announcement system. Consider this some kind of design doc / proposal document. I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This isn’t that different." />
+<meta name="twitter:description" content="The NCRy train&nbsp;could use some kind of automation in their PA announcement system. Currently, the passenger train relies on a volunteer manning the PA system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the PA system at specific points in the train’s route. As with most automation, it should be supplementary&nbsp;and a PA volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. Consider this document to be a design doc / proposal document." />
 <meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" />
 
 <title>R’alf Dev Log</title>
@@ -232,7 +232,9 @@ td p {
 
 
     <p style="text-align:left"></p>
-<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ncry.org/" style="color:inherit;text-decoration:inherit">NCRy train</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;could use some kind of automation in their PA announcement system. Consider this some kind of design doc / proposal document. I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This isn’t that different.</span></p>
+<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ncry.org/" style="color:inherit;text-decoration:inherit">NCRy train</a></span><span>&nbsp;could use some kind of automation in their PA announcement system. Currently, the passenger train relies on a volunteer manning the PA system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the PA system at specific points in the train’s route. As with most automation, it should be </span><span style="font-style:italic">supplementary</span><span>&nbsp;and a PA volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. </span><span style="font-family:&quot;Roboto Mono&quot;">Consider this document to be a design doc / proposal document.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This proposal isn’t very different, just updated to what is now ubiquitous tech.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I had to build this today with current tech, I’d simply use an Android smart phone or tablet with a custom-made Android app:</span></p>
 <ul style="margin:0">
@@ -315,8 +317,8 @@ td p {
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Trains Dashboard</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There’s an obvious corollary offshoot project from this design.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train -- basically each train would have had a cell phone on board sending their GPS position to some server, and then we collect and display that on a web site, which can be shown on a screen e.g. at the Sunol station, etc.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Well, it turns out that if the proposal above were implemented, one would have a GPS-enabled device on each passenger train on the mainline (since they would necessarily have the PA car in service). We just need the one smart phone to have a SIM card and a cell phone line, which can be fairly cheap using some kind of data-only MVNO plan (the so-called “tablet only” plans, IIRC we’re talking less than $200/yr these days). The device on the train just needs to output the known MP location to some server, and a display can then pick that up in the station if it has internet/wifi.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Back in 2016 I sent a proposal to Jim on how to create a dashboard that could display the location of each train -- basically each train would have had a cell phone on board sending their GPS position to some server, which we’d collect and display that on a web site, which can be shown on a screen e.g. at the Sunol station, etc.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Well, it turns out that if the proposal above were implemented, one would have a GPS-enabled device on the current passenger train on the mainline (since it would necessarily have the PA car in service). We just need the one smart phone/tablet to have a SIM card and a cell phone line, which can be fairly cheap using some kind of data-only MVNO plan (the so-called “tablet only” plans, IIRC we’re talking less than $200/yr these days). The device on the train just needs to output the known MP location to some server, and a display can then pick that up in the station if it has internet/wifi.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
 <hr>

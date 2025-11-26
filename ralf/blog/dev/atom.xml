@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-11-26T09:35:26.078763-08:00</updated>
+<updated>2025-11-26T09:57:15.215983-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -13,7 +13,9 @@
 <id>https://www.alfray.com/ralf/blog/dev/2025-11-25_automated_pa_announcement_on_the_ncry.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.ncry.org/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCRy train&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;could use some kind of automation in their PA announcement system. Consider this some kind of design doc / proposal document. I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This isn&#8217;t that different.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.ncry.org/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCRy train&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;could use some kind of automation in their PA announcement system. Currently, the passenger train relies on a volunteer manning the PA system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the PA system at specific points in the train&#8217;s route. As with most automation, it should be &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;supplementary&lt;/span&gt;&lt;span&gt;&amp;nbsp;and a PA volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Consider this document to be a design doc / proposal document.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This proposal isn&#8217;t very different, just updated to what is now ubiquitous tech.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If I had to build this today with current tech, I&#8217;d simply use an Android smart phone or tablet with a custom-made Android app:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
@@ -96,13 +98,13 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Trains Dashboard&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;There&#8217;s an obvious corollary offshoot project from this design.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train -- basically each train would have had a cell phone on board sending their GPS position to some server, and then we collect and display that on a web site, which can be shown on a screen e.g. at the Sunol station, etc.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Well, it turns out that if the proposal above were implemented, one would have a GPS-enabled device on each passenger train on the mainline (since they would necessarily have the PA car in service). We just need the one smart phone to have a SIM card and a cell phone line, which can be fairly cheap using some kind of data-only MVNO plan (the so-called &#8220;tablet only&#8221; plans, IIRC we&#8217;re talking less than $200/yr these days). The device on the train just needs to output the known MP location to some server, and a display can then pick that up in the station if it has internet/wifi.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Back in 2016 I sent a proposal to Jim on how to create a dashboard that could display the location of each train -- basically each train would have had a cell phone on board sending their GPS position to some server, which we&#8217;d collect and display that on a web site, which can be shown on a screen e.g. at the Sunol station, etc.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Well, it turns out that if the proposal above were implemented, one would have a GPS-enabled device on the current passenger train on the mainline (since it would necessarily have the PA car in service). We just need the one smart phone/tablet to have a SIM card and a cell phone line, which can be fairly cheap using some kind of data-only MVNO plan (the so-called &#8220;tablet only&#8221; plans, IIRC we&#8217;re talking less than $200/yr these days). The device on the train just needs to output the known MP location to some server, and a display can then pick that up in the station if it has internet/wifi.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-11-25T00:00:59-08:00</updated>
+<updated>2025-11-25T00:00:40-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
