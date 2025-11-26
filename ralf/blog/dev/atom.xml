@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-11-25T16:48:46.487265-08:00</updated>
+<updated>2025-11-25T17:41:58.146773-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -64,8 +64,8 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Hardware Choice&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Hardware wise, the easiest is a smart phone.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Most modern smart phones don&#8217;t have an audio jack anymore. That&#8217;s not a problem as we can use an USB C audio/power splitter like this $15 https://amzn.to/48dWSsn.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The audio jack on phones is always a 4-poles TRRS. There are splitters to get 2 3-poles jacks for headphones vs microphones such as this $8 https://amzn.to/43UBbfQ.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Most modern smart phones don&#8217;t have an audio jack anymore. That&#8217;s not a problem as we can use an USB C audio/power splitter like this $15 &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/48dWSsn&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/48dWSsn&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The audio jack on phones is always a 4-poles TRRS. There are splitters to get 2 3-poles jacks for headphones vs microphones such as this $8 &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43UBbfQ&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43UBbfQ&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The alternative is to use a bluetooth adapter for the audio in/out. For this application, I think a wired setup would be more reliable and less troublesome.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The nice thing about a smart phone is that it integrates all that we need: GPS for position, audio in/out, &#8220;disk&#8221; storage for audio files, and a screen for control. A basic Android cell phone in the $150 range will do just fine as we don&#8217;t need a lot of CPU here.&lt;/span&gt;&lt;/p&gt;
@@ -93,7 +93,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-11-25T00:00:37-08:00</updated>
+<updated>2025-11-25T00:00:27-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -123,7 +123,7 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the main entry point&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/about.html &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- a page &#8220;about this company&#8221;&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/catalog.html &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the catalog browser&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/product.html&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -- a page detailing a single product&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/product.html&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp; -- a page detailing a single product&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/purchase.html &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the purchase form&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -145,7 +145,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.mtbioauqltcm&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;It&#8217;s all about the frameworks&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this kind of web app, we rarely write &#8220;vanilla Javascript&#8221; (e.g. &#8220;code every by hand&#8221;). It&#8217;s just too tedious. Instead we use a framework to help us write the web page. There are a ton of frameworks out there, but essentially there are 4 that I consider the most popular and important:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this kind of web app, we rarely write &#8220;vanilla Javascript&#8221; (e.g. &#8220;code everything by hand&#8221;). It&#8217;s just too tedious. Instead we use a framework to help us write the web page. There are a ton of frameworks out there, but essentially there are 4 that I consider the most popular and important:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;React JS, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Angular JS.&lt;/span&gt;&lt;/li&gt;
@@ -166,7 +166,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;React, Vue, and Angular can equally be coded using JavaScript ES6, or TypeScript. In my option, JavaScript is &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;always&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;the wrong choice, no matter what the question is. Period. It&#8217;s an absolutely terrible language. Yes we can hand-code it without a compiler, and yes it runs directly in any web browser. Well, mostly. But it&#8217;s kind of flying without a net. Working with JavaScript is trying to admit that &#8220;hope is a strategy&#8221;. It&#8217;s not. Kids, just learn to say no to JavaScript.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;TypeScript is the &#8220;sanity&#8221; version of JavaScript. It forces us to use a compiler (since it compiles to JavaScript after all), and that&#8217;s a good thing. It forces us to understand the types we&#8217;re using -- as the name of the language implies, it&#8217;s JavaScript with &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actual&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;types, not just &#8220;whatever I can randomly put in a variable and hope it&#8217;s the right thing.&#8221;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;TypeScript is the &#8220;sanity&#8221; version of JavaScript. It forces us to use a compiler (since it compiles to JavaScript after all). My first reaction against TypeScript was why would I have to use a compiler toolchain? &#8220;It&#8217;s too much work&#8221;. But actually that&#8217;s a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;good&lt;/span&gt;&lt;span&gt;&amp;nbsp;thing -- the compiler does a lot of checking for us -- the tool is here to &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;help us&lt;/span&gt;&lt;span&gt;. It forces us to understand the types we&#8217;re using -- as the name of the language implies, it&#8217;s JavaScript with &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actual&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;types, not just &#8220;whatever I can randomly put in a variable and hope it&#8217;s the right thing.&#8221;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The only drawback of TypeScript is that it&#8217;s essentially &#8220;JavaScript with lipstick.&#8221; Nothing prevents us from doing all the crappy things that JS allows us to do. However, TypeScript comes with a linter tool which tries to catch us on exactly the common mistakes that everybody makes. Don&#8217;t ignore the warnings, they are here to help us.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Flutter is coded in Dart. That&#8217;s its strength. That&#8217;s also its main hindrance. We have to be willing and make the jump to learn one more language just to write that small SPA thingy. That actually has dragged me down, and I avoided Flutter for a long time just because of that.&lt;/span&gt;&lt;/p&gt;
@@ -188,9 +188,9 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;React is both the grandaddy and the poster child of, well, the reactive SPA design. It works fairly well yet at first glance, I found it at the same time easy to understand yet confusing and clunky.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Like Flutter, in React we code screens using &#8220;components&#8221; (same as Flutter Widgets). However we compose and create layouts using regular HTML and CSS positioning. In this case, the layout system will feel similar to anyone who has done their share of web design.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Like Flutter, in React we code screens using &#8220;components&#8221; (same as Flutter Widgets). However we compose and create layouts using regular HTML and CSS positioning. In this case, the layout system will feel familiar to anyone who has done their share of web design.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;React also has stateless vs stateful components. However that&#8217;s where it feels clunky and smells like legacy: they are the same thing, one just calls &#8220;useEffect / useState&#8221; methods and that makes a component reactive. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;React also has stateless vs stateful components. However that&#8217;s where it feels clunky and smells like legacy: there are no clear classes to inherit from, one just calls &#8220;useEffect / useState&#8221; methods in a component and that makes a component reactive. They are &#8220;hooks&#8221; and it feels bolted on after the fact.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;When I first learned React JS, that totally confused me. Ironically, it&#8217;s only &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;after learning Flutter&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;that the React JS stuff started making sense. And I&#8217;m still easily confused by e.g. the &#8220;useEffect&#8221; dependency lists.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -201,7 +201,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Vue is the last one I tried. Every comment I read around emphasizes that Vue is very beginner friendly. The expected cycle is to learn basically Vanilla JS, move to Vue, and maybe move to React. I went directly from JS to React years ago, so I wanted to understand what Vue provides.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I&#8217;d oversimplify is saying that Vue and React are mostly the same thing, except they take literally the opposite direction when it comes to generating content.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I&#8217;d oversimplify by saying that Vue and React are mostly the same thing, except they take literally the opposite direction when it comes to generating content.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;In React, as in Flutter, components/widgets are classes which are called and &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;generate&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;the UI using function calls. Literally a render method is a function that has code stating &#8220;hey place a div here, and in that div write a button, and label, etc.&#8221; If you want a table with multiple rows, the render method will literally have a for loop generating each &#8220;&amp;lt;tr&amp;gt;&#8221; element.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In Vue, the rendering is done by having an HTML piece of code directly in the file, that has placeholder variables, and a separate &#8220;script&#8221; code that computes the values for each placeholder variable. In a sense, that&#8217;s template rendering instead of generating code.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I&#8217;d say the Vue approach is more web designer-first, whereas the React/Flutter approach is more coder-first.&lt;/span&gt;&lt;/p&gt;
@@ -214,7 +214,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-16T00:00:53-07:00</updated>
+<updated>2025-10-16T00:00:57-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
