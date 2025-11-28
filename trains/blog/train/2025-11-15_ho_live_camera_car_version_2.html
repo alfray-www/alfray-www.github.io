@@ -273,7 +273,7 @@ td p {
 <p></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:308.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_16b10d92e180ef06544971c2898d5d2cb5d027ea8f8544440288aae9ead3347bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">The Raspberry Pi Zero 2 W neatly fits in an HO-size gondola car!</span></p>
 <p></p>
-<p></p>
+<h2 id="h.kqq84dfbi5qk" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Camera Choice</span></h2>
 <p><span>Now we need to select an adequate camera. There are a lot of options available. We’ll start by looking at the “official” “RPi Camera” page at </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.raspberrypi.com/documentation/accessories/camera.html" style="color:inherit;text-decoration:inherit">https://www.raspberrypi.com/documentation/accessories/camera.html</a></span></p>
 <p><span></span></p>
 <ul style="margin:0">
@@ -326,6 +326,7 @@ td p {
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The connector is a “CSI 2” (MIPI CSI-2 D-PHY protocol)<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Camera_Serial_Interface" style="color:inherit;text-decoration:inherit">https://en.wikipedia.org/wiki/Camera_Serial_Interface</a></span></li>
 </ul>
 <p></p>
+<h2 id="h.stuthdh6d1o0" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Cost Analysis</span></h2>
 <p><span>Cost wise, don’t let the cheap-looking price of the Raspberry Pi mislead you. People like to tout how cheap they are, but the reality is that the Raspberry Pi is just </span><span style="font-style:italic">one</span><span>&nbsp;component of a larger setup. What I need here:</span></p>
 <ul style="margin:0">
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>$25 </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/4i1HnIt" style="color:inherit;text-decoration:inherit">https://amzn.to/4i1HnIt</a></span><span>&nbsp;: The Raspberry Pi 2 W.</span></li>
@@ -339,6 +340,19 @@ td p {
 <p></p>
 <p><span>I’m not even counting the HDMI cable (I already have many), or the USB power supply (I have many of these), or a micro-USB OTG adapter. If you don’t have that, it brings your budget closer to $130. Now, I’m not saying it’s expensive, but we went 5x up from just the price of the RPi itself. That’s one thing I don’t like when people hype about how “cheap” the RPi is -- they often omit all the accessories that one is going to need.</span></p>
 <p></p>
+<h2 id="h.813n3s1mpq47" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">The Raspberry Pi Downsides</span></h2>
+<p><span>Since we’re dealing with a Raspberry Pi, we need to address the elephant in the room: SDCard corruption.</span></p>
+<p></p>
+<p><span>Embedded devices such as Arduino or ESP32 are designed to have their power yanked out at any moment. They start immediately -- in a matter of seconds or less -- and there’s no “shutdown” phase like on a normal computer.</span></p>
+<p></p>
+<p><span>The Raspberry Pi is a different matter. It’s a full fledged computer using the SDCard as a disk storage. Linux boots pretty fast but we’re still talking about something in the order of 10-30 seconds. And then Linux expects an order shutdown command so that it has time to flush all files and stop writing before the power runs out. Without that, we can more or less expect data corruption on the SDCard at some point since by default it’s always reading and writing to the SDCard, e.g. for log files. That means there has to be some way to send a shutdown command </span><span style="font-style:italic">before</span><span>&nbsp;power is turned off. Without that, we’re pretty much guaranteed that the SDCard will get corrupted fairly quickly. The usual workaround for that on modern Raspberry Pis is to use an SSD “hat”. That adds to the cost and complexity.</span></p>
+<p></p>
+<p><span>The other issue is that SDCards are not made to perform read/write operations continuously. That wears them out. So even if a Raspberry Pi is shut down properly all the time, we’ll eventually have to deal with SDCard wear issues. It’s not a matter of “if” but “when”. </span></p>
+<p></p>
+<p><span>The Raspberry Pi Zero is not different in that regard. That makes these devices less adequate to use for embedded usage than an Arduino or ESP32 device.</span></p>
+<p></p>
+<p><span>Finally there’s the issue of maintenance. We have a Linux distro installed on the Raspberry Pi. That requires a modicum amount of regular updates to the OS. If security is not a large issue, it could be considered entirely optional, although I would not recommend it. After a few years the Debian distro updates will stop and it will require a distro update that may break a lot of things.</span></p>
+<p></p>
 <p></p>
 <h2 id="h.dx2khljaz3a9" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span>Raspberry Pi </span><span style="font-size:16pt">Zero 2 W Setup</span></h2>
 <p></p>
@@ -346,8 +360,12 @@ td p {
 <ul style="margin:0">
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Get the Raspberry Pi Imager from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.raspberrypi.com/software/" style="color:inherit;text-decoration:inherit">https://www.raspberrypi.com/software/</a></span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Choose Device: RPi Zero 2 W</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">Choose OS: Other &gt; Raspberry Pi OS Lite (64-bit) Trixie</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Choose OS: Other &gt; Raspberry Pi OS Lite (32-bit) Trixie</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Choose OS:</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Other &gt; Raspberry Pi OS Lite (64-bit) Trixie</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>or</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Other &gt; Raspberry Pi OS Lite (32-bit) Trixie</span></li>
+ </ul>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Choose Storage: Insert 32GB SDCard (OS really only needs 0.5 GB)</span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Apply Customizations:</span></li>
  <ul>
@@ -442,7 +460,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-23 by Rig4j 0.1-Exp-9bafc34
+    Generated on 2025-11-28 by Rig4j 0.1-Exp-b292492
     <!-- )rg-excl -->
     &nbsp;
 </div>
