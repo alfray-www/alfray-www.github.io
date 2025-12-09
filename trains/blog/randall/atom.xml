@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-12-05T03:14:26.274005-08:00</updated>
+<updated>2025-12-08T23:19:26.079641-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-b292492">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Track Cam Monitor, Completed</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-12-07_track_cam_monitor_completed.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-12-07_track_cam_monitor_completed.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I finally finished the last phase of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Track Cam Monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project: the 3rd camera is now installed and configured to show all the back-of-the-mountain trains on the tablet display!&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:498.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_e5c13d700e58aa0af547846a676373c68ffedbcdc6ea8a4446848e983da2a9abi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Track Cam Monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(a.k.a. TCM) is &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-08-02_experiment_track_cam_monitor.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;a project I started last year&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: the goal of this project is to monitor a train staging yard with remote tracks out of sight. The &quot;kiosk mode&quot; Android application displays feeds from RTSP cameras.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the case of Randall, the purpose is to display the tracks which are not visible on the &#8220;other side of the mountain&#8221;. When the Saturday Operators stand by the main Valley control panel, they can&#8217;t see the tracks on the other side of the room. The tablet project views from 3 cameras in a concise display conveniently located next to the main control panel:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:430.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_99ce4981813bf81589715272c95fa51de1dd48992451520fd1377b9ea635ce75i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The cameras installed are &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/3yFtAmv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Tapo C110 cameras&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. They are excellent for this purpose -- very small footprint, very lightweight to install, and at a very attractive low price. Here&#8217;s the latest one that I installed on the top of the window -- it captures the view of the Summit tracks at the top and the Napa tracks going towards the Sultan tunnel at the bottom level:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:379.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:710.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_6349ee7814dfe1d87f8c4ff13bf1f403bdedb8fdc46d3d7190055b3eabbab2bai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;All the cameras are mounted sideways to take advantage of their larger horizontal field of view. In the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Track Cam Monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;software, I added the ability to rotate the image as well as zoom and pan. TCM grabs the RTSP video feed directly off the camera over wifi -- no wires needed -- and it automatically handles reconnections if the stream is interrupted.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2025-12-07T00:00:32-08:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Polar Express</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-12-01_polar_express.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-12-01_polar_express.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As is customary in the end of the year, the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2023-12-07_the_polar_express_on_automation_again.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Polar Express is back on automation during December&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_d1e030016a6cb0cfac275453f03de0d5e9324485cd85ceadd4052c151da6e0f7i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This uses the P&#232;re Marquette #1225 class 2-8-4 &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Berkshire&lt;/span&gt;&lt;span&gt;&amp;nbsp;steam engine, matching the &#8220;prototype&#8221; from the eponymous book and movie.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-12-01T00:00:25-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Vision and RTAC Update</title>
@@ -25,15 +72,14 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Most visitors will only need to see the status line under the videos -- it indicates whether the automation is stopped, or whether a train runs. For my own edification, I have details on the automation shown on the left side:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:309.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2be611d52b0b53ba6f910c20114baa4a98af57713945027bb124b3d6a4b5e1eci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:309.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_e1d97129e2b588e116b7ba58cbb44d5a39783a2ba693aa01e26987c05dc4b0bfi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That display on the side is purposely simple and not too fancy. I thought about doing something like an &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Apple_Monitor_II&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;old monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; look or an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/LCARS&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LCARS interface&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;and opted not to go for the gimmick.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-11-10T00:00:21-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-11-10T00:00:36-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -206,7 +252,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;It consistently derails when going in reverse on the same spot over the T311 turnout. That area is very hard to reach -- farther than arms&#8217; length -- so I can&#8217;t just get close and look carefully at the wheels on the turnout. It does also derail when I run just that one car with the same engine:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:169.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5b842f61df0edd26da7c5d601f92acb494c6f5d1aae8409f9912ec289d3ee2bfi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:169.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5a9ca9a56f4e244aeb7b54d3379fad45bca1fc480020edecce42e08779ec6196i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;One suggestion from Orion was to turn the truck around, so I&#8217;ll try that another time.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -217,7 +263,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-07-24T00:00:16-07:00</updated>
+<updated>2025-07-24T00:00:12-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -538,8 +584,8 @@
 &lt;p&gt;&lt;span&gt;Eventually, if that&#8217;s well received, I would like to duplicate this effort to a few over turnouts which are either hard to view or impossible from the main Stockton Yard location: the Bridgeport turnout, and the mainline to Napa yard turnouts. The Bridgeport turnout is the first one where I added a LED indicator years ago to solve exactly that problem, and it can now benefit from a nicer display. The Napa yard turnout is on the other side of the mountain, and the only way to know its state is to &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actually&lt;/span&gt;&lt;span&gt;&amp;nbsp;walk over there. In this case I&#8217;d place a similar display in the Stockton Yard area so that it&#8217;s easy to know what&#8217;s going on the other side of the mountain.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-04-17T00:00:56-07:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-04-17T00:00:18-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -557,8 +603,8 @@
 &lt;p&gt;&lt;span&gt;Obviously the entire thing is tongue-in-check / fiction. Happy April&#8217;s Fool Day! The automation doesn&#8217;t run the three RDCs together as shown above, or &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-07-27_rdc_update.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;does it&lt;/a&gt;&lt;/span&gt;&lt;span&gt;? Right now we have &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-03-03_rdc_sp10_is_back_on_the_auto_b1ed6fc1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RDC SP-10 running&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, and later I may switch to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-04-07_rdc_santa_fe_on_branchline_automation.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;RDC ATSF pair as I had it in the past&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;span&gt;&amp;nbsp;We try to run stuff as prototypical as we can.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-04-01T00:00:26-07:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-04-01T00:00:02-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -591,7 +637,7 @@
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Recently the Mainline automation was back at using the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-01-06_up_8736_on_the_mainline_pass_c5197a9c.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;good old Athearn UP 8736 engine&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. After the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2022-10-08_issues_with_the_walthers_mai_53cea6e7.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;fiasco of the Walthers units&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I&#8217;ve decided to try something different, so here we have the Mainline automation train pulled by this new &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://shop.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=258_288_1254&amp;amp;products_id=8890&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Bachmann UP 9538&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:197.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_03b9984a8d4e386aa54d4f8958d1839b01ea1d2e33c1cb0d3846e32c3a6a33dbi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:197.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7ebbd6d86437d9226e93f6634ab2d4bc8c291776ef196fe576d2d3714c84451fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Whilst I was at it, I&#8217;ve changed the Mainline Freight train to use SD70ACe 1072 instead of 1067. These are two Bachmann engines that have proven quite resilient and successful over the years. I recently cleaned 1072 and it&#8217;s running fine after a good cleanup of the wheel power pickup.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -599,7 +645,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;UP 9538 is currently an experiment. I want to give them a few weeks to evaluate how well it behaves in automation. The engine uses a more modern TCS Wow Diesel, with a fairly capable &#8220;current keeper&#8221; capacitor as can be &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_191&amp;amp;products_id=13431&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;seen in this loco chassis image&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-03-09T00:00:08-08:00</updated>
+<updated>2025-03-09T00:00:27-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -610,7 +656,7 @@
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I just swapped the Rapido Amtrak 204 train on the Branchline, and reinstalled the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/ho_rapido_rdc.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;good old Rapido RDC SP 10&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:173.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7c32a7915df1d2116d260abe24290b6a4855f12d7db48f3da8d5a58515391d4di.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:173.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_cdd031407d9b6b7c7399d17896de034db41c40f7cc8cb267fb6ff6e85eb6bb85i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That little engine had been the workhorse of the automation, back in 2017 on the Mainline, and back in 2018 on the Branchline. It&#8217;s back again on the Branchline automation for a little while, to give some much needed rest to the Amtrak 204 engine.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -628,7 +674,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-03-03T00:00:17-08:00</updated>
+<updated>2025-03-03T00:00:06-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -943,8 +989,8 @@
    &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(183, 183, 183);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(183, 183, 183);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(183, 183, 183);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(183, 183, 183);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:150.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3173ec394d2566bc54b2a6182aebd2f827ce05a5d80c3889e969146223f2ba49i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr style=&quot;height:0pt&quot;&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(183, 183, 183);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(183, 183, 183);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(183, 183, 183);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(183, 183, 183);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:190.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_45eff0c1e2daebbda5caef043a8d9a1b80ffbd307dda8fea08ed6676106d7141i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(183, 183, 183);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(183, 183, 183);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(183, 183, 183);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(183, 183, 183);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:194.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a51c19582eb6f67a12d75abdecc3543d27b4f3b00479c9347b48dd568f1c4027i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(183, 183, 183);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(183, 183, 183);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(183, 183, 183);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(183, 183, 183);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:190.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_c2ab14df32edb243855c4d1f702ca03a9674df2207e468978fe73ac21dabfb17i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(183, 183, 183);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(183, 183, 183);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(183, 183, 183);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(183, 183, 183);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:194.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_495ffa065af92442c5e56385587b342d3b249541bf994fcb1018ed31d8d772afi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td colspan=&quot;2&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(183, 183, 183);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(183, 183, 183);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(183, 183, 183);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(183, 183, 183);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:597.6pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:298.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:793.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_0a3f18c73336387e9bbcc9b975297456e129494e84bed05c1e86135d42027460i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
@@ -957,7 +1003,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-01-01T00:00:29-08:00</updated>
+<updated>2025-01-01T00:00:33-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
