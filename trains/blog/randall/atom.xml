@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-12-09T03:02:26.637247-08:00</updated>
+<updated>2025-12-10T03:02:24.968428-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -19,7 +19,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Track Cam Monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(a.k.a. TCM) is &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-08-02_experiment_track_cam_monitor.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;a project I started last year&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: the goal of this project is to monitor a train staging yard with remote tracks out of sight. The &quot;kiosk mode&quot; Android application displays feeds from RTSP cameras.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;In the case of Randall, the purpose is to display the tracks which are not visible on the &#8220;other side of the mountain&#8221;. When the Saturday Operators stand by the main Valley control panel, they can&#8217;t see the tracks on the other side of the room. The tablet project views from 3 cameras in a concise display conveniently located next to the main control panel:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the case of Randall, the purpose is to display the tracks which are not visible on the &#8220;other side of the mountain&#8221;. When the Saturday Operators stand by the main Valley control panel, they can&#8217;t see the tracks on the other side of the room. The tablet projects views from 3 cameras in a concise display conveniently located next to the main control panel:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:430.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_99ce4981813bf81589715272c95fa51de1dd48992451520fd1377b9ea635ce75i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -35,7 +35,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-07T00:00:03-08:00</updated>
+<updated>2025-12-07T00:00:18-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -71,7 +71,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:433.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7e2039cd572ed6b472db9bff148ccef842cb6687b43885af6683b5c5e1af0938i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Interestingly we had been running the Rapido RDC engines (both SP10 and ATSF) there for years, so how come? Well it turns out they are just narrower by half a millimeter. No kidding -- doesn&#8217;t take much. They were actually rubbing a very very tiny bit against the tunnel pillar.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Interestingly we had been running the Rapido RDC engines (both SP10 and ATSF) there for years, so how come? Well it turns out they are just narrower by half a millimeter. No kidding -- doesn&#8217;t take much. They were actually rubbing a very very tiny bit against the tunnel pillar too.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The problem was easily solved by taking the pillar off (it&#8217;s just lightly glued in place) and we&#8217;re going to reglue it a couple millimeters in the curve.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -80,7 +80,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-30T00:00:48-08:00</updated>
+<updated>2025-11-30T00:00:54-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
