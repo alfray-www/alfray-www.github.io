@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I keep circling back to these and I think it’s time I consider some “real” project for it." />
+<meta property="og:description" content="It’s been 2 years now that I started the rewrite of Conductor 2. Back then I chose Groovy, after trying Kotlin and deciding it wasn’t mature enough. In between, Kotlin usage has expanded a lot, so time to revisit." />
 <meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I keep circling back to these and I think it’s time I consider some “real” project for it." />
+<meta name="twitter:description" content="It’s been 2 years now that I started the rewrite of Conductor 2. Back then I chose Groovy, after trying Kotlin and deciding it wasn’t mature enough. In between, Kotlin usage has expanded a lot, so time to revisit." />
 <meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_1c371a8c748fd0f0f687b8d2cabc153f90a908dc96beebcb6365a4b002645ccai.png" />
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,49 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-02-07_conductor2_kotlin_vs_groovy_again.html">
+    <h2 class="post-title">2021-02-07 - Conductor2… Kotlin vs Groovy again</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s been 2 years now that I started the rewrite of Conductor 2. Back then I chose Groovy, after trying Kotlin and deciding it wasn’t mature enough. In between, Kotlin usage has expanded a lot, so time to revisit.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(N.D.L.R.: the goal of the Conductor 2 project is to replace the custom language from Conductor 1 by a new DSL based on top of Groovy, or Kotlin. That would allow the script to have more flexibility.)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Overall Conductor2 with Groovy would work. Although the engine isn’t 100% operational, I rewrote most of the main automation script using Groovy and I updated it to a few new concepts that I miss in my current custom language. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Conductor 2 design doc has more details on the new syntax.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Through the implementation, I evolved the syntax.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In conductor 1, we have basically a “global” namespace of “conditions --&gt; actions”.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">These can be expressed in the Groovy script using:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On { closure expression return a boolean } --&gt; { actions block }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">However I later rewrote the script to be more oriented for each route / block.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A route is defined as a sequence of blocks that must be traversed, and there are actions for each block. This avoids the soup of global state variables that must be maintained in Conductor 1 to achieve the same thing (e.g. “passenger train on this block going forward”). The new syntax looks like this:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Name = route {</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Route = [</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber.forward {</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onStart { actions }</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onEnter { actions } then_after delay { actions }</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;after delay { actions } then_after delay { actions }</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">} ] }</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This scheme basically encodes most of the complexity in Conductor 1’s script, which is using timers and global state to limit actions to certain routes/blocks/directions.</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2021-02-07_conductor2_kotlin_vs_groovy_again.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-12-18_kotlin_and_rust.html">
     <h2 class="post-title">2020-12-18 - Kotlin and Rust</h2>
@@ -634,79 +677,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-09-28_java_11.html">
-    <h2 class="post-title">2020-09-28 - Java 11</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The latest Debian Busty offers Java 11 via OpenJDK. There’s also a comment on the OpenJDK web site that from now on all official Java releases are done via the OpenJDK (site/framework)... does that mean one no longer has to wonder about Java vs OpenJDK compatibility? That would be nice.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Of note: Debian has an openjdk-11-headless… no more need to drag X libs pointlessly.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It also begs the question of “what’s new in Java 11”... and what can be used on Android.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://simply-how.com/getting-started-with-java-11" style="color:inherit;text-decoration:inherit">https://simply-how.com/getting-started-with-java-11</a></span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 9:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A new concept of “modules”, a “self describing collection of code and data”.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jlink, a tool with a link time phase vs compile time phase, using modules.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jshell, a REPL … that can come in handy.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Multi-release JAR files: version-specific of classes in the same JAR.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Private methods on interfaces, which can be used by default methods.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rx compliant Flow API.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Factory/collections methods: Set.of, List.of…</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Stuff I don’t care, e.g. garbage collector changed. (skipping those below).</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 10:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Var” keyword for local type inference.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Optional.orElseThrow.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Unmodifiable collections: List.copyOf, etc.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 11:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">HTTP Client API (do I care?)</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Singe-file source-code programs”... sounds like scripting to me.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Var” keyword can be used in lambda parameters.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java 12:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">More garbage collector whatever this or that.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Mostly nothing except some *preview* of a condensed switch/case/break syntax (e.g. the “break” also acts as a “return”, and can be further condensed to an -&gt; arrow syntax)... meh.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bottom line: mostly nothing to see here.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So overall a fairly incremental update to the language. The most notable useful thing is the “var” keyword. Since it is type-inference, I expect it can generate backward-compatible bytecode running fine with older JREs. New APIs like collections would obviously require the latest JRE to run.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We still don’t have support for “safe-dereference” (?. which was proposed for Java 7!) and folks horrendously suggest using Optional instead.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For gradle, the usual:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">targetCompatibility = 11</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">sourceCompatibility = 11</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Or</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">compileOptions {</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; targetCompatibility JavaVersion.VERSION_12</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; sourceCompatibility JavaVersion.VERSION_12</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus it seems to me overall I’d want something along the lines of “target 8… source 11”.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -723,7 +693,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

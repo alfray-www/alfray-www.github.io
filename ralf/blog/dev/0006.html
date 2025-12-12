@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Spent the last week or so “rebuilding” Asqare." />
+<meta property="og:description" content="I found the sources for both under the old Autosettings project." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Spent the last week or so “rebuilding” Asqare." />
+<meta name="twitter:description" content="I found the sources for both under the old Autosettings project." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,38 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-28_android_apps_update_flashlig_8fe84f68.html">
+    <h2 class="post-title">2022-05-28 - Android Apps Update: Flashlight, Brighteriffic</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>I found the sources for both under the old </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/autosettings/src/master/" style="color:inherit;text-decoration:inherit">Autosettings project</a></span><span>.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Back then I was using branches, instead of placing such projects in their own repository.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I should move them under their own git repo under bitbucket/ralfoide.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Flashlight matters; Brighteriffic not so much yet I may update it if it isn’t too cumbersome.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In both cases it makes sense to duplicate the autosettings repo entirely to preserve history, and limit it to these app folders only.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&lt;fork autosettings repo&gt;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ git clone git@bitbucket.org:ralfoide/brighteriffic.git</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ git filter-branch --prune-empty --index-filter 'git rm &nbsp;--ignore-unmatch --cached -r AlarmTest branches Flashlight wiki distrib/[aAfqtT]* trunk/AutoSettings trunk/TimerifficTest'</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ git push --force</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-05-25_android_apps_update_asqare_bearing.html">
     <h2 class="post-title">2022-05-25 - Android Apps Update: Asqare, Bearing</h2>
@@ -693,30 +725,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-09-09_feature_flag_based_android_app.html">
-    <h2 class="post-title">2021-09-09 - Feature flag based Android app</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What would it take to do an Android app that is modular and where each feature is controlled by a remote server feature flag?</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Would I choose something like Firebase, AWS, or a custom server like Alfray or RDRR?</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The data itself would likely be json or proto. We would want to have version capabilities.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Notions that become relevant are cold vs hot config, refresh times, networks caching. Also an ETag / checksum system could be used to only send diff/update and minimize network traffic.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -733,7 +741,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

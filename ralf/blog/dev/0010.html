@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="How to currently install/build go 1.5 from source on Linux:" />
+<meta property="og:description" content="Windows enumerate USB devices -- list usb: USBView" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="How to currently install/build go 1.5 from source on Linux:" />
+<meta name="twitter:description" content="Windows enumerate USB devices -- list usb: USBView" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,53 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2015-12-28_windows_enumerate_usb_device_86bb3c0d.html">
+    <h2 class="post-title">2015-12-28 - Windows enumerate USB devices -- list usb: USBView</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Windows enumerate USB devices -- list usb: USBView</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://msdn.microsoft.com/en-us/library/windows/hardware/ff560019(v=vs.85).aspx" style="color:inherit;text-decoration:inherit">https://msdn.microsoft.com/en-us/library/windows/hardware/ff560019(v=vs.85).aspx</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dev.windows.com/en-us/downloads/sdk-archive" style="color:inherit;text-decoration:inherit">https://dev.windows.com/en-us/downloads/sdk-archive</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and install only the "debugging tools for Windows".</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Install path is <br>C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86\usbview.exe</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There's also an x64 one but it's still under Program Files x86:<br>C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x64\usbview.exe</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Note on DigiX:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://digistump.com/wiki/digix/tutorials/programming" style="color:inherit;text-decoration:inherit">https://digistump.com/wiki/digix/tutorials/programming</a></span><span style="font-family:&quot;Roboto Mono&quot;"><br>Bootloader is SAM-BA with VID/PID 03EB/6124<br>Native USB mode is VID/PID 2341/003E</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">However DigiX appears with VID 0x16D0 and PID 0x078A</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">From http://digistump.com/board/index.php?topic=1185.20 <br>VID : PID<br>03EB:6124 &nbsp; Atmel: SAM-BA activated device<br>2341:003E &nbsp; Arduino DUE native PORT selected, sketch is running<br>16d0:078a &nbsp; DigiX board selected, sketch is running</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now open Device Manager &gt; Ports (COM &amp; LPT).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It shows "Digistump DigiX (COM6)".</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But since the Arduino IDE expects COM3, change it: device manager &gt; Ports &gt; DigiX (COM6) &gt; Properties &gt; Port Settings &gt; Advanced &gt; … won't do COM3 says "in use" (by whom). </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nevermind, change IDE to match COM6: Arduino 1.6.5 &gt; Tools &gt; Port &gt; COM6.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note by default the Arduino IDE expects 9600 bauds so make sure the sketch inits with this as early as possible: &nbsp;Serial.begin(9600); </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2015-09-10_how_to_install_build_go_1_5__8c57f07a.html">
     <h2 class="post-title">2015-09-10 - How to install/build go 1.5 from source on Linux</h2>
@@ -634,28 +681,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2014-04-07_web_ide_idea.html">
-    <h2 class="post-title">2014-04-07 - Web IDE idea</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Web ide idea: not a full project per se, just a server side hack.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -672,7 +697,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

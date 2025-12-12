@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I should try to make my own little Rx clone lib." />
+<meta property="og:description" content="Current projects or ideas and their status, more or less from higher to lower priority:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I should try to make my own little Rx clone lib." />
+<meta name="twitter:description" content="Current projects or ideas and their status, more or less from higher to lower priority:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,50 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-09-24_state_of_the_onion.html">
+    <h2 class="post-title">2017-09-24 - State of the Onion</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Current projects or ideas and their status, more or less from higher to lower priority:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Randall: Setup the linux box to auto-start with JMRI faceless and my controller script.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">High priority, EOM / EOY.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A sub-project is having a non-authenticated display on the laptop, which could be either in the form of a screen saver or a non-privileged user in auto-login running a single full screen app that can't be closed. Ideally: EOY. Useful for me.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Randall: RTAC android app for tablet. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">High Priority MVP by EOM / EOY on at least one tablet. Can be fine tuned later.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Home Monitor: </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Redo circuit board for alarm interface + box. Still want it. Low-priority because works well and kinda like the hackish look.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Current RPi setup works well.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Monitor android app using Firebase is meh ⇒ Rebuild without Firebase, direct App Engine web + Android w/ notifications.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Cab Engineer:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A v2 of Cab Throttle. Rewrite app using my RX instead of event bus.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MVP should have server save/recall, engine save/recall, soft-consist, wear.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2017-08-12_simple_rx.html">
     <h2 class="post-title">2017-08-12 - Simple Rx</h2>
@@ -762,34 +806,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2016-07-15_firebase.html">
-    <h2 class="post-title">2016-07-15 - Firebase</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What I have at home is an RPi monitoring some status. The interesting properties of Firebase in this case are receiving notifications (aka GCM) and the use of the distributed "realtime" database. The question is how do the events get generated. Can a script running on the RPi send data to Firebase?</span></p>
-<p style="text-align:left"></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">"Firebase Notifications" are sent solely using the Firebase console web UI. Not adequate.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">"Firebase Messages" can be generated via an HTTP POST with an OAuth token; however this requires getting the registration tokens for each device that should receive, which doesn't seem practical.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>"Firebase Database" is a synchronized JSON store. There are many REST wrappers (Go, Python, or just curl) that seem appropriate for the RPi to generate data. Authentication rules are set in the database console. See </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://firebase.google.com/docs/database/rest/start" style="color:inherit;text-decoration:inherit">https://firebase.google.com/docs/database/rest/start</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -806,7 +822,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-11-25 by Rig4j 0.1-Exp-b292492 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
