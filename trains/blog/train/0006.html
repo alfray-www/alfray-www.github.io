@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="We’re in the process of adding a Miller Engineering animated sign on the layout, and later I want to revive the 2 broken ones (the theater one and the motel one). So naturally I wonder how they do work… What's the tech behind it?" />
+<meta property="og:description" content="That Conductor 2&nbsp;project has been taking too long now. I still think there are good ideas in the design and the core foundation for it. The implementation has been taking forever due to a lack of clarity combined with some other projects taking precedence." />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_998fbecfe1e49dc64a17e93c6dceebe2b3378bb2cc306c12f030bf0e3eb15831i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="We’re in the process of adding a Miller Engineering animated sign on the layout, and later I want to revive the 2 broken ones (the theater one and the motel one). So naturally I wonder how they do work… What's the tech behind it?" />
+<meta name="twitter:description" content="That Conductor 2&nbsp;project has been taking too long now. I still think there are good ideas in the design and the core foundation for it. The implementation has been taking forever due to a lack of clarity combined with some other projects taking precedence." />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_998fbecfe1e49dc64a17e93c6dceebe2b3378bb2cc306c12f030bf0e3eb15831i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -247,6 +247,32 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-21_reboot_on_the_reboot_on_conductor_2.html">
+    <h2 class="post-title">2022-01-21 - Reboot on the Reboot on Conductor 2</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>That </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;project has been taking too long now. I still think there are good ideas in the design and the core foundation for it. The implementation has been taking forever due to a lack of clarity combined with some other projects taking precedence. </span></p>
+<p></p>
+<p><span>In between I have started an implementation in Groovy which is not quite satisfactory. It was merely a prototype to explore the DSL syntax and as such the project structure has not been carefully planned. It’s already hard to extend and I realize I’m not able to express the script logic as I want with it. The core issue is that the prototype tried to do too many things -- explore how to create a Groovy DSL, figure out the language I need, and at the same time the business logic of the script. So I have a bit of everything, and nothing concrete for each category. </span></p>
+<p></p>
+<p><span>So let’s reboot it. Let’s tackle it differently. Ignore the syntax. Focus on what the script business logic needs to work. I can express that “on the paper” using the ANTLR script language from Conductor 1. I’ll figure the DSL and engine structure from there.</span></p>
+<p style="text-align:left"><span></span></p>
+
+<a href="2022-01-21_reboot_on_the_reboot_on_conductor_2.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-07-04_how_do_the_electroluminescen_1afa26de.html">
     <h2 class="post-title">2021-07-04 - How do the Electroluminescent (EL) Displays Work?</h2>
@@ -492,27 +518,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-06-15_cotton_belt_9389.html">
-    <h2 class="post-title">2019-06-15 - Cotton Belt 9389</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/train" title="View All Category Posts">Train</a>
-    </span>
-</span></div>
-
-<p><span>Jim gave me this engine, with the sole purpose of changing the horn. How hard can it be?</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:272.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:770.00px"><img alt="" src="img_80189da38fbe73dcc02a5dc912fa85e166148a36e5a4f9849013c7b558a4ae0ai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p><span></span></p>
-
-<a href="2019-06-15_cotton_belt_9389.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -534,7 +539,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-21 by Rig4j 0.1-Exp-9bafc34
+    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
     <!-- )rg-excl -->
     &nbsp;
 </div>

@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-12-10T03:02:24.968428-08:00</updated>
+<updated>2025-12-13T15:50:03.966507-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-78c9166">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Live Camera Car at Randall</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-12-13_live_camera_car_at_randall.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-12-13_live_camera_car_at_randall.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Today was the very active &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://randallmuseum.org/randall-museum-events/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Winter Holiday Craft Day at the Randall Museum&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. This is a large event that always has a lot of crowds attending. In the train exhibit, we had a good variety of trains running, and I brought along my latest project, a live camera car:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:194.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_0fd6a702b0d43dcb6e8a9bd173830dc1142653f8492177d12eaa1d6c9286f52bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This is composed of a Raspberry Pi Zero 2W and a Raspberry Pi camera. It broadcasts a video stream over wifi, which I then display on a tablet using my &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;TCM Android software&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:373.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_68984875099b133a25222cfb1f14d8e75e3c4fe44e886706799481fcafbad4d5i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Here&#8217;s a closer look at the camera car:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:282.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ddd5f063aefd2c86ca8ddb94ed114736dc1f5a4fafe602ead321faba2dbecafci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;More details on the build can be found &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;here on the project page on the electronics blog&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2025-12-13T00:00:40-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Track Cam Monitor, Completed</title>
@@ -32,10 +59,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-07T00:00:18-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-12-07T00:00:08-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -350,82 +375,8 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Control of the turnouts.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Power routing for the tracks.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Turnout control is hard because it&#8217;s split between:&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&quot;1&quot; style=&quot;margin:0;padding:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The SIA panel&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The DFS &#8220;seize-release&#8221; on the Stockton / Mountain Panels.&lt;/span&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;That makes it incredibly annoying to use.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The SIA has old-style twin-coils. I would not try to provide DCC control for these.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The DFS has 5 Tortoises. These are the ones I&#8217;d connect to a Switch-8.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The Switch-8 is incompatible with our panel rotary turnout toggles, and that&#8217;s not an issue here since these are not on any given panel. On the contrary, their control is on &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;two&lt;/span&gt;&lt;span&gt;&amp;nbsp;panels using a complex seize-release setup. Thus a Switch-8 control with no panel access would be easier to use. We just need a schematic with a reminder of the AUX turnout numbers and we can operate them via JMRI (Orion&#8217;s TCS, or Engine Driver) or via NCE cab.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The only thing is that I need to understand how the seize-release control stuff works. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I believe that power routing is setup as follows:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;For the SIA, block toggles on the SIA panel &#8594; not a problem.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;For the DFS, the siding power is tied to the track alignment via the DFS electronics and the seize-release buttons.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The Track Power Routing for DFS document explains the background behind the choices. They made sense from a DC perspective. For DCC, we don&#8217;t really need that complexity anymore.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This schema &#8220;explains&#8221; it all&#8230; sort of: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Track%20Power%20Routing%20%5B2018%5D.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;DFS - Track Power Routing [2018].pdf&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;What I would suggest instead is:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The SIA already has its dedicated DCC circuit breaker.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Power to the DFS should come from the same location.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;SIA LOCAL means the SIA is powered by the Booster 4 P4 SIA.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;SIA AUTO means the SIA is powered by the DFS electronics.&lt;/span&gt;&lt;/li&gt;
-  &lt;ul&gt;
-   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The Auto/Local toggle should be disabled. According to the explanation above, what we want is to be fixed in the &#8220;Local&#8221; mode.&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The DFS siding power is the problem.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none&quot;&gt;It is my understanding that the siding power is governed by the AUX relays on the Tortoise, and they take their power from whatever lead track is connected on the East/West side of the yard. That&#8217;s fine in DC because the DFS electronics only opens a Tortoise on the East or West side of a turnout, but never both at the same time (at least I think&#8230; need to double check that). But if we have independent Tortoise control, that means a track can be powered from both ends. That would be acceptable only if the East/West approaches are on the same DCC circuit breaker / booster circuit.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;That &#8220;understanding&#8221; is wrong. Actually the siding power is provided by the DFS controller.&lt;/span&gt;&lt;/li&gt;
- &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;We would not use the DFS electronics power for the sidings and instead would power them directly from the Booster 4 P4 SIA, the same that powers the &#8220;SIA LOCAL&#8221; input.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Before we do that, we need to ensure there is electrical isolation on each side of the yard and their corresponding approaches. It &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;should&lt;/span&gt;&lt;span&gt;&amp;nbsp;already be the case (otherwise the current setup could not work to begin with) but we need to double check that.&lt;/span&gt;&lt;/li&gt;
- &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;We need to decide whether the DFS F1 / F2 / F3 are always powered or we want to have toggles switches to turn them off.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Polarity is fine on the East side (Stockton). It can be an issue on the West side when aligned towards the Branchline. That&#8217;s why we need electrical isolation. We also need that second part of the Branchline to have a polarity inverser. &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;In summary, the work to do is:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Validate whether the current DFS allows opening both Tortoises at the East or West of a given DFS track at the same time.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Validate we have track isolation on the East / West approaches.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Disconnect the SIA AUTO / LOCAL.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;To start, we&#8217;d just validate that everything works with it in LOCAL mode.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Validate that LOCAL is connected to Booster 4 P4 SIA.&lt;/span&gt;&lt;/li&gt;
- &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Disconnect power routing to DFS F1, F2, and F3 from the DFS electronics panel.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Instead tie them directly to the same input as the SIA LOCAL.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Long term we&#8217;d want a dedicated terminal block for feeders.&lt;/span&gt;&lt;/li&gt;
-  &lt;ul&gt;
-   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;For a quick test, we can use the O/P SIA after disconnecting it as it leads to the SIA AUTO/LOCAL. At least in theory it does, but we should never assume the schematics are (still) accurate.&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;We need to disconnect the 5 Tortoise from the DFS electronics panel and connect them to a separate Switch-8, which would then be powered by the DCC Turnout bus (and not the Booster 4 P4 since it&#8217;s a circuit breaker).&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Ideally all these changes would be done as local as possible on the SIA panel itself.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-06-04T00:00:39-07:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-06-04T00:00:56-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

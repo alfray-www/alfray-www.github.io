@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for Blog: Model Train-related Notes" />
+
+<meta property="og:url"         content="https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_power.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HO Live Camera Car v2: Power" />
+
+<meta property="og:description" content="I’m building an HO-Size Car Camera project&nbsp;(see first post here). It uses an Arduino Pi Zero 2W and an Arducam camera. How am I going to power this? And we’re running on an HO model railroad layout, so we have power on the track, can we use that? This is what I ended up with, and let’s detail how we got there:" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_e18db0145f1ae95a8376054202f38844541c2c5618cb982f7c41c8c8b676cd4ci.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="HO Live Camera Car v2: Power" />
+
+<meta name="twitter:description" content="I’m building an HO-Size Car Camera project&nbsp;(see first post here). It uses an Arduino Pi Zero 2W and an Arducam camera. How am I going to power this? And we’re running on an HO model railroad layout, so we have power on the track, can we use that? This is what I ended up with, and let’s detail how we got there:" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_e18db0145f1ae95a8376054202f38844541c2c5618cb982f7c41c8c8b676cd4ci.jpg" />
+
+<title>Blog: Model Train-related Notes</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #428bca;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="index.html">Blog: Model Train-related Notes</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p><span> </span></p>
+<p><span></span></p>
+<p><span> </span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:149.4pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/" style="color:inherit;text-decoration:inherit">Train Pages</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:149.4pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/" style="color:inherit;text-decoration:inherit">Tech Blog</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:149.4pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC Software</a></span></p></td>
+   <td colspan="1" rowspan="1" style="background-color:rgb(103, 78, 167);border-bottom-color:rgb(255, 255, 255);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(255, 255, 255);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(255, 255, 255);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(255, 255, 255);border-top-style:solid;border-top-width:1pt;padding:7.2pt 7.2pt 7.2pt 7.2pt;vertical-align:top;width:149.4pt"><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;color:rgb(255, 217, 102);font-size:14pt;font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/c/raphaelmoll" style="color:inherit;text-decoration:inherit">Videos</a></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span style="font-style:italic">Model Train-related Notes Blog -- t</span><span style="font-style:italic">hese are personal notes and musings on the subject of model train control, automation, electronics, or whatever I find interesting. I also have more posts in a blog dedicated to the maintenance of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span style="font-style:italic">.</span></p>
+<p><span></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2025-11-18_ho_live_camera_car_v2_arducam.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2025-11-18 - HO Live Camera Car v2: Power</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">Video</span>
+    </span>
+    </div>
+
+
+    <p><span></span></p>
+<p></p>
+<p><span>I’m building an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">HO-Size Car Camera project</a></span><span>&nbsp;(see </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">first post here</a></span><span>). It uses an Arduino Pi Zero 2W and an Arducam camera. How am I going to power this? And we’re running on an HO model railroad layout, so we have power on the track, can we use that? This is what I ended up with, and let’s detail how we got there:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:382.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_e18db0145f1ae95a8376054202f38844541c2c5618cb982f7c41c8c8b676cd4ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The Raspberry Pi is a mini computer and as such requires a constant source of power to run. I typically use embedded devices such as Arduino or ESP32 which are ok with being power cycled at any moment. That’s not the case with a Raspberry Pi -- the device takes a handful of seconds to boot, and constantly writes to its sdcard “drive” -- interrupting its power risks corrupting the filesystem and rendering it unable to boot. That’s why these are typically powered by a USB brick and designed to be left running all the time. </span></p>
+<p></p>
+<p><span>The good news is that we’re running on an HO model railroad layout. The rails provide power to the trains. So ideally the same rails can provide power for the Raspberry Pi and its camera. But again, continuity is an issue. With model trains, we’re used to have to deal with “dead spots” -- very short places where the rails fail to provide electricity to the trains. Most train engines deal with this using simple momentum -- the momentum of the train is enough to make it cross any tiny electrical gap and regain electrical power. Any longer unpowered section just ends up on the train stalling and stopping.</span></p>
+<p></p>
+<p><span>Here we want to convert this into a video server streaming over wifi. For that same reason, we want continued power. Thus it makes sense to not entirely rely on the rails to get power. A battery is the way to go. Fortunately, there are number of “UPS Hat” solutions (UPS = uninterrupted power supply). These are simply batteries that provide some power for the Raspberry Pi for a certain amount of time.</span></p>
+<p></p>
+<h2 id="h.s7y6whbslzx2" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">UPS Hat for RPi Zero</span></h2>
+<p></p>
+<p><span>For this project, I selected </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3X49IV3" style="color:inherit;text-decoration:inherit">https://amzn.to/3X49IV3</a></span><span>&nbsp;-- that came with “instructions” which was mostly a piece of paper sending to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://seengreat.com/wiki/180" style="color:inherit;text-decoration:inherit">https://seengreat.com/wiki/180</a></span><span>&nbsp;to get the information I needed.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:480.58px"><img alt="" src="img_1d727b80420397f6ae8340579fd9f9740920e0cee052469def56e449011abc29i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span></span></p>
+<p style="text-align:left"><span>This device is fairly simple. There’s a USB C plug at the bottom to charge the battery, and a set of “pogo” pins at the top that connect to the Raspberry Pi GPIO to provide power. The 2x3 pogo pins connect to:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Pin 1 = 3.3V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pin 2 = 5 V</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Pin 3 = SDA.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pin 4 = 5 V</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Pin 5 = SCL.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Pin 6 = GND</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Once first assembled, the RPi Zero 2 W was not turning on. Looking at it more closely, the “pogo pins” were not making any contact with the bottom of the GPIO. These are made to “push” on the bottom of the header pins, and a 2 W doesn’t have headers. I soldered 2x3 pins to ensure the pogo pins had something to make contact with.</span></p>
+<p></p>
+<p><span>I assembled the Raspberry Pi with the UPS Hat and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/487le7b" style="color:inherit;text-decoration:inherit">adapted some acrylic plates</a></span><span>&nbsp;to protect the various contacts:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:286.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_31a238858f7161cea7cd8f75b81bb1fbdf6ee7389e4584b97174f5b980b5b32di.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p></p>
+<h2 id="h.ielie8vt9ycr" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Monitoring the Battery</span></h2>
+<p></p>
+<p><span>These UPS Hat integrate an INA219, an I2C-controlled IC that monitors voltage and current. This can measure the voltage of the battery as well as the discharge or charge current. </span></p>
+<p></p>
+<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://seengreat.com/wiki/180" style="color:inherit;text-decoration:inherit">https://seengreat.com/wiki/180</a></span><span>&nbsp;page links to a “python demo” source code that will get the values from the INA219 sensor. I’ve mirrored this version of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/power/INA219.py" style="color:inherit;text-decoration:inherit">INA219.py here</a></span><span>. I’ve noticed that other similar boards link to slightly different versions of the same source. Apparently vendors just copy-paste it around.</span></p>
+<p></p>
+<p><span>Using this is fairly trivial:</span></p>
+<p></p>
+<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt">$ sudo apt install python3-smbus<br>$ vim </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Source Code Pro&quot;;font-size:9pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ina219.py" style="color:inherit;text-decoration:inherit">INA219.py</a></span><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt"><br></span><span style="font-size:9pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The device address can be either 0x42 or 0x43.<br></span><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt">$ python </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Source Code Pro&quot;;font-size:9pt;text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ina219.py" style="color:inherit;text-decoration:inherit">INA219.py</a></span><span style="font-family:&quot;Source Code Pro&quot;;font-size:9pt"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load Voltage: &nbsp; 4.120 V<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current: &nbsp; &nbsp; &nbsp; &nbsp;0.307848 A<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Power: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1.292 W (idle)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percent: &nbsp; &nbsp; &nbsp; &nbsp;100.0%</span></p>
+<p></p>
+<p><span>The device comes with a 3.7 watt/hour battery, and the RPi has a consumption of around 1.6 W when encoding one RTSP video stream. This gives a runtime of about 2 hours. That’s not enough for our needs.</span></p>
+<p></p>
+<h2 id="h.p3upr5rvspfi" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Trickle Charging from Track Power</span></h2>
+<p></p>
+<p><span>The battery is excellent to provide continuous power to the Raspberry Pi. Yet we want to charge it while the camera car is running, and what better source of power than the power from track? In this application, we don’t care if there are any dead spots when the car is running as long as overall it charges more often than it discharges.</span></p>
+<p></p>
+<p><span>The UPS Hat has a USB C plug to charge it. So ideally I want to use that.</span></p>
+<p></p>
+<p><span>The first thing is to realize they provide the schematic so let's use that to figure out the charge circuitry, and maybe get a datasheet for the USB charge controller.</span></p>
+<p><span>The quintessential question is how close to 5V do we need to be on the USB C port, and do we need CC1/2 resistors.</span></p>
+<p></p>
+<p><span>The schematic of the UPS Hat is here:</span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://seengreat.com/upload/file/131%20UPS/Pi%20Zero%20UPS%20HAT(A)Rve1.4.pdf" style="color:inherit;text-decoration:inherit">https://seengreat.com/upload/file/131%20UPS/Pi%20Zero%20UPS%20HAT(A)Rve1.4.pdf</a></span><span>&nbsp;</span></p>
+<p></p>
+<p><span>This is the part we care about:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:196.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_d2a830dc7f2a488abc53b792c59250a988c1d2fc2e8d27d0ff014061edf688bai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The “Type-C-6P” block is the USB C plug. CC1/CC2 are already connected to the proper resistors. A standard sink device is supposed to have 5.1 kΩ resistors on both CC1 and CC2, which this one does.</span></p>
+<p></p>
+<p><span>We see that VBUS goes directly to an ETA6003 (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/196/ETA6003-v2.5.1.pdf" style="color:inherit;text-decoration:inherit">TI datasheet</a></span><span>), which is a “switching Li-Ion battery charger” designed to take a USB input and charge a Li-Ion battery to about 4.2 V. Resistors ISET1 and ISET2 define the desired charge current.</span></p>
+<p><span>The schematic shows USB_DET connected to the ground, which means the device is in “AC charger” mode and should only use ISET1 to define the “fast” charge current. The values shown above match the datasheet, with 2 kΩ creating a max charge current of 0.5 A in USB mode (the one that is not enabled), and 470 Ω creating a max charge current of 2 A in “fast” AC charger mode (the one that is hard-wired by USB_DET above).</span></p>
+<p><span>In my case, the one spec I need is the input range, which is stated as 4.4 V up to 5.5 V, with an absolute maximum of 6 V. So that’s what we need to present on the USB C VBUS line.</span></p>
+<p></p>
+<p><span>In my case, the goal is to rectify the DCC signal from the track using a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3UJMq78" style="color:inherit;text-decoration:inherit">full bridge rectifier</a></span><span>. On the Randall layout, that will give us a fairly straight 12-13 V DC signal.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:325.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_83acfde24f9c59cf7ed4cd7204e503acce39707fd1795b1462a9e1eac4bec4afi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>On this early prototype, the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3UJMq78" style="color:inherit;text-decoration:inherit">AC-DC bridge rectifier</a></span><span>&nbsp;can be seen on the left with its smoothing capacitor. I can then use a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/2UCLQe7" style="color:inherit;text-decoration:inherit">DC-DC Step-Down Voltage Regulator 3-40V</a></span><span>&nbsp;</span><span>to then bring that to 5V. My only problem with this choice is that these do not regulate the output voltage AFAIK… it’s just a factor of the input voltage.</span></p>
+<p></p>
+<p><span>When running on the track at Randal, the DCC voltage level varies from 12.10V up to 13.5V depending on the NCE booster powering the track. With a step-down voltage regulator like the one above, the output voltage will vary slightly. The main issue is that this DC-DC step-down voltage regulator is quite bulky -- it’s almost half the size of the Raspberry Pi itself. I would like something more compact so that I can fit the entire thing in a small HO-sized car.</span></p>
+<p></p>
+<p><span>Looking in my bin of random parts, the second idea I had was to use a spare USB cigarette lighter adapter:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:208.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_5e62ae3f88d6d944b477a7d3b2417d54b93fd045a63ef5749a4b1cd3fbc7a1cdi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>These do have an IC inside that will generate a proper 5V suitable for a USB power, exactly what I need. The circuit board is fairly small, and I could work it out. The only issue is that these are “rated 1A” but really they crash when you try to pull more than 0.5A out of them. I’d like something that can support a bit more current. And then, wait a second, that reminds me of something… it turns out I already have exactly the right thing for this project:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:300.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d98590c17081ba3f51ce3bf2696ea512130e0713dacf04151f7f7eb825baf081i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>In </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2.html" style="color:inherit;text-decoration:inherit">the first article of this series</a></span><span>, I explained how this was a project I started back in 2019. Turns out that back then I had </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ebay.com/itm/112267705234" style="color:inherit;text-decoration:inherit">already ordered</a></span><span>&nbsp;2 small stamp-sized DC-DC step-down converters specifically for a 5V output:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:205.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:595.00px"><img alt="" src="img_fcb8511d72bb9222e6ab617e6a71dea7b12c62b87fc4972af20735e0ce1eb57ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The ones I have are fixed for a 5V output. Here’s a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3KPasuL" style="color:inherit;text-decoration:inherit">similar listing on Amazon with a variable output</a></span><span>. These are centered around an MP1584EN, which is a 3A 28V step-down converter (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP1584EN-LF-Z/document_id/204/" style="color:inherit;text-decoration:inherit">datasheet here</a></span><span>). Its input voltage is in the 4.5 to 28V range, and the output voltage is controlled by 2 resistors (either both fixed or with one variable resistor). </span></p>
+<p></p>
+<p><span>Thus </span><span style="font-weight:700">we finally have a good solution for our trickle charge scheme</span><span>:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We get power from the DCC track.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We “convert” it to DC using the small AC-DC full bridge rectifier.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Note that a DCC signal </span><span style="font-style:italic">really</span><span>&nbsp;is a DC signal in disguise with its polarity inverted at a 8 kHz frequency, thus once rectified, we get an almost-ripple-free DC signal. It’s nice to keep the capacitor for smoothing, but it’s not as needed as in a real AC-DC rectification.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We feed the 12-13V resulting DC signal to the MP1584EN on the DC-oDC step down converter.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>We feed the 5V resulting DC signal to the USB C plug on the UPS Hat, which feeds the ETA6003 charge controller.</span></li>
+</ul>
+<p></p>
+<p><span>So I did all this, and it worked as expected:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:294.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_2c4415f25889fb8baf2521f16599d0a92b70bb413ec5ec574f703904bc3f0ae9i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>This fits the camera, the Raspberry Pi with its battery, and a little “power module” with the bridge rectifier and the step down converter, then connected back to the USB C port via a DIY USB C plug.</span></p>
+<p></p>
+<p><span>There’s just the one detail I totally missed and never thought about: clearance! It turns out a USB C plug is “huge” in comparison to the size of my little HO camera car:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:232.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_9a4405b0769d90539b0bb40cd1d0bd5274e01e680cd9403d26f950213b249f05i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>I tried on the Randall Layout and I’m clearing some tunnels by a mere millimeter. That’s definitely not acceptable.</span></p>
+<p></p>
+<p><span>OK so fine, time for plan B. Disassemble everything, and solder 2 wires to the GND and VBUS directly on the other side of the USB C port on the UPS Hat:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:277.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_90f96177733a01d8df25b90e33a7b311d4db00c7cea419c461a10ff83b7971dci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Doing it this way, the two wires are still connected to the USB C port, just “on the other side”, the solder side. This is one of the “power only” USB C female ports so luckily it has only 6 pads. Still they are fairly tiny and it was a bit of a PITA to solder my wires. I’m using 28 AWG which is “small” yet looks huge compared to everything else on that board.</span></p>
+<p></p>
+<p><span>Since I had to disassemble everything, I 3d-printed another version of the supports for Raspberry Pi, camera, and power module, and here’s the final version once reassembled:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:449.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d6248b8d9c14c469cb13004a5667564b17cb8a1a88cd89260f0cd71ec5e75f10i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The square wave signal is the DCC signal as measured just before the full bridge rectifier, by the way.</span></p>
+<p></p>
+<p><span>This time there are no wires for power outside of the body. They connect to the green 2-position terminal and go directly under the RPi.</span></p>
+<p></p>
+<p><span>And here’s the view on the other side:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:250.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_3411d14dff1e3cd98a13500b1563e60576a028d411b1d1e7d8fa569e45eee71fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>and that’s what I successfully ran at the Randall Museum today, almost one month after I started this project.</span></p>
+<p></p>
+<hr>
+<p></p>
+<p><span></span></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2025-11-18_ho_live_camera_car_v2_arducam.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">
+    &nbsp;
+    <!-- rg-excl( -->
+    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
+    <!-- )rg-excl -->
+    &nbsp;
+</div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

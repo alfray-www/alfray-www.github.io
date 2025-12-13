@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="Experiment from tonight: control the EZTrack #6 crossovers using the NCE Q-Snap. ⇒ Failed." />
+<meta property="og:description" content="From both the NCE USB v7&nbsp;doc (see NCE website) or from" />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_c985daf3252ab87f2b786481eb693894a2892801de0919ad7654291ee92b4cadd.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="Experiment from tonight: control the EZTrack #6 crossovers using the NCE Q-Snap. ⇒ Failed." />
+<meta name="twitter:description" content="From both the NCE USB v7&nbsp;doc (see NCE website) or from" />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_c985daf3252ab87f2b786481eb693894a2892801de0919ad7654291ee92b4cadd.png" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -248,6 +248,52 @@ td p {
 
     <div class="post-container">
 <div class="post-title-container">
+<a class="post-title-link" href="2016-09-26_direct_access_to_nce_q-snap_mk2.html">
+    <h2 class="post-title">2016-09-26 - Direct Access to NCE Q-Snap Mk2</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    NCE
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p style="text-align:left"><span>From both the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/200590909-Board-Versions-and-Jumper-Settings" style="color:inherit;text-decoration:inherit">NCE USB v7</a></span><span>&nbsp;doc (see NCE website) or from</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://jmri.sourceforge.net/help/en/package/jmri/jmrix/nce/packetgen/NcePacketGenFrame.shtml" style="color:inherit;text-decoration:inherit">http://jmri.sourceforge.net/help/en/package/jmri/jmrix/nce/packetgen/NcePacketGenFrame.shtml</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Example: 0xAD is for switching an Accy/Signal. There is no provision to read the state.</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>E.g. 0xAD 0x00 0x03 0x03 0x00 ⇒ throw 0x0003 in normal direction</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>E.g. 0xAD 0x00 0x03 0x04 0x00 ⇒ throw 0x0003 in reverse direction</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>0 is an invalid address.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Max address is 2044 (0x7FC) which is a broadcast address for Accy.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Note: when trying in JMRI &gt; NCE Command, "Binary" means hex without x, seriously \o/ ?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Lockout CV 556:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Use on Address of input #1, which is 4 for my home one.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>556 = 0x022C</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>0xAF is Ops ACCY programming.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>AF 00 04 02 2C [0=unlocked | 1=locked]</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>This works. It locks buttons out.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ACCY on controller can still be used to throw turnouts.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>That means I can trivially command that from an Arduino and bypass JMRI if needed.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
 <a class="post-title-link" href="2016-08-25_nce_q-snap_and_eztrack_6_crossovers.html">
     <h2 class="post-title">2016-08-25 - NCE Q-Snap and EZTrack #6 Crossovers</h2>
 </a>
@@ -423,7 +469,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-21 by Rig4j 0.1-Exp-f3ee0b3
+    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
     <!-- )rg-excl -->
     &nbsp;
 </div>

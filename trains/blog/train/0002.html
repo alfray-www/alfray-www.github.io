@@ -13,14 +13,14 @@
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
 <meta property="og:description" content="The Software Defined Blocks&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_f166c02c848f568b930b21b2611854915be1af943b5f7a9d21919c483a3cc23fd.jpg" />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_c5f8b56e7364c511a43532c7a941c8cb273f0d3f09330438df8eb6f5e96f7592i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
 <meta name="twitter:description" content="The Software Defined Blocks&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_f166c02c848f568b930b21b2611854915be1af943b5f7a9d21919c483a3cc23fd.jpg" />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_c5f8b56e7364c511a43532c7a941c8cb273f0d3f09330438df8eb6f5e96f7592i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -247,6 +247,40 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-11-02_sdb_first_trolley_automation_test.html">
+    <h2 class="post-title">2023-11-02 - SDB: First Trolley Automation Test</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    SDB
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span style="font-style:italic">The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/sdb" style="color:inherit;text-decoration:inherit">Software Defined Blocks</a></span><span style="font-style:italic">&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad</span><span>.</span></p>
+<p></p>
+<p><span>I brought my prototype board to Randall today and gave it a try with the desired trolley:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:244.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_c5f8b56e7364c511a43532c7a941c8cb273f0d3f09330438df8eb6f5e96f7592i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The SDB prototype detected the trolley properly. When placed this way against the end bumper, we can adequately measure the trolley distance between 10 mm and 400 mm (1 cm up to 40 cm). After that, we always get a value in the 400 range.</span></p>
+<p></p>
+<p><span>Note that in this test, I did not hook SDB to the main JMRI computer for actual control. The goal was to determine which sensor placement would fulfill the detection need. Whatever is on the picture above seems like it will work correctly, so I’ll go ahead and create some kind of sensor support -- probably out of foam/cardboard first and then later 3d-printed or stuck to a little building.</span></p>
+<p></p>
+<p><span>Here’s an overview of the track I want to control:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:166.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_7bf923351e2d89701926b89b6c8fa0cc9c48bbe6ed090bad7abf62c8dc8ca4e9d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p><span></span></p>
+
+<a href="2023-11-02_sdb_first_trolley_automation_test.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-11-01_sdb_vl53l0x_tof_sensor_accuracy.html">
     <h2 class="post-title">2023-11-01 - SDB: VL53L0X ToF Sensor Accuracy</h2>
@@ -560,34 +594,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-05-10_conductor_2_crossing_block_boundaries.html">
-    <h2 class="post-title">2023-05-10 - Conductor 2: Crossing Block Boundaries</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Rtac
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span>Now I understand the issue that was affecting the automated freight train; it's quite interesting and worth elaborating.</span></p>
-<p></p>
-<p><span>First, as a recap, the freight route is a shuttle composed of 2 blocks. The train starts on say block A, travels to the consecutive block B, stops, and reverses to block A. The sequence is very simple:</span></p>
-<p></p>
-<p class="console "><span>Step / State Block A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;State Block B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description<br>1- </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">[ A </span><span style="background-color:rgb(244, 204, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;active </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;occupied </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;] &nbsp; [ B inactive </span><span style="background-color:rgb(255, 242, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; empty &nbsp; </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start from A</span><span style="font-family:&quot;Consolas&quot;;font-size:9pt"><br></span><span>2- </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">[ A inactive </span><span style="background-color:rgb(252, 229, 205);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;trailing </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;] &nbsp; [ B </span><span style="background-color:rgb(244, 204, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;active </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;occupied </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crosses from A to B</span><span style="font-family:&quot;Consolas&quot;;font-size:9pt"><br></span><span>2- </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">[ A inactive </span><span style="background-color:rgb(252, 229, 205);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;trailing </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;] &nbsp; [ B </span><span style="background-color:rgb(244, 204, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;active </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;occupied </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stops &amp; Reverses</span><span style="font-family:&quot;Consolas&quot;;font-size:9pt"><br></span><span>3- </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">[ A </span><span style="background-color:rgb(244, 204, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;active </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;occupied </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;] &nbsp; [ B inactive </span><span style="background-color:rgb(252, 229, 205);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;trailing </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crosses from B to A</span><span style="font-family:&quot;Consolas&quot;;font-size:9pt"><br></span><span>4- </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">[ A </span><span style="background-color:rgb(244, 204, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;active </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;</span><span style="background-color:rgb(217, 234, 211);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;occupied </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;] &nbsp; [ B inactive </span><span style="background-color:rgb(255, 242, 204);font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp; empty &nbsp; </span><span style="font-family:&quot;Consolas&quot;;font-size:9pt">&nbsp;]</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stops back on A and resets</span></p>
-<p></p>
-<p><span>Note how although we have 5 logical steps, there are only 4 different steps from the sensor/block occupancy point of view -- there is no difference whether the engine is running on block B or stopped and waiting till it reverses.</span></p>
-<p><span></span></p>
-
-<a href="2023-05-10_conductor_2_crossing_block_boundaries.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -609,7 +615,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-21 by Rig4j 0.1-Exp-9bafc34
+    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
     <!-- )rg-excl -->
     &nbsp;
 </div>
