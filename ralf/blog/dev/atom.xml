@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-12-12T13:11:12.068782-08:00</updated>
+<updated>2025-12-13T03:05:41.341532-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -21,10 +21,18 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;There were a lot of good tools on the Atari ST, yet the simple and efficient UI of DOpus 4 was and is still something I enjoyed -- extremely compact, extremely contrasted, efficient to use.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;A decade earlier, I was happily coding on Apple ][ and all my floppies used ProDOS:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:384.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:560.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7a4cfc284ad189e58c8f3de4f6dd653c0f9d3091ff34621627cf76dc75ad6a7ei.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span&gt;[&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Apple_ProDOS&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;source&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;One thing I have fond memories of is actually manipulating the filesystem structure at the byte level with a &#8220;nibble&#8221; editor. That&apos;s something I continued doing on the Atari ST itself. These were FAT-like filesystems which were still easy to comprehend. Back then I severely lacked any kind of official OS documentation. However, with just a byte editor capable of dumping the raw content of a floppy, it was possible to quickly make sense of the structure and figure them out by trial and error because these &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;just made sense&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-12-12T00:00:07-08:00</updated>
+<updated>2025-12-12T00:00:54-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
