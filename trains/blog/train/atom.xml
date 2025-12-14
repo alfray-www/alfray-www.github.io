@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-12-14T03:02:52.150275-08:00</updated>
+<updated>2025-12-14T11:21:04.293948-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -14,7 +14,7 @@
 <category term="video" label="Video"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/train/">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I&#8217;m building an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO-Size Car Camera project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(see &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). It uses an Arduino Pi Zero 2W and an Arducam camera. How am I going to power this? And we&#8217;re running on an HO model railroad layout, so we have power on the track, can we use that? This is what I ended up with, and let&#8217;s detail how we got there:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;m building an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO-Size Car Camera&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. In the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, we selected a Raspberry Pi Zero 2W for the processing unit and in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam_part_2_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;second post&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;we selected an Arducam camera module&lt;/span&gt;&lt;span&gt;. Now we need to discuss how we are going to power this. And we&#8217;re running on an HO model railroad layout, so we have power on the track, can we use that? This is what I ended up with, and let&#8217;s detail how we got there:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:382.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_e18db0145f1ae95a8376054202f38844541c2c5618cb982f7c41c8c8b676cd4ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -176,7 +176,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-11-19T00:00:29-08:00</updated>
+<updated>2025-11-19T00:00:24-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -186,7 +186,7 @@
 <category term="video" label="Video"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/train/">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I&#8217;m building an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO-Size Car Camera project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(see &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;). &lt;br&gt;This is the camera I&#8217;ve selected to use: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43sCfHv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43sCfHv&lt;/a&gt;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;&amp;nbsp;Arducam Module 3, with the 75 degrees FoV.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;m building an &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO-Size Car Camera&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. In the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;first post&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, we selected a Raspberry Pi Zero 2W for the processing unit and reviewed the possible camera module choices. This is the camera I&#8217;ve selected to use: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43sCfHv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43sCfHv&lt;/a&gt;&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;&amp;nbsp;Arducam Module 3, with the 75 degrees FoV:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:268.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8c32609f2ee718b6102c2aac1a92858c7cc47b6d9792fe6272b47a963711b637i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-size:9pt;font-style:italic&quot;&gt;Raspberry Pi Zero 2 W w/ Arducam Module 3&lt;/span&gt;&lt;span style=&quot;font-size:9pt&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -321,11 +321,11 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That currently displays a 1280x720 @ 30 fps with no problem. The 400 kb/s choice is terrible during motion, I&#8217;ll need to play with these parameters to see what works best.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-19_ho_live_camera_car_v2_power_part_3_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO Live Camera Car v2: Power (part 3)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next, we continue with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-19_ho_live_camera_car_v2_power_part_3_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO Live Camera Car v2: Power (part 3)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-18T00:00:27-08:00</updated>
+<updated>2025-11-18T00:00:54-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -513,11 +513,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The disk space difference is rather insignificant (I have a couple wireshark dumps stored on the 32-bit box; if we remove these, that&#8217;s really the same count).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Out of the theoretical 512 MB, the memory available is 61% for 32-bit vs 53% for 64-bit. Depending on usage, that could make a difference.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam_part_2_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO Live Camera Car v2: Arducam (part 2)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next, we continue with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam_part_2_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO Live Camera Car v2: Arducam (part 2)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-15T00:00:19-08:00</updated>
+<updated>2025-11-15T00:00:31-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
