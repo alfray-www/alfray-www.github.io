@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-12-13T15:59:02.922746-08:00</updated>
+<updated>2025-12-13T16:27:39.498637-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -133,16 +133,49 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;This time there are no wires for power outside of the body. They connect to the green 2-position terminal and go directly under the RPi.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;And here&#8217;s the view on the other side:&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.yz8owx7xy5da&quot; style=&quot;line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Camera Control Software&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;m keeping the software to a minimum on this project.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;All the scripts for the Raspberry Pi are in this &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/model-railroad/cam-car&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;repository:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Video Streaming Service: &lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;This uses a basic systemd &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-stream.service&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;picam-stream.service&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to start the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-stream.sh&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;picam-stream.sh&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;script when the Raspberry Pi boots&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam_part_2_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;As explained earlier&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, this uses the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;rpicam-vid&lt;/span&gt;&lt;span&gt;&amp;nbsp;to capture the video and streams it using &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;cvlc&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Battery Monitor Service:&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;This uses a basic systemd &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-power.service&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;picam-power.service&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to run a battery monitor script &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-power.sh&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;picam-power.sh&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When the battery goes below 50% &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;and&lt;/span&gt;&lt;span&gt;&amp;nbsp;it is not being charged, we initiate a system shutdown to save power. There is no facility to turn it back on -- that&#8217;s up to the user to do that.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/batt_level.py&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;batt_level.py&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;is a basic tweak to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/power/INA219.py&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;INA219.py&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;program to dump the battery state in a format that is easier to grep in the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;bash&lt;/span&gt;&lt;span&gt;&amp;nbsp;script.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;At the expected rate of discharge, the Raspberry Pi would have to be running for one hour without power for this to happen.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The video is accessible at the network stream URL rtsp://zero1.ggmrc:8554/stream1 on the layout&#8217;s internal wifi network.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;On the viewer side, I&#8217;m using my &lt;/span&gt;&lt;span&gt;own &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;TCM Android app&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;on an Umidigy G1 10-inch tablet.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;With a bit of experimentation, I found these parameters work well:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;rpicam-vid: video 640x360, at 4000kbps and 20fps.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;TCM: configure FFMpeg with &#8220;format=rtsp&#8221; and &#8220;rtsp_transport=udp&#8221;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;When running, the Raspberry Pi Zero 2 W generally runs at 10~15% CPU max.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:306.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2bd09e0284352ba5ec0de2ea9970517f101cec76d2533456da8578d6c3d7bb01i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:250.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3411d14dff1e3cd98a13500b1563e60576a028d411b1d1e7d8fa569e45eee71fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;and that&#8217;s what I successfully ran at the Randall Museum today, almost one month after I started this project.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;and that&#8217;s &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-12-13_live_camera_car_at_randall.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;what I successfully ran at the Randall Museum today&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, almost one month after I started this project.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-11-19T00:00:26-08:00</updated>
+<updated>2025-11-19T00:00:05-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -287,11 +320,11 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That currently displays a 1280x720 @ 30 fps with no problem. The 400 kb/s choice is terrible during motion, I&#8217;ll need to play with these parameters to see what works best.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with the HO Live Camera Car v2: Power (part 3).&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-19_ho_live_camera_car_v2_power_part_3_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO Live Camera Car v2: Power (part 3)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-18T00:00:52-08:00</updated>
+<updated>2025-11-18T00:00:02-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -479,11 +512,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The disk space difference is rather insignificant (I have a couple wireshark dumps stored on the 32-bit box; if we remove these, that&#8217;s really the same count).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Out of the theoretical 512 MB, the memory available is 61% for 32-bit vs 53% for 64-bit. Depending on usage, that could make a difference.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Raspberry Pi Camera (part 2)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Next, let&#8217;s deal with &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam_part_2_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO Live Camera Car v2: Arducam (part 2)&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-15T00:00:34-08:00</updated>
+<updated>2025-11-15T00:00:19-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

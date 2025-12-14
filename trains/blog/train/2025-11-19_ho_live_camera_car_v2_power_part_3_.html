@@ -375,11 +375,44 @@ td p {
 <p></p>
 <p><span>This time there are no wires for power outside of the body. They connect to the green 2-position terminal and go directly under the RPi.</span></p>
 <p></p>
-<p><span>And here’s the view on the other side:</span></p>
+<h2 id="h.yz8owx7xy5da" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">Camera Control Software</span></h2>
+<p></p>
+<p><span>I’m keeping the software to a minimum on this project.</span></p>
+<p></p>
+<p><span>All the scripts for the Raspberry Pi are in this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/cam-car</a></span><span>&nbsp;repository:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Video Streaming Service: </span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This uses a basic systemd </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-stream.service" style="color:inherit;text-decoration:inherit">picam-stream.service</a></span><span>&nbsp;to start the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-stream.sh" style="color:inherit;text-decoration:inherit">picam-stream.sh</a></span><span>&nbsp;script when the Raspberry Pi boots</span><span>.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-11-18_ho_live_camera_car_v2_arducam_part_2_.html" style="color:inherit;text-decoration:inherit">As explained earlier</a></span><span>, this uses the </span><span style="font-style:italic">rpicam-vid</span><span>&nbsp;to capture the video and streams it using </span><span style="font-style:italic">cvlc</span><span>.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Battery Monitor Service:</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This uses a basic systemd </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-power.service" style="color:inherit;text-decoration:inherit">picam-power.service</a></span><span>&nbsp;to run a battery monitor script </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/picam-power.sh" style="color:inherit;text-decoration:inherit">picam-power.sh</a></span><span>.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>When the battery goes below 50% </span><span style="font-style:italic">and</span><span>&nbsp;it is not being charged, we initiate a system shutdown to save power. There is no facility to turn it back on -- that’s up to the user to do that.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/service/batt_level.py" style="color:inherit;text-decoration:inherit">batt_level.py</a></span><span>&nbsp;is a basic tweak to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/cam-car/blob/main/rpi_zero_2w/power/INA219.py" style="color:inherit;text-decoration:inherit">INA219.py</a></span><span>&nbsp;program to dump the battery state in a format that is easier to grep in the </span><span style="font-style:italic">bash</span><span>&nbsp;script.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>At the expected rate of discharge, the Raspberry Pi would have to be running for one hour without power for this to happen.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>The video is accessible at the network stream URL rtsp://zero1.ggmrc:8554/stream1 on the layout’s internal wifi network.</span></p>
+<p></p>
+<p><span>On the viewer side, I’m using my </span><span>own </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/tcm" style="color:inherit;text-decoration:inherit">TCM Android app</a></span><span>&nbsp;on an Umidigy G1 10-inch tablet.</span></p>
+<p></p>
+<p><span>With a bit of experimentation, I found these parameters work well:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>rpicam-vid: video 640x360, at 4000kbps and 20fps.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>TCM: configure FFMpeg with “format=rtsp” and “rtsp_transport=udp”.</span></li>
+</ul>
+<p></p>
+<p><span>When running, the Raspberry Pi Zero 2 W generally runs at 10~15% CPU max.</span></p>
+<p></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:306.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_2bd09e0284352ba5ec0de2ea9970517f101cec76d2533456da8578d6c3d7bb01i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
 <p></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:250.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_3411d14dff1e3cd98a13500b1563e60576a028d411b1d1e7d8fa569e45eee71fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p></p>
-<p><span>and that’s what I successfully ran at the Randall Museum today, almost one month after I started this project.</span></p>
+<p><span>and that’s </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2025-12-13_live_camera_car_at_randall.html" style="color:inherit;text-decoration:inherit">what I successfully ran at the Randall Museum today</a></span><span>, almost one month after I started this project.</span></p>
 <p></p>
 <hr>
 <p></p>
