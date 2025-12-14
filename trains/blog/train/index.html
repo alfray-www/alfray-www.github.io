@@ -267,9 +267,9 @@ td p {
 <p></p>
 <p><span>The Raspberry Pi is a mini computer and as such requires a constant source of power to run. I typically use embedded devices such as Arduino or ESP32 which are ok with being power cycled at any moment. That’s not the case with a Raspberry Pi -- the device takes a handful of seconds to boot, and constantly writes to its sdcard “drive” -- interrupting its power risks corrupting the filesystem and rendering it unable to boot. That’s why these are typically powered by a USB brick and designed to be left running all the time. </span></p>
 <p></p>
-<p><span>The good news is that we’re running on an HO model railroad layout. The rails provide power to the trains. So ideally the same rails can provide power for the Raspberry Pi and its camera. But again, continuity is an issue. With model trains, we’re used to have to deal with “dead spots” -- very short places where the rails fail to provide electricity to the trains. Most train engines deal with this using simple momentum -- the momentum of the train is enough to make it cross any tiny electrical gap and regain electrical power. Any longer unpowered section just ends up on the train stalling and stopping.</span></p>
+<p><span>The good news is that we’re running on an HO model railroad layout. The rails provide power to the trains. So ideally the same rails can provide power for the Raspberry Pi and its camera. Continuity is an issue. With model trains, we’re used to have to deal with “dead spots” -- very short places where the rails fail to provide electricity to the trains. Most train engines deal with this using simple momentum -- the momentum of the train is enough to make it cross any tiny electrical gap and regain electrical power. Any longer unpowered section just ends up with the train stalling and stopping.</span></p>
 <p></p>
-<p><span>Here we want to convert this into a video server streaming over wifi. For that same reason, we want continued power. Thus it makes sense to not entirely rely on the rails to get power. A battery is the way to go. Fortunately, there are number of “UPS Hat” solutions (UPS = uninterrupted power supply). These are simply batteries that provide some power for the Raspberry Pi for a certain amount of time.</span></p>
+<p><span>Here we want to convert this into a video server streaming over wifi. To avoid interrupting the video stream, we also want continued power. Thus it makes sense to not entirely rely on the rails to get power. A battery is the way to go. Fortunately, there are a number of “UPS Hat” solutions (UPS = uninterrupted power supply). These are simply batteries that provide some power for the Raspberry Pi for a certain amount of time.</span></p>
 <p></p>
 <h2 id="h.s7y6whbslzx2" style="line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid"><span style="font-size:16pt">UPS Hat for RPi Zero</span></h2>
 <p></p>
@@ -658,7 +658,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
+    Generated on 2025-12-14 by Rig4j 0.1-Exp-78c9166
     <!-- )rg-excl -->
     &nbsp;
 </div>

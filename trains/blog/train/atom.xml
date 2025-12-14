@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-12-13T17:14:55.033178-08:00</updated>
+<updated>2025-12-14T03:02:52.150275-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -20,9 +20,9 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The Raspberry Pi is a mini computer and as such requires a constant source of power to run. I typically use embedded devices such as Arduino or ESP32 which are ok with being power cycled at any moment. That&#8217;s not the case with a Raspberry Pi -- the device takes a handful of seconds to boot, and constantly writes to its sdcard &#8220;drive&#8221; -- interrupting its power risks corrupting the filesystem and rendering it unable to boot. That&#8217;s why these are typically powered by a USB brick and designed to be left running all the time. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The good news is that we&#8217;re running on an HO model railroad layout. The rails provide power to the trains. So ideally the same rails can provide power for the Raspberry Pi and its camera. But again, continuity is an issue. With model trains, we&#8217;re used to have to deal with &#8220;dead spots&#8221; -- very short places where the rails fail to provide electricity to the trains. Most train engines deal with this using simple momentum -- the momentum of the train is enough to make it cross any tiny electrical gap and regain electrical power. Any longer unpowered section just ends up on the train stalling and stopping.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The good news is that we&#8217;re running on an HO model railroad layout. The rails provide power to the trains. So ideally the same rails can provide power for the Raspberry Pi and its camera. Continuity is an issue. With model trains, we&#8217;re used to have to deal with &#8220;dead spots&#8221; -- very short places where the rails fail to provide electricity to the trains. Most train engines deal with this using simple momentum -- the momentum of the train is enough to make it cross any tiny electrical gap and regain electrical power. Any longer unpowered section just ends up with the train stalling and stopping.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Here we want to convert this into a video server streaming over wifi. For that same reason, we want continued power. Thus it makes sense to not entirely rely on the rails to get power. A battery is the way to go. Fortunately, there are number of &#8220;UPS Hat&#8221; solutions (UPS = uninterrupted power supply). These are simply batteries that provide some power for the Raspberry Pi for a certain amount of time.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Here we want to convert this into a video server streaming over wifi. To avoid interrupting the video stream, we also want continued power. Thus it makes sense to not entirely rely on the rails to get power. A battery is the way to go. Fortunately, there are a number of &#8220;UPS Hat&#8221; solutions (UPS = uninterrupted power supply). These are simply batteries that provide some power for the Raspberry Pi for a certain amount of time.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.s7y6whbslzx2&quot; style=&quot;line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;UPS Hat for RPi Zero&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -58,7 +58,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.p3upr5rvspfi&quot; style=&quot;line-height:1.14;padding-bottom:6pt;padding-top:4pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Trickle Charging from Track Power&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The battery is excellent to provide continuous power to the Raspberry Pi. Yet we want to charge it while the camera car is running, and what better source of power than the power from track? In this application, we don&#8217;t care if there are any dead spots when the car is running as long as overall it charges more often than it discharges.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The battery is excellent to provide continuous power to the Raspberry Pi. Yet we want to charge it while the camera car is running, and what better source of power than the power from the track? In this application, we don&#8217;t care if there are any dead spots when the car is running as long as overall it charges more often than it discharges.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The UPS Hat has a USB C plug to charge it. So ideally I want to use that.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -176,7 +176,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-11-19T00:00:39-08:00</updated>
+<updated>2025-11-19T00:00:29-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
