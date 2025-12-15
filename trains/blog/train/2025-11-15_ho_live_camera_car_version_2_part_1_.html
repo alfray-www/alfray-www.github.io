@@ -345,7 +345,7 @@ td p {
 <p></p>
 <p><span>Embedded devices such as Arduino or ESP32 are designed to have their power yanked out at any moment. They start immediately -- in a matter of seconds or less -- and there’s no “shutdown” phase like on a normal computer.</span></p>
 <p></p>
-<p><span>The Raspberry Pi is a different matter. It’s a full fledged computer using the SDCard as a disk storage. Linux boots pretty fast but we’re still talking about something in the order of 10-30 seconds. And then Linux expects an order shutdown command so that it has time to flush all files and stop writing before the power runs out. Without that, we can more or less expect data corruption on the SDCard at some point since by default it’s always reading and writing to the SDCard, e.g. for log files. That means there has to be some way to send a shutdown command </span><span style="font-style:italic">before</span><span>&nbsp;power is turned off. Without that, we’re pretty much guaranteed that the SDCard will get corrupted fairly quickly. The usual workaround for that on modern Raspberry Pis is to use an SSD “hat”. That adds to the cost and complexity.</span></p>
+<p><span>The Raspberry Pi is a different matter. It’s a full fledged computer using the SDCard as a disk storage. Linux boots pretty fast but we’re still talking about something in the order of 10-30 seconds. And then Linux expects an orderly shutdown command so that it has time to flush all files and stop writing before the power runs out. Without that, we can more or less expect data corruption on the SDCard at some point since by default it’s always reading and writing to the SDCard, e.g. for log files. That means there has to be some way to send a shutdown command </span><span style="font-style:italic">before</span><span>&nbsp;power is turned off. Without that, we’re pretty much guaranteed that the SDCard will get corrupted fairly quickly. The usual workaround for that on modern Raspberry Pis is to use an SSD “hat” (to get rid of the SDCard) and a UPS hat (to provide a battery). That adds to the cost and complexity.</span></p>
 <p></p>
 <p><span>The other issue is that SDCards are not made to perform read/write operations continuously. That wears them out. So even if a Raspberry Pi is shut down properly all the time, we’ll eventually have to deal with SDCard wear issues. It’s not a matter of “if” but “when”. </span></p>
 <p></p>
@@ -460,7 +460,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-14 by Rig4j 0.1-Exp-78c9166
+    Generated on 2025-12-15 by Rig4j 0.1-Exp-78c9166
     <!-- )rg-excl -->
     &nbsp;
 </div>

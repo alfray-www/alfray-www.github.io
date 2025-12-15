@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2025-12-14T11:37:04.407161-08:00</updated>
+<updated>2025-12-15T03:02:53.28224-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -436,7 +436,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Embedded devices such as Arduino or ESP32 are designed to have their power yanked out at any moment. They start immediately -- in a matter of seconds or less -- and there&#8217;s no &#8220;shutdown&#8221; phase like on a normal computer.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The Raspberry Pi is a different matter. It&#8217;s a full fledged computer using the SDCard as a disk storage. Linux boots pretty fast but we&#8217;re still talking about something in the order of 10-30 seconds. And then Linux expects an order shutdown command so that it has time to flush all files and stop writing before the power runs out. Without that, we can more or less expect data corruption on the SDCard at some point since by default it&#8217;s always reading and writing to the SDCard, e.g. for log files. That means there has to be some way to send a shutdown command &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;before&lt;/span&gt;&lt;span&gt;&amp;nbsp;power is turned off. Without that, we&#8217;re pretty much guaranteed that the SDCard will get corrupted fairly quickly. The usual workaround for that on modern Raspberry Pis is to use an SSD &#8220;hat&#8221;. That adds to the cost and complexity.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The Raspberry Pi is a different matter. It&#8217;s a full fledged computer using the SDCard as a disk storage. Linux boots pretty fast but we&#8217;re still talking about something in the order of 10-30 seconds. And then Linux expects an orderly shutdown command so that it has time to flush all files and stop writing before the power runs out. Without that, we can more or less expect data corruption on the SDCard at some point since by default it&#8217;s always reading and writing to the SDCard, e.g. for log files. That means there has to be some way to send a shutdown command &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;before&lt;/span&gt;&lt;span&gt;&amp;nbsp;power is turned off. Without that, we&#8217;re pretty much guaranteed that the SDCard will get corrupted fairly quickly. The usual workaround for that on modern Raspberry Pis is to use an SSD &#8220;hat&#8221; (to get rid of the SDCard) and a UPS hat (to provide a battery). That adds to the cost and complexity.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The other issue is that SDCards are not made to perform read/write operations continuously. That wears them out. So even if a Raspberry Pi is shut down properly all the time, we&#8217;ll eventually have to deal with SDCard wear issues. It&#8217;s not a matter of &#8220;if&#8221; but &#8220;when&#8221;. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -529,7 +529,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-15T00:00:31-08:00</updated>
+<updated>2025-11-15T00:00:17-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
