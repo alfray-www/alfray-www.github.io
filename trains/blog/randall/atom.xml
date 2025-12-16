@@ -1,11 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-12-15T18:35:43.986249-08:00</updated>
+<updated>2025-12-15T22:27:51.499152-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-78c9166">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Stockton Station Tracks</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-12-15_stockton_station_tracks.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-12-15_stockton_station_tracks.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In my long list of projects to tackle some day are the Stockton Station tracks. There are 3 station tracks. We&#8217;ve been using the outer-most 3rd track for the Passenger automation track since the beginning. I&#8217;ve always wanted to start using the other two tracks at some point. The first pass, completed today, was the clear the tracks, clean them and vacuum them:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:341.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_57d225229924ab4aaeb8bf16e574dd614758ecca28a3e3793c7df2908f238143i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the picture above, the two tracks at the left are the mainline tracks. The station tracks, from left to right, are tracks 3, 2, and 1 -- track 1 is the one along the station, which makes sense.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Tracks 2 and 1 were occupied by a static display of a Pennsylvania GG-1 and its cars, as well as a NYC Berkshire and its NYC passenger cars. The Pennsylvania GG-1 and the PRR passenger cars have moved to Walong:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_892f0042f7c49985b9aeb379b9164b36b632554b94af4f70a9e1fb4f2c1e75e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;With the tracks free, I was able to test them. The turnouts all seem functional. They all have DCC power from the station panel, and I explicitly marked the block boundaries:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:94.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b3673c058a01050f9b585d2275538e7284efc671a2dc6e9e150eb18524bb4371i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:101.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_87084ea65997f2022cae74533d8576f03d325191255a9e099d7cca6e1d45368fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:100.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5282d4da8ce477460f38fd9c640f228a774a8b6e61f7bfc2419c020c9eee181fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The blue tape is just temporary:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:310.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8c74670d07060366bc496b36510e8839dd3eb484203b46121835a5afaed09cafi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I want to experiment with something else -- either laser-printed labels or DYMO labels. Something with a brown/sand color rather than black and white. There are other places on the layout where I&#8217;d like to have clear markers of block boundaries, and I should probably avoid littering the place with my trademark blue tape.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;After cleaning everything, I reinstalled Thomas, the cable car, the BART, and the LRV1, although the two latter are conveniently on the 3rd block so that I can turn it off as they are DC engines that can&#8217;t be powered on the layout -- there&#8217;s also a piece of blue tape yet it&#8217;s carefully hidden under the BART:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a53373ceeecd84363a1507f282bc1fef19d237601b6e0015cc09b3c9964e51dai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2025-12-15T00:00:17-08:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Branchline Tunnel</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-12-15_branchline_tunnel.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-12-15_branchline_tunnel.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;A couple weeks ago, I identified an issue with the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-11-30_zephyrette_on_the_branchline_62575c07.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Zephyrette getting stuck on one of the Brancheline tunnels&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. We removed the support pillar that the Zephyrette was hitting. Orion repainted it, and I glued it back today:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:468.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2243840d5ed0d97dd5267b22cedfcb9406a8910f5eb60dc453cd232c836ce4afi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The engine is still barely closing the tunnel wall, but at least it doesn&#8217;t hit the support pillar anymore. That&#8217;s how close I&#8217;m talking about:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:322.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b4b4317d92e0e9d43df3dbc74a07b47ce0c79baeacaac66d08b56572a9cfa409i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the picture above, you can clearly see the timber support that looks freshly brown painted on the left of the engine. It was aligned with the tunnel wall, and I reglued it about 5 millimeters inside.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;OK so I thought that was the end of it but no&#8230; The Zephyrette was still having trouble and once in a while, it would fail its automation run, get stuck &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;somewhere&lt;/span&gt;&lt;span&gt;&amp;nbsp;on the Canyon block, and the automation would bring it back home. It happened every 4 or 15 other runs, not every single time. Took me a while to figure where that was since by the time the automation would tell me there was an issue, the engine would be back at its parking spot. I finally managed to reproduce the issue. Turns out the Zephyrette was getting stuck on the other side of that tunnel. Here&#8217;s the spot, and how I fixed it:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:390.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7dccdb17fd9fb8652dba6951a94cbc929fe434d5b214b5483fa41df3a20af786i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;See the white marks on the first and second timber supports of the tunnel? That&#8217;s where it was rubbing, but just a fraction of a millimeter. So it turns out that if the engine had enough speed, it would overcome that easily. On that spot, I couldn&#8217;t just remove the timber supports and reglue them further inside like I did on the other side. So instead I used an x-acto knife to separate the timber support from its base and push it inwards. That&#8217;s just enough -- just a fraction of a millimeter -- to prevent the Zephyrette from rubbing against it.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Problem fixed.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-12-15T00:00:46-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Live Camera Car at Randall</title>
@@ -28,10 +101,8 @@
 &lt;p&gt;&lt;span&gt;More details on the build can be found &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-11-15_ho_live_camera_car_version_2_part_1_.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;here on the project page on the electronics blog&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-13T00:00:00-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-12-13T00:00:41-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -316,8 +387,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-07-24T00:00:12-07:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-07-24T00:00:35-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -345,8 +416,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-07-20T00:00:31-07:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-07-20T00:00:38-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
