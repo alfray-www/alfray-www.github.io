@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="The latest Debian Busty offers Java 11 via OpenJDK. There’s also a comment on the OpenJDK web site that from now on all official Java releases are done via the OpenJDK (site/framework)... does that mean one no longer has to wonder about Java vs OpenJDK compatibility? That would be nice." />
+<meta property="og:description" content="Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="The latest Debian Busty offers Java 11 via OpenJDK. There’s also a comment on the OpenJDK web site that from now on all official Java releases are done via the OpenJDK (site/framework)... does that mean one no longer has to wonder about Java vs OpenJDK compatibility? That would be nice." />
+<meta name="twitter:description" content="Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,85 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-10-06_of_the_importance_of_unit_te_e8767268.html">
+    <h2 class="post-title">2020-10-06 - Of the Importance of Unit Tests for Server-side Projects</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">However, I did a change in Rig3. I was glad to see this old project had some tests. Lots of verbose warnings when running them, but at least they gave me a baseline for the one change I had to make… it showed me how my own code was running, since I had largely forgotten. And I was able to break the tests as expected with my change, then adjust the tests. Thus they served their role in a TDD scenario.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now I’m looking at Inkblot2 and I skipped the testing part for all the React code. After all it’s just presentation, right? I have only a couple unit test methods for computational functions.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A decade ago, I wrote a little backend for Timeriffic to enable themes per user. It’s just a simple REST API served by a Go app-engine with a CRUD admin frontend. And it’s written in Go 1.1 (IIRC), and now I need to update to Go 1.9. I seriously hope I wrote some tests, and here’s what I expect of these tests:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First run them ideally with a Go 1.1 runtime (assuming I still have that), and validate they work.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Next run them with a Go 1.9 runtime, and if the app builds, see which part of the test works or breaks. In essence, I just want a baseline of what’s broken by the change.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which parts do I expect to be covered?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the backend REST API side, a get without a valid auth, and a get with a valid auth. That last one should also cover reading from a mock db.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the admin frontend, render the page without login, with login, and validate a simple CRUD usage (create an entry, see it listed, remote it, see it gone).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">These tests are not designed to do 100% coverage, yet they should cover the basic usage scenarios. Even if a full CRUD cycle is not exercised, the viewing part should be tested, e.g. login and display an empty list, login and display a list with known data.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I want to emphasize this is not the TDD philosophy here. We’re not using tests to validate every single inch of the app, every single little possible case. At the contrary, the tests should cover large strokes, making sure the obvious is not broken.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus Inkblot2 really needs something like that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I do remember that my little dabbing in Go did not show great ways to mock whole components such as database or logging auth. That’s one of the reasons I went back to liking Java all because of Dagger and how it enables that trivially, all at compile time. I’m curious what React JS has to offer in that regard.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-09-29_rig4j_and_an_update_on_rig4r.html">
+    <h2 class="post-title">2020-09-29 - Rig4j, and an update on Rig4r</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In my perpetual reshuffling of home projects, I need to bump up rig4j, and abandon rig4r.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4r: It was somewhat useful to learn Rust lang. However I really don’t care much about it. That language does not solve any problem that I don’t really have.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That said, it wasn’t a complete loss. The rig4r project showed me there’s some value in splitting rig4 in a gdoc-downloader vs a generator. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the current train site+blog, a simple blog update results in a 6-7 minutes rig4j run time. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">90% of that time is in checking images/graphics have not changed -- it takes about forever to pull them off gdoc using the current gdoc API… this will get addressed whenever I focus on rig4j again and implement the caching I specified from the start yet never fully implemented yet.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s also worth noting that the current rig4j is really “0.1-exp”. &nbsp;There would be some value in taking the learnings from that experiment -- what worked well, what did not work --, cross-reference that with the initial spec, and maybe re-implement from there.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The main pain point is looking up all these gdoc images instead of relying on cached blobs.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The second pain point is the HTML exported by gdoc. I have it </span><span style="font-style:italic">somewhat</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;cleaned up, yet I think even more could be done. On one hand I’d like to strip it down as much as I can to the level of what is/was supported by izumi’s syntax, and on the other hand I’d like to retain some complex elements such as tables.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-09-28_java_11.html">
     <h2 class="post-title">2020-09-28 - Java 11</h2>
@@ -580,103 +659,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-07-22_embedded_arduino-likes_and_e_598b7c4c.html">
-    <h2 class="post-title">2020-07-22 - Embedded Arduino-likes and exchanging data</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Interesting comment </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/how-to-choose-a-microcontroller?view=all#the-nrf52-feather-2990400-7" style="color:inherit;text-decoration:inherit">here in an Adafruit guide</a></span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>“If you're new to wireless communication and want to use BLE to make a group of microcontrollers talk to each other, we recommend you </span><span style="font-weight:700">STOP RIGHT NOW AND GO LOOK AT THE PACKET RADIO FEATHERS</span><span style="font-family:&quot;Roboto Mono&quot;">.”</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>What they call “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/how-to-choose-a-microcontroller?view=all#step-2990377" style="color:inherit;text-decoration:inherit">Packet Radio Boards</a></span><span>”, namely </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://cdn.sparkfun.com/datasheets/Wireless/General/RFM69HCW-V1.1.pdf" style="color:inherit;text-decoration:inherit">RFM69</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;modules or RFM95 Lora (19 kpbs at 100m / 500m line of sight respectively) in either 433 MHz or 900 MHz.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>“</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-feather-32u4-radio-with-rfm69hcw-module/overview" style="color:inherit;text-decoration:inherit">Feather</a></span><span style="font-family:&quot;Roboto Mono&quot;">” is the Adafruit name for an ATmega32u4 that has an RFM69 module directly on it. The RFM module uses the 3 SPI pins (SCK/MOSI/MISO).</span></p>
-<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-feather-32u4-radio-with-rfm69hcw-module/antenna-options" style="color:inherit;text-decoration:inherit">antenna</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;for the US 915 MHz is simply a 3 inch long wire.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Guides:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-rfm69hcw-and-rfm96-rfm95-rfm98-lora-packet-padio-breakouts" style="color:inherit;text-decoration:inherit">Adafruit RFM69HCW and RFM9X LoRa Packet Radio Breakouts</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-feather-32u4-radio-with-rfm69hcw-module/using-the-rfm69-radio" style="color:inherit;text-decoration:inherit">Using the RFM69 Radio</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;with “RadioHead RFM69 library” example. That library has a simple send/receive for a binary blob buffer.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(Future self comment: this, of course, is a bit Adafruit selling their own stuff… Although there’s merit in the suggestion above especially for people who feel stuck on Arduino for some reason, yet there’s an alternative to consider here: ESP-NOW on any ESP32).</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-07-18_projects_status.html">
-    <h2 class="post-title">2020-07-18 - Projects Status</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Current projects, in no particular order:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Non-started un-ended research with OpenCV / ESP32-CAM.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Interested in treating these as pages / research articles on the train site.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Start with one such page for the “Layout Vision / Cam Proxy” one.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Cab Engineer:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Basic version was released on Play.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Was not able to get Wear part distributed via Play.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Turnout card does not scale well with many turnouts.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Publicly available but not advertising it right now.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Should list it on the train site.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Quote Otter:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Stuck in whatever-land.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Randall:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nothing going on right now. Completed my “cam proxy” prototype.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Conductor 2… limbo state. Want it. Tons of work to get there.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Of interest:</span></li>
-  <ul>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Circuit breaker for the Stockton Station</span></li>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One more LED for T150.</span></li>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Myriad more options like more block detectors, more turnout controls, and the whole Fairfield idea.</span></li>
-  </ul>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4j…</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some gaming project.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So from all of that, what do I want to start with?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’d say start with Godot and do something with it. It’s summer time. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Speaking of Godot, there are options: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://defold.com/about/" style="color:inherit;text-decoration:inherit">https://defold.com/about/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;Defold, a “turn key game engine… Lua or C++”.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -693,7 +675,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

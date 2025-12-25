@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I found the sources for both under the old Autosettings project." />
+<meta property="og:description" content="In the latest version of Android Studio, the emulator shows up in a pane in the IDE. This is annoying and absolutely unusable on a small laptop screen. How do I get rid of that and have a separate window as usual?" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I found the sources for both under the old Autosettings project." />
+<meta name="twitter:description" content="In the latest version of Android Studio, the emulator shows up in a pane in the IDE. This is annoying and absolutely unusable on a small laptop screen. How do I get rid of that and have a separate window as usual?" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,145 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-06-18_android_studio_emulator.html">
+    <h2 class="post-title">2022-06-18 - Android Studio Emulator</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Android
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the latest version of Android Studio, the emulator shows up in a pane in the IDE. This is annoying and absolutely unusable on a small laptop screen. How do I get rid of that and have a separate window as usual?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To get rid of that: AS &gt; File &gt; Settings &gt; Tools &gt; Emulator &gt; uncheck “Launch in a tool window”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also keep creating the AVD with the “Cold Boot” setting instead of “Quick Boot”. Most of the time the emulator starts “unpowered” in quick boot, nothing on screen, and no idea on how to fix it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-29_android_simple_games_jump_ca_f1322603.html">
+    <h2 class="post-title">2022-05-29 - Android “simple” games: Jump, Cangrejo, Asqare</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I had to rebuild Asqare today, which framework would I choose?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Clearly I would use an existing one instead of rolling my own. There are lots of choices out there.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Godot is one obvious choice. It’s even officially listed in the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/games/engines/engines-overview#godot" style="color:inherit;text-decoration:inherit">Using a game engine on Android</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;guide. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">libGDX is another obvious choice for something lower level. It’s not a “full stack” game engine, yet it’s a good foundation for someone to roll their own renderer.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For Jump!, the idea was to use scenes to implement everything in Godot. It’s a Godot thing, which just happens to export to Android. Some functionality can be provided by plugins, such as the screen sharing/export provided by GodotShare.aar → this is done by generating an “aar” library, and making it available to Godot..</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For something like Asqare, the native Android implementation has some advantages as the gameplay screen is a view in an actual activity. It would be nice to know how to implement that level of integration using Godot. E.g. ideally a scene is just one view, or maybe one fragment, which is controlled by an otherwise “pure” Android app. That is, I want the reverse: instead of adding android library functionality to Godot, I’d like Godot to generate a library that I integrate in an external android app. This mode doesn’t quite seem supported but this seems the closer we can get:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/3.5/tutorials/export/android_custom_build.html#" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/3.5/tutorials/export/android_custom_build.html#</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The obvious cons here is that this implies we now have to deal with two tools/frameworks and they might have incompatible release schedules or requirements. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Generally speaking for all these small games, there’s a strong desire to reorganize them in a clear MVP or MVC pattern -- model-view-presenter or model-view-controller. MVC makes the most sense here: the model is the core gameplay, which can be coded in a separate library (e.g. an aar import), the view is an android skeleton and/or godot, and the presenter is godot. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s worth pointing out that games like Asqare and even Nerdkill are already architectured like that.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a sense that seems to run contrary to the default Godot game implementation: Godot naturally tends to architecture a game around its scene graph as being the directing entity. The scene graph is the model. Furthermore entities in the scene graph embed part of their own logic such as collision and event handling.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the Asqare case, that’s not incompatible with the MVC pattern: the “core” Asqare &nbsp;game can be modeled as a board representation (an array of e.g. integers) and a function computing the name board state as well as a list of view updates. The presenter part in Godot would basically map each board cell to a sprite entity. Updates are actions like select (implemented as blinking or rotating a sprite), vanish, or animate an entry. This is the way the game is currently implemented in its Java micro “game engine”, even though it’s all hard coded functions and nothing is really generic.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">From that description, it does read like using Godot for Asqare would be a bit of a stretch actually:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Godot drives the android app creation, instead of being an embedded view/fragment.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Godot strives to be the model with its scene graph.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The only benefit of using Godot is to use it as an animation engine (and without having to learn a new one). That’s more or less what using libGDX would do.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I should make the point that Nerdkill on Godot does make a lot of sense. The “scene graph is the model” works fine for Nerdkill.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But what about Asqare. If not Godot, then what?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What do I want, ideally?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some kind of scene graph thingy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An animation engine with some basic effects.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Optional: 3d support with an orthographic top view. Would allow to draw elements in Blender and animate them without having to render them to static image maps</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The cons of that is the added complexity of a 3d GL view.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What if we took a different approach? Kotling game engines:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>MiniGDX: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gamefromscratch.com/minigdx-kotlin-game-development-framework/" style="color:inherit;text-decoration:inherit">https://gamefromscratch.com/minigdx-kotlin-game-development-framework/</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Besides the name, this has no affiliation with libGDX. It uses ljgl and al.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is just a one-person game engine with no pedigree and no support team.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Same person has contributed to libKTX.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">libGDX is well known and documented.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Does both 2d and 3d.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://libgdx.com/wiki/jvm-langs/using-libgdx-with-kotlin" style="color:inherit;text-decoration:inherit">https://libgdx.com/wiki/jvm-langs/using-libgdx-with-kotlin</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://libktx.github.io/" style="color:inherit;text-decoration:inherit">https://libktx.github.io/</a></span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Korge: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://korge.org/" style="color:inherit;text-decoration:inherit">https://korge.org/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gamefromscratch.com/korge-engine-kotlin-powered-open-source-game-engine/" style="color:inherit;text-decoration:inherit">https://gamefromscratch.com/korge-engine-kotlin-powered-open-source-game-engine/</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Korge is a set of libraries + some IJ plugin.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It focuses on 2d.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Kotlin-is-fabulous indoctrination is a cons.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That Flutter-simple-game thing?</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Meh to Dart.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">No desire to use it long term.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Android Jetpack Compose?</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In my case, looking at the long-term, say I update an app next in 5-10 years:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The IDE project may be obsolete. E.g. some of my projects still use Eclipse.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The project configuration may be obsolete, even if the IDE is still the same.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Example: gradle groovy now vs maybe gradle kotlin later.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Who knows about stuff from e.g. Godot?</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The language could become obsolete.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Example: go1 projects not compatible with go1.5, etc.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">C# has the same issue. I expect Kotlin to have the same issue.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Java has this “legacy” thinking model which saves it for now.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Who knows about GDScript?</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Library support for Android and older API models changes.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Compat library is min 14 these days.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A lot of stuff at G is min 21.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Having an app/game that depends on e.g. Godot + Android means to have to deal with all that, times 2, for each platform, plus their intersection.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-05-28_android_apps_update_flashlig_8fe84f68.html">
     <h2 class="post-title">2022-05-28 - Android Apps Update: Flashlight, Brighteriffic</h2>
@@ -630,101 +769,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-11-11__nvm_for_multiple_node_versions.html">
-    <h2 class="post-title">2021-11-11 - “nvm” for Multiple Node Versions</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right now on the laptop for RPisicine I have:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ node --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ v14.11.0</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ npm --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ 6.14.8</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">https://github.com/nvm-sh/nvm</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ install.sh</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# takes a while...</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Install steps recommend to remove “-g” (global) modules that will likely break when changing version globally:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm use system</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ npm uninstall -g nwb</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ npm uninstall -g serve</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm install v14.11.0</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In rpiscine:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ node --version &gt; .nvmrc</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# in that directory, to switch to that version</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How does changing the Node version with nvm affect the NPM version?</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ The NPM version depends (and varies with) the Node version being used. E.g.:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm use node</span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">Now using node v14.11.0 (npm v6.14.8)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm install node</span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">Now using node v17.1.0 (npm v8.1.2)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For Windows, there’s https://github.com/coreybutler/nvm-windows </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To fix the NVM PATH in CMD.exe: Not really an option when installed using nvm-sh since the latter does not create an “nvm.exe” or “nvm.sh” -- instead all the nvm commands are bash functions loaded in the interpreter (meh). But we can work around it:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cygwin: $ cygpath -w $(dirname $(nvm which --silent))</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ C:\$USER\.nvm\versions\node\v18.8.0\bin</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Copy path to a CMD.exe.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cmd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; refreshenv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← optional, because I have chocolatey installed.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; set PATH=C:\%USER%\.nvm\versions\node\v18.8.0\bin;%PATH%</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; echo %PATH%</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-10-11_rpiscine_project.html">
-    <h2 class="post-title">2021-10-11 - RPiscine project</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An update on Projet RPiscine aka Piscine 2:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Python service: access RPi PiFace, store data, expose data via REST JSON.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">React JS served via nginx to connect to the Python service + visualize the data.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This worked very well. The “backend vs frontend” split was good. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The setup allows for a local react dev on laptop, build on laptop, then push the build site to the RPi.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This runs on an RPi 1 B (the older kind), with Debian buster, and using systemctl services for the python wrapper. Also a reverse-ssh service wrapper is created, which works very nicely. Using the new systemctl service is a nice improvement over the old initd scripts.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -741,7 +785,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

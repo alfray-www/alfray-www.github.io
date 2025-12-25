@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Pending home projects, in that order, that I’d really like to see completed this year:" />
+<meta property="og:description" content="I’m currently in the process of a full rewrite of Cab Throttle, and to make a long story short, I decided to entirely rewrite it. Cab v2 is the new project." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Pending home projects, in that order, that I’d really like to see completed this year:" />
+<meta name="twitter:description" content="I’m currently in the process of a full rewrite of Cab Throttle, and to make a long story short, I decided to entirely rewrite it. Cab v2 is the new project." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,78 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-04-04_what_about_libutils_.html">
+    <h2 class="post-title">2020-04-04 - What about LibUtils?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’m currently in the process of a full rewrite of Cab Throttle, and to make a long story short, I decided to entirely rewrite it. Cab v2 is the new project.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Somewhat of a tangent, looking back at Cab Throttle vs Cab v2 makes me wonder: is LibUtils useful anymore?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Maybe, but I think it’s time to change from android-lib-v2 to android-lib-v3</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/libutils/src/android-lib-v2/LibUtilsAndroid/build.gradle" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/libutils/src/android-lib-v2/LibUtilsAndroid/build.gradle</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One of the issues here is the cross-project dependencies. LibUtils depends on Dagger, on Mockito, on Robolectric, and on JUnit. All these versions must match together, otherwise imports get wonky. Robolectric and Dagger are the main drivers and are very opinionated.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example that means I can’t have a lib with Robolectric v3 and a main project with v4. And even within versions, I’ve had conflicts when multiple JUnit or Mockito libs are imported.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thought is to fix that by revisions. Lib-v2 goes up to Robolectric 3, and lib-v3 is to be used for “modern” projects with Robolectric 4.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-02-02_godot_game_engine.html">
+    <h2 class="post-title">2020-02-02 - Godot Game Engine</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Godot
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Tutorials / intro / 2d game step by step:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.gamefromscratch.com/page/Godot-3-Tutorial-Series-Index.aspx" style="color:inherit;text-decoration:inherit">https://www.gamefromscratch.com/page/Godot-3-Tutorial-Series-Index.aspx</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://godotengine.org/download/windows" style="color:inherit;text-decoration:inherit">https://godotengine.org/download/windows</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The download is not an installer, it’s the full thing just zipped in-place.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which means if I won’t use C#, just use the standard thing and I can always trivially change later.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Godot… standard vs Mono C#” -- the difference is that the 2nd supports everything(?) including C#, whereas the former is limited to using GDScript (a python look-alike). I’d venture the C# one is designed to ease people coming from Unity.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The C# version requires the Mono SDK: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.mono-project.com/download/stable/" style="color:inherit;text-decoration:inherit">https://www.mono-project.com/download/stable/</a></span></p>
+<p style="text-align:left"><span>Or the Visual Studio Build Tools: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://visualstudio.microsoft.com/downloads/?q=build+tools" style="color:inherit;text-decoration:inherit">https://visualstudio.microsoft.com/downloads/?q=build+tools</a></span><span>&nbsp;</span><span style="font-family:&quot;Roboto Mono&quot;">(which seem packaged separately from the full VS.Net?)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus going with Standard for now.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Doing what?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Either 2d or 3d (fixed perspective, toy like rendering), something with trains and tracks. First do a prototype demo to see if I can even render what I like. Game wise I'd like a tower defense/attack.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-01-24_home_projects.html">
     <h2 class="post-title">2020-01-24 - Home Projects</h2>
@@ -653,92 +725,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-08-31_esp32_camera_modules.html">
-    <h2 class="post-title">2019-08-31 - ESP32 Camera Modules</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Esp32
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>4 x ESP32 boards compared, all with an OV2640 camera module:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=5IhhyJjjCxo" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=5IhhyJjjCxo</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Possible applications? I’ve been looking at the cheapest way to add video to train layouts with at least 2 goals, if not more:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Video-based train automation.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In-car video streaming.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Single/multi view on remote monitor. E.g. monitor hidden staging yard(s) or tunnels, or display activity on a remote monitor -- any place where there’s motion.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For each of these, my concern is footprint, price, and power. Each time I operate under the expectation I can offset any processing to a local laptop or tablet or similar. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example, for streaming the expectation is that the camera can either send a constant stream and the computer does motion detection, or the camera can do basic detection and only transmit when there are changes. A mix is possible (e.g. non-sophisticated change detection on the camera, then a better filtering at the computer level). </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In this case, the value of the ESP32 is fairly reduced. It only needs to act as a crude frame server. The benefits are a small footprint, and real 1080p or better.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>The contenders are </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2019-01-20_mini_wifi_camera_and_train_l_10c40469.html" style="color:inherit;text-decoration:inherit">mini pinhole wifi cameras like the one I tried earlier</a></span><span style="font-family:&quot;Roboto Mono&quot;">. This would be an almost ideal choice if it were really a 1080p and not a marketing gimmick using a fairly old 720p @ 30 Hz.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-08-01_raspberry_pi_4.html">
-    <h2 class="post-title">2019-08-01 - Raspberry Pi 4</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the "don't need one right now, just doing my research" department...</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>There's a new RPi 4 out there, announced in June, and this is a pretty good and balanced review:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.techrepublic.com/article/raspberry-pi-4-model-b-review-this-board-really-can-replace-your-pc/" style="color:inherit;text-decoration:inherit">https://www.techrepublic.com/article/raspberry-pi-4-model-b-review-this-board-really-can-replace-your-pc/</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Direct comparison to the previous RPi 3:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.androidcentral.com/raspberry-pi-4-vs-raspberry-pi-3" style="color:inherit;text-decoration:inherit">https://www.androidcentral.com/raspberry-pi-4-vs-raspberry-pi-3</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As always with the Pi, there's the hype and reality:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Element14 (Newark) the official distributor is waiting for stock for the 4 GB version. They sell it at the official MSRP of $55 (+ s/h) bare-bones.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Amazon: Can't find a bare-bone one, but there are kits for the 4 GB version (with power supply, etc) for $99 (also waiting for stock). (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/2YCVKNe" style="color:inherit;text-decoration:inherit">example 1</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/31fWkOR" style="color:inherit;text-decoration:inherit">example 2</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;... these are good kits)</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When comparing to "something else", the "kit" price is often a better indicator in my book since we're often comparing it with another mini-PC that has a power supply, storage, and a box. In this respect, it's interesting: years ago I was expecting a full RPi 2 kit to be around $100, and here a full RPi 4 kit is still around $100.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Video review from Andreas [link?]:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Speed is only 30% marginally faster in tests.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Can get really hot during intensive computation.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ethernet speed is now good.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nowhere near a “desktop” computer beside claims.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Micro HDMI instead of full size HDMI.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Perf benchmark:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://core-electronics.com.au/tutorials/raspberry-pi-4-vs-3-model-b-performance-benchmark.html" style="color:inherit;text-decoration:inherit">https://core-electronics.com.au/tutorials/raspberry-pi-4-vs-3-model-b-performance-benchmark.html</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The dual HDMI output can be a good solution for building e.g. a public display.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -755,7 +741,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="What would it take to do an Android app that is modular and where each feature is controlled by a remote server feature flag?" />
+<meta property="og:description" content="Right now on the laptop for RPisicine I have:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="What would it take to do an Android app that is modular and where each feature is controlled by a remote server feature flag?" />
+<meta name="twitter:description" content="Right now on the laptop for RPisicine I have:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,101 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-11-11__nvm_for_multiple_node_versions.html">
+    <h2 class="post-title">2021-11-11 - “nvm” for Multiple Node Versions</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right now on the laptop for RPisicine I have:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ node --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ v14.11.0</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ npm --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ 6.14.8</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">https://github.com/nvm-sh/nvm</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ install.sh</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# takes a while...</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Install steps recommend to remove “-g” (global) modules that will likely break when changing version globally:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm use system</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ npm uninstall -g nwb</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ npm uninstall -g serve</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm install v14.11.0</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In rpiscine:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ node --version &gt; .nvmrc</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# in that directory, to switch to that version</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How does changing the Node version with nvm affect the NPM version?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ The NPM version depends (and varies with) the Node version being used. E.g.:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm use node</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">Now using node v14.11.0 (npm v6.14.8)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ nvm install node</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">Now using node v17.1.0 (npm v8.1.2)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For Windows, there’s https://github.com/coreybutler/nvm-windows </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To fix the NVM PATH in CMD.exe: Not really an option when installed using nvm-sh since the latter does not create an “nvm.exe” or “nvm.sh” -- instead all the nvm commands are bash functions loaded in the interpreter (meh). But we can work around it:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cygwin: $ cygpath -w $(dirname $(nvm which --silent))</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ C:\$USER\.nvm\versions\node\v18.8.0\bin</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Copy path to a CMD.exe.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cmd: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; refreshenv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← optional, because I have chocolatey installed.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; set PATH=C:\%USER%\.nvm\versions\node\v18.8.0\bin;%PATH%</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; echo %PATH%</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-10-11_rpiscine_project.html">
+    <h2 class="post-title">2021-10-11 - RPiscine project</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An update on Projet RPiscine aka Piscine 2:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Python service: access RPi PiFace, store data, expose data via REST JSON.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">React JS served via nginx to connect to the Python service + visualize the data.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This worked very well. The “backend vs frontend” split was good. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The setup allows for a local react dev on laptop, build on laptop, then push the build site to the RPi.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This runs on an RPi 1 B (the older kind), with Debian buster, and using systemctl services for the python wrapper. Also a reverse-ssh service wrapper is created, which works very nicely. Using the new systemctl service is a nice improvement over the old initd scripts.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-09-09_feature_flag_based_android_app.html">
     <h2 class="post-title">2021-09-09 - Feature flag based Android app</h2>
@@ -577,133 +672,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-08-02_summer_project_bearing.html">
-    <h2 class="post-title">2021-08-02 - Summer Project: Bearing</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Guess what… I’m in PA and I already want to add a couple features to Bearing:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Create a marked location list + auto save/load.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When marking a location:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add it to the list. Names a “Location 1…” + auto-inc (use list length).</span></li>
-  <ul>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">TBD later ⇒ dialog to edit name before adding it + cancel.</span></li>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But to get started, generate name automatically.</span></li>
-  </ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Display name in small font below marked location.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add a little “3-dot menu” on the “Marked Loc” line. Popup a menu:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recall / Edit… &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ goes to marked loc fragment (see below). &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Share… &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ share location as text/etc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">V2: Rename… &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ dialog with one text edit field</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">V2: Save &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇒ enabled/visible if marked loc is not in current list (e.g. upgrade or deleted)</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Share bearing (as text, to google maps).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Marked locs fragment:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Reuse the current pattern (fragments in a single activity).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Simple text list. Select an item : [Delete] / [Recall] / [Rename (v2)].&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">List items: GPS loc + date/time + name on 2nd line.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <ul>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">V1: Not listing the time</span></li>
-  </ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Delete with confirmation ⇒ does not remove current marked loc. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recall: honor the pref setting “ask before override marked loc”.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[done]</span></li>
-  <ul>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recall would erase the current mark loc,</span></li>
-   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Then go directly to the compass view.</span></li>
-  </ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">V2: Share selected mark.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">V2: Export all marks as text.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">V2 or +: reorder, rename.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Consider renaming “marked locations” to “waypoints”?</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Split screen:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bottom is list view</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">V2: top is map view of selected list item.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">V2: top is detail info for item. Name edit field to rename. Trash icon for delete with confirmation. Eye or compass icon to make it the mark in compass.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-02-17_esp32_learning_mqtt.html">
-    <h2 class="post-title">2021-02-17 - ESP32 Learning: MQTT</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Esp32
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is something I need to look into at some point: MQTT to send messages between ESP32 nodes on a local network. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There’s a group (MQTT4MR) that uses that to control sensors via JMRI (instead of C/MRI over RS485 wires).</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MQTT is also used typically with LoRa and such for larger distance networks, I believe using brokers/hubs. However that’s not really my first usage.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/mqtt-adafruit-io-and-you?view=all" style="color:inherit;text-decoration:inherit">https://learn.adafruit.com/mqtt-adafruit-io-and-you?view=all</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;MQTT very high overview:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Designed for sensors … small payloads, infrequent data, not heavy streams.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which is why it works well with LoRa (bandwidth vs distance, pick one).</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s a N-to-1 design: one server somewhere, multiple clients.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Either one device acts as a server, or a “broker” app/script runs on a network computer.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JMRI uses the latter design for obvious reasons.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are internet-wide brokers like adafruit.io</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To connect to a broker, need server/ip, port, username, and a key.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The whole concept is a pub-sub:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Devices publish to the server.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Devices subscribe to the server.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Subscribers need to send a ping (e.g. every 5 minutes).</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Failing to ping disconnects the device.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Adafruit_MQTT is such a lib for arduino.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">They warn it’s single-duplex: a subscription message would be lost if the device is transmitting (ping or publication) at the same time.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Quality-of-service:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QOS 0 = send publication message without checking they arrived.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QOS 1 = send publication message with an OK / ack.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A “will” is a message defined such that the broker sends it when the client disconnects.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -720,7 +688,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

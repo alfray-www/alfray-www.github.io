@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Not so quick test in 3d + Java + desktop. Part of portnawak. Could be made in its own project." />
+<meta property="og:description" content="Desktop app to access Wyze cams." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Not so quick test in 3d + Java + desktop. Part of portnawak. Could be made in its own project." />
+<meta name="twitter:description" content="Desktop app to access Wyze cams." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,176 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2018-10-07_wyze_app.html">
+    <h2 class="post-title">2018-10-07 - Wyze App</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Desktop app to access Wyze cams.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The TinyCam code seems easily reversible, and could be done as a desktop app instead of android.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>To play an h264 stream, have a look at JavaCV </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bytedeco/javacv" style="color:inherit;text-decoration:inherit">https://github.com/bytedeco/javacv</a></span><span>&nbsp;</span><span style="font-family:&quot;Roboto Mono&quot;">(Java wrappers around OpenCV ... can be useful for a lot of other applications).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In that specific case, a C# app might be better than Java as main target is Windows (potentially cross-platform with MonoDevelop, not sure if it’s even worth bothering here).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s a throw-away prototype, so failure is an option. The simplified goals would be:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Start by simulating whatever tinycam came up with, because it’s an easy start.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">TinyCam only takes care of discovering and connecting to local live feeds.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need to realize this is not my end goal. What I want is really:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">View remote notifications.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">View remote live feeds.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">View remote playback feeds.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Doing this would probably looking at the wyze apk with an ssl proxy to capture the json payloads.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Doing it in C# would be also a good exercise to do an UWP.</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide" style="color:inherit;text-decoration:inherit">https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">UWP:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Requires/useful if using the Windows App Store</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Can be </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://social.msdn.microsoft.com/Forums/windowsapps/en-US/aae09de5-a564-4c12-b948-e16518f24042/uwp-deploy-uwp-app-without-using-windows-store?forum=wpsubmit" style="color:inherit;text-decoration:inherit">sideloaded in Win 10</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;if device is set in dev mode.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">APIs access to Win 10 features: Tiles, badges, Cortana, bunch of other crap.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Various languages/UI combos supported: JS HTML, C# XAML, C++ DirectX.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So maybe UWP is overkill in this case. Just stick to a regular C# desktop with the old style C# gui builder. Use VS Community, and expect it to be ages behind in terms of code completion.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Why not a web app instead of a desktop app?</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Live viewing should work using any web page that can play an h264 feed. “In theory”?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the mobile app, notifications are seen using a download + local player. A web app could use local storage and/or just stream the video feed.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So it’s worth investigating, even if it turns out to not work well.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Results (done in JS):</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Public: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/wyze-web-interface/overview" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/wyze-web-interface/overview</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; </span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2018-10-03_projects_update.html">
+    <h2 class="post-title">2018-10-03 - Projects Update</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">Track</span><span style="font-family:&quot;Roboto Mono&quot;">: Has not changed since “\pɔʁt.na.wak\” dev in PA.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Track is part of “\pɔʁt.na.wak\” and is supposed to be a throw-away “quick” project. At that point it’s worth thinking whether there’s some real long term value in the project and in which case build a real standalone one.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What I need is a more generic way to describe track segments.</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And import the ones from SCARM.</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Then use it on my own layout design.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The 2D view lacks precise geometry tools that I’d take as a given: </span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">rulers x/y, </span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">units (inch vs mm), </span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ability to move something at a specific place by x/y coords, </span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">rotate by entering an angle, </span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ability to measure distance, </span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ability to dup/offset a track to another one (or an anchor point).</span></li>
+  </ul>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">NCE Cab</span><span style="font-family:&quot;Roboto Mono&quot;">: </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Wrote a “design doc” / spec / desiderata doc for it. </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need to do a prototype. </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First need to validate can use the RS485 interface on Windows/Java &amp; Linux/Java (instead of Linux/Python). That first test could be a simple Java port of the existing python nce protocol decoder, without the ncurses part.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">3D Blender</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Desired goal would be to have a quick export from Tracks or for Scarm into a blender file, then play with materials there.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>“</span><span style="font-weight:700">Cab Engineer</span><span style="font-family:&quot;Roboto Mono&quot;">” Android Mobile WiThrottle:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’ve started this for my own need as part of the old JMRI / JED experiment, then made a single use app with Wear integration also as an experiment.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I had some desire last to reboot that into a formal project.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">See “Cab Engineer” below in 2017-12-18 update.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/nce_button_board.html" style="color:inherit;text-decoration:inherit">Randall replacement for the NCE Button Board</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Desktop app to access Wyze cams</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s interesting to consider scopes:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Cab Engineer: For me + public app.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Value for me: mild.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Existing apps: Engine Driver.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">3D Blender: Only for me.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Track: For me + public app.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Value for me: medium/high.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Existing apps: Plenty on desktop (can’t match), none on Mobile.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Would be satisfied if I could just match desktop Scarm.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">NCE Cab: For me + public / for club.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Value for me: medium / low. Technical challenge.</span></li>
+  <ul>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Experimental: high value.</span></li>
+   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Finished product: low value.</span></li>
+  </ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Public / club: No adoption realistically expected at all.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So of these, based on value:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Track / desktop is highest.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Track / mobile is for fun and shows some interest.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">NCE Cab for the experimental phase value.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">3D blender for some moderate value.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Based on this my order is going to be:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">NCE Cab - experimental phase aka validation prototype.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Track / desktop.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Revamp of experimental project, focusing on Scarm level.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">No mobile target at first but keep in mind for feasibility.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Track / mobile. Maybe.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2018-08-03_tracks.html">
     <h2 class="post-title">2018-08-03 - Tracks</h2>
@@ -520,76 +690,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2017-10-27_rig4.html">
-    <h2 class="post-title">2017-10-27 - Rig4</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rig4 was not generating drawings anymore.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Two issues:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The generated URL for drawings changed from docs.google/com/drawings/image?id=... to docs.google.com/drawings/d/&lt;id&gt;/image?... </span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The generator was not generating an error on unprocessed docs.google.com links. That means these were exposed in the generated HTML and savvy-enough users would try to follow them, get an access denied and ask for permission to get access to the underlying doc.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Although Rig4 experimental doc generating work, it's still an ugly hack. It's very dependent on the generated html format. In essence the system is too fragile and doesn't work.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also it regenerates every time, regardless of whether the source has changed.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So eventually I need to fix that.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Drive.files.export API has the following formats for download:</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developers.google.com/drive/v2/web/manage-downloads" style="color:inherit;text-decoration:inherit">https://developers.google.com/drive/v2/web/manage-downloads</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Docs export to HTML, text, rtf, Open Office, PDF, MS Word, EPub.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Drawings export to JPEG, PNG, SVG, PDF.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Python-based implementation is a core part of the issue, and it’s clunky.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As far as languages to use, although Go works in its own clunky way, I'd like to get away from it. I'd say the contenders are Java or Node.js at that point. The Drive API also offers .Net, Python, PHP and Ruby but I need to standardize on something and JS might do it for what it's worth. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2017-10-27_mesh_networks.html">
-    <h2 class="post-title">2017-10-27 - Mesh Networks</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ESP8266 (wifi / mesh, e.g. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/Coopdis/easyMesh" style="color:inherit;text-decoration:inherit">library easyMesh</a></span><span style="font-family:&quot;Roboto Mono&quot;">)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">NRF24L01 (in the 2.4 GHz band)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>RFM69 (&lt; 1 Ghz, from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.mysensors.org/topic/4861/should-i-go-for-esp8266-or-may-be-nrf24l01-arduino-nano" style="color:inherit;text-decoration:inherit">last thread here</a></span><span style="font-family:&quot;Roboto Mono&quot;">)</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -606,7 +706,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

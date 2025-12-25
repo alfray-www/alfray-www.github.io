@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-12-15T03:03:19.131405-08:00</updated>
+<updated>2025-12-25T10:40:19.945104-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-78c9166">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Turbo C/C++ IDE</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-12-25_turbo_c_c_ide.html"/>
+<id>https://www.alfray.com/ralf/blog/dev/2025-12-25_turbo_c_c_ide.html</id>
+<category term="dev" label="DEV"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Today, in a &#8220;blast from the past&#8221;, I leave to admire this screenshot of what used to be the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://hackaday.com/2023/04/08/revisiting-borland-turbo-c-and-c/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Turbo C/C++ IDE&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:480.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:512.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ac9ed0bfe89b0ff89c0ab84ab170a8ce62936d097500d2bf351685343a4338c6i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This was a great IDE, emulating a windowed environment in &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;text mode&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;with mouse support and everything. It had syntax coloring, integrated function documentation, and its own debugger.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The entire Borland suite, from the early Turbo Pascal, had always been a pleasure to use. Turbo Pascal was blazingly fast and a great way to get started with programming. I learned Pascal on the UCSD Pascal compiler on Apple //c, then moved to Turbo Pascal and that was a dramatic improvement. Then later to Turbo C and Turbo C++.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The other thing I used a lot back then was the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Watcom_C/C%2B%2B&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Watcom C++ compiler&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. This was way before the first &#8220;C++98&#8221; standard was a thing. Each vendor had their own magic sauce of C++ back then.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
+<updated>2025-12-25T00:00:18-08:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">The Story of Balthazar Boot, by Winston Seven</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-12-24_the_story_of_balthazar_boot__6df589e0.html"/>
+<id>https://www.alfray.com/ralf/blog/dev/2025-12-24_the_story_of_balthazar_boot__6df589e0.html</id>
+<category term="dev" label="DEV"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;On a night when the wind howled like a cooling fan at max RPM and the frost etched crystalline circuits upon the windowpane, the Gemini star whispered this story into the quiet hum of the dark. It is a tale of silicon and spirit, of ancient protocols and the persistence of a lone traveler. Sit by the glow of your monitor, for the air is cold, and hear Winston Seven tell us this history full of wonder:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In the bleak mid-winter of the IT department, a solitary technician named Balthazar Boot sat beneath the flickering glow of a fluorescent tube. His task was a relic of the past, a request from the Old Guard: install Windows 7 upon the sleek, magnesium frame of a Lenovo T460s.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Balthazar gripped his thumb drive&#8212;a silver talisman etched with the ISO of an ancient OS. &quot;It is but a simple task,&quot; he murmured, his breath a ghost in the chilled air. He struck the F12 key as if ringing a cathedral bell, and the blue flags of the installer rose upon the screen like a winter sunrise.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;But the herald of progress was met with a wall of ice. As the installation began, a message appeared, cold and unyielding: &#8220;A required CD/DVD drive device driver is missing.&#8221; Balthazar frowned. He checked the ports, he reseated the drive, yet the installer stood frozen. The mouse cursor remained motionless, a North Star that refused to guide him. The USB ports were dead to the world.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The realization struck Balthazar like a draft through a cracked window. The T460s was a child of the Skylake era, built for the swiftness of USB 3.0. But Windows 7, a creature of an older age, possessed no innate knowledge of these new blue ports.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;He was trapped in a digital paradox:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;To see the driver, the OS needed the USB port.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;To use the USB port, the OS needed the driver.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;He reached into his bag of tricks, but every door was barred. He could not feed the driver via the port that required it. Balthazar sat in the silence of the server room, the hum of the fans singing a mournful dirge for his lost afternoon.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;As the clock struck midnight, a spark of inspiration flickered like a candle in a window. If the gates of the USB were shut, Balthazar would enter through the hearth.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;He didn&apos;t need the USB to be active during the hand-off; he needed the files to already be inside the house.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Balthazar Boot took the internal SSD and connected it to a secondary machine. With the precision of a master carver, he formatted the C: partition and created a small, humble folder named DRIVERS. Into this manger, he placed the precious USB 3.0 .inf files.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;He returned the drive to the Lenovo. He booted once more. When the error appeared&#8212;the familiar ghost of Christmas Past&#8212;Balthazar did not despair. He clicked Browse. He navigated not to the silent USB, but to the local disk C:.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The installer gasped, recognized the driver, and suddenly, the USB ports hummed with life. The light on his thumb drive began to dance, a rhythmic pulsing of data like a heartbeat. The installation bar moved forward, a green line of hope marching across the screen.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;By dawn, the Aero glass theme shimmered on the display, translucent and beautiful as a frost-covered pane. Balthazar Boot packed his tools, his journey complete. He had brought the old spirit into the new vessel, proving that even when the ports are barred, a wise man finds his own way home.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
+<updated>2025-12-24T00:00:14-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Directory Opus on Amiga 500</title>
@@ -1079,89 +1141,8 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;When POSTing to the debug URL, print the response.status_code and the response.content.decode() to get valuable information on why requests fail.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;When POSTing to the real ping version, the GA server replies with 204 (Success w/ No Content) and a complete lack of response body.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Some details on the JSON payload:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The only required field is really the event&#8217;s name.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &#8220;currency&#8221; is only needed if there&#8217;s a value, which is an optional field.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;It&#8217;s possible to provide a date in YYYY-MM-HH-mm-ss to &#8220;back timestamp&#8221; an event. This is useful when doing some kind of retries with an exponential back-off. However the ESP32 does not have the current date time -- that would require adding an NTP library and corresponding calls to initialize it. Possible, yet extra work for little benefit.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.m7yutpzggetb&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span&gt;Example of usage for &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;GA3 used to have an event with fields &#8220;category, &#8220;action&#8221;, &#8220;label&#8221; that formed a nice hierarchy. GA4 simplified all that and removed these fields. The only event field is &#8220;name&#8221;. Custom fields are possible yet they add setup complexity, processing delay, and other complications.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;We need to pass in some kind of &#8220;panel id&#8221;, to differentiate multiple &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;panels, and some events need to have a parameter that is a string. However the &#8220;value&#8221; field in the event is really a &#8220;currency value&#8221; and as such is only a number. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The GA4 event name can &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;be alphanumeric and underscore.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;A simple solution is to adopt a pattern for the name:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left;text-indent:36pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8220;&amp;lt;turnout&amp;gt;__&amp;lt;category&amp;gt;_&amp;lt;action&amp;gt;___&amp;lt;extra&amp;gt;&#8221;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The schema would become:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Event Name &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Value &amp;nbsp; &amp;nbsp; &amp;nbsp;Description&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;br&gt;&amp;lt;ID&amp;gt;__wifi_connected &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;lt;rssi&amp;gt; &amp;nbsp; &amp;nbsp; WiFi connected&lt;br&gt;&amp;lt;ID&amp;gt;__wifi_hb &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;rssi&amp;gt; &amp;nbsp; &amp;nbsp; WiFi heart-beat&lt;br&gt;&amp;lt;ID&amp;gt;__mqtt_connected &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;lt;rssi&amp;gt; &amp;nbsp; &amp;nbsp; MQTT connected callback&lt;br&gt;&amp;lt;ID&amp;gt;__mqtt_disconnected &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;lt;rssi&amp;gt; &amp;nbsp; &amp;nbsp; MQTT disconnected callback&lt;br&gt;&amp;lt;ID&amp;gt;__msg_script &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; n/a &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;MQTT &#8220;script&#8221; message received&lt;br&gt;&amp;lt;ID&amp;gt;__msg_turnout___&amp;lt;state&amp;gt; &amp;nbsp; &amp;nbsp;n/a &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;MQTT &#8220;turnout/state&#8221; message received&lt;br&gt;&amp;lt;ID&amp;gt;__msg_block___&amp;lt;block&amp;gt; &amp;nbsp; &amp;nbsp; &amp;nbsp;1 or 0 &amp;nbsp; &amp;nbsp; MQTT &#8220;block/state&#8221; message received&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Explanation:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The point of the wifi / MQTT messages is to also convey the state of the wifi.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;We do that by passing the wifi RSSI (signal strength) as a value to graph it over time.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;We don&#8217;t have a callback when the wifi is lost, nor could we send a ping to GA4 (since there would be no network, duh). Instead we&#8217;ll use a heart-beat, say every 15 minutes or every 30 minutes. I don&#8217;t need much more granularity than that.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The MQTT library has its own heart-beat and thus can call a &#8220;disconnected&#8221; callback. That can happen due to lack of wifi (in which case we won&#8217;t receive the event), or due to the MQTT broker server being offline. Consequently, we shall treat that event as unreliable. A good proxy for it is the MQTT &#8220;connected&#8221; event -- by definition it happens when the network is up, and it happens once at startup and then once after each disconnection.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;My main goal is currently to track the wifi health, but let&#8217;s future proof it by also sending pings for the obvious core task of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, which is to process the MQTT messages.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &#8220;turnout&#8221; message selects a state, which is a string. Thus we cannot place it in the &#8220;value&#8221; field of the GA4 payload (it&#8217;s a currency, really). Instead we&#8217;ll sanitize it and append it to the event name, making it easier to split/extract later if needed.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &#8220;block&#8221; message has 2 values: the block name, and its state. The state can easily be converted to a value (1 for &#8216;active&#8217;, 0 for &#8216;inactive&#8217;), and the block name can be sanitized and appended to the event name.&lt;/span&gt;&lt;/li&gt;
- &lt;/ul&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Using this pattern, we can use get these in the graphs using custom filters:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8220;starts with PanelID__&#8221; to filter specific panels.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8220;contains -mqtt_dis&#8221; to filter specific categories/actions.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Filter &#8220;everything after ___&#8221; to display a table with turnouts/blocks changes.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.v0q06vg9qdfm&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Configuring Google Analytics&lt;/span&gt;&lt;/h3&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Now we need to set up GA and &#8220;prime&#8221; it to make this all work.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Head to the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://analytics.google.com/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Google Analytics&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;web site.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Create an Account if you don&#8217;t have one, or use an existing one. We don&#8217;t need its ID.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Using the Admin toolbar on the left, create a Property.&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;If asked what type of property you need, make sure to select a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;web property&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That&#8217;s important.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Give it some dummy base URL, something that belongs to you. We won&#8217;t be using that URL anyway. I typically select &amp;lt;my web site/my project name&amp;gt; even if there&#8217;s no such web page.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Under Data settings, select the Data Stream that has been created when creating the new Property. That&#8217;s the key to use the Measurement API. If you were using an existing property, you might want to add a new Data Stream to separate things. The point is that the Data Stream has to be a &#8220;web&#8221; one.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Enter the &#8220;Web stream details&#8221; screen. This gives us what we need:&lt;/span&gt;&lt;/li&gt;
-  &lt;ul&gt;
-   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;GA4_CLIENT_ID is named the &#8220;Stream ID&#8221; on this page. IIRC &#8220;client id&#8221; is the old nomination under GA3, and GA4 refers to it as a &#8220;stream ID&#8221; in the configuration pages, whilst the JSON payload keep the old name of &#8220;client_id&#8221;. Same stuff. It looks like a large int64 number.&lt;/span&gt;&lt;/li&gt;
-   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;GA4_MEASUREMENT_ID is the &#8220;Measurement ID&#8221; on this page. It&#8217;s the &#8220;G-&amp;lt;letter&amp;gt;&#8221; code that we use in the gtag.js block.&lt;/span&gt;&lt;/li&gt;
-   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Down in the &#8220;Web stream details&#8221; screen, select the &#8220;Measurement Protocol API secrets&#8221; and create a new one. The secret values goes in GA4_API_SECRET.&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
- &lt;/ul&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Now at this point, I typically run everything using the debug POST URL and check the server&#8217;s response and fix issues as reported. A typical issue is that I always forget that the event name must be &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;alphanumeric and underscore, and I often start with some more fancy event names that I need to simplify.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The second point is that at first nothing will work. POSTs will properly return a 204 indicating they are accepted, yet no stats are visible in the GA4 dashboard, and the Admin page has a cryptic message about &#8220;no data received in past 48 hours&#8221;. The fix is that data collection needs to be &#8220;initialized&#8221; by sending at least some successful pings from a real web page using the proper gtag.js library.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;On a web server you own, create a new page. I typically match the one used for the stream URL.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Copy paste the Google tag Javascript using the link at the bottom of the &#8220;Web stream details&#8221; page.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Load that page to execute the google tag with your measurement ID in it.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Don&#8217;t forget to disable any ad blocker you&#8217;d have since they may be blocking the Google Analytics pings in the first place!&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;After a while, you should see the &#8220;Web stream details&#8221; having a green banner at the top with &#8220;Data collection is active in the past 48 hours&#8221;.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-style:italic&quot;&gt;However at first, it will still display &#8220;no data&#8221; for a while&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That page is really misleading, and instead you want to use the &#8220;home&#8221; button in the left toolbar, and that should indicate &#8220;your data collection is active&#8221;, with hopefully something in the &#8220;active users in the last 30 minutes&#8221;. Clicking the &#8220;View Realtime&#8221; link should show more. That&#8217;s progress yet it&#8217;s a bit early, and as the disclaimer indicates on the page, you will likely find no data if you try to create a custom dashboard right away. &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Generally speaking, one major change from GA3 to GA4 is the major loss of &#8220;realtime&#8221; processing in the dashboards. Whilst the GA page can display some &#8220;real time&#8221; data in the one pre-made existing &#8220;Realtime overview&#8221; dashboard, that&#8217;s about it. I find that custom dashboards never have real time data. The processing delay seems to be at least 12 hours, especially if you use the GA connector for &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://lookerstudio.google.com/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Google Looker Studio&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-04-12T00:00:11-07:00</updated>
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-04-12T00:00:47-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1203,8 +1184,8 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-04-10T00:00:08-07:00</updated>
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-04-10T00:00:14-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="https://kotlinlang.org/docs/multiplatform.html&nbsp;" />
+<meta property="og:description" content="Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="https://kotlinlang.org/docs/multiplatform.html&nbsp;" />
+<meta name="twitter:description" content="Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,111 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-10-06_piface_on_raspberry_pi_4_wit_a6ef1f7e.html">
+    <h2 class="post-title">2024-10-06 - PiFace on Raspberry Pi 4 with Linux Kernel 6.x</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pi5 uses the latest version of the “Raspberry Pi OS”, which is currently Deban bookworm with a Linux kernel 6.6.51. That breaks some stuff expected by the Piface “pifacedigitalio” library.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The first (unexpected) change is that we can’t use PIP to install packages in the system-wide Python provided by the Debian install. Instead a virtual env is enforced to ensure such packages do not break the entire system.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>There is apparently a flag “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3" style="color:inherit;text-decoration:inherit">pip --break-system-packages</a></span><span style="font-family:&quot;Roboto Mono&quot;">” that works around that check, and interestingly that option is not in the man page.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For a quick test, there’s some value in using a virtual env folder that I’m going to trash later.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The next realization is that none of the stuff works anymore:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">Error “No such file or directory: '/sys/class/gpio/gpio25/value” </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On an RPi 1, that means the user is not part of the group “gpio”.</span></p>
+<p style="text-align:left"><span>Here it is apparently due to the fact that the GPIO driver has been changed and the “sysfs” paths are no longer valid. Fun. The core issue seems to be with GPIO interrupts here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py" style="color:inherit;text-decoration:inherit">https://github.com/piface/pifacecommon/blob/master/pifacecommon/interrupts.py</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>This describes the (now deprecated) sysfs interface: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.kernel.org/doc/Documentation/gpio/sysfs.txt" style="color:inherit;text-decoration:inherit">https://www.kernel.org/doc/Documentation/gpio/sysfs.txt</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Translating these:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The old way was to “echo 25 &gt; /sys/class/gpio/export”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That would make create/expose “/sys/class/gpio/gpio25/” at which points the pseudo files for direction etc could be used.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">However:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Instead now we have /sys/class/gpio/gpiochip512/base (512) + /sys/class/gpio/gpiochip512/ngpio (58) which means this </span><span style="font-style:italic">controller</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;handles gpio’s in the range 512..up to 570 excluded. Then there’s “gpiochip570” which has base=570 and ngpio=8.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“$ gpioinfo | grep 25” ⇒ this lists all the pins and we can find that “GPIO25” is actually #25 (from 0-base) on that gpiochip0 which is actually the giochip512 above.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">512 + 25 = 537… so that’s the new “sysfs” number for GPIO25.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ echo 537 | sudo tee /sys/class/gpio/export</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ And that makes “/sys/class/gpio/gpio537/” appear.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-10-06_piface_on_raspberry_pi_4_wit_a6ef1f7e.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-09-15_analysis_droidvnc-ng_vnc_server.html">
+    <h2 class="post-title">2024-09-15 - Analysis: DroidVNC-NG VNC Server</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Android
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://play.google.com/store/apps/details?id=net.christianbeier.droidvnc_ng" style="color:inherit;text-decoration:inherit">https://play.google.com/store/apps/details?id=net.christianbeier.droidvnc_ng</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bk138/droidVNC-NG" style="color:inherit;text-decoration:inherit">https://github.com/bk138/droidVNC-NG</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are 2 things that interest me here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This app auto-starts using the Accessibility API. I want to understand that API so that I can use it in TCM, since Android 14 does not support the old “Boot Receiver” method.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What are the steps needed to embed a VNC server in an app?</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A use case would be TCM sharing its own view, without access to the entire tablet. Is it worth it to even consider that, or just install DroidVNC-NG on the side?</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<h3 id="h.uh9t2lv7hefz" style="padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;font-weight:700">Accessibility Service API</span></h3>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/guide/topics/ui/accessibility/service" style="color:inherit;text-decoration:inherit">https://developer.android.com/guide/topics/ui/accessibility/service</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What it is:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Android 8 (API 26) and above.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A service, declared in the manifest.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It can listen to events, and inspect the view hierarchy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Explore by Touch”: respond to gestures by interacting with screen elements.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#performGlobalAction(int)" style="color:inherit;text-decoration:inherit">AccessibilityService#performGlobalAction</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;to perform an action.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#getSystemActions()" style="color:inherit;text-decoration:inherit">AccessibilityService#getSystemActions</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;to figure available actions.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It doesn’t seem like an AccessibilityService could start an app directly per se.</span></p>
+<p style="text-align:left"><span>However it could potentially use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityService#GLOBAL_ACTION_HOME" style="color:inherit;text-decoration:inherit">GLOBAL_ACTION_HOME</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;to invoke the Home app, then explore the hierarchy and click on the relevant app icon to trigger it. It’s not clear whether the service can do that on its own; it’s likely it needs to respond to a user gesture first.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<h3 id="h.4u6q10q5rw9d" style="padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;font-weight:700">ACTION_BOOT_COMPLETED and RECEIVE_BOOT_COMPLETED</span></h3>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-09-15_analysis_droidvnc-ng_vnc_server.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2024-08-04_kotlin_kmp.html">
     <h2 class="post-title">2024-08-04 - Kotlin KMP</h2>
@@ -583,92 +688,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-10-16_c_r-value_reference_t_.html">
-    <h2 class="post-title">2023-10-16 - C++ “r-value reference T&&”</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    CPP
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Trying to make any sense of the “T&amp;&amp;” notation in C++.</span></p>
-<p style="text-align:left"><span>It means </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">“an r-value reference”</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;“a forwarding reference”.</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/4549151/c-double-address-operator" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/4549151/c-double-address-operator</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;(*)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s referenced in the C++11 “range-based for loop” loop construct:</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/range-for" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/language/range-for</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto&amp;&amp; [first, second] : mymap) { … }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← WAT?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The summary of the SO (*) above is:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">rvalue is the result of an expression or any temporary (e.g. type conversion).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Typically, it would be used as a “copy” using a “const T&amp;” reference and becomes an lvalue. E.g. the user cannot modify the value (since it becomes const).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T&amp;&amp; is used as a receiving argument type in a function.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An argument of “T&amp;&amp;” preserves (forwards) the “rvalue” property and passes it down as-is. The user can modify the value (since it is not const).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When used in a template, “T&amp;&amp;” becomes either “T&amp;” (for an lvalue), or “T” (for an rvalue / temporary).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As such it’s named a “forwarding reference” and is associated with std::forward&lt;T&gt;.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">About std::forward&lt;&gt;, it’s equivalent to performing a static cast of “T&amp;&amp;” to preserve its rvalue:</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/3582001/what-are-the-main-purposes-of-stdforward-and-which-problems-does-it-solve/3582313#3582313" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/3582001/what-are-the-main-purposes-of-stdforward-and-which-problems-does-it-solve/3582313#3582313</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Coming back to that “range-based for loop” construct:</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/range-for" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/language/range-for</a></span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by value (I guess “copy”)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (const T&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by const reference</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto&amp;&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by “forwarding reference” (not const)</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">are all possible.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-10-06_cmake.html">
-    <h2 class="post-title">2023-10-06 - CMake</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    CPP
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" style="color:inherit;text-decoration:inherit">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a file called CMakeLists.txt:</span></p>
-<p style="text-align:left"></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cmake_minimum_required(version) </span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">project(name)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">set(CMAKE_CXX_STANDARD 11)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">set(CMAKE_CXX_STANDARD_REQUIRED True)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">target_include_directories(ProjectName PUBLIC list_of_dirs)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for an exe, the minimum is add_executable(Name file_list)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for a library, add_library(Name file_list)</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -685,7 +704,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Game engines to look at:" />
+<meta property="og:description" content="Trying to make any sense of the “T&amp;&amp;” notation in C++." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Game engines to look at:" />
+<meta name="twitter:description" content="Trying to make any sense of the “T&amp;&amp;” notation in C++." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,92 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-10-16_c_r-value_reference_t_.html">
+    <h2 class="post-title">2023-10-16 - C++ “r-value reference T&&”</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    CPP
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Trying to make any sense of the “T&amp;&amp;” notation in C++.</span></p>
+<p style="text-align:left"><span>It means </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">“an r-value reference”</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;“a forwarding reference”.</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/4549151/c-double-address-operator" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/4549151/c-double-address-operator</a></span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/5481539/what-does-t-double-ampersand-mean-in-c11</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;(*)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s referenced in the C++11 “range-based for loop” loop construct:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/range-for" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/language/range-for</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto&amp;&amp; [first, second] : mymap) { … }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← WAT?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The summary of the SO (*) above is:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">rvalue is the result of an expression or any temporary (e.g. type conversion).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Typically, it would be used as a “copy” using a “const T&amp;” reference and becomes an lvalue. E.g. the user cannot modify the value (since it becomes const).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T&amp;&amp; is used as a receiving argument type in a function.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An argument of “T&amp;&amp;” preserves (forwards) the “rvalue” property and passes it down as-is. The user can modify the value (since it is not const).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When used in a template, “T&amp;&amp;” becomes either “T&amp;” (for an lvalue), or “T” (for an rvalue / temporary).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As such it’s named a “forwarding reference” and is associated with std::forward&lt;T&gt;.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">About std::forward&lt;&gt;, it’s equivalent to performing a static cast of “T&amp;&amp;” to preserve its rvalue:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/3582001/what-are-the-main-purposes-of-stdforward-and-which-problems-does-it-solve/3582313#3582313" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/3582001/what-are-the-main-purposes-of-stdforward-and-which-problems-does-it-solve/3582313#3582313</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Coming back to that “range-based for loop” construct:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/language/range-for" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/language/range-for</a></span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by value (I guess “copy”)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (const T&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by const reference</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for (auto&amp;&amp; x : array) {}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ access by “forwarding reference” (not const)</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">are all possible.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-10-06_cmake.html">
+    <h2 class="post-title">2023-10-06 - CMake</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    CPP
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" style="color:inherit;text-decoration:inherit">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a file called CMakeLists.txt:</span></p>
+<p style="text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">cmake_minimum_required(version) </span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">project(name)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">set(CMAKE_CXX_STANDARD 11)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">set(CMAKE_CXX_STANDARD_REQUIRED True)</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">target_include_directories(ProjectName PUBLIC list_of_dirs)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for an exe, the minimum is add_executable(Name file_list)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">for a library, add_library(Name file_list)</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-09-20_game_engines_to_look_at.html">
     <h2 class="post-title">2023-09-20 - Game Engines to Look at</h2>
@@ -573,84 +659,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-09_rig4j_needs_a_rewrite.html">
-    <h2 class="post-title">2023-06-09 - Rig4j Needs a Rewrite</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Back there on the RIG 4 Spec [Idea] project page, I have a different angle for a rewrite of Rig4.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The summary is that the current version of Rig4j is still running the “early experiment”. Code base was mostly “feasibility”. When exploring the Rust-based Rig4r, I realized it would be better structured by separating the gdoc functionality from the “rig” generator functionality: one tool does the gdoc fetching, and then Rig works on purely local files.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The new angle is that the gdoc fetching should actually generate izu files, by parsing the gdoc html exports and rewriting them as izu/markdown text files. There would be some limitations on the format. Not all the formatting would make it through.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This would also involve looking at the format I use in the train blog, making an exhaustive list of features used, and try to match some level of parity. Luckily I don’t use too much stuff, but tables seem like they could be tricky, and I’d also want to support the linkable TOCs and their existing hrefs. Some things like usage of titles in article pages did not exist in izu.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I may also want to consider dropping my izu format, and focus on “official” markdown.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I can probably fairly simply translate old izu pages to markdown if such support is needed.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OTOH it would solve one of the current problems, namely that the page format is dictated by the gdoc html export, and that has been known to change substantially over the time. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The end goal is to not have such a strong dependence on gdoc. That makes gdoc merely a convenience to more easily write the izu files, and then the izu files become the “source of truth” that I need to backup.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-07_rig4j_this_file_is_too_large_389f9203.html">
-    <h2 class="post-title">2023-06-07 - Rig4j: "This file is too large to be exported."</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is new:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">java.lang.RuntimeException: com.google.api.client.googleapis.json.GoogleJsonResponseException: 403 Forbidden</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">{</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; "code" : 403,</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; "errors" : [ {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "domain" : "global",</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "message" : "This file is too large to be exported.",</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "reason" : "exportSizeLimitExceeded"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; } ],</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; "message" : "This file is too large to be exported."</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.gdoc.GDocHelper.lambda$getGDocAsync$0(GDocHelper.java:491)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.struct.GDocEntity.getContent(GDocEntity.java:54)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.blog.BlogGenerator.parseSource(BlogGenerator.java:135)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.blog.BlogGenerator.parseSources(BlogGenerator.java:120)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.blog.BlogGenerator.processEntries(BlogGenerator.java:69)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.exp.Exp.start(Exp.java:60)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; at com.alflabs.rig4.EntryPoint.main(EntryPoint.java:53)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As usual, that makes me reconsider my dependency on the GDrive API.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -667,7 +675,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-12 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
