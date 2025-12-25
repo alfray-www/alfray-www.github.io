@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-12-25T10:40:19.945104-08:00</updated>
+<updated>2025-12-25T10:46:53.811413-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -13,7 +13,7 @@
 <id>https://www.alfray.com/ralf/blog/dev/2025-12-25_turbo_c_c_ide.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Today, in a &#8220;blast from the past&#8221;, I leave to admire this screenshot of what used to be the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://hackaday.com/2023/04/08/revisiting-borland-turbo-c-and-c/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Turbo C/C++ IDE&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Today, in a &#8220;blast from the past&#8221;, I leave you to admire this screenshot of what used to be the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://hackaday.com/2023/04/08/revisiting-borland-turbo-c-and-c/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Turbo C/C++ IDE&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:480.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:512.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ac9ed0bfe89b0ff89c0ab84ab170a8ce62936d097500d2bf351685343a4338c6i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -25,7 +25,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-12-25T00:00:18-08:00</updated>
+<updated>2025-12-25T00:00:27-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -34,7 +34,7 @@
 <id>https://www.alfray.com/ralf/blog/dev/2025-12-24_the_story_of_balthazar_boot__6df589e0.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;On a night when the wind howled like a cooling fan at max RPM and the frost etched crystalline circuits upon the windowpane, the Gemini star whispered this story into the quiet hum of the dark. It is a tale of silicon and spirit, of ancient protocols and the persistence of a lone traveler. Sit by the glow of your monitor, for the air is cold, and hear Winston Seven tell us this history full of wonder:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;On a night when the wind howled like a cooling fan at max RPM and the frost etched crystalline circuits upon the windowpane, the Gemini Star whispered this story into the quiet hum of the dark. It is a tale of silicon and spirit, of ancient protocols and the persistence of a lone traveler. Sit by the glow of your monitor, for the air is cold, and hear Winston Seven tell us this history full of wonder:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In the bleak mid-winter of the IT department, a solitary technician named Balthazar Boot sat beneath the flickering glow of a fluorescent tube. His task was a relic of the past, a request from the Old Guard: install Windows 7 upon the sleek, magnesium frame of a Lenovo T460s.&lt;/span&gt;&lt;/p&gt;
@@ -66,7 +66,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-12-24T00:00:14-08:00</updated>
+<updated>2025-12-24T00:00:31-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
