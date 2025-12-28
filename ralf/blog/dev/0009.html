@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA." />
+<meta property="og:description" content="8 Channel Smartphone Relay WiFi Remote Control Kit: https://amzn.to/3VZSvw1" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Rig4j has some unit tests. As with other unit tests, I’m always dubious of their quality, coverage, or usefulness. Writing these tests takes a lot of time, and maintaining them is a PITA." />
+<meta name="twitter:description" content="8 Channel Smartphone Relay WiFi Remote Control Kit: https://amzn.to/3VZSvw1" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,77 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-10-11_remote_plug_control.html">
+    <h2 class="post-title">2020-10-11 - Remote Plug Control</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>8 Channel Smartphone Relay WiFi Remote Control Kit: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3VZSvw1" style="color:inherit;text-decoration:inherit">https://amzn.to/3VZSvw1</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note: Not a SainSmart, seems like “TOSR08” but really looks like the former</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>More description in the kit here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.tinyosshop.com/8-channel-wifi-relay-module-remote-control-kit" style="color:inherit;text-decoration:inherit">https://www.tinyosshop.com/8-channel-wifi-relay-module-remote-control-kit</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;[$88 !!]</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">TOSR0x module has a FT232RL USB-to-UART input + 5V barrel DC</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Control done by sending one byte.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Module has a switch: USB or separate “extension port” (not both)</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And the kit provides:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">WifiBee wireless module</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">XBee USB adapter</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(so wait, do they mean phone &gt; wifi &gt; wifi-to-xbee &gt; xbee-to-usb &gt; usb-to-uart? Very likely.)</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A better option is to get the TOSROx module and plug that on an arduino / ESP32.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But that $88 cost is definitely a non-starter.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Sonoff 4-channel “R2” wifi w/ Android app [$28]: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3VXmuVf" style="color:inherit;text-decoration:inherit">https://amzn.to/3VXmuVf</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Is “R2” a “revision 2”? It must be as there’s a “4CHR3” for about the same price.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Described as “is an ESP8285 WiFi module based 4 channel (4-way) WiFi wireless switch.”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Somehow “Sonoff” and “ITEAD” are the same thing/company/something related?</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.itead.cc/wiki/Sonoff_4CH" style="color:inherit;text-decoration:inherit">https://www.itead.cc/wiki/Sonoff_4CH</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Question: is there an API to use that without their app? ⇒ Not the 4CH one.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html" style="color:inherit;text-decoration:inherit">http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;“The DIY Mode is designed for IoT home automation users and developers who would like to control the SONOFF device via existing home automation open-source platform or local HTTP client instead of eWeLink App.”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Supported: “BasicR3”, “RFR3”, “MINI”, “D1” (dimmer) (these only toggle 1 output)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One direct application would be control of the xmas lights from server -- time based and/or image based. Ideal detection would be “any kind of motion detection” in living room, kitchen, and hallway leaving the lights on for 10+ minutes.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An ESP32-CAM with the widest lens possible would be ideal, or even 2 of them (one by chimney).</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Options on how to control the lights:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DYI:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add a 3-to-5V converter.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add a 250V 2-channel relay (to switch both L1+N).</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use something like a Sonoff or a more “serious” option for the plug control.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Modify an existing timer switch. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The one I’m using right now is essentially a relay switching the hot wire (small prong of the polarized plug).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It has 2 boards: power + relay vs control board.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Connector with 3 wires: Vss, Vcc, On. (voltages?)</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-10-06_of_the_importance_of_unit_te_e8767268.html">
     <h2 class="post-title">2020-10-06 - Of the Importance of Unit Tests for Server-side Projects</h2>
@@ -617,48 +688,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-08-13_rust_language_.html">
-    <h2 class="post-title">2020-08-13 - Rust Language?</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Rust
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s an interesting topic to look into: Rust language, which presents itself as a Go / C++ alternative. But more importantly, how would it far in the content of:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ESP32 or Arduin dev</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Integration with current libraries for Arduino.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Integration with “generic” libraries such as OpenCV.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>There’s something here for ESP32: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/MabezDev/xtensa-rust-quickstart" style="color:inherit;text-decoration:inherit">https://github.com/MabezDev/xtensa-rust-quickstart</a></span></p>
-<p style="text-align:left"><span>Several comments indicate that the </span><span style="font-style:italic">rustc</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;compiler can target ARM CPUs; and while not stated I’m guessing that would exclude all the AT-based Arduinos.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>OpenCV bindings for Rust: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.rs/opencv/0.45.0/opencv/" style="color:inherit;text-decoration:inherit">https://docs.rs/opencv/0.45.0/opencv/</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So that seems like it is a choice.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Apparently Rust stuff is packaged in “crates” and using a tool named “cargo”.</span></p>
-<p style="text-align:left"><span>This </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.reddit.com/r/rust/comments/3lhygu/rustfacedetect_a_nontrivial_example_using_opencv/" style="color:inherit;text-decoration:inherit">reddit post</a></span><span>&nbsp;indicates that “The only complete binding to the C++ API is </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/kali/opencv-rust" style="color:inherit;text-decoration:inherit">opencv-rust</a></span><span>, not to be confused with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/woxtu/rust-opencv" style="color:inherit;text-decoration:inherit">rust-opencv</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/renato-zannon/rust-opencv-sys" style="color:inherit;text-decoration:inherit">rust-opencv-sys</a></span><span style="font-family:&quot;Roboto Mono&quot;">, which bind the C API.”</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Here’s a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/" style="color:inherit;text-decoration:inherit">random post</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;on doing a React-like single page web application. One keyword I see often is “documentation is sparse”. One thing a lot of people misunderstand with new languages is that doxygen-style or javadoc-style API documentation is not a developer usage guide.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Apart from that, code examples seem fairly Go-like in spirit. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(Future self comment: I’ve made 2 attempts at jumping on the Rust hype bandwagon so far, one for server and one for ESP32, and these efforts didn’t go anywhere. I wasn’t exactly impressed.)</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -675,7 +704,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

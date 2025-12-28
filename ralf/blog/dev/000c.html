@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="4 x ESP32 boards compared, all with an OV2640 camera module:https://www.youtube.com/watch?v=5IhhyJjjCxo&nbsp;" />
+<meta property="og:description" content="What is the dev that I want to be doing right?" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="4 x ESP32 boards compared, all with an OV2640 camera module:https://www.youtube.com/watch?v=5IhhyJjjCxo&nbsp;" />
+<meta name="twitter:description" content="What is the dev that I want to be doing right?" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,57 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2019-10-22_dev_state_of_the_union.html">
+    <h2 class="post-title">2019-10-22 - Dev State of the Union</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What is the dev that I want to be doing right?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I want some projects that I can demonstrate visually -- most of my stuff is often very cryptic, abstract, with little to see. By that I mean have a nice write up, maybe a video, and have a little collection of them. Experimental projects would be best for that.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ESP32-CAM in train context. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Could be as a simple web server demo with an android viewer. For example placed in scenery, or from a top view. </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Power from USB brick. </span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Point is to show the simplicity and versatility of this.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ESP32-CAM with OpenCV. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That requires a bit more research.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use integrated web server to see output.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Point is to demonstrate we can do embedded detection on the ESP32.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ESP32-CAM as “occupancy detector” without OpenCV.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is the simple “things move in the image” kind of demo.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use integrated web server to see output.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ESP32 with OLED send a JMRI JSON.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The OLED is nice because it adds a visual component. It makes it less abstract.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Point out that the OLED is a nice status/debugging tool.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is the kind of thing to do in MicroPython as it becomes trivial.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One tutorial for later would be “hacking the NCE AIU”, for example for the EB1. This requires more thought to explain why it’s useful for. It has less appeal (lesser known hardware).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2019-08-31_esp32_camera_modules.html">
     <h2 class="post-title">2019-08-31 - ESP32 Camera Modules</h2>
@@ -594,33 +645,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2018-12-18_windows_linux_subsystem_powershell.html">
-    <h2 class="post-title">2018-12-18 - Windows Linux Subsystem; Powershell</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Next thing to try: Windows Linux Subsystem.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Can it replace Cygwin?</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Does it integrate nicely with win ntfs / apps?</span></p>
-<p style="text-align:left"><span>[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.microsoft.com/en-us/windows/wsl/faq" style="color:inherit;text-decoration:inherit">Summary from the FAQ</a></span><span style="font-family:&quot;Roboto Mono&quot;">] ⇒ Provides a bash shell and /mnt access to the win fs. Does not provide GUI support. Mentions apt-get (with potential errors due to a lack of udev).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I should also (re)learn Powershell (again and/or for real) and take cheat notes on how to be proficient / use it.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -637,7 +661,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

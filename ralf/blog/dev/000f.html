@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Proposal doc has been sent:" />
+<meta property="og:description" content="It still feels like shoe-horning to use dagger in my apps (e.g. CabThrottle)." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Proposal doc has been sent:" />
+<meta name="twitter:description" content="It still feels like shoe-horning to use dagger in my apps (e.g. CabThrottle)." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,40 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-03-10_dagger.html">
+    <h2 class="post-title">2017-03-10 - Dagger</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It still feels like shoe-horning to use dagger in my apps (e.g. CabThrottle).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Reactive … Potentially interesting or totally hyped:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://reactivex.io/" style="color:inherit;text-decoration:inherit">http://reactivex.io/</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ReactiveX/RxJava" style="color:inherit;text-decoration:inherit">https://github.com/ReactiveX/RxJava</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;-- an observer pattern (the "reverse" of a subscriber pattern) to do async operations.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>It has stuff for Android (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ReactiveX/RxAndroid" style="color:inherit;text-decoration:inherit">https://github.com/ReactiveX/RxAndroid</a></span><span style="font-family:&quot;Roboto Mono&quot;">).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Potential: for tasks that involve multiple AsyncTasks (e.g. google play login) or for replacing my event bus. (huh, not really?)</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Unrelated:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Dokan, a user-mode file system for Windows. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dokan-dev.github.io/" style="color:inherit;text-decoration:inherit">https://dokan-dev.github.io/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2017-01-01_cmrs_touch_panels.html">
     <h2 class="post-title">2017-01-01 - CMRS Touch Panels</h2>
@@ -559,52 +593,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2016-03-31_distributed_thingy_and_prese_518eed2a.html">
-    <h2 class="post-title">2016-03-31 - Distributed Thingy and Presenter Pattern</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So there's the usual MVP -- Model / View / Presenter pattern, exploded in a distributed fashion. A server sends data, and the client has a bunch of presenters for that data. That makes the client somewhat "generic" in the sense that it just presents whatever data it is given.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MVP : model → presenter → view.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The view is "dumb" and only displays stuff. It's a ViewHolder essentially.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Model has all the data and no logic.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">All the logic is in the presenter. The presenter is notified of view changes and updates the model and the views.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For a distributed server-client system, we want all the logic server side.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So really what we have is:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server model → server presenter (logic) → client proto → view renderer.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">where proto is naturally a Cap'n Proto for example.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The difference between MVP and MVC: in MVC, the model has part of the logic (it dictates what gets sent to the View) and the Controller accepts the input and updates the model. In MVP, the view and the model are dumb, and the presenter embeds both the logic to go from M-to-V and the logic from the Controller (to go from V to M.)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thinking ahead in terms of a game. Interaction cannot only be handled server side. Otherwise it would mean every user action would have a huge network delay impact. That prevents offline usage at best, and of course implies lag, at worse. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That means part of the model/presenter needs to be on the client:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Server + Client model] → server presenter → | → [Client model] → [presenter] → View.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The client presenter handles the immediate interaction and at the same time pushes back some updates to the server.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For offline play, that's all we need. For live server-backed play, that has 2 frequent issues:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Server needs to sanitize / validate inputs from the client. They cannot be trusted. Otherwise it encourages cheating by simple MITM techniques.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Server pushes updates to client regularly which are more trusted than local updates. That can create magical warping when there's a lag.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -621,7 +609,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

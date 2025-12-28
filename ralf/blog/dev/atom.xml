@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-12-26T03:05:52.615561-08:00</updated>
+<updated>2025-12-27T23:31:37.821104-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-78c9166">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Lenovo T480s: i5 vs i7 CPU Comparison</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-12-27_lenovo_t480s_i5_vs_i7_cpu_comparison.html"/>
+<id>https://www.alfray.com/ralf/blog/dev/2025-12-27_lenovo_t480s_i5_vs_i7_cpu_comparison.html</id>
+<category term="dev" label="DEV"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I have a number of Lenovo T480s and T460s laptops, with either the Core-i5 or the Core-i7 CPUs. I know for a fact that when looking at eBay pricings, for example, the i7 laptops always fetch a higher value because they have a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;perceived&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;better performance. Yet, in a day to day usage, I don&#8217;t really notice a difference between both. So, is the i7 &#8220;value added&#8221; real or hype?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Let&#8217;s look in detail at the T480s and these 2 flavors of CPUs:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;i5-8350U&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.intel.com/content/www/us/en/products/sku/124969/intel-core-i58350u-processor-6m-cache-up-to-3-60-ghz/specifications.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Intel specifications&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;:&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;14 nm, 4 cores, 8 threads,&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;freq base 1.7 GHz, turbo 3.60 GHz, 6 MB cache, 4 GT/s bus speed,&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;TDP 15W (10W @ 800 MHz &#8594; 25 W @ 1.90 GHz),&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;DDR4-2400 @ 37.5 GB/s on 2 lanes max, UHD Graphics 620 @ 300 MHz &#8594; 1.10 GHz&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;i7-8650U&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.intel.com/content/www/us/en/products/sku/124968/intel-core-i78650u-processor-8m-cache-up-to-4-20-ghz/specifications.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Intel specifications&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;:&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;14 nm, 4 cores, 8 threads,&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;freq base 1.9 GHz, turbo 4.20 GHz, 8 MB cache, 4 GT/s bus speed,&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;TDP 15W (10W @ 800 MHz &#8594; 25 W @ 2.10 GHz),&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;DDR4-2400 @ 37.5 GB/s on 2 lanes max, UHD Graphics 620 @ 300 MHz &#8594; 1.10 GHz&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The major difference between both is a 12% speed increase in the base clock frequency, and a 33% cache increase. I do not think these numbers match my actual usage perception of both machines -- they don&#8217;t feel anywhere &#8220;12 to 33% faster&#8221;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;It&#8217;s important to note that these are &#8220;U&#8221; model CPUs. In Intel terminology, this means they are &#8220;mobile&#8221; (laptop) variants mostly constrained by their &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;power dissipation&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;(a.k.a TDP, or &#8220;Thermal Design Power&#8221;). Both CPUs have the 25W TDP envelope. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Let&#8217;s look at this from another angle: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://cpu.userbenchmark.com/Compare/Intel-Core-i5-8350U-vs-Intel-Core-i7-8650U/m388461vsm353957&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;reported user benchmarks&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;show us a reported 1%-2% increase in actual benchmarks.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Benchmarks are the way to go, but these above were a bit abstract. I thus decided to run my own benchmarks based on stuff I &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actually&lt;/span&gt;&lt;span&gt;&amp;nbsp;do with these laptops. This includes compiling a Flutter web app in Dart, compiling a fairly large ESP32 C++ project, compiling fairly large Java and Kotlin projects, and using DaVinci Resolve to stabilize, render, and compute Fusion VFX on one of my train videos. You know the usual stuff one does on a laptop on a daily basis.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Here are the results:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:354.89px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:574.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_807dad8b37a7f7e6715cc4db864773da85f5c831e8eabb09e3ded3046f37bb5di.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;We can see that all the results are extremely close. All these results are &#8220;best of 3&#8221; for each test (I screwed up the DaVinci stabilization test on the i5 on battery and I got too lazy to rerun it again). I did the tests using both the on-AC vs on-battery mode, with the default &#8220;balanced&#8221; Windows 10 battery settings.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;And thus, indeed, the i7 is slightly faster than the i5, and the AC mode is slightly faster than the battery mode. But how much is &#8220;slightly&#8221;?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I want &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actual&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;numbers, so here&#8217;s a graph computing the best of each i7 vs the best of each i5 result:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:354.89px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:574.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ca22af42f63d3e074ef772ed889a84043a73b8068eb73ea5599d129efd7498cci.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;So there I have it: the i7 provides a 5-8% improvement over the i5 for my daily development tasks. I have to say it doesn&#8217;t feel tangible.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
+<updated>2025-12-27T00:00:42-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Turbo C/C++ IDE</title>
@@ -1082,8 +1135,8 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-09-28T00:00:45-07:00</updated>
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-09-28T00:00:41-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

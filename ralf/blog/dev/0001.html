@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="At Randall, I’ll soon have the Distant Signal&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the CircuitPython&nbsp;script on the ESP32 to send pings to GA4." />
+<meta property="og:description" content="I looked at using Rust a few years ago on ESP32, but quite frankly the platform did not seem mature enough. It was really bleeding edge. Like razor sharp. I can barely stand the “better-than-thou” hype around Rust, so that was too much. Then I checked again last year when I did the SDB project and it still wasn’t looking stable enough for my needs." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="At Randall, I’ll soon have the Distant Signal&nbsp;panel installed. This connects to the local wifi and gets the turnout state from the local MQTT broker. I want to track the “health” of that wifi connection, as that has been an issue in the past. The simplest way is to reuse my existing Google Analytics dashboards, thus I want the CircuitPython&nbsp;script on the ESP32 to send pings to GA4." />
+<meta name="twitter:description" content="I looked at using Rust a few years ago on ESP32, but quite frankly the platform did not seem mature enough. It was really bleeding edge. Like razor sharp. I can barely stand the “better-than-thou” hype around Rust, so that was too much. Then I checked again last year when I did the SDB project and it still wasn’t looking stable enough for my needs." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,60 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-09-28_esp-rs_rust_on_the_esp32-cam_again_.html">
+    <h2 class="post-title">2025-09-28 - ESP-RS: Rust on the ESP32-CAM (again)</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Esp32
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>I looked at using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/ralf/blog/dev/2023-01-28_esp32_rust_vs_tinygo_are_both_no-go.html" style="color:inherit;text-decoration:inherit">Rust a few years ago on ESP32</a></span><span style="font-family:&quot;Roboto Mono&quot;">, but quite frankly the platform did not seem mature enough. It was really bleeding edge. Like razor sharp. I can barely stand the “better-than-thou” hype around Rust, so that was too much. Then I checked again last year when I did the SDB project and it still wasn’t looking stable enough for my needs.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This time it looks like I could at least do what I want: use Rust with ESP-RS on the ESP32-CAM and actually capture image frames. There’s now some good ESP Camera component circulating around with some tangible support:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/espressif/esp32-camera" style="color:inherit;text-decoration:inherit">https://github.com/espressif/esp32-camera</a></span><span>:</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;An Espressif ESP32 Camera module with an OV2640 driver like the ESP32-CAM does have.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/jlocash/esp-camera-rs" style="color:inherit;text-decoration:inherit">https://github.com/jlocash/esp-camera-rs</a></span><span style="font-family:&quot;Roboto Mono&quot;">: The “original” example of how to wrap the esp-camera component into a Rust embedded project.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/jlocash/esp-camera-rs" style="color:inherit;text-decoration:inherit">https://github.com/jlocash/esp-camera-rs</a></span><span>: A </span><span style="font-family:&quot;Roboto Mono&quot;">fork of that previous project.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/MathiasPius/esp-camera-rs" style="color:inherit;text-decoration:inherit">https://github.com/MathiasPius/esp-camera-rs</a></span><span>: Y</span><span style="font-family:&quot;Roboto Mono&quot;">et another fork.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/Kezii/esp32cam_rs" style="color:inherit;text-decoration:inherit">https://github.com/Kezii/esp32cam_rs</a></span><span>:</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;A real example using the esp32-camera IDF component above, with an “espcam.rs” wrapper around it, and a wifi query.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To use this in an ESP-RS project, we need 3 changes:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>First, we need a git checkout of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/espressif/esp32-camera" style="color:inherit;text-decoration:inherit">https://github.com/espressif/esp32-camera</a></span><span>&nbsp;project.<br>In a serious project, that would be a git submodule, but for a throw-away test that can be just good ol’ boring </span><span style="font-style:italic">git clone</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<p style="text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span>$ mkdir components<br>$ pushd components<br>$ git clone </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/espressif/esp32-camera.git" style="color:inherit;text-decoration:inherit">https://github.com/espressif/esp32-camera.git</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the main Cargo.toml, we need the esp-idf-sys crate and we need to use (import?) that esp32-camera component:</span></p>
+<p style="text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ cargo add esp-idf-sys<br>$ vim Cargo.toml<br>[[package.metadata.esp-idf-sys.extra_components]]<br>component_dirs = "components/esp32-camera"<br>bindings_header = "components/bindings.h"<br>bindings_module = "camera"</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now the first I compiled this, it failed at runtime in the esp_camera::init:</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I (657) cam_hal: Allocating 384000 Byte frame buffer in PSRAM<br>E (657) cam_hal: cam_dma_config(509): frame buffer malloc failed</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That sounds like “esp_psram” is not enabled on the project. That’s done in the sdkconfig.defaults file:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">CONFIG_ESP32_SPIRAM_SUPPORT=y</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">My own “webcam sample” for the ESP32-CAM is located here:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left;text-indent:36pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/ralfoide/arduino/tree/main/ESP32-CAM/Rust/esp-rs-std-webcam" style="color:inherit;text-decoration:inherit">https://github.com/ralfoide/arduino/tree/main/ESP32-CAM/Rust/esp-rs-std-webcam</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2025-04-12_ga4_stats_from_an_esp32_.html">
     <h2 class="post-title">2025-04-12 - GA4 Stats from an ESP32?</h2>
@@ -575,55 +629,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2024-11-09_rig4j_addressing_pagination.html">
-    <h2 class="post-title">2024-11-09 - Rig4j: Addressing Pagination</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are 2 issues, which keep haunting me:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The “N+1” problem with the first page repeating some but not all of the index.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Using the “next page” is “page N” and “next page” after that is “N-1” till page 1.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I have reverse ordering. The design is that each blog page has a stable URL with N articles each, so let’s say 10: page 1 is 1..10, page 2 is 11..20, etc. up to page N that “fills” up to N articles so that the last page always has an overlap with the index.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s telling that even I get surprised when I click on the “Next Page” link on the index and end up on “Page 6” rather than “Page 1”.</span></p>
-<p style="text-align:left"></p>
-<h3 id="h.hqnbvw2p72cf" style="padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:12pt;font-weight:700">Issue 1: Previous / Next Links</span></h3>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other issue is the navigation links.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I went from this, which was problematic:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Previous Posts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next Posts ⇒ <br>to this, which IMHO has other issues:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Previous Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next Page ⇒ </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The problem with “previous/next post” is that it’s ambiguous: “previous” is implied to mean “page N-1” or “older in time”, and “next” would mean “page N+1” or “newer in time”. But because the pages are in reverse chronological order, the “next” link actually points to an older-in-time content and page N-1. That’s the reverse of what one would expect.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I think we can solve that conundrum by renaming the links to be more technically correct:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Newer Page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Older Page ⇒ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⇐ Newer Post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Older Post ⇒ </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That’s a small trivial change that I think that would be less ambiguous:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Newer / Older only imply time-based ordering, not index-based ordering.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We’re not implied what is a “previous” or a “next page” anymore.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Navigation is “[page N+1] &lt;&lt; Newer || current is page N || Older &gt;&gt; [page N-1]”.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Done. Implemented. Seems very nice.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also added an “{{If.IsIndex}}” command in the template so that we can have “Newer Post” in the single blog full page vs “Newer Posts” in the index blog pages. This required adding a crude support for nested {{If}}...{{Endif}}.</span></p>
-<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
-
-<a href="2024-11-09_rig4j_addressing_pagination.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -640,7 +645,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
