@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-12-27T23:31:37.821104-08:00</updated>
+<updated>2025-12-27T23:42:37.749847-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -35,11 +35,13 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The major difference between both is a 12% speed increase in the base clock frequency, and a 33% cache increase. I do not think these numbers match my actual usage perception of both machines -- they don&#8217;t feel anywhere &#8220;12 to 33% faster&#8221;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;It&#8217;s important to note that these are &#8220;U&#8221; model CPUs. In Intel terminology, this means they are &#8220;mobile&#8221; (laptop) variants mostly constrained by their &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;power dissipation&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;(a.k.a TDP, or &#8220;Thermal Design Power&#8221;). Both CPUs have the 25W TDP envelope. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &#8220;marketing perception&#8221; is also that the &#8220;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;i5 is a great all-rounder for mainstream users, while the i7 offers more power for demanding tasks like video editing or high-end gaming&lt;/span&gt;&lt;span&gt;&#8221; (sic). I call that dubious marketing (a.k.a &#8220;BS&#8221;). That statement is likely true for the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;desktop&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;processors, but that&#8217;s not what we have here. They both have 4 cores so a i7 is not going to be able to run more tasks in parallel than an i5.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;It&#8217;s important to note that these are &#8220;U&#8221; model CPUs. In Intel terminology, this means they are &#8220;mobile&#8221; (laptop) variants mostly constrained by their &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;power dissipation&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;(a.k.a TDP, or &#8220;Thermal Design Power&#8221;). Both CPUs have the 25W TDP envelope. The reality is that there are only so many transistors in a 14 nm die that can run at the same time and not exceed that 25 W envelope. You&#8217;re essentially limited by how much heat you can get out of these CPUs with the weak cooling architecture.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Let&#8217;s look at this from another angle: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://cpu.userbenchmark.com/Compare/Intel-Core-i5-8350U-vs-Intel-Core-i7-8650U/m388461vsm353957&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;reported user benchmarks&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;show us a reported 1%-2% increase in actual benchmarks.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Benchmarks are the way to go, but these above were a bit abstract. I thus decided to run my own benchmarks based on stuff I &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actually&lt;/span&gt;&lt;span&gt;&amp;nbsp;do with these laptops. This includes compiling a Flutter web app in Dart, compiling a fairly large ESP32 C++ project, compiling fairly large Java and Kotlin projects, and using DaVinci Resolve to stabilize, render, and compute Fusion VFX on one of my train videos. You know the usual stuff one does on a laptop on a daily basis.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Benchmarks are the way to go, but these above were a bit abstract. I thus decided to run my own benchmarks based on stuff I &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actually&lt;/span&gt;&lt;span&gt;&amp;nbsp;do with these laptops. This includes compiling a Flutter web app in Dart, compiling a fairly large ESP32 C++ project, compiling fairly large Java and Kotlin projects, and using DaVinci Resolve to stabilize, render, and compute Fusion VFX on one of my train videos. You know, the usual stuff one does on a laptop on a daily basis.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Here are the results:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -53,11 +55,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:354.89px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:574.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ca22af42f63d3e074ef772ed889a84043a73b8068eb73ea5599d129efd7498cci.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;So there I have it: the i7 provides a 5-8% improvement over the i5 for my daily development tasks. I have to say it doesn&#8217;t feel tangible.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;So there I have it: the i7 provides a 5-8% improvement over the i5 for my daily development tasks. I have to say it doesn&#8217;t feel like a tangible difference.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-12-27T00:00:42-08:00</updated>
+<updated>2025-12-27T00:00:47-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
