@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2025-12-29T03:05:45.315684-08:00</updated>
+<updated>2025-12-30T17:05:18.268897-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -297,16 +297,16 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The mechanism above using the hash is called a &#8220;hash router&#8221;. There are other ways to do it, that&apos;s just the one I prefer.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I want to emphasize that the web site loaded by the Web browser due not user HTML pages the regular way. What the browser loads is a large JavaScript file that generates all the elements on the page dynamically using code when the page loads. For example, to display a label and button, we&apos;ll have JavaScript code using the DOM API document.createElement(&quot;button&quot;), then manually set the attributes, etc. Rinse and repeat for every single HTML entity on the page. That would quickly become unbearable, wouldn&apos;t it be nice if instead we had some kind of tool that could parse a template and generate all that code for us? The template could even look like familiar HTML!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I want to emphasize that the web site loaded by the Web browser does not use HTML pages the regular way. What the browser loads is a large JavaScript file that generates all the elements on the page dynamically using code when the page loads. For example, to display a label and button, we&apos;ll have JavaScript code using the DOM API document.createElement(&quot;button&quot;), then manually set the attributes, etc. Rinse and repeat for every single HTML entity on the page. That would quickly become unbearable, wouldn&apos;t it be nice if instead we had some kind of tool that could parse a template and generate all that code for us? The template could even look like familiar HTML!&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.mtbioauqltcm&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;It&#8217;s all about the frameworks&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this kind of web app, we rarely write &#8220;vanilla Javascript&#8221; (e.g. &#8220;code everything by hand&#8221;). It&#8217;s just too tedious. Instead we use a framework to help us write the web page. There are a ton of frameworks out there, but essentially there are 4 that I consider the most popular and important:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this kind of web app, we rarely write &#8220;vanilla Javascript&#8221; (e.g. &#8220;code everything by hand&#8221;). It&#8217;s just too tedious. Instead we use a framework to help us write the web page. There are a ton of frameworks out there, but essentially there are 4 that are considered the most popular and relevant:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;React JS, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Angular JS.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Vue JS, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Flutter, with code written in Dart.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;React JS&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Angular JS&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Vue JS&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Flutter&lt;/span&gt;&lt;span&gt;, with code written in Dart.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I believe that also more or less represents their level of popularity. My opinion on them, in a one line summary each:&lt;/span&gt;&lt;/p&gt;
@@ -368,7 +368,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-16T00:00:32-07:00</updated>
+<updated>2025-10-16T00:00:08-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
