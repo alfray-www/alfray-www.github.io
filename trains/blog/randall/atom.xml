@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-01-03T21:21:14.365546-08:00</updated>
+<updated>2026-01-03T21:32:16.173524-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -86,7 +86,7 @@
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I&#8217;m tackling the &#8220;DCC conversion&#8221; of the DFS Yard. This 3-track yard adjacent to the SIA is controlled by a fairly complex electronic board, designed by Mr. Perry back in 2009, that controls its track power in a fairly fancy way adequate for the old DC layout, but now-a-day entirely obsolete.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
  &lt;tbody&gt;
   &lt;tr style=&quot;height:21pt&quot;&gt;
    &lt;td colspan=&quot;2&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:597.6pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:298.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:793.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1f80bcbc4108905843007606a0e4a6121f35c1849357a45128a9a81e64639c65i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The DFS Power Routing Switching Panel&lt;/span&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
@@ -136,7 +136,7 @@
 &lt;h2 id=&quot;h.mnwn4tka7n5v&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the turnouts for DCC operation&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;That part was actually trivial: the turnouts are all modern Tortoise, with their control wires going directly to the Stockton Panel and the Mountain Panel respectively. The goal is to instead wire them to an NCE Switch-8, which will allow us to control the turnouts from the NCE PowerCab or from the JMRI computer and WiThrottle.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
  &lt;tbody&gt;
   &lt;tr style=&quot;height:0pt&quot;&gt;
    &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:198.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_674555a0cae91eb5d04dc03cbaf6976cfbdafb92a72851e28cdd94ca1a3dcf96i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;Stockton Panel&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
@@ -160,7 +160,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Rewiring the 3 DFS tracks was trivial: I just used the existing power leads, but I disconnected them from the electronics &#8220;Switching Panel&#8221; (the board with all the relays) and wired them directly to the DCC. I also bypassed the &#8220;auto/local&#8221; toggle as it was now redundant. In essence, I wired all the DFS tracks to always be in &#8220;local&#8221; mode.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
  &lt;tbody&gt;
   &lt;tr style=&quot;height:0pt&quot;&gt;
    &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:297.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_654b4333b3b4d7aa60a4c4decfb0a0241b2d6bd719ffd1a0a875daa2e87f2c79i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
@@ -223,7 +223,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-29T00:00:12-08:00</updated>
+<updated>2025-12-29T00:00:26-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
