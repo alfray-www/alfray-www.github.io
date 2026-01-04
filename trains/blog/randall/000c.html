@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="On the software side, while traveling during the xmas break, I have spent time cleaning up the Conductor source code, which is my script-based software that drives the entire model layout automation. I have not changed any functionality, just done maintenance on the code base; I have modularized the code to split the parser and the script engine into an engine module, and I have updated all the dagger components&nbsp;to make it easier to write tests for just the scripting engine." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_f438ebd345a5bf3ad278fcb210b25075cca7f870b9002a8133e288c15868e145i.jpg" />
+<meta property="og:description" content="Back in November, I did a major update to the Vision&nbsp;software that drives the Vision computer&nbsp;at the museum for the Train Vision Project. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the chrome://tracing protocol&nbsp;and the Perfetto web UI, which I can then collect remotely and analyze later." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_59cc51d3066e971db165016f79bec83199fc27439166e443cfa02cd3f099675ci.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="On the software side, while traveling during the xmas break, I have spent time cleaning up the Conductor source code, which is my script-based software that drives the entire model layout automation. I have not changed any functionality, just done maintenance on the code base; I have modularized the code to split the parser and the script engine into an engine module, and I have updated all the dagger components&nbsp;to make it easier to write tests for just the scripting engine." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_f438ebd345a5bf3ad278fcb210b25075cca7f870b9002a8133e288c15868e145i.jpg" />
+<meta name="twitter:description" content="Back in November, I did a major update to the Vision&nbsp;software that drives the Vision computer&nbsp;at the museum for the Train Vision Project. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the chrome://tracing protocol&nbsp;and the Perfetto web UI, which I can then collect remotely and analyze later." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_59cc51d3066e971db165016f79bec83199fc27439166e443cfa02cd3f099675ci.png" />
 
 <title>Blog: Randall Museum Model Railroad</title>
 
@@ -248,6 +248,103 @@ td p {
 
     <div class="post-container">
 <div class="post-title-container">
+<a class="post-title-link" href="2022-01-11_train_vision_detection_and_p_136b337d.html">
+    <h2 class="post-title">2022-01-11 - Train Vision Detection and Perfetto Tracing</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-11-27_new_version_for_train_vision.html" style="color:inherit;text-decoration:inherit">Back in November</a></span><span>, I did a major update to the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision/" style="color:inherit;text-decoration:inherit">Vision</a></span><span>&nbsp;software that drives the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;at the museum for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-09-20_train_vision.html" style="color:inherit;text-decoration:inherit">Train Vision Project</a></span><span>. A major issue was the image detection had a lot of false triggers and would erroneously detect a change in the image when there was no motion. I reworked the image analyzer, and I also added logging to capture what motion is detected. The logging system dumps data to a JSON file compatible with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool/" style="color:inherit;text-decoration:inherit">chrome://tracing protocol</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ui.perfetto.dev/" style="color:inherit;text-decoration:inherit">Perfetto web UI</a></span><span>, which I can then collect remotely and analyze later.</span></p>
+<p></p>
+<p><span>Here’s an example of run from last Saturday:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:249.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_59cc51d3066e971db165016f79bec83199fc27439166e443cfa02cd3f099675ci.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>What we see above is an automated run from the mainline Freight train. Rows represent cameras 1, 2, and 3 respectively. Let’s look at camera 1 in detail:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:227.02px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:634.00px"><img alt="" src="img_7f3ea6295f722a0f0d98b8f2f6a671bcab40d548c1efcb90fb68a344a7016528d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span></span></p>
+
+<a href="2022-01-11_train_vision_detection_and_p_136b337d.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-10_planning_for_2022.html">
+    <h2 class="post-title">2022-01-10 - Planning for 2022</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>This year I’d like my projects to enhance the automation. There are two automation additions I want to get to, namely </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.dcct9cs2zllo" style="color:inherit;text-decoration:inherit">Fairfield</a></span><span>&nbsp;and the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2018-11-22_more_automated_routes.html" style="color:inherit;text-decoration:inherit">Trolley line</a></span><span>; however I realize these require a lot of research &amp; preparation work that is mostly software and, if I go there, it will be yet another 6-9 months with nothing tangible for others to actually see.</span></p>
+<p></p>
+<p><span>So instead I’d like to focus on enhancing the variety of the current automation. </span></p>
+<p></p>
+<p><span style="font-weight:700">1- Branchline Automation</span></p>
+<p></p>
+<p><span>We currently have a single engine running, and we park it on the B811/B801 storage track. However the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.frbaeoqrvbt" style="color:inherit;text-decoration:inherit">track &amp; panel</a></span><span>&nbsp;supports 3 storage tracks.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:154.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d9b412b41bc649015d5d01393c51aded4b9d0d2691c32d5969561611508e8c50i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:10pt;font-style:italic">Branchline/Mainline Track Diagram (blue is mainline, green is branchline)</span><span style="font-style:italic">.</span></p>
+<p></p>
+<p><span></span></p>
+
+<a href="2022-01-10_planning_for_2022.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-08_documentation_update_and_a_t_047ce9f2.html">
+    <h2 class="post-title">2022-01-08 - Documentation Update and a Trip Down Memory Lane</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>I’ve spent some time updating the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation" style="color:inherit;text-decoration:inherit">Randall Documentation</a></span><span>&nbsp;git repository. What’s changed:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation/src/master/hardware/" style="color:inherit;text-decoration:inherit">hardware</a></span><span>&nbsp;folder.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Currently it only contains the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/nce_fulgurex.html" style="color:inherit;text-decoration:inherit">PFM Fulgurex</a></span><span>&nbsp;documentation.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I plan to add more to collect the user manual of all the hardware we </span><span style="font-style:italic">currently</span><span>&nbsp;</span><span>use on the train layout, from the command station, to the various electronic boards such as auto reversers or electronic circuit breakers.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There’s a new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/randall-documentation/src/master/ggmrc_history/" style="color:inherit;text-decoration:inherit">ggmrc_history</a></span><span>&nbsp;folder. </span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>This contains paper documentation I found on the layout’s archives. I scanned them all a few years ago. Scan quality was so-so; image contrast is really poor on many of these. I tried my best to find what they describe and rename them accordingly.</span></li>
+ </ul>
+</ul>
+<p></p>
+<p><span>I was particularly interested in the historical documents I could find. They cover a wide time range, from 1965 up to 2010.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:257.00px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.00px"><img alt="" src="img_e73a502f93503977134381daa11adfb16378e84cd09b7e2d187689c8f7c40699i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-size:10pt;font-style:italic">Layout wiring standard “adopted June ‘65”</span><span style="font-style:italic">.</span></p>
+<p></p>
+<p><span>However these documents are a mixed bag. Some are early design schematics for the mainline or the yards, which may or may not be relevant today. There are some early construction standards for the layout. Others describe equipment which is not there anymore. There are a few yard or panel descriptions that I could not quite relate exactly to the layout, so these are labeled as ‘unknown’.</span></p>
+<p><span></span></p>
+
+<a href="2022-01-08_documentation_update_and_a_t_047ce9f2.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
 <a class="post-title-link" href="2022-01-06_automation_maintenance.html">
     <h2 class="post-title">2022-01-06 - Automation Maintenance</h2>
 </a>
@@ -455,105 +552,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-11-22_maintenance_and_debian_updates.html">
-    <h2 class="post-title">2021-11-22 - Maintenance and Debian Updates</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p><span>A few things have happened this week-end.</span></p>
-<p></p>
-<p><span>First the visible yet inconsequential thing: the Bridgeport Ballon Track #2 now has the proper Auto-Reverser.</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:322.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:759.00px"><img alt="" src="img_147cc505d864b2c8c21f2793b6509cb19e20c55945d9799df35d343a035ae044i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>The story about this is that I had ordered two </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.tamvalleydepot.com/products/dccfrogjuicers.html" style="color:inherit;text-decoration:inherit">Tam Valley Dual Frog Juicers</a></span><span>&nbsp;to be installed and configured as auto-reversers, one per balloon track. Unfortunately in the order I was sent a DCC Hex Frog Juicer by mistake. The Dual Frog Juicers can use up to 4 amps per track, whereas the Hex Frog Juicer can only only 1 amp per track and that’s not enough when running multiple engines in consist with sound. So now I just got around to installing the proper board. It was a rather trivial swap since I had done all the prep work when installing the Hex Frog Juicer, so really only terminals to unscrew/rescrew. Probably took more time to take the pictures and write this post than actually installing the board. But hey, one more </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.j53vr0a7rw9f" style="color:inherit;text-decoration:inherit">task is complete on my long list</a></span><span>.</span></p>
-<p></p>
-<p><span>The more exciting news is that I got around to update my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html" style="color:inherit;text-decoration:inherit">Layout Presentation Documentation</a></span><span>. I know, exciting, isn’t it? “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://knowyourmeme.com/memes/see-nobody-cares" style="color:inherit;text-decoration:inherit">See? Nobody cares</a></span><span>.” Well I do. I added a whole chapter on the computer setup used in the “train room exhibit”, and updated the pending work list, and I think that’s pretty neat. I’ve also updated the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.bz9kni24b6d6" style="color:inherit;text-decoration:inherit">Known Issues list</a></span><span>.</span></p>
-<p><span></span></p>
-
-<a href="2021-11-22_maintenance_and_debian_updates.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-11-16_mainline_t330_at_sonora.html">
-    <h2 class="post-title">2021-11-16 - Mainline T330 at Sonora</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p><span>Speaking of disasters waiting to happen, this is the mainline track at T330 Sonora:</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:553.22px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:720.00px"><img alt="" src="img_0c7ef66458f83df8b71426157c8165f5e5abc7b25e4a7806a72301cf75516f18d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p style="text-align:left"><span>What we can observe here is that both rails from the turnout lead are not soldered to the mainline track anymore. There’s some remnant of solder, thus I’ll venture a guess they used to be joined. Moreover the track lifts by about half a millimeter and can flex up and down freely. It’s amazing we don’t derail here. And that’s the mainline where every single train runs..</span></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-11-15_randall_repairs_block_b321_t_0e8d6f42.html">
-    <h2 class="post-title">2021-11-15 - Randall Repairs: Block B321 / Turnout T322</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
- <tbody>
-  <tr style="height:0pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt"><p style="text-align:left"><span style="vertical-align:baseline">Affected</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt"><p style="text-align:left"><span style="vertical-align:baseline">Mainline B321 close to Turnout T322.</span></p></td>
-  </tr>
-  <tr style="height:0pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt"><p style="text-align:left"><span style="vertical-align:baseline">Description</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt"><p style="text-align:left"><span style="vertical-align:baseline">Dead spot on Mainline B321.</span></p></td>
-  </tr>
-  <tr style="height:0pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt"><p style="text-align:left"><span style="vertical-align:baseline">Summary Fix</span></p></td>
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt"><p style="text-align:left"><span style="vertical-align:baseline">Fix bad track joiner.</span></p></td>
-  </tr>
- </tbody>
-</table>
-<p style="text-align:left"></p>
-<h2 id="h.eroi7fafnp8x" style="line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Description of Issue</span></h2>
-<p><span>As </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-11-10_maintenance_automation_stopp_dd713a3c.html" style="color:inherit;text-decoration:inherit">explained earlier</a></span><span>, we’ve been having issues with the train stopping on a dead spot on the mainline block B321, just after the Branchline turnout T322. I posited the issue was a broken solder joint, and it was indeed the case. A repair has been made -- actually two of them --, we’ll see if that holds.</span></p>
-<p></p>
-<p><span>On the track schematics, repairs were performed at the approximate locations shown below, on the red-side rail.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:188.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:690.00px"><img alt="" src="img_97dcc16f8f72317a92baa23a48e0ea4f41a865d93fc4deaff0a5d25d8051ff61d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>Trains used to stop dead in that area recently, intermittently. Typically that’s due to a solder joint that is broken and now makes a bad contact. As the track shrinks or expands with humidity, temperature, and the weight of the rolling stock, contact can appear or vanish during the day. The test was simple: with the train dead at that spot, just putting some slight pressure on the track was enough to power the train again. Problem is, that track has been naturally weathered by decades of usage, and it’s nearly impossible to know where the solder joints are, or for what. There can be many, from track feeders, to rail jointers. Not to mention the </span><span style="font-style:italic">voluntary</span><span>&nbsp;block isolation gaps that I need to preserve. Due to the lack of documentation, it means that when I find a gap (or a broken rail that looks like a gap), I don’t really know if it’s on purpose or not.</span></p>
-<p style="text-align:left"></p>
-<h2 id="h.fvxh5pnd8m7j" style="line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Description of Fix</span></h2>
-<p><span>First repair at spot #1 was done somewhere near the middle of the block. There is a track feeder under the layout going to both the black and red rail. It’s worth pointing two important details at this point:</span></p>
-<p><span></span></p>
-
-<a href="2021-11-15_randall_repairs_block_b321_t_0e8d6f42.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -575,7 +573,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-15 by Rig4j 0.1-Exp-78c9166
+    Generated on 2026-01-03 by Rig4j 0.1-Exp-78c9166
     <!-- )rg-excl -->
     &nbsp;
 </div>

@@ -1,11 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2025-12-17T03:03:51.365874-08:00</updated>
+<updated>2026-01-03T21:21:14.365546-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-78c9166">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Randall Repairs: Block B350</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-01-03_randall_repairs_block_b350.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-01-03_randall_repairs_block_b350.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Affected&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Block B340/B350 up the mountain.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Joiner solder gone bad &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;again&lt;/span&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Summary Fix&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Resolder the joiner.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.ym1xj2hjeo85&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Issue&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;We&#8217;ve had the UP Passenger train go dead going up the mountain yesterday at the junction between blocks B340 and B350. It did work twice in the morning before it totally lost power. Then this morning it was powered fine, and later the Saturday Operators folks reported a loss of power on that same block.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Orion was there and examined this more closely:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:298.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3350f0a4eeca53143acf0a25c7346278678e9cab100ce4dd3e7d13d73d115bb6i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That seems very familiar because I&#8217;ve seen that &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2019-08-26_randall_repairs_block_b350.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;happen already back in 2019 at the exact same spot&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. You can read that report to get the details. The bottom line is that the joint between these two rails failed again.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.3l1n59c970s9&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Fix&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;The immediate fix done by Orion was to reflow these track joints:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:360.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_e4f665411a83bd3600e9aa0628bc0b9ede21d04feb04a2e9436e704f39d72455i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;However this is clearly a temporary fix. That means in any number of years, we&#8217;ll get the exact same issue at this spot again. My opinion is that we&#8217;re seeing the result of track expansion or contraction due to weather, and a hard joint will inevitably fail sometimes later. The real solution is a bit more involved and involves using &#8220;bond wires&#8221;: That means removing the solder between the two rails to leave an expansion gap, and then soldering a piece of wire on both sides yet free to flex in the middle.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Fix time: &amp;lt; 1 hour.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
+<updated>2026-01-03T00:00:20-08:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Happy New Year</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-01-01_happy_new_year.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-01-01_happy_new_year.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Happy New Year 2026 from the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Museum Model Railroad&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;team&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:352.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ed65e2f714f183f9098a8c251922c2bab253744af8621b025f5425918ca03161i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_d1e030016a6cb0cfac275453f03de0d5e9324485cd85ceadd4052c151da6e0f7i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_892f0042f7c49985b9aeb379b9164b36b632554b94af4f70a9e1fb4f2c1e75e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a53373ceeecd84363a1507f282bc1fef19d237601b6e0015cc09b3c9964e51dai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:310.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1f1db1cfe67eb083b19b4730b9ff16d20bbd0e96e80c998c11a167d1dc756ddbi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-01-01T00:00:59-08:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Work on the DFS Yard and an Explanation</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2025-12-29_work_on_the_dfs_yard_and_an__3e65507d.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2025-12-29_work_on_the_dfs_yard_and_an__3e65507d.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;m tackling the &#8220;DCC conversion&#8221; of the DFS Yard. This 3-track yard adjacent to the SIA is controlled by a fairly complex electronic board, designed by Mr. Perry back in 2009, that controls its track power in a fairly fancy way adequate for the old DC layout, but now-a-day entirely obsolete.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:21pt&quot;&gt;
+   &lt;td colspan=&quot;2&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:597.6pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:298.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:793.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1f80bcbc4108905843007606a0e4a6121f35c1849357a45128a9a81e64639c65i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The DFS Power Routing Switching Panel&lt;/span&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:222.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_89eecd9dd152d320de8b1083524e6116aacef7d651452cc28bece6ab1844a12fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;The Stockton Yard Approach.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:222.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_21adce04a716d96fd05514c8f10f0c85e9e8d1d450dd544c21014b91a5e7a44fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;The Mountain/Branch Approach.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;And because it was designed by Mr. Perry, the awesome thing is that I &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/tree/main/schemas&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;have schematics for every part of the components&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, which is a good thing because that &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Track%20Power%20Routing%20%5B2018%5D.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;power routing&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;looks totally intimidating at first:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:417.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_aa5f64dde1db7b183e40ec9616d5c82078f58ee9f6debded5c1a7913add00107i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.jo09qe83u00m&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;DC Usage&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;This electronics makes entire sense on a DC layout. The power routing works as such:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train must enter the yard from the &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Stockton Panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;side, the users press a &#8220;Seize&#8221; button on the &lt;/span&gt;&lt;span&gt;Stockton Panel&lt;/span&gt;&lt;span&gt;. This ensures that the DFS tracks are powered by the DC power from the Stockton Panel -- and it disconnects power from the Mountain Panel.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train must enter the yard from the &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Mountain Panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;side, the users press a &#8220;Seize&#8221; button on the Mountain Panel. This ensures that the DFS tracks are powered by the DC power from the Mountain Panel -- and it disconnects power from the StocktonPanel.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Each panel also has a &#8220;Release&#8221; button to stop powering the yard from either side.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train needs to operate only within limits of the yard, the &#8220;Auto/Local&#8221; toggle on the SIA panel can be placed on the &#8220;Local&#8221; side. This powers the tracks from the SIA panel.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The signal bridges over the entrance on both sides are tied to the power routing and will only show a green indication when their side powers the track. This is a perfect visual indicator: if one side has all reds on a signal bridge, a train should not cross that signal bridge as it does not have the power routed correctly for it.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Similarly, the turnouts to enter or exit the yard from the Stockton Panel side are controlled by the toggles on the Stockton Panel itself. And the turnouts to enter or exit the yard from the MountainPanel side are controlled by the toggles on the MountainPanel itself. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.qp3z28usbp2l&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;DCC Usage&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;All that scheme above made sense when the yard was used in DC. But when we&#8217;re using DCC, it brings a lot of complexity that is not useful anymore:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Depending on the position of the Seize/Release buttons, the yard may be powered by the DCC boosters attached to the Stockton yard power district, or the Mountain power district, or the SIA power district. That means the yard is affected by any short in these other places, and inversely can short the other locations.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When we are in front of the DFS tracks, we do not have access to the Seize/Release buttons for the power routing as they are located on other distance panels. Similarly, we cannot change the turnouts because they are located on the Mountain or the Stockton panels which are far away from the DFS yard itself.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The signal bridges on the yard entrance and exit should no longer be &#8220;all red&#8221; and should indicate which track is aligned.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;What we really want for DCC operation is:&lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;1&quot; style=&quot;margin:0;padding:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Bypass all the complex Seize/Release power routing scheme, and power the DFS tracks solely from the SIA panel power.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Have access to the turnouts from anywhere.&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Note that these are two separate goals.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As usual, I decided to proceed with multiple phases. The first phase is mostly validation -- make sure I understand everything and that I am able to modify things adequately. Once that is done and that we have used the new way for a while, the next phase will be to clean up and remove obsolete wiring and equipment.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.mnwn4tka7n5v&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the turnouts for DCC operation&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;That part was actually trivial: the turnouts are all modern Tortoise, with their control wires going directly to the Stockton Panel and the Mountain Panel respectively. The goal is to instead wire them to an NCE Switch-8, which will allow us to control the turnouts from the NCE PowerCab or from the JMRI computer and WiThrottle.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:198.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_674555a0cae91eb5d04dc03cbaf6976cfbdafb92a72851e28cdd94ca1a3dcf96i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;Stockton Panel&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:212.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_4e6fd15064dfa7aa757d6615a9ebfa27b693c25b9565aca075739543f8f39276i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;&lt;br&gt;NCE Switch-8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:198.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fb6bff84685730640fdd797accf1b37306c151b2af586ef241aaa1ad243e0242i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;Mountain Panel&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;An NCE Switch-8 was placed next to the SIA panel as I found that the current turnout control wires, once desoldered from the Stockton and Mountain panel, were just about the right length to reach the SIA panel. Very convenient.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The NCE Switch-8 is temporarily powered by the DCC power from the SIA panel. This is not desirable long term -- if an engine shorts against a turnout in the yard, we&#8217;d lose yard power and thus we would not be able to throw the turnout. The proper way to do this is to power the Switch-8 from a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;different&lt;/span&gt;&lt;span&gt;&amp;nbsp;place. &lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Instead I need to pull wires from the isolated DCC turnout power supply which is dedicated to that purpose.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.we22rtm1icx4&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the Track Power Routing&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;I first checked that all the 3 DFS tracks are properly isolated from the turnouts, and indeed they are. Both rails are isolated, they don&#8217;t even share commons. That&#8217;s good to know!&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Rewiring the 3 DFS tracks was trivial: I just used the existing power leads, but I disconnected them from the electronics &#8220;Switching Panel&#8221; (the board with all the relays) and wired them directly to the DCC. I also bypassed the &#8220;auto/local&#8221; toggle as it was now redundant. In essence, I wired all the DFS tracks to always be in &#8220;local&#8221; mode.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:297.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_654b4333b3b4d7aa60a4c4decfb0a0241b2d6bd719ffd1a0a875daa2e87f2c79i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:297.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_dd67c22ba6db4458adc5d534671ace5bb68c8d3dd81471c12962a1f29e805409i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;We now lack a way to individually turn each DFS track on and off. This is a very useful feature in a yard as it&#8217;s desirable to turn power off when parking engines long term. Eventually what I&#8217;d like to have are 3 track on-off toggles on the SIA/DFS panel.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I also need to change the dangling Wago connectors for a proper terminal under the panel.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.jcuhxiw7izp2&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the Signal Bridges&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;In the DC usage mode, the signal bridges on both sides are wired in such a way that they become all-red when power is not &#8220;seized&#8221; on that entrance/exit. When that happens, the signal bridges no longer reflect the state of the turnouts.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In DC mode that makes sense as it clearly indicates that a train should not cross the signal bridge as the power on the other side of the track does not match. But in DCC we don&#8217;t care. We want the signal bridges to always show us how the turnouts are aligned.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The question is how does the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;&#8220;Switching Panel&#8221; electronics board&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;do that?&lt;br&gt;Luckily, courtesy of Mr. Perry, we have the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;schematics for it right here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(click on this for a better view):&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:416.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:576.30px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fd6a358dea9e6ecbde29ee7ee44e328e102447e1d3d4f1a3452a359c2d127d2ai.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now that thing sure looks intimidating, yet it&apos;s not that bad. It&apos;s essentially a bunch of relays forming logic gates, and I implicitly &#8220;translate&#8221; and read this as a bunch of boolean logic equations. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I noticed that a few of these relays are configured to be self locking: once power is applied to turn via an intermittent push button, the relay closes a circuit that keeps powering it itself.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Let&apos;s examine the schematics above: &lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;At the top level are the 8 relays that power the 3 DFS tracks.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When the Stockton/Valley seize button is pressed, it closes a relay to enable power to be fed from the Stockton side, and then, depending on which track is selected, sends that power to the track. So that accounts for 4 of the relays at the top.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;And then there&apos;s a similar arrangement for the other side with power from the Mountain. &lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;At the same time, the relay from one side disconnects the power input from the other side. &lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The &#8220;seize&#8221; from one side also grounds the output signal named &#8220;0vsz&#8221;. That signal goes to the signal bridge&#8217;s &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to allow it to display the turnout state in green.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Both the &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Switching Panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics as well as the &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics were puzzling at first until I realized that most of the logic is triggered by control lines that are grounded when active. They are tied to the positive of the power supply by default. We&#8217;re what we call &#8220;active-low control lines&#8221;! Once I understood that, the schematics made much more sense. It now makes sense what the signal &#8220;enabling&#8221; the signal controller is labelled &#8220;0vsz&#8221; as it is probably an abbreviation for &#8220;zero volts seize&#8221;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Which means now I realized that I could bypass the entirety of the complex power routing switching panel by doing 2 simple things:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I just disconnected all the input power leads. Since it&#8217;s not routing any power anymore, it doesn&#8217;t need to be actually powered at all.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I just needed to tie the &#8220;0vsz&#8221; lines to the ground of the power supply. That enables both signal bridges to show a green state based on the turnouts&#8217; positions.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;And that&#8217;s what I ended up with:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:465.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fea30fe35bbd1285733892b218faa7d623a7905070eb3eaf2e0fd8029bcb68e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;And this makes it work as I need. The Switching Panel is entirely bypassed. I labeled every wire so that I can easily revert things if needed. However from an initial test, it behaved as I wanted.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Instead of bridging both &#8220;0vsz&#8221; wires to the ground on the panel, I should do that directly on both remote Signal Controller boards. Then the black wires can be removed.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Similarly the 3 wires to the West (Ws, W2/3, W3) and the East (Es, E2/3, E3) are no longer used and can be removed.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The two red-black power routing input wires at the top can be removed.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The Seize/Release button wires can be removed.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.qjwuym3v9tr7&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Conclusion&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;The first phase was a success so far. I have a usable DFS yard. The track is powered by the SIA panel. The turnouts can be controlled using the NCE PowerCab.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The next phase is to do cleanup -- mostly remove a bunch of wiring that is now unused, and tidy up the SIA panel.&lt;br&gt;We&#8217;ll also want to add toggles for each of the DFS tracks to turn them on/off individually.&lt;br&gt;Finally, I have a bunch of schematics to update: the main layout map, the Stockton Yard panel map, the SIA panel map, and all the information I wrote here should also be collected in the main &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;layout description document&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2025-12-29T00:00:12-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Stockton Station Tracks</title>
@@ -45,11 +264,11 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a53373ceeecd84363a1507f282bc1fef19d237601b6e0015cc09b3c9964e51dai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-15T00:00:48-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2025-12-15T00:00:25-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -222,23 +441,8 @@
 &lt;p&gt;&lt;span&gt;This page gives me an overview of which computers are on, wherever the automated lines are active (the &#8220;toggles&#8221;), and which train ran last, and whether it completed its run properly.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I recently expanded that dashboard with a &#8220;performance&#8221; tab that lets me see how the trains behave on their respective route:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:424.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:575.39px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8e32d6fce9c3cd7728dc819c8f1bf3240f8609a75e517ac64fdff216fe70035bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;For each block, the automation keeps track of the time the train should spend in that block -- there&#8217;s a minimum time, a maximum, and the performance tab shows a color based on the &#8220;ideal&#8221; time spent in each block:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #b7b7b7;display:inline-block;height:131.04px;margin:-0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:383.90px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_d9b461825c0936afc81b022c0ad829d23e216c0faf809146075ae292e281da1ai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;That allows the automation to detect anomalies as soon as possible. If a train spends too long in a block, that means either the engine has a problem or maybe it derailed and it&#8217;s not moving. The minimum timing also detects anomalies -- since the trains move at a very specific speed, they can&#8217;t magically cross a block too fast. Since we rely on electrical detection of the train in a block, that&#8217;s generally the sign there&#8217;s a problem with a sensor or a train that derailed and shorts the track for example, among other possible causes. In any case, the automation program will automatically stop the current train and attempt to do a &#8220;recovery&#8221; where it runs &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;another&lt;/span&gt;&lt;span&gt;&amp;nbsp;program to bring the train back to the station. &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;It used to be that I needed to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2024-10-14_conductor_2_freight_starts_w_ce787171.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;carefully go through the automation logs&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to figure issues after the fact. I still expect to do that in specific situations. However, the dashboard &#8220;performance&#8221; page above should help with the most common cases by directly highlighting where a train has performed out of its expected timing range.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The web page dashboard is only the tip of the iceberg. There&#8217;s a lot more to making this happen than just displaying the data. Obviously it needs to be collected in the first place. For more detail, please &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-08-23_wazz_web_dashboard_update.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;continue reading here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-08-23T00:00:13-07:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-08-23T00:00:50-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -279,56 +483,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Back in 2018 when I soldered that bonding wire to fix the track continuity problem, I was surprised when the part below the solder started melting and that&#8217;s how I discovered that this was held using hot glue. It must have been done a long time as it had blended with the rest of the scenery. Anyhow, as &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2018-06-20_randall_repairs_turnouts_t370-t371.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;I wrote back then&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, that bonding wire was supposed to be a temporary fix. And now we&#8217;re finally circling back and taking care of it.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.rlddthj0zwmt&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Fix&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Orion did all the work related to this. My role here was mostly support, organization, and being &#8220;the voice of reason&#8221;. We both decided we didn&#8217;t really need turnout T370. It was spiked, and we had no intention of using the siding at B372 since now it holds the Summit station. However I wanted to keep the other siding as it may be nice to restore it later. To fix the track, Orion suggested simply removing all the track from the turnout up to the next junction point of the flex track, on the other side of the bridge.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Based on the preliminary discussion, we checked we had all the materials needed for this work. Of concern was the bridge: as we were going to remove the track over the bridge, there was a possibility that we might damage the structure, and I just wanted to check that we could easily replace it if needed. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:220.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:382.87px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ca60579cd4799871ec4429f3dbd432aa3f03ef4892981857ceb7b69c56bd6e60i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;A quick check revealed that the bridge is &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.walthers.com/single-track-railroad-truss-bridge-kit-20-x-3-1-4-x-5-50-x-8-1-x-12-5cm&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Walthers Cornerstone &quot;single track railroad truss bridge kit&quot; Part # 933-3185&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. That&#8217;s easy to replace if needed.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:388.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5a6d1ef73614dee02fa48e81447eff398faedfed74891c5aa4bf63e802ad62bfi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Orion preparing to remove the old track.&lt;br&gt;A bit of isopropyl alcohol made quick work of loosening the scenery holding the track.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:417.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_f02c18e626d519cedb83b01426ac47f3decf32c88bd03a143d37a23b87fc47b3i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Orion desoldering turnout T370.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:469.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2a38c93dbe794caa9ce451ff6d8b511873bb8d24d0afdb8a25c42fd36f733eeci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;In a short time, Orion had the turnout removed. That surprisingly went smoother than expected!&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:426.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fe7963400142b96677de65ea9c73180f337c10db718bb494807dc37773c6d99di.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Orion desoldering the track joiners on the other side of the bridge.&lt;br&gt;We&#8217;re close to the basement ceiling here so there isn&#8217;t a lot of headroom to work.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:449.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5c14d3072df203690dc672562ee4be9abd15c35655bbd35994be864640c46127i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;With a bit of persuasion, Orion got the track desoldered neatly.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:249.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_0b350e0f4c7cc8f71688ddb8de74a4af886374647c65c530286f0becb826fb6fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Now we had the track removed. It was time to install new track after cleaning up the area and preparing it.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:270.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_c2c130a9532b7a4bcbdaa30f2c1e1bf185248ef676d889aa13b25d2412ba1574i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Wood shims and cardboard pieces were used to level the approaches on both sides of the bridge.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:390.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fc818475d0aeaa2b42abd9e4977f937fdef5ba8109b1868ef618476ec69b99d5i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Orion first soldered the new flex track with new rail joiners on the B360 side.&lt;br&gt;A caboose and my trusty &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.nmra.org/sites/default/files/standards/sandrp/General/RP/rp-2_track_gauges2024.pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NMRA &#8220;Mark IVb&#8221; HO Gauge&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;&amp;nbsp;were used to verify track gauge, level, and alignment.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The new track is held in place with glue. I didn&#8217;t find the usual white glue around so instead I got some Tidebond II glue from the wood workshop. I believe it also softens with isopropyl alcohol later if we need to work on the track again.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:408.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3080fe7f9ff81217e67909ffefa9b8cddd9799fed9d5c94cca8c2e978296bca6i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Orion soldering the flex track where the old turnout used to be.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;An attempt was made to use &#8220;transition joiners&#8221; between the code 83 and the code 100 track at this junction. That didn&#8217;t go well, and after a lot of time spent on that failure, Orion went back to regular universal joiners.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:250.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ccc2947deafa29aa0e708c32ef9cc9c4765be5a87881eabfc91bb69033143a11i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Testing the new track junctions.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:322.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_4dd4351423f3d4ed3373049b67bb24d64a0e55f1621b20ca995e9ef4a38b681ai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The scene after cleanup.&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Running the automation train to test the new mainline track.&lt;br&gt;Orion added a track bumper on the end of the siding.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;We ran the Automated Passenger train several times on that new section of the mainline. Since the automated train runs as a shuttle, it runs both in forward and reverse on this part of the track and it&#8217;s very prone to derailment when there are alignment or defects in the track, making it a perfect test. This was, however, a fairly slow and finicky process.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Not detailed above, various pieces of wood or cardboard were used to shim the track and level it on the right side of the bridge as needed. I also won&#8217;t go into the cleanup details -- from cleaning up solder joints to filing them, vacuuming the area here and below, running the track cleaning train, etc.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Orion wanted to then immediately ballast the track. That&#8217;s not an area that museum visitors can see up close, so I&#8217;m not too concerned about the look. However I see some value in that as it will hold the new flex track in place. That said I insisted we do that another day -- it was getting late and I didn&#8217;t want us to do a rush job and then close the layout without having a good chance to test our work, not to mention cleaning everything &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;again&lt;/span&gt;&lt;span&gt;. Later I realized another good reason is that we can run the mainline as-is for a little while, and it will make it easier to do any correction if necessary. Then once we know we have good track work, Orion can ballast it.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Fix time: 6 hours.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-08-03T00:00:06-07:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-08-03T00:00:40-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -355,8 +511,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-07-27T00:00:24-07:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-07-27T00:00:48-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
