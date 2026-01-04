@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-01-03T21:32:16.173524-08:00</updated>
+<updated>2026-01-03T22:06:11.998187-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -105,6 +105,7 @@
 &lt;h2 id=&quot;h.jo09qe83u00m&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;DC Usage&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;This electronics makes entire sense on a DC layout. The power routing works as such:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The yard can be powered by 3 different sources -- the SIA Panel, the Stockton Panel, or the Mountain Panel -- but never more than one source can power the yard at the same time.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train must enter the yard from the &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Stockton Panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;side, the users press a &#8220;Seize&#8221; button on the &lt;/span&gt;&lt;span&gt;Stockton Panel&lt;/span&gt;&lt;span&gt;. This ensures that the DFS tracks are powered by the DC power from the Stockton Panel -- and it disconnects power from the Mountain Panel.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train must enter the yard from the &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Mountain Panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;side, the users press a &#8220;Seize&#8221; button on the Mountain Panel. This ensures that the DFS tracks are powered by the DC power from the Mountain Panel -- and it disconnects power from the StocktonPanel.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Each panel also has a &#8220;Release&#8221; button to stop powering the yard from either side.&lt;/span&gt;&lt;/li&gt;
@@ -112,13 +113,13 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The signal bridges over the entrance on both sides are tied to the power routing and will only show a green indication when their side powers the track. This is a perfect visual indicator: if one side has all reds on a signal bridge, a train should not cross that signal bridge as it does not have the power routed correctly for it.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Similarly, the turnouts to enter or exit the yard from the Stockton Panel side are controlled by the toggles on the Stockton Panel itself. And the turnouts to enter or exit the yard from the MountainPanel side are controlled by the toggles on the MountainPanel itself. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Similarly, the turnouts to enter or exit the yard from the Stockton Panel side are controlled by the toggles on the Stockton Panel itself. And the turnouts to enter or exit the yard from the MountainPanel side are controlled by the toggles on the Mountain Panel itself. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.qp3z28usbp2l&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;DCC Usage&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;All that scheme above made sense when the yard was used in DC. But when we&#8217;re using DCC, it brings a lot of complexity that is not useful anymore:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Depending on the position of the Seize/Release buttons, the yard may be powered by the DCC boosters attached to the Stockton yard power district, or the Mountain power district, or the SIA power district. That means the yard is affected by any short in these other places, and inversely can short the other locations.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When we are in front of the DFS tracks, we do not have access to the Seize/Release buttons for the power routing as they are located on other distance panels. Similarly, we cannot change the turnouts because they are located on the Mountain or the Stockton panels which are far away from the DFS yard itself.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When we are in front of the DFS tracks, we&#8217;re next to the SIA panel, and that panel only. We do not have access to the Seize/Release buttons for the power routing as they are located on other distant panels. Similarly, we cannot change the turnouts because they are located on the Mountain or the Stockton panels which are far away from the DFS yard itself.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The signal bridges on the yard entrance and exit should no longer be &#8220;all red&#8221; and should indicate which track is aligned.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -151,12 +152,12 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The NCE Switch-8 is temporarily powered by the DCC power from the SIA panel. This is not desirable long term -- if an engine shorts against a turnout in the yard, we&#8217;d lose yard power and thus we would not be able to throw the turnout. The proper way to do this is to power the Switch-8 from a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;different&lt;/span&gt;&lt;span&gt;&amp;nbsp;place. &lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The NCE Switch-8 is temporarily powered by the DCC power from the SIA panel. This is not desirable long term -- if an engine shorts against a turnout in the yard, we&#8217;d lose yard power and thus we would not be able to throw the turnout. The proper way to do this is to power the Switch-8 from a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;different&lt;/span&gt;&lt;span&gt;&amp;nbsp;power supply. &lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Instead I need to pull wires from the isolated DCC turnout power supply which is dedicated to that purpose.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.we22rtm1icx4&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the Track Power Routing&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;I first checked that all the 3 DFS tracks are properly isolated from the turnouts, and indeed they are. Both rails are isolated, they don&#8217;t even share commons. That&#8217;s good to know!&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I first checked that all the 3 DFS tracks were properly isolated from the turnouts, and indeed they are. Both rails are isolated, they don&#8217;t even share commons. That&#8217;s good to know!&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Rewiring the 3 DFS tracks was trivial: I just used the existing power leads, but I disconnected them from the electronics &#8220;Switching Panel&#8221; (the board with all the relays) and wired them directly to the DCC. I also bypassed the &#8220;auto/local&#8221; toggle as it was now redundant. In essence, I wired all the DFS tracks to always be in &#8220;local&#8221; mode.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -183,7 +184,7 @@
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:416.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:576.30px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fd6a358dea9e6ecbde29ee7ee44e328e102447e1d3d4f1a3452a359c2d127d2ai.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Now that thing sure looks intimidating, yet it&apos;s not that bad. It&apos;s essentially a bunch of relays forming logic gates, and I implicitly &#8220;translate&#8221; and read this as a bunch of boolean logic equations. &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I noticed that a few of these relays are configured to be self locking: once power is applied to turn via an intermittent push button, the relay closes a circuit that keeps powering it itself.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I noticed that a few of these relays are configured to be self locking: once power is applied via an intermittent button push, the relay closes a circuit that powers the relay itself, and thus makes sure it stays closed.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Let&apos;s examine the schematics above: &lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;At the top level are the 8 relays that power the 3 DFS tracks.&lt;/span&gt;&lt;/li&gt;
@@ -193,18 +194,18 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The &#8220;seize&#8221; from one side also grounds the output signal named &#8220;0vsz&#8221;. That signal goes to the signal bridge&#8217;s &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to allow it to display the turnout state in green.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Both the &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Switching Panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics as well as the &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics were puzzling at first until I realized that most of the logic is triggered by control lines that are grounded when active. They are tied to the positive of the power supply by default. We&#8217;re what we call &#8220;active-low control lines&#8221;! Once I understood that, the schematics made much more sense. It now makes sense what the signal &#8220;enabling&#8221; the signal controller is labelled &#8220;0vsz&#8221; as it is probably an abbreviation for &#8220;zero volts seize&#8221;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Both the &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Switching Panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics as well as the &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics were puzzling at first until I realized that most of the logic is triggered by control lines that are grounded when active. They are tied to the positive of the power supply by default. This is simply what we call &#8220;active-low control lines!&#8221; Once I understood that, the schematics made much more sense. It now makes sense that the output &#8220;enabling&#8221; the signal controller is labelled &#8220;0vsz&#8221; as it is probably an abbreviation for &#8220;zero volts seize&#8221;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Which means now I realized that I could bypass the entirety of the complex power routing switching panel by doing 2 simple things:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I just disconnected all the input power leads. Since it&#8217;s not routing any power anymore, it doesn&#8217;t need to be actually powered at all.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I just needed to tie the &#8220;0vsz&#8221; lines to the ground of the power supply. That enables both signal bridges to show a green state based on the turnouts&#8217; positions.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Disconnect all the input power leads. The panel is not routing any power anymore and doesn&#8217;t need to be actually powered at all.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Tie the &#8220;0vsz&#8221; lines to the ground of the power supply. That enables both signal bridges to show a green state based on the turnouts&#8217; positions.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;And that&#8217;s what I ended up with:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:465.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fea30fe35bbd1285733892b218faa7d623a7905070eb3eaf2e0fd8029bcb68e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;And this makes it work as I need. The Switching Panel is entirely bypassed. I labeled every wire so that I can easily revert things if needed. However from an initial test, it behaved as I wanted.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This makes it work as I need. I labeled every wire so that I can easily revert things if needed. The Switching Panel is entirely bypassed. Yet, from an initial test, it behaved as I wanted.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
@@ -217,13 +218,26 @@
 &lt;h2 id=&quot;h.qjwuym3v9tr7&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Conclusion&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;The first phase was a success so far. I have a usable DFS yard. The track is powered by the SIA panel. The turnouts can be controlled using the NCE PowerCab.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The next phase is to do cleanup -- mostly remove a bunch of wiring that is now unused, and tidy up the SIA panel.&lt;br&gt;We&#8217;ll also want to add toggles for each of the DFS tracks to turn them on/off individually.&lt;br&gt;Finally, I have a bunch of schematics to update: the main layout map, the Stockton Yard panel map, the SIA panel map, and all the information I wrote here should also be collected in the main &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;layout description document&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The next phase is to do cleanup, which I will do slowly as I go along:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Remove a bunch of wiring that is now unused.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Tidy up the SIA panel.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Add toggles for each of the DFS tracks to turn them on/off individually.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Use a proper terminal block to wire the DFS tracks instead of Wago connectors.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Update a bunch of schematics to show the new DCC turnout numbers:&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;the main layout map,&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;the Stockton Yard panel map,&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;the SIA panel map.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;All the information I wrote here should also be collected in the main &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;layout description document&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-29T00:00:26-08:00</updated>
+<updated>2025-12-29T00:00:43-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
