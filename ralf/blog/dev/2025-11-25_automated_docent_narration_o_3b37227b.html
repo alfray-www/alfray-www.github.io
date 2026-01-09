@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/2025-11-25_automated_docent_narration_o_3b37227b.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Automated Docent Narration on the NCRy" />
+
+<meta property="og:description" content="The NCRy train&nbsp;could use some kind of automation in their Docent narration system. Currently, the passenger train relies on a volunteer manning the speaker system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the speaker system at specific points in the train’s route. As with most automation, it should be supplementary&nbsp;and a Docent volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. Consider this document to be a design doc / proposal document." />
+<meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Automated Docent Narration on the NCRy" />
+
+<meta name="twitter:description" content="The NCRy train&nbsp;could use some kind of automation in their Docent narration system. Currently, the passenger train relies on a volunteer manning the speaker system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the speaker system at specific points in the train’s route. As with most automation, it should be supplementary&nbsp;and a Docent volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. Consider this document to be a design doc / proposal document." />
+<meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" />
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+    background: #EFE;
+    /* color: #000; */
+
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="index.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2025-12-12_directory_opus_on_amiga_500.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2025-11-25 - Automated Docent Narration on the NCRy</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.ncry.org/" style="color:inherit;text-decoration:inherit">NCRy train</a></span><span>&nbsp;could use some kind of automation in their Docent narration system. Currently, the passenger train relies on a volunteer manning the speaker system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the speaker system at specific points in the train’s route. As with most automation, it should be </span><span style="font-style:italic">supplementary</span><span>&nbsp;and a Docent volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. </span><span style="font-family:&quot;Roboto Mono&quot;">Consider this document to be a design doc / proposal document.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I think Curt and I had discussed that about 10 years ago -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This proposal isn’t very different, just updated to what is now ubiquitous tech.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I had to build this today with current tech, I’d simply use an Android smart phone or tablet with a custom-made Android app:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use the phone’s GPS to get the location of the train.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>It may or may not be necessary to have a SIM for internet access to speed up the initial-fix problem (a.k.a. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Assisted_GNSS" style="color:inherit;text-decoration:inherit">Assisted GNSS</a></span><span style="font-family:&quot;Roboto Mono&quot;">).</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use the phone’s storage to record pre-recorded messages, and then play them back when the phone reaches pre-recorded GPS positions.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">We may want to have these be specific to the train direction or work both ways, and they can be set up with a distance match. That’s basically a crude geofencing solution.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There can be multiple “tracks” that switch pre-recorded messages/locations for different kinds of events (TOL, beer train, charter, regular w-e train, etc).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Rather than think in terms of GPS position, my suggestion is that we convert GPS positions into a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Milestone" style="color:inherit;text-decoration:inherit">milepost (MP) number</a></span><span style="font-family:&quot;Roboto Mono&quot;">. That’s more familiar with everyone involved on the railroad.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus a “voice track” is actually a succession of “voice segments” -- each segment is a snippet of voice recording, with an MP interval in which it plays, and optionally a direction.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:260.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f5ffd05caeeadbff7624e12774d8f130c4ae30ae11cf2809b59a8e294a46cae3i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example a “brightside” segment could have MP 33.5~34.5 -- it would start playing at MP 34.5 when westbound from Sunol, or at MP 33.5 when eastbound from Niles, or right away if the track playback is activated within the yard.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Two segments could have the same milepost range if they have different direction flags. It's useful to record something like “look at this landmark on the left” vs “look on the right” depending on the direction of travel -- which is always either eastbound vs westbound.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Usage</span></p>
+<p style="text-align:left"><span></span></p>
+<p style="text-align:left"><span>The tracks would be created by having a simple </span><span style="font-weight:700">recording mode</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Engage a recording mode before the train leaves.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let the Docent volunteer just talk into a mic, and record stuff with the location of where it started. Each recording is a succession of segments with a few minutes of voice and their associated start position.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Option 1: Manual recording mode.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Docent volunteer pushes a button to denote when the start and stop recording each segment.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Option 2: Automated recording.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let the system automatically detect pauses and create segments.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a post-edit phase, segments can be altered to re-record the voice, or change their milepost range (i.e. adjust geofencing parameters), and/or limit them to a specific direction.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For the first segment, we could decide whether it plays immediately or when the train starts moving or reaches a specific MP (e.g. the end of the platform at Sunol).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Playback mode</span><span style="font-family:&quot;Roboto Mono&quot;">:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A train Conductor or other volunteer simply selects the appropriate track to play.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If the first segment is set to play automation on train motion, then there’s nothing else to do.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If the train is already en route when we start playing, the program should just compute the current MP and start playing at the matching segment if any. That lets a real PA announcer take a break by just starting playing a track at any time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The screen should let the Docent volunteer change segments -- force going previous or next, or pause/resume.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Hardware Choice</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Hardware wise, the easiest is a smart phone or a tablet.</span></p>
+<p style="text-align:left"><span>Example of an adequate tablet: Samsung Galaxy Tab A9+ Plus, 11” screen, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/4jA4v0J" style="color:inherit;text-decoration:inherit">https://amzn.to/4jA4v0J</a></span><span style="font-family:&quot;Roboto Mono&quot;">, around $200. This has an audio jack.</span></p>
+<p style="text-align:left"><span>Most modern smart phones or tablets don’t have an audio jack anymore. That’s not a problem as we can use an USB C audio/power splitter like this $15 </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/48dWSsn" style="color:inherit;text-decoration:inherit">https://amzn.to/48dWSsn</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span>The audio jack on phones is always a 4-poles TRRS. There are splitters to get 2 3-poles jacks for headphones vs microphones such as this $8 </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/43UBbfQ" style="color:inherit;text-decoration:inherit">https://amzn.to/43UBbfQ</a></span><span>.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The alternative is to use a bluetooth adapter for the audio in/out. For this application, I think a wired setup would be more reliable and less troublesome.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The nice thing about a smart phone or tablet is that it integrates all that we need: GPS for position, audio in/out, “disk” storage for audio files, and a screen for control. A simple </span><span style="font-style:italic">good</span><span>&nbsp;</span><span style="font-family:&quot;Roboto Mono&quot;">Android cell phone like a Pixel in the $150 range will do just fine as we don’t need a lot of CPU here, and for a tablet the price range starts at $200 like the Samsung listed above.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note that smart phones or tablets really are the same thing with only the screen size as the difference. A smart phone can be fairly compact. However here we could benefit from the larger screen size of a tablet, which may allow for a larger easier to read UI for our senior volunteers.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Another hardware choice is to use a small laptop like those I use for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad automation</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;-- something like a Lenovo T480s in the $150 range, or maybe a Lenovo Yoga to benefit from a folding touch screen. At 14”, these are still fairly compact. However these don’t have a GPS unit, we need something external such as a USB GPS receiver (in the $15-$30 range). Most of these receivers have a USB cable which allows placing them near a window for better GPS reception.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A hardware analysis would not be complete without estimating how many units we need.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The thing is that we don’t really need to have more than one -- there’s always a single Docent car at a given time on the mainline. Conductors or Docent volunteers can just carry and set up that phone when they set up the train.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One can argue that Docent announcements are not critical (they can always be operated by a volunteer after all) thus this doesn’t even need a strong backup solution.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Hardware-wise, I always aim to be scrappy in my choices. I’ve gotten my share of snarky comments at Randall for not using the latest laptop or tablet hype -- especially from Apple users who don’t seem to understand that a device can work adequately even when it doesn’t cost an arm and a leg. There are a ton of absolutely crappy Android phones and tablets out there at ridiculous prices, but there are also a lot of </span><span style="font-style:italic">good</span><span>&nbsp;options at moderate prices. </span><span style="font-family:&quot;Roboto Mono&quot;">The task at hand does not require a ton of resources, and using the latest hype hardware would just be a waste of money. Instead, focus on a reliable brand like Pixel, Samsung, or Lenovo that will have good quality for a fairly long period of time.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">Software Choice</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That seems like a fairly straightforward piece of custom software to write.<br>For an Android device, obviously the software would be an Android app in Kotlin that I would then publish via the Google Play store. Makes it easier to load and update on the target device. For a laptop, I’d likely also target a Kotlin app and run it in kiosk mode under Debian Linux -- that way we have better control of the OS, e.g. we don’t risk having e.g. a mandatory Windows update whilst the train is operating, and we have less of an ambulatory security risk.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>My usual way to write custom software is to build it in phases, starting with an MVP (minimum viable product), then add features as things progress. E.g. to get started, we don’t even need to handle recording in that software. Things can be recorded offline, edited in e.g. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.audacityteam.org/" style="color:inherit;text-decoration:inherit">Audacity</a></span><span style="font-family:&quot;Roboto Mono&quot;">, and then imported on the device as audio files.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One obvious choice would be to load/save the audio files from an external SDCard. That would allow us to easily swap them or have backups. That said if the device has wifi or some cell connection, using something like Google Drive or Dropbox as the exchange medium seems a lot easier. The APIs to deal with this on Android are fairly straightforward.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Trains Dashboard</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There’s an obvious corollary offshoot project from this design.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Back in 2016 I sent a proposal to Jim on how to create a dashboard that could display the location of each train -- basically each train would have had a cell phone on board sending their GPS position to some server, which we’d collect, and display that on a web site, which can be shown on a screen e.g. at the Sunol station, etc.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Well, it turns out that if the proposal above were implemented, one would have a GPS-enabled device on the current passenger train on the mainline (since it would necessarily have the Docent car in service). We just need the one smart phone/tablet to have a SIM card and a cell phone line, which can be fairly cheap using some kind of data-only MVNO plan (the so-called “tablet only” plans, IIRC we’re talking less than $200/yr these days). The device on the train just needs to output the known MP location to some server, and a display can then pick that up in the station if it has internet/wifi.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"><a href="2025-12-12_directory_opus_on_amiga_500.html">⇐ Newer Post</a><br/></span>
+    <span class="next-page"><a href="2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-01-08 by Rig4j 0.1-Exp-b9954ae <!-- )rg-excl --> &nbsp; </div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+
