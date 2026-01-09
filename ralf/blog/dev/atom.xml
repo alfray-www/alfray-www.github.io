@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-01-09T03:07:59.963959-08:00</updated>
+<updated>2026-01-09T14:21:32.393188-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
-<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-b9954ae">Rig4j</generator>
+<generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-bc668ce">Rig4j</generator>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Lenovo T480s: i5 vs i7 CPU Comparison</title>
@@ -155,7 +155,8 @@
 <link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2025-11-25_automated_docent_narration_o_3b37227b.html"/>
 <id>https://www.alfray.com/ralf/blog/dev/2025-11-25_automated_docent_narration_o_3b37227b.html</id>
 <category term="dev" label="DEV"/>
-<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.ncry.org/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCRy train&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;could use some kind of automation in their Docent narration system. Currently, the passenger train relies on a volunteer manning the speaker system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the speaker system at specific points in the train&#8217;s route. As with most automation, it should be &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;supplementary&lt;/span&gt;&lt;span&gt;&amp;nbsp;and a Docent volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Consider this document to be a design doc / proposal document.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Curt and I had discussed about 10 years ago how we could broadcast the trains&#8217; positions -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This proposal isn&#8217;t very different, just updated to what is now ubiquitous tech, and adapted to a slightly adjacent purpose.&lt;/span&gt;&lt;/p&gt;
@@ -247,7 +248,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-11-25T00:00:39-08:00</updated>
+<updated>2025-11-25T00:00:07-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
