@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="A few things have happened this week-end." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_147cc505d864b2c8c21f2793b6509cb19e20c55945d9799df35d343a035ae044i.jpg" />
+<meta property="og:description" content="I’ve done some work on the Vision computer&nbsp;to get more reliable networking. The USB-to-ethernet adapter hasn’t been behaving as stable as I’d like to, and I fixed the wifi so at least I got that." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_e98edbc1e36b76fd8a974af63ba6fcbbb3861576ed368901d8b485fa7b4e7593i.png" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="A few things have happened this week-end." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_147cc505d864b2c8c21f2793b6509cb19e20c55945d9799df35d343a035ae044i.jpg" />
+<meta name="twitter:description" content="I’ve done some work on the Vision computer&nbsp;to get more reliable networking. The USB-to-ethernet adapter hasn’t been behaving as stable as I’d like to, and I fixed the wifi so at least I got that." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_e98edbc1e36b76fd8a974af63ba6fcbbb3861576ed368901d8b485fa7b4e7593i.png" />
 
 <title>Blog: Randall Museum Model Railroad</title>
 
@@ -247,6 +247,36 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2021-11-23_train_vision_maintenance.html">
+    <h2 class="post-title">2021-11-23 - Train Vision Maintenance</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>I’ve done some work on the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.7m64vnftp5qs" style="color:inherit;text-decoration:inherit">Vision computer</a></span><span>&nbsp;to get more reliable networking. The USB-to-ethernet adapter hasn’t been behaving as stable as I’d like to, and I fixed the wifi so at least I got that.</span></p>
+<p></p>
+<p><span>But maybe it’s not just that </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://amzn.to/3EMDuDe" style="color:inherit;text-decoration:inherit">USB-to-ethernet adapter</a></span><span>&nbsp;that needs some more work though -- last time I went by the museum, all the port lights were off on the ethernet switch till I power-cycled it so maybe I should look at that first.</span></p>
+<p></p>
+<p><span>I have also updated the highlighter’s logic in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/vision" style="color:inherit;text-decoration:inherit">vision</a></span><span>, and actually I like the updated logic even less than the original. Look at these stats:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:295.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:675.00px"><img alt="" src="img_e98edbc1e36b76fd8a974af63ba6fcbbb3861576ed368901d8b485fa7b4e7593i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>That’s terrible. Too many highlights. The thing is too sensitive, I need to change it to have some kind of adaptive threshold. Some of the highlights happen when no trains are moving, probably because the RTSP h264 stream is of subpar quality and very noisy, not to mention noticeable inconsistent frame rate. That’s why I need that wired ethernet to work.</span></p>
+<p></p>
+<p><span>And what’s up with the lack of stats after noon? I know the laptop was running at least till 4-5 pm. If it were a 12/24 hour mismatch, the “12 pm” events should look like midnight (12 am) and the 4-5pm events should look like 4-5am, which is not the case here. More mysteries.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-11-22_maintenance_and_debian_updates.html">
     <h2 class="post-title">2021-11-22 - Maintenance and Debian Updates</h2>
@@ -545,35 +575,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-09-21_maintenance.html">
-    <h2 class="post-title">2021-09-21 - Maintenance</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p></p>
-<p><span>Yesterday was also time for some regular maintenance.</span></p>
-<p></p>
-<p><span>First order of business was to swap the engine for the automated UP passenger train. It has been running with </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.rrpicturearchives.net/Locopicture.aspx?id=168956" style="color:inherit;text-decoration:inherit">UP 8736</a></span><span>&nbsp;for quite a while, and I swapped it for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.rrpicturearchives.net/Locopicture.aspx?id=169705" style="color:inherit;text-decoration:inherit">UP 8749</a></span><span>. They are both identical SD70ACe engines, and I had previously programmed them to have identical running characteristics, so it was a quick one-line change in the automation computer’s event script.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:189.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:760.00px"><img alt="" src="img_89bfb6a9cab691e1939493f5b21b7a5d3b8856e6361cbf471d65be13b0890360i.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>Then I had been told the grade crossing bell was ringing all the time with no trains, so I spent quite some time adjusting it. One of the sensors is way more sensitive than the others. I readjusted them all. Unfortunately I’m told today that the bell was again ringing for almost 20 minutes when the layout was turned on. I had noticed that before -- when we turn everything on in the room, the lights are not as bright and they take time to warm up. And that can be enough to trip the grade crossing light sensors. Ideally I’d have to adjust the sensor right when the lights are turned on in the morning. </span></p>
-<p></p>
-<p><span>So I need to adjust the grade crossing sensors again. I’ll see if I can reduce the dimmable spots or turn off some lights to reproduce that “warming up” state from the morning.</span></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
 
 
 
@@ -595,7 +596,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-01-03 by Rig4j 0.1-Exp-78c9166
+    Generated on 2026-01-27 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>

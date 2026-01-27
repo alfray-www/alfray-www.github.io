@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-01-22T03:02:23.414268-08:00</updated>
+<updated>2026-01-27T13:37:21.538942-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-bc668ce">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Automation Maintenance</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-01-26_automation_maintenance.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-01-26_automation_maintenance.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;span&gt;Yet another day of &#8220;fixing whatever needs to be fixed&#8221; for the train automation and a bunch of other tiny things to take care of. The Zephyrette has been giving me trouble on the Branchline recently so I decided to replace it whilst I look at it more carefully. The Passenger UP engine decided to not have sound anymore so I also replaced it. Details below.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:252.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_4127771179b987100b4fe3378283cf7dfb5c77e7d5ae6de0d660f2babd753c3bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Mainline Passenger automation (front) and Branchline automation (back).&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;First, I started the day by fishing out Jim&#8217;s train derailed in Fairfield, in a location hard to reach:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:154.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_502ea849a035bd487e045bc89458bc1c9cc264fe4ba03d530d64c3ee14946931i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Fairfield.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That was shorting the power district, which is never a good thing for the engine or for the rest of the DCC system. The picture above depicts how I found the train.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I can&#8217;t quite figure out the sequence of events that made the train separate from its cars and derail in such a way. Anyhow, forensics was not part of the day&#8217;s tasks so let&#8217;s move on. I also crawled to and examined the end of the Tehachapi loop and the Bridgeport T450 turnout as Jim indicated the train had derailed there. I could not find anything wrong with the track itself -- no debris or anything visible on the track.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;My main concern was the Zephyrette RDC that has been running on the Branchline. Last week it started behaving erratically -- stopping on very specific sections of the track. The track sensors could not detect the engine, which means it wasn&#8217;t electrically making contact. Then later -- anywhere from 20 minutes to hours -- it would re-appear on the block sensor map and be controllable. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:249.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ead12dd95ae970b85fa4c5e7416e7824b966cb6877aaf835e92d27fc2cfb91aei.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Zephyrette RDC on the Branchline.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Testing the track, I could not find obvious conductivity issues, and even after cleaning the track carefully, the engine would stop and go on a few specific places. I suspect the issue is with the engine.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As a test, I put another engine on the Branchline, and it behaved just fine, confirming my hypothesis that the issue is with the Zephyrette itself.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I had cleaned the Zephyrette wheels a couple weeks ago and they still looked clean -- however sometimes that&#8217;s not enough. For example, for the main automation Bachmann, I also need to disassemble the trucks and clear the side contacts (the &#8220;journals&#8221;) to prevent stuttering. I figure we need something similar here.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;While I was checking the Branchline&#8217;s Zephyrette, I was running the UP 9538 engine for the Passenger Automation as usual to make sure it&#8217;s fine, when I realized at some point that the engine was silent -- its sound cut off instead of sounding a horn whilst going over the canyon bridge. No matter what I tried with the DCC controller, I couldn&#8217;t get the sound to turn back on. OK one more problem in the way. At least, that was easy to fix, or more exactly to work around: it turns out last year I acquired on purpose an exact replica of the UP 9538 engine, which I had already configured in the LokSound Programmer to have exactly the same characteristics as the first one. Now, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;through the magic of buying two of them&lt;/span&gt;&lt;span&gt;, all I had to do was replace the UP 9538 engine #1 by its clone #2, and voil&#224;, the automation is instantly back in business whilst I will look at the first engine &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;another day&lt;/span&gt;&lt;span&gt;. In this case, I highly suspect that a simple decoder reset + reprogram will be enough to fix it. LokSound decoders are sometimes indistinguishable from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.reallifecomics.com/comic.php?comic=march-3-2022&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;printers&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:184.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7b70640a02e76584e8b27f5ca6bb854021d46bfc653ce7a75425c87bd7c3e620i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The second UP 9538 engine.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;OK so now, let&#8217;s go back to that Branchline. I decided I will look at the Zephyrette another day, and in the meantime I could use that new Bachmann UP SD40-2 I got last year. A quick check revealed it worked well on the Branchline so I quickly adjusted my automation program for it:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:270.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_f93629c0bdaf4be67f120df3e5d49adbe7f395802b3b0afffa8a231d511150bei.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Bachmann UP 3450 SD40-2 on the Branchline&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;When I tried the new automation program, I found a couple issues. First the couplers&#8217; hoses were getting stuck on the rails in a few places. Easy fix, I just cut them shorter. More annoying, the engine was getting stuck sometimes on the track near the garage track. Upon closer inspection, I realized there&#8217;s one of these annoying uncoupling magnets there and it was hitting the underframe of the engine. I decided the best course of action was to remove the unused magnet, and of course that one is neatly almost out of reach. Eventually I got it removed:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:242.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_6ac1349067b9012bddd429148ebce8820a5c56ea6e04590830235a7daba40abdi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;These are both glued &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;and&lt;/span&gt;&lt;span&gt;&amp;nbsp;nailed in place. I realized after that I should have used some isopropyl alcohol to lose the glue, that would have made the task a bit easier. Anyhow, with that fix done, the engine now runs smoothly on the Branchline. As usual, I will try the engine alone first, and if all goes well, in a week or two I will try to add a freight car and maybe a caboose. Things can derail very easily on the Branchline&#8217;s sub-par track so it&#8217;s imperative to try one change at a time and not rush things.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-01-26T00:00:59-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Randall Repairs: Block B350</title>
@@ -67,15 +115,10 @@
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_892f0042f7c49985b9aeb379b9164b36b632554b94af4f70a9e1fb4f2c1e75e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a53373ceeecd84363a1507f282bc1fef19d237601b6e0015cc09b3c9964e51dai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:310.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1f1db1cfe67eb083b19b4730b9ff16d20bbd0e96e80c998c11a167d1dc756ddbi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-01-01T00:00:59-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2026-01-01T00:00:18-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -436,8 +479,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-10T00:00:36-08:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-11-10T00:00:07-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
