@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="The Software Defined Blocks&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_c5f8b56e7364c511a43532c7a941c8cb273f0d3f09330438df8eb6f5e96f7592i.jpg" />
+<meta property="og:description" content="I realize I don’t know the exact details of what’s needed for DCC-EX. So let’s look into it." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_e93d1ea97f855b743c90c75ddfe0df6f516e29a96b7897e2cab624feffa4360fi.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="The Software Defined Blocks&nbsp;project uses an ESP32 with sensors to emulate block activations for a train model railroad." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_c5f8b56e7364c511a43532c7a941c8cb273f0d3f09330438df8eb6f5e96f7592i.jpg" />
+<meta name="twitter:description" content="I realize I don’t know the exact details of what’s needed for DCC-EX. So let’s look into it." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_e93d1ea97f855b743c90c75ddfe0df6f516e29a96b7897e2cab624feffa4360fi.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
 
@@ -247,6 +247,42 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-11-11_dcc-ex_command_station.html">
+    <h2 class="post-title">2023-11-11 - DCC-EX Command Station</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    DCC
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>I realize I don’t know the exact details of what’s needed for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dcc-ex.com/" style="color:inherit;text-decoration:inherit">DCC-EX</a></span><span>. So let’s look into it.</span></p>
+<p><span>I also wonder how much some of the hardware parts cost, out of curiosity.</span></p>
+<p></p>
+<p><span>To start with, a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dcc-ex.com/ex-commandstation/index.html" style="color:inherit;text-decoration:inherit">DCC-EX Command Station</a></span><span>&nbsp;is, as the name suggests, a command station for DCC -- digital control of model trains. What makes this interesting is that it’s a complete DIY system based around an Arduino board, an extra board providing the track power, and an open-source free software. Depending on the kind of Arduino board used, the trains can then be controlled via a computer and a web page, or even an Android or iPhone.</span></p>
+<p></p>
+<p><span>Here’s the one I made using the recommended components. It is pictured next to an HO-scale engine to show you how small it is:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:334.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_e93d1ea97f855b743c90c75ddfe0df6f516e29a96b7897e2cab624feffa4360fi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">An Arduino UNO with a Motor Shield. <br>Bottom jack is the input power for the track.<br>The USB cable provides power to the Arduino + web page for control.</span></p>
+<p></p>
+<p><span>Of note, a DCC-EX command station can generate two track outputs. That can be 2 DCC signals -- for example for a mainline track + a separate programming track -- or it can be one DCC signal plus a separate DC signal. E.g. one could make a circuit with one loop on DCC, one loop on DC voltage, and control both independently..</span></p>
+<p></p>
+<p><span>On the hardware side, one needs two things:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>An Arduino board -- that’s the “computer” part</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>A “motor shield” -- that’s the part at the top that produces the track voltage.</span></li>
+</ul>
+<p><span></span></p>
+
+<a href="2023-11-11_dcc-ex_command_station.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-11-02_sdb_first_trolley_automation_test.html">
     <h2 class="post-title">2023-11-02 - SDB: First Trolley Automation Test</h2>
@@ -557,43 +593,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-05-21_conductor_2_now_the_default__3eef9fa3.html">
-    <h2 class="post-title">2023-05-21 - Conductor 2: Now the Default on the Automation Computer!</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Rtac
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span>I tested </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;with script 53 while the rest of the team was cleaning the layout and it worked reliably.</span></p>
-<p><span>Thus I enabled it as the default for the automation computer.</span></p>
-<p></p>
-<p><span>Basic recovery was also tested and worked in the “ideal” conditions.</span></p>
-<p><span>Known cases where recovery will not work:</span></p>
-<ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Branchline on virtual block B830.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>PA/FR on flaky block B321 not registering the train stopped.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Any train stopped across two blocks and activating both blocks.</span></li>
-</ul>
-<p></p>
-<p><span>The plan for B830 is to convert it to a real block sensor.</span></p>
-<p></p>
-<p><span>The plan for B321 is to change the sensor to another type than the BD20 with hopefully better sensitivity -- I’m especially interested in trying the new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">ATOM DCC Block Detector (CKT-BD1)</a></span><span>&nbsp;from Iowa Scaled Engineering. </span></p>
-<p></p>
-<p><span>Dealing with the train stopped and activated two blocks will need more work, either on the Conductor engine side or on the script side. I need to think more about how I want to handle that one. One option is for the recovery script to be able to mark 2 consecutively occupied blocks as “occupied + trailing” since that’s really the state they are supposed to be in. Then the normal engine behavior will take care of it properly.</span></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
 
 
 
@@ -615,7 +614,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
+    Generated on 2026-01-30 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>

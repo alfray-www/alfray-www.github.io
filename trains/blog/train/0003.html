@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="Now I understand the issue that was affecting the automated freight train; it's quite interesting and worth elaborating." />
+<meta property="og:description" content="I tested Conductor 2&nbsp;with script 53 while the rest of the team was cleaning the layout and it worked reliably." />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="Now I understand the issue that was affecting the automated freight train; it's quite interesting and worth elaborating." />
+<meta name="twitter:description" content="I tested Conductor 2&nbsp;with script 53 while the rest of the team was cleaning the layout and it worked reliably." />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_61b66d301f05ed6bc167a01a8d573ad0c63b00935ba4cb8ce7e817b793c9c9c1i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -247,6 +247,43 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-05-21_conductor_2_now_the_default__3eef9fa3.html">
+    <h2 class="post-title">2023-05-21 - Conductor 2: Now the Default on the Automation Computer!</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>I tested </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;with script 53 while the rest of the team was cleaning the layout and it worked reliably.</span></p>
+<p><span>Thus I enabled it as the default for the automation computer.</span></p>
+<p></p>
+<p><span>Basic recovery was also tested and worked in the “ideal” conditions.</span></p>
+<p><span>Known cases where recovery will not work:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Branchline on virtual block B830.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>PA/FR on flaky block B321 not registering the train stopped.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Any train stopped across two blocks and activating both blocks.</span></li>
+</ul>
+<p></p>
+<p><span>The plan for B830 is to convert it to a real block sensor.</span></p>
+<p></p>
+<p><span>The plan for B321 is to change the sensor to another type than the BD20 with hopefully better sensitivity -- I’m especially interested in trying the new </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.iascaled.com/store/CKT-BD1" style="color:inherit;text-decoration:inherit">ATOM DCC Block Detector (CKT-BD1)</a></span><span>&nbsp;from Iowa Scaled Engineering. </span></p>
+<p></p>
+<p><span>Dealing with the train stopped and activated two blocks will need more work, either on the Conductor engine side or on the script side. I need to think more about how I want to handle that one. One option is for the recovery script to be able to mark 2 consecutively occupied blocks as “occupied + trailing” since that’s really the state they are supposed to be in. Then the normal engine behavior will take care of it properly.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-05-10_conductor_2_crossing_block_boundaries.html">
     <h2 class="post-title">2023-05-10 - Conductor 2: Crossing Block Boundaries</h2>
@@ -510,34 +547,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-03-12_conductor_2_test-only_deployment.html">
-    <h2 class="post-title">2023-03-12 - Conductor 2: Test-only Deployment</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Rtac
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span>Let’s discuss </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;strategies for deployment.</span></p>
-<p></p>
-<p><span>One issue is that I can’t just install this on the main automation computer at the museum and just “hope it works the first time”. Even though it’s volunteer work, I take it seriously and I have an unofficial SLA of 7/5 -- my automation needs to work reliably for 7 hours for 5 days a week. That makes my downtime only two days (Sunday and Monday), one being a workday for me, so really I have one day to get stuff done, and it’s on the week-ends when I often have other commitments. Then I wonder why any project takes so long to accomplish… oh well.</span></p>
-<p></p>
-<p><span>So the solution is that I have a clone of the automation computer at Randall. It’s the “backup” computer in case the main one fails. It’s a 99.9% exact setup so it’s nice for testing software upgrades. And because I can’t often easily go on place, I also have </span><span style="font-style:italic">another</span><span>&nbsp;fairly similar machine at home for testing. Thus I deploy on the machine at home, sort of a canary, and if I like it, I deploy on the backup machine at the museum, and finally on the main one. It’s a bit of a process but it works neatly. I can identify issues early, as is the case here.</span></p>
-<p></p>
-<p><span>My early attempt at deployment failed, and I addressed it already.</span></p>
-<p><span></span></p>
-
-<a href="2023-03-12_conductor_2_test-only_deployment.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -559,7 +568,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
+    Generated on 2026-01-30 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>

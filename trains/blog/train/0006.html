@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="That Conductor 2&nbsp;project has been taking too long now. I still think there are good ideas in the design and the core foundation for it. The implementation has been taking forever due to a lack of clarity combined with some other projects taking precedence." />
+<meta property="og:description" content="We need to dwell a bit more on error management in Conductor 2. What is the current situation, versus what we really want?" />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_998fbecfe1e49dc64a17e93c6dceebe2b3378bb2cc306c12f030bf0e3eb15831i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="That Conductor 2&nbsp;project has been taking too long now. I still think there are good ideas in the design and the core foundation for it. The implementation has been taking forever due to a lack of clarity combined with some other projects taking precedence." />
+<meta name="twitter:description" content="We need to dwell a bit more on error management in Conductor 2. What is the current situation, versus what we really want?" />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_998fbecfe1e49dc64a17e93c6dceebe2b3378bb2cc306c12f030bf0e3eb15831i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -247,6 +247,32 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-22_conductor_2_error_management.html">
+    <h2 class="post-title">2022-01-22 - Conductor 2: Error Management</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>We need to dwell a bit more on error management in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>. What is the current situation, versus what we really want?</span></p>
+<p></p>
+<p><span>In Conductor 1, error management is made ad-hoc by the script. For each individual route (branchlines vs mainline), there’s a timer, and the goal is that each shuttle should complete its travel within 5 minutes. The implementation is rather simple: the timer is started when the engine starts in either direction, and stopped when the engine reaches the target block. If the timer expires, the global state is changed to error, which stops everything for that route. There is nothing in the script to get out of that error state. A manual reset (via the tablets) is necessary.</span></p>
+<p></p>
+<p><span>In Conductor 2, the error management should depend on the route manager. Here we’re only concerned with the shuttle “sequence” manager. We can decide to keep it as simple as it was in Conductor 1 -- namely that the route must complete in a given time.</span></p>
+<p style="text-align:left"><span></span></p>
+
+<a href="2022-01-22_conductor_2_error_management.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-01-21_reboot_on_the_reboot_on_conductor_2.html">
     <h2 class="post-title">2022-01-21 - Reboot on the Reboot on Conductor 2</h2>
@@ -494,30 +520,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-06-20_conductor_2_simulations_expe_dfd12b83.html">
-    <h2 class="post-title">2019-06-20 - Conductor 2: Simulations & Expectations for Occupancy</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Rtac
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p></p>
-<p><span>Starting to implement the occupancy manager in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor 2</a></span><span>&nbsp;immediately showed an issue in the default route mapping: the default idle block of one route cannot be part of another route.</span></p>
-<p></p>
-<p><span>So let’s backup and analyze this.</span></p>
-<p style="text-align:left"><span></span></p>
-
-<a href="2019-06-20_conductor_2_simulations_expe_dfd12b83.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -539,7 +541,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
+    Generated on 2026-01-30 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>

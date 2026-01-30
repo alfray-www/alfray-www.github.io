@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Model Train-related Notes" />
-<meta property="og:description" content="The latest video I did was an update of the full “cab ride” layout tour of the Randall Museum layout." />
+<meta property="og:description" content="How would a Conductor&nbsp;2 differ from the current version?" />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/train/img_cf140af90756b4e5863e62ecadd9ee71b48d36c3a2b1b4579465b4565981cdf6i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Model Train-related Notes" />
-<meta name="twitter:description" content="The latest video I did was an update of the full “cab ride” layout tour of the Randall Museum layout." />
+<meta name="twitter:description" content="How would a Conductor&nbsp;2 differ from the current version?" />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/train/img_cf140af90756b4e5863e62ecadd9ee71b48d36c3a2b1b4579465b4565981cdf6i.jpg" />
 
 <title>Blog: Model Train-related Notes</title>
@@ -247,6 +247,46 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2018-05-10_conductor_2_desiderata.html">
+    <h2 class="post-title">2018-05-10 - Conductor 2: Desiderata</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Rtac
+    
+    </span>
+</span></div>
+
+<p><span></span></p>
+<p></p>
+<p><span>How would a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac" style="color:inherit;text-decoration:inherit">Conductor</a></span><span>&nbsp;2 differ from the current version?</span></p>
+<p></p>
+<p><span>Requirements</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Simulator.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Validation via tests.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Visual feedback from internal tests, both real and simulated.</span></li>
+</ul>
+<p></p>
+<p><span>State:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define JMRI turnouts.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define JMRI block sensors.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define map graph.</span></li>
+ <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define virtual blocks.</span></li>
+ </ul>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Define routes.</span></li>
+</ul>
+<p style="text-align:left"><span></span></p>
+
+<a href="2018-05-10_conductor_2_desiderata.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2018-04-21_mobius_action_cam_vs_runcam_2.html">
     <h2 class="post-title">2018-04-21 - Mobius Action Cam vs Runcam 2</h2>
@@ -523,48 +563,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2016-10-07_nce_switch-8.html">
-    <h2 class="post-title">2016-10-07 - NCE Switch-8</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    NCE
-    
-    </span>
-</span></div>
-
-<p><span></span></p>
-<p style="text-align:left"><span>I got an NCE Switch-8 to learn what I can (and cannot) do with it for Randall. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Looking at the electronics on the board… If there’s one thing I like about the NCE electronics, it is that they are </span><span style="font-style:italic">not</span><span>&nbsp;fancy. This is the tech I grew up with and I can look at the board and recognize the components and understand what they do. I hope it will stay like that.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Microproc: PIC16F1936</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.microchip.com/wwwproducts/en/PIC16F1936" style="color:inherit;text-decoration:inherit">http://www.microchip.com/wwwproducts/en/PIC16F1936</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf" style="color:inherit;text-decoration:inherit">http://ww1.microchip.com/downloads/en/DeviceDoc/41364E.pdf</a></span></p>
-<p style="text-align:left"><span>Pin 1 = Vpp (programing voltage)</span></p>
-<p style="text-align:left"><span>Pin 8 = Vss (-)</span></p>
-<p style="text-align:left"><span>Pin 20 = Vdd (+)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Power: MCC 7805CT</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.mccsemi.com/up_pdf/MC7805CT(TO-220).pdf" style="color:inherit;text-decoration:inherit">http://www.mccsemi.com/up_pdf/MC7805CT(TO-220).pdf</a></span></p>
-<p style="text-align:left"><span>Front Left to Right : Pin 1 / 2 / 3</span></p>
-<p style="text-align:left"><span>Pin 1 = Input / Left</span></p>
-<p style="text-align:left"><span>Pin 2 = GND</span></p>
-<p style="text-align:left"><span>Pin 3 = Output / Right</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>On the Switch-8, the large programming header can be used to get the +5 from the 7805.</span></p>
-<p style="text-align:left"><span>From top, #2 is the +5 and #3 is the Gnd from 7805 (shared with the GND headers).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>NCE AIU01: there's a similar 7805. A +5V can be soldered on the little through-hole just on top of the 7805 on the board. Measures 5V. For a single IR sensor, use a 220 Ω resistor.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -586,7 +584,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-12-13 by Rig4j 0.1-Exp-78c9166
+    Generated on 2026-01-30 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>
