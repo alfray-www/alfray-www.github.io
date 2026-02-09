@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-01-31T03:02:16.191788-08:00</updated>
+<updated>2026-02-09T00:52:14.50681-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-bc668ce">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Automation Maintenance, Continued</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-02-09_automation_maintenance_continued.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-02-09_automation_maintenance_continued.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;A bit more maintenance to &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2026-01-26_automation_maintenance.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;continue what I was doing last week&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. The new UP SD40-2 has been behaving very nicely on the Branchline automation, so I added one more car as planned:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:208.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a7dcecf6598816c1bfad0b184e16ea134fd5983f13fc6ac4542b3c6478a0cd53i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I took this gondola from the McCloskey collection. I wanted a gondola with an open visible content rather than a freight box car. The gondola has some interesting detail that is all fully glued in place, the car is well balanced and seems very stable on the Branchline track. I&#8217;ll try it for a week and then either add another car or a UP caboose. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Routine maintenance, I checked the indicator lights on the NCE-controlled turnouts in the back of the mountain used to access the Napa yard. Jim indicated some potential problems with them. They all checked out fine, at least today. That said, these are directly powered by the track, so they would not be lighted if there&#8217;s any short.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:153.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_c8932e871416bcc576e6881b11426112c70816b515ea3c77ff9abdd9b571d27di.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;And finally, I crossed one of the long-overdue action items on my long todo list: I know have the DCC command station, DCC boosters, and the automation computer all connected to a wifi-controlled power strip, with power monitoring:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:325.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a4a40cb125805878d33df4cdee52ca27be2a5711849b5265a154a343d9824e13i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This of course requires wifi access to be working; however after the rework initiated by Tiffany and Nathan a few years ago, the museum wifi has been much more reliable and usable.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I feel like the museum staff is honestly getting a bit too much used to the train exhibit&#8217;s automation being somewhat &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;too&lt;/span&gt;&lt;span&gt;&amp;nbsp;reliable. All they have to do is turn it on in the morning, off in the evening, and they can just ignore it. The problem is that model train automation is more an art than a science. It only works flawlessly because Jim and I keep an eye on it during the day, each our own way. I react to notifications from my automation program when things are not within acceptable parameters, whereas Jim reacts to things he sees on the monitoring cameras. Either way, the train automation doesn&#8217;t just keep running without work behind the curtain.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Jim and I have always been adamant that the DCC power should be turned off when there&#8217;s a short on the track and the layout cannot be left unattended for hours with equipment derailed. In the past, we&#8217;ve relied on the museum&#8217;s staff to do that for us if we detect there&#8217;s a need for it, and now I can also do it remotely in case of emergency. And it should be just that, an emergency in case we can&#8217;t do it otherwise. I&#8217;d still prefer the museum staff to take care of their own property if possible.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-02-09T00:00:02-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Automation Maintenance</title>
@@ -48,11 +81,9 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;These are both glued &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;and&lt;/span&gt;&lt;span&gt;&amp;nbsp;nailed in place. I realized after that I should have used some isopropyl alcohol to lose the glue, that would have made the task a bit easier. Anyhow, with that fix done, the engine now runs smoothly on the Branchline. As usual, I will try the engine alone first, and if all goes well, in a week or two I will try to add a freight car and maybe a caboose. Things can derail very easily on the Branchline&#8217;s sub-par track so it&#8217;s imperative to try one change at a time and not rush things.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-01-26T00:00:59-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2026-01-26T00:00:29-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -451,8 +482,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-11-30T00:00:54-08:00</updated>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-11-30T00:00:11-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
