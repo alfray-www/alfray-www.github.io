@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-02-20T00:06:15.1954-08:00</updated>
+<updated>2026-02-20T00:10:45.990918-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -121,9 +121,11 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;But in &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;all&lt;/span&gt;&lt;span&gt;&amp;nbsp;cases, there was effectively no power on block B321. So where was this extra power consumption going for P2 and P3?&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I do not have any kind of explanation, except for the fact that there is clearly some kind of power flowing across boosters and power districts boundaries, which totally negates the principle of isolation that &#8220;power districts&#8221; are supposed to bring! And the entire thing makes no sense whatsoever.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;(&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;Note for self: double check my documentation against reality&#8230; Is it possible I inverted my notes regarding which boosters are actually connected to the P2/P3/P4 circuit breakers? A quick check would be to power the command station and the boosters one by one, and double check the track voltage on various blocks to see whether it matches expectations.&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Now that is not a shocker, as that was precisely the thought behind &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the bizarre link I noticed with the Richmond Yard&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(booster P3) affecting the track sensors on the Mountain 2 panel (booster P3). See here for a detail on this weird incident:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I do not have any kind of explanation. Is there some kind of power flowing across boosters and power districts boundaries? That would totally negate the principle of isolation that &#8220;power districts&#8221; are supposed to bring! The entire thing makes no sense whatsoever.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now that is not a shocker, as that was precisely the thought behind &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the bizarre link I noticed with the Richmond Yard&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(booster P3) affecting the track sensors on the Mountain 2 panel (booster P4). See here for a detail on this weird incident:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-indent:36pt&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;That issue still exists as I was unable to find any tangible connection between both. I can&#8217;t fix stuff that I cannot fathom.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -131,7 +133,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-02-18T00:00:33-08:00</updated>
+<updated>2026-02-18T00:00:23-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
