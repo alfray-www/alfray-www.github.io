@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-02-19T23:16:34.006945-08:00</updated>
+<updated>2026-02-20T00:06:15.1954-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -12,8 +12,7 @@
 <link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-02-19_randall_repairs_t326.html"/>
 <id>https://www.alfray.com/trains/blog/randall/2026-02-19_randall_repairs_t326.html</id>
 <category term="randall" label="Randall"/>
-<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;TEMPLATE TO BE EDITED&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
  &lt;tbody&gt;
   &lt;tr style=&quot;height:0pt&quot;&gt;
@@ -32,11 +31,11 @@
 &lt;/table&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.hdas7d7qkah4&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Issue&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;Turnout T326 is on the mainline in front of the Sonora Station, where the B320 and B321 blocks merge into B330.&lt;br&gt;On the picture below, we can see the track lifted at the end of T326&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Turnout T326 is on the mainline in front of the Sonora Station, where the B320 and B321 blocks merge into B330.&lt;br&gt;On the picture below, we can see the track lifted at the end of T326:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:360.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_510bf3ee59b2d1732850244b1bb312117c1b593c3d92e16d8a159acdd7fd604ed.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I had noticed the track on one leg of the turnout seemed loose in the past. This time, it got worse. Interestingly trains have no problem when they go &#8220;up&#8221; the turnout, from B321 towards B330, and so this has not affected the Saturday operators. It&#8217;s only the mainline automation, which operates as a shuttle, that started derailing on this spot a couple days ago.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I had noticed the track on one leg of the turnout seemed loose in the past. This time, it got worse. Interestingly trains have no problem when they go &#8220;up&#8221; the turnout, from B321 towards B330, and so this has not affected the Saturday operators. It&#8217;s only the mainline automation, which operates as a back-and-forth shuttle, that started derailing on this spot a couple days ago.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.4q2ejxo7l735&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Fix&lt;/span&gt;&lt;/h2&gt;
@@ -76,7 +75,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;So now we get to &#8220;Booster Mystery&#8221;, or my repeated claim that the electrical system on this particular layout makes no sense whatsoever.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Here&#8217;s the Watt consumption graph for a normal operation day:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Here&#8217;s the Watt consumption graph for a typical automation day:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:295.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:543.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ad7a40ab1e555aa94b5de801043e183ce6e4b48901ab3d330ad2bf14a21caeeei.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;and here&#8217;s the Watt consumption graph for a specific day where an engine was shorting the layout:&lt;/span&gt;&lt;/p&gt;
@@ -87,9 +86,9 @@
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The blue curve is the computer&#8217;s consumption. It&#8217;s fairly constant, that&#8217;s fine.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The red curve is the NCE Command Station. That one is very neatly constant too. That also powers the Valley 1 blocks (unused during automation days), and the Stockton Yard where we have a number of engines parked on tracks turned off. Overall, that&#8217;s fine.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The yellow curve represents Booster P2. It has Valley 2 blocks (also unused during automation days), as well as the Napa yard, Lodi, and Fairfield areas, which also seen no movement during automation day. So why is that booster&#8217;s consumption changing during the day? On the first curve it corresponds to engine movements on the mainline. We&#8217;ll discuss the 2nd curve below.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The yellow curve represents Booster P2. It powers Valley 2 blocks (also unused during automation days), as well as the Napa yard, Lodi, and Fairfield areas, which also see no movement during automation days. Why is that booster&#8217;s consumption changing during the day? On the first curve it corresponds to engine movements on the mainline which is powered by booster P4. We&#8217;ll discuss the 2nd curve below.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The green curve represents Booster P3. That&#8217;s Mountain 1 blocks (also unused during automation days) as well as the Branchline -- that one has an automated line.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Finally the purple curve represents Booster P4. That&#8217;s Mountain 2, and Stockton Station, which has every single blocks used during automation. Every. Single. One. So why is that one so flat and minimal? It should be one with more consumption and the more variation!&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Finally the purple curve represents Booster P4. That powers Mountain 2 blocks, and Stockton Station, and these contain every single block used during automation. Every. Single. One. Why is that one so flat and minimal? It should be one with more consumption and the more variation!&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Now let&#8217;s discuss that second graph. On February 18, the mainline UP engine started derailing. It stopped on block B321, shorting the power district. Block B321 is part of the Mountain 2 panel, covered by booster P4. At the end of the day, I expected to see a peak in the booster P4 consumption&#8230; only to find it on the booster P2.&lt;/span&gt;&lt;/p&gt;
@@ -106,7 +105,7 @@
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The engine was shorted on B321 (which should be powered by booster P4).&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P2 consumption shot up from ~8 W to ~40 W.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P2 consumption shot up from 8 W to 40 W.&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P3 consumption was still in its usual 4~5 W range.&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P4 did not show any increase in consumption and stayed constant at 3.5 W.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
@@ -119,20 +118,20 @@
  &lt;ul&gt;
   &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P4 still did not show any increase in consumption and stayed constant at 3.5 W.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;But in &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;all&lt;/span&gt;&lt;span&gt;&amp;nbsp;cases, there was effectively no power on block B321. So where was this extra consumption going for P2 and P3?&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;But in &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;all&lt;/span&gt;&lt;span&gt;&amp;nbsp;cases, there was effectively no power on block B321. So where was this extra power consumption going for P2 and P3?&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I do not have any kind of explanation, except for the fact that there is clearly some kind of power flowing across boosters and power districts boundaries, which totally negates the principle of isolation that &#8220;power districts&#8221; are supposed to bring! And the entire thing makes no sense whatsoever.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Now that is not a shocker, as that was precisely the thought behind &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the bizarre link I noticed with the Richmond Yard&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(booster P3) affecting the track sensors on the Mountain 2 panel (booster P3). See here for a detail on this weird incident:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;That link still exists as I was unable to find any tangible connection between both. I can&#8217;t fix stuff that I cannot fathom.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-indent:36pt&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That issue still exists as I was unable to find any tangible connection between both. I can&#8217;t fix stuff that I cannot fathom.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-02-18T00:00:06-08:00</updated>
+<updated>2026-02-18T00:00:33-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
