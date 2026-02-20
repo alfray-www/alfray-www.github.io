@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-02-19T23:05:08.527228-08:00</updated>
+<updated>2026-02-19T23:16:34.006945-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -102,7 +102,7 @@
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The next day, the same engine failed at the same spot -- that&#8217;s when I went to investigate, found the issue, and fixed the track. And I also did another experiment:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The next day, the same engine failed at the same spot -- that&#8217;s when &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2026-02-19_randall_repairs_t326.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;I went to investigate, found the issue, and fixed the track&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. And I also did another experiment:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The engine was shorted on B321 (which should be powered by booster P4).&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
@@ -132,7 +132,7 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-02-18T00:00:07-08:00</updated>
+<updated>2026-02-18T00:00:06-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
