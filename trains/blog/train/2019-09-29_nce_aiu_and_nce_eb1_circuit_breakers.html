@@ -271,7 +271,8 @@ td p {
 <p></p>
 <p><span>Details on the EB1:</span></p>
 <ul style="margin:0">
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">The EB1 doc indicates a LED (-) should be on terminal pos 4 (outer side) and thus logically the (+) on the inner terminal pos 3</span><span>. Contrary to what the EB1 doc says, on the EB1 I took to experiment with, Terminal 3 (inner, lower) is LED -, and Terminal 4 (outer, lower) is LED +.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Check your EB1 board Revision! There are at least 3 board revs out there -- at Randall, I have boards with Rev B and with Rev C. They are easily distinguishable: the Rev B boards are definitely older, they use jumpers instead of the dip switch of the newer revision, and they do not feature the PIC 12F683 microcontroller.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">The EB1 doc indicates a LED (-) should be on terminal pos 4 (outer side) and thus logically the (+) on the inner terminal pos 3</span><span>. Contrary to what the EB1 doc says, on the EB1 I took to experiment with, Terminal 3 (inner, lower) is LED -, and Terminal 4 (outer, lower) is LED +. This may not be a “documentation bug” as it is more likely a mismatch between the board revision I was looking at versus the doc I was looking at. Thus the warning above: always check your board revision against the documentation you’re reading.</span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The on-board LED and the external LED terminal are connected to a PIC 12F683 (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ww1.microchip.com/downloads/en/devicedoc/41211d_.pdf" style="color:inherit;text-decoration:inherit">pdf link</a></span><span>) on Pin 7 (GP0). The on-board LED is connected between that same pin and Vdd (positive power supply) [Reminder: Vss=Ground, Vdd=+Voltage]. Thus keeping GP0 low would by default light up the LED, which seems to be the default behavior.</span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>EB1 LED is ON by default (no short) ⇒ Opto output = Low ⇒ AIU bit == 1.</span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>According to the EB1 doc: “300Ω 5 V” &nbsp;= 17 mA.</span></li>
@@ -448,7 +449,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2025-11-21 by Rig4j 0.1-Exp-9bafc34
+    Generated on 2026-02-19 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>

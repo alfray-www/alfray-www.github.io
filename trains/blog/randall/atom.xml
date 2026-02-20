@@ -1,11 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-02-10T03:02:03.879156-08:00</updated>
+<updated>2026-02-19T23:05:08.527228-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-bc668ce">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Randall Repairs: T326</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-02-19_randall_repairs_t326.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-02-19_randall_repairs_t326.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;TEMPLATE TO BE EDITED&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Affected&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Turnout T326 on the mainline by Sonora Station.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;One leg of the turnout was loose and moving up and down.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:102pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Summary Fix&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:366pt&quot;&gt;&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;Glue track and spike it.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.hdas7d7qkah4&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Issue&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;Turnout T326 is on the mainline in front of the Sonora Station, where the B320 and B321 blocks merge into B330.&lt;br&gt;On the picture below, we can see the track lifted at the end of T326&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:360.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_510bf3ee59b2d1732850244b1bb312117c1b593c3d92e16d8a159acdd7fd604ed.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I had noticed the track on one leg of the turnout seemed loose in the past. This time, it got worse. Interestingly trains have no problem when they go &#8220;up&#8221; the turnout, from B321 towards B330, and so this has not affected the Saturday operators. It&#8217;s only the mainline automation, which operates as a shuttle, that started derailing on this spot a couple days ago.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;h.4q2ejxo7l735&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Description of Fix&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;I&#8217;ve attempted a preliminary quick fix:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:217.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_510e84d55780bc9604e57c59a82072f4af53c30c5608ef02f5a0a55fa78e28ffi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I found that the track was already spiked, yet the spikes were &#8220;floating&#8221; and not holding strongly.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I removed the spikes I could find, and added some white glue. I tried to lift the track and apply the white glue below it, although I was a bit limited by the lack of clearance, and the area seemed a bit dusty. I then reapplied the couple spikes I found and added a few more.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I then cleaned the top and the inside of the rails to make sure they had no glue, and ran the automation train a few times at various speeds. The track seemed to behave correctly, as did the engine.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Glue notoriously doesn&#8217;t hold too well to dust, so I will want to re-evaluate the quality of that fix later once the glue dries. Plus, looking at the last picture, I think I still see a couple ties loose on the left side.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:246.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_9297a13a129b4bdcc2a0915f7191aacdc34a4b8a9e4388cdd872ac88f41359fai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Fix time: 15~20 minutes.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
+<updated>2026-02-19T00:00:05-08:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">DCC Power Usage, and Boosters Mystery</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-02-18_dcc_power_usage_and_boosters_mystery.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-02-18_dcc_power_usage_and_boosters_mystery.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now that I have a way to remote turn off power on the layout in case of emergency, I also have a way to measure the power consumption of the NCE Command Station and its boosters. The results are in after a few days:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:213.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2d78fc23997a35180c063bb9b8b6c24eead05979f478afdf04ed0043e9942aeci.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;During the week with automation turned on, the layout consumes a bit less than 70 W.&lt;br&gt;That breaks down as 30 W for the automation computer, 20 W for the NCE Command Station, 9 W for Booster P2, 4 W for Booster P3, and 3.5 W for Booster P4.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;On the graph above, the last day is a Saturday. When the Saturday Operators are running their trains, the layout uses more power. A typical HO engine consumes about 1 W per engine, and long trains often have 2 or 3 engines.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;So now we get to &#8220;Booster Mystery&#8221;, or my repeated claim that the electrical system on this particular layout makes no sense whatsoever.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Here&#8217;s the Watt consumption graph for a normal operation day:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:295.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:543.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ad7a40ab1e555aa94b5de801043e183ce6e4b48901ab3d330ad2bf14a21caeeei.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;and here&#8217;s the Watt consumption graph for a specific day where an engine was shorting the layout:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:296.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:543.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b2ce0025a20d65732959f9906e73a4c29a86063c28325935e4e1c01500a07fd1i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Both are actually a bit unexpected:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The blue curve is the computer&#8217;s consumption. It&#8217;s fairly constant, that&#8217;s fine.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The red curve is the NCE Command Station. That one is very neatly constant too. That also powers the Valley 1 blocks (unused during automation days), and the Stockton Yard where we have a number of engines parked on tracks turned off. Overall, that&#8217;s fine.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The yellow curve represents Booster P2. It has Valley 2 blocks (also unused during automation days), as well as the Napa yard, Lodi, and Fairfield areas, which also seen no movement during automation day. So why is that booster&#8217;s consumption changing during the day? On the first curve it corresponds to engine movements on the mainline. We&#8217;ll discuss the 2nd curve below.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The green curve represents Booster P3. That&#8217;s Mountain 1 blocks (also unused during automation days) as well as the Branchline -- that one has an automated line.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Finally the purple curve represents Booster P4. That&#8217;s Mountain 2, and Stockton Station, which has every single blocks used during automation. Every. Single. One. So why is that one so flat and minimal? It should be one with more consumption and the more variation!&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now let&#8217;s discuss that second graph. On February 18, the mainline UP engine started derailing. It stopped on block B321, shorting the power district. Block B321 is part of the Mountain 2 panel, covered by booster P4. At the end of the day, I expected to see a peak in the booster P4 consumption&#8230; only to find it on the booster P2.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-right:auto&quot;&gt;
+ &lt;tbody&gt;
+  &lt;tr style=&quot;height:0pt&quot;&gt;
+   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt&quot;&gt;&lt;p style=&quot;margin-left:36pt;text-indent:-36pt&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Side Note&lt;/span&gt;&lt;span&gt;: that P2 curve on the second graph very clearly explains why shorts are deadly for DCC decoders. We run an NCE Booster, which can provide 5 Amps @ 12 V so about 60 W normal. It has its own over-current protection. Then we isolate power districts using NCE EB1 circuit breaker boards, each with their own over-current protection circuitry. Yet, what most people forget is that the circuit breakers are not designed to safeguard DCC decoders -- they are designed to protect the boosters! They do so by detecting high current usage (shorts) and very quickly kill the output track power, then they regularly &#8220;pulse&#8221; it back to see if the short has been resolved. From a DCC decoder point of view, that&#8217;s the equivalent of turning them on and off every few seconds, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;for hours&lt;/span&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;. It&#8217;s not kind to such delicate electronics.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The next day, the same engine failed at the same spot -- that&#8217;s when I went to investigate, found the issue, and fixed the track. And I also did another experiment:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The engine was shorted on B321 (which should be powered by booster P4).&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P2 consumption shot up from ~8 W to ~40 W.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P3 consumption was still in its usual 4~5 W range.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P4 did not show any increase in consumption and stayed constant at 3.5 W.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I turned off power to booster P2.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Suddenly, booster P3 started to consume 20 W!&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P4 still did not show any increase in consumption and stayed constant at 3.5 W.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I turned off power to booster P2 and P3.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Booster P4 still did not show any increase in consumption and stayed constant at 3.5 W.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;But in &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;all&lt;/span&gt;&lt;span&gt;&amp;nbsp;cases, there was effectively no power on block B321. So where was this extra consumption going for P2 and P3?&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I do not have any kind of explanation, except for the fact that there is clearly some kind of power flowing across boosters and power districts boundaries, which totally negates the principle of isolation that &#8220;power districts&#8221; are supposed to bring! And the entire thing makes no sense whatsoever.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now that is not a shocker, as that was precisely the thought behind &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;the bizarre link I noticed with the Richmond Yard&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(booster P3) affecting the track sensors on the Mountain 2 panel (booster P3). See here for a detail on this weird incident:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That link still exists as I was unable to find any tangible connection between both. I can&#8217;t fix stuff that I cannot fathom.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-02-18T00:00:07-08:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Automation Maintenance, Continued</title>
@@ -35,9 +163,8 @@
 &lt;p&gt;&lt;span&gt;Jim and I have always been adamant that the DCC power should be turned off when there&#8217;s a short on the track and the layout cannot be left unattended for hours with equipment derailed. In the past, we&#8217;ve relied on the museum&#8217;s staff to do that for us if we detect there&#8217;s a need for it, and now I can also do it remotely in case of emergency. And it should be just that, an emergency in case we can&#8217;t do it otherwise. I&#8217;d still prefer the museum staff to take care of their own property if possible.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-02-09T00:00:02-08:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2026-02-09T00:00:51-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -429,16 +556,8 @@
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:430.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_99ce4981813bf81589715272c95fa51de1dd48992451520fd1377b9ea635ce75i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;The cameras installed are &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/3yFtAmv&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Tapo C110 cameras&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. They are excellent for this purpose -- very small footprint, very lightweight to install, and at a very attractive low price. Here&#8217;s the latest one that I installed on the top of the window -- it captures the view of the Summit tracks at the top and the Napa tracks going towards the Sultan tunnel at the bottom level:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:379.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:710.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_6349ee7814dfe1d87f8c4ff13bf1f403bdedb8fdc46d3d7190055b3eabbab2bai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;All the cameras are mounted sideways to take advantage of their larger horizontal field of view. In the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/tcm/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Track Cam Monitor&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;software, I added the ability to rotate the image as well as zoom and pan. TCM grabs the RTSP video feed directly off the camera over wifi -- no wires needed -- and it automatically handles reconnections if the stream is interrupted.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-12-07T00:00:08-08:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-12-07T00:00:56-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -455,7 +574,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
 <updated>2025-12-01T00:00:07-08:00</updated>
 </entry>
 <entry>

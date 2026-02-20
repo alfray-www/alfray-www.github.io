@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="Allen and I started looking at what it would take to fix the mainline crossover T1-T2 in front of Stockton Station." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_52b4d6833cba103eb03c3e534c4f5a886e3707dfcb5a94440d4786091d44bc73d.jpg" />
+<meta property="og:description" content="I’ve noticed a couple times in the last few weeks that the automated Branchline train did not run, yet then it inexplicably started working fine the next day. Normally when the automation stops, it’s due to the train having derailed, which is not a situation that fixes itself automagically." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_ff1ebea422b73185c4f8e6fd6ce54348dff3d512786c4513d60026a3205fc947i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="Allen and I started looking at what it would take to fix the mainline crossover T1-T2 in front of Stockton Station." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_52b4d6833cba103eb03c3e534c4f5a886e3707dfcb5a94440d4786091d44bc73d.jpg" />
+<meta name="twitter:description" content="I’ve noticed a couple times in the last few weeks that the automated Branchline train did not run, yet then it inexplicably started working fine the next day. Normally when the automation stops, it’s due to the train having derailed, which is not a situation that fixes itself automagically." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_ff1ebea422b73185c4f8e6fd6ce54348dff3d512786c4513d60026a3205fc947i.jpg" />
 
 <title>Blog: Randall Museum Model Railroad</title>
 
@@ -247,6 +247,69 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-10-02_branchline_maintenance.html">
+    <h2 class="post-title">2022-10-02 - Branchline Maintenance</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>I’ve noticed a couple times in the last few weeks that the automated Branchline train did not run, yet then it inexplicably started working fine the next day. Normally when the automation stops, it’s due to the train having derailed, which is not a situation that fixes itself automagically.</span></p>
+<p></p>
+<p><span>Of course, then I show up the day after at the layout and things work just fine, so it makes it hard to guess where the failure was. Today I noticed that it was one of these days where the branchline automation was not running. And since I was at the museum, I took a look and started with the silent branchline train. Was the engine derailed? Nope. Was it responding to DCC commands? Nope. Huh, wait, is there power to the track? Nope. Aha, that’s our problem!</span></p>
+<p></p>
+<p><span>A quick look at the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://ncedcc.zendesk.com/hc/en-us/articles/360047851293-EB1-Circuit-Breaker-Version-1-1-Setup-Notes" style="color:inherit;text-decoration:inherit">NCE EB1 circuit breakers</a></span><span>, and it’s obvious something is wrong:</span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:407.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:797.00px"><img alt="" src="img_ff1ebea422b73185c4f8e6fd6ce54348dff3d512786c4513d60026a3205fc947i.jpg" style="height:597.00px;margin-left:0.00px;margin-top:-50.00px" title=""></span></p>
+<p></p>
+<p><span>“P3 BRN RCHM-2” is the sweet designation of the EB1 that controls the Branchline power district. That LED being off is a problem. And measuring it, we have ~13.5V DCC on the input and nothing on the output. So that’s the likely culprit.</span></p>
+<p></p>
+<p><span>I don’t really have a spare EB1 right now because, duh I used them all. But that’s ok, I can borrow the one from Fairfield which is not currently being used. After the annoying task of trying to fit the obviously too large gauge wires in the obviously too small EB1 terminals, I got the thing working in a short time:</span></p>
+<p><span></span></p>
+
+<a href="2022-10-02_branchline_maintenance.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-09-19_automation_updates.html">
+    <h2 class="post-title">2022-09-19 - Automation Updates</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>The automation runs 7 hours a day, 5 days a week. That's a lot of runtime for HO train engines which are not designed to run that much in their entire lifetime.</span></p>
+<p></p>
+<p><span>Consequently, for each mainline automated train, I have 2 similar engines with the goal of swapping them on a regular basis. I've done the UP engine a few times yet I have not rotated the Freight train engines in a while, and I finally got around to it today:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:246.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d627229d4dab5b8ab0623adedd95bdbf00ecfc77cfec034fcd6ca44404a2ee4ei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">NS 1072 Heritage “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.heritageunits.com/locomotive/detail/NS1072" style="color:inherit;text-decoration:inherit">Illinois Terminal</a></span><span style="font-style:italic">” is back on Freight automation.</span><span>&nbsp;</span></p>
+<p></p>
+<p><span>On the Branchline side, Santa Fe 804 has been behaving neatly and I just added a car and a caboose to it:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:218.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_704906d0c257916e2bf13dbdf706fe18037ce0c124abdb72ec8426db650b1c83i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:204.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_9fcf4226ab571a0581911c50dad6e1df01c7582d686109aa563a0b9a689ee1f7i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>I'll need to carefully monitor that for the next few days to ensure this combo does not derail. The branch line track can be very finicky in a couple of specific places.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-09-18_work_on_t1_and_t2_turnouts.html">
     <h2 class="post-title">2022-09-18 - Work on T1 and T2 Turnouts</h2>
@@ -525,70 +588,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-06-05_nce_usb_interface_for_the_wo_a828272f.html">
-    <h2 class="post-title">2022-06-05 - NCE USB Interface for the Workbench JMRI Laptop</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p></p>
-<p><span>I installed a new NCE USB Interface for the JMRI laptop on the workbench. The last one got wet during the last rainstorm and I wasn’t able to revive it. The new one is wrapped in a little plastic wrapper to hopefully prevent it getting taunted a second time.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:354.28px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:573.90px"><img alt="" src="img_f196d3eb9c71df94e742cfd0fc43e414a4e4c7b1d32ae427b5119189ef78394ci.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>To help against the next rain season, Allen and I reorganized the protective tarp on the ceiling. The arrow highlights the source of the leak from the concrete ceiling. It is a small dripping leak, yet persistent enough to do damage to the wood workbench and all the equipment.</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:433.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:576.00px"><img alt="" src="img_5996a79f5d321cd8be3e8c59d11e6f307743150507d40bc5759f709803e7d15fd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>Not pictured here, we have a large bucket at the front that collects dripping water.</span></p>
-<p><span>And yes the museum direction is well aware of the core issue. That’s how we got the tarp to begin with, as that imaginative yet hopefully temporary solution was installed by one of the museum coordinators while we wait for official repairs to happen.</span></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-05-14_layout_topology_and_reversing_loops.html">
-    <h2 class="post-title">2022-05-14 - Layout Topology and Reversing Loops</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p></p>
-<p><span>Here’s a schematic representation of the Randall Museum Model Railroad track:</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:381.30px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_63e29c3a34d848a0d4e4f13fc95084670bd229640dd9d5d25c2fe74806be2aead.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p><span>The dark line indicates the current running direction. Green blocks are features in the Mountain division, and yellow blocks are features in the Valley division. The two secondary yards with their balloon reversing tracks are denoted in blue. Stockton Yard is the staging yard and starting point and is denoted in red.</span></p>
-<p></p>
-<p><span>Now the schema above is a bit messy as it vaguely represents the physical location of each feature in the room, with the track that keeps crossing over itself </span><span style="font-style:italic">lots</span><span>&nbsp;of times via bridges and tunnels. I even omitted the Branchline, which confusingly adds another reversing loop from Sonora back to Stockton Station or Stockton Yard.</span></p>
-<p><span>However, since we mostly have a single mainline running loop, we can reorganize the schema and simplify it as follows:</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:420.88px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:624.00px"><img alt="" src="img_e195314f4ca1046a508a73c3dfab2abc1c970b1eda7269b33af3e7481cc756b6d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:left"></p>
-<p><span>This track schema is strictly equivalent to that spaghetti mess above.</span></p>
-<p><span>Here it’s easier to see that Saturday operators basically run a glorified 4x8 oval loop, with two yards providing balloon tracks.</span></p>
-<p></p>
-<p><span>Now this opens some interesting operational considerations. </span></p>
-<p><span></span></p>
-
-<a href="2022-05-14_layout_topology_and_reversing_loops.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -610,7 +609,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-02-09 by Rig4j 0.1-Exp-bc668ce
+    Generated on 2026-02-19 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>
