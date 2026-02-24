@@ -278,15 +278,17 @@ td p {
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The red curve is the NCE Command Station. That one is very neatly constant too. That also powers the Valley 1 blocks (unused during automation days), and the Stockton Yard where we have a number of engines parked on tracks turned off. Overall, that’s fine.</span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The yellow curve represents Booster P2. It powers Valley 2 blocks (also unused during automation days), as well as the Napa yard, Lodi, and Fairfield areas, which also see no movement during automation days. Why is that booster’s consumption changing during the day? On the first curve it corresponds to engine movements on the mainline which is powered by booster P4. We’ll discuss the 2nd curve below.</span></li>
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The green curve represents Booster P3. That’s Mountain 1 blocks (also unused during automation days) as well as the Branchline -- that one has an automated line.</span></li>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Finally the purple curve represents Booster P4. That powers Mountain 2 blocks, and Stockton Station, and these contain every single block used during automation. Every. Single. One. Why is that one so flat and minimal? It should be one with more consumption and the more variation!</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Finally the purple curve represents Booster P4. That powers Mountain 2 blocks, and Stockton Station, and these contain every single block used during automation. Every. Single. One. Why is that one so flat and minimal? It should be one with the most consumption and the most variation!</span></li>
 </ul>
 <p></p>
-<p><span>Now let’s discuss that second graph. On February 18, the mainline UP engine started derailing. It stopped on block B321, shorting the power district. Block B321 is part of the Mountain 2 panel, covered by booster P4. At the end of the day, I expected to see a peak in the booster P4 consumption… only to find it on the booster P2.</span></p>
+<p><span style="font-weight:700">Update 2026-02-23</span><span>: The P2 / P4 mystery got easily resolved… I had the plugs inverted on the power strip, so I had the measures for P2 and P4 inverted. This makes more sense: the graph above means the yellow curve is the Booster P4, which has the most blocks used by the automation. I’ll update the text below to match the real P2 and P4.</span></p>
+<p></p>
+<p><span>Now let’s discuss that second graph. On February 18, the mainline UP engine started derailing. It stopped on block B321, shorting the power district. Block B321 is part of the Mountain 2 panel, covered by booster P4. At the end of the day, the graph showed a peak in the yellow curve (booster P4), which is what was expected.</span></p>
 <p></p>
 <table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
  <tbody>
   <tr style="height:0pt">
-   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="margin-left:36pt;text-indent:-36pt"><span style="font-weight:700">Side Note</span><span>: that P2 curve on the second graph very clearly explains why shorts are deadly for DCC decoders. We run an NCE Booster, which can provide 5 Amps @ 12 V so about 60 W normal. It has its own over-current protection. Then we isolate power districts using NCE EB1 circuit breaker boards, each with their own over-current protection circuitry. Yet, what most people forget is that the circuit breakers are not designed to safeguard DCC decoders -- they are designed to protect the boosters! They do so by detecting high current usage (shorts) and very quickly kill the output track power, then they regularly “pulse” it back to see if the short has been resolved. From a DCC decoder point of view, that’s the equivalent of turning them on and off every few seconds, </span><span style="font-style:italic">for hours</span><span style="vertical-align:baseline">. It’s not kind to such delicate electronics.</span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="margin-left:36pt;text-indent:-36pt"><span style="font-weight:700">Side Note</span><span>: that yellow P4 curve on the second graph very clearly explains why shorts are deadly for DCC decoders. We run an NCE Booster, which can provide 5 Amps @ 12 V so about 60 W normal. It has its own over-current protection. Then we isolate power districts using NCE EB1 circuit breaker boards, each with their own over-current protection circuitry. Yet, what most people forget is that the circuit breakers are not designed to safeguard DCC decoders -- they are designed to protect the boosters! They do so by detecting high current usage (shorts) and very quickly kill the output track power, then they regularly “pulse” it back to see if the short has been resolved. From a DCC decoder point of view, that’s the equivalent of turning them on and off every few seconds, </span><span style="font-style:italic">for hours</span><span style="vertical-align:baseline">. It’s not kind to such delicate electronics.</span></p></td>
   </tr>
  </tbody>
 </table>
@@ -295,25 +297,25 @@ td p {
 <ul style="margin:0">
  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The engine was shorted on B321 (which should be powered by booster P4).</span></li>
  <ul>
-  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P2 consumption shot up from 8 W to 40 W.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P4 consumption shot up from 8 W to 40 W.</span></li>
   <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P3 consumption was still in its usual 4~5 W range.</span></li>
-  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P4 did not show any increase in consumption and stayed constant at 3.5 W.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P2 consumption was still at its usual 3.5 W.</span></li>
  </ul>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I turned off power to booster P2.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I turned off power to booster P4.</span></li>
  <ul>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P4’s light was </span><span style="font-style:italic">still</span><span>&nbsp;lit up even though its power plug was disconnected?!</span></li>
   <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Suddenly, booster P3 started to consume 20 W!</span></li>
-  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P4 still did not show any increase in consumption and stayed constant at 3.5 W.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P2 consumption was still at its usual 3.5 W.</span></li>
  </ul>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I turned off power to booster P2 and P3.</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I turned off power to booster P4 and P3.</span></li>
  <ul>
-  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P4 still did not show any increase in consumption and stayed constant at 3.5 W.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P4 and booster P3 lights finally turned off.</span></li>
+  <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Booster P2 still did not show any increase in consumption and stayed constant at 3.5 W.</span></li>
  </ul>
- <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>But in </span><span style="font-style:italic">all</span><span>&nbsp;cases, there was effectively no power on block B321. So where was this extra power consumption going for P2 and P3?</span></li>
+ <li style="line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>But in </span><span style="font-style:italic">all</span><span>&nbsp;cases, there was effectively no power on block B321. So where was this extra power consumption going for P3 and P4?</span></li>
 </ul>
 <p></p>
-<p><span>(</span><span style="font-style:italic">Note for self: double check my documentation against reality… Is it possible I inverted my notes regarding which boosters are actually connected to the P2/P3/P4 circuit breakers? A quick check would be to power the command station and the boosters one by one, and double check the track voltage on various blocks to see whether it matches expectations.</span><span>)</span></p>
-<p></p>
-<p><span>I do not have any kind of explanation. Is there some kind of power flowing across boosters and power districts boundaries? That would totally negate the principle of isolation that “power districts” are supposed to bring! The entire thing makes no sense whatsoever.</span></p>
+<p><span>I do not have any kind of explanation. It seems like there’s some kind of connection between booster P3 and P4, but how? That would totally negate the principle of isolation that “power districts” are supposed to bring! The entire thing makes no sense whatsoever.</span></p>
 <p></p>
 <p><span>Now that is not a shocker, as that was precisely the thought behind </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html" style="color:inherit;text-decoration:inherit">the bizarre link I noticed with the Richmond Yard</a></span><span>&nbsp;(booster P3) affecting the track sensors on the Mountain 2 panel (booster P4). See here for a detail on this weird incident:</span></p>
 <p style="text-indent:36pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html" style="color:inherit;text-decoration:inherit">https://www.alfray.com/trains/blog/randall/2024-11-19_richmond_yard_panel_and_moun_a8d081ac.html</a></span></p>
@@ -345,7 +347,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-02-20 by Rig4j 0.1-Exp-bc668ce
+    Generated on 2026-02-23 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>
