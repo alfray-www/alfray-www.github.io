@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-01-10T03:06:21.936789-08:00</updated>
+<updated>2026-03-01T03:06:02.430477-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -2436,7 +2436,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Implementation wise, why kind of framework would be used?&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;One option is to make a standalone processing app, either in Java/Kotlin/C++, with its own movie decoding + UI rendering. The input movie decoding would take advantage of either ffmpeg or vlc as libraries or avcodec on linux. Similarly this can write a movie result on the fly.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this mode, we would convert a raw footage upfront -- cam files ar 10 minutes long.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this mode, we would convert a raw footage upfront -- cam files are 10 minutes long.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The other option is to use a Fusion plugin as the framework -- in this case Fusion provides the input and the output. Debugging seems potentially more challenging this way. The Fuse SDK doc indicates the Lua code can be reloaded &#8220;live&#8221; to ease debugging. This has the side benefit that we can judge performance immediately, and that we can take advantage of the fuse UI widgets to e.g. select the initial position to look at or to select some parameters (width, blending, etc).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In this mode, we could apply the tool to only the segments being rendered in the final production rather than on the entire raw footage.&lt;/span&gt;&lt;/p&gt;
@@ -2447,7 +2447,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2023-05-16T00:00:56-07:00</updated>
+<updated>2023-05-16T00:00:25-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
