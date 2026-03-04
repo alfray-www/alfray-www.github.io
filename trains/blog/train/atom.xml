@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Model Train-related Notes</title>
-<updated>2026-03-03T03:06:20.981926-08:00</updated>
+<updated>2026-03-04T03:10:17.461188-08:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/train/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/train/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/train/atom.xml</id>
@@ -1415,7 +1415,7 @@
 &lt;p&gt;&lt;span&gt;One of the cornerstones of maintaining any automated process, especially daily automated running of little HO-sized trains on a public music model railroad, is to have dashboards to track the status of the automated processes and being able to see at a glance whether they are healthy.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;For example this is part of a dashboard that I look multiple times a day:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:233.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5be8931741fd913034b5cf00f732dca8381233bba85470ef5f165beceda220aci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:233.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_01a4b114dabab7905bf32856ef145bed78c833acb2cadb0441c355e74665c9a5i.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;My dashboards have a few moving parts:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
@@ -1424,7 +1424,7 @@
  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://lookerstudio.google.com/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Looker Studio&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;is used to build the dashboard.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2023-07-01T00:00:49-07:00</updated>
+<updated>2023-07-01T00:00:54-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
