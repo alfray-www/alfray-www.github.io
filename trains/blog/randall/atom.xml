@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-03-12T03:02:46.897996-07:00</updated>
+<updated>2026-03-14T18:25:09.244404-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -41,12 +41,37 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:214.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8f460640ff7557e6b16f61b9396f1b2be9f9875bb82c2e9d65c794810e67200bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;To be continued&#8230;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Update&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Upon closer inspection, it seems the driveshaft wiggles in the black U-joint plastic piece glued to the screw gear.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;After consideration, I decided to remove the screw gear and the front driveshaft, leaving the engine powered only by its rear truck. The rationale was that the &#8220;Branchline is almost flat&#8221; so it shouldn&#8217;t matter. Well&#8230; that&#8217;s sort of not quite true. Turns out that the canyon section has a slight grade. Combined with the sharp curve, the engine is having a bit of a hard time when it reaches the canyon bridge. I compensated by bumping up the speed in the automation program, and that makes it usable for now.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:190.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_9b0b33eb23df751ac73cb320f3579becbf2a1ed773829743a40f145ec756ac30i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The end goal is to get a new gear and driveshaft from Bachmann if possible to replace it and restore the front truck.I &#8220;just&#8221; need to find the right part and see whether it&#8217;s available, and of course I forgot the box with the original documentation at the museum so I don&#8217;t have it look it up at home, however luckily it&#8217;s easy to find online:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Product: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://shop.bachmanntrains.com/index.php?main_page=product_info&amp;amp;products_id=6502&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://shop.bachmanntrains.com/index.php?main_page=product_info&amp;amp;products_id=6502&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://shop.bachmanntrains.com/documents/HOSD40-2(DCCSOUNDVALUE).pdf&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;accompanying exploded part documentation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;lists the parts I need as H623X-00A01 + *00G03.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Parts: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=index&amp;amp;cPath=68_790_187&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://estore.bachmanntrains.com/index.php?main_page=index&amp;amp;cPath=68_790_187&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Driveshaft alone:&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_187&amp;amp;products_id=1328&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_187&amp;amp;products_id=1328&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Worm gear assembly with driveshaft:&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_187&amp;amp;products_id=7177&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_187&amp;amp;products_id=7177&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That last reference looks right, so I&#8217;ll probably just order a couple of these.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;As for the speaker, once cleaned it produced a correct sound so I opted to not replace it yet. However, I added a mesh in front to hopefully reduce the amount of metal that it would pick up:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:320.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b39ad6bc90a3ebd96debdbaafa51cdf957dc9160ef14ba266cb52e2b257b1789i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/2LS9Kgd&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;pet-resistant mesh&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;is actually a piece from a window screen that I fixed recently at home. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-03-11T00:00:07-07:00</updated>
+<updated>2026-03-11T00:00:09-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
