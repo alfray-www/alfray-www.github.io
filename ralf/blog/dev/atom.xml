@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-04-27T11:35:22.452177-07:00</updated>
+<updated>2026-04-27T12:29:20.086707-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -20,11 +20,10 @@
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:320.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;TL;DR&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: A foreground clip is subtracted from a clean plate reference to obtain a matte mask&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;that represents &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only what has changed&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That mask is then used to blend the foreground clip on top of a background clip.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;TL;DR&lt;/span&gt;&lt;span&gt;: A foreground clip is subtracted from a clean plate reference to obtain a matte mask that represents &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only what has changed&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That mask is then used to blend the foreground clip on top of a background clip.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-style:italic;font-weight:700&quot;&gt;Disclaimer&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span style=&quot;font-size:10pt&quot;&gt;This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It&apos;s easier for me to program a Fuse that does exactly what I want, which I did&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-size:10pt;font-style:italic;font-weight:700&quot;&gt;Disclaimer&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:10pt&quot;&gt;: This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It&apos;s easier for me to program a Fuse that does exactly what I want, which I did.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Usage Guide&lt;/span&gt;&lt;/p&gt;
@@ -38,6 +37,9 @@
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask that represents &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only what has changed&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That mask is then used to blend the foreground on top of the background.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This really only works properly if all the clips were filmed with a fixed camera setup, under the same illumination. I usually compensate for minor tripod movement using a Transform node with a minor X/Y offset.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Fusion Node Setup&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -67,6 +69,9 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Compute the difference delta on either RGB, Chroma, or Luma.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Depending on the scene, one option may work better than the other one.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The Chroma and Luma options may somewhat help if the recorded clips have some minor illumination differences.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Luma and Chroma are defined using the YCbCr colorspace using the conversion formulas from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.itu.int/rec/T-REC-T.871-201105-I/en&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;JFIF ITU-T T.871&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;(RGB to YCbCr using full range, instead of the Y&#8242;CbCr ITU-R BT.601 with the limited 16-240 range).&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The difference is computed as the average of the absolute value of the difference on each channel, and is thus always a value in the [0..1] range.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Threshold 1 &amp;amp; 2: The min/max threshold of the difference.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
@@ -114,7 +119,7 @@
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-04-18T00:00:22-07:00</updated>
+<updated>2026-04-18T00:00:49-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

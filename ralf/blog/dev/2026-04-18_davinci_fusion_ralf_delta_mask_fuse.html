@@ -239,11 +239,10 @@ td p {
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:320.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-weight:700">TL;DR</span><span style="font-family:&quot;Roboto Mono&quot;">: A foreground clip is subtracted from a clean plate reference to obtain a matte mask</span></p>
-<p style="text-align:left"><span>that represents </span><span style="font-style:italic">only what has changed</span><span style="font-family:&quot;Roboto Mono&quot;">. That mask is then used to blend the foreground clip on top of a background clip.</span></p>
+<p style="text-align:left"><span style="font-weight:700">TL;DR</span><span>: A foreground clip is subtracted from a clean plate reference to obtain a matte mask that represents </span><span style="font-style:italic">only what has changed</span><span style="font-family:&quot;Roboto Mono&quot;">. That mask is then used to blend the foreground clip on top of a background clip.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-style:italic;font-weight:700">Disclaimer</span><span>: </span><span style="font-size:10pt">This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It's easier for me to program a Fuse that does exactly what I want, which I did</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-size:10pt;font-style:italic;font-weight:700">Disclaimer</span><span style="font-family:&quot;Roboto Mono&quot;;font-size:10pt">: This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It's easier for me to program a Fuse that does exactly what I want, which I did.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Usage Guide</span></p>
@@ -257,6 +256,9 @@ td p {
 </ul>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span>The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask that represents </span><span style="font-style:italic">only what has changed</span><span style="font-family:&quot;Roboto Mono&quot;">. That mask is then used to blend the foreground on top of the background.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This really only works properly if all the clips were filmed with a fixed camera setup, under the same illumination. I usually compensate for minor tripod movement using a Transform node with a minor X/Y offset.</span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Fusion Node Setup</span></p>
 <p style="text-align:left"></p>
@@ -286,6 +288,9 @@ td p {
  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Compute the difference delta on either RGB, Chroma, or Luma.</span></li>
  <ul>
   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Depending on the scene, one option may work better than the other one.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Chroma and Luma options may somewhat help if the recorded clips have some minor illumination differences.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Luma and Chroma are defined using the YCbCr colorspace using the conversion formulas from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.itu.int/rec/T-REC-T.871-201105-I/en" style="color:inherit;text-decoration:inherit">JFIF ITU-T T.871</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;(RGB to YCbCr using full range, instead of the Y′CbCr ITU-R BT.601 with the limited 16-240 range).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The difference is computed as the average of the absolute value of the difference on each channel, and is thus always a value in the [0..1] range.</span></li>
  </ul>
  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Threshold 1 &amp; 2: The min/max threshold of the difference.</span></li>
  <ul>
