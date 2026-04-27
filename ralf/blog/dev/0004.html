@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="No choice, GA is giving me more and more warnings about the incoming GA4 migration." />
+<meta property="og:description" content="What: https://bitbucket.org/blog/ssh-host-key-changes" />
 <meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_5af2b29a67ee8c6bf888b849efb93d2ce0bff0bd7b6736c50d95eb87178e02bbi.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="No choice, GA is giving me more and more warnings about the incoming GA4 migration." />
+<meta name="twitter:description" content="What: https://bitbucket.org/blog/ssh-host-key-changes" />
 <meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_5af2b29a67ee8c6bf888b849efb93d2ce0bff0bd7b6736c50d95eb87178e02bbi.jpg" />
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,46 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-06-17_bitbucket_ssh_host_key_migration.html">
+    <h2 class="post-title">2023-06-17 - BitBucket SSH Host Key Migration</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>What: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/blog/ssh-host-key-changes" style="color:inherit;text-decoration:inherit">https://bitbucket.org/blog/ssh-host-key-changes</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Verify by running this command on each host:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ ssh git@bitbucket.org host_key_info</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; You are using host key with fingerprint:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; ssh-ed25519 SHA256:ybgmFkzwOSotHTHLJgHO0QN8L0xErw6vd0VhFA9m3SM</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&gt; ecdsa-sha2-nistp256 SHA256:FC73VB6C4OQLSCrjEayhMp9UMxS97caD/Yyi2bhW/J0</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ECDA or ED25519 are GOOD.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Got “Permission denied”?</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://confluence.atlassian.com/bbkb/permission-denied-publickey-302811860.html" style="color:inherit;text-decoration:inherit">https://confluence.atlassian.com/bbkb/permission-denied-publickey-302811860.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ This should happen for any machine where I did not load an SSH Key in my Bitbucket account. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ If I have an ssh-agent key, load it first.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ If I don’t expect to have ssh auth, then it’s fine. In this case, grep bitbucket ~/.ssh/known_hosts ⇒ vim ~/.ssh/known_hosts and remove any reference to bitbucket).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To accept the new host on a machine that needs git access:</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">$ ssh-keygen -R bitbucket.org &amp;&amp; curl https://bitbucket.org/site/ssh &gt;&gt; ~/.ssh/known_hosts</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">then rerun the host_key_info cmd, access the key with “yes”, and repeat again to remove any duplicated host entry.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-06-10_brace_yourself_google_analyt_941602d6.html">
     <h2 class="post-title">2023-06-10 - Brace Yourself, Google Analytics 4 is Coming</h2>
@@ -748,48 +788,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-01-29_vscode_and_terminal_and_cygwin.html">
-    <h2 class="post-title">2023-01-29 - VSCode and Terminal and Cygwin</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">VSCode &gt; Terminal &gt; use “v” icon &gt; Terminal Settings</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">or</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">VSCode &gt; File &gt; Preferences &gt; Settings (Ctrl + ,)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Scroll to Features &gt; Terminal &gt; Integrated &gt; Automation Profile: Windows (or Linux)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Edit in settings.json” → creates C:\Users\%USER%\AppData\Roaming\Code\User\settings.json</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the JSON section:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">replace by:</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "terminal.integrated.shell.windows": "C:\\cygwin64\\bin\\bash.exe",</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "terminal.integrated.shellArgs.windows": [</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; "--login",</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; "-i"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; ],</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; "terminal.integrated.env.windows": {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; &nbsp; &nbsp; "CHERE_INVOKING": "1"</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; },</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Try it with Ctrl-` (or Terminal &gt; New)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also copy that in the workspace profile rather than the user-wide profile.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note that this method is deprecated as now there are “terminal profiles” but it still works.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -806,7 +804,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-03-01 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

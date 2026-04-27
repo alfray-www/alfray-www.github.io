@@ -241,7 +241,7 @@ td p {
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It turns out that CircuitPython is built with a max stack depth of 15-16 calls (*), at least for this version of the MatrixPortal S3.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s entirely possible to rebuild it with a different stack depth, if one is inclined to do so.</span></p>
-<p style="text-align:left"><span>The stack size is controlled by CIRCUITPY_PYSTACK_SIZE which is defined globally here:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455" style="color:inherit;text-decoration:inherit">https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455</a></span><span><br></span><span style="font-family:&quot;Roboto Mono&quot;">and is also architecture dependent -- e.g. the SAM arch overrides the default.</span></p>
+<p style="text-align:left"><span>The stack size is controlled by CIRCUITPY_PYSTACK_SIZE which is defined globally here:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455" style="color:inherit;text-decoration:inherit">https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455</a></span><span style="font-family:&quot;Roboto Mono&quot;"><br>and is also architecture dependent -- e.g. the SAM arch overrides the default.</span></p>
 <p style="text-align:left"><span>Documentation on CIRCUITPY_PYSTACK_SIZE is here:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/adafruit/circuitpython/blob/HEAD/docs/environment.rst#circuitpy_pystack_size" style="color:inherit;text-decoration:inherit">https://github.com/adafruit/circuitpython/blob/HEAD/docs/environment.rst#circuitpy_pystack_size</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(*) As can be seen above, the “stack size” is not really a number of calls but really a size in bytes. Thus I expect calls with more arguments will exhaust the stack faster, or whatever else needs to be pushed on the stack for each call.</span></p>
@@ -283,7 +283,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-25 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

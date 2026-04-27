@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="8 Channel Smartphone Relay WiFi Remote Control Kit: https://amzn.to/3VZSvw1" />
+<meta property="og:description" content="For the daily Xmas lights, what I’d like is to have:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="8 Channel Smartphone Relay WiFi Remote Control Kit: https://amzn.to/3VZSvw1" />
+<meta name="twitter:description" content="For the daily Xmas lights, what I’d like is to have:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,39 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-11-12_remote_plug_motion.html">
+    <h2 class="post-title">2020-11-12 - Remote plug + motion</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For the daily Xmas lights, what I’d like is to have:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Person detection, likely using an existing PIR.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Light detection, to turn it on when it gets dark.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Server/wifi control so that I could rifle it from the phone.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One option is to take the existing timer plug and control it from an ESP32. Doesn't even have to be a cam one, using a PIR in max range could work.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I'd like to have a second ESP+PIR across the room for more coverage. Whenever any of these detect motion, light would stay on for e.g. 15 minutes. The second ESP can send an ESP-NOW data packet to the first one.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A local button toggle would be ideal.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other option would be to use a dedicated wifi plug like the sonoff. I do want something absolutely local that does not use any cloud.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-10-11_remote_plug_control.html">
     <h2 class="post-title">2020-10-11 - Remote Plug Control</h2>
@@ -655,39 +688,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2020-08-21_godot_and_3d.html">
-    <h2 class="post-title">2020-08-21 - Godot and 3d</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Godot
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now it's time to take [...] and understand Godot with 3d. &nbsp;</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Link to blender 2 godot exporter:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gamefromscratch.com/blender2godot-add-on-released/" style="color:inherit;text-decoration:inherit">https://gamefromscratch.com/blender2godot-add-on-released/</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Points to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.zammedev.com/home/wip_projects/blender2godot" style="color:inherit;text-decoration:inherit">https://www.zammedev.com/home/wip_projects/blender2godot</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Points to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gitlab.com/Zamme/blender2godot" style="color:inherit;text-decoration:inherit">https://gitlab.com/Zamme/blender2godot</a></span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This seems like a good way to get started. Create something in Blender and convert it to Godot.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One obvious teaching from some games is that a 3D game can basically be just a 2d game with a 3d rendering. That is probably the easiest way to get started.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -704,7 +704,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

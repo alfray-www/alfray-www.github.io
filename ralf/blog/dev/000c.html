@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="What is the dev that I want to be doing right?" />
+<meta property="og:description" content="A few of my older apps rely on a common principle of having a permanent background service. This broke with the API changes in Android O &amp; P (API 26)." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="What is the dev that I want to be doing right?" />
+<meta name="twitter:description" content="A few of my older apps rely on a common principle of having a permanent background service. This broke with the API changes in Android O &amp; P (API 26)." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,81 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2019-11-17_android_background_service.html">
+    <h2 class="post-title">2019-11-17 - Android Background Service</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Android
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A few of my older apps rely on a common principle of having a permanent background service. This broke with the API changes in Android O &amp; P (API 26).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Trying to fix T3 &amp; RTAC in-situ has been a bit of a PITA, so it’s time to do an isolated “canonical example” app to figure that out. But first I need to understand why I have a background service and how to adjust it for these API. Also to clearly list which API levels are the issues.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Existing cases:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RTAC: </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Needs to run on Hi10 tablets, Android 5.1 (API 22, Lollipop MR1).</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Permanent background service.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Designed to keep the app alive at all times, even if not in foreground. Keep all the network connections active. Wakelock to make sure the tablet never sleeps.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Notification shown when main activity is in background.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DccThrottle:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Same as RTAC. Permanent, active even when in background.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bearing v1:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Similar to RTAC. Permanent, active even when in background.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T2:</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T2 is API 9+, T3 is API 26+.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Job-oriented background service.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Started by “check” menu, alarm, or receiver, only for the duration of the operation.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The needs for T3 are very different and ideally we would not use a service for that if we can avoid it. The only reason a service was used here is because that was the recommended design at the time. I understand OS requirements can change, but it’s somewhat ironic an app breaks when it was following the recommended design, with undertones of “you’re doing it wrong”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The T3 case was handled in 2019-07-08.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It uses:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JobService to schedule a task.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Still relies on an UpdateReceiver starting an actual Service.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Boot_Received triggers the UpdateReceiver.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now the question is whether a service is even needed at all. Does the new API offer something else?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all" style="color:inherit;text-decoration:inherit">https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"><span>In theory that doc seems fine: start a service using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/content/Context#startForegroundService(android.content.Intent)" style="color:inherit;text-decoration:inherit">startForegroundService</a></span><span>, then call </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/app/Service.html#startForeground(int,%20android.app.Notification)" style="color:inherit;text-decoration:inherit">startForeground</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;with a notification &nbsp;In practice that seems to fail, and the service still gets killed 5 minutes later when testing on an Android O device or emulator.</span></p>
+<p style="text-align:left"><span>There’s a lot of that on SO:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus my suggestion is to create two simple samples/demo apps:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T2 case: a “short job”, triggered by a button, an alarm (specific time), or a boot receiver.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Permanent case (e.g. RTAC, DccThrottle, etc) of a permanent “foreground” service.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>For the latter, integrate some external lib such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/doubledotlabs/doki" style="color:inherit;text-decoration:inherit">Doki</a></span><span>&nbsp;that shows details from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://dontkillmyapp.com" style="color:inherit;text-decoration:inherit">dontkillmyapp.com</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;for a specific device.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; is a good place to store these.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2019-10-22_dev_state_of_the_union.html">
     <h2 class="post-title">2019-10-22 - Dev State of the Union</h2>
@@ -602,49 +677,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2018-12-25_dart.html">
-    <h2 class="post-title">2018-12-25 - Dart</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s a random idea: try Dart for a web project.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s another random idea: While not rewrite Track for the web?</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Data files provided by a web server.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">User accounts and all that: Firebase.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">2d canvas editor.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">3d view in browser?</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing from “\pɔʁt.na.wak\” experiment is that editing in 3d is a PITA. I should focus on a 2d editor and then adapt it to 3d as it’s not my strong point.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also I didn’t like the model I had in Track, especially the connectors. It seemed like a good idea initially but ended up troublesome. Tests were inadequate.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I wanted to try Dart, there are 2 other possible projects:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rewrite Wazz. </span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A bit moot since there’s nothing complicated nor wrong with the current version. It could be an interesting test to get a direct comparison between Dart and pure JS ES6.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Write a simple single-page web-page game. Nerdkill for example ;-)</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -661,7 +693,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

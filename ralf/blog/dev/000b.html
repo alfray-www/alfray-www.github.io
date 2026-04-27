@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="A follow up to 2020-04-04 Cab Throttle aka “Cab Engineer”: Importing Cab Throttle source has been done. It’s called “Cab Engineer”, and as all the source from Cab Throttle + WiThrottleLib." />
+<meta property="og:description" content="One feature I miss with trains is scripting. Back in 2014 or 2015, I wrote a very simple cab command interpreter in python for JMRI, “cab3.py”." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="A follow up to 2020-04-04 Cab Throttle aka “Cab Engineer”: Importing Cab Throttle source has been done. It’s called “Cab Engineer”, and as all the source from Cab Throttle + WiThrottleLib." />
+<meta name="twitter:description" content="One feature I miss with trains is scripting. Back in 2014 or 2015, I wrote a very simple cab command interpreter in python for JMRI, “cab3.py”." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,61 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-04-11_cab_engineer_scripting_.html">
+    <h2 class="post-title">2020-04-11 - Cab Engineer “scripting”</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One feature I miss with trains is scripting. Back in 2014 or 2015, I wrote a very simple cab command interpreter in python for JMRI, “cab3.py”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I should add something like in Cab Engineer:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Tie it with an existing throttle (e.g. for a specific DCC address)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Or let the script change/mix engines.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Be able to save / recall scripts.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Also control turnouts.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Introduce a mini-editor with a less cryptic language, and buttons to quickly insert language keywords.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Make it line-agnostic so that the script can be one line or multi lines.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Random examples:</span></p>
+<p style="text-align:left"></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Label start</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle 537 speed +12 for 5s until B370 then speed 0</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Reverse T330</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">F2 press</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">F5 on</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle 113 speed +12 for 2s </span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Speed 0</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Speed -12 for 2s</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Normal T330</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">F5 off</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle 537 speed -12 for 5s until B310 then speed 0</span></p>
+<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Loop start</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here each command is one keyword + one value, and the “then” keyword is a no-op.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A command like “for” or “until” would simply introduce a pause.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A “function press” would toggle it for a fixed time, e.g. 300-500 ms.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A logical extension is a “record macro” mode, that records the actions, generates the script, which can then be edited, saved, recalled.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recalling a script would open a card on the recycle view with a status/run/stop. Running would “inject” commands in controllers, but not block the user. E.g. one could try to “beat” the system, or start/stop an engine during a macro run. Useful for things like horn/bell, or prevent a collision.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-04-07_cab_engineer.html">
     <h2 class="post-title">2020-04-07 - Cab Engineer</h2>
@@ -651,81 +706,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-11-17_android_background_service.html">
-    <h2 class="post-title">2019-11-17 - Android Background Service</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Android
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A few of my older apps rely on a common principle of having a permanent background service. This broke with the API changes in Android O &amp; P (API 26).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Trying to fix T3 &amp; RTAC in-situ has been a bit of a PITA, so it’s time to do an isolated “canonical example” app to figure that out. But first I need to understand why I have a background service and how to adjust it for these API. Also to clearly list which API levels are the issues.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Existing cases:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RTAC: </span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Needs to run on Hi10 tablets, Android 5.1 (API 22, Lollipop MR1).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Permanent background service.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Designed to keep the app alive at all times, even if not in foreground. Keep all the network connections active. Wakelock to make sure the tablet never sleeps.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Notification shown when main activity is in background.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DccThrottle:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Same as RTAC. Permanent, active even when in background.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bearing v1:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Similar to RTAC. Permanent, active even when in background.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T2:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T2 is API 9+, T3 is API 26+.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Job-oriented background service.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Started by “check” menu, alarm, or receiver, only for the duration of the operation.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The needs for T3 are very different and ideally we would not use a service for that if we can avoid it. The only reason a service was used here is because that was the recommended design at the time. I understand OS requirements can change, but it’s somewhat ironic an app breaks when it was following the recommended design, with undertones of “you’re doing it wrong”.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The T3 case was handled in 2019-07-08.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It uses:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JobService to schedule a task.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Still relies on an UpdateReceiver starting an actual Service.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Boot_Received triggers the UpdateReceiver.</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now the question is whether a service is even needed at all. Does the new API offer something else?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all" style="color:inherit;text-decoration:inherit">https://developer.android.com/about/versions/oreo/android-8.0-changes.html#back-all</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
-<p style="text-align:left"><span>In theory that doc seems fine: start a service using </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/content/Context#startForegroundService(android.content.Intent)" style="color:inherit;text-decoration:inherit">startForegroundService</a></span><span>, then call </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/reference/android/app/Service.html#startForeground(int,%20android.app.Notification)" style="color:inherit;text-decoration:inherit">startForeground</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;with a notification &nbsp;In practice that seems to fail, and the service still gets killed 5 minutes later when testing on an Android O device or emulator.</span></p>
-<p style="text-align:left"><span>There’s a lot of that on SO:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone" style="color:inherit;text-decoration:inherit">https://stackoverflow.com/questions/49637967/minimal-android-foreground-service-killed-on-high-end-phone</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus my suggestion is to create two simple samples/demo apps:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T2 case: a “short job”, triggered by a button, an alarm (specific time), or a boot receiver.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Permanent case (e.g. RTAC, DccThrottle, etc) of a permanent “foreground” service.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>For the latter, integrate some external lib such as </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/doubledotlabs/doki" style="color:inherit;text-decoration:inherit">Doki</a></span><span>&nbsp;that shows details from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://dontkillmyapp.com" style="color:inherit;text-decoration:inherit">dontkillmyapp.com</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;for a specific device.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; is a good place to store these.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -742,7 +722,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2025-12-27 by Rig4j 0.1-Exp-78c9166 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

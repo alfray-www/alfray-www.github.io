@@ -1,11 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-04-23T03:07:46.285026-07:00</updated>
+<updated>2026-04-27T11:01:37.380267-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-bc668ce">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">DaVinci Fusion: Ralf Delta Mask Fuse</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/ralf/blog/dev/2026-04-18_davinci_fusion_ralf_delta_mask_fuse.html"/>
+<id>https://www.alfray.com/ralf/blog/dev/2026-04-18_davinci_fusion_ralf_delta_mask_fuse.html</id>
+<category term="dev" label="DEV"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfDeltaMask.md&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Ralf Delta Mask Fuse&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It&apos;s a direct recreation in Fusion of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/README.md#ralf-delta-mask-blend-fx-shader&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LightWorks FX Shader&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;I wrote years ago:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The goal is to compare a foreground media clip with a reference image to create a mask of what is moving on the image, and then compose this on top of a background. Here&apos;s a visual summary:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:320.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Disclaimer: This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It&apos;s easier for me to program a Fuse that does exactly what I want, which I did.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Usage Guide&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;To use this, we need 2 or 3 media inputs:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;background&quot; clip.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;foreground&quot; clip.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;reference&quot; -- this can be either a clip, or a static frame (a.k.a &quot;the clean plate&quot;)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask. That mask is then used to blend the foreground on top of the background.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Fusion Node Setup&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:168.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:539.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_67aff0b89c25bba7eccd199c376b6d418e5378465ffc60784b6bcc3b7c218d93i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The simplest Fusion node setup is as follow:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;background-color:rgb(255, 255, 0)&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Use the MediaIn as the foreground (typically I use the clip from the Edit timeline).&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For a static clean plate, simply plug that into a Matte &amp;gt; Clean Plate, and configure it in &quot;Hold Frame&quot; with the non-animated frame for the static reference.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Plug both the foreground and the clean plate into a Matte &amp;gt; Ralf Delta Mask node.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Drop the background clip from the Media Pool; this creates a new MediaIn node. Plug that into the background input of the Ralf Delta Mask node. Use the Trim of the background media input to offset the clip as desired.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In the Ralf Delta Mask properties:&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;By default, the &quot;Reveal Mask&quot; checkbox is selected, showing the mask. Adjust the mask parameters to get the desired separation (details below).&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Uncheck the &quot;Reveal Mask&quot; to get the blended output.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Ralf Delta Mask properties&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:344.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:402.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_698e73df3a6863a09b3c970a2e13f99e1c0c811124ac21d8c95d3be241752811i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The Ralf Delta Mask node has the following properties:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Compute the difference delta on either RGB, Chroma, or Luma.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Depending on the scene, one option may work better than the other one.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Threshold 1 &amp;amp; 2: The min/max threshold of the difference.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This creates a 0..100% gradient:&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Everything below the minimum is 0% (not masked = background is selected),&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Everything above the maximum is 100% (entirely masked = foreground is selected),&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Anything in between is a progression 0..100% mask.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Reveal Matte&quot; checkbox controls whether the output shows the mask or the blended result.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Gaussian Blur: Applies an optional gaussian blur to the mask. 0 disables the blur.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Erode / Dilate:&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Positive values apply a dilate first followed by an erode of the same ammount (this helps to fill small holes in the mask).&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Negative values apply an erode first followed by a dilate of the same amount (this helps to isolate fine details for masks that must keep holes).&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;0 disables the operation.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Top Left / Bottom Right Crop: these define the clipping boundaries of the mask to speed up computing.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;0..1 corresponds to the entire width / height of the image.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This helps speed up rendering by limiting the mask to a specific region of interest.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;These can be interactively manipulated using 2 handles (one green, one red) on the Fusion preview.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;A typical use case is to set up the node graph, select an interesting frame, and adjust the parameters with &quot;Reveal Matte&quot; enabled. That allows you to directly view the mask in the output. Once satisfied, toggle &quot;Reveal Matte&quot; off to see the blended result.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Node inputs:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Clean Plate&quot; and the &quot;Foreground&quot; inputs are mandatory. There is no output if they are missing.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Background&quot; input is optional.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;When no background is provided, the output is always the revealed matte. The matte has RGBA channels filled and can be used as an input to other nodes for merging or effect mask.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Effect Mask&quot; input is optional.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If connected, its alpha is applied to the final blended output.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Important: This Fuse does not use the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.steakunderwater.com/VFXPedia/96.0.243.189/indexc413.html?title=Third_Party_Fuses/ROIDS_Tutorial&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;DoD/ROI&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;from Fusion (I&apos;m not familiar enough with the API, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;quality patches welcome&lt;/span&gt;&lt;span&gt;). If you apply an Effect Mask, the entire image is computed, and &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;then&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;it is filtered. This is inefficient. That&apos;s why there are specific top left/bottom right crop controls: these define the area of the image that will be actually processed. If you know you do not need to process the entire image, adjusting the crop to just the area needed will dramatically speed up processing.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-04-18T00:00:10-07:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Lenovo T480s: i5 vs i7 CPU Comparison</title>
@@ -41,7 +142,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Let&#8217;s look at this from another angle: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://cpu.userbenchmark.com/Compare/Intel-Core-i5-8350U-vs-Intel-Core-i7-8650U/m388461vsm353957&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;reported user benchmarks&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;show us a reported 1%-2% increase in actual benchmarks.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Benchmarks are the way to go, but these above were a bit abstract. I thus decided to run my own benchmarks based on stuff I &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actually&lt;/span&gt;&lt;span&gt;&amp;nbsp;do with these laptops. This includes compiling a Flutter web app in Dart, compiling a fairly large ESP32 C++ project, compiling fairly large Java and Kotlin projects, and using DaVinci Resolve to stabilize, render, and compute Fusion VFX on one of my train videos. You know, the usual stuff one does on a laptop on a daily basis.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Benchmarks are the way to go, but these above were a bit abstract. I thus decided to run my own benchmarks based on stuff I &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;actually&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;do with these laptops. This includes compiling a Flutter web app in Dart, compiling a fairly large ESP32 C++ project, compiling fairly large Java and Kotlin projects, and using DaVinci Resolve to stabilize, render, and compute Fusion VFX on one of my train videos. You know, the usual stuff one does on a laptop on a daily basis.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Here are the results:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -59,7 +160,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-12-27T00:00:47-08:00</updated>
+<updated>2025-12-27T00:00:40-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -157,7 +258,7 @@
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.ncry.org/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCRy train&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;could use some kind of automation in their Docent narration system. Currently, the passenger train relies on a volunteer manning the speaker system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the speaker system at specific points in the train&#8217;s route. As with most automation, it should be &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;supplementary&lt;/span&gt;&lt;span&gt;&amp;nbsp;and a Docent volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Consider this document to be a design doc / proposal document.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.ncry.org/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;NCRy train&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;could use some kind of automation in their Docent narration system. Currently, the passenger train relies on a volunteer manning the speaker system and following some kind of ad-hoc script. This screams for automation -- pre-recorded messages could be announced on the speaker system at specific points in the train&#8217;s route. As with most automation, it should be &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;supplementary&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;and a Docent volunteer should be able to take over at any moment, or just enable the system temporarily when they need a break. Consider this document to be a design doc / proposal document.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Curt and I had discussed about 10 years ago how we could broadcast the trains&#8217; positions -- back in 2016 I had sent a proposal to Jim on how to create a dashboard that could display the location of each train. This proposal isn&#8217;t very different, just updated to what is now ubiquitous tech, and adapted to a slightly adjacent purpose.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -184,7 +285,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Usage&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The tracks would be created by having a simple &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;recording mode&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Engage a recording mode before the train leaves.&lt;/span&gt;&lt;/li&gt;
@@ -215,10 +316,10 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Hardware wise, the easiest is a smart phone or a tablet.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Example of an adequate tablet: Samsung Galaxy Tab A9+ Plus, 11&#8221; screen, &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/4jA4v0J&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/4jA4v0J&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, around $200. This has an audio jack.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Most modern smart phones or tablets don&#8217;t have an audio jack anymore. That&#8217;s not a problem as we can use an USB C audio/power splitter like this $15 &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/48dWSsn&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/48dWSsn&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The audio jack on phones is always a 4-poles TRRS. There are splitters to get 2 3-poles jacks for headphones vs microphones such as this $8 &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43UBbfQ&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43UBbfQ&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The audio jack on phones is always a 4-poles TRRS. There are splitters to get 2 3-poles jacks for headphones vs microphones such as this $8 &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/43UBbfQ&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/43UBbfQ&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The alternative is to use a bluetooth adapter for the audio in/out. For this application, I think a wired setup would be more reliable and less troublesome.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The nice thing about a smart phone or tablet is that it integrates all that we need: GPS for position, audio in/out, &#8220;disk&#8221; storage for audio files, and a screen for control. A simple &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;good&lt;/span&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Android cell phone like a Pixel in the $150 range will do just fine as we don&#8217;t need a lot of CPU here, and for a tablet the price range starts at $200 like the Samsung listed above.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The nice thing about a smart phone or tablet is that it integrates all that we need: GPS for position, audio in/out, &#8220;disk&#8221; storage for audio files, and a screen for control. A simple &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;good&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;Android cell phone like a Pixel in the $150 range will do just fine as we don&#8217;t need a lot of CPU here, and for a tablet the price range starts at $200 like the Samsung listed above.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Note that smart phones or tablets really are the same thing with only the screen size as the difference. A smart phone can be fairly compact. However here we could benefit from the larger screen size of a tablet, which may allow for a larger easier to read UI for our senior volunteers.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Another hardware choice is to use a small laptop like those I use for the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Randall Museum Model Railroad automation&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;-- something like a Lenovo T480s in the $150 range, or maybe a Lenovo Yoga to benefit from a folding touch screen. At 14&#8221;, these are still fairly compact. However these don&#8217;t have a GPS unit, we need something external such as a USB GPS receiver (in the $15-$30 range). Most of these receivers have a USB cable which allows placing them near a window for better GPS reception.&lt;/span&gt;&lt;/p&gt;
@@ -227,7 +328,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The thing is that we don&#8217;t really need to have more than one -- there&#8217;s always a single Docent car at a given time on the mainline. Conductors or Docent volunteers can just carry and set up that phone when they set up the train.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;One can argue that Docent announcements are not critical (they can always be operated by a volunteer after all) thus this doesn&#8217;t even need a strong backup solution.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Hardware-wise, I always aim to be scrappy in my choices. I&#8217;ve gotten my share of snarky comments at Randall for not using the latest laptop or tablet hype -- especially from Apple users who don&#8217;t seem to understand that a device can work adequately even when it doesn&#8217;t cost an arm and a leg. There are a ton of absolutely crappy Android phones and tablets out there at ridiculous prices, but there are also a lot of &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;good&lt;/span&gt;&lt;span&gt;&amp;nbsp;options at moderate prices. &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The task at hand does not require a ton of resources, and using the latest hype hardware would just be a waste of money. Instead, focus on a reliable brand like Pixel, Samsung, or Lenovo that will have good quality for a fairly long period of time.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Hardware-wise, I always aim to be scrappy in my choices. I&#8217;ve gotten my share of snarky comments at Randall for not using the latest laptop or tablet hype -- especially from Apple users who don&#8217;t seem to understand that a device can work adequately even when it doesn&#8217;t cost an arm and a leg. There are a ton of absolutely crappy Android phones and tablets out there at ridiculous prices, but there are also a lot of &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;good&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;options at moderate prices. The task at hand does not require a ton of resources, and using the latest hype hardware would just be a waste of money. Instead, focus on a reliable brand like Pixel, Samsung, or Lenovo that will have good quality for a fairly long period of time.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Software Choice&lt;/span&gt;&lt;/p&gt;
@@ -248,7 +349,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-11-25T00:00:07-08:00</updated>
+<updated>2025-11-25T00:00:45-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -274,11 +375,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Let&#8217;s take an example: we want to create a small e-commerce site. We&apos;ll structure our site as different pages, each rendered by their own HTML file: &lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the main entry point&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/about.html &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- a page &#8220;about this company&#8221;&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/catalog.html &amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the catalog browser&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/product.html&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp; -- a page detailing a single product&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/purchase.html &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;-- the purchase form&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/index.html &amp;nbsp; &amp;nbsp;-- the main entry point&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/about.html &amp;nbsp; &amp;nbsp;-- a page &#8220;about this company&#8221;&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/catalog.html &amp;nbsp;-- the catalog browser&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/product.html &amp;nbsp;-- a page detailing a single product&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/purchase.html -- the purchase form&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Instead an SPA web site uses a single file:&lt;/span&gt;&lt;/p&gt;
@@ -287,11 +388,11 @@
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;However, using JavaScript, we&#8217;ll change the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;content&lt;/span&gt;&lt;span&gt;&amp;nbsp;of the page to simulate showing the &#8220;about&#8221; page vs the &#8220;catalog&#8221; page, etc. One way to know which one to &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;render&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;is to encode the desired &#8220;page&#8221; using the hash portion of the URL:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#about&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#catalog&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#product/{id}&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;http://example.org/mysite/index.html#purchase&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/index.html&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/index.html#about&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/index.html#catalog&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/index.html#product/{id}&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;http://example.org/mysite/index.html#purchase&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;From the web browser point of view, it&apos;s always the same page being rendered (index.html) yet JavaScript is used to read the hash name and decide how to fill the page -- when the page loads, we use JavaScript to literally inject the content we want in the web page at runtime. If you were to read the &#8220;source&#8221; of the main index.html, you&#8217;d find it basically empty (or more exactly having just a single div container).&lt;/span&gt;&lt;/p&gt;
@@ -307,7 +408,7 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;React JS&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Angular JS&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Vue JS&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, with code written in JavaScript or TypeScript.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Flutter&lt;/span&gt;&lt;span&gt;, with code written in Dart.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Flutter&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;, with code written in Dart.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I believe that also more or less represents their level of popularity. My opinion on them, in a one line summary each:&lt;/span&gt;&lt;/p&gt;
@@ -325,7 +426,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The only drawback of TypeScript is that it&#8217;s essentially &#8220;JavaScript with lipstick.&#8221; Nothing prevents us from doing all the crappy things that JS allows us to do. However, TypeScript comes with a linter tool which tries to catch us on exactly the common mistakes that everybody makes. Don&#8217;t ignore the warnings, they are here to help us.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Flutter is coded in Dart. That&#8217;s its strength. That&#8217;s also its main hindrance. We have to be willing and make the jump to learn one more language just to write that small SPA thingy. That actually has dragged me down, and I avoided Flutter for a long time just because of that.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;But&#8230; once I jumped into it, I realized that the TL;DR for Dart is &#8220;Java meets TypeScript&#8221;. Seriously. And if, like me, you find the Java syntax to be actually quite agreable, then Dart almost becomes &#8220;TypeScript as it should have been from the beginning&#8221;. In essence, it was intuitive, easy to learn, and easy to get back into it when looking at old code.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;But&#8230; once I jumped into it, I realized that the TL;DR for Dart is &#8220;Java meets TypeScript&#8221;. Seriously. And if, like me, you find the Java syntax to be actually quite agreable, then Dart almost becomes &#8220;TypeScript as it should have been from the beginning&#8221;. In essence, it was intuitive, easy to learn, and easy to get back into it when looking at old code.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.g6cf9fn625pa&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Flutter &lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -349,7 +450,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;When I first learned React JS, that totally confused me. Ironically, it&#8217;s only &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;after learning Flutter&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;that the React JS stuff started making sense. And I&#8217;m still easily confused by e.g. the &#8220;useEffect&#8221; dependency lists.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;My last 2 projects used React JS. I decided to standardize on that.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;My last 2 projects used React JS. I decided to standardize on that.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.fgi4bnlqtbld&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Vue JS&lt;/span&gt;&lt;/h2&gt;
@@ -369,7 +470,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-16T00:00:08-07:00</updated>
+<updated>2025-10-16T00:00:34-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -381,7 +482,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I&#8217;ve had a couple people ask me about &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;upgrading to Windows 11&lt;/span&gt;&lt;span&gt;, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.s0f9vqvfqf9v&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span&gt;What this is Not&lt;/span&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;h.s0f9vqvfqf9v&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;What this is Not&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;TL;DR&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: This is no shortcut TL;DR here.&lt;br&gt;If you&#8217;re not willing to read it all, I suggest you don&#8217;t bother.&lt;br&gt;If you don&#8217;t understand what you&#8217;re doing, I suggest you don&#8217;t bother.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If you&#8217;re not familiar and comfortable with changing BIOS options or changing an SSD, I suggest you don&#8217;t bother either.&lt;/span&gt;&lt;/p&gt;
@@ -430,21 +531,21 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I know nothing of modern AMD processors so I can&#8217;t say what works or doesn&#8217;t for them.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.y9l0bsfjh8i2&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Check the BIOS Mode&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.y9l0bsfjh8i2&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Check the BIOS Mode:&lt;/span&gt;&lt;/h3&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;That&#8217;s either &#8220;Legacy&#8221; or &#8220;UEFI&#8221;.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If it&#8217;s &#8220;UEFI&#8221;, good news, you don&#8217;t have to deal with it.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;If it&#8217;s &#8220;Legacy&#8221;, we&#8217;ll need to change it to UEFI mode &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;later&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. Don&#8217;t change it right away or the machine won&#8217;t boot anymore.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.e3ueez5derzu&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Check the Secure Boot state&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.e3ueez5derzu&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Check the Secure Boot state:&lt;/span&gt;&lt;/h3&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;That can be &#8220;Unsupported&#8221;, &#8220;Supported&#8221;, or &#8220;Enabled&#8221;.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Windows 11 requires it to be at least supported. It doesn&#8217;t have to be enabled.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;If Secure Boot is Unsupported, Windows 11 will never work on that machine.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.ej8nvpjpu333&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Check the System Disk partition style&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.ej8nvpjpu333&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Check the System Disk partition style:&lt;/span&gt;&lt;/h3&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Open PowerShell&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Run the command &#8220;Get-Disk&#8221;.&lt;/span&gt;&lt;/li&gt;
@@ -456,7 +557,7 @@
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.6eso8ni6f9ud&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Check the TPM mode&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.6eso8ni6f9ud&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Check the TPM mode:&lt;/span&gt;&lt;/h3&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Open the following tool:&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
@@ -605,7 +706,7 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Find the category that has the BIOS mode.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;On the Lenovo T460 / T480, that&#8217;s in the last category named &#8220;Startup&#8221; under &#8220;Boot Priority&#8221;.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Change it to &#8220;UEFI only&#8221;.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;S&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;ave and reboot. &lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Save and reboot. &lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;We should be able to boot back into Windows 10, but this time with a disk using the GPT partition style with an UEFI BIOS.&lt;/span&gt;&lt;/p&gt;
@@ -623,7 +724,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;If we have all that and an Intel 8th Gen CPU or better, we have a machine that is all ready to install Windows 11 &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;the easy way&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;as it was intended to be installed.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Just to be clear, I would still recommend making a backup copy of the system drive as explained above. That&#8217;s not a gimmick. It&#8217;s my guarantee that I can always revert back to the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;pristine&lt;/span&gt;&lt;span&gt;&amp;nbsp;Window 10 disk if anything goes wrong.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Just to be clear, I would still recommend making a backup copy of the system drive as explained above. That&#8217;s not a gimmick. It&#8217;s my guarantee that I can always revert back to the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;pristine&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;Window 10 disk if anything goes wrong.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The simplest way to force the install on Windows 11 on compatible hardware is to download the &#8220;Installation Assistant&#8221; from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/software-download/windows11&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://www.microsoft.com/en-us/software-download/windows11&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;and follow the steps.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -645,7 +746,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Preliminaries:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Apply updates to Windows 10 first&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Apply updates to Windows 10 first.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Go to Windows Settings &amp;gt; Windows Updates and ensure you have the most up to date version of Windows 10 already installed.&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Do not install the undesirable &#8220;preview&#8221; updates, just install the regular ones.&lt;/span&gt;&lt;/li&gt;
@@ -686,7 +787,7 @@
    &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Name: AllowUpgradesWithUnsupportedTPMOrCPU&lt;/span&gt;&lt;/li&gt;
    &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Value: 1&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Double check and triple check the spelling of that name above. It&#8217;s &#8220;Upgrades&#8221; plural, and &#8220;Unsupported&#8221; with 2 &#8220;p&#8221;, and &#8220;TPMOrCPU&#8221; exactly as-is at the end.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Double check and triple check the spelling of that name above. It&#8217;s &#8220;Upgrades&#8221; plural, and &#8220;Unsupported&#8221; with 2 &#8220;p&#8221;, and &#8220;TPMOrCPU&#8221; exactly as-is at the end.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -772,7 +873,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-06T00:00:56-07:00</updated>
+<updated>2025-10-06T00:00:10-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -829,7 +930,7 @@
 <category term="rust" label="Rust"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Some notes on how to perform basic Tasks, Threads, Synchronization functions using Rust with ESP-RS. &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;And to clarify, by &#8220;ESP-RS&#8221;, I mean the &#8220;std&#8221; mode built around the esp-idf-sys/svc/hal crates.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Some notes on how to perform basic Tasks, Threads, Synchronization functions using Rust with ESP-RS. And to clarify, by &#8220;ESP-RS&#8221;, I mean the &#8220;std&#8221; mode built around the esp-idf-sys/svc/hal crates.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This isn&#8217;t meant to be used as a canonical guide. Most of these are just a quick reminder for myself when I need something so that I don&#8217;t need to re-read the docs every time. So basically that only covers stuff I know &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;I&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;would need. I&#8217;m not pretending to be exhaustive here. And since I&#8217;m a newbie in Rust, I&#8217;m not pretending to be right either. Do your own due diligence by reading the official docs.&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.4gzppor3shk5&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Tasks &amp;amp; Threads&lt;/span&gt;&lt;/h2&gt;
@@ -927,7 +1028,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Let&#8217;s say a thread needs to export a counter and another thread needs to read it.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.nmy01kph75q&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span&gt;Option 1 is to use LazyLock:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.nmy01kph75q&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Option 1 is to use LazyLock:&lt;/span&gt;&lt;/h3&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;static COUNTER: LazyLock&amp;lt;Mutex&amp;lt;i32&amp;gt;&amp;gt; = LazyLock::new(|| Mutex::new(0));&lt;br&gt;fn increment_counter() {&lt;br&gt; &amp;nbsp; &amp;nbsp;let mut num = COUNTER.lock().unwrap();&lt;br&gt; &amp;nbsp; &amp;nbsp;*num += 1;&lt;br&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -935,7 +1036,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;LazyLock is nice as it exposes the value as &#8220;just a &amp;amp;T&#8221; so it&#8217;s easy to use: the user automatically locks and gets the object in the scope, and the lock is released when the scope ends.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.2ztb5mxm3kl3&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Option 2 is to use an Atomic type&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.2ztb5mxm3kl3&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Option 2 is to use an Atomic type:&lt;/span&gt;&lt;/h3&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For stuff as simple as an i32, there&#8217;s an atomic object just for that:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -954,7 +1055,7 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;counter.load(Ordering::SeqCst or Relaxed) &#8594; i32 (with memory ordering semantics)&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Relaxed: no constraints.&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Acquire: &#8230;? I have no idea what &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/sync/atomic/enum.Ordering.html#variant.Acquire&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;this even means&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8230;&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;Acquire: &#8230;? I have no idea what &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://doc.rust-lang.org/std/sync/atomic/enum.Ordering.html#variant.Acquire&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;this even means&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8230;&lt;/span&gt;&lt;/li&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;SeqCst: all others threads see sequentially consistent operations,.&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;counter.store(value, Ordering)&lt;/span&gt;&lt;/li&gt;
@@ -974,7 +1075,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-02T00:00:03-07:00</updated>
+<updated>2025-10-02T00:00:51-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1004,96 +1105,8 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Of note: there is no &#8220;esp&#8221; toolchain installed (yet).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;OK now we need to install a bunch of stuff:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ cargo install ldproxy&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;# time: &amp;lt; 5 minutes&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ cargo install espup --locked&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;# time: &amp;lt; 5 minutes&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ espup install --default-host x86_64-pc-windows-msvc --targets esp32,esp32s2&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;# time: &amp;lt; 1 minutes&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;# &#8220;espup&#8221; generates the &#8220;export-esp.ps1&#8221; that we&#8217;ll need later&lt;br&gt;$ ls -la &quot;C:\Users\$USER\export-esp.ps1&quot;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;# At that point we have a usable &#8220;esp&#8221; toolchain. We used ~3 GB of disk space.&lt;br&gt;# We just need the &#8220;espflash&#8221; tool.&lt;br&gt;$ cargo install espflash --locked&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;# time ~3 minutes&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Optionals tools we can install and build:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ cargo install esp-generate --locked&lt;br&gt;$ cargo install esp-config --features=tui --locked&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I don&#8217;t use esp-generate nor esp-config so I just skip them. &#8220;esp-generate&#8221; is useful to create a barebone no_std project or clone a canonical esp-rs/std one, but I basically do that by cloning my own canonical git sample:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span&gt;$ git clone &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/ralfoide/arduino&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;git@github.com:ralfoide/arduino.git&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&lt;br&gt;$ cd ESP32-CAM/Rust/esp-rs-std-blinky&lt;br&gt;$ echo &#8220;don&#8217;t run cargo build yet&#8221;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;At that point, we &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;could&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;build a project, except that it will fail.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The first &#8220;cargo build&#8221; or &#8220;cargo run&#8221; we&#8217;ll do with an &#8220;esp-idf-sys&#8221; crate is going to perform an entire checkout of the ESP-IDF toolchain (complete with its own Python env, etc) and build it locally. That will take an extra 3.8 GB once it succeeds, except it will never succeed at first. The main issue is that the ESP-IDF build generates paths which are much longer than what the Windows shell can support. So read below before trying to build.&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.duq1jte1il0o&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Customize the ESP-IDF Toolchain Location&lt;/span&gt;&lt;/h2&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;By default, &#8220;cargo build&#8221; will generate a &#8220;.embuild&#8221; folder in the current project directory, and proceed to perform an entire git checkout of the ESP-IDF toolchain in there and build it. This build has very long paths, and it happens in your own development folder that itself can have fairly long paths. The result is a failure due to the path being longer than Windows can deal with.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;You&#8217;ll get errors like this:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ cargo build&lt;br&gt;D:/github/ralfoide/arduino/ESP32-CAM/RustExperiment/esp-rs-exp/.embuild/espressif/esp-idf/v5.2.3/components/mbedtls/port/esp_hardware.c:25:1: fatal error: opening dependency file esp-idf\mbedtls\mbedtls\library\CMakeFiles\mbedcrypto.dir\d6d36c90cb3cc8680c2d3a46d0c7f9c4\esp_hardware.c.obj.d: No such file or directory&lt;br&gt;error: failed to run custom build command for `esp-idf-sys v0.36.1`&lt;br&gt;Caused by:&lt;br&gt; &amp;nbsp;process didn&apos;t exit successfully: `D:\github\ralfoide\arduino\ESP32-CAM\RustExperiment\esp-rs-exp\target\release\build\esp-idf-sys-e4b83c89877131ec\build-script-build` (exit code: 1)&lt;br&gt; &amp;nbsp;--- stderr&lt;br&gt; &amp;nbsp;Error: Too long output directory: `\\?\D:\github\ralfoide\arduino\ESP32-CAM\RustExperiment\esp-rs-exp\target\xtensa-esp32-none-elf\release\build\esp-idf-sys-405b878788241d10\out`. Shorten your project path down to no more than 10 characters (or use WSL2 and its native Linux filesystem). Note that tricks like Windows `subst` do NOT work!&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I&#8217;m not interested in &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;moving&lt;/span&gt;&lt;span&gt;&amp;nbsp;my development folder, and I definitely do not want to deal ever again with WSL2. Luckily, there&#8217;s a much easier solution to this problem: the ESP-IDF location does &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;not&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;have to be located in the project&#8217;s folder at all.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Simply edit .cargo/config.toml in your project and customize the ESP-IDF location:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ vim .cargo/config.toml&lt;br&gt;[env]&lt;br&gt;ESP_IDF_PATH_ISSUES = &quot;warn&quot;&lt;br&gt;ESP_IDF_TOOLS_INSTALL_DIR = { value = &quot;global&quot; }&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;There are 2 variables to add:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8220;ESP_IDF_PATH_ISSUES&#8221; tells the build system to print suspiciously long path but do not abort the build.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;&#8220;ESP_IDF_TOOLS_INSTALL_DIR&#8221; indicates where to install the ESP-IDF folder as described in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/esp-rs/esp-idf-sys/blob/master/BUILD-OPTIONS.md#esp_idf_tools_install_dir-esp_idf_tools_install_dir&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;esp-idf-sys documentation&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. The default is &#8220;workspace&#8221;. A custom directory could be specified. However in my case, &#8220;global&#8221; works very nicely and it defaults to $USERPROFILE/.espressif (a.k.a. C:\Users\$USER\.espressif).&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;For my use case, one advantage of &#8220;global&#8221; is that if you have multiple projects, they will share the same ESP-IDF install. That directly has one sub-dir per ESP-IDF version. Thus I allocate only 3.8 GB for that ESP-IDF install globally instead of per-project.&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.ut0el3leuuww&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Enable Win32 Long Path Supports&lt;/span&gt;&lt;/h2&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This MUST be enabled or the ESP-IDF install will fail:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;gpedit.msc &amp;gt; run as admin&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Local computer &amp;gt; Computer config &amp;gt; Admin Templates &amp;gt; System &amp;gt; Filesystem&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8220;Enable Win32 long path&#8221; &#8594; enable&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Reboot&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I don&#8217;t know why modern Windows installs don&#8217;t just enable this by default. There&#8217;s no downside to having the long path support AFAIK.&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.zijglj2y3d67&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;PowerShell: Check Python with PowerShell&lt;/span&gt;&lt;/h2&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The PowerShell build first failed because &#8220;Python.exe&#8221; could not be found.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;On the Cygwin box, that wasn&#8217;t a problem, and this machine does have the Windows Python 3.11 installed but it&#8217;s apparently not in the main $Env:PATH used by PowerShell.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I guess I &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;could&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;reinstall Python and not forget the &#8220;add to PATH&#8221; checkbox in the installer, but that&#8217;s boring when I can simply alter the &#8220;export-esp.ps1&#8221; script to add Python to the PATH:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; vim C:\Users\$Env:USERNAME\export-esp.ps1&lt;br&gt;&amp;gt; $Env:PATH=&quot;C:\Users\$Env:USERNAME\AppData\Local\Programs\Python\Python311;&quot;+$Env:PATH&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Check it&#8217;s available in PowerShell:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; python --version&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Python 3.11.2&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.jpflihazd8f4&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;PowerShell: Allow to Execute Scripts&lt;/span&gt;&lt;/h2&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Open PowerShell and run this command &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;once to allow execution of the ps1 script:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left;text-indent:36pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Now we can run the script to change the PATH:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left;text-indent:36pt&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; C:\Users\$Env:USERNAME\export-esp.ps1&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.px40ocev4u06&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Build esp-idf-sys Once with PowerShell&lt;/span&gt;&lt;/h2&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Although I want to use MSYS2 later, the first build of the &#8220;esp-idf-sys&#8221; crate is special. It performs an entire git checkout of the ESP-IDF toolchain and builds many of the tools once. I found that this step worked with Cygwin yet it always failed with MSYS2 due to a path style mismatch. The solution is to build the project &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;once&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;with PowerShell, then we can use the regular MSYS2 for followup builds.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; cd C:\github\ralfoide\arduino\ESP32-CAM\Rust\esp-rs-std-webcam\&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; C:\Users\$Env:USER\export-esp.ps1&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;gt; date ; cargo build -vv ; date&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;That took about 7 minutes for esp-idf-sys and ~7 minutes for the other crates.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Once this is built once, I&#8217;ve noticed it&#8217;s then possible to build from MSYS2 as expected:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;lt;MSYS2&amp;gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;$ carbo build -vv --release&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&#8658; that works now.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2025-10-01T00:00:18-07:00</updated>
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-10-01T00:00:53-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1107,11 +1120,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;This time it looks like I could at least do what I want: use Rust with ESP-RS on the ESP32-CAM and actually capture image frames. There&#8217;s now some good ESP Camera component circulating around with some tangible support:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/espressif/esp32-camera&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/espressif/esp32-camera&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;An Espressif ESP32 Camera module with an OV2640 driver like the ESP32-CAM does have.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/espressif/esp32-camera&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/espressif/esp32-camera&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: An Espressif ESP32 Camera module with an OV2640 driver like the ESP32-CAM does have.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/jlocash/esp-camera-rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/jlocash/esp-camera-rs&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: The &#8220;original&#8221; example of how to wrap the esp-camera component into a Rust embedded project.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/jlocash/esp-camera-rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/jlocash/esp-camera-rs&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: A &lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;fork of that previous project.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/MathiasPius/esp-camera-rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/MathiasPius/esp-camera-rs&lt;/a&gt;&lt;/span&gt;&lt;span&gt;: Y&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;et another fork.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/Kezii/esp32cam_rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/Kezii/esp32cam_rs&lt;/a&gt;&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;A real example using the esp32-camera IDF component above, with an &#8220;espcam.rs&#8221; wrapper around it, and a wifi query.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/jlocash/esp-camera-rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/jlocash/esp-camera-rs&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: A fork of that previous project.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/MathiasPius/esp-camera-rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/MathiasPius/esp-camera-rs&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: Yet another fork.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/Kezii/esp32cam_rs&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/Kezii/esp32cam_rs&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: A real example using the esp32-camera IDF component above, with an &#8220;espcam.rs&#8221; wrapper around it, and a wifi query.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;To use this in an ESP-RS project, we need 3 changes:&lt;/span&gt;&lt;/p&gt;
@@ -1139,7 +1152,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-09-28T00:00:41-07:00</updated>
+<updated>2025-09-28T00:00:58-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1181,8 +1194,8 @@
  &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;A base URL:&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;https://www.google-analytics.com/debug/mp/collect&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp; &amp;nbsp; -- debugging version&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;https://www.google-analytics.com/mp/collect&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; -- real pings version&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;https://www.google-analytics.com/debug/mp/collect &amp;nbsp; &amp;nbsp;-- debugging version&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;https://www.google-analytics.com/mp/collect &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;-- real pings version&lt;/span&gt;&lt;/li&gt;
  &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The POST URL is:&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
@@ -1195,10 +1208,10 @@
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://docs.circuitpython.org/projects/requests/en/latest/examples.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;AdaFruit &#8220;requests&#8221; library&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;is the simplest way to send a POST request. It accepts either a JSON (using a Python dictionary) or a string payload.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;When POSTing to the debug URL, print the response.status_code and the response.content.decode() to get valuable information on why requests fail.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span&gt;When POSTing to the real ping version, the GA server replies with 204 (Success w/ No Content) and a complete lack of response body.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;When POSTing to the real ping version, the GA server replies with 204 (Success w/ No Content) and a complete lack of response body.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-04-12T00:00:47-07:00</updated>
+<updated>2025-04-12T00:00:54-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1216,7 +1229,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;It turns out that CircuitPython is built with a max stack depth of 15-16 calls (*), at least for this version of the MatrixPortal S3.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;It&#8217;s entirely possible to rebuild it with a different stack depth, if one is inclined to do so.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The stack size is controlled by CIRCUITPY_PYSTACK_SIZE which is defined globally here:&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;and is also architecture dependent -- e.g. the SAM arch overrides the default.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The stack size is controlled by CIRCUITPY_PYSTACK_SIZE which is defined globally here:&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/adafruit/circuitpython/blob/HEAD/py/circuitpy_mpconfig.h#L455&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;br&gt;and is also architecture dependent -- e.g. the SAM arch overrides the default.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Documentation on CIRCUITPY_PYSTACK_SIZE is here:&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/adafruit/circuitpython/blob/HEAD/docs/environment.rst#circuitpy_pystack_size&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/adafruit/circuitpython/blob/HEAD/docs/environment.rst#circuitpy_pystack_size&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;(*) As can be seen above, the &#8220;stack size&#8221; is not really a number of calls but really a size in bytes. Thus I expect calls with more arguments will exhaust the stack faster, or whatever else needs to be pushed on the stack for each call.&lt;/span&gt;&lt;/p&gt;
@@ -1241,7 +1254,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-04-10T00:00:14-07:00</updated>
+<updated>2025-04-10T00:00:52-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1251,12 +1264,12 @@
 <category term="ESP32" label="Esp32"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Over there in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;trains/electronics blog&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I have a little write up about the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HUB75 Protocol for LED Matrix Displays&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, as used in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project. Go read it &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;there&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;Over there in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;trains/electronics blog&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, I have a little write up about the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HUB75 Protocol for LED Matrix Displays&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, as used in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://github.com/model-railroad/distant-signal&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Distant Signal&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;project. Go read it &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/train/2025-04-07_distant_signal_the_hub75_pro_6347ebc3.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;there&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-04-07T00:00:48-07:00</updated>
+<updated>2025-04-07T00:00:44-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1351,7 +1364,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;2- These games lack gameplay depth. Well, yeah. Totally. All of them.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/labs/archived/Nerdkill/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Nerdkill&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;is a good example as I never intended for the &#8220;game&#8221; to have a scoring system because then it would become the game I don&#8217;t want it to be (gratification of violence). Not having a scoring system is a core part of this gameplay (&#8220;violence is pointless&#8221;).&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/labs/apps/asqare/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Asqare&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;could do more, but really what for? It&#8217;s a me-too kind of gameplay and the more I add to it, the more it would be clear it&#8217;s not Bejeweled -- when I started, I was trying to not be that game, as part of the original implementation was to try &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;different&lt;/span&gt;&lt;span&gt;&amp;nbsp;gameplays&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;-- but the problem is that no matter what, it would be compared to that baseline.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/labs/apps/asqare/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Asqare&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;could do more, but really what for? It&#8217;s a me-too kind of gameplay and the more I add to it, the more it would be clear it&#8217;s not Bejeweled -- when I started, I was trying to not be that game, as part of the original implementation was to try &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;different&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;gameplays -- but the problem is that no matter what, it would be compared to that baseline.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;3- I do have a number of totally unfinished games. Or maybe it&#8217;s better to see them as &#8220;not even really started&#8221;. They are not even on the Labs page or anywhere to be found.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
@@ -1365,7 +1378,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-01-06T00:00:57-08:00</updated>
+<updated>2025-01-06T00:00:03-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1411,11 +1424,11 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Time to try again if this combo finally works.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;My main motivation is to use &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.cppreference.com/w/cpp/language/modules&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;C++20 Modules&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;(TL;DR Summary: it works&#8230; and yet it doesn&#8217;t. C++ Modules require a very specific compilation ordering due to cross module dependencies, and the Arduino CLI simply &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;cannot&lt;/span&gt;&lt;span&gt;&amp;nbsp;do that. However with ESP-IDF and CMake, it should be fine.&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;(TL;DR Summary: it works&#8230; and yet it doesn&#8217;t. C++ Modules require a very specific compilation ordering due to cross module dependencies, and the Arduino CLI simply &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;cannot&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;do that. However with ESP-IDF and CMake, it should be fine.)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2024-11-11T00:00:09-08:00</updated>
+<updated>2024-11-11T00:00:03-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1588,16 +1601,16 @@
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;var damage:= 10.5&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8658; inferred typing&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;var damage: float = 10.5&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8658; explicit typing&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.7ttg8x98dqgp&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;For constants&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.7ttg8x98dqgp&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;For constants:&lt;/span&gt;&lt;/h3&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;const MOVE_SPEED = 50.0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8658; inferred (= and := are the same)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;const MOVE_SPEED := 50.0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8658; inferred&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;const MOVE_SPEED: float = 50.0&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8658; explicit&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.j25ppnw9xip2&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;For functions&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.j25ppnw9xip2&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;For functions:&lt;/span&gt;&lt;/h3&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;func sum(a: float = 0.0, b: float = 0.0) -&amp;gt; float: &#8230; &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;func sum(a := 0.0, b := 0.0) -&amp;gt; float:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;h.887owtni8ehl&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Which types to use&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;:&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h.887owtni8ehl&quot; style=&quot;padding-bottom:4pt;padding-top:4pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:12pt;font-weight:700&quot;&gt;Which types to use:&lt;/span&gt;&lt;/h3&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html#what-can-be-a-type-hint&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/static_typing.html#what-can-be-a-type-hint&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Types can be:&lt;/span&gt;&lt;/p&gt;
@@ -1612,7 +1625,7 @@
 &lt;p style=&quot;margin-left:36pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;func blah() -&amp;gt; void: &#8230; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#8658; forces the function to not return a value&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;background-color:rgb(255, 255, 0)&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2024-07-09T00:00:28-07:00</updated>
+<updated>2024-07-09T00:00:15-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1721,12 +1734,12 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp; return std::unique_ptr&amp;lt;Class&amp;gt;(new Class());&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;C++ ref mentions creating the instances using std::make_unique(), but apparently I don&#8217;t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I&#8217;m using the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;previous&lt;/span&gt;&lt;span&gt;&amp;nbsp;one)&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;C++ ref mentions creating the instances using std::make_unique(), but apparently I don&#8217;t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I&#8217;m using the &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;previous&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;one).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2024-02-18T00:00:27-08:00</updated>
+<updated>2024-02-18T00:00:34-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
