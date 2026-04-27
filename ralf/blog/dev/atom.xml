@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-04-27T11:01:37.380267-07:00</updated>
+<updated>2026-04-27T11:35:22.452177-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -13,13 +13,19 @@
 <id>https://www.alfray.com/ralf/blog/dev/2026-04-18_davinci_fusion_ralf_delta_mask_fuse.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfDeltaMask.md&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Ralf Delta Mask Fuse&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It&apos;s a direct recreation in Fusion of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/README.md#ralf-delta-mask-blend-fx-shader&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LightWorks FX Shader&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;I wrote years ago:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfDeltaMask.md&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Ralf Delta Mask Fuse&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It&apos;s a direct recreation in Fusion of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/README.md#ralf-delta-mask-blend-fx-shader&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LightWorks FX Shader&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;I wrote years ago.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The goal is to compare a foreground media clip with a reference image to create a mask of what is moving on the image, and then compose this on top of a background. Here&apos;s a visual summary:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:320.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Disclaimer: This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It&apos;s easier for me to program a Fuse that does exactly what I want, which I did.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-weight:700&quot;&gt;TL;DR&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;: A foreground clip is subtracted from a clean plate reference to obtain a matte mask&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;that represents &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only what has changed&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That mask is then used to blend the foreground clip on top of a background clip.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-style:italic;font-weight:700&quot;&gt;Disclaimer&lt;/span&gt;&lt;span&gt;: &lt;/span&gt;&lt;span style=&quot;font-size:10pt&quot;&gt;This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It&apos;s easier for me to program a Fuse that does exactly what I want, which I did&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Usage Guide&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -31,7 +37,7 @@
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;reference&quot; -- this can be either a clip, or a static frame (a.k.a &quot;the clean plate&quot;)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask. That mask is then used to blend the foreground on top of the background.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask that represents &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;only what has changed&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;. That mask is then used to blend the foreground on top of the background.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-weight:700&quot;&gt;Fusion Node Setup&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -41,7 +47,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;background-color:rgb(255, 255, 0)&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Use the MediaIn as the foreground (typically I use the clip from the Edit timeline).&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For a static clean plate, simply plug that into a Matte &amp;gt; Clean Plate, and configure it in &quot;Hold Frame&quot; with the non-animated frame for the static reference.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;For a static clean plate, simply plug that into a Matte &amp;gt; Clean Plate, and configure it in &quot;Hold Frame&quot; with the non-animated frame number for the static reference.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Plug both the foreground and the clean plate into a Matte &amp;gt; Ralf Delta Mask node.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Drop the background clip from the Media Pool; this creates a new MediaIn node. Plug that into the background input of the Ralf Delta Mask node. Use the Trim of the background media input to offset the clip as desired.&lt;/span&gt;&lt;/li&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;In the Ralf Delta Mask properties:&lt;/span&gt;&lt;/li&gt;
@@ -89,7 +95,10 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Node inputs:&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Clean Plate&quot; and the &quot;Foreground&quot; inputs are mandatory. There is no output if they are missing.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Clean Plate&quot; and the &quot;Foreground&quot; inputs are mandatory.&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;There is no output if they are missing.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
  &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The &quot;Background&quot; input is optional.&lt;/span&gt;&lt;/li&gt;
  &lt;ul&gt;
   &lt;li style=&quot;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;When no background is provided, the output is always the revealed matte. The matte has RGBA channels filled and can be used as an input to other nodes for merging or effect mask.&lt;/span&gt;&lt;/li&gt;
@@ -105,7 +114,7 @@
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-04-18T00:00:10-07:00</updated>
+<updated>2026-04-18T00:00:22-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

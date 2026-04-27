@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="The Ralf Delta Mask Fuse&nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It's a direct recreation in Fusion of the LightWorks FX Shader&nbsp;I wrote years ago:" />
+<meta property="og:description" content="The Ralf Delta Mask Fuse&nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It's a direct recreation in Fusion of the LightWorks FX Shader&nbsp;I wrote years ago." />
 <meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="The Ralf Delta Mask Fuse&nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It's a direct recreation in Fusion of the LightWorks FX Shader&nbsp;I wrote years ago:" />
+<meta name="twitter:description" content="The Ralf Delta Mask Fuse&nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It's a direct recreation in Fusion of the LightWorks FX Shader&nbsp;I wrote years ago." />
 <meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg" />
 
 <title>R’alf Dev Log</title>
@@ -237,13 +237,19 @@ td p {
 </span></div>
 
 <p style="text-align:left"></p>
-<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfDeltaMask.md" style="color:inherit;text-decoration:inherit">Ralf Delta Mask Fuse</a></span><span>&nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It's a direct recreation in Fusion of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/README.md#ralf-delta-mask-blend-fx-shader" style="color:inherit;text-decoration:inherit">LightWorks FX Shader</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;I wrote years ago:</span></p>
+<p style="text-align:left"><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfDeltaMask.md" style="color:inherit;text-decoration:inherit">Ralf Delta Mask Fuse</a></span><span>&nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It's a direct recreation in Fusion of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/lightworks/blob/main/README.md#ralf-delta-mask-blend-fx-shader" style="color:inherit;text-decoration:inherit">LightWorks FX Shader</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;I wrote years ago.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The goal is to compare a foreground media clip with a reference image to create a mask of what is moving on the image, and then compose this on top of a background. Here's a visual summary:</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:320.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_3d0b41e629296034e2da3596a82069e2260b493f0561bfccc3ff9cb23d151033i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Disclaimer: This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It's easier for me to program a Fuse that does exactly what I want, which I did.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">TL;DR</span><span style="font-family:&quot;Roboto Mono&quot;">: A foreground clip is subtracted from a clean plate reference to obtain a matte mask</span></p>
+<p style="text-align:left"><span>that represents </span><span style="font-style:italic">only what has changed</span><span style="font-family:&quot;Roboto Mono&quot;">. That mask is then used to blend the foreground clip on top of a background clip.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-style:italic;font-weight:700">Disclaimer</span><span>: </span><span style="font-size:10pt">This can likely be achieved using a Difference Keyer and a Merge node in Resolve. With my limited knowledge of Fusion, I always struggle to configure a Difference Keyer properly to get the effect I desire. It's easier for me to program a Fuse that does exactly what I want, which I did</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Usage Guide</span></p>
 <p style="text-align:left"></p>
@@ -255,7 +261,7 @@ td p {
  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The "reference" -- this can be either a clip, or a static frame (a.k.a "the clean plate")</span></li>
 </ul>
 <p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask. That mask is then used to blend the foreground on top of the background.</span></p>
+<p style="text-align:left"><span>The clean plate represents the decor without the moving object. The foreground is subtracted from the clean plate reference to obtain a matte mask that represents </span><span style="font-style:italic">only what has changed</span><span style="font-family:&quot;Roboto Mono&quot;">. That mask is then used to blend the foreground on top of the background.</span></p>
 <p style="text-align:left"></p>
 <p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-weight:700">Fusion Node Setup</span></p>
 <p style="text-align:left"></p>
