@@ -290,7 +290,7 @@ td p {
   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Depending on the scene, one option may work better than the other one.</span></li>
   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Chroma and Luma options may somewhat help if the recorded clips have some minor illumination differences.</span></li>
   <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Luma and Chroma are defined using the YCbCr colorspace using the conversion formulas from </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.itu.int/rec/T-REC-T.871-201105-I/en" style="color:inherit;text-decoration:inherit">JFIF ITU-T T.871</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;(RGB to YCbCr using full range, instead of the Y′CbCr ITU-R BT.601 with the limited 16-240 range).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The difference is computed as the average of the absolute value of the difference on each channel, and is thus always a value in the [0..1] range.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The highest absolute difference per channel is used as the threshold.</span></li>
  </ul>
  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Threshold 1 &amp; 2: The min/max threshold of the difference.</span></li>
  <ul>
@@ -355,7 +355,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-28 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
