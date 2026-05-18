@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="It's time to reflect on Conductor 2 again." />
+<meta property="og:description" content="I’ve been thinking about how Lacan uses his Arduino for his aircraft animation." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="It's time to reflect on Conductor 2 again." />
+<meta name="twitter:description" content="I’ve been thinking about how Lacan uses his Arduino for his aircraft animation." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,86 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-05-10_arduino_sequence_controller_.html">
+    <h2 class="post-title">2022-05-10 - Arduino Sequence Controller?</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’ve been thinking about how Lacan uses his Arduino for his aircraft animation.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What he needs is really a sequence controller to create time-base sequences triggered by input events.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I had to program this from scratch, what would I do? I’d create a “mini language” using either macro or C++ objects which represents states to change over time:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">LED timings is really just a list of (start timestamp, LED pin, LED state).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Servos: (start timestamp, servo pin, angle to reach, speed or duration)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Motors: (start timestamp, motor pin, power level, direction)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Instructions to end sequence, repeat N times, or chain to another sequence.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Depending on the specific needs:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sequence(s) are started by an input (with either forced restart or don’t retrigger).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need more than one concurrent sequence? Make each sequence independent. That is each sequence is started and actuates by itself on main clock.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need to make sequences run solo? Have an instruction that stop/cancel all other sequences.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Maybe put sequences in groups (e.g. “servo groups”, “lights groups”) and make the group exclusive as in only 1 sequence runs in the group, or be able to stop any running sequence in the group.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example for the case of the variable geometry plane:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button 1 ⇒ sequence 1 = stop sequence 2, move servo N up to 60. No retrigger.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button 2 ⇒ sequence 2 = stop sequence 1, move servo N down to 0. No retrigger.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button N ⇒ sequence N for lights.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It seems so obvious that I would be surprised if this had not been done before and be made available as a customizable library for arduino.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For model trains, there are a couple obvious usages:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sequencing road traffic lights, e.g. to animate a city.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">With the addition of a “random LED value” instruction, animate anything from a camp fire to a building in fire.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-02-20_cat_litter_box_timer.html">
+    <h2 class="post-title">2022-02-20 - Cat Litter Box Timer</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Where’s the source for the current “Timer” app used for the litter box?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Device it uses: Tmo (saffire?) 3g something… running Android 2.2 (aka Froyo).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">API level ⇒ API 8</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As an exercise, it would be nice to rewrite this in Kotlin to see if it can run on Froyo. (FAQ says there’s no min sdk req).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-12-25_conductor_2.html">
     <h2 class="post-title">2021-12-25 - Conductor 2</h2>
@@ -558,104 +638,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-08-11_android_testing_androidx_and_7a1dff4e.html">
-    <h2 class="post-title">2021-08-11 - Android Testing : AndroidX “AndroidJUnit4” vs Robolectric</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I feel like a case of deja vu so I need to write this down.</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Robolectric: simulating an Android runtime working on top of the JVM, local dev machine. No emulator needed.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Used to be simple and straightforward. Since Robolectric 4 and recent android gradle updates, some things have been deprecated / changed making it harder to use.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">AndroidX runner “AndroidJUnitRunner” tests which go in androidTest folder: run on device or emulator, and are essentially the modern version of the instrumentation tests.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Setup for gradle imports is highly modular. For ref:</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/training/testing/set-up-project" style="color:inherit;text-decoration:inherit">https://developer.android.com/training/testing/set-up-project</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">AndroidX runner “AndroidJUnit4” tests which go in androidTest folder: run on device or emulator too ⇒ the test folder name indicates which build rule is used and where the test runs.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">AndroidX runner “MockitoJUnitRunner” tests which go in the test folder: run on JVM.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is provided by mockito-core and is basically a JUnit runner that also happens to auto-init all the @Mock instances. ⇒ Just a convenience over the usual Mock rule, no relation to Android framework.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How much of the Android framework can be used with that? ⇒ none</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Robolectric with AndroidX tests:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://robolectric.org/androidx_test/" style="color:inherit;text-decoration:inherit">http://robolectric.org/androidx_test/</a></span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Use the “AndroidJUnit4” runner.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Confusing because nothing makes it clear these are Robolectric tests.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What I have done for Cab v2:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Build.gradle &gt; defaultConfig &gt; testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">ServersActivityTest:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">@RunWith(AndroidJUnit4.class)<br>@Config(application = TestMainApp.class)<br>ApplicationProvider.getApplicationContext()<br>ActivityScenario.launch(MainActivity.class)</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The cabv2 TestMainApp derives from the LegacyMainApp and replaces the IAppComponent by the ITestAppComponent for testing. That’s how test modules are injected in the app.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Since updating B3, I was getting errors:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“robolectric RuntimeException Method not mocked”</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">They are “solved” by adding this to app gradle:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">testOptions &gt; unitTests &gt; &nbsp;returnDefaultValues = true</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which in turn creates another error: “java.lang.ClassNotFoundException: android.content.res.ApkAssets”</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Real solution: following </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/robolectric/robolectric/issues/4740" style="color:inherit;text-decoration:inherit">https://github.com/robolectric/robolectric/issues/4740</a></span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The dumb solution is to remove the m2 robolectric cache so that it gets downloaded again.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-08-08_gradle_wrapper_maven_repo_of_72ce091b.html">
-    <h2 class="post-title">2021-08-08 - Gradle Wrapper + Maven Repo Offline caching</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://softwareengineering.stackexchange.com/questions/331817/self-contained-projects-gradle-maven-dependencies-offline" style="color:inherit;text-decoration:inherit">https://softwareengineering.stackexchange.com/questions/331817/self-contained-projects-gradle-maven-dependencies-offline</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This explains:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How to use an offline version of the Gradle wrapper.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How to use an offline version of a project’s Maven repo dependencies (cached once).</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -672,7 +654,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

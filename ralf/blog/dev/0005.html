@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="VSCode &gt; Terminal &gt; use “v” icon &gt; Terminal Settings" />
+<meta property="og:description" content="Just leaving this here to explore it later: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="VSCode &gt; Terminal &gt; use “v” icon &gt; Terminal Settings" />
+<meta name="twitter:description" content="Just leaving this here to explore it later: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,152 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-02-24_mqtt.html">
+    <h2 class="post-title">2023-02-24 - MQTT</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Just leaving this here to explore it later: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html" style="color:inherit;text-decoration:inherit">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Guides:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/alltheiot-protocols/mqtt" style="color:inherit;text-decoration:inherit">https://learn.adafruit.com/alltheiot-protocols/mqtt</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-mqtt-device-to-device" style="color:inherit;text-decoration:inherit">https://docs.arduino.cc/tutorials/uno-wifi-rev2/uno-wifi-r2-mqtt-device-to-device</a></span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Spec for MQTT v5:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html" style="color:inherit;text-decoration:inherit">https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html</a></span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This would be useful for SDB: make it an MQTT client.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But potentially that can be useful for other projects.</span></p>
+<p style="text-align:left"><span>For example, my current layout stats from Randall are sent via very </span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">hackish</span><span>&nbsp;REST post (</span><span style="-webkit-text-decoration-skip:none;text-decoration:line-through;text-decoration-skip-ink:none">hackish in the sense it’s received via a BASH CGI</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;:-p ⇒ not anymore, it’s a CGI py), and it may be better served by using this protocol: e.g. Conductor sending events to home via broker/gateways, and I'd want to better understand the possibilities.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">From the adafruit guide above:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An </span><span style="font-weight:700">MQTT broker</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is a “stable” node to which (potentially ephemeral) MQTT clients connect. It’s basically the “local server” of a bunch of clients.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Brokers typically have their own local database but they do not have to.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An </span><span style="font-weight:700">MQTT client</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is any end-point sending or receiving messages.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">Publish</span><span style="font-family:&quot;Roboto Mono&quot;">: A client sends a message to a broker.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-weight:700">Subscribe</span><span style="font-family:&quot;Roboto Mono&quot;">: A client receives messages from a broker.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A client keeps an open connection to a broker. The connection open/close is lightweight enough that it can be beneficial to open/close it when needed.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MQTT messages have a fairly lightweight header, designed for lightweight payloads.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The protocol is mostly transport-agnostic.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The spec above recommends TCP, TLS, or WebSockets, and recommends avoiding UDP due to lack of ordering guarantee.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QOS: 0=at most once delivery, 1=at least once delivery, 2=exactly once delivery.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Messages are sent to “</span><span style="font-weight:700">topics</span><span style="font-family:&quot;Roboto Mono&quot;">”: a hierarchical string e.g. /root/part1/…/partn.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Concrete example: /building1/sensors/floor1/division2/temperature.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Subscription can be done using wildcards: + for any given part, and # for “anything till the end”.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Topics should be carefully defined upfront, as changing the schema later is not trivial especially with regards to wildcard subscriptions.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>An </span><span style="font-weight:700">MQTT gateway</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is a client/bridge translating data from sensors to MQTT messages (example: sensor ⇔ RF/BLE ⇔ gateway ⇔ MQTT messages ⇔ &nbsp;broker).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MQTT Libraries</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Comprehensive list of brokers/clients here </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mqtt.org/software/" style="color:inherit;text-decoration:inherit">https://mqtt.org/software/</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ Note that most of the time I want a “client” and not a “broker” (server).</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>ESP-IDF has </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/mqtt.html" style="color:inherit;text-decoration:inherit">ESP-MQTT</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/arduino-libraries/ArduinoMqttClient" style="color:inherit;text-decoration:inherit">ArduinoMqttClient</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.eclipse.org/paho/index.php?page=clients/java/index.php" style="color:inherit;text-decoration:inherit">Eclipse Paho MQTT Client</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;Java library.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.mqttv5.client/1.2.5" style="color:inherit;text-decoration:inherit">https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.mqttv5.client/1.2.5</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;⇒ Last updated in 2020, seems dead in Java?</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/" style="color:inherit;text-decoration:inherit">Eclipse Mosquitto</a></span><span>&nbsp;open source broker: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/" style="color:inherit;text-decoration:inherit">https://mosquitto.org/</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Part of Debian or RPi packages. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mosquitto.org/download/" style="color:inherit;text-decoration:inherit">https://mosquitto.org/download/</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Mosquitto public “test” broker: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://test.mosquitto.org/" style="color:inherit;text-decoration:inherit">https://test.mosquitto.org/</a></span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Moquette : Java MQTT “lightweight” broker </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/moquette-io/moquette" style="color:inherit;text-decoration:inherit">https://github.com/moquette-io/moquette</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Note that most MQTT brokers try to be “comprehensive” with persistence support built on top of some database; there are very very few light Java libraries brokers.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Apache ActiveMQ: a broker and a client.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://activemq.apache.org/version-5-getting-started.html" style="color:inherit;text-decoration:inherit">https://activemq.apache.org/version-5-getting-started.html</a></span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mvnrepository.com/artifact/org.apache.activemq/activemq-client" style="color:inherit;text-decoration:inherit">https://mvnrepository.com/artifact/org.apache.activemq/activemq-client</a></span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>HiveMQ MQTT Client - </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/hivemq/hivemq-mqtt-client" style="color:inherit;text-decoration:inherit">https://github.com/hivemq/hivemq-mqtt-client</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That looks fairly used, recent, instantly documented in the README with no need to go fishing around.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://mvnrepository.com/artifact/com.hivemq/hivemq-mqtt-client" style="color:inherit;text-decoration:inherit">https://mvnrepository.com/artifact/com.hivemq/hivemq-mqtt-client</a></span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2023-01-31_diy_esp32_mount_hardware_design.html">
+    <h2 class="post-title">2023-01-31 - DIY ESP32 Mount/Hardware Design</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some interesting things here:</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.mrhmag.com/post/an-operating-steam-throttle-you-can-customize-12548356?&amp;trail=25" style="color:inherit;text-decoration:inherit">https://forum.mrhmag.com/post/an-operating-steam-throttle-you-can-customize-12548356?&amp;trail=25</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I don’t care about the “steam throttle” part. What I do care is this is using:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A 3d printed case.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An ESP32 and other arduino-like accessories, such as OLED screens, buttons, etc.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I realize I can use a principle like that for my own contraptions. For example for the ToF sensor for the Software Defined Blocks [research] project, I was wondering whether I should solder pin headers on the sensors and the ESP32 to use. The headers make it easier to prototype, but then they expose contacts that I may not want exposed during the real application -- and once soldered, the headers are impossible to remove neatly.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So here’s what I could be doing:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">3d print my own case / support.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In there, have holes for the pin headers.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This would support the part in the direction I want.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Just solder connections on the back on the appropriate pins.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Or use Dupont connectors.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The soldering can also help hold the part in place.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s still possible to unsolder and remove the part.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other option I had used before (for the motion sensor at Randall) was to use Dupont connectors for all the usable pins. That can also be worked in the 3d print to make room for only what I need, helping connect to the right pins.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Finally, for something like Software Defined Blocks [research], I’d want the sensor encased in a little box mimicking a railroad “trackside equipment house”, whatever that thing is called. It can just be a 3d printed rectangular box with a slanted root, painted in gray. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.hobbylinc.com/blms-modern-medium-electrical-box-large-ho-scale-model-railroad-trackside-accessory-4312" style="color:inherit;text-decoration:inherit">Example 1</a></span><span style="font-family:&quot;Roboto Mono&quot;">. These are called “electrical cabinet”, or “equipment house”, “relay house”, etc.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-01-29_vscode_and_terminal_and_cygwin.html">
     <h2 class="post-title">2023-01-29 - VSCode and Terminal and Cygwin</h2>
@@ -571,64 +717,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-08-31_android_kingdom_rush_td.html">
-    <h2 class="post-title">2022-08-31 - Android Kingdom Rush TD</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://love2d.org/" style="color:inherit;text-decoration:inherit">https://love2d.org/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;-- open source 2d game framework over Lua</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://luajit.org/" style="color:inherit;text-decoration:inherit">https://luajit.org/</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Another site online mentioned the use of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Cocos2d" style="color:inherit;text-decoration:inherit">cocos2d</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;which is not very interesting.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-08-14_nerdkill_android_and_godot.html">
-    <h2 class="post-title">2022-08-14 - Nerdkill Android and Godot</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Android
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill needs to be updated to satisfy the Play store requirements.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I started an “N2” branch in the Nerdkill Android repo, simply rebuilding the existing Android source under a modern AS / gradle project. This should be considered 90% done. The only known issues are:</span></p>
-<ol start="1" style="margin:0;padding:0">
- <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As for Asqare, I had to implement a “canvas zoom” in the rendering engine to simulate a smaller screen. This results in the desired pixelated look.</span></li>
- <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The weapon / cartouche area is 50% height. Probably needs to be adjusted by the canvas zoom or similar. [⇒ FIXED]</span></li>
- <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Lack of default Android menu. In Asqare, I fixed that by adding the window nav bar and populating a menu icon. I can do the same here, or I can just add a 3-dot menu icon in the intro screen. [⇒ Not Needed]</span></li>
-</ol>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’m likely going to just fix issue #2 (or maybe even not) and release the game as-is to meet the store requirements to avoid delisting. That’s the “immediate band-aid” strategy. [⇒ DONE, submitted to the store]</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But a bit more long term, I’ve been wanting to put out a Godot-based game, and after contemplating doing that for Asqare, I’ll use Nerdkill instead. After all that’s the core leitmotif of the project, to be a test bed for platform adoptance.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -645,7 +733,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

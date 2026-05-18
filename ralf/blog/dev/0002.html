@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Time to try again if this combo finally works." />
+<meta property="og:description" content="Recently I’ve started two game projects at home, none of which are in a good enough state to be published. One of them is TD1 which I’ve discussed here in the previous years, and I finally built a prototype, originally to have a concrete way to explore the issues in a specific defense-vs-attack gameplay. There were some interesting challenges. Then I’ve discussed that with some friends. Now that this is done, I have had little motivation to actually implement the discussed gameplay changes. Instead I have thoughts on other projects." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Time to try again if this combo finally works." />
+<meta name="twitter:description" content="Recently I’ve started two game projects at home, none of which are in a good enough state to be published. One of them is TD1 which I’ve discussed here in the previous years, and I finally built a prototype, originally to have a concrete way to explore the issues in a specific defense-vs-attack gameplay. There were some interesting challenges. Then I’ve discussed that with some friends. Now that this is done, I have had little motivation to actually implement the discussed gameplay changes. Instead I have thoughts on other projects." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,94 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-01-06_motivation_to_write_games.html">
+    <h2 class="post-title">2025-01-06 - Motivation to Write Games</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recently I’ve started two game projects at home, none of which are in a good enough state to be published. One of them is TD1 which I’ve discussed here in the previous years, and I finally built a prototype, originally to have a concrete way to explore the issues in a specific defense-vs-attack gameplay. There were some interesting challenges. Then I’ve discussed that with some friends. Now that this is done, I have had little motivation to actually implement the discussed gameplay changes. Instead I have thoughts on other projects.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Then I see a lot of little short games on Itch.io that are “playable” -- small scopes and essentially “mostly” finished. But I honestly don’t feel like playing them much besides the initial intro. Each time I think I’m maybe jealous because these games are finished and mine aren’t… but is that really the case?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Well, let’s analyze this a bit more.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">1- I’m jealous these games are “finished” and I don’t finish mine.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Well, it turns out the first part is only the appearance of it. I fully understand some of the games I see in the various itch.io Jams are only finished “on the surface” -- good enough for a Jam deadline. Each time I try some, I feel like there’s a lack of depth.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>It’s not true that I don’t finish my games. </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/" style="color:inherit;text-decoration:inherit">My Labs</a></span><span>&nbsp;has </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/archived/Nerdkill/" style="color:inherit;text-decoration:inherit">Nerdkill</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/asqare/" style="color:inherit;text-decoration:inherit">Asqare</a></span><span>&nbsp;which, also on the surface, can appear “finished” -- and in fact these 2 are actually finished from </span><span style="font-style:italic">my</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;point of view.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">2- These games lack gameplay depth. Well, yeah. Totally. All of them.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/archived/Nerdkill/" style="color:inherit;text-decoration:inherit">Nerdkill</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is a good example as I never intended for the “game” to have a scoring system because then it would become the game I don’t want it to be (gratification of violence). Not having a scoring system is a core part of this gameplay (“violence is pointless”).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/asqare/" style="color:inherit;text-decoration:inherit">Asqare</a></span><span>&nbsp;could do more, but really what for? It’s a me-too kind of gameplay and the more I add to it, the more it would be clear it’s not Bejeweled -- when I started, I was trying to not be that game, as part of the original implementation was to try </span><span style="font-style:italic">different</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;gameplays -- but the problem is that no matter what, it would be compared to that baseline.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">3- I do have a number of totally unfinished games. Or maybe it’s better to see them as “not even really started”. They are not even on the Labs page or anywhere to be found.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Cangrejo is one. It’s 200% me-too and not even clearly defined where it was going anyway. Jump! is another one such. They are essentially technological demos with a complete lack of interest in producing even a finished MVP. I only started them because I saw some other game and I thought “hey how would I implement </span><span style="font-style:italic">this</span><span style="font-family:&quot;Roboto Mono&quot;">”. But once I found the core engine implementation, I didn't really care about all the work needed to make it a playable game.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a way TD1 falls into that category as well. I had a vague idea, but I see a huge gap between what the prototype is and where I’d want it to be, and it’s not clear to me the end result would be interesting. Thus, yeah, I have little motivation to put in the effort to bridge that gap, only to end up with something I don’t care for at the end.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>In essence, that last part is key: I measure the cost of the project in terms of involvement versus result, and I don’t find it motivation compared to other stuff I may be doing. For example stuff like </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor" style="color:inherit;text-decoration:inherit">Conductor</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">RTAC</a></span><span>, or even </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/sdb" style="color:inherit;text-decoration:inherit">SDB</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;have a high involvement cost, yet on the other hand I can see the tangible benefits to me of having them working -- the Randall Museum visitors may not see the software behind the train automation, yet I know what drives that automation and I’m proud of it.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other aspect of these game projects is that I tend to focus on the wrong thing. I find it more interesting to focus on the engine and the framework than the gameplay or the rendering itself. I’m not really a game designer, and I’m definitely not a graphic artist. Eventually implementing the gameplay is the least interesting part of game development so far.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-12-29_kotlin_web.html">
+    <h2 class="post-title">2024-12-29 - Kotlin Web</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Kotlin
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It's time to look again at Kotlin for web development. Last time I tried it, a few years ago, it was embryonic and really not suitable for usage. Since then things have changed. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The entry point is Kotlin Multi Platform. It has now a version of Jetpack Compose: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.jetbrains.com/lp/compose-multiplatform/" style="color:inherit;text-decoration:inherit">https://www.jetbrains.com/lp/compose-multiplatform/</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The goal is to evaluate that against my use of Dart / Flutter on Firebase GCP.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There's currently some uncertainty in the future of Flutter. Dart should survive a bit longer as it still seems to be used internally by core projects, however the same can't be said of Flutter according to the water tank hearsay.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Evaluation criteria:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How to build a Kotlin MP project.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What can Compose do for the web.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Overall app architecture. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Integration with Firebase authentication.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Integration with Firebase DB.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ecosystem of 3rd party libraries.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ease of maintenance over time.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">These are all points where Flutter more or less excels. Dart seemed like a barrier at first, until I understood it as basically “Java/Kotlin meets Typescript”. After that, it just made sense and it's easy to work with and pick it up again when I only tweak a project once a year. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The “web UI” aspect of Flutter is familiar -- it's basically ReactJS, but easier to use, and better documented. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Flutter doc is very strong, and the IJ plugin is a delight to use. </span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-12-29_kotlin_web.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2024-11-11_esp32_with_arduino-esp32_idf_7a53fbf9.html">
     <h2 class="post-title">2024-11-11 - ESP32 with Arduino-esp32, IDF 5.1.x, and C++20</h2>
@@ -568,114 +656,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2024-02-18_c_unique_ptr.html">
-    <h2 class="post-title">2024-02-18 - C++ unique_ptr</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    CPP
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s time to update SDB to use more unique_ptr and/or shared_ptrs.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some simple examples come to mind:</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">class SdbModManager {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbMod*&gt; _mods;</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::map&lt;String, SdbMod*&gt; _modsmap;</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbSensor*&gt; _sensors;</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbServer*&gt; _servers;</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbBlock*&gt; _blocks;</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">All these should be either unique or shared pointers to clarify the ownership.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are 2 or 3 aspects to clarify:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How a new object is created.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How a ptr is “moved” into the vector.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Users of the vector.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For each collection, I have a simple getter that returns the vector as a reference:</span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">const std::vector&lt;SdbServer*&gt;&amp; servers() const &nbsp;{ return _servers; }</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and then I use that in a for/auto loop:</span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">for(auto* s: _manager.servers()) { … s-&gt;name() … &nbsp;}</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other kind of usage is the vector for Events. One goal here is to change that from a struct holding to holding unique ptrs, with the goal that events get automatically released when pulled out of the vector and used.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So first, I need to write down a few things about how to use unique_ptrs correctly.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/memory/unique_ptr" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/memory/unique_ptr</a></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">#include &lt;memory&gt;</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">auto p = std::unique_ptr&lt;Class&gt;(new Class())</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">std::unique_ptr&lt;Class&gt; function() {</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; return std::unique_ptr&lt;Class&gt;(new Class());</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>C++ ref mentions creating the instances using std::make_unique(), but apparently I don’t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I’m using the </span><span style="font-style:italic">previous</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;one).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2024-01-01_defold_vs_godot.html">
-    <h2 class="post-title">2024-01-01 - Defold vs Godot</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Godot
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>Week of 2023-12-24 to 2023-12-31, I wrote </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/#nerdkill" style="color:inherit;text-decoration:inherit">Nerdkill Defold</a></span><span style="font-family:&quot;Roboto Mono&quot;">. Worked well, was easy to use and get something.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing that was nice was that I ported the original game, with all the original 8 “weapons”.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Started looking at Nerdkill w/ Godot 4.2, just to compare with Defold. </span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Not sure there's a point in concluding that one though.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A new Asqare using Godot 4 for Android would make more sense.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One angle of Nerdkill w/ Godot would be how to create a project that can produce both a web version and a mobile version? More specifically, I’d want the screen form factor to be different.</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill “desktop” in landscape can use the cartouche with the 8 weapons.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill “mobile” in portrait can use the 5 weapons.</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I could of course change the mobile version to have the same 8-weapons row, but I feel the mobile version looks better that way.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(Alternate idea: consider using 7 weapons on mobile; drop the flag. 2 rows of 5 slots each, the cartouche would occupy the 3 middle bottom slots.)</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So one thing I realize I don’t know if it’s possible is to configure the window size dynamically, or at least static by export type. Or maybe it could be two projects using the same resources.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3" style="color:inherit;text-decoration:inherit">https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“get_window().size = Vector2i(width, height)”</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html</a></span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“the size in Project Settings &gt; Display &gt; Windows… think of it as the design size”</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“to support both landscape and portrait, consider using e.g. 720x720”</span></p>
-<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
-
-<a href="2024-01-01_defold_vs_godot.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -692,7 +672,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

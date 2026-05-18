@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Things to look for:" />
+<meta property="og:description" content="The next phase in Rig4 is to be able to generate a simple blog." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Things to look for:" />
+<meta name="twitter:description" content="The next phase in Rig4 is to be able to generate a simple blog." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,56 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2018-02-14_rig4_ext_.html">
+    <h2 class="post-title">2018-02-14 - Rig4 ext…</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The next phase in Rig4 is to be able to generate a simple blog.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2018-01-27_withrottle_connections_on_ipv6.html">
+    <h2 class="post-title">2018-01-27 - WiThrottle connections on IPv6</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In Cab2 / RTAC, the mDNS discovery generally gives IPv6 addresses before IPv4.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">2 things to investigate:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Why the code always seems to fail to connect to the IPv6.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Can I programmatically convert an IPv6 into an equivalent IPv4 (at least for local networks) and try that instead?</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2018-01-27_rig4_ext_.html">
     <h2 class="post-title">2018-01-27 - Rig4 ext…</h2>
@@ -635,146 +685,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2017-05-23_rxjava.html">
-    <h2 class="post-title">2017-05-23 - RxJava</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Still trying to wrap around the basics. </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some high level vocabulary:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Observable = iterator == the stream.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Source / emitter == produce values (into an Observable) via onNext / onCompleted.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Observer = consumer == callback (onNext / onError / onCompleted).</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">"Subscribe to an observable using an observer".</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">⇒ This is my main grip with RxJava: the vocabulary is nonsensical and confusing. It means as soon as I stop using it I will get confused when I get back to it later.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The flow in a nutshell: </span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">(emitter) ⇒ Observable ⇒ Observer[s].</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But in fact it is implemented as such:</span></p>
-<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">Observable.onSubscribe(emitter code) ⇒ Observer/Subscriber(receiving code)</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">with various intermediate steps in the stream.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A Disposable/Subscription represents the link from an Observer/Subscriber to an Observable/stream.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Core to remember:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Observable.{from|create}(source) ---&gt; the observable</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribeOn(Schedulers.io())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.observeOn(AndroidSchedulers.mainThread())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe(an observer).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RxJava2 has Observable vs Flowable:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Observable = no back pressure.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Observer type: #onNext / #onComplete / #onError / #onSubscribe(Disposable).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Disposable: #dispose.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Specialized types: Single, Completable, Maybe (types of Observable)</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Source: fromCallable(() -&gt; return value), </span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Source: Observable.create() using a "subscriber" with an "emitter" object.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Flowable = has back pressure built-in.</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Subscriber type: #onNext / #onComplete / #onError / #onSubscribe(Subscription).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Subscription: #cancel, #request.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RxStreams:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Publisher: #subscribe(Subscriber)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Subscriber: #onSubscribe(Subscription)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Subscription: #request, #cancel</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Processor&lt;T, R&gt;: converts a Subscriber T into a Publisher R.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A few links:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>The missing intro: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754" style="color:inherit;text-decoration:inherit">https://gist.github.com/staltz/868e7e9bc2a7b8c1f754</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>RxJava Android tips: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://futurice.com/blog/top-7-tips-for-rxjava-on-android" style="color:inherit;text-decoration:inherit">http://futurice.com/blog/top-7-tips-for-rxjava-on-android</a></span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Using it to replace an Event Bus:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/" style="color:inherit;text-decoration:inherit">http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba" style="color:inherit;text-decoration:inherit">https://lorentzos.com/rxjava-as-event-bus-the-right-way-10a36bdd49ba</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
-</ul>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Useful videos:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=k3D0cWyNno4" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=k3D0cWyNno4</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.youtube.com/watch?v=htIXKI5gOQU" style="color:inherit;text-decoration:inherit">https://www.youtube.com/watch?v=htIXKI5gOQU</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The most obvious pattern is to replace async tasks:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Observable.just( input data )</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map( async lambda, transforming input to output type )</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribeOn(Schedulers.io())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.observeOn(AndroidSchedulers.mainThread())</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe( observer using the output )</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">To replace a timer task:</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">subscription = Observable.timer(delay, interval, TimeUnit.unit)</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.take(20) / map, etc. # for example</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.subscribe( observer doing something at interval )</span></p>
-<p style="margin-left:36pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">subscription.unsubscribe() # equivalent to timer.cancel</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2017-04-21_rxjava_rxandroid.html">
-    <h2 class="post-title">2017-04-21 - RxJava / RxAndroid</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking into RxJava 2 for usage in CabThrottle and derived apps.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RxJava 2 has 2 kinds of streams: "observables" (no back pressure, no blocking) and "flowable" (back pressure, blocking). Still trying to figure the APIs correctly, but let's see where these would be needed:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Mountain throttle: stream from the hardware throttle to notify of throttle changes.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">CabThrottle:</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">NSD/Discovery stream (add/remove).</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle UI to controller.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Throttle controller to network.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Network back to throttle controller/UI.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">KeyServer changes.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some of these were done using the event bus and instead would map nicely in the concept of a stream with subscribers being notified. They are not pull events, mostly push events.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">All of these map on the observable (no back pressure / no blocking) pattern.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -791,7 +701,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

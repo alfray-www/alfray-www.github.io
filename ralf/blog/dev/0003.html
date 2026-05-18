@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Started going through the Defold&nbsp;tutorials." />
+<meta property="og:description" content="It’s time to update SDB to use more unique_ptr and/or shared_ptrs." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Started going through the Defold&nbsp;tutorials." />
+<meta name="twitter:description" content="It’s time to update SDB to use more unique_ptr and/or shared_ptrs." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,114 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-02-18_c_unique_ptr.html">
+    <h2 class="post-title">2024-02-18 - C++ unique_ptr</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    CPP
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It’s time to update SDB to use more unique_ptr and/or shared_ptrs.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some simple examples come to mind:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">class SdbModManager {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbMod*&gt; _mods;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::map&lt;String, SdbMod*&gt; _modsmap;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbSensor*&gt; _sensors;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbServer*&gt; _servers;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; &nbsp; std::vector&lt;SdbBlock*&gt; _blocks;</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">All these should be either unique or shared pointers to clarify the ownership.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are 2 or 3 aspects to clarify:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How a new object is created.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How a ptr is “moved” into the vector.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Users of the vector.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For each collection, I have a simple getter that returns the vector as a reference:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">const std::vector&lt;SdbServer*&gt;&amp; servers() const &nbsp;{ return _servers; }</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">and then I use that in a for/auto loop:</span></p>
+<p style="text-align:left;text-indent:36pt"><span style="font-family:&quot;Roboto Mono&quot;">for(auto* s: _manager.servers()) { … s-&gt;name() … &nbsp;}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The other kind of usage is the vector for Events. One goal here is to change that from a struct holding to holding unique ptrs, with the goal that events get automatically released when pulled out of the vector and used.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So first, I need to write down a few things about how to use unique_ptrs correctly.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.cppreference.com/w/cpp/memory/unique_ptr" style="color:inherit;text-decoration:inherit">https://en.cppreference.com/w/cpp/memory/unique_ptr</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">#include &lt;memory&gt;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">auto p = std::unique_ptr&lt;Class&gt;(new Class())</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">std::unique_ptr&lt;Class&gt; function() {</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">&nbsp; return std::unique_ptr&lt;Class&gt;(new Class());</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">}</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>C++ ref mentions creating the instances using std::make_unique(), but apparently I don’t have that in the ESP IDF projects (N.D.L.R. it should be in ESP IDF 5.x but I’m using the </span><span style="font-style:italic">previous</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;one).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2024-01-01_defold_vs_godot.html">
+    <h2 class="post-title">2024-01-01 - Defold vs Godot</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Godot
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Week of 2023-12-24 to 2023-12-31, I wrote </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/#nerdkill" style="color:inherit;text-decoration:inherit">Nerdkill Defold</a></span><span style="font-family:&quot;Roboto Mono&quot;">. Worked well, was easy to use and get something.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One thing that was nice was that I ported the original game, with all the original 8 “weapons”.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Started looking at Nerdkill w/ Godot 4.2, just to compare with Defold. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Not sure there's a point in concluding that one though.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A new Asqare using Godot 4 for Android would make more sense.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One angle of Nerdkill w/ Godot would be how to create a project that can produce both a web version and a mobile version? More specifically, I’d want the screen form factor to be different.</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill “desktop” in landscape can use the cartouche with the 8 weapons.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill “mobile” in portrait can use the 5 weapons.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I could of course change the mobile version to have the same 8-weapons row, but I feel the mobile version looks better that way.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(Alternate idea: consider using 7 weapons on mobile; drop the flag. 2 rows of 5 slots each, the cartouche would occupy the 3 middle bottom slots.)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So one thing I realize I don’t know if it’s possible is to configure the window size dynamically, or at least static by export type. Or maybe it could be two projects using the same resources.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3" style="color:inherit;text-decoration:inherit">https://forum.godotengine.org/t/how-to-change-window-size-using-gdscript/2861/3</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“get_window().size = Vector2i(width, height)”</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html" style="color:inherit;text-decoration:inherit">https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html</a></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“the size in Project Settings &gt; Display &gt; Windows… think of it as the design size”</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“to support both landscape and portrait, consider using e.g. 720x720”</span></p>
+<p style="text-align:left"><span style="background-color:rgb(255, 255, 0)"></span></p>
+
+<a href="2024-01-01_defold_vs_godot.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2023-12-24_defold.html">
     <h2 class="post-title">2023-12-24 - Defold</h2>
@@ -551,89 +659,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-29_spa_web_alternatives_flutter_0382f95a.html">
-    <h2 class="post-title">2023-06-29 - SPA Web Alternatives: Flutter / ReactJS vs Smalltalk Seaside / AIDAweb</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Something to try:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Aida/Web: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.aidaweb.si/tutorial" style="color:inherit;text-decoration:inherit">https://www.aidaweb.si/tutorial</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Seaside: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.seaside.st/documentation/tutorials" style="color:inherit;text-decoration:inherit">https://www.seaside.st/documentation/tutorials</a></span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>Book: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://book.seaside.st/book" style="color:inherit;text-decoration:inherit">https://book.seaside.st/book</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pharo-by-example is a hijacked web site, just ignore it.</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The critical question is why bother? Flutter / React already offer well-rounded frameworks, and Smalltalk is just yet-another-esoteric language. It’s on the same level as JS/TS/Dart when it comes to “stuff I only use occasionally”, with the typical issue of feeling mostly write-only.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On that part, I ended up actually enjoying Dart as it seemed like a suitable compromise between Java, JS, and TS.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Flutter vs ReactJS:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pro of Flutter = dev in IJ… The integration is excellent.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Cons of Flutter = dev in IJ… Requires IJ to edit a project.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Same goes for ReactJS. The VS Code integration is good, but lacks an IJ-level project management.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">VS Code is good for short-sided projects (e.g. Wazz), whereas IJ is better for large project organization.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2023-06-26_web_stats_alternatives_-_mqtt_.html">
-    <h2 class="post-title">2023-06-26 - Web Stats Alternatives - MQTT?</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The Looker+GA4 behavior is currently limiting. It also exposes the typical issue when relying on external “free” services. Are there ways I can bring my stats in-house?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">2 aspects come to mind:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sending the event data… </span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">With the usual caveat of outage reliability, the data would be better hosted on my own server.</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">An option would be to use MQTT to transport that data around.</span></li>
- </ul>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Viewing the data…</span></li>
- <ul>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Can I write my own Looker connector pulling data from my server?</span></li>
-  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Are there other MQTT-based or similar web-based stats pages I can reuse?</span></li>
- </ul>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’m not particularly interested in writing my own graphs, even though I’ve certainly done that.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are Linux packages that can pre-render graphs and I can expose them via ssl.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Can MQTT be used as either a transport mechanism, storage, or a data source?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -650,7 +675,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

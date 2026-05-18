@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Thinking of using D3&nbsp;for learning how to use it, and RPisicine could be a good candidate for that. It’s a React app so how do we integrate them?" />
+<meta property="og:description" content="https://love2d.org/&nbsp;-- open source 2d game framework over Lua" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Thinking of using D3&nbsp;for learning how to use it, and RPisicine could be a good candidate for that. It’s a React app so how do we integrate them?" />
+<meta name="twitter:description" content="https://love2d.org/&nbsp;-- open source 2d game framework over Lua" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,64 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-08-31_android_kingdom_rush_td.html">
+    <h2 class="post-title">2022-08-31 - Android Kingdom Rush TD</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://love2d.org/" style="color:inherit;text-decoration:inherit">https://love2d.org/</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;-- open source 2d game framework over Lua</span></p>
+<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://luajit.org/" style="color:inherit;text-decoration:inherit">https://luajit.org/</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Another site online mentioned the use of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/Cocos2d" style="color:inherit;text-decoration:inherit">cocos2d</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;which is not very interesting.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-08-14_nerdkill_android_and_godot.html">
+    <h2 class="post-title">2022-08-14 - Nerdkill Android and Godot</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    Android
+    
+    </span>
+</span></div>
+
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Nerdkill needs to be updated to satisfy the Play store requirements.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I started an “N2” branch in the Nerdkill Android repo, simply rebuilding the existing Android source under a modern AS / gradle project. This should be considered 90% done. The only known issues are:</span></p>
+<ol start="1" style="margin:0;padding:0">
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As for Asqare, I had to implement a “canvas zoom” in the rendering engine to simulate a smaller screen. This results in the desired pixelated look.</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The weapon / cartouche area is 50% height. Probably needs to be adjusted by the canvas zoom or similar. [⇒ FIXED]</span></li>
+ <li style="margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Lack of default Android menu. In Asqare, I fixed that by adding the window nav bar and populating a menu icon. I can do the same here, or I can just add a 3-dot menu icon in the intro screen. [⇒ Not Needed]</span></li>
+</ol>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’m likely going to just fix issue #2 (or maybe even not) and release the game as-is to meet the store requirements to avoid delisting. That’s the “immediate band-aid” strategy. [⇒ DONE, submitted to the store]</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">But a bit more long term, I’ve been wanting to put out a Godot-based game, and after contemplating doing that for Asqare, I’ll use Nerdkill instead. After all that’s the core leitmotif of the project, to be a test bed for platform adoptance.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2022-07-01_d3_js_chart_library_and_react.html">
     <h2 class="post-title">2022-07-01 - D3 js chart Library and React</h2>
@@ -695,86 +753,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-05-10_arduino_sequence_controller_.html">
-    <h2 class="post-title">2022-05-10 - Arduino Sequence Controller?</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I’ve been thinking about how Lacan uses his Arduino for his aircraft animation.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">What he needs is really a sequence controller to create time-base sequences triggered by input events.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">If I had to program this from scratch, what would I do? I’d create a “mini language” using either macro or C++ objects which represents states to change over time:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">LED timings is really just a list of (start timestamp, LED pin, LED state).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Servos: (start timestamp, servo pin, angle to reach, speed or duration)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Motors: (start timestamp, motor pin, power level, direction)</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Instructions to end sequence, repeat N times, or chain to another sequence.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Depending on the specific needs:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sequence(s) are started by an input (with either forced restart or don’t retrigger).</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need more than one concurrent sequence? Make each sequence independent. That is each sequence is started and actuates by itself on main clock.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Need to make sequences run solo? Have an instruction that stop/cancel all other sequences.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Maybe put sequences in groups (e.g. “servo groups”, “lights groups”) and make the group exclusive as in only 1 sequence runs in the group, or be able to stop any running sequence in the group.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For example for the case of the variable geometry plane:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button 1 ⇒ sequence 1 = stop sequence 2, move servo N up to 60. No retrigger.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button 2 ⇒ sequence 2 = stop sequence 1, move servo N down to 0. No retrigger.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">IR button N ⇒ sequence N for lights.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">It seems so obvious that I would be surprised if this had not been done before and be made available as a customizable library for arduino.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For model trains, there are a couple obvious usages:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sequencing road traffic lights, e.g. to animate a city.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">With the addition of a “random LED value” instruction, animate anything from a camp fire to a building in fire.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2022-02-20_cat_litter_box_timer.html">
-    <h2 class="post-title">2022-02-20 - Cat Litter Box Timer</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Where’s the source for the current “Timer” app used for the litter box?</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Device it uses: Tmo (saffire?) 3g something… running Android 2.2 (aka Froyo).</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">API level ⇒ API 8</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As an exercise, it would be nice to rewrite this in Kotlin to see if it can run on Froyo. (FAQ says there’s no min sdk req).</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -791,7 +769,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

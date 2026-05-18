@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I have been playing Pokemon Yellow on an Android GameBoy Color emulator lately. Thoughts about these apps and their model." />
+<meta property="og:description" content="Google Code transition:" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I have been playing Pokemon Yellow on an Android GameBoy Color emulator lately. Thoughts about these apps and their model." />
+<meta name="twitter:description" content="Google Code transition:" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,113 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2014-09-09_google_code_transition_githu_94202b4b.html">
+    <h2 class="post-title">2014-09-09 - Google Code transition, GitHub vs BitBucket</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Google Code transition:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Google Code will close, with enough time to migrate projects.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">GitHub sounds like a logical choice.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Price model is based on number of private repos, with unlimited collaborators.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">BitBucket is the other choice.</span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Part of the Atlassian group.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Private repos are unlimited even in the free plan.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Price model is based on the number of users, with unlimited repos.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">A users is "someone with r/w access to your private repositories"</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Free model is up to 5 users.</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Pros/cons:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">GitHub is more suited for high visibility + trivial project cloning.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">BitBucket is better for my personal stuff -- I want low visibility including private repos which I do not have right now.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I don't need users (just me, maybe an rdrrlabs repo)</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">With BitBucket, I might want to try to mirror my home repos as backups.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">List of Google Code repos and migration path:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Most of my GC repos are here to "reserve" a namespace and project name. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Most of my GC repos are here to serve as an online backup. Many of them I do not wish to expose so I jungle around to only publish "public" stuff in them.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This isn't needed in the GH or BB model since each project is under the user's namespace.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I'd suggest going with BB because I mostly want private repos.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Most repos would go into private mode for pure archival purposes, no activity.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Check whether a repo can be changed from private to public at any time or is fixed.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Only expose a minimal set of "useful" repos.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2014-07-04_language_design.html">
+    <h2 class="post-title">2014-07-04 - Language design</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I'd like to do a parallel research document on language design.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Right now I have some ideas for Hint, which is still very vague and not well formalized. It's a bit of a catch-all. So instead I did a subset with NovaScript, whose version NS1 is really limited -- the main purpose is to remember how to implement a language and interpreter, then have a more useful NS2 version. This isn't Hint at all, although hopefully some things could be reused.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Hint discussion suffered from being both a language discussion and a platform discussion but I believe I cleared that one out, or did I?</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Anyhow, the point of this snippet is to remember that, in an ideal version, Hint would have elements of:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://c2.com/cgi/wiki?ActorsModel" style="color:inherit;text-decoration:inherit">Actor</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;model: each "class" or module is independent and calls are considered RPCs. </span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Distributed vs non-distributed and "mobile" actors. There can be several VMs distributed on different hosts and then freeze/move runtime modules around.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://c2.com/cgi/wiki?BehaviorDrivenDevelopment" style="color:inherit;text-decoration:inherit">Behavior Driven Development</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;-- in the very very early Hint discussion one of the ideas was to make it trivial to add testing. </span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One way is the classic unit test where each function has its associated test, but in practice this is seldom useful and unit tests quickly turn into larger behavior tests that encompass a set of functions.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Small functions can be treated as mathematical functions, with some inputs and output automatically compared.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">More often what needs to be described is the behavior of a whole or part of a system, but it gets tricky with side effects and generally the test itself is costly and confusing to write. Not to mention that all corner cases are hard to predict and test.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Still the idea is that this is highly valuable and ideally would be part of the source and not an on-the-side after-thought.</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://c2.com/cgi/wiki?ContinuationExplanation" style="color:inherit;text-decoration:inherit">Continuations</a></span><span>&nbsp;built into the language, either like a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://c2.com/cgi/wiki?CallWithCurrentContinuation" style="color:inherit;text-decoration:inherit">call/cc</a></span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Coroutines, iterators and generators.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Various levels of implementation using extensions to a unified language. That's the point of the hint levels (0=assembly, 1=C/java like, 2=interpreted). Similarly some of the concepts like distributed actors are not mandatory.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Whenever possible I should look up definitions in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://c2.com/" style="color:inherit;text-decoration:inherit">c2</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;and match their name patterns.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So part of this impacts both the platform and the language (e.g. BDD, mobile/distributed actors.)</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Some of these are things I have absolutely no idea about them except they seem like good ideas. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I've never used call/cc -- although goroutines and closures are familiar. I certainly have no idea how to implement them, which makes it much more interesting to even think about.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">BDD and testing are in a slightly different category -- there are many languages that have support for unit tests and such. The question is whether I can make it attractive and efficient for me to use a-priori rather than a-posteriori. My current attempts at using UT are more hindering my development style than enhancing it.</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2014-06-24_gameboy_emulators.html">
     <h2 class="post-title">2014-06-24 - Gameboy emulators</h2>
@@ -544,65 +651,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2014-02-19_hint.html">
-    <h2 class="post-title">2014-02-19 - Hint</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking at the various Hint documents, it's a bit of a mess: As explained in the [Hint Platform] document, the various Hint docs are mixed because some define what I want to do "with Hint" rather than "for Hint". </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Namely [Hint Platform] describes how the discussion should be split into different projects:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Hint documents should be purely about the language and the VM itself.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ikaria should be the umbrella platform, the shell that _uses_ Hint.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Cloud Bus is a separate project.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One cleanup operation is to take the old [Hint Platform] and pretty much rename/move it into an "Ikaria Platform" document. Then the Hint doc folder should only have Hint material focusing on the language, its syntax, and implementation.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Given that, the goals are not quite changed:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Target apps are still Black Editor, Nerdkill/Asqare on top of Hint.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Apps are networked using experimental versions of Cloud Bus.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2014-01-14_robolectric.html">
-    <h2 class="post-title">2014-01-14 - Robolectric</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Last week, experimented with Robolectric.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -619,7 +667,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-04-27 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-18 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
