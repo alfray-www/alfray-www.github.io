@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-05-19T15:18:58.124262-07:00</updated>
+<updated>2026-05-19T16:46:13.476557-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -51,6 +51,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:334.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_6aee25c678218c79fff97c8060b0da9b0184ded281291c9e2fe7c3a03e09c66ad.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;One of the goals of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/ralf/blog/dev/2026-04-24_pyrod_version_1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;PyRod Version 1 implementation&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;was to be able &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;skip&lt;/span&gt;&lt;span&gt;&amp;nbsp;that coupler tracker as it turned out to be quite a cumbersome task in DaVinci Fusion. The idea was &lt;/span&gt;&lt;span&gt;to automatically locate the rod by finding its &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;base&lt;/span&gt;&lt;span&gt;&amp;nbsp;-- with the observation that the base of the rod necessarily was in the bottom center of the video&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;and thus should be &#8220;easy&#8221; to find. &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;That actually highlighted one of the shortcomings of PyRod Version 1: it turned out that the base of the rod wasn&#8217;t trivial to find in a reliable enough way. It moves around when the train runs along a curve, and various tunnels and other places create illumination challenges. The second issue was that the coupler at the top is actually very useful information -- without knowing its location, we cannot reliably figure the height of the rod in the image as it varies while the train bounces around on the track.&lt;/span&gt;&lt;/p&gt;
@@ -149,12 +150,13 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;One thing I&#8217;d like to do is get a better inpaiting that avoids duplicating the rails or erasing them. So far, my attempts at detecting the side rails in the image have not been very successful -- that works in ideal conditions, and spectacularly fails most of the time as the rails are often hard to distinguish from the ballast. It&#8217;s easy to guess their location in straight lines, yet hard in curves. Lastly, I&#8217;ve been considering some ML approaches for the inpainting, yet so far I have not found any adequate libraries that can run &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;locally&lt;/span&gt;&lt;span&gt;&amp;nbsp;on my i5-4400 desktop at reasonable speeds.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This project can be found on GitHub: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/rod/tree/main/pyrod2&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/alf-labs/rod/tree/main/pyrod2&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;--]&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2026-05-18T00:00:35-07:00</updated>
+<updated>2026-05-18T00:00:14-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -163,8 +165,6 @@
 <id>https://www.alfray.com/ralf/blog/dev/2026-04-24_pyrod_version_1.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;I have a fair number of &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLjmlvzL_NxLr6EP-oa-RcA6YhSTHtBBFr&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;HO model train &#8220;cab ride&#8221; videos&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;on my &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;http://youtube.com/c/raphaelmoll&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;YouTube&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;channel. I particularly enjoy a view where the camera follows the last car, or precedes the front engine. Over the years I&#8217;ve been experimenting with various ways to achieve them, and I&#8217;m currently using this setup where a camera car is attached to the HO model train using a 3d-printed long rod:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:186.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:791.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_be2145913ef488ba4ea58d6c17edd40ca437fc2343f2fbecc629edc95f58e937i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The camera car setup&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
@@ -310,12 +310,12 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This project can be found on GitHub: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/rod/tree/main/pyrod1&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/alf-labs/rod/tree/main/pyrod1&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Next month, we&#8217;ll discuss the version 2 of the tool that compensates for this and generates proper results.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/ralf/blog/dev/2026-05-18_pyrod_version_2.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Next month, we&#8217;ll discuss the version 2 of the tool&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;that compensates for this and generates proper results.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2026-04-24T00:00:34-07:00</updated>
+<updated>2026-04-24T00:00:30-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
