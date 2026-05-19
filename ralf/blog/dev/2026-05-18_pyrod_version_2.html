@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for R’alf Dev Log" />
+
+<meta property="og:url"         content="https://www.alfray.com/ralf/blog/dev/2026-05-18_pyrod_version_2.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="PyRod Version 2" />
+
+<meta property="og:description" content="In this article, we’ll discuss the version 2 of the PyRod tool&nbsp;that I use to erase the rod used to attach a camera car to film an HO model train:" />
+<meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_774f73ea06bd597b20a57a8ae99d7c8ab7cb51d501b748af7910e1d2d33da8a9i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="PyRod Version 2" />
+
+<meta name="twitter:description" content="In this article, we’ll discuss the version 2 of the PyRod tool&nbsp;that I use to erase the rod used to attach a camera car to film an HO model train:" />
+<meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_774f73ea06bd597b20a57a8ae99d7c8ab7cb51d501b748af7910e1d2d33da8a9i.jpg" />
+
+<title>R’alf Dev Log</title>
+
+
+<!-- custom fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+    background: #EFE;
+    /* color: #000; */
+
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #060;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+
+.title-container {
+    color: #FF0;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.title-container a {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-container {
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #FF0;
+    background-color: #060;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+.post-title-container {
+    position: relative;
+    background-color: #060;
+    padding: 0.5rem;
+}
+
+.post-title {
+    display: inline;
+    color: #FF0;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-title-link {
+    color: #FF0;
+    text-decoration: none;
+}
+
+.post-cat {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    background-color: #d0e0e3;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+a.post-cat-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.post-cat-label {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 0.4em;
+}
+
+.prev-next-container {
+    overflow: auto;
+}
+
+.prev-page {
+    float: left;
+    line-height: 2em;
+}
+
+.next-page {
+    float: right;
+    line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/ralf/">Ralf's Home Page</a>
+        
+        /
+        <a href="index.html">R’alf Dev Log</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p style="text-align:left"><span> </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"> </span></p>
+<p style="text-align:left"><span style="font-style:italic">The place where random ideas get written down and lost in time</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2026-04-24_pyrod_version_1.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+
+    <div class="post-container">
+    <div class="post-title-container"><h2 class="post-title">2026-05-18 - PyRod Version 2</h2>
+    <span class="post-cat" title="Category">
+            <span class="post-cat-label">Category</span>
+            <span class="post-cat-text">DEV</span>
+    </span>
+    </div>
+
+
+    <p style="text-align:left"></p>
+<p style="text-align:left"><span>In this article, we’ll discuss the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/tree/main/pyrod2" style="color:inherit;text-decoration:inherit">version 2 of the PyRod tool</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;that I use to erase the rod used to attach a camera car to film an HO model train:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:264.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_774f73ea06bd597b20a57a8ae99d7c8ab7cb51d501b748af7910e1d2d33da8a9i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br> </span><span style="font-style:italic">Original image captured by camera &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Desired image for the final video</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>For further details, you can read this </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-01-02_cab_ride_videos_with_the_mob_a8befb95.html" style="color:inherit;text-decoration:inherit">blog post that explains the camera car setup</a></span><span>&nbsp;that I use to film </span><span style="font-family:&quot;Roboto Mono&quot;">HO model trains:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:186.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:791.00px"><img alt="" src="img_be2145913ef488ba4ea58d6c17edd40ca437fc2343f2fbecc629edc95f58e937i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-style:italic">The camera car setup</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The problem is the 3D-printed rod that attaches the camera car to the train. It’s distracting once seen on the video, and needs to be removed. PyRod is a Python program that does just that. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<h2 id="h.445c4btzkwyb" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Overview of PyRod 2</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The tool is a Python script that processes a source video -- the one captured by the camera. It runs a multi-pass process. Each pass performs one specific action and generates either a video or JSON data for the next pass. The second iteration is structured fairly similarly to the first one. I use the same “engine”, with just a variation on the processors.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>GitHub: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/tree/main/pyrod2" style="color:inherit;text-decoration:inherit">https://github.com/alf-labs/rod/tree/main/pyrod2</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The structure of the Python project is as follows:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/blob/main/pyrod2/_setup.sh" style="color:inherit;text-decoration:inherit">setup.sh</a></span><span>: A wrapper script to create a Python Virtual Environment and install the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://pypi.org/project/numpy/" style="color:inherit;text-decoration:inherit">numpy</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://pypi.org/project/opencv-python/" style="color:inherit;text-decoration:inherit">opencv-python</a></span><span>&nbsp;packages. OpenCV can be quite tricky to install -- it comes with a number of prebuilts that are tightly linked to </span><span style="font-style:italic">specific</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;versions of Python depending on whether you run it on Linux or Windows MSYS. Trying to build from scratch is an exercise in frustration that rarely ends well.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/blob/main/pyrod2/pyrod.py" style="color:inherit;text-decoration:inherit">pyrod.py</a></span><span style="font-family:&quot;Roboto Mono&quot;">: the main entry point. It decodes command line parameters, loads the input video, invokes one or more “processors”, and writes the output video and json data.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/blob/main/pyrod2/processor.py" style="color:inherit;text-decoration:inherit">processor.py</a></span><span style="font-family:&quot;Roboto Mono&quot;">: the base class for processors. A processor performs one pass on the video, receiving all the video decoded frames. A processor returns the video to be output, and accumulates whatever data is needed for a later pass. The data can be saved and then reloaded as JSON.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/blob/main/pyrod2/process_coupler.py" style="color:inherit;text-decoration:inherit">process_coupler.py</a></span><span style="font-family:&quot;Roboto Mono&quot;">: the first pass processor. It runs a tracker that locates the coupler at the top of the rod. Details below.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/blob/main/pyrod2/process_detector.py" style="color:inherit;text-decoration:inherit">process_detector.py</a></span><span style="font-family:&quot;Roboto Mono&quot;">: the second pass processor. It determines the outline of the rod.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/alf-labs/rod/blob/main/pyrod2/process_inpainter.py" style="color:inherit;text-decoration:inherit">process_inpainter.py</a></span><span style="font-family:&quot;Roboto Mono&quot;">: the third pass processor. It uses the previously computed coupler location and the rod outline to perform the actual inpainting.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Performance wise, the source is a 4K video, yet we don’t need to process the entirety of the frame every time. To speed up processing, a 1280x720 area is cropped out and processed. Thus all the processors deal with a 1280x720 image at most. Then the generated image is recomposed with the original 4K image to save a 4K video matching the original size and fps.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Each processor has vastly different characteristics yet overall they operate at a speed around 15 to 30 fps rate each on my desktop i5-4400 processor. The overall end-to-end processing speed is around 5 fps though, as it turns out that encoding a 4K mp4 video is quite time consuming.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.hyuw4iivg617" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">The Coupler Tracker</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Before starting this project, I had already created a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html" style="color:inherit;text-decoration:inherit">DaVinci Fusion plugin that performed the rod removal</a></span><span style="font-family:&quot;Roboto Mono&quot;">. This plugin required me to set up a tracker in Fusion to locate the coupler at the top of the rod and track it along the video. That provided the information needed by the plugin to locate the rod below the coupler:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:334.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_6aee25c678218c79fff97c8060b0da9b0184ded281291c9e2fe7c3a03e09c66ad.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>One of the goals of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/ralf/blog/dev/2026-04-24_pyrod_version_1.html" style="color:inherit;text-decoration:inherit">PyRod Version 1 implementation</a></span><span>&nbsp;was to be able </span><span style="font-style:italic">skip</span><span>&nbsp;that coupler tracker as it turned out to be quite a cumbersome task in DaVinci Fusion. The idea was </span><span>to automatically locate the rod by finding its </span><span style="font-style:italic">base</span><span>&nbsp;-- with the observation that the base of the rod necessarily was in the bottom center of the video</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;and thus should be “easy” to find. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That actually highlighted one of the shortcomings of PyRod Version 1: it turned out that the base of the rod wasn’t trivial to find in a reliable enough way. It moves around when the train runs along a curve, and various tunnels and other places create illumination challenges. The second issue was that the coupler at the top is actually very useful information -- without knowing its location, we cannot reliably figure the height of the rod in the image as it varies while the train bounces around on the track.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus in PyRod Version 2, I went back to the notion of tracking that coupler.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>It turns out that OpenCV has a neat </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html" style="color:inherit;text-decoration:inherit">cv2.matchTemplate()</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;that performs exactly the same kind of template-based tracker as what DaVinci Fusion does:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:162.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:764.00px"><img alt="" src="img_d2be38212f3720082aefa0dfa15c08a80bcfb1a6924c89b1eb230ae91eaf5a6bi.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How this works:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>As usual, we first convert out input frame from RGB to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://en.wikipedia.org/wiki/CIELAB_color_space" style="color:inherit;text-decoration:inherit">L*a*b</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;and extract the luminance channel. All the work is done on the luminance, which provides the best contrast for our search.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>We use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/4.12.0/d7/dfc/group__highgui.html#gaabb58bae304674b429d9102a7155a86e" style="color:inherit;text-decoration:inherit">cv2.selectROI()</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;once. This displays the frame in a window and the user can draw a bounding box around the coupler area. The template is then saved to the JSON data, to be reused later. Thus we need to do this only once per video, not every time we run the tool.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For each frame, we compute a region-of-interest where the coupler and the rod are likely to be located. This region is updated dynamically as we progress through the video.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>We run </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/4.12.0/df/dfb/group__imgproc__object.html#ga586ebfb0a7fb604b35a23d85391329be" style="color:inherit;text-decoration:inherit">cv2.matchTemplate()</a></span><span style="font-family:&quot;Roboto Mono&quot;">. This finds the template within the region of interest using a convolution. The result is a [0..1] map representing the most likely location of the template in the region of interest.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/4.12.0/d2/de8/group__core__array.html#gab473bf2eb6d14ff97e89b355dac20707" style="color:inherit;text-decoration:inherit">cv2.minMaxLoc()</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;returns the point in the result map with the highest match. That’s the location of the coupler template in this frame.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Rinse and repeat for every frame, adjusting the region of interest to somewhat follow the coupler location we found.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:398.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_ea0fd293407b7981b8d386544606b507e06fd8b4f00452a31efd2a2c16c040c5i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="font-family:&quot;Roboto Mono&quot;;font-style:italic">The “heatmap” result of the matchTemplate() convolution.<br>Yellow: The region-of-interest search area.<br>Green: The matched coupler location.<br>0.91 is the convolution value at the peak (red spot).<br>0.28 is the quality score.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The result of </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/4.12.0/d2/de8/group__core__array.html#gab473bf2eb6d14ff97e89b355dac20707" style="color:inherit;text-decoration:inherit">cv2.minMaxLoc()</a></span><span>&nbsp;is the location point of the highest template convolution result, as well as the value of that convolution in a [0..1] range. We multiply this with the median of the luminance of the region of interest: this gives us a “quality” score which essentially plummets to zero when the train enters a tunnel. That allows us to ignore fairly dark frames, where the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/4.12.0/df/dfb/group__imgproc__object.html#ga586ebfb0a7fb604b35a23d85391329be" style="color:inherit;text-decoration:inherit">cv2.matchTemplate()</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;fails to give any meaningful result anyway.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>The region-of-interest rectangle dynamically moves around to follow the coupler. This has two main purposes: first, we limit our search to a subpart of the image, which makes it fairly fast. Second, the region can only move with some constraints, namely it follows the coupler using a weight-average movement, and its height is constrained to where the rod </span><span style="font-style:italic">must</span><span>&nbsp;end in the image. This prevents the search from “losing its focus”, a problem typical of a tracker in DaVinci Fusion -- sometimes the tracker will latch on some other detail in the image, and once the region of search is no longer overlapping on the desired artifact, it won’t be able to “fix” itself to go back to the real item to be found.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">At the end of this pass, we have a list of all possible coupler locations for each frame where the quality was greater than some threshold. We then simply fill the locations for all missing frames using a simple interpolation. </span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:158.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:615.00px"><img alt="" src="img_083354e87a7a54ad0ae49330e31deae2542eb59b5fb4a31961d5b7e006238ccei.png" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<h2 id="h.qupxwcdedwmo" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">The Rod Detector</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The second pass is to detect the outline of the rod.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>In </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/ralf/blog/dev/2026-04-24_pyrod_version_1.html" style="color:inherit;text-decoration:inherit">PyRod Version 1</a></span><span style="font-family:&quot;Roboto Mono&quot;">, we used some kind of flood fill to build a mask using the median of the luminance of the rod at the bottom center point. That proved to be too finicky but more importantly it highlighted the issue that the rod may have inconsistent luminance across its length.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So instead we take a row-by-row approach:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:389.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d50d1c0f812d8caa73e8fb0733d905aa8de6c85b45031465ad46c7a7b7f637e0d.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For each row below the coupler tracker, we analyze the luminance of a specific width of that row by finding all locations where the luminance is above the 80% percentile in the row. We then filter these areas using their width and their location -- because we know the ideal width of the rod for a given row, we want one band that has the ideal width and is the closest to the center of the row. This is shown in the control output above: a few selected rows are sampled and displayed; the yellow line is the luminance, the horizontal orange line is the 80% percentile, and the dark blue peaks indicate potential locations above that threshold.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Sometimes, the rod blends with the ballast between the ties. We detect that by computing the min-max contrast for each row. If it’s too low, we simply skip the row as the result would be inaccurate anyway.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>For each row, that gives us a potential center and width for the rod. There’s some noise to it, as well as some missing points due to low contrast. To remove the noise, we use </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.Polynomial.fit.html" style="color:inherit;text-decoration:inherit">numpy's Polynomial.fit</a></span><span>&nbsp;to compute a 2nd-degree polynomial approximation of the </span><span style="font-style:italic">vertical</span><span>&nbsp;center line and its width. In the control output above, that polynomial is displayed as the large orange band. It fairly accurately matches the rod.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When we tracked the coupler in the previous pass, we also computed a “quality” score to detect dark areas where tracking was not accurate. We use the same signal here to simply bypass and skip these frames, as they would be too dark to accurately compute the 80% threshold on the luminance. Instead, at the end, we do another quick pass to fill any missing frame data using interpolation.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.usn0hsd5vfii" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Inpaint of the Rod</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>In </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/ralf/blog/dev/2026-04-24_pyrod_version_1.html" style="color:inherit;text-decoration:inherit">PyRod Version 1</a></span><span style="font-family:&quot;Roboto Mono&quot;">, the second pass was detecting the rod, computing its mask, and performing the inpainting all at the same time. In Version 2, I’ve separated them since the detector phase computes the polynomial outline of the rod and then at the end interpolates it for all the missing frames.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Inpainting uses the same left/right custom-made algorithms I used in Version 1, albeit updated to use the polynomials that define the rod. Here’s an example showing the rod boundaries and the rod inpainted:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:396.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_646a6dbcc712f600af8db28b374a73bfcdede7f34b1fd59d4971cc66576b6ba1i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="font-family:&quot;Roboto Mono&quot;"><br>Dark blue rectangle is the coupler location.<br>Yellow curve: opaque center matching the rod.<br>Red curve: horizontal dilate to cover borders.<br>Green curve: A smooth blend on each side.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The same 3 possible choices are available for inpainting:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:329.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_c7f2bda7a5442c6bb6207c9c9bfe83365939bdba48c40b2126c365d1a24bd65bi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span style="font-family:&quot;Roboto Mono&quot;"><br>Inpaint left &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Inpaint Mix &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Inpaint Right</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here’s an attempt at explaining the “left” inpaint algorithm:</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:221.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:598.00px"><img alt="" src="img_a983a6f21aa43ede09d750557e5eaeeeb92e13eda1f6f1d33c2ab955c48b0f9bd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:left"></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The rod boundaries are computed and given by two polynomials: one for the center of the rod, and one for its width.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">For a given row, we compute the rod boundary (yellow lines), and dilate them horizontally (red lines). This accounts for the edges being fuzzy.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The part between the 2 red lines (left0 → right0) is copied with an opacity of 100%. In the “left” algorithm, we take the part of the row immediately on the left red boundary.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">On the left side, this creates an implicit “smooth” transition since the image is mirrored with itself.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>On the right side, we want to avoid an abrupt transition. The right0→right1 zone also mirrors the pixels from the left side, but this time merged with a progressive opacity blending from 100% down to 0%.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This works well as long as the part on the left of the rod is uniform ballast. It does create artifacts when the rod gets closer to the rails -- either the left rail gets copied to the right, or the right rail gets erased by the pattern. That effect is particularly visible when crossing turnouts or in curves.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the sample image above, we can see that the “inpaint right” mode duplicates the right rail because it’s too close to the rod.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This described the “left” inpainting method. The “right” one is exactly the same, but swapped left and right.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The “mix” one is, as the name suggests, a mix. It’s however done differently from Version 1: both “A” segments from the right and the left are copied on top of the rod and blended together. Then the progressive opacity blend is performed both on the left and the right. If the rod were perfectly centered with enough sides between the rails, that method would have very good results. Unfortunately, that’s rarely the case and as such it tends to create ghostly artifacts in the middle where the rod used to be.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.jbgyikv3yi5u" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Inpaint of the Coupler</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The coupler is often way too visible in the generated picture, since it results in a fairly light-gray shape on top of the dark engine’s cowl.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">PyRod Version 2 adds a simple way to deal with this: In the coupler’s tracked rectangle, we figure the max and median luminance at the base of the coupler. This is used with a cv2.floodFill() to create a mask matching the coupler’s brightest luminance area, and then that area is simply clipped to the median luminance. In other words, we remove highlights. This keeps the coupler’s shape and color intact, yet make it dark enough to match its immediate surroundings, and thus much less noticeable without doing an actual inpainting.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.5a662glzlze5" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">Conclusion and Follow Up</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">My video workflow so far has been to compute all 3 inpaiting versions and then pick the best one for each segment. In the latest video, the “left” inpainting is used almost everywhere except in two curves where the “right” one had best results. The “mix” one is never used.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Compared to the original &nbsp;</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2023-06-04_davinci_resolve_plugin_for_t_4126bb12.html" style="color:inherit;text-decoration:inherit">DaVinci Resolve plugin</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;that I started with, PyRod Version 2 is a vast improvement. The only input needed is manually selecting the coupler’s boundary once per video, and then saving it as a JSON data file so that I can reuse it. There are a few parameters that I can adjust, such as the rod’s width. However since these are tied to the design of the rod and the camera car, they are going to be consistent for future videos.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>One thing I’d like to do is get a better inpaiting that avoids duplicating the rails or erasing them. So far, my attempts at detecting the side rails in the image have not been very successful -- that works in ideal conditions, and spectacularly fails most of the time as the rails are often hard to distinguish from the ballast. It’s easy to guess their location in straight lines, yet hard in curves. Lastly, I’ve been considering some ML approaches for the inpainting, yet so far I have not found any adequate libraries that can run </span><span style="font-style:italic">locally</span><span>&nbsp;on my i5-4400 desktop at reasonable speeds.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">--]</span></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+    </div>
+
+
+
+<div class="prev-next-container">
+
+
+    <span class="prev-page"></span>
+    <span class="next-page"><a href="2026-04-24_pyrod_version_1.html">Older Post ⇒</a><br/></span>
+
+</div>
+
+</div> <!-- container -->
+</div> <!-- main -->
+
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-19 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+
+</main>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCEQ33G1MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCEQ33G1MB');
+</script>
+
+</body>
+</html>
+
