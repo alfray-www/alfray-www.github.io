@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-05-19T16:46:13.476557-07:00</updated>
+<updated>2026-05-19T16:49:03.839834-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -24,6 +24,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The problem is the 3D-printed rod that attaches the camera car to the train. It&#8217;s distracting once seen on the video, and needs to be removed. PyRod is a Python program that does just that. &lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;In the previous article, I explained how &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/ralf/blog/dev/2026-04-24_pyrod_version_1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;PyRod Version 1&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;worked and its shortcomings. So now let&#8217;s detail how Version 2 addresses these.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;h.445c4btzkwyb&quot; style=&quot;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;;font-size:16pt;font-weight:700&quot;&gt;Overview of PyRod 2&lt;/span&gt;&lt;/h2&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -152,11 +153,10 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;This project can be found on GitHub: &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/rod/tree/main/pyrod2&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://github.com/alf-labs/rod/tree/main/pyrod2&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;--]&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2026-05-18T00:00:14-07:00</updated>
+<updated>2026-05-18T00:00:40-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
