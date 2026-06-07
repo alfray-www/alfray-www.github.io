@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-05-29T03:07:30.474196-07:00</updated>
+<updated>2026-06-07T12:24:30.175641-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -329,7 +329,7 @@
 <id>https://www.alfray.com/ralf/blog/dev/2026-04-18_davinci_fusion_ralf_delta_mask_fuse.html</id>
 <category term="dev" label="DEV"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/ralf/blog/dev/">&lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/fusion/fuses/RalfDeltaMask.md&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Ralf Delta Mask Fuse&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It&apos;s a direct recreation in Fusion of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/lightworks/blob/main/README.md#ralf-delta-mask-blend-fx-shader&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LightWorks FX Shader&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;I wrote years ago.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span&gt;The &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/video/tree/main/fusion/delta_mask&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Ralf Delta Mask Fuse&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;essentially recreates a custom-made Difference Keyer combined with a Merge node. It&apos;s a direct recreation in Fusion of the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/alf-labs/video/blob/main/README.md#ralf-delta-mask-blend-fx-shader&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;LightWorks FX Shader&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&amp;nbsp;I wrote years ago.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;The goal is to compare a foreground media clip with a reference image to create a mask of what is moving on the image, and then compose this on top of a background. Here&apos;s a visual summary:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -435,7 +435,7 @@
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-04-18T00:00:15-07:00</updated>
+<updated>2026-04-18T00:00:40-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
