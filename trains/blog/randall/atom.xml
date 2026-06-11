@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-06-10T20:35:13.19217-07:00</updated>
+<updated>2026-06-10T20:58:13.323551-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
@@ -13,22 +13,22 @@
 <id>https://www.alfray.com/trains/blog/randall/2026-06-11_automation_ho_engine_roster.html</id>
 <category term="randall" label="Randall"/>
 <content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Last year, I started compiling a roster of all the engines used on the Randall Model Railroad automation for both the mainline and the branchline. The mainline one speaks for itself:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last year, I started compiling a roster of all the engines used on the Randall Model Railroad automation for both the mainline and the branchline. The one for the Passenger Train on the mainline speaks for itself:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:385.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_51956888da2d6638a6cb081aef7704c503de6ba033876f2eb5d868636cebdd56i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;It took me a while to compile all the changes made since 2017. A good part of it was based on an older spreadsheet I had, and I also was able to pull quite some data from all the automation changes carefully recorded in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/conductor/commits/main/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;git repository of the Conductor project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;What matters is that &#8220;&lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Running?&lt;/span&gt;&lt;span&gt;&#8221; column&#8230; The name says it all. That&#8217;s a lot of red &#9785;&#65039;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;What matters is that &#8220;&lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Running?&lt;/span&gt;&lt;span&gt;&#8221; column&#8230; The name says it all. It records the status of the engine when I stopped running in automation. That&#8217;s a lot of red &#9785;&#65039; The goal would be ideally to swap engines before they become non-functional, and clearly that&#8217;s not happening frequently.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The freight one is a bit better:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The freight route on the mainline fares a bit better:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:466.67px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_031065398eee11349d178eec71180eb19f8a37169d1c1188c5f292c927c38100i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;and the branchline is another messy situation:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:406.67px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_f3bbe8ec3f0279c760ec2d1df10a8e9490f5f13faa57381640bddfecbb47fd71i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Now, the &#8220;Days&#8221; column is fairly simple: my original goal was to rotate the automation engines about every 3 months, so anything about 90 days highlights in red. But then, when an engine works and I don&#8217;t have a replacement at all&#8230; well it turns out that policy doesn&#8217;t quite work at all. Thus that ideal policy quickly turned into &#8220;if it ain&#8217;t broke, don&#8217;t fix it&#8221;. I&#8217;m all about pragmatism after all.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now, the &#8220;Days&#8221; column is fairly simple: my original goal was to rotate the automation engines about every 3 months, so anything above 90 days highlights in red. But then, when an engine works and I don&#8217;t have a replacement at all&#8230; well it turns out that policy doesn&#8217;t quite work at all. Thus that unrealistic policy quickly turned into &#8220;if it ain&#8217;t broke, don&#8217;t fix it&#8221;. I&#8217;m all about pragmatism (a.k.a. &#8220;lowest effort&#8221;) after all. &amp;lt;sarcasm&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Anyhow, the freight train runs a much shorter route, and it&#8217;s sort of flat. No big elevation changes. That helps a lot. The mainline going to Summit has a long ramp going up, and the route is 3 times longer.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -36,12 +36,12 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;When an engine fails, I try to fix it as much as I can. Yet there&#8217;s only so much I can do. If it&#8217;s as simple as cleaning trucks and electrical pickups, fine. I can also swap motors or decoders when I can get replacements. Sometimes engines just end up being entirely unreliable and I can&#8217;t quite figure out why. What I don&#8217;t do is randomly swap components that I don&#8217;t know if they are truly defective, especially when I don&#8217;t have alternates in the first place. That&#8217;s just not a cost effective way to deal with this. I try to operate on facts, not guesses.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I feel like one could easily draw conclusions by OEM here, but that&#8217;s not quite true. BLI engines generally have a lot of issues with the DCC on our old layout, and I&#8217;m guessing this has to do with cross electrical district spikes (meaning I blame the layout, not the BLI decoders per se). Bachmann engines have proven to be entirely hit or miss. They either tend to fail right away or work flawlessly for a long time. Same goes for Walthers&#8217; engines. Rapido engines are amongst the nicest ones yet they tend to not last long for one reason or another; however they have exceptional support and I got replacement motors or speakers from Rapido when I needed them. Eventually, all OEMs have their pros and cons, there&#8217;s no clear winner or loser here. I&#8217;m not picky. If it runs, I&#8217;ll take it. What I won&#8217;t do is take personal engines offered by the fellow Saturday operators on the layout -- if there&#8217;s one constant here, it is that running these engines on automation 7 hours a day for 5 days per week just simply kills them all, eventually.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I feel like one could easily draw conclusions by OEM here, but that&#8217;s not quite true. BLI engines generally have a lot of issues with the DCC on our old layout, and I&#8217;m guessing this has to do with cross electrical district spikes (meaning I blame the layout, not the BLI decoders per se). Bachmann engines have proven to be entirely hit or miss. They either tend to fail right away or work flawlessly for a long time. Same goes for Walthers&#8217; engines. Rapido engines are amongst the nicest ones to automate (feature wise) yet they tend to not last long for one reason or another; however they have exceptional support and I got replacement motors or speakers from Rapido when I needed them. Eventually, all OEMs have their pros and cons, there&#8217;s no clear winner or loser here. I&#8217;m not picky: iIf it runs, I&#8217;ll take it. What I won&#8217;t do is take personal engines offered by the fellow Saturday operators on the layout -- if there&#8217;s one constant here, it is that running these engines on automation 7 hours a day for 5 days per week just simply kills them all, eventually.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-06-11T00:00:46-07:00</updated>
+<updated>2026-06-11T00:00:18-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -80,7 +80,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:262.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:794.41px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_9b1dceebee1dd740fed42ef5c5f0b71a15ea2eda19956588821b9f7d43654926d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Inside we fit a fairly standard 28 mm round speaker, rated 8 ohms at 0.4 W. That seems an unusually low power wattage. &amp;nbsp;The fuel tank also uses a PH0 screwdriver, however the speaker is held in place by two small metal tabs with fine PH00 screws. One of them was loose.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Inside we find a fairly standard 28 mm round speaker, rated 8 ohms at 0.4 W. That seems an unusually low power wattage. &amp;nbsp;The fuel tank screws also uses a PH0 screwdriver; however the speaker is held in place by two small metal tabs with fine PH00 screws. One of them was loose.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:205.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7d136a38c642dc413d74e513c39b189ebf50f2eea8d612ca4468e308f9a3ae8bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -95,20 +95,20 @@
 &lt;p&gt;&lt;span&gt;Here&#8217;s the speaker replaced by one from the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/4vxHnpg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/4vxHnpg&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;8-pack I just received&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:466.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1f64769e283216039c7b5864defdb16cc634959b927deed22a804a34f1e25a9bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This one seems to have a tiny bit less sensitivity than the original speaker. I had to boost the master volume CV in JMRI from 70 to 100. On the other hand, it&#8217;s &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;allegedly&lt;/span&gt;&lt;span&gt;&amp;nbsp;a 2W speaker rather than a 0.4W so it should hold the charge better. It sounded fine. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This one seems to have a tiny bit less sensitivity than the original speaker. I had to boost the master volume CV in JMRI from 70 to 100. On the other hand, it&#8217;s &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;allegedly&lt;/span&gt;&lt;span&gt;&amp;nbsp;a 2W speaker rather than a 0.4W so it should hold the charge better. It sounded fine and provided a clear sound. &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The new speaker seems to be half a millimeter thicker than the previous one, yet there&#8217;s enough clearance to put the fuel tank back in place. I&#8217;ve also replaced the white masking tape by proper polyamide tape, as it help keeps the wires against the body when placing the shell in place:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The new speaker seems to be half a millimeter thicker than the previous one, yet there&#8217;s enough clearance to put the fuel tank back in place. I&#8217;ve also replaced the white masking tape by proper polyimide tape, as it help keeping the wires against the body when placing the shell in place:&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:220.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_66c2adc53848479960cb3dc3f4e6e6050cefc12eec72376a266e96d14eeb136ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;Placing the shell back in place took only a couple of minutes. It&#8217;s a tight fit yet it&#8217;s not a fight.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I also have the second engine to fix. That one went mute merely 3 months after operation. I&#8217;d venture it&#8217;s the same speaker failure. Since the speaker wires are folded under the engine, I will need to open the shell the first time to pull them in the fuel tank. When re-assembling it, I&#8217;ve left the extra speaker wire in the tank. That means next time I need to replace the speaker, I don&#8217;t even need to pull the shell off at all.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I also have the second engine to fix. That one went mute merely 3 months after operation. I&#8217;d venture it&#8217;s the same speaker failure. Since the speaker wires are folded under the engine, I will need to open the shell the first time to pull them in the fuel tank. When re-assembling it, I&#8217;ve left the extra speaker wires in the tank. That means next time I need to replace the speaker, I won&#8217;t even need to pull the shell off at all.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2026-06-10T00:00:32-07:00</updated>
+<updated>2026-06-10T00:00:03-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
