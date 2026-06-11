@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="Just brainstorming here." />
+<meta property="og:description" content="Work as started a few months ago on the layout and scenery is being refreshed." />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_f6d39d2952d55816b01f19c8be19600dec4e0f5ac7cd3910305d315fd5363daai.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="Just brainstorming here." />
+<meta name="twitter:description" content="Work as started a few months ago on the layout and scenery is being refreshed." />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_f6d39d2952d55816b01f19c8be19600dec4e0f5ac7cd3910305d315fd5363daai.jpg" />
 
 <title>Blog: Randall Museum Model Railroad</title>
@@ -239,7 +239,7 @@ td p {
 <div class="prev-next-container">
 
     <span class="prev-page"><a href="0019.html">⇐ Newer Posts</a><br/></span>
-    <span class="next-page"></span>
+    <span class="next-page"><a href="001b.html">Older Posts ⇒</a><br/></span>
 
 
 </div>
@@ -247,6 +247,66 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-02-19_progress_on_train_automation_b18326d0.html">
+    <h2 class="post-title">2017-02-19 - Progress on train automation at the model railroad</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>Work as started a few months ago on the layout and scenery is being refreshed.</span></p>
+<p></p>
+<p><span>In parallel, automated train runs are being installed. On two different routes, two trains are waiting to be activated at the push of a button. The trains go around a selected part of the layout, reverse and come back. While there's still work to do, here are two short videos demonstrating the early results.</span></p>
+<p></p>
+<p><span>The first route is a short passenger train composed of two Amtrak F40PH engines and Amfleet coaches that starts at the main passenger station. The second route features a single-unit Budd RDC (Rail Diesel Car) operating on the Branchline.</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:298.8pt"><p style="text-align:center"><span style="background-color:rgb(255, 255, 255);font-weight:700;vertical-align:baseline">Video of the Passenger Automation</span></p><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="450" height="253" src="https://www.youtube.com/embed/-_qlqWYfz_E" frameborder="0" allowfullscreen></iframe></span></p></td>
+   <td colspan="1" rowspan="1" style="border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:top;width:298.8pt"><p style="text-align:center"><span style="background-color:rgb(255, 255, 255);font-weight:700;vertical-align:baseline">Video of the Branchline Automation</span></p><p style="text-align:center"><span style="-webkit-text-decoration-skip:none;background-color:rgb(255, 255, 255);color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><iframe width="450" height="253" src="https://www.youtube.com/embed/PSfy2tQKMu8" frameborder="0" allowfullscreen></iframe></span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2017-01-16_thinking_ahead_on_the_automa_4c99e18e.html">
+    <h2 class="post-title">2017-01-16 - Thinking ahead on the Automation Software</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>Here's a rethink of the automation software.</span></p>
+<p></p>
+<p><span>Right now I have JMRI for sensor management and DCC throttles. Conductor acts as a plug-in that drives the automation purley on sensor+timer event based script.</span></p>
+<p></p>
+<p><span>One useful thing in RocRail is the notion of routes, which JMRI has too of course (but annoyingly complex to setup).</span></p>
+<p></p>
+<p><span>The idea is to describe the model railroad using a chain of blocks with turnouts on or between them.</span></p>
+<p><span><br>The timer/sensor script remains the same, but the goal is to have the software know which engine number is on which block. This in turn will drive the display and make it possible to lock routes.</span></p>
+
+<a href="2017-01-16_thinking_ahead_on_the_automa_4c99e18e.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2017-01-16_lights_and_sound.html">
     <h2 class="post-title">2017-01-16 - Lights and Sound</h2>
@@ -476,35 +536,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2015-12-25_non_valorem_in_ruinam.html">
-    <h2 class="post-title">2015-12-25 - Non valorem in ruinam</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p><span>The </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.ggmrc.org/index_1189.html" style="color:inherit;text-decoration:inherit">GGMRC officially donated the layout to the Randall Museum</a></span><span>.</span></p>
-<p></p>
-<p><span style="font-style:italic">L'important ce n'est pas la chute, c'est l'atterrissage.</span></p>
-<p></p>
-<p><span>Now it’s time to (re?)build a relationship and get this going.</span></p>
-<p></p>
-<p><span>Freeze frame. How did we end up in this situation?</span></p>
-<p></p>
-<p><span>The </span><span style="font-style:italic">opinion</span><span>&nbsp;below is solely my own and not the official views of the GGMRC. It is based on my own recollection of events and my own biased opinion on such events.</span></p>
-<p></p>
-<p><span></span></p>
-
-<a href="2015-12-25_non_valorem_in_ruinam.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -513,7 +544,7 @@ td p {
 <div class="prev-next-container">
 
     <span class="prev-page"><a href="0019.html">⇐ Newer Posts</a><br/></span>
-    <span class="next-page"></span>
+    <span class="next-page"><a href="001b.html">Older Posts ⇒</a><br/></span>
 
 
 </div>
@@ -526,7 +557,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-03-11 by Rig4j 0.1-Exp-bc668ce
+    Generated on 2026-06-10 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>

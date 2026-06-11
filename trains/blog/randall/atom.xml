@@ -1,11 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-06-07T12:22:52.883104-07:00</updated>
+<updated>2026-06-10T20:35:13.19217-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-bc668ce">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Automation HO Engine Roster</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-06-11_automation_ho_engine_roster.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-06-11_automation_ho_engine_roster.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last year, I started compiling a roster of all the engines used on the Randall Model Railroad automation for both the mainline and the branchline. The mainline one speaks for itself:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #000000;display:inline-block;height:385.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_51956888da2d6638a6cb081aef7704c503de6ba033876f2eb5d868636cebdd56i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;It took me a while to compile all the changes made since 2017. A good part of it was based on an older spreadsheet I had, and I also was able to pull quite some data from all the automation changes carefully recorded in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/conductor/commits/main/&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;git repository of the Conductor project&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;What matters is that &#8220;&lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Running?&lt;/span&gt;&lt;span&gt;&#8221; column&#8230; The name says it all. That&#8217;s a lot of red &#9785;&#65039;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The freight one is a bit better:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:466.67px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_031065398eee11349d178eec71180eb19f8a37169d1c1188c5f292c927c38100i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;and the branchline is another messy situation:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:406.67px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_f3bbe8ec3f0279c760ec2d1df10a8e9490f5f13faa57381640bddfecbb47fd71i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now, the &#8220;Days&#8221; column is fairly simple: my original goal was to rotate the automation engines about every 3 months, so anything about 90 days highlights in red. But then, when an engine works and I don&#8217;t have a replacement at all&#8230; well it turns out that policy doesn&#8217;t quite work at all. Thus that ideal policy quickly turned into &#8220;if it ain&#8217;t broke, don&#8217;t fix it&#8221;. I&#8217;m all about pragmatism after all.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Anyhow, the freight train runs a much shorter route, and it&#8217;s sort of flat. No big elevation changes. That helps a lot. The mainline going to Summit has a long ramp going up, and the route is 3 times longer.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The branchline is also a fairly flat route, and not much longer than the freight route, yet it&#8217;s been a constant source of nuisance.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;When an engine fails, I try to fix it as much as I can. Yet there&#8217;s only so much I can do. If it&#8217;s as simple as cleaning trucks and electrical pickups, fine. I can also swap motors or decoders when I can get replacements. Sometimes engines just end up being entirely unreliable and I can&#8217;t quite figure out why. What I don&#8217;t do is randomly swap components that I don&#8217;t know if they are truly defective, especially when I don&#8217;t have alternates in the first place. That&#8217;s just not a cost effective way to deal with this. I try to operate on facts, not guesses.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I feel like one could easily draw conclusions by OEM here, but that&#8217;s not quite true. BLI engines generally have a lot of issues with the DCC on our old layout, and I&#8217;m guessing this has to do with cross electrical district spikes (meaning I blame the layout, not the BLI decoders per se). Bachmann engines have proven to be entirely hit or miss. They either tend to fail right away or work flawlessly for a long time. Same goes for Walthers&#8217; engines. Rapido engines are amongst the nicest ones yet they tend to not last long for one reason or another; however they have exceptional support and I got replacement motors or speakers from Rapido when I needed them. Eventually, all OEMs have their pros and cons, there&#8217;s no clear winner or loser here. I&#8217;m not picky. If it runs, I&#8217;ll take it. What I won&#8217;t do is take personal engines offered by the fellow Saturday operators on the layout -- if there&#8217;s one constant here, it is that running these engines on automation 7 hours a day for 5 days per week just simply kills them all, eventually.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-06-11T00:00:46-07:00</updated>
+</entry>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Fixing the Speaker on the Bachmann UP #9538</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-06-10_fixing_the_speaker_on_the_ba_3a2fc001.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-06-10_fixing_the_speaker_on_the_ba_3a2fc001.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last year, I changed the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2025-03-09_up_9538_on_automated_mainlin_3646d6a1.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;mainline automation to use UP #9538&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, a &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://shop.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=258_288_1254&amp;amp;products_id=8890&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;GE Dash 8-40CW made by Bachmann&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. These feature a TCS decoder, and I had good success running them in automation, good enough that I then acquired a second one to be able to swap the units easily. Then in January, after running for about 10 months, the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2026-01-26_automation_maintenance.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;sound stopped working&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;on the first unit, so I swapped it for the backup unit whilst I&#8217;d investigate the problem.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:304.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ea8582901962dc3d4d87567dea40472116a509e30aba904f8f6f1086322012c3i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;And that&#8217;s what we&#8217;re looking into today. My first thought was to do a decoder reset. That&#8217;s because I&#8217;m used to LokSound decoders that routinely misbehaved on the automation and which were mostly fixed by a reset (thus pointing to a software defect). But that didn&#8217;t fix the TCS decoder here. Maybe the audio was totally muted? That&#8217;s possible on the TCS decoder, but then the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.tcsdcc.com/about-audioassist&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;TCS Audio Assist&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;would still work&#8230; and it didn&#8217;t. Well, it did seem to work, but without the sound -- which makes the feature hard to use ;-) OK fine, let&#8217;s admit it: the speaker is &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;likely&lt;/span&gt;&lt;span&gt;&amp;nbsp;dead so let&#8217;s investigate on the hardware side.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;First, we need to open the engine. Kudos to Bachmann here as this is a fairly trivial operation. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:353.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ffb017e70da20b8ad8b64ee1989cbab5287b7084f6fdb51dead68b4e3ed11739i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This particular engine is catalog number 68514, and &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=index&amp;amp;cPath=68_790_191&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;its store parts page can be found here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. This has an exploded view diagram (&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.bachmanntrains.com/home-usa/dwg/dwgs/H835x-IS001.PDF&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;PDF link&lt;/a&gt;&lt;/span&gt;&lt;span&gt;) which is the same as the one provided in the box. Although that doesn&#8217;t explicitly tell us how to open the engine, we can infer it from the diagram:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Remove the couplers, front and back -- this takes a PH0 screwdriver.&lt;/span&gt;&lt;/li&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Lift the shell. It slightly gets stuck on the front as there are two small snap-fit joints in the front (they hold the snow plow) that prevent the front of the shell from sliding out. Just push the snow plow gently by a quarter of a millimeter to clear it.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span&gt;OK, that was easy.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:212.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_08034e36654ffa9f09d523b462c8e8c25d5810dd77bed4a5195f6b3286cccbfci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Once we open it, we can see the inside. It&#8217;s a fairly neat and simple design. There&#8217;s a long TCW keep-alive board with 3 generous caps mounted on the bottom, and a TCS 21-pin decoder on the top. The TCS decoder neatly uses a PIC32 processor and a Winbond memory chip on the other side of the board. I just happen to have a fond memory of using &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/PIC_microcontrollers#PIC10_and_PIC12&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;PIC12 processors&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;decades ago with their amusing &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/PIC_instruction_listings#Baseline_core_devices_(12_bit)&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;12-bit instruction set&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:213.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_2b5c0a67e90d398de3a485eeab9a91c56439e4c2182b4dea06c24c9460dead63i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Now, in my case, I want to isolate the speaker. As is usual with Bachmann engines, the speaker is in the fuel tank -- a design I don&#8217;t like too much because the speaker&#8217;s magnet tends to accumulate all the metallic debris from the track, potentially perforating the speaker membrane.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The fuel tank is held to the body by only 3 screws. However the problem is that the speaker wires have no play -- they are tucked inside during assembly between the board and the motor behind the white masking tape. Using pliers, I had to carefully unroll the speaker wires to give it enough play to move the fuel tank on the side.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:262.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:794.41px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_9b1dceebee1dd740fed42ef5c5f0b71a15ea2eda19956588821b9f7d43654926d.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Inside we fit a fairly standard 28 mm round speaker, rated 8 ohms at 0.4 W. That seems an unusually low power wattage. &amp;nbsp;The fuel tank also uses a PH0 screwdriver, however the speaker is held in place by two small metal tabs with fine PH00 screws. One of them was loose.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:205.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7d136a38c642dc413d74e513c39b189ebf50f2eea8d612ca4468e308f9a3ae8bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;A quick continuity check with a multimeter on the speaker measures an open circuit instead of the expected 8 ohms.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Getting a replacement speaker is easy enough, as 8 ohm 28 mm round speakers are very common from HO scale, although they typically come in 1 W or 2 W variants such as &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/3PVyc2Z&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/3PVyc2Z&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;or &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/4vxHnpg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/4vxHnpg&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:322.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7813367c1333d8f759bbcb69bd2652f08c297ddae9b038eca599fe3860b7914ei.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;In the picture above, we can see a little piece of metal at the bottom of the calipers -- it was stuck on the speaker, picked up from the track. Ideally I like to place some kind of fine mesh in front of the speaker, yet right now I have nothing fine enough for the job.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Here&#8217;s the speaker replaced by one from the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/4vxHnpg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/4vxHnpg&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;8-pack I just received&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:466.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_1f64769e283216039c7b5864defdb16cc634959b927deed22a804a34f1e25a9bi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;This one seems to have a tiny bit less sensitivity than the original speaker. I had to boost the master volume CV in JMRI from 70 to 100. On the other hand, it&#8217;s &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;allegedly&lt;/span&gt;&lt;span&gt;&amp;nbsp;a 2W speaker rather than a 0.4W so it should hold the charge better. It sounded fine. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;The new speaker seems to be half a millimeter thicker than the previous one, yet there&#8217;s enough clearance to put the fuel tank back in place. I&#8217;ve also replaced the white masking tape by proper polyamide tape, as it help keeps the wires against the body when placing the shell in place:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:220.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_66c2adc53848479960cb3dc3f4e6e6050cefc12eec72376a266e96d14eeb136ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Placing the shell back in place took only a couple of minutes. It&#8217;s a tight fit yet it&#8217;s not a fight.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;I also have the second engine to fix. That one went mute merely 3 months after operation. I&#8217;d venture it&#8217;s the same speaker failure. Since the speaker wires are folded under the engine, I will need to open the shell the first time to pull them in the fuel tank. When re-assembling it, I&#8217;ve left the extra speaker wire in the tank. That means next time I need to replace the speaker, I don&#8217;t even need to pull the shell off at all.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2026-06-10T00:00:32-07:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Branchline UP #3450 SD40-2</title>
@@ -69,9 +173,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-03-11T00:00:09-07:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2026-03-11T00:00:20-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -263,7 +366,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;I had cleaned the Zephyrette wheels a couple weeks ago and they still looked clean -- however sometimes that&#8217;s not enough. For example, for the main automation Bachmann, I also need to disassemble the trucks and clear the side contacts (the &#8220;journals&#8221;) to prevent stuttering. I figure we need something similar here.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;While I was checking the Branchline&#8217;s Zephyrette, I was running the UP 9538 engine for the Passenger Automation as usual to make sure it&#8217;s fine, when I realized at some point that the engine was silent -- its sound cut off instead of sounding a horn whilst going over the canyon bridge. No matter what I tried with the DCC controller, I couldn&#8217;t get the sound to turn back on. OK one more problem in the way. At least, that was easy to fix, or more exactly to work around: it turns out last year I acquired on purpose an exact replica of the UP 9538 engine, which I had already configured in the LokSound Programmer to have exactly the same characteristics as the first one. Now, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;through the magic of buying two of them&lt;/span&gt;&lt;span&gt;, all I had to do was replace the UP 9538 engine #1 by its clone #2, and voil&#224;, the automation is instantly back in business whilst I will look at the first engine &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;another day&lt;/span&gt;&lt;span&gt;. In this case, I highly suspect that a simple decoder reset + reprogram will be enough to fix it. LokSound decoders are sometimes indistinguishable from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.reallifecomics.com/comic.php?comic=march-3-2022&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;printers&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;While I was checking the Branchline&#8217;s Zephyrette, I was running the UP 9538 engine for the Passenger Automation as usual to make sure it&#8217;s fine, when I realized at some point that the engine was silent -- its sound cut off instead of sounding a horn whilst going over the canyon bridge. No matter what I tried with the DCC controller, I couldn&#8217;t get the sound to turn back on. OK one more problem in the way. At least, that was easy to fix, or more exactly to work around: it turns out last year I acquired on purpose an exact replica of the UP 9538 engine, which I had already configured in JMRI to have exactly the same characteristics as the first one. Now, &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;through the magic of buying two of them&lt;/span&gt;&lt;span&gt;, all I had to do was replace the UP 9538 engine #1 by its clone #2, and voil&#224;, the automation is instantly back in business whilst I will look at the first engine &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;another day&lt;/span&gt;&lt;span&gt;. In this case, I highly suspect that a simple decoder reset + reprogram will be enough to fix it. Modern decoders are sometimes indistinguishable from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.reallifecomics.com/comic.php?comic=march-3-2022&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;printers&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:184.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7b70640a02e76584e8b27f5ca6bb854021d46bfc653ce7a75425c87bd7c3e620i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The second UP 9538 engine.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -279,7 +382,7 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;/p&gt;</content>
-<updated>2026-01-26T00:00:29-08:00</updated>
+<updated>2026-01-26T00:00:00-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -527,32 +630,8 @@
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_892f0042f7c49985b9aeb379b9164b36b632554b94af4f70a9e1fb4f2c1e75e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;With the tracks free, I was able to test them. The turnouts all seem functional. They all have DCC power from the station panel, and I explicitly marked the block boundaries:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
- &lt;tbody&gt;
-  &lt;tr style=&quot;height:0pt&quot;&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:94.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_b3673c058a01050f9b585d2275538e7284efc671a2dc6e9e150eb18524bb4371i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:101.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_87084ea65997f2022cae74533d8576f03d325191255a9e099d7cca6e1d45368fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:100.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_5282d4da8ce477460f38fd9c640f228a774a8b6e61f7bfc2419c020c9eee181fi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-  &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The blue tape is just temporary:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:310.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_8c74670d07060366bc496b36510e8839dd3eb484203b46121835a5afaed09cafi.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I want to experiment with something else -- either laser-printed labels or DYMO labels. Something with a brown/sand color rather than black and white. There are other places on the layout where I&#8217;d like to have clear markers of block boundaries, and I should probably avoid littering the place with my trademark blue tape.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;After cleaning everything, I reinstalled Thomas, the cable car, the BART, and the LRV1, although the two latter are conveniently on the 3rd block so that I can turn it off as they are DC engines that can&#8217;t be powered on the layout -- there&#8217;s also a piece of blue tape yet it&#8217;s carefully hidden under the BART:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_a53373ceeecd84363a1507f282bc1fef19d237601b6e0015cc09b3c9964e51dai.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-12-15T00:00:25-08:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-12-15T00:00:23-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -570,17 +649,8 @@
 &lt;p&gt;&lt;span&gt;In the picture above, you can clearly see the timber support that looks freshly brown painted on the left of the engine. It was aligned with the tunnel wall, and I reglued it about 5 millimeters inside. There&#8217;s probably just enough clearance for a page from &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;le bottin t&#233;l&#233;phonique&lt;/span&gt;&lt;span&gt;, and not much more. Sorry, French joke, and no I won&#8217;t explain it.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;OK so I thought that was the end of it but no&#8230; The Zephyrette was still having trouble and once in a while, it would fail its automation run, get stuck &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;somewhere&lt;/span&gt;&lt;span&gt;&amp;nbsp;on the canyon block, and the automation would bring it back home. It happened every 4 or 15 other runs, not every single time. Took me a while to figure where that was since by the time the automation would tell me there was an issue, the engine would be back at its parking spot. I finally managed to reproduce the issue. Turns out the Zephyrette was getting stuck on the other side of that tunnel. Here&#8217;s the spot, and how I fixed it:&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:390.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_7dccdb17fd9fb8652dba6951a94cbc929fe434d5b214b5483fa41df3a20af786i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;See the white marks on the first and second timber supports of the tunnel? That&#8217;s where it was rubbing, but just a fraction of a millimeter. So it turns out that if the engine had enough speed, it would overcome that easily. On that spot, I couldn&#8217;t just remove the timber supports and reglue them further inside like I did on the other side. So instead I used an x-acto knife to separate the timber support from its base and push it inwards. That&#8217;s just enough -- just a fraction of a millimeter -- to prevent the Zephyrette from rubbing against it.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Problem fixed.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;</content>
-<updated>2025-12-15T00:00:27-08:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-12-15T00:00:37-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -1003,9 +1073,9 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;UP 9538 is a GE Dash 8-40CW, replacing the EMD SD70ACe. I chose these engines because they are both modern and highly recognizable.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;UP 9538 is currently an experiment. I want to give them a few weeks to evaluate how well it behaves in automation. The engine uses a more modern TCS Wow Diesel, with a fairly capable &#8220;current keeper&#8221; capacitor as can be &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_191&amp;amp;products_id=13431&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;seen in this loco chassis image&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;UP 9538 is currently an experiment. I want to give them a few weeks to evaluate how well it behaves in automation. The engine uses a more modern TCS Diesel, with a fairly capable &#8220;current keeper&#8221; capacitor as can be &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://estore.bachmanntrains.com/index.php?main_page=product_info&amp;amp;cPath=68_790_191&amp;amp;products_id=13431&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;seen in this loco chassis image&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
-<updated>2025-03-09T00:00:27-08:00</updated>
+<updated>2025-03-09T00:00:41-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>

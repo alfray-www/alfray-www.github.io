@@ -12,15 +12,15 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="I’ve spent the last couple weeks doing background computer maintenance mostly. The kind of stuff nobody at the layout will notice, because things magically get fixed before they are too broken." />
-<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_22072132add2c376c313423a5257d341e7d271e236f048ada0ade32fecb03b71i.jpg" />
+<meta property="og:description" content="On the software side, while traveling during the xmas break, I have spent time cleaning up the Conductor source code, which is my script-based software that drives the entire model layout automation. I have not changed any functionality, just done maintenance on the code base; I have modularized the code to split the parser and the script engine into an engine module, and I have updated all the dagger components&nbsp;to make it easier to write tests for just the scripting engine." />
+<meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_f438ebd345a5bf3ad278fcb210b25075cca7f870b9002a8133e288c15868e145i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="I’ve spent the last couple weeks doing background computer maintenance mostly. The kind of stuff nobody at the layout will notice, because things magically get fixed before they are too broken." />
-<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_22072132add2c376c313423a5257d341e7d271e236f048ada0ade32fecb03b71i.jpg" />
+<meta name="twitter:description" content="On the software side, while traveling during the xmas break, I have spent time cleaning up the Conductor source code, which is my script-based software that drives the entire model layout automation. I have not changed any functionality, just done maintenance on the code base; I have modularized the code to split the parser and the script engine into an engine module, and I have updated all the dagger components&nbsp;to make it easier to write tests for just the scripting engine." />
+<meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_f438ebd345a5bf3ad278fcb210b25075cca7f870b9002a8133e288c15868e145i.jpg" />
 
 <title>Blog: Randall Museum Model Railroad</title>
 
@@ -247,6 +247,69 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-06_automation_maintenance.html">
+    <h2 class="post-title">2022-01-06 - Automation Maintenance</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>On the software side, while traveling during the xmas break, I have spent time cleaning up the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor" style="color:inherit;text-decoration:inherit">Conductor source code</a></span><span>, which is my </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">script-based software that drives the entire model layout automation</a></span><span>. I have not changed any functionality, just done maintenance on the code base; I have modularized the code to split the parser and the script engine into an </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor/src/master/jmri/conductor/engine1/" style="color:inherit;text-decoration:inherit">engine module</a></span><span>, and I have updated all the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://dagger.dev/dev-guide/" style="color:inherit;text-decoration:inherit">dagger components</a></span><span>&nbsp;to make it easier to write tests for just the scripting engine.</span></p>
+<p></p>
+<p><span>I have remotely deployed the new version on the layout, and as desired this update was totally silent and unnoticed.</span></p>
+<p></p>
+<p><span>On the train model side, we’ve had issues with the Branchline for a little while.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:236.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_f438ebd345a5bf3ad278fcb210b25075cca7f870b9002a8133e288c15868e145i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>Last month, the 2-car Santa Fe RDC from Rapido stopped working. I “solved” that by just running it with only one of the two RDC cars. The unit is also not doing sound anymore, at least not in a consistent manner. &nbsp;That’s unfortunately the second Rapido RDC unit that developed similar problems. The small motors they use for each truck is apparently the weak link, and since they use two of them, the unit can’t run well once one of the motors fails. For the RDC SP 11, I worked around that by disconnecting one of the motors, making it single-truck powered, which is fine on our flat branchline. I could do that too here, however it won’t solve the sound issue (it does make sound from time to time IIRC so it’s not a speaker/wiring issue, maybe more like a decoder issue).</span></p>
+<p></p>
+<p><span>The other way I “fixed” the branchline automation is by thoroughly cleaning the engine wheels and then scrubbing the track where it was losing power with the Walthers hand cleaning tool. </span></p>
+<p></p>
+<p><span>But at some point we need to just work around the problem and address it. Time for an engine/train change on the branchline.</span></p>
+<p></p>
+<p><span>There’s a similar issue on the mainline. The trains were not stopping at the right spot, and that got solved by cleaning the engine wheels. But more importantly, we’re going to have to swap the engines at some point. Out of the two UP SD70ACe engines, one is out of commission, and I’m currently running with the backup </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="http://www.rrpicturearchives.net/Locopicture.aspx?id=169705" style="color:inherit;text-decoration:inherit">UP 8749</a></span><span>. There is no backup for the backup so we’ll need to deal with that.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:180.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:739.00px"><img alt="" src="img_01b58347699baf4756e390f9361c5c374916c013ea850d9fc52f0e202d3873a8i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>The easy solution here is to try to get yet another UP SD70ACe once available. Currently </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.walthers.com/products/trains/locomotives-traction/diesel/scale-ho_scale-road_name-union_pacific-dcc-y_2-sound-y_4?product_list_limit=240" style="color:inherit;text-decoration:inherit">Walthers</a></span><span>&nbsp;or </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.trainworld.com/catalogsearch/result/index/?q=sd70ace&amp;scale=151" style="color:inherit;text-decoration:inherit">TrainWorld</a></span><span>&nbsp;have none though. In any case, one of the many pending tasks I have is to look at what’s wrong with the first unit and fix it. What I have done in the past that worked well is get any similar unit from the same OEM and just do a shell swap.</span></p>
+<p></p>
+<hr>
+<p></p>
+
+
+</div>
+<div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2022-01-01_happy_new_year.html">
+    <h2 class="post-title">2022-01-01 - Happy New Year</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p><span>Happy New Year 2022 from the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span>&nbsp;team.</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:609.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:609.00px"><img alt="" src="img_0f7d041d7428e39e688b39c1563d7f0bcda53047a2330e6b7fdfe29bea8efc4ei.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:431.28px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:588.90px"><img alt="" src="img_e7156e7ba740d89ffa7cf84b31a694a4ec34590c59df281d221d74690d56c7c7i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>2021 was yet another odd year. It was marked by the museum reopening in October. The usual lot of mandatory </span><span>layout maintenance</span><span>&nbsp;happened with various things to fix (</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-06-05_work_update_t80_t90_and_siding_b91.html" style="color:inherit;text-decoration:inherit">B91</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-04-18_repair_for_block_b320.html" style="color:inherit;text-decoration:inherit">B320</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-11-15_mainline_b321_repair_at_t322.html" style="color:inherit;text-decoration:inherit">B321</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-01-09_work_update_on_t150_panels_and_lights.html" style="color:inherit;text-decoration:inherit">T150</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-02-06_repair_for_turnout_t320.html" style="color:inherit;text-decoration:inherit">T320</a></span><span>, </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-07-06_repair_for_turnout_t450.html" style="color:inherit;text-decoration:inherit">T450</a></span><span>, etc). Some new stuff happened like balloon auto-reversers for </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2020-12-06_dcc_control_for_bridgeport_turnout.html" style="color:inherit;text-decoration:inherit">Bridgeport yard</a></span><span>, and a good amount of time spent </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/randall/2021-07-02_understanding_the_building_l_9aa84d3d.html" style="color:inherit;text-decoration:inherit">understanding the lighting</a></span><span>.</span></p>
+<p><span></span></p>
+
+<a href="2022-01-01_happy_new_year.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2021-12-23_update_to_vision_computer_vl_557b4ea0.html">
     <h2 class="post-title">2021-12-23 - Update to Vision Computer: VLC with RTSP on Debian Bullseye</h2>
@@ -491,60 +554,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-11-14_motion_sensor.html">
-    <h2 class="post-title">2021-11-14 - Motion Sensor</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p><span>The motion sensor finally has a little cover to keep it in place:</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:276.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:714.00px"><img alt="" src="img_ad8330ee50fb6a7af28f5987f25bcd8faec3066a7721d779c4614999bc91fd49i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>Description of the Motion Sensor and how it is hooked into the NCE AIU01:</span></p>
-<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.mnaglpwxrgon" style="color:inherit;text-decoration:inherit">https://www.alfray.com/trains/randall/about.html#h.mnaglpwxrgon</a></span><span>&nbsp;</span></p>
-<p></p>
-<p><span>For reference, here’s how the sensor is calibrated:</span></p>
-<p><span></span></p>
-
-<a href="2021-11-14_motion_sensor.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2021-11-10_maintenance_automation_stopp_dd713a3c.html">
-    <h2 class="post-title">2021-11-10 - Maintenance: Automation Stopping on Mainline</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p></p>
-<p><span>Recently a dead spot has developed on the mainline track #1 just in front of Stockton Station.</span></p>
-<p></p>
-<p><span>And last week we had another one: the automation trains are stopping on the mainline between the Branchline Interchange and the Sonora turnout.</span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:120.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_915af0e1f3a148eaa9e3bcd903d0c4048afacb03f943e27e2f7ddbe2ba5d74c1i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<p><span>As with (the one) previous short we had on the mainline, this one is intermittent, which makes it so fun to find and debug. It works for a while and then suddenly stops. That’s the typical sign of a cold / broken solder joint that moves during the day as the rail expands or shrinks with humidity or temperature. So now I have to look for a solder joint. Could be a track feeder, or it could be a rail joiner, who knows.</span></p>
-<p></p>
-<p><span>The “nice” thing is that I can temporarily fix the dead short just by pressing on the outer rail. So that gives me a clue...</span></p>
-<p><span></span></p>
-
-<a href="2021-11-10_maintenance_automation_stopp_dd713a3c.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -566,7 +575,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-03-11 by Rig4j 0.1-Exp-bc668ce
+    Generated on 2026-06-10 by Rig4j 0.1-Exp-bc668ce
     <!-- )rg-excl -->
     &nbsp;
 </div>
