@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="One of the goals of Quote Otter is to try some “web stuff”." />
+<meta property="og:description" content="Just completed this yesterday, and it works as expected:https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/" />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="One of the goals of Quote Otter is to try some “web stuff”." />
+<meta name="twitter:description" content="Just completed this yesterday, and it works as expected:https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/" />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,65 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2019-11-29_background_foreground_demo_a_95ed3307.html">
+    <h2 class="post-title">2019-11-29 - Background Foreground Demo Android App</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Just completed this yesterday, and it works as expected:<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/" style="color:inherit;text-decoration:inherit">https://bitbucket.org/ralfoide/misc-exp-public/src/master/android/bg-demo/</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">(In retrospect, I should have called the demo “fg-demo”).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First off, I’d say duplicating the job-demo project was easy and the way to go: dup the folder, remove app/build as well as anything excluded by gitconfig, then do a simple grep/sed on “job.demo”. The only 2 places where it was used was in the app name.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The demo uses a “startForegroundService”, a regular Service, and a “startForeground” from the onStartCommand of the service, with a notification. </span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The service is started when the activity is started/resumed. The service is only stopped when the stop button in the activity is explicitly used. The service itself runs a thread that updates a counter. The activity binds to the service to give a callback, used to update the counter on screen.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">As this is both a “bound” service (for the activity) and a “started” service, it keeps running until it is both stopped and unbound from the UI.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There are a few cases where the system may kill &amp; restart the service immediately.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Which project make sense using that, and which do not?</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In the past, I’ve been using background services for applications that:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Do some kind of system control and need to run in the background all the time.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Those that have expensive/complicated startup, for example with network connections to hold the update state.</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In these cases, it’s a bit wasteful to stop everything as soon as the user switches between apps.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">In a post-Android-O world, one should balance between this and using a JobService, or neither.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">How would I use these for current, former, or future projects:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">DccThrottle: Foreground service is a logical choice. User is expected to switch between apps, not lose control, and be able to change back immediately. Service only needs to be started once at least one engine is in command; stopped by asking for confirmation when trying to exit the app (or the double-back pattern).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">RTAC: Background service is a logical choice, but not necessary. The app is supposed to be used in foreground. Instead it could just use an app singleton thread.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">T3: JobService + AlarmManager.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Bearing: This was using a background service before. The new version just uses an activity-centric update. State is lost/reconstructed when outside of the activity.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Follow up work:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change on-going notification to “App Blah is Running”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Change notification setting so that it does not beep at me (lower priority).</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Add 1 or 2 notification actions: “quit now” vs “open”.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Open would do what the current notification click does, bring the activity.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Quite would both stop the service and kill the app (or more exactly stop the activity if it’s open).</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2019-11-28_quote_otter_choices.html">
     <h2 class="post-title">2019-11-28 - Quote Otter choices</h2>
@@ -680,41 +739,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-04-08_summer_project.html">
-    <h2 class="post-title">2019-04-08 - Summer Project</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I was going to start a “Service [idea]” doc as a Summer Project, but honestly at that point it’s more like a reboot as it feels really deja-vu:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-style:italic">Menerba</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is the obvious canonical example.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-style:italic">Home Monitor App</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Not every far:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-style:italic">Mobile dev</span><span>&nbsp;and </span><span style="font-style:italic">Hint v3</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-style:italic">Ikaria</span><span>&nbsp;and </span><span style="font-style:italic">Ikaria v2</span><span style="font-family:&quot;Roboto Mono&quot;">.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And of course “\pɔʁt.na.wak\” as a meta-meta project.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Part of the motivation for Portnawak was exactly what the name says, it’s a place to put temporary projects without the pretense of ever finishing them. They can be left there and not be too visible, so it’s not an inconvenience to anyone.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -731,7 +755,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-05-19 by Rig4j 0.1-Exp-bc668ce <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-12 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
