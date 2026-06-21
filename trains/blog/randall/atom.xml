@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">Blog: Randall Museum Model Railroad</title>
-<updated>2026-06-13T10:36:26.59505-07:00</updated>
+<updated>2026-06-21T13:11:50.714529-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/trains/blog/randall/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/trains/blog/randall/atom.xml"/>
 <id>https://www.alfray.com/trains/blog/randall/atom.xml</id>
 <generator uri="https://github.com/ralfoide/rig4" version="0.1-Exp-907a6e8">Rig4j</generator>
+<entry>
+<author><name>Ralf</name></author>
+<title type="html">Bachmann UP #9538 Speaker, Continued</title>
+<link rel="alternate" type="text/html" href="https://www.alfray.com/trains/blog/randall/2026-06-14_bachmann_up_9538_speaker_continued.html"/>
+<id>https://www.alfray.com/trains/blog/randall/2026-06-14_bachmann_up_9538_speaker_continued.html</id>
+<category term="randall" label="Randall"/>
+<content type="html" xml:lang="en" xml:base="https://www.alfray.com/trains/blog/randall/">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;A few days ago I fixed the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2026-06-10_fixing_the_speaker_on_the_ba_3a2fc001.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;speaker on one of the Backmann UP #9538 engines&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. We run 2 of these in alternance for the passenger automation, and the speaker on the second had also failed. It&#8217;s time to swap that speaker too.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:192.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_ea1ef91052e01612b631d5360a0c33bf6775f779da6ef23e9773e0792cdfd945i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Interestingly, there are a couple minor differences between the two otherwise-identical engines. In these engines, the speaker is located inside the fuel tank, and it can be opened directly from the bottom without removing the entire shell. However, as I wrote in the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/blog/randall/2026-06-10_fixing_the_speaker_on_the_ba_3a2fc001.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;previous post&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, last time I had to remove the shell anyway because the speaker wires were too short -- they were tucked inside the shell. Here, there&#8217;s just enough slack in the speaker wires that the fuel tank can be opened without removing the entire shell:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:213.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_d2523edfb24aefefe7d610c758f98c99e7b94e90ad2ff85ac26fd58770523f52i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Once opened, I can see the speaker is actually slightly different. This time we have an 8 ohm speaker rated at 0.5 W instead of 0.4 W. The shape is the same. The speaker is attached to the fuel tank using these little tabs, and ironically there&#8217;s 3 of them this time, as 2 were stacked on top of each other. I like this kind of subtle difference.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Time to change that speaker.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last time, I used the 8-ohms 2 Watt speakers from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/4vxHnpg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/4vxHnpg&lt;/a&gt;&lt;/span&gt;&lt;span&gt;; they ended up sounding very nice, even though I disliked the crude packaging that just had the 8 speakers thrown together in a plastic bag, each one sticking to the others&#8217; magnets. This time I&#8217;m using an 8-ohm 1 Watt speaker from &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/3PVyc2Z&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/3PVyc2Z&lt;/a&gt;&lt;/span&gt;&lt;span&gt;. The packaging is better as we have a little foam container that securely holds each speaker. The size and shape matches perfectly the speaker I&#8217;m replacing:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:242.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_38c241bfd0131d261e7097df06ea588edbdd196f8c91398baaf49f9e651efa96i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;The original Bachmann speaker on the left; the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/3PVyc2Z&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;replacement speaker&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;&amp;nbsp;on the right&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;They come with a little 3 cm wire already soldered. I&#8217;ll keep that as it&#8217;s convenient to extend the short wires out of the engine:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:276.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_08483a87c64f2c1cc9cea3ff8e9b71a8db9e3e32f8d8f4ef4bb4227b762a981ci.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;That all fits neatly inside, and it&#8217;s such an easy swap. I used polyimide tape instead of shrinking tubes for insulation as I think it&#8217;s more flexible and takes less space.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Finally, I got to run both engines side by side at Randall, and the difference between both speakers is quite drastic:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin:0&quot;&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Original speaker: 8-ohm, 0.4 W or 0.5 W&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Nice sound, a bit on the low volume side.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Master Volume CV: 70%, the default value that came programmed in the engine.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Engine #1 with 8-ohm 2 Watt speaker (&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/4vxHnpg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/4vxHnpg&lt;/a&gt;&lt;/span&gt;&lt;span&gt;):&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Very good sound, albeit a tad on the low volume side.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;However, since we changed from a 0.4 W to a 2 W speaker, I can boost the volume without risking burning out the speaker. I&#8217;ve tried upping the master volume and there was no distortion, so I went for it.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Master Volume CV: changed to 100%.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Engine #2 with 8-ohm 1 Watt speaker (&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://amzn.to/3PVyc2Z&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;https://amzn.to/3PVyc2Z&lt;/a&gt;&lt;/span&gt;&lt;span&gt;)&lt;/span&gt;&lt;/li&gt;
+ &lt;ul&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Fairly metallic and aggressive sound. Very loud but also very harsh.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I&#8217;ve tried variations on the master volume, and ended up lowering it. It still sounds aggressive. I don&#8217;t think this speaker has a nice frequency response. On a Soundtraxx decoder, I&#8217;d try to change the equalizer to better match a small speaker, but that&#8217;s unfortunately not an option on the TCS decoder.&lt;/span&gt;&lt;/li&gt;
+  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Master Volume CV: changed to 50%.&lt;/span&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Overall I much prefer the sound of the 2 Watt speaker, even though I had to max the Master Volume and the packaging is very crude. That said, I don&#8217;t think most people will be able to tell the difference since both engines will never run at the same time. Since the new speakers have a much higher power rating, they should last longer. And if they don&#8217;t, I have replacements at hand, and I can refer to these posts to remember how to replace them later (why else do you think I spend so much effort documenting how to open these HO engines in these posts, duh!? I document these things thoroughly because I&#8217;m lazy and I don&#8217;t want to have to figure it out twice!)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
+<updated>2026-06-14T00:00:03-07:00</updated>
+</entry>
 <entry>
 <author><name>Ralf</name></author>
 <title type="html">Automation HO Engine Roster</title>
@@ -39,9 +96,8 @@
 &lt;p&gt;&lt;span&gt;I feel like one could easily draw conclusions by OEMs here, but that&#8217;s not quite true. BLI engines generally have a lot of issues with the DCC on our old layout, and I&#8217;m guessing this has to do with cross electrical district spikes (meaning I blame the layout, not the BLI decoders per se). Bachmann engines have proven to be entirely hit or miss. They either tend to fail right away or work flawlessly for a long time. Same goes for Walthers&#8217; engines. Rapido engines are amongst the nicest ones to automate (feature wise) yet they tend to not last long for one reason or another; however they have exceptional support and I got replacement motors or speakers from Rapido when I needed them. Eventually, all OEMs have their pros and cons, there&#8217;s no clear winner or loser here. I&#8217;m not picky: if it runs, I&#8217;ll take it. What I won&#8217;t do is take personal engines offered by the fellow Saturday operators on the layout -- if there&#8217;s one constant here, it is that running these engines on automation 7 hours a day for 5 days per week just simply kills them all, eventually.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2026-06-11T00:00:34-07:00</updated>
+&lt;p&gt;&lt;/p&gt;</content>
+<updated>2026-06-11T00:00:51-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
@@ -473,144 +529,8 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span&gt;And because it was designed by Mr. Perry, the awesome thing is that I &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/tree/main/schemas&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;have schematics for every part of the components&lt;/a&gt;&lt;/span&gt;&lt;span&gt;, which is a good thing because that &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Track%20Power%20Routing%20%5B2018%5D.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;power routing&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;looks totally intimidating at first:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:417.33px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_aa5f64dde1db7b183e40ec9616d5c82078f58ee9f6debded5c1a7913add00107i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.jo09qe83u00m&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;DC Usage&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;This electronics makes entire sense on a DC layout. The power routing works as such:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The yard can be powered by 3 different sources -- the SIA Panel, the Stockton Panel, or the Mountain Panel -- but never more than one source can power the yard at the same time.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train must enter the yard from the &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Stockton Panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;side, the users press a &#8220;Seize&#8221; button on the &lt;/span&gt;&lt;span&gt;Stockton Panel&lt;/span&gt;&lt;span&gt;. This ensures that the DFS tracks are powered by the DC power from the Stockton Panel -- and it disconnects power from the Mountain Panel.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train must enter the yard from the &lt;/span&gt;&lt;span style=&quot;font-weight:700&quot;&gt;Mountain Panel&lt;/span&gt;&lt;span&gt;&amp;nbsp;side, the users press a &#8220;Seize&#8221; button on the Mountain Panel. This ensures that the DFS tracks are powered by the DC power from the Mountain Panel -- and it disconnects power from the StocktonPanel.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Each panel also has a &#8220;Release&#8221; button to stop powering the yard from either side.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When a train needs to operate only within limits of the yard, the &#8220;Auto/Local&#8221; toggle on the SIA panel can be placed on the &#8220;Local&#8221; side. This powers the tracks from the SIA panel.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The signal bridges over the entrance on both sides are tied to the power routing and will only show a green indication when their side powers the track. This is a perfect visual indicator: if one side has all reds on a signal bridge, a train should not cross that signal bridge as it does not have the power routed correctly for it.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Similarly, the turnouts to enter or exit the yard from the Stockton Panel side are controlled by the toggles on the Stockton Panel itself. And the turnouts to enter or exit the yard from the MountainPanel side are controlled by the toggles on the Mountain Panel itself. &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.qp3z28usbp2l&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;DCC Usage&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;All that scheme above made sense when the yard was used in DC. But when we&#8217;re using DCC, it brings a lot of complexity that is not useful anymore:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Depending on the position of the Seize/Release buttons, the yard may be powered by the DCC boosters attached to the Stockton yard power district, or the Mountain power district, or the SIA power district. That means the yard is affected by any short in these other places, and inversely can short the other locations.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When we are in front of the DFS tracks, we&#8217;re next to the SIA panel, and that panel only. We do not have access to the Seize/Release buttons for the power routing as they are located on other distant panels. Similarly, we cannot change the turnouts because they are located on the Mountain or the Stockton panels which are far away from the DFS yard itself.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The signal bridges on the yard entrance and exit should no longer be &#8220;all red&#8221; and should indicate which track is aligned.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;What we really want for DCC operation is:&lt;/span&gt;&lt;/p&gt;
-&lt;ol start=&quot;1&quot; style=&quot;margin:0;padding:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Bypass all the complex Seize/Release power routing scheme, and power the DFS tracks solely from the SIA panel power.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;margin-left:36pt;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Have access to the turnouts from anywhere.&lt;/span&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Note that these are two separate goals.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;As usual, I decided to proceed with multiple phases. The first phase is mostly validation -- make sure I understand everything and that I am able to modify things adequately. Once that is done and that we have used the new way for a while, the next phase will be to clean up and remove obsolete wiring and equipment.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.mnwn4tka7n5v&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the turnouts for DCC operation&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;That part was actually trivial: the turnouts are all modern Tortoise, with their control wires going directly to the Stockton Panel and the Mountain Panel respectively. The goal is to instead wire them to an NCE Switch-8, which will allow us to control the turnouts from the NCE PowerCab or from the JMRI computer and WiThrottle.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
- &lt;tbody&gt;
-  &lt;tr style=&quot;height:0pt&quot;&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:198.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_674555a0cae91eb5d04dc03cbaf6976cfbdafb92a72851e28cdd94ca1a3dcf96i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;Stockton Panel&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:212.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_4e6fd15064dfa7aa757d6615a9ebfa27b693c25b9565aca075739543f8f39276i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;vertical-align:baseline&quot;&gt;&lt;br&gt;NCE Switch-8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:199.2pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:198.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:264.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fb6bff84685730640fdd797accf1b37306c151b2af586ef241aaa1ad243e0242i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-style:italic;vertical-align:baseline&quot;&gt;Mountain Panel&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-  &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;An NCE Switch-8 was placed next to the SIA panel as I found that the current turnout control wires, once desoldered from the Stockton and Mountain panel, were just about the right length to reach the SIA panel. Very convenient.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The NCE Switch-8 is temporarily powered by the DCC power from the SIA panel. This is not desirable long term -- if an engine shorts against a turnout in the yard, we&#8217;d lose yard power and thus we would not be able to throw the turnout. The proper way to do this is to power the Switch-8 from a &lt;/span&gt;&lt;span style=&quot;font-style:italic&quot;&gt;different&lt;/span&gt;&lt;span&gt;&amp;nbsp;power supply. &lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Instead I need to pull wires from the isolated DCC turnout power supply which is dedicated to that purpose.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.we22rtm1icx4&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the Track Power Routing&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;I first checked that all the 3 DFS tracks were properly isolated from the turnouts, and indeed they are. Both rails are isolated, they don&#8217;t even share commons. That&#8217;s good to know!&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Rewiring the 3 DFS tracks was trivial: I just used the existing power leads, but I disconnected them from the electronics &#8220;Switching Panel&#8221; (the board with all the relays) and wired them directly to the DCC. I also bypassed the &#8220;auto/local&#8221; toggle as it was now redundant. In essence, I wired all the DFS tracks to always be in &#8220;local&#8221; mode.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;table style=&quot;border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto&quot;&gt;
- &lt;tbody&gt;
-  &lt;tr style=&quot;height:0pt&quot;&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:297.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_654b4333b3b4d7aa60a4c4decfb0a0241b2d6bd719ffd1a0a875daa2e87f2c79i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-   &lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:0pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:0pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:0pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:0pt;vertical-align:middle;width:298.8pt&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:297.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:396.00px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_dd67c22ba6db4458adc5d534671ace5bb68c8d3dd81471c12962a1f29e805409i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
-  &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;We now lack a way to individually turn each DFS track on and off. This is a very useful feature in a yard as it&#8217;s desirable to turn power off when parking engines long term. Eventually what I&#8217;d like to have are 3 track on-off toggles on the SIA/DFS panel.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;I also need to change the dangling Wago connectors for a proper terminal under the panel.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.jcuhxiw7izp2&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Rewiring the Signal Bridges&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;In the DC usage mode, the signal bridges on both sides are wired in such a way that they become all-red when power is not &#8220;seized&#8221; on that entrance/exit. When that happens, the signal bridges no longer reflect the state of the turnouts.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;In DC mode that makes sense as it clearly indicates that a train should not cross the signal bridge as the power on the other side of the track does not match. But in DCC we don&#8217;t care. We want the signal bridges to always show us how the turnouts are aligned.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The question is how does the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;&#8220;Switching Panel&#8221; electronics board&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;do that?&lt;br&gt;Luckily, courtesy of Mr. Perry, we have the &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;schematics for it right here&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&amp;nbsp;(click on this for a better view):&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:1.33px solid #999999;display:inline-block;height:416.50px;margin:0.00px -0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:576.30px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fd6a358dea9e6ecbde29ee7ee44e328e102447e1d3d4f1a3452a359c2d127d2ai.png&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Now that thing sure looks intimidating, yet it&apos;s not that bad. It&apos;s essentially a bunch of relays forming logic gates, and I implicitly &#8220;translate&#8221; and read this as a bunch of boolean logic equations. &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;I noticed that a few of these relays are configured to be self locking: once power is applied via an intermittent button push, the relay closes a circuit that powers the relay itself, and thus makes sure it stays closed.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Let&apos;s examine the schematics above: &lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;At the top level are the 8 relays that power the 3 DFS tracks.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;When the Stockton/Valley seize button is pressed, it closes a relay to enable power to be fed from the Stockton side, and then, depending on which track is selected, sends that power to the track. So that accounts for 4 of the relays at the top.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;And then there&apos;s a similar arrangement for the other side with power from the Mountain. &lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;At the same time, the relay from one side disconnects the power input from the other side. &lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The &#8220;seize&#8221; from one side also grounds the output signal named &#8220;0vsz&#8221;. That signal goes to the signal bridge&#8217;s &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221;&lt;/span&gt;&lt;span&gt;&amp;nbsp;to allow it to display the turnout state in green.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Both the &amp;nbsp;&#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20-%20Switching%20Panel.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Switching Panel&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics as well as the &#8220;&lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://github.com/model-railroad/randall-documentation/blob/main/schemas/DFS%20Signal%201-%20Dow%20Yard%20Signal%20Controller.svg&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;Dow Yard signal controller&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&#8221; schematics were puzzling at first until I realized that most of the logic is triggered by control lines that are grounded when active. They are tied to the positive of the power supply by default. This is simply what we call &#8220;active-low control lines!&#8221; Once I understood that, the schematics made much more sense. It now makes sense that the output &#8220;enabling&#8221; the signal controller is labelled &#8220;0vsz&#8221; as it is probably an abbreviation for &#8220;zero volts seize&#8221;.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;Which means now I realized that I could bypass the entirety of the complex power routing switching panel by doing 2 simple things:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Disconnect all the input power leads. The panel is not routing any power anymore and doesn&#8217;t need to be actually powered at all.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Tie the &#8220;0vsz&#8221; lines to the ground of the power supply. That enables both signal bridges to show a green state based on the turnouts&#8217; positions.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;And that&#8217;s what I ended up with:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;span style=&quot;-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:465.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;img_fea30fe35bbd1285733892b218faa7d623a7905070eb3eaf2e0fd8029bcb68e9i.jpg&quot; style=&quot;margin-left:0.00px;margin-top:0.00px&quot; title=&quot;&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;This makes it work as I need. I labeled every wire so that I can easily revert things if needed. The Switching Panel is entirely bypassed. Yet, from an initial test, it behaved as I wanted.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&quot;font-style:italic&quot;&gt;What&#8217;s Next&lt;/span&gt;&lt;span&gt;:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Instead of bridging both &#8220;0vsz&#8221; wires to the ground on the panel, I should do that directly on both remote Signal Controller boards. Then the black wires can be removed.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Similarly the 3 wires to the West (Ws, W2/3, W3) and the East (Es, E2/3, E3) are no longer used and can be removed.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The two red-black power routing input wires at the top can be removed.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;The Seize/Release button wires can be removed.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&quot;h.qjwuym3v9tr7&quot; style=&quot;line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid&quot;&gt;&lt;span style=&quot;font-size:16pt&quot;&gt;Conclusion&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;The first phase was a success so far. I have a usable DFS yard. The track is powered by the SIA panel. The turnouts can be controlled using the NCE PowerCab.&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;The next phase is to do cleanup, which I will do slowly as I go along:&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin:0&quot;&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Remove a bunch of wiring that is now unused.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Tidy up the SIA panel.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Add toggles for each of the DFS tracks to turn them on/off individually.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Use a proper terminal block to wire the DFS tracks instead of Wago connectors.&lt;/span&gt;&lt;/li&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;Update a bunch of schematics to show the new DCC turnout numbers:&lt;/span&gt;&lt;/li&gt;
- &lt;ul&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;the main layout map,&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;the Stockton Yard panel map,&lt;/span&gt;&lt;/li&gt;
-  &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;the SIA panel map.&lt;/span&gt;&lt;/li&gt;
- &lt;/ul&gt;
- &lt;li style=&quot;line-height:1.15;padding-bottom:0pt;padding-left:0pt;padding-top:0pt&quot;&gt;&lt;span&gt;All the information I wrote here should also be collected in the main &lt;/span&gt;&lt;span style=&quot;-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none&quot;&gt;&lt;a href=&quot;https://www.alfray.com/trains/randall_layout.html&quot; style=&quot;color:inherit;text-decoration:inherit&quot;&gt;layout description document&lt;/a&gt;&lt;/span&gt;&lt;span&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</content>
-<updated>2025-12-29T00:00:43-08:00</updated>
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;(Abridged version... follow web site link to read more)</content>
+<updated>2025-12-29T00:00:57-08:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
