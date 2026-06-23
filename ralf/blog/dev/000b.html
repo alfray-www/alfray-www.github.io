@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Here’s an interesting problem in Cab v2:" />
+<meta property="og:description" content="JavaCV: Used in Randall’s camera proxy app to capture data from an RTSP h264 / MJPEG feed, and produce jpeg images or publish an MJPEG web (via a Jetty web server)." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Here’s an interesting problem in Cab v2:" />
+<meta name="twitter:description" content="JavaCV: Used in Randall’s camera proxy app to capture data from an RTSP h264 / MJPEG feed, and produce jpeg images or publish an MJPEG web (via a Jetty web server)." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,62 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2020-06-05_opencv_and_javacv.html">
+    <h2 class="post-title">2020-06-05 - OpenCV and JavaCV</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">JavaCV</span><span style="font-family:&quot;Roboto Mono&quot;">: Used in Randall’s camera proxy app to capture data from an RTSP h264 / MJPEG feed, and produce jpeg images or publish an MJPEG web (via a Jetty web server).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-weight:700">OpenCV</span><span style="font-family:&quot;Roboto Mono&quot;">: for the Randall camera proxy project, need basic motion detection.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Some good tutorials here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_bg_subtraction/py_bg_subtraction.html" style="color:inherit;text-decoration:inherit">https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_video/py_bg_subtraction/py_bg_subtraction.html</a></span></p>
+<p style="text-align:left"><span>Example in Python. Java API available here: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.opencv.org/master/javadoc/org/opencv/video/package-summary.html" style="color:inherit;text-decoration:inherit">https://docs.opencv.org/master/javadoc/org/opencv/video/package-summary.html</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>And in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/bytedeco/javacv" style="color:inherit;text-decoration:inherit">JavaCV</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;it shows how to convert frames between the FFMPEG input and what’s needed by the OpenCV library using “Mat” and an OpenCV converter.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-style:italic">Update 2020-06-09</span><span style="font-family:&quot;Roboto Mono&quot;">: The “cam-proxy” project is working nicely.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One realisation: I picked up the JavaCV approach as it seemed easier to get started, and that paid off. However it’s worth pointing out that the generated fatJar is an impressive 760 MB!</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">That is quite a feat.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Looking at the APIs, do I need all of JavaCV, or could I use only OpenCV with its Java bindings? Let’s see which APIs I’m using here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JavaCV.FFMpegFrameGrabber ⇒ there’s an OpenCV specific one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JavaCV.FFMpegFrameRecorder ⇒ to generate the MJPEG stream. Alternative?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">JavaCV.2dFrameConverters + CanvasFrame ⇒ there’s an OpenCV one.</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OpenCV core: IplImage, Size, Rect, Mat</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OpenCV imgproc: resize</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">OpenCV video: cvCreateImage, mediamBlur, createBackgroundSubstractorMOG2.</span></li>
+</ul>
+<p style="text-align:left"></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Thus one question is whether it’s possible to generate the output stream (MJPEG or h264) using OpenCV and its Java wrappers, or is FFMpeg needed for that?</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Uncompressed fatJar size: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,762,758,664 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">org/ part of the jar: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,227,823,156 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Opencv:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,065,264,936 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">lib/ part of the jar:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;629,358,581 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Ffmpeg:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;371,946,457 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Javacpp:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 10,261,365 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Javacv:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;921,733 bytes</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Jetty part: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;318,8118 bytes</span></li>
+</ul>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">So essentially trying to only use OpenCV would likely not save that much. A huge part of the JavaCV package is indeed OpenCV and a quick look at the final Jar shows that it contains not only java wrappers but also hpp headers, some xml, and most important the jni+si native libs for a lot of architectures (e.g. armhf, armeabi-v7, arm64-v8a, x86, x86_64). If an effort was needed to trim the jar file, it could be by avoiding packaging these in the first place by removing all the arm ones (3 out of 5 archs).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2020-05-02_dagger_and_libraries.html">
     <h2 class="post-title">2020-05-02 - Dagger and Libraries</h2>
@@ -584,46 +640,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2019-11-30_esp32-cam_project_grade_crossing.html">
-    <h2 class="post-title">2019-11-30 - ESP32-CAM Project: Grade Crossing</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    Esp32
-    
-    </span>
-</span></div>
-
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One discussion on the Arduini mailing list centered about the use of Arduinos to commonly do Crossing Gates mechanisms. The projects are considered “trivial” as they involve commanding servos (to move gate arms) and blinking LEDs for the crossing lights. There are modules to do sound too. Both are ubiquitous with Arduinos and well designed for that.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Typically inputs come from photoresistor, IR leds for detection, or less commonly from existing block detection modules.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This makes me think an ESP32-CAM would be almost suitable for that. What form would it take?</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">First, I should wonder whether something like OpenCV is even needed here. I’m not familiar enough with it to know whether it would help. On a fixed camera, simple naive image detection would be enough to see if there’s any motion change on a masked area. A simple average+diff algorithm would probably be good enough.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Second, implementation wise, C or MicroPython? I’m surprised we don’t see more of the latter. It’s certainly slow yet good enough to just blink a LED or move a servo. It would not be suitable for image analysis, though.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The ESP32-CAM MicroPython fork made it clear this is done by taking a specific commit on the ESP32 repo, not all of them are suitable; then add the camera module in C as a Python module, then use it from Python as a black box. </span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">At that point that does mean that developing on the module is best done in a separate C sketch. And from a distribution model, an Arduino sketch is still the easiest way to deliver this to an end user who needs to tinker with it. What does using ESP IDF or even MicroPython add here? </span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">MicroPython does add that it becomes trivial to talk to JMRI via a JSON client/server, but that’s not exactly hard from C either, just a bit more clunky. One of the original demo suggestions was to split both.</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">One does wonder why Swift or GoLang is not more popular on these. They would be good fits. Swift is probably too Apple centric. There’s a TinyGo.</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">There is one obvious downside to using an ESP32-CAM to do a grade crossing module, and that’s the location of components. The camera is attached to the ESP32 with a short ribbon (either 1 cm or the 10-ish cm one). This cannot be much longer. And mounting location would require a good view of the track that is to be detected. For example directly on the ceiling, or maybe 1-2 meters above. Track level would be possible but would probably be hard. Perspective/distance means that scale/precision won’t be the same in different places of the camera view. A direct view of the track is needed. That precludes having tunnels or bridges in the way, as well as potentially operators.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The connections for the LEDs and servos could be longer, using twisted wire pairs it would not be unreasonable to have 2-4 meters or more.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Another option is to use more than one module, for example an ESP32-CAM can be mounted on the ceiling, communicating to another Arduino next to the crossing with a simple RS485/RS232 link. In that case, a much longer distance can be achieved.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -640,7 +656,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-12 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-23 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

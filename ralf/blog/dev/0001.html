@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="I’ve had a couple people ask me about upgrading to Windows 11, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide." />
+<meta property="og:description" content="Recently I've completed a number of small dynamic website projects, and I want to discuss my view on the way to choose to implement these sites." />
 
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="I’ve had a couple people ask me about upgrading to Windows 11, and I have a process to do an in-place update -- meaning it preserves all files and applications -- so I decided to write this down to have a clear instruction guide." />
+<meta name="twitter:description" content="Recently I've completed a number of small dynamic website projects, and I want to discuss my view on the way to choose to implement these sites." />
 
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,65 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html">
+    <h2 class="post-title">2025-10-16 - Web SPA: Flutter vs React, JavaScript vs TypeScript</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recently I've completed a number of small dynamic website projects, and I want to discuss my view on the way to choose to implement these sites.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is to be read as an opinionated essay. YMMV.</span></p>
+<p style="text-align:left"></p>
+<h2 id="h.y4cib01i7ru5" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">SPA, a Single Page Application</span></h2>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here are a few sites I completed recently:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://rorschach-coding.alfray.com/" style="color:inherit;text-decoration:inherit">Rorschach™ Inkblot Coding</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/tangram/" style="color:inherit;text-decoration:inherit">Tangram Viewer</a></span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/wazz/" style="color:inherit;text-decoration:inherit">Randall Train Status</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>They all have in common that they are “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.mozilla.org/en-US/docs/Glossary/SPA" style="color:inherit;text-decoration:inherit">Single Page Application</a></span><span>” websites. What does that even mean? In short, that means it’s a single HTML web page that uses JavaScript to implement a “full” web site by </span><span style="font-style:italic">simulating</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;several pages.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let’s take an example: we want to create a small e-commerce site. We'll structure our site as different pages, each rendered by their own HTML file: </span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html &nbsp; &nbsp;-- the main entry point</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/about.html &nbsp; &nbsp;-- a page “about this company”</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/catalog.html &nbsp;-- the catalog browser</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/product.html &nbsp;-- a page detailing a single product</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/purchase.html -- the purchase form</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Instead an SPA web site uses a single file:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>http://example.org/mysite/index.html &nbsp; &nbsp;-- the </span><span style="font-style:italic">sole</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;page of the web site</span></li>
+</ul>
+<p style="text-align:left"><span>However, using JavaScript, we’ll change the </span><span style="font-style:italic">content</span><span>&nbsp;of the page to simulate showing the “about” page vs the “catalog” page, etc. One way to know which one to </span><span style="font-style:italic">render</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is to encode the desired “page” using the hash portion of the URL:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#about</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#catalog</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#product/{id}</span></li>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#purchase</span></li>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">From the web browser point of view, it's always the same page being rendered (index.html) yet JavaScript is used to read the hash name and decide how to fill the page -- when the page loads, we use JavaScript to literally inject the content we want in the web page at runtime. If you were to read the “source” of the main index.html, you’d find it basically empty (or more exactly having just a single div container).</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The mechanism above using the hash is called a “hash router”. There are other ways to do it, that's just the one I prefer.</span></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
+
+<a href="2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html">Click here to continue reading...</a>
+<p/>
+<hr/>
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2025-10-06_windows_10_to_windows_11_in-_389cfd67.html">
     <h2 class="post-title">2025-10-06 - Windows 10 to Windows 11 In-Place Upgrade</h2>
@@ -647,33 +706,6 @@ td p {
 
 
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2025-02-05_here_we_go_again_.html">
-    <h2 class="post-title">2025-02-05 - Here we go again…</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Somehow the same wishes always circle back: </span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">“Aww, wouldn't it be cool if &lt;insert random unfinished project name&gt; had a built-in editor and I could code the app on my {phone, PDA} whilst I'm using it?”</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>A few decades ago that's how the Hint project started, which quickly got nowhere -- mostly because I was trying to get </span><span style="font-style:italic">everywhere</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;at the same time.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">And of course later I realized the goal is its own anti-goal -- it's already hard to finish one project, so adding another project inside that project pretty much guarantees that neither gets anywhere, fast.</span></p>
-<p style="text-align:left"></p>
-<hr>
-<p style="text-align:left"></p>
-
-
-</div>
 
 
 
@@ -690,7 +722,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-12 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-23 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 

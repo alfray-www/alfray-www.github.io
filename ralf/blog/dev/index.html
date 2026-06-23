@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="R’alf Dev Log" />
-<meta property="og:description" content="Over the last week, I wrote this DaVinci Fusion plugin that renders a WAV audio file as a waveform and can plot EQ bands. Here’s the demo of what it can achieve:" />
+<meta property="og:description" content="When using Windows on a laptop, I often have Windows in “High DPI” mode -- aka the “Scale” option in the Display Properties. E.g. on a 1920x1080 14” screen, this is set to 150%. DaVinci Resolve by default uses the DPI scaling as it should (that’s called “DPI awareness”)." />
 <meta property="og:image"       content="https://www.alfray.com/ralf/blog/dev/img_774f73ea06bd597b20a57a8ae99d7c8ab7cb51d501b748af7910e1d2d33da8a9i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="R’alf Dev Log" />
-<meta name="twitter:description" content="Over the last week, I wrote this DaVinci Fusion plugin that renders a WAV audio file as a waveform and can plot EQ bands. Here’s the demo of what it can achieve:" />
+<meta name="twitter:description" content="When using Windows on a laptop, I often have Windows in “High DPI” mode -- aka the “Scale” option in the Display Properties. E.g. on a 1920x1080 14” screen, this is set to 150%. DaVinci Resolve by default uses the DPI scaling as it should (that’s called “DPI awareness”)." />
 <meta name="twitter:image"       content="https://www.alfray.com/ralf/blog/dev/img_774f73ea06bd597b20a57a8ae99d7c8ab7cb51d501b748af7910e1d2d33da8a9i.jpg" />
 
 <title>R’alf Dev Log</title>
@@ -224,6 +224,62 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2026-06-23_davinci_resolve_and_windows__62537d9e.html">
+    <h2 class="post-title">2026-06-23 - DaVinci Resolve and Windows High DPI Scaling</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
+    </span>
+</span></div>
+
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">When using Windows on a laptop, I often have Windows in “High DPI” mode -- aka the “Scale” option in the Display Properties. E.g. on a 1920x1080 14” screen, this is set to 150%. DaVinci Resolve by default uses the DPI scaling as it should (that’s called “DPI awareness”).</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>If you’re curious, you’d want to read the developer docs on the DPI handling, as it’s “interesting” (a.k.a </span><span style="font-style:italic">totally not simple</span><span>):<br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.microsoft.com/en-us/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows" style="color:inherit;text-decoration:inherit">https://learn.microsoft.com/en-us/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows</a></span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>Now the problem with DaVinci Resolve is that once the UI is scaled at 150%, there’s not much space left for the various property panes. Thus that’s one case where I do </span><span style="font-style:italic">not</span><span>&nbsp;want DPI awareness to kick in. There’s no setting in Resolve to do that, but we can notice that Resolve uses the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.qt.io/" style="color:inherit;text-decoration:inherit">QT library</a></span><span style="font-family:&quot;Roboto Mono&quot;">, and we can take advantage of QT’s environment variables for this.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span>To do this, we simply create a “</span><span style="font-style:italic">resolve_1080p.bat</span><span style="font-family:&quot;Roboto Mono&quot;">” file with this content:</span></p>
+<p style="text-align:left"></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:left"><span style="color:rgb(56, 118, 29);font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">@rem change DPI scaling on laptop (1920x1080 @ 150%, but want resolve at 100%)</span></p><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">@cd "C:\Program Files\Blackmagic Design\DaVinci Resolve"</span></p><p style="text-align:left"><span style="color:rgb(56, 118, 29);font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">@rem disable auto-scaling (this is a boolean)</span></p><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">set QT_AUTO_SCREEN_SCALE_FACTOR=0</span></p><p style="text-align:left"><span style="color:rgb(56, 118, 29);font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">@rem set scaling to factor 1</span></p><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">set QT_DEVICE_PIXEL_RATIO=1</span></p><p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;vertical-align:baseline">start Resolve.exe</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Now simply double-clicking that BAT file will set the QT environment variables to ignore DPI scaling, and run “Resolve.exe”. Place a shortcut to that file where you like to see it, e.g. the desktop or some such, and use that to launch DaVinci Resolve instead of the normal launch icon. The benefit of creating a shortcut is that you can change the icon on the shortcut whereas you can’t change the icon on the BAT file.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">I wrote that script a few years ago and DaVinci Resolve was using QT version 5, thus the variables I have are for QT5. I expect them to stop working at some point since the latest QT6 version has slightly different names for the same environment variables.</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">They are described here:</span></p>
+<ul style="margin:0">
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>QT5: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://doc.qt.io/archives/qt-5.15/highdpi.html" style="color:inherit;text-decoration:inherit">https://doc.qt.io/archives/qt-5.15/highdpi.html</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QT_AUTO_SCREEN_SCALE_FACTOR=0 → disables automatic HiDPI scaling</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QT_DEVICE_PIXEL_RATIO → sets the scale</span></li>
+ </ul>
+ <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>QT6: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://doc.qt.io/qt-6/highdpi.html" style="color:inherit;text-decoration:inherit">https://doc.qt.io/qt-6/highdpi.html</a></span></li>
+ <ul>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QT_ENABLE_HIGHDPI_SCALING=0 → disables automatic HiDPI scaling<br>This is the variable that enables automatic HiDPI scaling.</span></li>
+  <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">QT_SCALE_FACTOR → sets the scale</span></li>
+ </ul>
+</ul>
+<p style="text-align:left"></p>
+<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Hope this helps!</span></p>
+<p style="text-align:left"></p>
+<p style="text-align:left"></p>
+<hr>
+<p style="text-align:left"></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2026-06-07_audio_waveform_and_spectrum__de1a556a.html">
     <h2 class="post-title">2026-06-07 - Audio Waveform and Spectrum Fuse Plugin for DaVinci Fusion</h2>
@@ -619,65 +675,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html">
-    <h2 class="post-title">2025-10-16 - Web SPA: Flutter vs React, JavaScript vs TypeScript</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/dev" title="View All Category Posts">DEV</a>
-    </span>
-</span></div>
-
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Recently I've completed a number of small dynamic website projects, and I want to discuss my view on the way to choose to implement these sites.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">This is to be read as an opinionated essay. YMMV.</span></p>
-<p style="text-align:left"></p>
-<h2 id="h.y4cib01i7ru5" style="padding-bottom:6pt;padding-top:18pt;page-break-after:avoid;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;;font-size:16pt;font-weight:700">SPA, a Single Page Application</span></h2>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Here are a few sites I completed recently:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://rorschach-coding.alfray.com/" style="color:inherit;text-decoration:inherit">Rorschach™ Inkblot Coding</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/labs/apps/tangram/" style="color:inherit;text-decoration:inherit">Tangram Viewer</a></span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/wazz/" style="color:inherit;text-decoration:inherit">Randall Train Status</a></span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span>They all have in common that they are “</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.mozilla.org/en-US/docs/Glossary/SPA" style="color:inherit;text-decoration:inherit">Single Page Application</a></span><span>” websites. What does that even mean? In short, that means it’s a single HTML web page that uses JavaScript to implement a “full” web site by </span><span style="font-style:italic">simulating</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;several pages.</span></p>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Let’s take an example: we want to create a small e-commerce site. We'll structure our site as different pages, each rendered by their own HTML file: </span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html &nbsp; &nbsp;-- the main entry point</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/about.html &nbsp; &nbsp;-- a page “about this company”</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/catalog.html &nbsp;-- the catalog browser</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/product.html &nbsp;-- a page detailing a single product</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/purchase.html -- the purchase form</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">Instead an SPA web site uses a single file:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span>http://example.org/mysite/index.html &nbsp; &nbsp;-- the </span><span style="font-style:italic">sole</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;page of the web site</span></li>
-</ul>
-<p style="text-align:left"><span>However, using JavaScript, we’ll change the </span><span style="font-style:italic">content</span><span>&nbsp;of the page to simulate showing the “about” page vs the “catalog” page, etc. One way to know which one to </span><span style="font-style:italic">render</span><span style="font-family:&quot;Roboto Mono&quot;">&nbsp;is to encode the desired “page” using the hash portion of the URL:</span></p>
-<ul style="margin:0">
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#about</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#catalog</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#product/{id}</span></li>
- <li style="padding-bottom:0pt;padding-left:0pt;padding-top:0pt;text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">http://example.org/mysite/index.html#purchase</span></li>
-</ul>
-<p style="text-align:left"></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">From the web browser point of view, it's always the same page being rendered (index.html) yet JavaScript is used to read the hash name and decide how to fill the page -- when the page loads, we use JavaScript to literally inject the content we want in the web page at runtime. If you were to read the “source” of the main index.html, you’d find it basically empty (or more exactly having just a single div container).</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;">The mechanism above using the hash is called a “hash router”. There are other ways to do it, that's just the one I prefer.</span></p>
-<p style="text-align:left"><span style="font-family:&quot;Roboto Mono&quot;"></span></p>
-
-<a href="2025-10-16_web_spa_flutter_vs_react_jav_da93c434.html">Click here to continue reading...</a>
-<p/>
-<hr/>
-</div>
 
 
 
@@ -694,7 +691,7 @@ td p {
 </div> <!-- container -->
 </div> <!-- main -->
 
-<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-13 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
+<div class="bottom-container"> &nbsp; <!-- rg-excl( --> Generated on 2026-06-23 by Rig4j 0.1-Exp-907a6e8 <!-- )rg-excl --> &nbsp; </div>
 
 </main>
 
