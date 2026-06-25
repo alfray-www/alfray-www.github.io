@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <title type="html">R&#8217;alf Dev Log</title>
-<updated>2026-06-24T03:08:15.542725-07:00</updated>
+<updated>2026-06-25T03:07:48.091023-07:00</updated>
 <link rel="alternate" type="text/html" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/"/>
 <link rel="self" type="application/atom+xml" hreflang="en" href="https://www.alfray.com/ralf/blog/dev/atom.xml"/>
 <id>https://www.alfray.com/ralf/blog/dev/atom.xml</id>
@@ -29,7 +29,7 @@
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Now simply double-clicking that BAT file will set the QT environment variables to ignore DPI scaling, and run &#8220;Resolve.exe&#8221;. Create a shortcut to that BAT file and place it where you like to see it, e.g. the desktop or some such, and use that to launch DaVinci Resolve instead of the normal launch icon. The benefit of creating a shortcut is that you can thn change the icon on the shortcut whereas you can&#8217;t change the icon on the BAT file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;Now simply double-clicking that BAT file will set the QT environment variables to ignore DPI scaling, and run &#8220;Resolve.exe&#8221;. Create a shortcut to that BAT file and place it where you like to see it, e.g. the desktop or some such, and use that to launch DaVinci Resolve instead of the normal launch icon. The benefit of creating a shortcut is that you can then change the icon on the shortcut whereas you can&#8217;t change the icon on the BAT file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;span style=&quot;font-family:&amp;quot;Roboto Mono&amp;quot;&quot;&gt;I wrote that script a few years ago and DaVinci Resolve was using QT version 5, thus the variables I have are for QT5. I expect them to stop working at some point since the latest QT6 version has slightly different names for the same environment variables.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
@@ -52,7 +52,7 @@
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p style=&quot;text-align:left&quot;&gt;&lt;/p&gt;</content>
-<updated>2026-06-23T00:00:05-07:00</updated>
+<updated>2026-06-23T00:00:04-07:00</updated>
 </entry>
 <entry>
 <author><name>Ralf</name></author>
