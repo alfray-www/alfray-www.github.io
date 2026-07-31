@@ -12,14 +12,14 @@
 <meta property="og:type"        content="article" />
 
 <meta property="og:title"       content="Blog: Randall Museum Model Railroad" />
-<meta property="og:description" content="A few days ago I fixed the speaker on one of the Backmann UP #9538 engines. We run 2 of these in alternance for the passenger automation, and the speaker on the second had also failed. It’s time to swap that speaker too." />
+<meta property="og:description" content="Not much has happened on the train automation recently, or has it? “KTLO” in software engineering refers to “Keeping the Lights On,” the act of performing routine maintenance, bug fixes, and system monitoring to keep current IT infrastructure running. And I’ve had my share of it keeping me busy in the past few weeks." />
 <meta property="og:image"       content="https://www.alfray.com/trains/blog/randall/img_ea1ef91052e01612b631d5360a0c33bf6775f779da6ef23e9773e0792cdfd945i.jpg" />
 
 <meta name="twitter:card"        content="summary" />
 <!-- meta name="twitter:site"    content="@flickr" / -->
 
 <meta name="twitter:title"       content="Blog: Randall Museum Model Railroad" />
-<meta name="twitter:description" content="A few days ago I fixed the speaker on one of the Backmann UP #9538 engines. We run 2 of these in alternance for the passenger automation, and the speaker on the second had also failed. It’s time to swap that speaker too." />
+<meta name="twitter:description" content="Not much has happened on the train automation recently, or has it? “KTLO” in software engineering refers to “Keeping the Lights On,” the act of performing routine maintenance, bug fixes, and system monitoring to keep current IT infrastructure running. And I’ve had my share of it keeping me busy in the past few weeks." />
 <meta name="twitter:image"       content="https://www.alfray.com/trains/blog/randall/img_ea1ef91052e01612b631d5360a0c33bf6775f779da6ef23e9773e0792cdfd945i.jpg" />
 
 <title>Blog: Randall Museum Model Railroad</title>
@@ -247,6 +247,37 @@ td p {
 
 
     <div class="post-container">
+<div class="post-title-container">
+<a class="post-title-link" href="2026-07-30_ktlo_maintenance.html">
+    <h2 class="post-title">2026-07-30 - KTLO Maintenance</h2>
+</a>
+<span class="post-cat" title="Category">
+    <span class="post-cat-label">Category</span>
+    <span class="post-cat-text">
+    
+    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
+    </span>
+</span></div>
+
+<p></p>
+<p><span>Not much has happened on the train automation recently, or has it? “KTLO” in software engineering refers to “Keeping the Lights On,” the act of performing routine maintenance, bug fixes, and system monitoring to keep current IT infrastructure running. And I’ve had my share of it keeping me busy in the past few weeks.</span></p>
+<p></p>
+<p><span>Routine maintenance is all the under-appreciated work that has to be done and that people don’t notice until it is </span><span style="font-style:italic">not</span><span>&nbsp;done.</span></p>
+<p></p>
+<p><span>Since we’re dealing with HO trains, one of the basic maintenance tasks is track cleaning. Orion cleaned the mainline recently. The branchline automation was getting stuck in the You Bet town a few weeks ago, and I simply fixed it by cleaning the track. I also had cleaned the parking area the week before. Nothing glamorous, but here it keeps the </span><span style="font-style:italic">train lights</span><span>&nbsp;on, literally</span><span>.</span></p>
+<p></p>
+<p><span>On the IT side, I’ve spent the week updating all the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.debian.org/" style="color:inherit;text-decoration:inherit">Debian Linux</a></span><span>&nbsp;computers. That’s all work I do remotely. There are 4 Linux computers I need to maintain for the model railroad, plus the Windows one for the Earthquake Exhibit. My strategy for the model railroad computers is very simple: I’m extremely conservative. They don’t need to have the latest version of Debian as long as they have all the security updates. And I don’t update them directly -- I first update my home computers, which happen to (unsurprisingly) have almost the same setup as what I installed at the museum. In this case, I wanted to upgrade the entire OS from one old major revision to a newer one. So I do all this work at home first, then once I know what to expect, I can do it at Randall. This takes more time yet it ensures the upgrade process is as seamless as possible and essentially invisible with no side effects. The model railroad computers were running Debian 11 (codename “bullseye”) and Debian 12 (codename “bookworm”) and I’m updating them to the latest Debian 13 (codename “trixie”) one by one. Unlike Windows or MacOS upgrades, these are fairly straightforward full upgrades, as long as they are planned carefully.</span></p>
+<p></p>
+<p><span>The only exception is the main automation computer. That one still runs an ever older version of Debian 10 (codename “buster”) and I’m not going to update it at all. That’s because the automation software is stuck using an older version of JMRI 4 with Open JDK 11 and Kotlin 1.6. The problem is that Kotlin 1.6 is deprecated, but JMRI 4 does not work with the latest Kotlin 2.1 with the way I’m using it. Instead, my strategy is different: I got a replacement computer on which I have installed Debian 13, and I’m going to first fix the Kotlin / JMRI incompatibility, then update my automation software to work with it, and finally I’ll have a full new hardware replacement, all setup with up-to-date versions from scratch. That’s unfortunately a bit more work than I expected, and it will happen at a slower pace. But once I’m done, I’ll be able to swap the computers seamlessly, and nobody will notice the change, nor even realize it took 10 months of work to make it happen. That’s the essence of KTLO.</span></p>
+<p></p>
+<p></p>
+<hr>
+<p></p>
+<p><span></span></p>
+
+
+</div>
+<div class="post-container">
 <div class="post-title-container">
 <a class="post-title-link" href="2026-06-14_bachmann_up_9538_speaker_continued.html">
     <h2 class="post-title">2026-06-14 - Bachmann UP #9538 Speaker, Continued</h2>
@@ -549,33 +580,6 @@ td p {
 <p/>
 <hr/>
 </div>
-<div class="post-container">
-<div class="post-title-container">
-<a class="post-title-link" href="2026-01-01_happy_new_year.html">
-    <h2 class="post-title">2026-01-01 - Happy New Year</h2>
-</a>
-<span class="post-cat" title="Category">
-    <span class="post-cat-label">Category</span>
-    <span class="post-cat-text">
-    
-    <a class="post-cat-link" href="../../blog/randall" title="View All Category Posts">Randall</a>
-    </span>
-</span></div>
-
-<p></p>
-<p><span>Happy New Year 2026 from the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span>&nbsp;team</span></p>
-<p></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:352.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_ed65e2f714f183f9098a8c251922c2bab253744af8621b025f5425918ca03161i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_d1e030016a6cb0cfac275453f03de0d5e9324485cd85ceadd4052c151da6e0f7i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:274.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_892f0042f7c49985b9aeb379b9164b36b632554b94af4f70a9e1fb4f2c1e75e9i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:293.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_a53373ceeecd84363a1507f282bc1fef19d237601b6e0015cc09b3c9964e51dai.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:310.67px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_1f1db1cfe67eb083b19b4730b9ff16d20bbd0e96e80c998c11a167d1dc756ddbi.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
-<p></p>
-<hr>
-<p></p>
-
-
-</div>
 
 
 
@@ -597,7 +601,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-06-21 by Rig4j 0.1-Exp-907a6e8
+    Generated on 2026-07-31 by Rig4j 0.1-Exp-907a6e8
     <!-- )rg-excl -->
     &nbsp;
 </div>
