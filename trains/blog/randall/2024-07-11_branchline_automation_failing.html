@@ -339,7 +339,7 @@ td p {
 <p><span>I suspected the lack of recovery had to do with the virtual block -- if the train is found nowhere, recovery “deduces” it is in the virtual block and reverses it. This is a fairly logical assumption with ideal sensors, but it is wrong if we start with flaky sensors. Then if the train is somewhere else and wasn’t detected when stopped, it may be detected once it starts moving and now we have 2 active blocks, which is a definite recovery error.</span></p>
 <p></p>
 <p><span>There’s an attempt at a “2nd stage recovery” here in script 55 v11, line 1966:</span></p>
-<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://bitbucket.org/model-railroad/conductor/src/2e2829741f2610ee23dd37745cad0cf61b279816/jmri/conductor/engine2k/src/main/resources/v2/script/script_55_v11_bl204%2Bml8330%2B1067%2Btl6119_sat.conductor.kts#lines-1966" style="color:inherit;text-decoration:inherit">https://bitbucket.org/model-railroad/conductor/src/2e2829741f2610ee23dd37745cad0cf61b279816/jmri/conductor/engine2k/src/main/resources/v2/script/script_55_v11_bl204%2Bml8330%2B1067%2Btl6119_sat.conductor.kts#lines-1966</a></span></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/conductor/blob/2e2829741f2610ee23dd37745cad0cf61b279816/jmri/conductor/engine2k/src/main/resources/v2/script/script_55_v11_bl204%2Bml8330%2B1067%2Btl6119_sat.conductor.kts#L1966" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/conductor/blob/2e2829741f2610ee23dd37745cad0cf61b279816/jmri/conductor/engine2k/src/main/resources/v2/script/script_55_v11_bl204%2Bml8330%2B1067%2Btl6119_sat.conductor.kts#L1966</a></span><span>&nbsp;</span></p>
 <p></p>
 <p><span>The main recovery handles the “normal” cases of all the real blocks detecting the presence of a train on a single block (or a boundary). If that fails, we switch to a secondary recovery. That one (ab)uses an “idle” route rather than a “sequence” route: we run the train backwards till B801 (BL Parked) is active, with B820 (BL station) inactive. There’s also a 5-minutes timeout for that operation. That will not fix the root cause, but it should fix the recovery.</span></p>
 <p></p>
@@ -383,7 +383,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-06-21 by Rig4j 0.1-Exp-907a6e8
+    Generated on 2026-10-24 by Rig4j 0.1-Exp-907a6e8
     <!-- )rg-excl -->
     &nbsp;
 </div>
