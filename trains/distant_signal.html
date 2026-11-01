@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"    content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"      content="">
+
+<meta property="og:url"         content="https://www.alfray.com/trains/distant_signal.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Distant Signal [ESP32 Project]" />
+
+<meta property="og:image"       content="https://www.alfray.com/trains/img_8156e384e12591fbf0bb195903c275ec9693fcda3ade8884caabd81d830c7886i.jpg" />
+
+<meta name="twitter:card"        content="summary" />
+<!-- meta name="twitter:site"    content="@flickr" / -->
+<meta name="twitter:title"       content="Distant Signal [ESP32 Project]" />
+
+<meta name="twitter:image"       content="https://www.alfray.com/trains/img_8156e384e12591fbf0bb195903c275ec9693fcda3ade8884caabd81d830c7886i.jpg" />
+
+<title>Distant Signal [ESP32 Project]</title>
+
+<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c66171070e9220011ed1c61&product=inline-share-buttons" async="async"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    margin: 8px;
+}
+
+p, span {
+    line-height: 1.2;
+    text-align: justify;
+}
+
+p.console {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 95%;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 60rem;
+    }
+}
+
+.center-horiz {
+    margin: auto;
+}
+
+.no-margin-container {
+}
+
+/* Header + Title */
+.blog-header {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+
+.banner-bg-image {
+    height: 50px;
+    background-image: url("header.jpg");
+    background-position: center;
+    background-size: 100% auto;
+}
+
+@media screen and (min-width: 600px) {
+    .banner-bg-image {
+        height: 200px;
+    }
+}
+
+
+.title-container {
+    color: #fff;
+    padding: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.title-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bottom-container {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #428bca;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
+    line-height: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .bottom-container {
+        font-size: x-small;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+td p {
+    margin: 0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="blog-header">
+
+    <div class="no-margin-container banner-bg-image text-hide">
+        Site Banner Image
+    </div>
+
+    <div class="title-container">
+        <a href="https://www.alfray.com/trains/">Ralf's Train Pages</a>
+        
+        /
+        <a href="distant_signal.html">Distant Signal [ESP32 Project]</a>
+        
+    </div>
+</header>
+
+<main role="main">
+<div class="main">
+<div class="container center-horiz">
+
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-left:auto;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(164, 194, 244);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(164, 194, 244);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(164, 194, 244);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(164, 194, 244);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p style="text-align:center"><span style="font-size:24pt;font-weight:700">Distant Signal<br></span><span style="font-size:24pt">[ESP32 Project]</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p style="text-align:center"><span>2025-03</span></p>
+<p></p>
+<p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-weight:700;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">Distant Signal</a></span><span>&nbsp;is a CircuitPython script for an ESP32 to display the state of a remote model-railroad turnout on a LED Matrix Display. A small custom language allows one to define the panel display, and then animate it with a simple trigger. The color and animation script can be loaded from an MQTT broker..</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:329.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_8156e384e12591fbf0bb195903c275ec9693fcda3ade8884caabd81d830c7886i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span><span><br></span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-style:italic;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/blog/train/2025-03-26_distant_signal_matrix_displa_08700264.html" style="color:inherit;text-decoration:inherit">Distant Signal Demonstration at Randall Museum Model Railroad</a></span></p>
+<p></p>
+<p><span>Source: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/distant-signal</a></span></p>
+<p><span>License: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://opensource.org/license/mit" style="color:inherit;text-decoration:inherit">MIT License</a></span></p>
+<p></p>
+<h1 id="h.fu1oelumr8yg" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Origin of this Project</span></h1>
+<p><span>The design of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/about.html#h.mp5mka5bxy0" style="color:inherit;text-decoration:inherit">Randall Museum Model Railroad</a></span><span>&nbsp;makes it such that we cannot easily the state of the turnouts on the mainline from the main operator’s control panel. We have two main tracks coming out of the yard and merging into a single track on the mainline. Although there’s a signal bridge, it’s almost 20 or 30 feet away and impossible to see its LED indicators properly. Besides, when we operate during Saturdays, there’s a lot of public just standing in the way.</span></p>
+<p></p>
+<p><span>Thus the idea is to have a display mounted high enough that we can see it from far away, like this:</span></p>
+<p><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:397.33px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_09f432977391b0a41c424bcbd636d2a7b7b2a2231ec0e24af8188794b0f8e3cfd.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<p><span>With a glance at the Distance Signal panel, we can quickly verify that the turnout is properly aligned. The panel also indicates the block occupancy around the turnout:</span></p>
+<p></p>
+<p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:340.00px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:796.80px"><img alt="" src="img_4db6f274b935e6928cc4819c4f7b3ce900fd34b62faf62665f00bb161662ac99i.jpg" style="margin-left:0.00px;margin-top:0.00px" title=""></span></p>
+<p></p>
+<h1 id="h.rev1lfbrvkdb" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Hardware used for this project</span></h1>
+<ul style="margin:0">
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.adafruit.com/product/5778" style="color:inherit;text-decoration:inherit">AdaFruit MatrixPortal CircuitPython ESP32-S3</a></span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.adafruit.com/product/2278" style="color:inherit;text-decoration:inherit">AdaFruit 64x32 RGB LED Matrix - 4mm pitch</a></span><span>&nbsp;or equivalent.</span></li>
+</ul>
+<p></p>
+<p><span>The script is fairly customizable.</span></p>
+<p><span>There are many more LED Matrix displays compatible with the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-matrixportal-s3" style="color:inherit;text-decoration:inherit">AdaFruit MatrixPortal</a></span><span>&nbsp;platform that should work.</span></p>
+<p></p>
+<h2 id="h.5a9fxi8bfb53" style="line-height:1.25;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid"><span style="font-size:16pt">ESP32 Setup</span></h2>
+<p><span>Instructions for the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-matrixportal-s3" style="color:inherit;text-decoration:inherit">MatrixPortal ESP32-S3</a></span><span>. This page has the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-matrixportal-s3/pinouts" style="color:inherit;text-decoration:inherit">specification, pin out</a></span><span>&nbsp;and this page </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-matrixportal-s3/prep-the-matrixportal" style="color:inherit;text-decoration:inherit">explains how to connect the LED Matrix display</a></span><span>.</span></p>
+<p></p>
+<ul style="margin:0">
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>I power the Matrix Portal S3 with a 5V 4A USB-C power supply, as recommended. However that seems a tad overkill as I have measured the display to consume only between 1A and 2A. Note that these displays only update 1 or 2 rows of pixels at a time and power usage only depends on the current lines being updated, not the entire display.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>The device should already come with a USB bootloader and create a USB drive visible under Windows or Linux. If needed follow the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-matrixportal-s3/factory-reset#factory-reset-and-bootloader-repair-3107941" style="color:inherit;text-decoration:inherit">instructions to reflash the bootloader</a></span><span>.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Plug the ESP32, click the reset button, and as the onboard LED becomes purple, immediately click the reset button again. If you do it right, the onboard LED should stay and remain green. A drive named </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">QTPYS2BOOT</span><span>&nbsp;should appear on USB.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Run the </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">setup/_get_circuitpy_uf2.sh</span><span>&nbsp;script and drop the downloaded uf2 file on the USB drive. Once the device reboot, a USB drive named </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">CIRCUITPY</span><span>&nbsp;should appear.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Uploading the code on the ESP32 is done by </span><span style="font-style:italic">copying</span><span>&nbsp;files to the USB drive named </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">CIRCUITPY</span><span>. You can drag'n'drop stuff manually. I prefer to automate things using scripts with MSYS, Cygwin, or Git Bash.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Tip: Open </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">src/_lib_upload.sh</span><span>&nbsp;and </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">src/_upload.sh</span><span>.<br>Change the line </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">D="/d /f /cygdrive/f"</span><span>&nbsp;at the beginning to add the drive letter needed for your USB drive. For example "F:" is "/f" under MSYS, "/cygdrive/f" under Cygwin, or "/media/usb" under Linux.</span></li>
+</ul>
+<p></p>
+<p><span>I run these from the Terminal tab in VS Code:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cd src</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># upload all libraries (once)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_logging</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_connection_manager</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_requests</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_ticks</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_minimqtt</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_haslib</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_matrixportal</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_bitmap_font</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_display_text</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh neopixel</span></p><p style="height:11pt"></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># upload the fonts, images, and default script (once)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cp ../font/tom-thumb.bdf /circuitpydrive/</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cp ../font/tom-thumb2.bdf /circuitpydrive/</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cp wifi_off.bmp /circuitpydrive/</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cp wifi_on.bmp /circuitpydrive/</span></p><p style="height:11pt"></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># upload source code (after each modification)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_upload.sh</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<p><span>Update settings:</span></p>
+<p></p>
+<ul style="margin:0">
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Open </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">setup\settings.toml</span><span>.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Open F:\settings.toml (or whatever is your </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">CIRCUITPY</span><span>&nbsp;USB Drive)</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Copy the settings to the USB drive file, and modify as needed to set the SSID/password for your wifi and your MQTT server information:</span></li>
+</ul>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># Setting these variables will automatically connect board to WiFi on boot</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">CIRCUITPY_WIFI_SSID="Your WiFi SSID Here"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">CIRCUITPY_WIFI_PASSWORD="Your WiFi Password Here"</span></p><p style="height:11pt"></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># MQTT integration.</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_BROKER_IP=""</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_BROKER_PORT=1883</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_USERNAME="username"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_PASSWORD="password"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_TOPIC_ROOT="ambiance"</span></p><p style="height:11pt"></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># DistantSignal Configuration for this panel</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_TURNOUT="Your_Panel_MQTT_ID_Here"</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<h2 id="h.98vprp2bkooe" style="line-height:1.25;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">Development and Debugging</span></h2>
+<p><span>To monitor the serial out of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://learn.adafruit.com/adafruit-matrixportal-s3" style="color:inherit;text-decoration:inherit">AdaFruit MatrixPortal S3</a></span><span>, configure VS Code Serial Monitor with Text mode, Port USB, Baud rate 115200, Line ending LF.</span></p>
+<p></p>
+<p><span>Note that whilst the ESP32 resets (after pressing the "reset" button), VS Code disconnects from the USB port and loses valuable debug information. Thus you can't debug your script if it fails to load this way. Instead, the easiest way to debug a broken script is to upload it. Any upload triggers a soft reboot which reloads the Python VM and exposes any missing imports:</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cd src</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_upload.sh</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
+<h1 id="h.663xqbuccpb" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">MQTT Interaction</span></h1>
+<p><span>These are the topics that Distant Signal subscribes to.</span></p>
+<h2 id="h.yo9x912msuob" style="line-height:1.25;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">Update Configuration Script</span></h2>
+<p><span>Topic: "</span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:700">distantsignal/%(T)s/script</span><span>"</span></p>
+<p><span>Value: JSON stringified.</span></p>
+<p><span>Where T is MQTT_TURNOUT as defined in setting.toml.</span></p>
+<p></p>
+<p><span>This defines the main configuration script for the display panel. See next section for syntax.</span></p>
+<p></p>
+<h2 id="h.dyam29r8dm4l" style="line-height:1.25;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">Set Turnout State</span></h2>
+<p><span>Topic: "</span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:700">turnout/%(T)s/state</span><span>"</span></p>
+<p><span>Value: string</span></p>
+<p><span>Where T is MQTT_TURNOUT as defined in setting.toml.</span></p>
+<p></p>
+<p><span>This selects one of the names defined in the states section of the configuration script.</span></p>
+<p></p>
+<h2 id="h.qdsftqyz0hwj" style="line-height:1.25;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">Set Block State</span></h2>
+<p><span>Topic: "</span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:700">block/%(B)s/state</span><span>"</span></p>
+<p><span>Value: "active" or "inactive"</span></p>
+<p><span>Where B is the one of the names defined in the blocks section of the configuration script.</span></p>
+<p></p>
+<p><span>This selects the state of a given block number. Blocks are hidden until they are set as either actie or inactive.</span></p>
+<p></p>
+<h1 id="h.nbsjwlgln1i2" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Configuration Script Syntax</span></h1>
+<p><span>See </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal/blob/main/setup/script_example.json" style="color:inherit;text-decoration:inherit">script_example.json</a></span><span>.</span></p>
+<p></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">[</span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);font-family:&quot;Trebuchet MS&quot;;text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com" style="color:inherit;text-decoration:inherit">Back to main page</a></span><span style="font-family:&quot;Trebuchet MS&quot;">]</span></p>
+<p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
+<p><span></span></p>
+
+</div>
+</div>
+</main>
+
+<div class="sharethis-inline-share-buttons"></div>
+
+<div class="bottom-container">
+    &nbsp;
+    <!-- rg-excl( -->
+    Generated on 2026-10-31 by Rig4j 0.1-Exp-907a6e8
+    <!-- )rg-excl -->
+    &nbsp;
+</div>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1KDMEFC4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M1KDMEFC4D');
+</script>
+
+</body>
+</html>
+

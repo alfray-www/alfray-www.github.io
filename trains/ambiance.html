@@ -172,18 +172,6 @@ td p {
 <p><span>Source: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/ambiance" style="color:inherit;text-decoration:inherit">https://github.com/model-railroad/ambiance</a></span></p>
 <p><span>License: </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://opensource.org/license/mit" style="color:inherit;text-decoration:inherit">MIT License</a></span></p>
 <p></p>
-<p><span>Table of contents:</span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.rev1lfbrvkdb" style="color:inherit;text-decoration:inherit">Hardware used for this project</a></span></p>
-<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.5a9fxi8bfb53" style="color:inherit;text-decoration:inherit">ESP32 Setup</a></span></p>
-<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.98vprp2bkooe" style="color:inherit;text-decoration:inherit">Development and Debugging</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.663xqbuccpb" style="color:inherit;text-decoration:inherit">MQTT Interaction</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.9j0tyctn9npl" style="color:inherit;text-decoration:inherit">LED Color Light Sequencer</a></span></p>
-<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.s1fvzbakcn1" style="color:inherit;text-decoration:inherit">Script syntax</a></span></p>
-<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.m83zw03k2lte" style="color:inherit;text-decoration:inherit">Control Instructions</a></span></p>
-<p style="margin-left:18pt;text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.hfw5roygcql4" style="color:inherit;text-decoration:inherit">Color Filling Instructions</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.4uiazdbdlmi5" style="color:inherit;text-decoration:inherit">Color Animation Instructions</a></span></p>
-<p style="text-align:left"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="#h.eq5rt0yfh097" style="color:inherit;text-decoration:inherit">Usage As a Library</a></span></p>
-<p></p>
 <h1 id="h.rev1lfbrvkdb" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Hardware used for this project</span></h1>
 <ul style="margin:0">
  <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.adafruit.com/product/5325" style="color:inherit;text-decoration:inherit">AdaFruit QT PY ESP32-S2</a></span></li>
@@ -208,16 +196,15 @@ td p {
 </ul>
 <p></p>
 <p><span>I run these from the Terminal tab in VS Code:</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">cd src</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600"># upload all libraries (once)</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_lib_upload.sh adafruit_logging</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_lib_upload.sh adafruit_tricks</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_lib_upload.sh adafruit_ticks</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_lib_upload.sh adafruit_connection_manager</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_lib_upload.sh adafruit_minimqtt</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_lib_upload.sh neopixel</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600"># upload source code (after each modification)</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_upload.sh</span></p>
+<p></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cd src</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># upload all libraries (once)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_logging</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_tricks</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_ticks</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_connection_manager</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh adafruit_minimqtt</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_lib_upload.sh neopixel</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># upload source code (after each modification)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_upload.sh</span></p></td>
+  </tr>
+ </tbody>
+</table>
+<p></p>
 <p></p>
 <p><span>Update settings:</span></p>
 <ul style="margin:0">
@@ -226,29 +213,26 @@ td p {
  <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>Copy the settings to the USB drive file, and modify as needed to set the SSID/password for your wifi and your MQTT server information:</span></li>
 </ul>
 <p></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600"># Setting these variables will automatically connect board to WiFi on boot</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">CIRCUITPY_WIFI_SSID="Your WiFi SSID Here"</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">CIRCUITPY_WIFI_PASSWORD="Your WiFi Password Here"</span></p>
-<p style="margin-left:36pt"></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600"># MQTT integration.</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">MQTT_BROKER_IP=""</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">MQTT_BROKER_PORT=1883</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">MQTT_USERNAME="username"</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">MQTT_PASSWORD="password"</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">MQTT_TOPIC_ROOT="ambiance"</span></p>
-<p style="margin-left:36pt"></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600"># Default NeoPixel strip length</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">NEO_LEN="100"</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600"># NEO_STRIP_PIN can be "A1" or "ONBOARD" (onboard LED)</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">NEO_STRIP_PIN="A1"</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(208, 224, 227);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># Setting these variables will automatically connect board to WiFi on boot</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">CIRCUITPY_WIFI_SSID="Your WiFi SSID Here"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">CIRCUITPY_WIFI_PASSWORD="Your WiFi Password Here"</span></p><p style="height:11pt"></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># MQTT integration.</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_BROKER_IP=""</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_BROKER_PORT=1883</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_USERNAME="username"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_PASSWORD="password"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">MQTT_TOPIC_ROOT="ambiance"</span></p><p style="height:11pt"></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># Default NeoPixel strip length</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">NEO_LEN="100"</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline"># NEO_STRIP_PIN can be "A1" or "ONBOARD" (onboard LED)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">NEO_STRIP_PIN="A1"</span></p></td>
+  </tr>
+ </tbody>
+</table>
 <p></p>
 <h2 id="h.98vprp2bkooe" style="line-height:1.25;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">Development and Debugging</span></h2>
 <p><span>To monitor the serial out of the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.adafruit.com/product/5325" style="color:inherit;text-decoration:inherit">AdaFruit QT PY ESP32-S2</a></span><span>, configure VS Code Serial Monitor with Text mode, Port USB, Baud rate 115200, Line ending LF.</span></p>
 <p></p>
 <p><span>Note that whilst the ESP32 resets (after pressing the "reset" button), VS Code disconnects from the USB port and loses valuable debug information. Thus you can't debug your script if it fails to load this way. Instead, the easiest way to debug a broken script is to upload it. Any upload triggers a soft reboot which reloads the Python VM and exposes any missing imports:</span></p>
 <p></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">cd src</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">./_upload.sh</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(255, 242, 204);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">cd src</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">./_upload.sh</span></p></td>
+  </tr>
+ </tbody>
+</table>
 <p></p>
 <h1 id="h.663xqbuccpb" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">MQTT Interaction</span></h1>
 <p><span style="font-weight:700">Ambiance</span><span>&nbsp;is used by the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/randall/rtac.html" style="color:inherit;text-decoration:inherit">Randall Train Automation Controller</a></span><span>&nbsp;software via MQTT. The automation controller publishes "color scripts" via MQTT topics, which are then fetched and executed by the ESP32.</span></p>
@@ -307,12 +291,13 @@ td p {
 <h1 id="h.eq5rt0yfh097" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Usage As a Library</span></h1>
 <p><span>The </span><span style="font-weight:700">Sequencer</span><span>&nbsp;can be used as a standalone library:</span></p>
 <p></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">neo = neopixel.NeoPixel(board.A1, NEO_LEN, auto_write = False, pixel_order=(0, 1, 2))</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">seq = sequencer.Sequencer(sequencer.NeoWrapper(neo, NEO_LEN))</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">seq.parse(""" Fill #000000 1 ; </span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SlowFill 0.1 &nbsp;#00FF00 10 &nbsp;#FF0000 10 ;</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Slide 0.1 80 """)</span></p>
-<p style="margin-left:36pt"><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">while seq.step(): True</span></p>
+<table style="border-collapse:collapse;border-spacing:0;margin-right:auto">
+ <tbody>
+  <tr style="height:0pt">
+   <td colspan="1" rowspan="1" style="background-color:rgb(217, 234, 211);border-bottom-color:rgb(0, 0, 0);border-bottom-style:solid;border-bottom-width:1pt;border-left-color:rgb(0, 0, 0);border-left-style:solid;border-left-width:1pt;border-right-color:rgb(0, 0, 0);border-right-style:solid;border-right-width:1pt;border-top-color:rgb(0, 0, 0);border-top-style:solid;border-top-width:1pt;padding:5pt 5pt 5pt 5pt;vertical-align:top;width:597.6pt"><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">neo = neopixel.NeoPixel(board.A1, NEO_LEN, auto_write = False, pixel_order=(0, 1, 2))</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">seq = sequencer.Sequencer(sequencer.NeoWrapper(neo, NEO_LEN))</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">seq.parse(""" Fill #000000 1 ; </span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SlowFill 0.1 &nbsp;#00FF00 10 &nbsp;#FF0000 10 ;</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Slide 0.1 80 """)</span></p><p><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600;vertical-align:baseline">while seq.step(): True</span></p></td>
+  </tr>
+ </tbody>
+</table>
 <p></p>
 <p></p>
 <p><span style="font-family:&quot;Trebuchet MS&quot;">~~</span></p>
