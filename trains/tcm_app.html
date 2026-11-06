@@ -238,11 +238,11 @@ td p {
 <h1 id="h.hyyun6uqp2x4" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Wake Lock and Power Saving Behavior</span></h1>
 <p><span>The goal is to have the tablet (almost) always turned on. The layout at the Randall Museum Model Railroad is turned on by the museum staff at 9am and turned off at 5pm. The tablet is powered by a switched outlet connected to the layout's main power. Consequently the tablet will only be charging during that time, and thus video processing should only occur when the tablet is powered.</span></p>
 <p></p>
-<p><span>To monitor the charging state, Android provides the </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">ACTION_BATTERY_CHANGED</span><span>&nbsp;intent and the </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">BatteryManager.isCharging()</span><span>&nbsp;function (only API 23 and above). We do not need any AndroidManifest broadcast to monitor the charging state outside of the application's lifecycle.</span></p>
+<p><span>To monitor the charging state, Android provides the </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">ACTION_BATTERY_CHANGED</span><span>&nbsp;intent and the </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">BatteryManager isCharging()</span><span>&nbsp;function (only API 23 and above). We do not need any AndroidManifest broadcast to monitor the charging state outside of the application's lifecycle.</span></p>
 <p></p>
 <p><span>This is periodically checked using a thread in the main activity.</span></p>
 <p></p>
-<p><span>When the main activity runs and the tablet is actually powered, video streaming automatically starts. At that point, the app also acquires a </span><span style="font-style:italic">wake lock</span><span>&nbsp;to ensure that the tablet does not go into sleep mode. An early implementation used the View </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">keepScreenOn</span><span>&nbsp;attribute for that purpose however that has turned out to be oddly unreliable when the app is set as the main Home app. Instead, the implementation has been switched to use the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/develop/background-work/background-tasks/awake/wakelock" style="color:inherit;text-decoration:inherit">Wake Lock API</a></span><span>, which requires the associated </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">android.permission.WAKE_LOCK</span><span>&nbsp;permission.</span></p>
+<p><span>When the main activity runs and the tablet is actually powered, video streaming automatically starts. At that point, the app also acquires a </span><span style="font-style:italic">wake lock</span><span>&nbsp;to ensure that the tablet does not go into sleep mode. An early implementation used the View </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">keepScreenOn</span><span>&nbsp;attribute for that purpose however that has turned out to be oddly unreliable when the app is set as the main Home app. Instead, the implementation has been switched to use the </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://developer.android.com/develop/background-work/background-tasks/awake/wakelock" style="color:inherit;text-decoration:inherit">Wake Lock API</a></span><span>, with the associated </span><span style="font-family:&quot;Source Code Pro&quot;;font-weight:600">WAKE_LOCK</span><span>&nbsp;permission.</span></p>
 <p></p>
 <h1 id="h.427r76bcxpl6" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Privacy Policy</span></h1>
 <p><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://docs.google.com/document/d/1dONgR1cS5073jHYlxyktt7s-TzJg5EtEzMkf_uozPNs/pub" style="color:inherit;text-decoration:inherit">Alf-Labs Android App Privacy Policy</a></span><span>:</span></p>
@@ -277,7 +277,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-11-01 by Rig4j 0.1-Exp-907a6e8
+    Generated on 2026-11-06 by Rig4j 0.1-Exp-907a6e8
     <!-- )rg-excl -->
     &nbsp;
 </div>
