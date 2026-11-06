@@ -189,8 +189,26 @@ td p {
 <p></p>
 <p><span>The panel subscribes to specific MQTT topics on the MQTT broker. To update the panel, a server simply needs to publish messages on the desired MQTT topics.</span></p>
 <p></p>
-<h1 id="h.u7wmmkpl614q" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Alternative Usages</span></h1>
+<h1 id="h.u7wmmkpl614q" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Example Usages</span></h1>
 <p></p>
+<p><span>Distant Signal has been designed to primarily display different turnout states, and layer block states on top of that.</span></p>
+<p></p>
+<p><span>However we’re not limited to just displaying turnout information. The implementation treats states as individual “layers”, of which only one is displayed at a time, and which content is a series of lines, rectangles, and text. Thus we can display a few different things. Blocks, on the other hand, are individual elements that can be toggled on/off individually.</span></p>
+<p></p>
+<p><span>Basic usage, as shown in </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal/blob/main/setup/script_example.json" style="color:inherit;text-decoration:inherit">script_example.json</a></span><span>: A single turnout is shown.</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>2 possible states are possible: “normal” (a.k.a turnout straight) vs “reverse” (a.k.a. turnout thrown).</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>3 blocks are shown -- one for each leg of the turnout.</span></li>
+</ul>
+<p></p>
+<p><span>Extended usage with a siding track:</span></p>
+<ul style="margin:0">
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>In this case we want to display 2 turnouts, and 4 blocks.</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>There are 4 possible states for the turnouts (both normal, both reverse, normal/reverse, reverse/normal).</span></li>
+ <li style="line-height:1.25;padding-bottom:0pt;padding-left:0pt;padding-top:0pt"><span>4 blocks -- 2 for the main vs siding, plus the mainline outside the turnouts.</span></li>
+</ul>
+<p></p>
+<p><span>Dave Kaufman suggested we can also use this as train signage to indicate a train is approaching a station, indicate a train is loading freight for example, or returning to a yard. In the context of the Randall Museum where the model railroad is controlled by an automation computer, we can easily use either block sensors or the automation program to display messages other than just turnout states.</span></p>
 <p></p>
 <h1 id="h.rev1lfbrvkdb" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Hardware used for this project</span></h1>
 <ul style="margin:0">
