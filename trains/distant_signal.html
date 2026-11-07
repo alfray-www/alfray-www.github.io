@@ -185,9 +185,9 @@ td p {
 <h1 id="h.f0sef4c875nw" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">How it Works</span></h1>
 <p><span style="font-weight:700">Distant Signal</span><span>&nbsp;is just a “dumb” display panel -- the panel does not know anything about the model railroad.</span></p>
 <p></p>
-<p><span>The implementation is based around having a JSON file defining a series of layers that represent blocks or turnout, with the ability to show/hide these layers. Control is done indirectly via MQTT.</span></p>
+<p><span>The implementation is based around having a </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/distant_signal.html#h.nbsjwlgln1i2" style="color:inherit;text-decoration:inherit">JSON file defining a series of layers</a></span><span>&nbsp;that represent blocks or turnout, with the ability to show/hide these layers. Control is done indirectly via MQTT.</span></p>
 <p></p>
-<p><span>The panel subscribes to specific MQTT topics on the MQTT broker. To update the panel, a server simply needs to publish messages on the desired MQTT topics.</span></p>
+<p><span>The panel subscribes to </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://www.alfray.com/trains/distant_signal.html#h.663xqbuccpb" style="color:inherit;text-decoration:inherit">specific MQTT topics</a></span><span>&nbsp;on the MQTT broker. To update the panel, a server simply needs to publish messages on the desired MQTT topics.</span></p>
 <p></p>
 <h1 id="h.u7wmmkpl614q" style="line-height:1.25;padding-bottom:6pt;padding-top:12pt;page-break-after:avoid"><span style="font-size:20pt">Example Usages</span></h1>
 <p></p>
@@ -294,7 +294,7 @@ td p {
 <p><span>This selects the state of a given block number. Blocks are hidden until they are set as either actie or inactive.</span></p>
 <p></p>
 <h1 id="h.nbsjwlgln1i2" style="line-height:1.25;padding-bottom:6pt;padding-top:20pt;page-break-after:avoid"><span style="font-size:20pt">Configuration Script Syntax</span></h1>
-<p><span>See </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal/blob/main/setup/script_example.json" style="color:inherit;text-decoration:inherit">script_example.json</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal/blob/main/src/script_parser.py" style="color:inherit;text-decoration:inherit">script_parser.py</a></span><span>&nbsp;for a quick overview</span></p>
+<p><span>See </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal/blob/main/setup/script_example.json" style="color:inherit;text-decoration:inherit">script_example.json</a></span><span>&nbsp;and </span><span style="-webkit-text-decoration-skip:none;color:rgb(17, 85, 204);text-decoration:underline;text-decoration-skip-ink:none"><a href="https://github.com/model-railroad/distant-signal/blob/main/src/script_parser.py" style="color:inherit;text-decoration:inherit">script_parser.py</a></span><span>&nbsp;for a quick overview.</span></p>
 <h2 id="h.nd8kwa95kqgi" style="line-height:1.25;padding-bottom:6pt;padding-top:18pt;page-break-after:avoid"><span style="font-size:16pt">JSON structure</span></h2>
 <p><span>The script is encoded in a JSON structure as follows:</span></p>
 <ul style="margin:0">
