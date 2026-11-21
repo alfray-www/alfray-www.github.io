@@ -771,7 +771,7 @@
 })(); (function () {
     "use strict"; var webglEl = document.getElementById("webgl"); if (!Detector.webgl) {
         Detector.addGetWebGLMessage(webglEl); return
-    } var DEFAULT_YEAR = 240; var radius = 1; var segments = 64; var rotationY = 4 / 3 * Math.PI; var rotationX = 0; var preloaded = {}; var HI_RES_ENTER = 3.5; var HI_RES_EXIT = 4; var hiRes = false; var BORDER_RADIUS = radius + .0025; var BORDER_OPACITY = .55; var bordersEnabled = false; var labelsEnabled = false; var countryLabels = []; var labelYear = null; var labelRequestYear = null; var labelsElt = document.getElementById("country-labels"); var borderData = {}; var width = window.innerWidth; var height = window.innerHeight; var webParams = parseWebParams(); var mya = webParams.startingYear; console.info("webParams:", webParams); var STEPS = Object.keys(EXPLAIN_MAP).map(Number).sort(function (a, b) {
+    } var DEFAULT_YEAR = 1000; var radius = 1; var segments = 64; var rotationY = 4 / 3 * Math.PI; var rotationX = 0; var preloaded = {}; var HI_RES_ENTER = 3.5; var HI_RES_EXIT = 4; var hiRes = false; var BORDER_RADIUS = radius + .0025; var BORDER_OPACITY = .55; var bordersEnabled = false; var labelsEnabled = false; var countryLabels = []; var labelYear = null; var labelRequestYear = null; var labelsElt = document.getElementById("country-labels"); var borderData = {}; var width = window.innerWidth; var height = window.innerHeight; var webParams = parseWebParams(); var mya = webParams.startingYear; console.info("webParams:", webParams); var STEPS = Object.keys(EXPLAIN_MAP).map(Number).sort(function (a, b) {
         return b - a
     });
     var timeline = createTimeline();

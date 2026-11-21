@@ -1004,35 +1004,33 @@
         console.log("@@ Link clicked:", link.href);
       });
 
-      let timesLength = window.ANCIENT_EARTH_TIMES.length;
-      let currentTime = timesLength;
-      console.log("@@ timesLength:", timesLength);
-
-      function processTime(mya) {
-        console.log("@@ Processing mya:", mya);
-        // window.location.replace("#" + mya)
-        window.TIMELINE.setMya(mya);
-      }
+      const yearsSelect = document.getElementById("years-ago");
+      const totalOptions = yearsSelect ? yearsSelect.options.length : 0;
+      let currentIndex = 0;
+      console.log("@@ totalOptions:", totalOptions);
 
       function getDelayMs(mya) {
-        const seconds = 2 + 8 * Math.log10((mya + 100) / 100);
+        // const seconds = 2 + 8 * Math.log10((mya + 100) / 100);
+        const seconds = 11 + 8 * Math.log10((mya + 50) / 1000);
         return seconds * 1000;
       }
 
       function timeStep() {
-        console.log("@@ currentTime:", currentTime, timesLength);
-        if (currentTime <= 0) {
-          currentTime = timesLength;
-        }
-
-        const currentMya = window.ANCIENT_EARTH_TIMES[--currentTime].mya;
-        processTime(currentMya);
+        // change year popup + dispach events
+        yearsSelect.selectedIndex = currentIndex;
+        yearsSelect.dispatchEvent(new Event("change", { bubbles: true }));
+        const currentMya = Number(yearsSelect.options[currentIndex].value);
         const delay = getDelayMs(currentMya);
-        console.log("@@ delay:", delay);
+        console.log("@@ currentIndex:", currentIndex, ", delay:", delay);
+        currentIndex++;
+        if (currentIndex >= totalOptions) {
+          currentIndex = 0;
+        }
         timerId = setTimeout(timeStep, delay);
       }
-
-      timerId = setTimeout(timeStep, 2000); // ms
+      if (totalOptions > 0) {
+        timerId = setTimeout(timeStep, 2000); // ms
+      }
     }); // document loaded
 
     function ga() {
