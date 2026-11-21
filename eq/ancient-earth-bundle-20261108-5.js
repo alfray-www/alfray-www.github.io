@@ -57,6 +57,8 @@
             })
         }, t.Headers = f, t.Request = b, t.Response = w, t.fetch = function (r, n) {
             return new Promise(function (o, t) {
+                console.log("@@ Request R =", JSON.stringify(r, null, 2));
+                console.log("@@ Request N =", JSON.stringify(n, null, 2));
                 var e = new b(r, n), i = new XMLHttpRequest; i.onload = function () {
                     var t, n, e = {
                         status: i.status, statusText: i.statusText, headers: (t = i.getAllResponseHeaders() || "", n = new f, t.replace(/\r?\n[\t ]+/g, " ").split(/\r?\n/).forEach(function (t) {
@@ -554,7 +556,9 @@
             }, true); return
         } if (query.length < 1) {
             return
-        } addressWarning.innerHTML = "Searching..."; addressInput.disabled = true; fetch("/api/geocode/" + encodeURIComponent(query)).then(function (response) {
+        } addressWarning.innerHTML = "Searching..."; addressInput.disabled = true;
+        console.log("@@ FETCH ", "/api/geocode/" + encodeURIComponent(query));
+        fetch("/api/geocode/" + encodeURIComponent(query)).then(function (response) {
             if (!response.ok && response.status !== 404) {
                 throw new Error("Geocode request failed: " + response.status)
             } return response.json()
@@ -570,6 +574,7 @@
             addressInput.disabled = false
         })
     } function hinter(val, suggest) {
+        console.log("@@ FETCH ", "/api/geocodeAutocomplete/" + encodeURIComponent(val));
         fetch("/api/geocodeAutocomplete/" + encodeURIComponent(val)).then(function (response) {
             return response.json()
         }).then(function (obj) {
@@ -584,7 +589,9 @@
     } var latestLookupIds = {}; function createMarkerWithLatlng(place, shouldAnimate) {
         var lat = place.lat; var lng = place.lng; var lookupKey = lat + "," + lng; var lookupId = (latestLookupIds[lookupKey] || 0) + 1; latestLookupIds[lookupKey] = lookupId; function isSuperseded() {
             return latestLookupIds[lookupKey] !== lookupId
-        } var originalMya = window.getMya(); fetch("/api/geo-reconstruct/" + originalMya + "?lat=" + lat + "&lng=" + lng).then(function (response) {
+        } var originalMya = window.getMya();
+            console.log("@@ FETCH ", "/api/geo-reconstruct/" + originalMya + "?lat=" + lat + "&lng=" + lng);
+            fetch("/api/geo-reconstruct/" + originalMya + "?lat=" + lat + "&lng=" + lng).then(function (response) {
             return response.json()
         }).then(function (obj) {
             if (isSuperseded()) {
@@ -809,7 +816,9 @@
     } function upgradeCloudTexture() {
         if (!hiRes || !clouds.parent || clouds.userData.hiResRequested) {
             return
-        } clouds.userData.hiResRequested = true; (new THREE.TextureLoader).load("ancient-earth-assets/images/fair_clouds_4096.png", function (map) {
+        }
+        console.log("@@ LOAD assets/images/fair_clouds_4096.png");
+        clouds.userData.hiResRequested = true; (new THREE.TextureLoader).load("ancient-earth-assets/images/fair_clouds_4096.png", function (map) {
             map.anisotropy = maxAnisotropy; var previous = clouds.material.map; clouds.material.map = map; previous.dispose()
         }, undefined, function () {
             clouds.userData.hiResRequested = false
@@ -817,6 +826,7 @@
     } function preloadNearbyTextures() {
         var idx = STEPS.indexOf(mya); for (var offset = -2; offset <= 2; offset++) {
             var year = STEPS[idx + offset]; var path = year !== undefined && imagePathForYearsAgo(year); if (path && !preloaded[path]) {
+                console.log("@@ PRELOAD ", path);
                 preloaded[path] = true; var i = new Image; i.src = path
             } if (year !== undefined && (bordersEnabled || labelsEnabled)) {
                 loadBorders(year).catch(function () {
@@ -825,6 +835,7 @@
         }
     } function loadBorders(year) {
         if (!borderData[year]) {
+            console.log("@@ FETCH ancient-earth-assets/borders/" + year + ".json");
             borderData[year] = fetch("ancient-earth-assets/borders/" + year + ".json").then(function (res) {
                 if (!res.ok) {
                     throw new Error("HTTP " + res.status)
@@ -996,10 +1007,15 @@
             } if (onLoad) {
                 onLoad()
             }
-        } var map = THREE.ImageUtils.loadTexture(img, undefined, loaded, function () {
+        }
+        console.log("@@ LOAD ", img);
+        var map = THREE.ImageUtils.loadTexture(img, undefined, loaded, function () {
             if (img.indexOf("/paleo-4k/") === -1 || mesh.userData.disposed) {
                 return
-            } var fallback = img.replace("/paleo-4k/", "/paleo/"); (new THREE.ImageLoader).load(fallback, function (image) {
+            }
+            var fallback = img.replace("/paleo-4k/", "/paleo/");
+            console.log("@@ LOAD ", fallback);
+            (new THREE.ImageLoader).load(fallback, function (image) {
                 if (mesh.userData.disposed) {
                     return
                 } map.image = image; map.needsUpdate = true; mesh.userData.img = fallback; loaded()
@@ -1012,6 +1028,7 @@
             color: 14540253, transparent: true, opacity: .3
         }); var geometry = new THREE.CircleGeometry(radius + .005, 50); geometry.vertices.shift(); var circle = new THREE.Line(geometry, material); circle.rotation.x = Math.PI / 2; return [circle]
     } function createClouds(radius, segments) {
+        console.log("@@ LOAD ancient-earth-assets/images/fair_clouds_4k.png");
         var map = THREE.ImageUtils.loadTexture("ancient-earth-assets/images/fair_clouds_4k.png", undefined, function () {
             if (++loadedCount >= 2) {
                 document.getElementById("loading").style.display = "none"
