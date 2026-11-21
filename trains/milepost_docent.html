@@ -205,6 +205,20 @@ td p {
 <p style="text-align:center"><span style="-webkit-transform:rotate(0.00rad) translateZ(0px);border:0.00px solid #000000;display:inline-block;height:97.50px;margin:0.00px 0.00px;overflow:hidden;transform:rotate(0.00rad) translateZ(0px);width:252.56px"><a href="https://play.google.com/store/apps/details?id=com.alflabs.milepost"><img alt="Milepost Docent" src="img_87a3f87b86b658d649f3b2c1aa82a43935931e3e734757eb89f359d01ec098fei.png" style="margin-left:0.00px;margin-top:0.00px" title="Milepost Docent"></a></span><span><br></span></p>
 <p></p>
 <p></p>
+<h2 id="h.mz5xbatdkq1z" style="line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Future Improvements</span></h2>
+<p><span>As explained above, the current state of the application is at the stage of “working prototype”.</span></p>
+<p></p>
+<p><span>Currently, the application supports only one active docent track at a time. This was enough for a demonstration prototype. In the current version, someone would have to activate the program when the train sits at the station, before it leaves. That starts the GPS tracking, and the docent announcements. If the application were started in the Brightside yard, before the train is brought to the station, the GPS tracking would already be active and the program announcement would play the recording scheduled for the end of the trip. </span></p>
+<p></p>
+<p><span>To prevent that, I defined the concept of an activation trigger. That's the missing piece for a fully automated behavior with zero human intervention. Here's how this works. </span></p>
+<p></p>
+<p><span>First, we allow multiple docent tracks to be defined and enabled at the same time, not just one. For a typical NCRy weekend excursion, we would have a track for the train starting at Niles, and a second track for the train starting at Sunol. Each track is “enabled” but only one can be active at a given time. Each track has its own activation trigger, which here is a simple geofencing centered on the corresponding station. </span></p>
+<p><span>When the train is set up at the Brightside yard, no docent track is activated. The GPS tracking monitors the train, and waits for it to enter the geofence for either Sunol or Niles. Once that happens, the corresponding docent track is activated and locked -- the track will only start once the train leaves the station </span><span style="font-style:italic">in the proper direction</span><span>, and will only end once the train is back from its excursion. </span></p>
+<p><span>On top of the geofence, we can use the time and day as activation triggers. For example, the weekend excursion announcements shall only activate on Saturdays and Sundays, between 10am (for the first train) and 2pm (for the second train). This ensures the announcements will not play for charter trains during the week, nor for the return to the yard at the end of the day.</span></p>
+<p></p>
+<p><span>Using time and day based activations allows us to prepare even more docent tracks in advance, and have them play only when expected. For example, regular excursion trains only run from January to October, and the NCRy’s Train of Lights only runs in November and December.</span></p>
+<p></p>
+<p></p>
 <h2 id="h.50oer2yb04eg" style="line-height:1.15;padding-bottom:6pt;padding-top:6pt;page-break-after:avoid;text-align:left"><span style="font-size:16pt">Demonstration</span></h2>
 <p><span>Here’s a video showing the Milepost Docent application running on the tablet:</span></p>
 <p></p>
@@ -337,7 +351,7 @@ td p {
 <div class="bottom-container">
     &nbsp;
     <!-- rg-excl( -->
-    Generated on 2026-11-12 by Rig4j 0.1-Exp-907a6e8
+    Generated on 2026-11-21 by Rig4j 0.1-Exp-907a6e8
     <!-- )rg-excl -->
     &nbsp;
 </div>
