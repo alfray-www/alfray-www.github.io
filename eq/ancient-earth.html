@@ -382,6 +382,7 @@
       color: #ccc;
       cursor: pointer;
       transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+      visibility: hidden;
     }
 
     #settings-toggle svg {
@@ -872,7 +873,7 @@
 
   <div class="hide-in-iframe">
     <div id="copyright">
-      Paleogeography from <a href="">C.R. Scotese</a> &amp; <a href="">EarthByte</a>, visualization developed by <a href="">Ian Webster</a> &middot; &nbsp;<a href="" class="js-open-credits">Details &raquo;</a>
+      Paleogeography from <a href="http://www.scotese.com/">C.R. Scotese</a> &amp; <a href="https://www.earthbyte.org/">EarthByte</a>, visualization developed by <a href="https://www.ianww.com">Ian Webster</a> &middot; &nbsp;<a href="#" class="js-open-credits-disable">Details &raquo;</a>
     </div>
   </div>
 
@@ -992,6 +993,52 @@
     if (cameraOptions.has('cameraNoRotate')) {
       window.cameraNoRotate = cameraOptions.get('cameraNoRotate') === '1';
     }
+
+    // RM 2026-11-21
+    document.addEventListener('DOMContentLoaded', function() {
+      // disable all hrefs
+      document.addEventListener('click', function(event) {
+        const link = event.target.closest('a');
+        if (!link) return;
+        event.preventDefault();
+        console.log("@@ Link clicked:", link.href);
+      });
+
+      let timesLength = window.ANCIENT_EARTH_TIMES.length;
+      let currentTime = timesLength;
+      console.log("@@ timesLength:", timesLength);
+
+      function processTime(mya) {
+        console.log("@@ Processing mya:", mya);
+        // window.location.replace("#" + mya)
+        window.TIMELINE.setMya(mya);
+      }
+
+      function getDelayMs(mya) {
+        const seconds = 2 + 8 * Math.log10((mya + 100) / 100);
+        return seconds * 1000;
+      }
+
+      function timeStep() {
+        console.log("@@ currentTime:", currentTime, timesLength);
+        if (currentTime <= 0) {
+          currentTime = timesLength;
+        }
+
+        const currentMya = window.ANCIENT_EARTH_TIMES[--currentTime].mya;
+        processTime(currentMya);
+        const delay = getDelayMs(currentMya);
+        console.log("@@ delay:", delay);
+        timerId = setTimeout(timeStep, delay);
+      }
+
+      timerId = setTimeout(timeStep, 2000); // ms
+    }); // document loaded
+
+    function ga() {
+      console.log("@@ GA ignored");
+    }
+
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
   <script src="ancient-earth-bundle-20261108-5.js"></script>

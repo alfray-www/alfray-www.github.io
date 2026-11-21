@@ -604,7 +604,9 @@
                 var links = obj.data.nearby.names.map(function (name) {
                     if (!nameToLatlngs[name]) {
                         nameToLatlngs[name] = obj.data.nearby.lookup[name]
-                    } return '<a target="_blank" data-name="' + name + '" href="/' + name + '-pictures">' + name + "</a>"
+                    }
+                    console.log("@@ A HREF:", "/" + name + "-pictures");
+                    return '<a target="_blank" data-name="' + name + '" href="/' + name + '-pictures">' + name + "</a>"
                 }); addressNearby.innerHTML = "Nearby fossils: " + links.join(", ")
             } else {
                 addressNearby.innerHTML = ""
@@ -771,7 +773,10 @@
         Detector.addGetWebGLMessage(webglEl); return
     } var DEFAULT_YEAR = 240; var radius = 1; var segments = 64; var rotationY = 4 / 3 * Math.PI; var rotationX = 0; var preloaded = {}; var HI_RES_ENTER = 3.5; var HI_RES_EXIT = 4; var hiRes = false; var BORDER_RADIUS = radius + .0025; var BORDER_OPACITY = .55; var bordersEnabled = false; var labelsEnabled = false; var countryLabels = []; var labelYear = null; var labelRequestYear = null; var labelsElt = document.getElementById("country-labels"); var borderData = {}; var width = window.innerWidth; var height = window.innerHeight; var webParams = parseWebParams(); var mya = webParams.startingYear; console.info("webParams:", webParams); var STEPS = Object.keys(EXPLAIN_MAP).map(Number).sort(function (a, b) {
         return b - a
-    }); var timeline = createTimeline(); var rotationEnabled = true; var simulationClicked = false; webglEl.addEventListener("mousedown", function () {
+    });
+    var timeline = createTimeline();
+    window.TIMELINE = timeline; // RM
+    var rotationEnabled = true; var simulationClicked = false; webglEl.addEventListener("mousedown", function () {
         simulationClicked = true
     }, false); document.addEventListener("keydown", function (e) {
         var tag = e.target && e.target.tagName; if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") {
@@ -955,7 +960,9 @@
             markers = createSurfaceMarkers(webParams.surfacePoints); markers.forEach(function (marker) {
                 sphereAndPoints.add(marker)
             })
-        } addressInputYearChanged(); updateSelectWithValue(); updateBorders(); document.getElementById("address-warning").innerHTML = ""; window.location.replace("#" + mya); preloadNearbyTextures()
+        } addressInputYearChanged(); updateSelectWithValue(); updateBorders(); document.getElementById("address-warning").innerHTML = "";
+        // RM disable -- window.location.replace("#" + mya);
+        preloadNearbyTextures()
     } function swapSphereTexture(img, year) {
         if (!sphere) {
             sphere = createSphere(radius, segments, img); sphere.userData.year = year; sphere.userData.img = img; sphereAndPoints.add(sphere); return
@@ -1157,7 +1164,9 @@
             url.searchParams.delete(name)
         } else {
             url.searchParams.set(name, value)
-        } window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash)
+        }
+        console.log("@@ setUrlParam:", url)
+        // RM disable -- window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash)
     } function updateMarkerPosition(marker) {
         sphereAndPoints.remove(marker); marker.__updateMarkerPositionFn(marker)
     } window.getMya = function () {
